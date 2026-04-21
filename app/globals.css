@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Compact prose styles for article bodies. Used via the <Prose> primitive. */
+.prose-body {
+  @apply text-slate-700 leading-relaxed;
+  max-width: 70ch;
+}
+.prose-body h2 {
+  @apply mt-10 mb-4 text-2xl font-bold tracking-tight text-slate-900;
+  scroll-margin-top: 5rem;
+}
+.prose-body h3 {
+  @apply mt-6 mb-3 text-xl font-semibold text-slate-900;
+  scroll-margin-top: 5rem;
+}
+.prose-body p {
+  @apply my-4;
+}
+.prose-body ul {
+  @apply my-4 ml-6 list-disc space-y-2;
+}
+.prose-body ol {
+  @apply my-4 ml-6 list-decimal space-y-2;
+}
+.prose-body a {
+  @apply font-medium text-brand underline underline-offset-2 hover:text-brand-dark;
+}
+.prose-body strong {
+  @apply font-semibold text-slate-900;
+}
+.prose-body code {
+  @apply rounded bg-slate-100 px-1.5 py-0.5 text-sm text-slate-800;
+}
+.prose-body blockquote {
+  @apply my-6 border-l-4 border-slate-200 pl-4 italic text-slate-600;
+}
+
+/* Focus ring polish — visible only for keyboard users. */
+:focus-visible {
+  outline: none;
+}
