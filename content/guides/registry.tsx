@@ -125,6 +125,9 @@ import * as PriceFreelanceWork from "./how-to-price-freelance-work";
 import * as SplitExpensesFairly from "./how-to-split-expenses-fairly";
 import * as ChooseImageDimensions from "./how-to-choose-image-dimensions";
 import * as CalculateProfitMargin from "./how-to-calculate-profit-margin";
+import * as CalculateBodyFatPercentage from "./how-to-calculate-body-fat-percentage";
+import * as CalculateOvertimePay from "./how-to-calculate-overtime-pay";
+import * as CalculateTdeeAndBmr from "./how-to-calculate-tdee-and-bmr";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1249,6 +1252,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Calculate gross, markup, and margin in one pass — free profit margin calculator.",
       targetSlug: "profit-margin-calculator",
+    },
+  },
+  "how-to-calculate-body-fat-percentage": {
+    intro: CalculateBodyFatPercentage.intro,
+    body: CalculateBodyFatPercentage.body,
+    cta: {
+      label: "Measure your body fat in under a minute with the US Navy tape method.",
+      targetSlug: "body-fat-calculator",
+    },
+  },
+  "how-to-calculate-overtime-pay": {
+    intro: CalculateOvertimePay.intro,
+    body: CalculateOvertimePay.body,
+    cta: {
+      label: "Verify your overtime paycheck — federal, California, or custom rule sets.",
+      targetSlug: "overtime-calculator",
+    },
+  },
+  "how-to-calculate-tdee-and-bmr": {
+    intro: CalculateTdeeAndBmr.intro,
+    body: CalculateTdeeAndBmr.body,
+    cta: {
+      label: "Get your BMR and TDEE in seconds using the Mifflin-St Jeor equation.",
+      targetSlug: "bmr-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
