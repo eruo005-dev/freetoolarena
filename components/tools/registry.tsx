@@ -86,6 +86,29 @@ const HeicToJpg = dynamic(() => import("./HeicToJpg").then(m => ({ default: m.He
 const IpLookup = dynamic(() => import("./IpLookup").then(m => ({ default: m.IpLookup })), { loading: Skeleton });
 const PublicHolidays = dynamic(() => import("./PublicHolidays").then(m => ({ default: m.PublicHolidays })), { loading: Skeleton });
 const PasswordBreachChecker = dynamic(() => import("./PasswordBreachChecker").then(m => ({ default: m.PasswordBreachChecker })), { loading: Skeleton });
+// Wave 5 — parity pass: PDF suite
+const PdfSplit = dynamic(() => import("./PdfSplit").then(m => ({ default: m.PdfSplit })), { loading: Skeleton });
+const PdfMetadataViewer = dynamic(() => import("./PdfMetadataViewer").then(m => ({ default: m.PdfMetadataViewer })), { loading: Skeleton });
+const PdfMetadataRemover = dynamic(() => import("./PdfMetadataRemover").then(m => ({ default: m.PdfMetadataRemover })), { loading: Skeleton });
+const PdfToLongImage = dynamic(() => import("./PdfToLongImage").then(m => ({ default: m.PdfToLongImage })), { loading: Skeleton });
+const PdfWatermark = dynamic(() => import("./PdfWatermark").then(m => ({ default: m.PdfWatermark })), { loading: Skeleton });
+const PdfOrganizer = dynamic(() => import("./PdfOrganizer").then(m => ({ default: m.PdfOrganizer })), { loading: Skeleton });
+const PdfPageNumbers = dynamic(() => import("./PdfPageNumbers").then(m => ({ default: m.PdfPageNumbers })), { loading: Skeleton });
+const PdfCrop = dynamic(() => import("./PdfCrop").then(m => ({ default: m.PdfCrop })), { loading: Skeleton });
+// Wave 5 — parity pass: image suite
+const WebpToJpg = dynamic(() => import("./WebpToJpg").then(m => ({ default: m.WebpToJpg })), { loading: Skeleton });
+const ImageCropper = dynamic(() => import("./ImageCropper").then(m => ({ default: m.ImageCropper })), { loading: Skeleton });
+const ColorExtractor = dynamic(() => import("./ColorExtractor").then(m => ({ default: m.ColorExtractor })), { loading: Skeleton });
+const GifMaker = dynamic(() => import("./GifMaker").then(m => ({ default: m.GifMaker })), { loading: Skeleton });
+// Wave 5 — parity pass: dev + utility
+const QrCodeGenerator = dynamic(() => import("./QrCodeGenerator").then(m => ({ default: m.QrCodeGenerator })), { loading: Skeleton });
+const AgeGapCalculator = dynamic(() => import("./AgeGapCalculator").then(m => ({ default: m.AgeGapCalculator })), { loading: Skeleton });
+const PercentageCalculator = dynamic(() => import("./PercentageCalculator").then(m => ({ default: m.PercentageCalculator })), { loading: Skeleton });
+const HashGenerator = dynamic(() => import("./HashGenerator").then(m => ({ default: m.HashGenerator })), { loading: Skeleton });
+const CssMinifier = dynamic(() => import("./CssMinifier").then(m => ({ default: m.CssMinifier })), { loading: Skeleton });
+const JsMinifier = dynamic(() => import("./JsMinifier").then(m => ({ default: m.JsMinifier })), { loading: Skeleton });
+const XmlFormatter = dynamic(() => import("./XmlFormatter").then(m => ({ default: m.XmlFormatter })), { loading: Skeleton });
+const DiffChecker = dynamic(() => import("./DiffChecker").then(m => ({ default: m.DiffChecker })), { loading: Skeleton });
 
 /** Next passes `searchParams` as `string | string[] | undefined`. */
 export type RenderParams = Record<string, string | string[] | undefined>;
@@ -1826,6 +1849,556 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Check — it hashes locally and sends only 5 characters of the hash.",
       "A green box means it&rsquo;s not in HIBP&rsquo;s breach corpus; red means rotate it now.",
       "Click Clear when done so the field resets.",
+    ],
+  },
+  // ---------- Wave 5: parity pass ----------
+  "pdf-split": {
+    render: () => <PdfSplit />,
+    explainer: (
+      <>
+        <p>
+          Split a PDF the fast, private way — in your browser. Drop a file, pick
+          either &ldquo;every page as its own PDF&rdquo; or a custom range like
+          <code> 1-3, 5, 7-9</code>, and each slice becomes its own downloadable
+          PDF. Your file never leaves the machine, which matters for contracts,
+          medical records, and anything else you&rsquo;d rather not upload.
+        </p>
+        <p>
+          The tool uses{" "}
+          <a href="https://pdf-lib.js.org/" target="_blank" rel="noreferrer noopener">pdf-lib</a>, copying pages into new documents so text,
+          fonts, and images all stay sharp. If the source is password-protected
+          you&rsquo;ll see a clear error — unlock it first, then try again. For
+          merging the opposite direction, try{" "}
+          <a href="/tools/merge-pdf">Merge PDF</a>; for visual reordering and
+          rotation, try <a href="/tools/pdf-organizer">PDF Organizer</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop a PDF onto the upload area.",
+      "Choose every-page mode or type a range like 1-3, 5, 7-9.",
+      "Click Split — each range becomes its own downloadable PDF.",
+      "Download each slice from the list.",
+    ],
+  },
+  "pdf-metadata-viewer": {
+    render: () => <PdfMetadataViewer />,
+    explainer: (
+      <>
+        <p>
+          Every PDF carries a small block of metadata — title, author, producer,
+          creation date, keywords, the software that made it, and sometimes the
+          full file path from the creator&rsquo;s machine. This viewer reads it
+          all without opening the file in Acrobat, without uploading anywhere,
+          and without installing anything. Useful for vetting a contract
+          you&rsquo;ve received, auditing a resume before sending, or confirming
+          a file matches a version history.
+        </p>
+        <p>
+          If any field surprises you — an author name that&rsquo;s not yours, a
+          timestamp from years ago — use{" "}
+          <a href="/tools/pdf-metadata-remover">PDF Metadata Remover</a> to
+          strip the fields before sharing. For a deeper conceptual walkthrough,
+          see <a href="/guides/how-to-remove-pdf-metadata">How to remove PDF metadata</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop any PDF onto the upload area.",
+      "Read the two-column metadata table — dashes mean the field is blank.",
+      "Note anything surprising (author, producer, creation date, path).",
+      "If you need to strip those fields, open PDF Metadata Remover.",
+    ],
+  },
+  "pdf-metadata-remover": {
+    render: () => <PdfMetadataRemover />,
+    explainer: (
+      <>
+        <p>
+          Strip the author name, title, subject, keywords, creator, producer,
+          and timestamp fields from any PDF — all in your browser, nothing
+          uploaded. This is the field journalists, lawyers, and job seekers
+          reach for: the visible text stays exactly as you wrote it, but the
+          hidden fields that leak your username, corporate software suite, or
+          original file path are wiped.
+        </p>
+        <p>
+          Caveat: this removes document-level metadata. It does not attempt to
+          strip embedded image EXIF or signature traces — those require a
+          re-render. For a before/after check, run the output through{" "}
+          <a href="/tools/pdf-metadata-viewer">PDF Metadata Viewer</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop the PDF whose metadata you want wiped.",
+      "Click Strip metadata — all author/title/creator fields are cleared.",
+      "Download the cleaned file.",
+      "Re-open it in PDF Metadata Viewer to verify the fields are blank.",
+    ],
+  },
+  "pdf-to-long-image": {
+    render: () => <PdfToLongImage />,
+    explainer: (
+      <>
+        <p>
+          Stitch every page of a PDF into one tall PNG — perfect for pasting a
+          report into a Notion page, previewing a deck in a Slack DM, or
+          sharing a signed document where the recipient lives on their phone.
+          Rendered with{" "}
+          <a href="https://mozilla.github.io/pdf.js/" target="_blank" rel="noreferrer noopener">PDF.js</a>{" "}
+          at a scale you control, so you can trade file size for sharpness.
+        </p>
+        <p>
+          If your PDF is more than a dozen pages, the output can get large —
+          the final dimensions are shown next to the download link so you
+          can see before you save. For page-by-page images instead of one tall
+          strip, use <a href="/tools/pdf-to-jpg">PDF to JPG</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop your PDF onto the upload area.",
+      "Pick a render scale — 1.5 is a good default, higher for print.",
+      "Click Render — watch the progress indicator.",
+      "Download the single tall PNG when it&rsquo;s ready.",
+    ],
+  },
+  "pdf-watermark": {
+    render: () => <PdfWatermark />,
+    explainer: (
+      <>
+        <p>
+          Stamp a text watermark across every page of a PDF — DRAFT,
+          CONFIDENTIAL, your company name, a client reference. You pick the
+          text, size, color, opacity, rotation, and one of six positions. The
+          watermark is a real PDF layer (not a bitmap overlay), so the
+          underlying document stays searchable and selectable.
+        </p>
+        <p>
+          Good watermarks signal status; they don&rsquo;t replace real
+          protection. Anyone who wants to can re-OCR and clean it off. For
+          shared drafts and work samples the signal is enough — for actual
+          confidentiality, limit distribution. For practical guidance on text
+          and styling, see{" "}
+          <a href="/guides/how-to-add-watermark-to-pdf">How to add a watermark to a PDF</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop the PDF you want to watermark.",
+      "Type the watermark text (e.g. DRAFT or your name).",
+      "Pick size, color, opacity, rotation, and position.",
+      "Click Apply — download the watermarked file.",
+    ],
+  },
+  "pdf-organizer": {
+    render: () => <PdfOrganizer />,
+    explainer: (
+      <>
+        <p>
+          Reorder, rotate, and delete pages in a PDF using a visual thumbnail
+          view. Every page renders as a small preview you can move up or down,
+          rotate in 90° steps, or drop from the final document. When
+          you&rsquo;re happy with the order, save a new PDF that mirrors it
+          exactly. Everything runs in your browser — nothing is uploaded.
+        </p>
+        <p>
+          For pure splitting, <a href="/tools/pdf-split">PDF Split</a> is
+          faster. For combining PDFs from multiple files,{" "}
+          <a href="/tools/merge-pdf">Merge PDF</a> is the right tool. This
+          organizer is for when you already have one file and want to clean up
+          its page order — scanning fixes, removing blanks, fixing upside-down
+          scans.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop a PDF — thumbnails load for each page.",
+      "Use ↑/↓ to reorder, the rotate button for orientation, ✕ to delete.",
+      "Click Save reorganized PDF when the order looks right.",
+      "Download your rearranged file.",
+    ],
+  },
+  "pdf-page-numbers": {
+    render: () => <PdfPageNumbers />,
+    explainer: (
+      <>
+        <p>
+          Add page numbers to any PDF without re-typesetting it in Word or
+          InDesign. Pick one of six positions, a font size, a starting number,
+          and a format (<code>1, 2, 3</code>, <code>Page 1</code>,{" "}
+          <code>Page 1 of N</code>, or <code>1 / N</code>). Skip the first page
+          if it&rsquo;s a cover. The numbering is added as a real PDF text
+          layer — searchable, not a flattened bitmap.
+        </p>
+        <p>
+          For contracts that cite page numbers in clauses, books that print for
+          binding, and multi-page sworn statements, the numbering matters more
+          than people assume. More detail and conventions in the guide:{" "}
+          <a href="/guides/how-to-add-page-numbers-to-pdf">How to add page numbers to a PDF</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop the PDF you want to number.",
+      "Choose position, font size, starting number, and format.",
+      "Toggle &ldquo;Skip first page&rdquo; if page 1 is a cover.",
+      "Click Apply — download the numbered PDF.",
+    ],
+  },
+  "pdf-crop": {
+    render: () => <PdfCrop />,
+    explainer: (
+      <>
+        <p>
+          Trim the margins off every page of a PDF at once. Enter how many
+          points to shave from the top, right, bottom, and left (72 points = 1
+          inch; the default 36 = half an inch). Ideal for cleaning up old scans
+          with wide margins, removing the white borders from a slide deck
+          exported to PDF, or tightening up a long read for an e-reader.
+        </p>
+        <p>
+          The crop is non-destructive — viewers respect the new crop box but
+          the original content stays in the file, so you can always widen the
+          box back out later. If you need true page resizing (content actually
+          scaled), a desktop PDF editor is a better tool.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop the PDF you want to crop.",
+      "Enter margins in points for top/right/bottom/left (36 = 0.5 inch).",
+      "Click Crop all pages — a new PDF saves with the trimmed crop box.",
+      "Open it in any PDF viewer — the margins will appear gone.",
+    ],
+  },
+  "webp-to-jpg": {
+    render: () => <WebpToJpg />,
+    explainer: (
+      <>
+        <p>
+          WebP is great for the web (smaller files, same visual quality) but
+          shows up as broken in older CMSs, most print-shop upload forms,
+          iMessage photo previews, and some email clients. This converter
+          batches multiple WebP images to JPG in one click — canvas-based,
+          quality-adjustable, and everything runs in your browser.
+        </p>
+        <p>
+          Transparency gets flattened onto white when saving JPG (JPG
+          doesn&rsquo;t support alpha). If your WebP has transparency you want
+          to preserve, use{" "}
+          <a href="/tools/image-format-converter">Image Format Converter</a>{" "}
+          and output PNG instead.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop one or many .webp files onto the upload area.",
+      "Adjust the quality slider (0.92 is a safe default).",
+      "Click Convert all — each file gets a JPG version below.",
+      "Download them individually from the list.",
+    ],
+  },
+  "image-cropper": {
+    render: () => <ImageCropper />,
+    explainer: (
+      <>
+        <p>
+          Crop an image to a custom box or a fixed aspect ratio — square for
+          profile photos, 4:5 for portrait posts, 16:9 for YouTube, 9:16 for
+          Stories and Reels. Drag the crop rectangle or resize from its
+          corners; the side panel shows the exact region you&rsquo;ll export.
+          Output preserves the original resolution of the cropped area, so no
+          blur or rescale is introduced.
+        </p>
+        <p>
+          For resizing the whole image instead of cropping, use{" "}
+          <a href="/tools/image-resizer">Image Resizer</a>. For shrinking file
+          size after cropping, <a href="/tools/image-compressor">Image Compressor</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop an image onto the upload area.",
+      "Pick a fixed aspect ratio, or leave it free.",
+      "Drag the crop box or its corner handles to frame the shot.",
+      "Click Export cropped — download the PNG.",
+    ],
+  },
+  "color-extractor": {
+    render: () => <ColorExtractor />,
+    explainer: (
+      <>
+        <p>
+          Upload any image and get back the six most-dominant colors as HEX,
+          RGB, and HSL — with a one-click copy on each. The picker samples the
+          image onto a small canvas, buckets each pixel into a 32-step RGB
+          grid, and surfaces the most-populated buckets. Useful for building a
+          mood board, matching a site&rsquo;s brand color to its hero photo,
+          or checking logo contrast.
+        </p>
+        <p>
+          For converting one color between formats (HEX ↔ RGB ↔ HSL), see{" "}
+          <a href="/tools/color-converter">Color Converter</a>. For manual
+          tweaks from a starting palette, the HSL output makes it easy to
+          shift hue or saturation by a fixed amount.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop an image — the swatch panel updates automatically.",
+      "Copy HEX, RGB, or HSL from any swatch.",
+      "If the palette feels off, try a different crop or a higher-contrast shot.",
+      "Drop a new image to reset.",
+    ],
+  },
+  "gif-maker": {
+    render: () => <GifMaker />,
+    explainer: (
+      <>
+        <p>
+          Build a looping GIF from a stack of images — PNGs from a tutorial,
+          a burst of photos from your phone, frames exported from a video.
+          Set frame delay (80-200ms is common), output width, and whether it
+          should loop. The encoder runs entirely in your browser using{" "}
+          <a href="https://github.com/jnordberg/gif.js" target="_blank" rel="noreferrer noopener">gif.js</a> —
+          no uploads, no watermark.
+        </p>
+        <p>
+          For anything over ~8 seconds or with lots of detail, an MP4 will be
+          smaller and smoother; use a video tool for that. GIF shines for
+          email, Slack previews, and short no-audio tutorials where a link
+          preview won&rsquo;t autoplay an MP4.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop multiple image frames onto the upload area.",
+      "Reorder with ↑/↓ to get the right sequence.",
+      "Set delay (ms/frame), width, and loop.",
+      "Click Create GIF — download when rendering finishes.",
+    ],
+  },
+  "qr-code-generator": {
+    render: () => <QrCodeGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate a QR code for any URL, wifi string, or plain text — free,
+          offline, no account. Pick size, error-correction level (L/M/Q/H —
+          higher survives smudges and crops at the cost of density), and
+          colors. Download as PNG for print and social, or SVG for infinite
+          scaling.
+        </p>
+        <p>
+          Rules of thumb: keep the data short (shortened URL beats long
+          query-string link), use error-correction M for most cases and Q
+          when a logo overlay or glossy surface is in play, and test from
+          two or three phones before printing — the cheapest phone is usually
+          the strictest scanner. More tips in{" "}
+          <a href="/guides/how-to-generate-qr-codes">How to generate QR codes</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type or paste the text or URL to encode.",
+      "Pick size, error-correction level, and colors.",
+      "Preview updates live.",
+      "Download as PNG (for print/social) or SVG (for perfect scaling).",
+    ],
+  },
+  "age-gap-calculator": {
+    render: () => <AgeGapCalculator />,
+    explainer: (
+      <>
+        <p>
+          Enter two birthdays and see the gap in years, months, and days —
+          calendar-correct, not a rough &ldquo;subtract the years&rdquo;
+          approximation. Borrows days from the previous month when the
+          subtraction goes negative, so a Feb 28 to Mar 1 gap reads as 1 day,
+          not a month. Works for couples, siblings, sports eligibility, or any
+          two humans.
+        </p>
+        <p>
+          For a single person&rsquo;s age today, use{" "}
+          <a href="/tools/age-calculator">Age Calculator</a>. For the math
+          behind the calendar borrowing rules, see{" "}
+          <a href="/guides/how-to-calculate-age-gap">How to calculate an age gap</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick Person 1&rsquo;s birthday.",
+      "Pick Person 2&rsquo;s birthday.",
+      "Read the gap in years, months, days — plus total days.",
+      "Order doesn&rsquo;t matter; the tool uses the absolute gap.",
+    ],
+  },
+  "percentage-calculator": {
+    render: () => <PercentageCalculator />,
+    explainer: (
+      <>
+        <p>
+          A fast percentage calculator that covers the three formulas that
+          actually come up in daily life: &ldquo;what is X% of Y&rdquo;,
+          &ldquo;A is what percent of B&rdquo;, and &ldquo;percent change from
+          old to new&rdquo;. All three are live on the page — fill the one you
+          need. Negative results show red so a price drop or account loss
+          reads at a glance.
+        </p>
+        <p>
+          For tip and bill-split math specifically, use the{" "}
+          <a href="/tools/tip-calculator">Tip Calculator</a>. For a written
+          walkthrough of five common formulas, including markup and reverse
+          percent, see{" "}
+          <a href="/guides/how-to-calculate-percentages">How to calculate percentages</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Use the first card for &ldquo;what is X% of Y&rdquo; — enter two numbers.",
+      "Use the second for &ldquo;A is what % of B&rdquo;.",
+      "Use the third for percent change — negative means a drop.",
+      "Numbers update as you type; nothing to submit.",
+    ],
+  },
+  "hash-generator": {
+    render: () => <HashGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text — all
+          four at once, computed locally, nothing sent anywhere. Useful for
+          verifying a file-integrity checksum, building a fingerprint for
+          deduplication, or testing a hashing pipeline during development.
+        </p>
+        <p>
+          One thing worth being clear about: <strong>do not use MD5 or SHA-1
+          for storing passwords.</strong> Both are broken for that purpose —
+          too fast, well-rainbowed, and missing a salt. For password storage
+          use a proper password-hashing function (bcrypt, scrypt, Argon2). See{" "}
+          <a href="/guides/how-to-hash-passwords">How to hash passwords</a> for
+          the full explanation, and{" "}
+          <a href="/tools/password-breach-checker">Password Breach Checker</a>{" "}
+          if you want to check whether your password has leaked.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type or paste your input into the textarea.",
+      "All four hashes update as you type.",
+      "Use the Copy button next to any hash.",
+      "Clear the input when done — nothing is remembered.",
+    ],
+  },
+  "css-minifier": {
+    render: () => <CssMinifier />,
+    explainer: (
+      <>
+        <p>
+          Paste a stylesheet, click Minify, get a smaller version with comments
+          and whitespace stripped. The result is ready to paste into a{" "}
+          <code>&lt;style&gt;</code> block, copy into a production build
+          shortcut, or compare against your build tool&rsquo;s output. Runs in
+          your browser — your CSS never leaves the page.
+        </p>
+        <p>
+          This is a string-level minifier — it preserves quoted content but
+          doesn&rsquo;t understand CSS grammar. For a full-optimization
+          pipeline (including color shortening, rule merging, and dead-code
+          removal) a build tool like cssnano or lightningcss is still the
+          right answer.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your CSS into the input textarea.",
+      "Click Minify — the output and savings appear below.",
+      "Copy the result with the Copy button.",
+      "Click Clear to reset.",
+    ],
+  },
+  "js-minifier": {
+    render: () => <JsMinifier />,
+    explainer: (
+      <>
+        <p>
+          Paste some JavaScript, click Minify, get a smaller version — strips
+          line and block comments, collapses whitespace, and tightens spaces
+          around punctuation. Useful for trimming a snippet before pasting
+          into an inline script tag or a config file. No code ever leaves
+          your browser.
+        </p>
+        <p>
+          <strong>Caveat:</strong> this is a conservative regex-based
+          minifier. It preserves quoted strings and template literals but
+          won&rsquo;t re-rename variables, shorten booleans, or fully parse
+          regex literals. For production builds, use{" "}
+          <a href="https://terser.org/" target="_blank" rel="noreferrer noopener">Terser</a>{" "}
+          — every modern bundler wraps it.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your JavaScript into the textarea.",
+      "Click Minify — output and saved bytes show below.",
+      "Copy the minified version.",
+      "For heavy regex-based code, verify the result still runs.",
+    ],
+  },
+  "xml-formatter": {
+    render: () => <XmlFormatter />,
+    explainer: (
+      <>
+        <p>
+          Paste XML, click Format, and get a cleanly indented, 2-space output
+          that&rsquo;s easy to read and diff. Invalid XML surfaces the parser
+          error inline — much faster than opening an IDE. Minify mode strips
+          whitespace between tags when you need the smallest possible payload.
+        </p>
+        <p>
+          All parsing uses the browser&rsquo;s built-in{" "}
+          <code>DOMParser</code>, so it runs without dependencies and handles
+          namespaces, CDATA, comments, and self-closing tags correctly. For
+          JSON, use <a href="/tools/json-formatter">JSON Formatter</a>; for
+          YAML↔JSON conversions,{" "}
+          <a href="/tools/yaml-json-converter">YAML ↔ JSON</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste XML into the input.",
+      "Click Format for indented output, or Minify for a compact version.",
+      "Read the error message if the parser flags a problem.",
+      "Copy the output when it looks right.",
+    ],
+  },
+  "diff-checker": {
+    render: () => <DiffChecker />,
+    explainer: (
+      <>
+        <p>
+          Paste two blocks of text — a previous and current version of a
+          contract, a commit message, or a draft — and see exactly which lines
+          changed. Unchanged lines appear grey on both sides; removed lines
+          are red on the left, added lines are green on the right. The diff
+          is a standard LCS-based line comparison, same idea as{" "}
+          <code>diff</code> on a Unix shell.
+        </p>
+        <p>
+          For comparing structured text like JSON, reformat both sides first
+          with <a href="/tools/json-formatter">JSON Formatter</a> before
+          running the diff — identical data can otherwise show as completely
+          different if whitespace or key order shifted.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the original text on the left.",
+      "Paste the changed text on the right.",
+      "Click Compare — scroll through the side-by-side result.",
+      "Red = removed, green = added, grey = unchanged.",
     ],
   },
 };

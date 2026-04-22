@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
   },
-  twitter: { card: "summary" },
+  twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
 };
 

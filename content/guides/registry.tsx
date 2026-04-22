@@ -99,6 +99,22 @@ import * as PlanMove from "./how-to-plan-a-move";
 import * as PackForTravel from "./how-to-pack-for-travel";
 import * as SaveOnUtilities from "./how-to-save-on-utilities";
 import * as ApologizeWell from "./how-to-apologize-well";
+// Wave 5 — parity pass
+import * as MergePdfsGuide from "./how-to-merge-pdfs";
+import * as SplitPdfGuide from "./how-to-split-a-pdf";
+import * as CompressImagesQuality from "./how-to-compress-images-without-losing-quality";
+import * as GenerateQrCodes from "./how-to-generate-qr-codes";
+import * as CalculateAgeGap from "./how-to-calculate-age-gap";
+import * as CalculatePercentages from "./how-to-calculate-percentages";
+import * as ConvertWebpToJpg from "./how-to-convert-webp-to-jpg";
+import * as CropImagesOnline from "./how-to-crop-images-online";
+import * as ExtractColorsFromImage from "./how-to-extract-colors-from-an-image";
+import * as CreateGifsFromImages from "./how-to-create-gifs-from-images";
+import * as AddWatermarkPdf from "./how-to-add-watermark-to-pdf";
+import * as AddPageNumbersPdf from "./how-to-add-page-numbers-to-pdf";
+import * as RemovePdfMetadata from "./how-to-remove-pdf-metadata";
+import * as HashPasswords from "./how-to-hash-passwords";
+import * as UseRegexEffectively from "./how-to-use-regex-effectively";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -1018,6 +1034,127 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Track the behavior change you committed to — free habit tracker.",
       targetSlug: "habit-tracker",
+    },
+  },
+  // ---------- Wave 5: parity pass ----------
+  "how-to-merge-pdfs": {
+    intro: MergePdfsGuide.intro,
+    body: MergePdfsGuide.body,
+    cta: {
+      label: "Merge PDFs in your browser — free, no watermark, no sign-up.",
+      targetSlug: "merge-pdf",
+    },
+  },
+  "how-to-split-a-pdf": {
+    intro: SplitPdfGuide.intro,
+    body: SplitPdfGuide.body,
+    cta: {
+      label: "Split a PDF by pages or ranges — free, in-browser, private.",
+      targetSlug: "pdf-split",
+    },
+  },
+  "how-to-compress-images-without-losing-quality": {
+    intro: CompressImagesQuality.intro,
+    body: CompressImagesQuality.body,
+    cta: {
+      label: "Compress images in your browser — free image compressor.",
+      targetSlug: "image-compressor",
+    },
+  },
+  "how-to-generate-qr-codes": {
+    intro: GenerateQrCodes.intro,
+    body: GenerateQrCodes.body,
+    cta: {
+      label: "Generate a QR code now — free, offline, PNG or SVG.",
+      targetSlug: "qr-code-generator",
+    },
+  },
+  "how-to-calculate-age-gap": {
+    intro: CalculateAgeGap.intro,
+    body: CalculateAgeGap.body,
+    cta: {
+      label: "Find the exact age gap in years, months, days — free tool.",
+      targetSlug: "age-gap-calculator",
+    },
+  },
+  "how-to-calculate-percentages": {
+    intro: CalculatePercentages.intro,
+    body: CalculatePercentages.body,
+    cta: {
+      label: "Run percent math instantly — free percentage calculator.",
+      targetSlug: "percentage-calculator",
+    },
+  },
+  "how-to-convert-webp-to-jpg": {
+    intro: ConvertWebpToJpg.intro,
+    body: ConvertWebpToJpg.body,
+    cta: {
+      label: "Convert WebP to JPG in your browser — free, batch-friendly.",
+      targetSlug: "webp-to-jpg",
+    },
+  },
+  "how-to-crop-images-online": {
+    intro: CropImagesOnline.intro,
+    body: CropImagesOnline.body,
+    cta: {
+      label: "Crop an image online — free image cropper, no watermark.",
+      targetSlug: "image-cropper",
+    },
+  },
+  "how-to-extract-colors-from-an-image": {
+    intro: ExtractColorsFromImage.intro,
+    body: ExtractColorsFromImage.body,
+    cta: {
+      label: "Pull a palette from any photo — free color extractor.",
+      targetSlug: "color-extractor",
+    },
+  },
+  "how-to-create-gifs-from-images": {
+    intro: CreateGifsFromImages.intro,
+    body: CreateGifsFromImages.body,
+    cta: {
+      label: "Build an animated GIF from images — free, in-browser.",
+      targetSlug: "gif-maker",
+    },
+  },
+  "how-to-add-watermark-to-pdf": {
+    intro: AddWatermarkPdf.intro,
+    body: AddWatermarkPdf.body,
+    cta: {
+      label: "Add a watermark to your PDF — free, private, no sign-up.",
+      targetSlug: "pdf-watermark",
+    },
+  },
+  "how-to-add-page-numbers-to-pdf": {
+    intro: AddPageNumbersPdf.intro,
+    body: AddPageNumbersPdf.body,
+    cta: {
+      label: "Add page numbers to any PDF — free, configurable, offline.",
+      targetSlug: "pdf-page-numbers",
+    },
+  },
+  "how-to-remove-pdf-metadata": {
+    intro: RemovePdfMetadata.intro,
+    body: RemovePdfMetadata.body,
+    cta: {
+      label: "Strip author and hidden info from a PDF — free in-browser tool.",
+      targetSlug: "pdf-metadata-remover",
+    },
+  },
+  "how-to-hash-passwords": {
+    intro: HashPasswords.intro,
+    body: HashPasswords.body,
+    cta: {
+      label: "Generate MD5, SHA-1, SHA-256, SHA-512 locally — free hash generator.",
+      targetSlug: "hash-generator",
+    },
+  },
+  "how-to-use-regex-effectively": {
+    intro: UseRegexEffectively.intro,
+    body: UseRegexEffectively.body,
+    cta: {
+      label: "Test a regex in real time — free regex tester.",
+      targetSlug: "regex-tester",
     },
   },
 };
