@@ -2893,7 +2893,23 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter the time period in years.",
       "Read simple ROI and annualized ROI.",
     ],
-      faq: [
+    whenToUse: [
+      "Comparing investments with different holding periods on the same annualized scale.",
+      "Evaluating a business initiative's return vs. its opportunity cost.",
+      "Sanity-checking a deal that advertises a simple percentage return without a time frame.",
+      "Converting a 'doubled my money' claim into the annualized rate that actually produced it.",
+    ],
+    whenNotToUse: [
+      "Deals involving ongoing cash flows (rental income, dividend reinvestment) — use IRR or XIRR instead, since ROI assumes a single in/out transaction.",
+      "Tax-sensitive decisions — after-tax return is often meaningfully lower, and this tool doesn't model it.",
+      "Comparing investments with very different risk profiles — a 15% ROI on a CD and 15% on a venture-stage startup aren't the same achievement.",
+    ],
+    example: {
+      input: "Cost: $10,000\nReturn: $15,000\nHolding period: 5 years",
+      output: "Simple ROI: 50%\nAnnualized ROI (CAGR): 8.45%",
+      note: "That's in line with long-term S&P 500 nominal returns (~10%), so it's solid but not exceptional.",
+    },
+    faq: [
       {
         "q": "What's a good ROI?",
         "a": "For a business investment, 15–20 percent annualized over multiple years is considered strong. For stocks, 7 percent real returns is the historical average. Anything over 30 percent annualized over a long period is unusual and deserves scrutiny."
@@ -3079,7 +3095,24 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Compare results across the four formulas.",
       "Use as rough reference, not as a strict target.",
     ],
-      faq: [
+    whenToUse: [
+      "Getting a rough weight range for a medication dose calculation (the original clinical purpose).",
+      "Comparing your current weight to a commonly cited reference point.",
+      "Setting a loose weight-loss or weight-gain goal to discuss with a clinician.",
+      "Sanity-checking a target weight another source recommends.",
+    ],
+    whenNotToUse: [
+      "Pregnancy or postpartum recovery — work with your provider, not a decades-old formula.",
+      "Athletes with significant muscle mass — these formulas will mark you 'overweight' even at athletic body-fat %.",
+      "Eating-disorder recovery — any weight target should come from your treatment team.",
+      "Children or adolescents — use BMI percentiles, not adult formulas.",
+    ],
+    example: {
+      input: "Female, 5'6\" (168 cm)",
+      output: "Devine: 59.0 kg (130 lb)\nRobinson: 57.4 kg (127 lb)\nMiller: 57.9 kg (128 lb)\nHamwi: 59.9 kg (132 lb)",
+      note: "The spread (127–132 lb) is more informative than any single number — 'ideal weight' inherently has a range.",
+    },
+    faq: [
       { q: "Which formula does the calculator use?", a: "We show results from four widely cited formulas: Devine, Robinson, Miller, and Hamwi. Each gives a slightly different estimate — 'ideal weight' isn't a precise medical concept, so seeing the range is more useful than a single number." },
       { q: "Is ideal weight the same as healthy weight?", a: "No — ideal-weight formulas were originally designed for medication dosing, not general health. For a health-oriented target, use BMI (range 18.5–24.9) or a body-fat percentage in a healthy range." },
       { q: "Does age affect ideal weight?", a: "The classic formulas don't factor in age. For adults, weight tends to naturally trend slightly higher with age without health concern — absolute targets that were calibrated in the 1970s may be over-restrictive." },
@@ -7437,8 +7470,8 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       <>
         <p>
           Calculate weighted and unweighted GPA on the US 4.0 scale from a list of courses with letter grades and
-          credit hours. Supports honors and AP bumps with a per-class weight toggle. Shows cumulative and
-          term-by-term GPAs.
+          credit hours. Supports honors and AP bumps with a per-class weight toggle (typical +0.5 for honors,
+          +1.0 for AP/IB). Shows cumulative and term-by-term GPAs.
         </p>
         <p>
           Related: <a href="/tools/grade-calculator">grade calculator</a>,{" "}
@@ -7454,6 +7487,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read unweighted and weighted GPA side by side.",
       "Copy the summary for a résumé or transcript prep.",
     ],
+    whenToUse: [
+      "Projecting your GPA before final grades are posted.",
+      "Estimating impact of a single course on your cumulative GPA.",
+      "Preparing a résumé where weighted vs unweighted is ambiguous.",
+      "Comparing two schedule options (e.g., dropping an AP class).",
+    ],
+    whenNotToUse: [
+      "Graduate / professional programs — they use different scales (4.3, 4.5, or percentage-based).",
+      "International systems (UK, EU, Indian, Chinese) — convert first using a dedicated WES/ECE-style tool.",
+      "Schools using pass/fail for some courses — most GPA formulas ignore them; check your school's policy.",
+    ],
+    example: {
+      input: "AP Calc (4 cr, A)\nHonors English (3 cr, B+)\nChemistry (3 cr, A-)\nPE (1 cr, A)",
+      output: "Unweighted GPA: 3.68\nWeighted GPA: 4.03 (AP = 5.0, Honors = 4.5 scale)",
+      note: "Most college admissions officers recalculate GPAs using their own scale, so treat your unweighted GPA as the more transferable figure.",
+    },
+    faq: [
+      {
+        q: "What's the difference between weighted and unweighted GPA?",
+        a: "Unweighted GPA caps every course at 4.0 regardless of difficulty. Weighted GPA adds bonus points for honors (usually +0.5) and AP/IB (usually +1.0) classes — so a perfect schedule with APs can exceed 4.0.",
+      },
+      {
+        q: "How do I handle pass/fail courses?",
+        a: "Most schools exclude them from GPA entirely; the tool lets you drop them. If your school counts a pass as a specific letter (e.g., C for pass), enter that manually.",
+      },
+      {
+        q: "Does the tool use credit hours or just course count?",
+        a: "Credit hours. A 4-credit calculus class weighs more than a 1-credit PE class, which reflects how most US schools and colleges compute GPA.",
+      },
+      {
+        q: "Why do colleges recalculate my GPA?",
+        a: "High schools weight differently (+0.5 vs +1.0), include or exclude non-core classes, and treat plus/minus grades inconsistently. To compare applicants fairly, colleges re-score using their own scale.",
+      },
+    ],
   },
   "grade-calculator": {
     render: () => <GradeCalculator />,
@@ -7462,7 +7529,7 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
         <p>
           Work out a final course grade from weighted categories (homework 20%, midterm 30%, final 50%, etc.) or
           figure out exactly what you need on the final to hit a target grade. Essential during exam prep and
-          end-of-semester planning.
+          end-of-semester planning — and the math most students get wrong when they try it in their head.
         </p>
         <p>
           Related: <a href="/tools/gpa-calculator">GPA calculator</a>,{" "}
@@ -7477,6 +7544,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Add the final exam and the target grade.",
       "Read your current weighted grade and the score needed on the final.",
       "Plan study time accordingly.",
+    ],
+    whenToUse: [
+      "Before a final exam — compute exactly what score you need to clinch a target grade.",
+      "Mid-semester check-in to see where you actually stand across weighted categories.",
+      "Deciding whether to retake an assignment if the weight allows rework.",
+      "Comparing grade scenarios (curve vs no curve, drop-lowest vs no-drop policies).",
+    ],
+    whenNotToUse: [
+      "Courses that grade on a curve — you can't compute your final letter until the class is scored.",
+      "Pass/fail classes — use the threshold your syllabus specifies, not a percent target.",
+      "Courses with a participation 'instructor discretion' category worth 10%+, since that's guesswork.",
+    ],
+    example: {
+      input: "Homework 20% @ 88%\nMidterm 30% @ 76%\nFinal 50% = ?\nTarget: B (85%)",
+      output: "Current weighted: 80.4%\nNeed on final: 91.2%",
+      note: "If the final is unreachable (above 100%), the tool flags it so you can plan realistic targets — or ask the professor about extra credit.",
+    },
+    faq: [
+      {
+        q: "What's the formula?",
+        a: "Weighted grade = sum of (category weight × category percent). If categories sum to less than 100%, the tool flags it — most common cause is forgetting the final exam weight. The 'needed on final' formula is: (target − current points earned) / final weight.",
+      },
+      {
+        q: "My weights don't add to 100 — is that wrong?",
+        a: "Usually yes. Syllabi occasionally reserve small chunks (attendance, in-class quizzes) under 'other' — the tool shows the gap so you can fill it or confirm.",
+      },
+      {
+        q: "Can I use this for a letter-grade cutoff?",
+        a: "Yes — enter the cutoff (e.g., 90% for an A) as the target. The tool tells you the score you need on the remaining weight to land exactly on that boundary. Remember that most schools round 89.5% up to A, but some don't — check your school's policy.",
+      },
+      {
+        q: "What about curves or bell-curving?",
+        a: "The tool assumes absolute grading (your 85% is a B). Curved classes depend on the rest of the class's performance, which you can't know until finals are scored — use absolute grading as a worst-case estimate.",
+      },
     ],
   },
   "fuel-cost-calculator": {
@@ -9472,18 +9573,58 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
     render: () => <SalesTaxCalculator />,
     explainer: (
       <>
-        <p>Compute sales tax from a pre-tax price, reverse-calculate pre-tax from a total, or compare rates across regions.</p>
         <p>
-          Runs entirely in your browser — no upload, no account, no watermark.
-          For more tools in this category see the{" "}
-          <a href="/tools">full tools index</a>.
+          Compute sales tax from a pre-tax price, reverse-calculate the pre-tax subtotal from a receipt total,
+          or compare rates across regions. Works with any rate — US state (0–7.25% state + up to 4% local),
+          Canadian GST/HST (5–15%), UK VAT (20%), or a custom rate.
+        </p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no stored data. Pair with{" "}
+          <a href="/tools/vat-calculator">VAT calculator</a> for EU/UK tax, or{" "}
+          <a href="/tools/discount-calculator">discount calculator</a> when both apply (discount is
+          almost always computed before tax in the US).
         </p>
       </>
     ),
     howToUse: [
-      "Fill in the inputs or drop your file.",
-      "Click the primary button to run.",
-      "Copy or download the result.",
+      "Enter the pre-tax price (or the total, if reverse-calculating).",
+      "Enter the tax rate as a percentage.",
+      "Pick forward (add tax) or reverse (strip tax) mode.",
+      "Read the tax amount and the combined total.",
+    ],
+    whenToUse: [
+      "Estimating checkout total before adding items to a cart.",
+      "Splitting a receipt where you know the total but need the pre-tax subtotal.",
+      "Comparing effective prices across states or cities with different rates.",
+      "Building an invoice or quote that needs tax itemized separately.",
+    ],
+    whenNotToUse: [
+      "Filing actual tax returns — use IRS/state filing tools or a CPA for nexus rules and exemptions.",
+      "Multi-jurisdiction e-commerce where sales tax depends on ship-to ZIP — use a TaxJar / Avalara integration.",
+      "Figuring out whether your business owes tax at all — that's a nexus question, not a math one.",
+    ],
+    example: {
+      input: "Pre-tax price: $48.99\nTax rate: 7.25% (CA base)",
+      output: "Tax: $3.55\nTotal: $52.54",
+      note: "Reverse-calc a $52.54 total at 7.25% returns exactly $48.99 pre-tax — useful for itemizing a receipt.",
+    },
+    faq: [
+      {
+        q: "Does this handle combined state + local rates?",
+        a: "Enter whichever combined rate applies to your ZIP. Five US states have zero statewide sales tax (AK, DE, MT, NH, OR), but Alaska has local sales taxes in some cities, and most others stack a county/city rate on top of state.",
+      },
+      {
+        q: "Is sales tax applied before or after a discount?",
+        a: "In the US, sales tax is almost always applied after store-issued discounts (making the coupon effectively reduce your tax bill too) and before a manufacturer rebate. Gift cards are applied after tax because they're payment, not a price reduction.",
+      },
+      {
+        q: "Why does reverse-calc give a slightly different pre-tax than expected?",
+        a: "Register systems often round per-line-item to 2 decimals before summing. The reverse-calc works on the total exactly, so rounding can produce a 1–2 cent difference vs what the receipt itemized line-by-line.",
+      },
+      {
+        q: "Does this work for VAT or GST?",
+        a: "Mathematically yes — VAT, GST, and sales tax use the same percent-based formula. Structurally they differ (VAT is invoice-credit-based), so for EU/UK compliance use our dedicated VAT calculator.",
+      },
     ],
   },
   "shopify-fee-calculator": {
