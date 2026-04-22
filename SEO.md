@@ -80,7 +80,9 @@ Metric targets (90 days from live index):
 - [x] **Phase 23 — FAQPage schema opt-in on tools + guides.** Wired via
       `faq` prop on ToolShell/ArticleShell. Already live on 23 tools
       + 6 guides.
-- [ ] **Phase 24 — Expand FAQ schema to 40 more top tools.** In-flight.
+- [x] **Phase 24 — Expand FAQ schema to 40 more top tools.** 34 tools now
+      carry `faq` blocks (wave 2 injection added 20 more on 2026-04-22).
+      Remaining ~15 slots will come in as rich-metadata passes land.
 - [ ] **Phase 25 — HowTo schema on calculators.** Every calculator has a
       How-to-use block; upgrade to HowTo JSON-LD with `@type: HowToStep`.
 - [x] **Phase 26 — ItemList JSON-LD on hubs.**
@@ -147,9 +149,13 @@ Metric targets (90 days from live index):
       `password-strength-checker`, `caffeine-intake-calculator`,
       `smoking-cost-calculator`, `meme-text-formatter`. Thread on X /
       Show HN / Product Hunt / AlternativeTo / IndieHackers.
-- [ ] **Phase 50 — Submit to Bing Webmaster Tools + IndexNow.** Currently
-      only on Google Search Console. Bing accounts for ~7 % of US search
-      and indexes faster for new sites. IndexNow pings Bing on publish.
+- [x] **Phase 50 — Submit to Bing Webmaster Tools + IndexNow.** IndexNow
+      is fully wired: key file at `public/bfb35698ca8221cb0e08229834083d67.txt`,
+      `scripts/indexnow-ping.mjs` reads live sitemaps and POSTs to
+      `api.indexnow.org`, `npm run indexnow` / `npm run indexnow:recent`
+      convenience aliases. Bing Webmaster verification flow + sitemap
+      submission steps documented in DEPLOY.md §7. Bing account verification
+      itself is a manual step for Jay (tracked as task #81).
 
 ---
 

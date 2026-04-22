@@ -108,7 +108,40 @@ Google Search Console is the more important one for an SEO site:
 3. Submit `https://freetoolarena.com/sitemap.xml`.
 4. Check back in 2–3 days — Google will have started crawling.
 
-Bing Webmaster Tools takes 60 seconds and indexes independently; worth doing.
+### Bing Webmaster Tools
+
+Bing indexes independently from Google and tends to rank new SEO sites faster in the first few weeks. Verify in 5 minutes:
+
+1. Sign in at bing.com/webmasters with the Microsoft account you want to own the site.
+2. **Add a site → Import from Google Search Console** is the fastest path once GSC is verified. Otherwise **Add manually** and enter `https://freetoolarena.com`.
+3. Verify via one of:
+   - **XML file** — Bing gives you a `BingSiteAuth.xml` file with your verification code inside. Drop it in `/public/BingSiteAuth.xml` (this folder is served at the site root), redeploy, then click "Verify" in Bing.
+   - **Meta tag** — paste the meta tag into `app/layout.tsx` in the `<head>` via `export const metadata.other`, redeploy, then verify.
+   - **DNS CNAME** — add the CNAME Bing provides at your registrar. Slowest but doesn't require a redeploy.
+4. Once verified, go to **Sitemaps → Submit a sitemap** and submit `https://freetoolarena.com/sitemap.xml` (the index — it fans out to all five per-section sitemaps automatically).
+
+### IndexNow (Bing + Yandex + Seznam + Naver)
+
+IndexNow is a free ping protocol that tells Bing, Yandex, Seznam, and Naver "here are URLs that just changed, please recrawl them." Google does not honor it, so Google Search Console remains the primary channel for Google — IndexNow just accelerates the other four engines.
+
+The key is already committed at `public/bfb35698ca8221cb0e08229834083d67.txt`. Do not rotate the filename or the contents — the file and the key inside must match, and IndexNow verifies by fetching `https://freetoolarea.com/<key>.txt` before accepting any submission.
+
+To ping after a deploy:
+
+```bash
+# Pings every URL in every sitemap. Safe to run whenever; the endpoint dedupes.
+node scripts/indexnow-ping.mjs
+
+# Only pings the newest sections — /compare, /learn, /best. Fast (~100 URLs).
+node scripts/indexnow-ping.mjs --recent
+
+# Pings a specific URL list.
+node scripts/indexnow-ping.mjs https://freetoolarea.com/tools/json-formatter https://freetoolarea.com/guides/how-to-use-json-formatter
+```
+
+Expected output: `Batch 1/N — X URLs — HTTP 200` (or `202 Accepted`). The script reads the key from `/public` automatically, so there's nothing to configure. A post-deploy cron or Vercel deploy hook can invoke it, but it is fine to run manually after each significant content push.
+
+Docs: [indexnow.org/documentation](https://www.indexnow.org/documentation).
 
 ## 8. Launch-day smoke tests
 
@@ -120,6 +153,7 @@ After the production domain is live with a cert:
 - `https://freetoolarena.com/sitemap.xml` — opens as XML with absolute `https://freetoolarena.com/...` URLs.
 - `https://freetoolarena.com/robots.txt` — lists the sitemap.
 - `https://freetoolarena.com/og?slug=tip-calculator` — returns a 1200×630 PNG.
+- `https://freetoolarena.com/bfb35698ca8221cb0e08229834083d67.txt` — returns the IndexNow key as plain text. If this 404s, the key file didn't ship and IndexNow submissions will be rejected.
 - Paste `https://freetoolarena.com/tools/tip-calculator` into the Twitter/LinkedIn share preview checker — OG image renders.
 - Lighthouse on mobile → Performance 95+, SEO 100, Best Practices 100, Accessibility 95+.
 

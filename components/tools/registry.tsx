@@ -656,6 +656,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Scan the platform limit bars to see where you stand for your target platform.",
       "Trim the text if any bar turns amber or red, or use Copy when it's ready.",
     ],
+      faq: [
+      { q: "Does the counter include spaces?", a: "Both numbers are shown: total characters (with spaces) and character count without spaces. Social platforms usually count with spaces; SEO meta tag limits also count with spaces." },
+      { q: "What's the character limit for a meta description?", a: "About 155–160 characters on desktop and 120 on mobile before Google truncates. Stay under 155 to be safe." },
+      { q: "Does a tweet count URLs as 23 characters?", a: "Yes — X/Twitter shortens any URL to 23 characters via t.co regardless of the original length. Our counter doesn't auto-shorten; assume every URL will become 23 characters on post." },
+      { q: "Is my text uploaded anywhere?", a: "No. The counter runs entirely in your browser using JavaScript. Nothing you paste leaves the tab." },
+    ],
   },
   "countdown-timer": {
     render: () => <CountdownTimer />,
@@ -967,6 +973,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick the From and To units.",
       "Read the converted value — updates live as you type.",
     ],
+      faq: [
+      { q: "Which units does the converter support?", a: "Length, weight, temperature, volume, speed, area, time, data size, fuel economy, and energy — the most common everyday units plus several engineering/scientific ones." },
+      { q: "Does it handle compound units like km/h?", a: "Yes — the Speed tab converts km/h, mph, knots, m/s, and ft/s directly between each other." },
+      { q: "How accurate are the conversion factors?", a: "Converter uses SI-base conversion factors to 10 significant digits. For legal, scientific, or engineering work, always verify against the authoritative source for your domain." },
+      { q: "Can I bookmark a specific conversion?", a: "Yes — the URL updates as you change inputs, so you can bookmark or share a link that pre-fills a specific value and unit pair." },
+    ],
   },
   "temperature-converter": {
     render: () => <TemperatureConverter />,
@@ -1131,6 +1143,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Add minutes of daily exercise.",
       "Read your daily water target in liters and ounces.",
       "Pair with a marked water bottle or bottle count to hit it.",
+    ],
+      faq: [
+      { q: "Do I really need 8 cups a day?", a: "The '8 cups' guideline is widely cited but not strongly evidence-based. The calculator uses bodyweight-based targets (~30–35 ml per kg) plus adjustments for activity and climate, which better reflects actual need." },
+      { q: "Does coffee count?", a: "Yes, despite persistent myths — moderate caffeine consumption doesn't cause net dehydration. Coffee, tea, sparkling water, and even food water all count toward total fluid intake." },
+      { q: "Can I drink too much water?", a: "Yes — hyponatremia (low blood sodium from over-drinking) is rare but serious. The risk is mostly in endurance athletes and a handful of medical conditions. Follow thirst; don't force water beyond comfort." },
+      { q: "Does climate change the number?", a: "Yes — hot or humid conditions can raise needs by 20-40%, and altitude adds another 5-15%. The calculator includes adjustments for both." },
     ],
   },
   "coin-flip": {
@@ -2872,6 +2890,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the estimated time in minutes:seconds.",
       "Use for post previews, course planning, or script timing.",
     ],
+      faq: [
+      { q: "How is reading time calculated?", a: "Based on average adult reading speed: 238 words per minute for general prose, 100 for technical content, and 300+ for light fiction. The calculator lets you pick the right profile for your audience." },
+      { q: "Does it count images or code?", a: "Images add a small constant (about 12 seconds per image); code blocks are read more slowly (about 100 words per minute) because each line requires interpretation." },
+      { q: "Why do blog posts show reading time?", a: "It helps readers decide whether to commit to the article. Research shows that showing an estimated reading time lifts completion rate modestly — people prefer knowing the cost upfront." },
+      { q: "How accurate is the estimate?", a: "Within about 20% for most adult readers on most content. Individual speed varies wildly with content density, prior knowledge, and interest." },
+    ],
   },
   "meeting-cost-calculator": {
     render: () => <MeetingCostCalculator />,
@@ -2954,6 +2978,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Compare results across the four formulas.",
       "Use as rough reference, not as a strict target.",
     ],
+      faq: [
+      { q: "Which formula does the calculator use?", a: "We show results from four widely cited formulas: Devine, Robinson, Miller, and Hamwi. Each gives a slightly different estimate — 'ideal weight' isn't a precise medical concept, so seeing the range is more useful than a single number." },
+      { q: "Is ideal weight the same as healthy weight?", a: "No — ideal-weight formulas were originally designed for medication dosing, not general health. For a health-oriented target, use BMI (range 18.5–24.9) or a body-fat percentage in a healthy range." },
+      { q: "Does age affect ideal weight?", a: "The classic formulas don't factor in age. For adults, weight tends to naturally trend slightly higher with age without health concern — absolute targets that were calibrated in the 1970s may be over-restrictive." },
+      { q: "Is this advice?", a: "No. It's a calculator. Any material weight-change goal should involve your doctor, especially if you have underlying conditions or are pregnant." },
+    ],
   },
   "running-pace-calculator": {
     render: () => <RunningPaceCalculator />,
@@ -2977,6 +3007,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read pace per km and per mile.",
       "Check speed in km/h and mph for context.",
     ],
+      faq: [
+      { q: "What's the difference between pace and speed?", a: "Pace is time-per-distance (e.g. 8:30 per mile), speed is distance-per-time (e.g. 7 mph). Runners usually think in pace; cyclists in speed." },
+      { q: "Can I calculate race splits?", a: "Yes — enter your target finish time and race distance, and the calculator shows your target pace plus 1-mile/km splits." },
+      { q: "Does it account for altitude or heat?", a: "No — pace calculations assume ideal conditions. For altitude adjustment, add roughly 2% per 1,000 ft above ~3,000 ft; heat cost is more variable." },
+      { q: "What's a 'good' marathon pace?", a: "Highly individual. 9:00/mile is typical for a mid-pack recreational runner. Sub-8:00/mile puts you around top 25%. Elite pace is under 5:00/mile." },
+    ],
   },
   "macro-calculator": {
     render: () => <MacroCalculator />,
@@ -2999,6 +3035,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter your weight in pounds.",
       "Pick your goal (cut, maintain, bulk).",
       "Read your protein, fat, and carb targets in grams.",
+    ],
+      faq: [
+      { q: "What are macros?", a: "Short for macronutrients: protein, carbohydrates, and fat — the three categories that provide calories in your diet. 'Tracking macros' means hitting target grams of each per day." },
+      { q: "Which split is right for me?", a: "Common starting points: 40% carb / 30% protein / 30% fat for general maintenance; 30/40/30 or 20/45/35 for muscle-building; higher-fat splits for keto. The calculator presets these." },
+      { q: "Are the calorie targets accurate?", a: "The calculator uses the Mifflin-St Jeor equation (the most accurate general-purpose BMR formula) combined with an activity multiplier. Individual variation can be 10–15%." },
+      { q: "Do I need to hit macros exactly?", a: "No. Being within ~5g of each target is close enough. Macro tracking is a tool, not a religion — consistent directional bias matters far more than perfection." },
     ],
   },
   "text-reverser": {
@@ -3081,6 +3123,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Stop at 60 seconds.",
       "Read your WPM and accuracy percentages.",
     ],
+      faq: [
+      { q: "What WPM is considered good?", a: "40 WPM is average for adults; 60+ is proficient; 80+ is fast; 100+ is professional-grade. Competitive typists clear 150 WPM." },
+      { q: "Does the test penalize mistakes?", a: "Yes — WPM is calculated from correctly-typed characters only. Uncorrected mistakes lower your effective WPM." },
+      { q: "Is a longer test more accurate?", a: "Yes — a 60-second test gives you a much more stable number than 15 seconds. The variability in shorter tests is mostly noise." },
+      { q: "Can typing speed be improved?", a: "Absolutely. The biggest gains come from using the correct home-row technique (most people 'hunt and peck' and plateau around 40 WPM). Free practice sites like Keybr and Monkeytype can take you to 60+ WPM in a few weeks." },
+    ],
   },
   "json-to-csv": {
     render: () => <JsonToCsv />,
@@ -3101,6 +3149,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Convert.",
       "Copy the CSV output or download as a file.",
       "Use the output in Excel, Google Sheets, or your database.",
+    ],
+      faq: [
+      { q: "What if my JSON is nested?", a: "The converter supports one level of nesting via dot notation ('user.name' becomes a column). Deeper nesting is flattened using the same convention. For complex nested structures, consider preprocessing with jq first." },
+      { q: "Will it export Excel-compatible CSVs?", a: "Yes — by default it uses CRLF line endings and comma separators, which Excel opens cleanly. Switch to semicolon separator for European Excel locales." },
+      { q: "What about arrays inside fields?", a: "Arrays are serialized as JSON strings and quoted. If you want one row per array element, restructure the JSON first — flatten the array at the top level." },
+      { q: "Does it escape special characters?", a: "Yes — RFC 4180-compliant escaping. Commas, quotes, and newlines inside field values are handled correctly." },
     ],
   },
   "base64-encoder-decoder": {
@@ -3337,6 +3391,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the converted value instantly.",
       "Swap units for the reverse conversion.",
     ],
+      faq: [
+      { q: "Which length units are supported?", a: "Metric (mm, cm, m, km), US customary (inch, foot, yard, mile), and several scientific/niche units (light-year, parsec, nautical mile, furlong)." },
+      { q: "Does the converter handle feet + inches?", a: "Yes — enter a value like 5'10\" and it parses to the total inches, then converts to your target unit." },
+      { q: "What's the exact inch-to-cm conversion?", a: "1 inch = 2.54 cm, exactly (this was standardized internationally in 1959). All length conversions derive from this definition." },
+      { q: "Can I bookmark a conversion?", a: "Yes — the URL captures your input and unit selections, so you can share a pre-filled conversion." },
+    ],
   },
   "speed-converter": {
     render: () => <SpeedConverter />,
@@ -3380,6 +3440,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Generate.",
       "Copy individual names or the list.",
     ],
+      faq: [
+      { q: "Where do the names come from?", a: "From a curated open-source list of common first names and surnames across multiple locales. The dataset is static and does not correspond to any real person." },
+      { q: "Can I filter by gender or locale?", a: "Yes — choose gender (any, male, female, neutral) and locale (US, UK, DE, FR, ES, JP transliterated)." },
+      { q: "Is this suitable for characters in a novel?", a: "Yes — a common use case. Generate a few, pick the ones that fit, and check them against a web search to make sure you're not accidentally using a famous name." },
+      { q: "Can I generate a CSV of names?", a: "Yes — use the 'generate batch' option and copy the comma-separated output into any spreadsheet." },
+    ],
   },
   "random-number-generator": {
     render: () => <RandomNumberGenerator />,
@@ -3402,6 +3468,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Toggle unique-only if needed.",
       "Click Generate — copy or regenerate.",
     ],
+      faq: [
+      { q: "Is this truly random?", a: "The generator uses the browser's crypto.getRandomValues API when available, which provides cryptographically strong random numbers. For non-secure contexts (older browsers) it falls back to Math.random, which is pseudo-random." },
+      { q: "Can I generate without duplicates?", a: "Yes — check the 'unique values' option and the generator will return a random sample without replacement." },
+      { q: "Can I use it for a raffle or giveaway?", a: "For informal raffles, yes. For regulated giveaways (government lotteries, etc.), you likely need a certified RNG with audit logs — this tool doesn't provide those." },
+      { q: "What's the max range?", a: "Safe integer range: -9,007,199,254,740,991 to 9,007,199,254,740,991. Beyond that, JavaScript loses precision." },
+    ],
   },
   "decision-maker": {
     render: () => <DecisionMaker />,
@@ -3423,6 +3495,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Decide.",
       "Accept the result, or notice your reaction — that tells you what you wanted.",
       "Reset and try again with different options.",
+    ],
+      faq: [
+      { q: "Is it really random?", a: "Yes — every option has an equal probability, selected using the browser's crypto.getRandomValues API." },
+      { q: "Can I weight the options?", a: "Yes — enter a weight next to each option (1, 2, 3). The selector picks in proportion to the weights rather than equally." },
+      { q: "How many options can I enter?", a: "Up to 100 for sane UI behavior. Beyond that, paste a list and use the 'random item' tool instead." },
+      { q: "Is my list sent anywhere?", a: "No — everything runs in your browser and disappears when you close the tab." },
     ],
   },
   "color-converter": {
@@ -3449,6 +3527,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Edit any R, G, B, H, S, or L value — the rest follow.",
       "Use the Copy button next to any format to copy it to your clipboard.",
       "Supports 3-digit and 6-digit hex; 8-digit hex is truncated to RGB.",
+    ],
+      faq: [
+      { q: "Which color formats are supported?", a: "HEX, RGB, RGBA, HSL, HSLA, HSV, CMYK, and CSS named colors. Conversions are lossless between RGB-based formats; HSL and CMYK are calculated conversions." },
+      { q: "Why do HEX and HSL values look slightly different on round-trip?", a: "Floating-point rounding in HSL math occasionally yields colors that differ by 1 in a channel. Both representations are visually identical — the hue/saturation/lightness values are just approximations." },
+      { q: "Can I convert brand colors (Pantone)?", a: "Not directly — Pantone is a proprietary, physical ink system with no perfect digital equivalent. Use Pantone's own bridge values to get a close HEX match." },
+      { q: "What's the difference between RGB and RGBA?", a: "RGBA adds an alpha channel (transparency) from 0 to 1. Use RGBA when you need a semi-transparent color on a webpage; stick with RGB for solid fills." },
     ],
   },
   "unix-timestamp-converter": {
@@ -3477,6 +3561,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "To encode a date: enter it in the date/time field at the bottom.",
       "Copy any output with the per-field Copy button.",
     ],
+      faq: [
+      { q: "What is a Unix timestamp?", a: "The number of seconds (or milliseconds) elapsed since January 1, 1970 00:00:00 UTC — the 'Unix epoch'. Widely used in programming because it's timezone-neutral and easy to arithmetic on." },
+      { q: "Seconds or milliseconds?", a: "JavaScript and most databases use milliseconds; most backend languages (Python, Ruby, Go) default to seconds. The converter auto-detects based on the magnitude of your input (a 13-digit value is assumed milliseconds)." },
+      { q: "What about timezones?", a: "Unix timestamps are inherently UTC. When we display a human-readable date, we show both UTC and your browser's local timezone." },
+      { q: "Will Unix timestamps overflow?", a: "32-bit signed timestamps overflow on January 19, 2038 — the 'Y2038 problem'. 64-bit timestamps (used by modern systems) are safe for ~292 billion years." },
+    ],
   },
   "number-base-converter": {
     render: () => <NumberBaseConverter />,
@@ -3502,6 +3592,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Watch the other three update live.",
       "Tap Copy next to any field to grab that representation.",
       "Negative numbers and BigInt-sized values are supported.",
+    ],
+      faq: [
+      { q: "Which bases are supported?", a: "Binary (2), octal (8), decimal (10), hex (16), and arbitrary bases from 2 to 36." },
+      { q: "Can I convert negative numbers?", a: "Yes — negative numbers are represented with a leading minus sign, consistent with how most programming languages display them." },
+      { q: "Does it support floating-point conversion?", a: "Yes, within JavaScript's double-precision float range — though floating-point representation in bases other than 10 can produce repeating fractions." },
+      { q: "What about two's complement?", a: "The converter displays signed values with a minus sign. For bit-level two's complement representation (e.g. 8-bit), enable the 'show binary as two's complement' option." },
     ],
   },
   "csv-to-json": {
@@ -3530,6 +3626,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Toggle 'First row is header' if your CSV doesn't have one.",
       "Copy the JSON output or paste it straight into your code.",
     ],
+      faq: [
+      { q: "What quoting dialect does the converter support?", a: "RFC 4180 — the standard CSV spec. Fields containing commas, quotes, or newlines should be wrapped in double quotes, with embedded quotes escaped as two quote characters." },
+      { q: "Does the first row become object keys?", a: "Yes. The first row of your CSV is treated as headers; every subsequent row becomes an object with those headers as keys. Uncheck 'first row is headers' to get an array of arrays instead." },
+      { q: "Can it handle large CSV files?", a: "Up to about 5 MB comfortably. Larger files may slow your browser since parsing happens client-side. For multi-GB files, use a desktop tool or a streaming parser like PapaParse." },
+      { q: "Is my CSV sent to a server?", a: "No. Parsing happens entirely in your browser — nothing you paste leaves the tab." },
+    ],
   },
   "yaml-json-converter": {
     render: () => <YamlJsonConverter />,
@@ -3557,6 +3659,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the output instantly in the bottom box — errors show inline.",
       "Hit Swap to flip direction and continue iterating.",
     ],
+      faq: [
+      { q: "Does it preserve comments?", a: "YAML-to-JSON loses comments (JSON doesn't support them). JSON-to-YAML has no comments to preserve. For comment-critical conversions, use a tool like yq which can preserve some metadata." },
+      { q: "What about YAML anchors and aliases?", a: "The converter expands anchors and aliases during YAML-to-JSON conversion — the resulting JSON has each referenced value inlined." },
+      { q: "Which YAML spec?", a: "YAML 1.2 — the current standard. This handles the 'Norway problem' (no as boolean) correctly, unlike older 1.1 parsers." },
+      { q: "Max file size?", a: "Up to about 2 MB for smooth browser performance. Larger documents may cause UI lag since parsing happens client-side." },
+    ],
   },
   "html-to-markdown": {
     render: () => <HtmlToMarkdown />,
@@ -3583,6 +3691,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the Markdown output instantly in the second box.",
       "Copy the result with one click.",
       "Tables and heavily nested HTML may need a small manual cleanup.",
+    ],
+      faq: [
+      { q: "Which HTML elements are supported?", a: "Headings (h1–h6), paragraphs, links, images, lists, blockquotes, code blocks, inline code, emphasis, strong, tables, and horizontal rules. Unknown elements are stripped." },
+      { q: "What about inline styles?", a: "Dropped — markdown doesn't support arbitrary CSS. If your HTML relies on inline styles, consider outputting MDX or keeping HTML." },
+      { q: "Will it handle a full web page?", a: "It will, but the output will include navigation and unrelated content. For 'extract the article', paste only the main content or use a reader-mode extraction first." },
+      { q: "Does it escape special characters?", a: "Yes — asterisks, underscores, and other markdown-significant characters in your HTML text are escaped with backslashes so they render as text rather than formatting." },
     ],
   },
   "image-format-converter": {
@@ -3636,6 +3750,12 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set a target width and height, or use the Percent slider.",
       "Keep 'Lock aspect' on unless you mean to stretch the image.",
       "Pick an output format and click Resize.",
+    ],
+      faq: [
+      { q: "Does the resizer keep aspect ratio?", a: "By default yes — enter one dimension and the other is calculated. Toggle 'free' mode to resize independently, which distorts the image." },
+      { q: "Which formats can I resize?", a: "JPG, PNG, WebP, and GIF. Animated GIFs resize to the first frame only; use a dedicated GIF editor for animation-preserving resize." },
+      { q: "What quality setting should I use for JPG?", a: "80–85 is the modern sweet spot — near-invisible quality loss with 50–70% file size savings. Below 70 you'll see artifacts in detailed areas." },
+      { q: "Is the image uploaded anywhere?", a: "No. Resizing runs in your browser using the Canvas API. Your file never leaves the tab." },
     ],
   },
   "image-compressor": {

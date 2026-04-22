@@ -8,6 +8,8 @@ import {
   guidesByGuideCategory,
 } from "@/lib/pages";
 import { HUBS } from "@/lib/hubs";
+import { COMPARISONS } from "@/lib/comparisons";
+import { GLOSSARY } from "@/lib/glossary";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -16,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/best`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/compare`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/learn`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/favorites`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${SITE_URL}/trust`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/security`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
@@ -35,6 +39,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const compareRoutes: MetadataRoute.Sitemap = COMPARISONS.map((c) => ({
+    url: `${SITE_URL}/compare/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  const learnRoutes: MetadataRoute.Sitemap = GLOSSARY.map((g) => ({
+    url: `${SITE_URL}/learn/${g.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
+
   const byCat = guidesByGuideCategory();
   const categoryRoutes: MetadataRoute.Sitemap = GUIDE_CATEGORY_ORDER
     .filter((gc) => (byCat[gc]?.length ?? 0) > 0)
@@ -51,5 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: p.type === "tool" ? 0.7 : 0.6,
   }));
-  return [...staticRoutes, ...hubRoutes, ...categoryRoutes, ...pageRoutes];
+  return [
+    ...staticRoutes,
+    ...hubRoutes,
+    ...compareRoutes,
+    ...learnRoutes,
+    ...categoryRoutes,
+    ...pageRoutes,
+  ];
 }

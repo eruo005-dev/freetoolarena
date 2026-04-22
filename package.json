@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "node scripts/indexnow-ping.mjs",
+    "indexnow:recent": "node scripts/indexnow-ping.mjs --recent"
   },
   "dependencies": {
     "@vercel/analytics": "1.3.1",

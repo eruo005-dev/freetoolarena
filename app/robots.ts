@@ -28,6 +28,8 @@ export default function robots(): MetadataRoute.Robots {
       `${SITE_URL}/sitemap-tools.xml`,
       `${SITE_URL}/sitemap-guides.xml`,
       `${SITE_URL}/sitemap-hubs.xml`,
+      `${SITE_URL}/sitemap-compare.xml`,
+      `${SITE_URL}/sitemap-learn.xml`,
     ],
     host: SITE_URL,
   };
