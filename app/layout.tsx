@@ -33,6 +33,7 @@ export const viewport: Viewport = {
 };
 
 const ADSENSE_CLIENT = "ca-pub-8018173696794576";
+const GA_MEASUREMENT_ID = "G-85KCG9RR4Q";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -58,6 +59,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+
+        {/* Google Analytics 4 — page_view + engagement tracking */}
+        <Script
+          id="ga4-loader"
+          async
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </head>
       <body className="flex min-h-screen flex-col bg-white text-slate-900 antialiased">
         <a
