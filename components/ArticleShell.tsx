@@ -5,7 +5,14 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Prose } from "@/components/ui/Prose";
-import { getPageBySlug, pageHref, CATEGORIES } from "@/lib/pages";
+import {
+  getPageBySlug,
+  pageHref,
+  CATEGORIES,
+  GUIDE_CATEGORIES,
+  guideCategoryFor,
+  guideCategoryHref,
+} from "@/lib/pages";
 import { jsonLdFor, faqJsonLd, SITE_UPDATED } from "@/lib/seo";
 
 export interface FaqItem {
@@ -47,6 +54,9 @@ export function ArticleShell({
   const page = getPageBySlug(slug);
   if (!page) return <p>Page not found.</p>;
   const category = CATEGORIES[page.category];
+  const guideCat = page.type === "article"
+    ? GUIDE_CATEGORIES[guideCategoryFor(page)]
+    : null;
   const ctaTarget = cta ? getPageBySlug(cta.targetSlug) : undefined;
 
   return (
@@ -55,12 +65,32 @@ export function ArticleShell({
         trail={[
           { label: "Home", href: "/" },
           { label: "Guides", href: "/guides" },
+          ...(guideCat
+            ? [{
+                label: guideCat.label,
+                href: guideCategoryHref(guideCategoryFor(page)),
+              }]
+            : []),
           { label: page.h1, href: pageHref(page) },
         ]}
       />
 
       <PageHeader
-        eyebrow={`${category.label} · Guide`}
+        eyebrow={
+          guideCat ? (
+            <>
+              <Link
+                href={guideCategoryHref(guideCategoryFor(page))}
+                className="font-semibold text-brand hover:text-brand-dark"
+              >
+                {guideCat.label}
+              </Link>{" "}
+              · Guide · {category.label}
+            </>
+          ) : (
+            `${category.label} · Guide`
+          )
+        }
         title={page.h1}
         lede={page.description}
         meta={<>Updated {formatDate(SITE_UPDATED)} · {readingMinutes} min read</>}

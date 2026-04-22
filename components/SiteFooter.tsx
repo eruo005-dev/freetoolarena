@@ -1,48 +1,9 @@
 import Link from "next/link";
-import {
-  SITE_NAME,
-  CATEGORIES,
-  getPublishedPages,
-  pageHref,
-  type Category,
-  type Page,
-} from "@/lib/pages";
+import { SITE_NAME } from "@/lib/pages";
 import { Container } from "@/components/ui/Container";
-
-/**
- * Picks one representative published page per category so the footer keeps
- * a fixed silhouette as content grows. Priority: highest-intent category
- * slugs first, then natural order.
- */
-const FOOTER_CATEGORY_ORDER: Category[] = [
-  "money",
-  "productivity",
-  "converters",
-  "coding",
-  "career",
-  "health",
-  "writing",
-  "home",
-  "social",
-  "dev",
-  "text",
-  "units",
-  "random",
-];
-
-function pickCategoryLink(
-  pages: Page[],
-  category: Category,
-): Page | undefined {
-  return pages.find((p) => p.category === category);
-}
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
-  const published = getPublishedPages();
-  const liveCategories = FOOTER_CATEGORY_ORDER.filter((c) =>
-    published.some((p) => p.category === c),
-  );
 
   return (
     <footer className="mt-24 border-t border-slate-200 bg-slate-50">
@@ -71,19 +32,17 @@ export function SiteFooter() {
             <FooterLink href="/contact">Contact</FooterLink>
           </FooterColumn>
 
-          <FooterColumn title="Popular categories">
-            {liveCategories.slice(0, 6).map((c) => {
-              const rep = pickCategoryLink(published, c);
-              if (!rep) return null;
-              return (
-                <FooterLink key={c} href={pageHref(rep)}>
-                  {CATEGORIES[c].label}
-                </FooterLink>
-              );
-            })}
+          <FooterColumn title="Guide sections">
+            <FooterLink href="/guides/category/ai">AI & LLMs</FooterLink>
+            <FooterLink href="/guides/category/how-to">How-To & Life</FooterLink>
+            <FooterLink href="/guides/category/business">Money & Business</FooterLink>
+            <FooterLink href="/guides/category/technical">Developers</FooterLink>
+            <FooterLink href="/guides/category/productivity">Productivity</FooterLink>
+            <FooterLink href="/guides/category/design-media">Design & Media</FooterLink>
           </FooterColumn>
 
-          <FooterColumn title="Legal">
+          <FooterColumn title="Safety & legal">
+            <FooterLink href="/trust">Trust & safety</FooterLink>
             <FooterLink href="/privacy">Privacy policy</FooterLink>
             <FooterLink href="/terms">Terms of service</FooterLink>
             <FooterLink href="/sitemap.xml">Sitemap</FooterLink>

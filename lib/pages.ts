@@ -33,6 +33,21 @@ export type Category =
   | "media"
   | "ai";
 
+/**
+ * Editorial groupings used only for guides (articles). Kept separate from
+ * the tool-facing `Category` so we can group "how to save money fast" and
+ * "how to pay off debt" under one business heading without touching the
+ * per-tool categorization.
+ */
+export type GuideCategory =
+  | "ai"
+  | "how-to"
+  | "tools"
+  | "business"
+  | "technical"
+  | "productivity"
+  | "design-media";
+
 export type PageType = "tool" | "article";
 
 export interface Page {
@@ -45,6 +60,11 @@ export interface Page {
   category: Category;
   related: string[];   // slugs of related pages (tools or articles)
   published?: boolean;
+  /**
+   * Editorial guide section (only meaningful for type: "article").
+   * If unset, the guide will be auto-bucketed into "how-to" on the hub.
+   */
+  guideCategory?: GuideCategory;
 }
 
 export const CATEGORIES: Record<Category, { label: string; blurb: string }> = {
@@ -64,6 +84,75 @@ export const CATEGORIES: Record<Category, { label: string; blurb: string }> = {
   media: { label: "Audio, Video & Voice", blurb: "Record, trim, convert, and transcribe audio + video — all in your browser." },
   ai: { label: "AI & Prompt Tools", blurb: "Prompt builders, token counters, and prompt libraries for ChatGPT, Claude, Gemini, and image models." },
 };
+
+/**
+ * Editorial groupings for the /guides hub and /guides/category/[slug]
+ * landing pages. Order here drives the hub tile order.
+ */
+export const GUIDE_CATEGORIES: Record<
+  GuideCategory,
+  { slug: string; label: string; blurb: string; tagline: string }
+> = {
+  ai: {
+    slug: "ai",
+    label: "AI & LLMs",
+    blurb:
+      "Practical, plain-English guides for ChatGPT, Claude, Gemini, and image models — prompt patterns, token limits, cost math, and agent setup.",
+    tagline: "Use AI like a pro — without the hype.",
+  },
+  "how-to": {
+    slug: "how-to",
+    label: "How-To & Life",
+    blurb:
+      "Short, specific how-tos for everyday life: habits, health, home, money, relationships, and the small skills that compound.",
+    tagline: "Actionable guides, no 2,000-word intros.",
+  },
+  tools: {
+    slug: "tools",
+    label: "Using Our Tools",
+    blurb:
+      "Walk-throughs for the calculators, converters, and utilities on this site — when to use which, with examples and common mistakes.",
+    tagline: "Get more out of every tool.",
+  },
+  business: {
+    slug: "business",
+    label: "Money & Business",
+    blurb:
+      "Budgets, debt, salary, freelancing, and building a side income — the money math that actually changes your month.",
+    tagline: "Fewer spreadsheets, better decisions.",
+  },
+  technical: {
+    slug: "technical",
+    label: "Developers & Technical",
+    blurb:
+      "Coding, developer workflow, and engineering how-tos — clean code, shipping faster, and breaking into the industry.",
+    tagline: "Ship better code, faster.",
+  },
+  productivity: {
+    slug: "productivity",
+    label: "Productivity & Focus",
+    blurb:
+      "Time management, deep work, task systems, and the habits that let you finish real work — not performatively look busy.",
+    tagline: "Do deeper work in less time.",
+  },
+  "design-media": {
+    slug: "design-media",
+    label: "Design & Media",
+    blurb:
+      "Images, video, color, typography, and the everyday creative workflow — compress without losing quality, crop without guessing.",
+    tagline: "Clean visuals, no Photoshop required.",
+  },
+};
+
+export const GUIDE_CATEGORY_ORDER: GuideCategory[] = [
+  "ai",
+  "how-to",
+  "tools",
+  "business",
+  "technical",
+  "productivity",
+  "design-media",
+];
 
 export const PAGES: Page[] = [
   // -------------------- TOOLS: MONEY (10) --------------------
@@ -458,6 +547,7 @@ export const PAGES: Page[] = [
     description: "Save money fast with 15 tactics that actually work: automate savings, cut three categories, raise your income floor. No gimmicks.",
     keyword: "how to save money fast",
     related: ["budget-calculator", "tip-calculator", "how-to-build-an-emergency-fund", "how-to-make-a-monthly-budget"],
+    guideCategory: "business",
     published: true },
   { slug: "best-side-hustles-for-beginners", type: "article", category: "money",
     title: "Best Side Hustles for Beginners (2026)",
@@ -465,6 +555,7 @@ export const PAGES: Page[] = [
     description: "Honest side hustle list for beginners: what pays now, what takes months, what's a scam. Time vs money ranked.",
     keyword: "best side hustles for beginners",
     related: ["how-to-start-a-business-with-no-money", "how-to-make-passive-income", "how-to-increase-your-income"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-start-investing-with-100-dollars", type: "article", category: "money",
     title: "How to Start Investing With $100 (Step-by-Step)",
@@ -472,6 +563,7 @@ export const PAGES: Page[] = [
     description: "A beginner walkthrough: pick a broker, buy a low-cost index fund, automate. What to avoid. Real numbers.",
     keyword: "how to start investing with $100",
     related: ["compound-interest-calculator", "how-to-save-for-retirement", "how-to-pay-off-debt-fast"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-make-a-monthly-budget", type: "article", category: "money",
     title: "How to Make a Monthly Budget (That You'll Actually Use)",
@@ -479,6 +571,7 @@ export const PAGES: Page[] = [
     description: "Build a monthly budget in 20 minutes. The 50/30/20 rule, zero-based, and how to pick what fits your life.",
     keyword: "how to make a monthly budget",
     related: ["budget-calculator", "how-to-save-money-fast", "how-to-focus-better"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-pay-off-debt-fast", type: "article", category: "money",
     title: "How to Pay Off Debt Fast — Snowball vs Avalanche",
@@ -486,6 +579,7 @@ export const PAGES: Page[] = [
     description: "Compare snowball and avalanche methods with real math. Which wins in dollars, which wins in momentum.",
     keyword: "how to pay off debt fast",
     related: ["budget-calculator", "how-to-track-expenses", "how-to-save-money-fast"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-build-credit", type: "article", category: "money",
     title: "How to Build Credit From Zero (Beginner's Guide)",
@@ -493,6 +587,7 @@ export const PAGES: Page[] = [
     description: "Build a credit score from 0 to 700+ with simple moves: secured card, on-time payments, and what to avoid.",
     keyword: "how to build credit",
     related: ["how-to-pay-off-debt-fast", "how-to-make-a-monthly-budget", "debt-payoff-calculator"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-make-passive-income", type: "article", category: "money",
     title: "How to Make Passive Income — Real Streams in 2026",
@@ -500,6 +595,7 @@ export const PAGES: Page[] = [
     description: "Passive income without the hype. Honest breakdown of seven streams: setup cost, effort, realistic return.",
     keyword: "how to make passive income",
     related: ["best-side-hustles-for-beginners", "how-to-start-investing-with-100-dollars", "roi-calculator"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-save-for-retirement", type: "article", category: "money",
     title: "How to Save for Retirement (Start at Any Age)",
@@ -507,6 +603,7 @@ export const PAGES: Page[] = [
     description: "A plain-English retirement plan: how much to save, which accounts, how age changes the math. No jargon.",
     keyword: "how to save for retirement",
     related: ["budget-calculator", "how-to-build-an-emergency-fund", "how-to-save-money-fast"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-save-for-a-house", type: "article", category: "money",
     title: "How to Save for a House — Down Payment Plan",
@@ -514,6 +611,7 @@ export const PAGES: Page[] = [
     description: "Build a realistic down-payment plan. How much you need, where to park it, and timelines by city.",
     keyword: "how to save for a house",
     related: ["mortgage-calculator", "savings-goal-calculator", "how-to-make-a-monthly-budget"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-negotiate-salary", type: "article", category: "money",
     title: "How to Negotiate Salary — Scripts That Actually Work",
@@ -521,6 +619,7 @@ export const PAGES: Page[] = [
     description: "Negotiate salary with confidence: prep, anchor, respond, counter. Real scripts for email and calls.",
     keyword: "how to negotiate salary",
     related: ["how-to-ace-a-job-interview", "how-to-write-a-resume", "budget-calculator"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-start-a-business-with-no-money", type: "article", category: "money",
     title: "How to Start a Business With No Money",
@@ -528,6 +627,7 @@ export const PAGES: Page[] = [
     description: "Bootstrap a business from $0: ideas that need only time, validating cheaply, and the first 10 customers.",
     keyword: "how to start a business with no money",
     related: ["best-side-hustles-for-beginners", "how-to-make-passive-income", "how-to-increase-your-income"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-save-on-groceries", type: "article", category: "money",
     title: "How to Save on Groceries — 12 Habits That Stick",
@@ -535,6 +635,7 @@ export const PAGES: Page[] = [
     description: "Cut your grocery bill 20-30% with habits, not coupons. Meal planning, store choice, and the 3-item rule.",
     keyword: "how to save on groceries",
     related: ["how-to-meal-prep", "budget-calculator", "how-to-track-expenses"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-live-below-your-means", type: "article", category: "money",
     title: "How to Live Below Your Means (Without Feeling Deprived)",
@@ -542,6 +643,7 @@ export const PAGES: Page[] = [
     description: "Spend less than you earn, enjoy it, and build wealth. Practical mindset + mechanics that last.",
     keyword: "how to live below your means",
     related: ["how-to-make-a-monthly-budget", "how-to-avoid-lifestyle-creep", "how-to-save-money-fast"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-avoid-lifestyle-creep", type: "article", category: "money",
     title: "How to Avoid Lifestyle Creep After a Raise",
@@ -549,6 +651,7 @@ export const PAGES: Page[] = [
     description: "Got a raise? Don't spend it. How to lock in savings automatically and keep your life the same.",
     keyword: "how to avoid lifestyle creep",
     related: ["how-to-live-below-your-means", "how-to-make-a-monthly-budget", "how-to-save-for-retirement"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-track-expenses", type: "article", category: "money",
     title: "How to Track Expenses — Simple Systems That Work",
@@ -556,6 +659,7 @@ export const PAGES: Page[] = [
     description: "Three systems to track expenses: paper, spreadsheet, or app. Pick one, use it for a month, decide.",
     keyword: "how to track expenses",
     related: ["budget-calculator", "how-to-make-a-monthly-budget", "how-to-save-money-fast"],
+    guideCategory: "business",
     published: true },
   { slug: "best-apps-to-save-money", type: "article", category: "money",
     title: "Best Apps to Save Money in 2026",
@@ -563,6 +667,7 @@ export const PAGES: Page[] = [
     description: "Honest reviews of the best money-saving apps. Which are worth it, which are ads, which to skip.",
     keyword: "best apps to save money",
     related: ["how-to-save-money-fast", "how-to-track-expenses", "how-to-make-a-monthly-budget"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-teach-kids-about-money", type: "article", category: "money",
     title: "How to Teach Kids About Money (By Age)",
@@ -570,6 +675,7 @@ export const PAGES: Page[] = [
     description: "Age-by-age guide to teaching kids money: ages 4-7, 8-12, and teens. Simple lessons that actually stick.",
     keyword: "how to teach kids about money",
     related: ["how-to-make-a-monthly-budget", "how-to-build-credit", "how-to-save-money-fast"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-build-an-emergency-fund", type: "article", category: "money",
     title: "How to Build an Emergency Fund (From Zero)",
@@ -577,6 +683,7 @@ export const PAGES: Page[] = [
     description: "How much you really need, where to keep it, and how to get there in 6 months even on a tight budget.",
     keyword: "how to build an emergency fund",
     related: ["budget-calculator", "how-to-save-money-fast", "how-to-make-a-monthly-budget"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-increase-your-income", type: "article", category: "money",
     title: "How to Increase Your Income — 7 Proven Paths",
@@ -584,6 +691,7 @@ export const PAGES: Page[] = [
     description: "Raise income without burning out: raise, promotion, side hustle, freelance, switch jobs. Ranked by speed.",
     keyword: "how to increase your income",
     related: ["how-to-negotiate-salary", "best-side-hustles-for-beginners", "how-to-switch-careers"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-save-on-taxes", type: "article", category: "money",
     title: "How to Save on Taxes — Legal Moves Anyone Can Use",
@@ -591,6 +699,7 @@ export const PAGES: Page[] = [
     description: "Legit tax-saving moves: retirement contributions, HSA, deductions, credits. What most people miss.",
     keyword: "how to save on taxes",
     related: ["paycheck-calculator", "how-to-save-for-retirement", "how-to-make-a-monthly-budget"],
+    guideCategory: "business",
     published: true },
 
   // -------------------- ARTICLES: PRODUCTIVITY (15) --------------------
@@ -600,6 +709,7 @@ export const PAGES: Page[] = [
     description: "Stay productive without hustle culture. Nine daily habits that keep output high and burnout away.",
     keyword: "how to stay productive daily",
     related: ["pomodoro-timer", "how-to-focus-better", "morning-routine-for-success", "how-to-stop-procrastinating"],
+    guideCategory: "productivity",
     published: true },
   { slug: "morning-routine-for-success", type: "article", category: "productivity",
     title: "Morning Routine for Success — What Actually Works",
@@ -607,6 +717,7 @@ export const PAGES: Page[] = [
     description: "Build a morning routine that sets up your day. Science-backed steps, realistic time blocks, no 4 a.m. talk.",
     keyword: "morning routine for success",
     related: ["how-to-wake-up-early", "how-to-stay-productive-daily", "how-to-focus-better"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-focus-better", type: "article", category: "productivity",
     title: "How to Focus Better — Deep Work in a Distracted World",
@@ -614,6 +725,7 @@ export const PAGES: Page[] = [
     description: "Focus for 90 minutes at a time with three mechanics: environment, rhythm, and the one-tab rule.",
     keyword: "how to focus better",
     related: ["pomodoro-timer", "how-to-stay-productive-daily", "how-to-learn-coding-fast"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-stop-procrastinating", type: "article", category: "productivity",
     title: "How to Stop Procrastinating — The 2-Minute Rule & More",
@@ -621,6 +733,7 @@ export const PAGES: Page[] = [
     description: "Stop procrastinating with tactics that beat willpower: 2-minute rule, task framing, and environment design.",
     keyword: "how to stop procrastinating",
     related: ["pomodoro-timer", "how-to-focus-better", "how-to-use-pomodoro-technique"],
+    guideCategory: "productivity",
     published: true },
   { slug: "time-management-tips-for-students", type: "article", category: "productivity",
     title: "Time Management Tips for Students — Study Smarter",
@@ -628,6 +741,7 @@ export const PAGES: Page[] = [
     description: "Manage your time as a student: time-block classes + study, use the pomodoro technique, protect sleep.",
     keyword: "time management tips for students",
     related: ["pomodoro-timer", "how-to-plan-your-week", "how-to-take-better-notes"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-wake-up-early", type: "article", category: "productivity",
     title: "How to Wake Up Early (and Actually Enjoy It)",
@@ -635,6 +749,7 @@ export const PAGES: Page[] = [
     description: "Wake up early without hating life. Shift your bedtime in 15-minute steps, fix your first 10 minutes.",
     keyword: "how to wake up early",
     related: ["how-to-sleep-better", "how-to-build-good-habits", "countdown-timer"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-build-good-habits", type: "article", category: "productivity",
     title: "How to Build Good Habits (That Stick)",
@@ -642,6 +757,7 @@ export const PAGES: Page[] = [
     description: "Build habits that last: habit stacking, tiny actions, and the environment trick almost no one uses.",
     keyword: "how to build good habits",
     related: ["pomodoro-timer", "how-to-stop-procrastinating", "how-to-focus-better"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-break-bad-habits", type: "article", category: "productivity",
     title: "How to Break Bad Habits — Without Willpower",
@@ -649,6 +765,7 @@ export const PAGES: Page[] = [
     description: "Break a bad habit by changing the cue, not the behavior. A simple framework with examples.",
     keyword: "how to break bad habits",
     related: ["how-to-build-good-habits", "how-to-reduce-stress", "how-to-stay-motivated"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-plan-your-week", type: "article", category: "productivity",
     title: "How to Plan Your Week — A 20-Minute System",
@@ -656,6 +773,7 @@ export const PAGES: Page[] = [
     description: "Plan your week in 20 minutes: review, pick the three that matter, time-block, protect energy peaks.",
     keyword: "how to plan your week",
     related: ["pomodoro-timer", "how-to-stay-productive-daily", "deep-work-strategies"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-work-from-home-productively", type: "article", category: "productivity",
     title: "How to Work From Home Productively",
@@ -663,6 +781,7 @@ export const PAGES: Page[] = [
     description: "Work from home without burning out: dedicated space, hard edges on start/stop, and meeting hygiene.",
     keyword: "how to work from home productively",
     related: ["how-to-stay-productive-daily", "how-to-set-up-a-home-office", "how-to-work-remotely"],
+    guideCategory: "productivity",
     published: true },
   { slug: "deep-work-strategies", type: "article", category: "productivity",
     title: "Deep Work Strategies That Actually Scale",
@@ -670,6 +789,7 @@ export const PAGES: Page[] = [
     description: "Deep work, distilled: rhythmic vs monastic, how to schedule it, how to protect it, how to recover.",
     keyword: "deep work strategies",
     related: ["how-to-focus-better", "pomodoro-timer", "how-to-stop-procrastinating"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-use-pomodoro-technique", type: "article", category: "productivity",
     title: "How to Use the Pomodoro Technique — A Full Guide",
@@ -677,6 +797,7 @@ export const PAGES: Page[] = [
     description: "The complete pomodoro guide: the rules, the common mistakes, and variations that work for coding or writing.",
     keyword: "how to use the pomodoro technique",
     related: ["pomodoro-timer", "countdown-timer", "how-to-focus-better", "how-to-stop-procrastinating"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-prioritize-tasks", type: "article", category: "productivity",
     title: "How to Prioritize Tasks — Eisenhower, MITs & More",
@@ -684,6 +805,7 @@ export const PAGES: Page[] = [
     description: "Three prioritization frameworks that actually get used: Eisenhower, MITs, and the 1-3-5 rule.",
     keyword: "how to prioritize tasks",
     related: ["to-do-list", "how-to-plan-your-week", "how-to-stay-productive-daily"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-beat-burnout", type: "article", category: "productivity",
     title: "How to Beat Burnout — Recover and Rebuild",
@@ -691,6 +813,7 @@ export const PAGES: Page[] = [
     description: "Burnout isn't laziness. A staged recovery plan: rest, reassess workload, rebuild boundaries.",
     keyword: "how to beat burnout",
     related: ["how-to-reduce-stress", "how-to-sleep-better", "how-to-stay-motivated"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-stay-motivated", type: "article", category: "productivity",
     title: "How to Stay Motivated — When the Spark Is Gone",
@@ -698,6 +821,7 @@ export const PAGES: Page[] = [
     description: "Motivation is unreliable. Systems that keep you moving when you don't feel like it — and why they work.",
     keyword: "how to stay motivated",
     related: ["how-to-build-good-habits", "how-to-stop-procrastinating", "how-to-beat-burnout"],
+    guideCategory: "productivity",
     published: true },
 
   // -------------------- ARTICLES: CODING (15) --------------------
@@ -707,6 +831,7 @@ export const PAGES: Page[] = [
     description: "Learn coding in 90 days with a realistic plan: one language, small projects, and the daily habit that makes it stick.",
     keyword: "how to learn coding fast",
     related: ["json-formatter", "best-programming-languages-to-learn", "how-to-build-a-developer-portfolio", "how-to-learn-python-in-30-days"],
+    guideCategory: "technical",
     published: true },
   { slug: "best-programming-languages-to-learn", type: "article", category: "coding",
     title: "Best Programming Languages to Learn in 2026",
@@ -714,6 +839,7 @@ export const PAGES: Page[] = [
     description: "The best languages to learn in 2026, ranked by job market, learning curve, and what you want to build.",
     keyword: "best programming languages to learn",
     related: ["how-to-learn-coding-fast", "how-to-learn-python-in-30-days", "how-to-get-your-first-developer-job"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-get-your-first-developer-job", type: "article", category: "coding",
     title: "How to Get Your First Developer Job",
@@ -721,6 +847,7 @@ export const PAGES: Page[] = [
     description: "From zero to hired: what to build, how to apply, what recruiters actually want to see from juniors.",
     keyword: "how to get your first developer job",
     related: ["how-to-build-a-developer-portfolio", "how-to-prepare-for-coding-interviews", "how-to-ace-a-job-interview"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-build-a-developer-portfolio", type: "article", category: "coding",
     title: "How to Build a Developer Portfolio That Gets Interviews",
@@ -728,6 +855,7 @@ export const PAGES: Page[] = [
     description: "What makes a dev portfolio land interviews: the right 3 projects, a clean README, and a live demo.",
     keyword: "how to build a developer portfolio",
     related: ["how-to-get-your-first-developer-job", "how-to-learn-coding-fast", "how-to-contribute-to-open-source"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-write-clean-code", type: "article", category: "coding",
     title: "How to Write Clean Code — 12 Habits That Matter",
@@ -735,6 +863,7 @@ export const PAGES: Page[] = [
     description: "Clean code isn't style — it's empathy for the next reader. Twelve habits that make codebases better.",
     keyword: "how to write clean code",
     related: ["git-commands-every-developer-should-know", "how-to-prepare-for-coding-interviews", "how-to-learn-coding-fast"],
+    guideCategory: "technical",
     published: true },
   { slug: "git-commands-every-developer-should-know", type: "article", category: "coding",
     title: "Git Commands Every Developer Should Know",
@@ -742,6 +871,7 @@ export const PAGES: Page[] = [
     description: "The 20 git commands you'll use every day, with real examples and when to reach for each.",
     keyword: "git commands every developer should know",
     related: ["how-to-write-clean-code", "how-to-prepare-for-coding-interviews", "password-generator"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-prepare-for-coding-interviews", type: "article", category: "coding",
     title: "How to Prepare for Coding Interviews",
@@ -749,6 +879,7 @@ export const PAGES: Page[] = [
     description: "A realistic prep plan: DS&A, systems, behavioral. How long it takes, what to skip.",
     keyword: "how to prepare for coding interviews",
     related: ["how-to-ace-a-job-interview", "how-to-learn-coding-fast", "countdown-timer"],
+    guideCategory: "technical",
     published: true },
   { slug: "vscode-tips-and-tricks", type: "article", category: "coding",
     title: "VS Code Tips and Tricks — Level Up in an Hour",
@@ -756,6 +887,7 @@ export const PAGES: Page[] = [
     description: "Keyboard shortcuts, multi-cursor, settings sync, and the extensions that actually earn their keep.",
     keyword: "VS Code tips and tricks",
     related: ["how-to-write-clean-code", "git-commands-every-developer-should-know", "how-to-debug-code-effectively"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-debug-code-effectively", type: "article", category: "coding",
     title: "How to Debug Code Effectively",
@@ -763,6 +895,7 @@ export const PAGES: Page[] = [
     description: "Debug faster by forming a hypothesis first, binary-searching the problem, and using the debugger properly.",
     keyword: "how to debug code effectively",
     related: ["how-to-write-clean-code", "regex-tester", "vscode-tips-and-tricks"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-contribute-to-open-source", type: "article", category: "coding",
     title: "How to Contribute to Open Source — A First-PR Guide",
@@ -770,6 +903,7 @@ export const PAGES: Page[] = [
     description: "Land your first open source PR: find a good-first-issue, read the contrib guide, keep the diff small.",
     keyword: "how to contribute to open source",
     related: ["git-commands-every-developer-should-know", "how-to-build-a-developer-portfolio", "how-to-learn-coding-fast"],
+    guideCategory: "technical",
     published: true },
   { slug: "frontend-vs-backend-development", type: "article", category: "coding",
     title: "Frontend vs Backend Development — Which to Pick",
@@ -777,6 +911,7 @@ export const PAGES: Page[] = [
     description: "What each side actually does day to day, who tends to enjoy which, and why full-stack is usually the answer.",
     keyword: "frontend vs backend development",
     related: ["how-to-become-a-full-stack-developer", "best-programming-languages-to-learn", "how-to-learn-coding-fast"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-become-a-full-stack-developer", type: "article", category: "coding",
     title: "How to Become a Full Stack Developer",
@@ -784,6 +919,7 @@ export const PAGES: Page[] = [
     description: "A roadmap from zero to full-stack: HTML/CSS/JS, one frontend framework, one backend, one database.",
     keyword: "how to become a full stack developer",
     related: ["frontend-vs-backend-development", "how-to-learn-coding-fast", "how-to-build-a-developer-portfolio"],
+    guideCategory: "technical",
     published: true },
   { slug: "rest-vs-graphql", type: "article", category: "coding",
     title: "REST vs GraphQL — When to Use Each",
@@ -791,6 +927,7 @@ export const PAGES: Page[] = [
     description: "REST and GraphQL compared honestly: developer experience, performance, tooling, and real-world fit.",
     keyword: "REST vs GraphQL",
     related: ["what-is-an-api", "how-to-become-a-full-stack-developer", "how-to-write-clean-code"],
+    guideCategory: "technical",
     published: true },
   { slug: "what-is-an-api", type: "article", category: "coding",
     title: "What Is an API? A Plain-English Explainer",
@@ -798,6 +935,7 @@ export const PAGES: Page[] = [
     description: "APIs explained without jargon: what they do, how they work, and why they're the glue of modern software.",
     keyword: "what is an API",
     related: ["rest-vs-graphql", "how-to-learn-coding-fast", "json-formatter"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-learn-python-in-30-days", type: "article", category: "coding",
     title: "How to Learn Python in 30 Days — Week by Week",
@@ -805,6 +943,7 @@ export const PAGES: Page[] = [
     description: "A 30-day Python plan: syntax, data structures, a real project. Daily time commitment: 1 hour.",
     keyword: "how to learn Python in 30 days",
     related: ["how-to-learn-coding-fast", "best-programming-languages-to-learn", "how-to-build-a-developer-portfolio"],
+    guideCategory: "technical",
     published: true },
 
   // -------------------- ARTICLES: HEALTH (15) --------------------
@@ -814,6 +953,7 @@ export const PAGES: Page[] = [
     description: "Sleep better tonight: ten habits that move the needle on sleep quality, without melatonin marketing.",
     keyword: "how to sleep better",
     related: ["how-to-reduce-stress", "how-to-wake-up-early", "countdown-timer"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-drink-more-water", type: "article", category: "health",
     title: "How to Drink More Water — 7 Habits That Stick",
@@ -821,6 +961,7 @@ export const PAGES: Page[] = [
     description: "Drink more water without thinking about it: habit stacks, bottle tricks, and signals to watch for.",
     keyword: "how to drink more water",
     related: ["water-intake-calculator", "how-to-build-good-habits", "how-to-sleep-better"],
+    guideCategory: "how-to",
     published: true },
   { slug: "beginner-workout-plan-at-home", type: "article", category: "health",
     title: "Beginner Workout Plan at Home — 4 Weeks, No Gear",
@@ -828,6 +969,7 @@ export const PAGES: Page[] = [
     description: "A 4-week home workout for complete beginners. Bodyweight only, 20-30 minutes, three days a week.",
     keyword: "beginner workout plan at home",
     related: ["bmi-calculator", "how-to-start-running", "calorie-calculator"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-start-running", type: "article", category: "health",
     title: "How to Start Running — Couch to First 5K",
@@ -835,6 +977,7 @@ export const PAGES: Page[] = [
     description: "Start running without hating it. A walk-run plan to your first 5K in 8 weeks, plus injury avoidance.",
     keyword: "how to start running",
     related: ["stopwatch", "beginner-workout-plan-at-home", "how-to-sleep-better"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-lose-belly-fat", type: "article", category: "health",
     title: "How to Lose Belly Fat — The Honest Version",
@@ -842,6 +985,7 @@ export const PAGES: Page[] = [
     description: "You can't spot-reduce. What actually works: calorie deficit, strength, sleep, stress. Honest and boring.",
     keyword: "how to lose belly fat",
     related: ["calorie-calculator", "beginner-workout-plan-at-home", "intermittent-fasting-for-beginners"],
+    guideCategory: "how-to",
     published: true },
   { slug: "intermittent-fasting-for-beginners", type: "article", category: "health",
     title: "Intermittent Fasting for Beginners",
@@ -849,6 +993,7 @@ export const PAGES: Page[] = [
     description: "IF explained simply: 16:8, what to eat, common mistakes, and who should skip it. No hype.",
     keyword: "intermittent fasting for beginners",
     related: ["how-to-lose-belly-fat", "macro-calculator", "how-to-eat-healthy-on-a-budget"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-eat-healthy-on-a-budget", type: "article", category: "health",
     title: "How to Eat Healthy on a Budget",
@@ -856,6 +1001,7 @@ export const PAGES: Page[] = [
     description: "Eat well for less: the 10-item grocery staple list, batch cooking, and when frozen beats fresh.",
     keyword: "how to eat healthy on a budget",
     related: ["how-to-meal-prep", "how-to-save-on-groceries", "calorie-calculator"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-reduce-stress", type: "article", category: "health",
     title: "How to Reduce Stress — Daily Habits That Work",
@@ -863,6 +1009,7 @@ export const PAGES: Page[] = [
     description: "Reduce stress with simple daily habits: breathwork, sleep, movement, and the 'worry window' trick.",
     keyword: "how to reduce stress",
     related: ["how-to-sleep-better", "pomodoro-timer", "how-to-build-good-habits"],
+    guideCategory: "how-to",
     published: true },
   { slug: "mindfulness-for-beginners", type: "article", category: "health",
     title: "Mindfulness for Beginners — A 10-Minute Start",
@@ -870,6 +1017,7 @@ export const PAGES: Page[] = [
     description: "A realistic 10-minute intro to mindfulness. What it is, what it isn't, and a daily micro-practice.",
     keyword: "mindfulness for beginners",
     related: ["how-to-meditate-daily", "how-to-reduce-stress", "how-to-improve-mental-health"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-meditate-daily", type: "article", category: "health",
     title: "How to Meditate Daily (Even if You've Failed Before)",
@@ -877,6 +1025,7 @@ export const PAGES: Page[] = [
     description: "Build a daily meditation habit: 3 minutes, same time, same trigger. No app required.",
     keyword: "how to meditate daily",
     related: ["mindfulness-for-beginners", "how-to-build-good-habits", "how-to-reduce-stress"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-build-muscle-as-a-beginner", type: "article", category: "health",
     title: "How to Build Muscle as a Beginner",
@@ -884,6 +1033,7 @@ export const PAGES: Page[] = [
     description: "Beginner muscle-building: progressive overload, sleep, protein. What matters in year one.",
     keyword: "how to build muscle as a beginner",
     related: ["macro-calculator", "beginner-workout-plan-at-home", "calorie-calculator"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-stretch-properly", type: "article", category: "health",
     title: "How to Stretch Properly — Dynamic vs Static",
@@ -891,6 +1041,7 @@ export const PAGES: Page[] = [
     description: "Stretch without wasting time or risking injury: when to do dynamic, when static, and what to skip.",
     keyword: "how to stretch properly",
     related: ["how-to-start-running", "how-to-fix-posture", "beginner-workout-plan-at-home"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-fix-posture", type: "article", category: "health",
     title: "How to Fix Posture — Simple Daily Drills",
@@ -898,6 +1049,7 @@ export const PAGES: Page[] = [
     description: "Fix your posture with 5-minute daily drills. What to strengthen, what to stretch, what to stop doing.",
     keyword: "how to fix posture",
     related: ["how-to-stretch-properly", "how-to-set-up-a-home-office", "beginner-workout-plan-at-home"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-boost-energy-naturally", type: "article", category: "health",
     title: "How to Boost Energy Naturally — Without Caffeine",
@@ -905,6 +1057,7 @@ export const PAGES: Page[] = [
     description: "Sustainable energy without more coffee: light, movement, meal timing, and hydration.",
     keyword: "how to boost energy naturally",
     related: ["how-to-drink-more-water", "how-to-sleep-better", "how-to-reduce-stress"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-improve-mental-health", type: "article", category: "health",
     title: "How to Improve Mental Health — Small Daily Moves",
@@ -912,6 +1065,7 @@ export const PAGES: Page[] = [
     description: "Small, repeatable moves that build mental health over months: sleep, connection, movement, and help.",
     keyword: "how to improve mental health",
     related: ["how-to-reduce-stress", "mindfulness-for-beginners", "how-to-set-boundaries"],
+    guideCategory: "how-to",
     published: true },
 
   // -------------------- ARTICLES: WRITING (10) --------------------
@@ -921,6 +1075,7 @@ export const PAGES: Page[] = [
     description: "Ten writing rules that work in essays, blog posts, and email. Cut words, pick nouns, kill throat-clearing.",
     keyword: "how to write better",
     related: ["word-counter", "character-counter", "how-to-start-a-blog"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-start-a-blog", type: "article", category: "writing",
     title: "How to Start a Blog — Step-by-Step for 2026",
@@ -928,6 +1083,7 @@ export const PAGES: Page[] = [
     description: "Start a blog in a weekend: platform, domain, first post, and a sane posting cadence you can hold.",
     keyword: "how to start a blog",
     related: ["seo-basics-for-beginners", "how-to-write-better", "slug-generator"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-grow-on-twitter", type: "article", category: "writing",
     title: "How to Grow on Twitter — From Zero to 10K",
@@ -935,6 +1091,7 @@ export const PAGES: Page[] = [
     description: "Grow a Twitter/X following with consistency, niche focus, and reply-first engagement. No buying followers.",
     keyword: "how to grow on Twitter",
     related: ["how-to-start-a-blog", "how-to-grow-on-youtube", "how-to-write-better"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-grow-on-youtube", type: "article", category: "writing",
     title: "How to Grow on YouTube — Beginner's Blueprint",
@@ -942,6 +1099,7 @@ export const PAGES: Page[] = [
     description: "The beginner YouTube blueprint: niche, title + thumbnail, first 10 videos, and the hook rule.",
     keyword: "how to grow on YouTube",
     related: ["how-to-grow-on-twitter", "how-to-start-a-blog", "seo-basics-for-beginners"],
+    guideCategory: "business",
     published: true },
   { slug: "seo-basics-for-beginners", type: "article", category: "writing",
     title: "SEO Basics for Beginners — A Zero-to-Rank Guide",
@@ -949,6 +1107,7 @@ export const PAGES: Page[] = [
     description: "SEO from zero: keywords, on-page, links, and what matters vs what's noise. With a real workflow.",
     keyword: "SEO basics for beginners",
     related: ["slug-generator", "how-to-start-a-blog", "how-to-write-better"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-write-a-cover-letter", type: "article", category: "writing",
     title: "How to Write a Cover Letter That Gets Read",
@@ -956,6 +1115,7 @@ export const PAGES: Page[] = [
     description: "Cover letters that actually get read: lead with the win, tie to the role, keep it one page.",
     keyword: "how to write a cover letter",
     related: ["how-to-write-a-resume", "how-to-ace-a-job-interview", "how-to-write-better"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-write-a-resume", type: "article", category: "writing",
     title: "How to Write a Resume (That Beats the ATS)",
@@ -963,6 +1123,7 @@ export const PAGES: Page[] = [
     description: "A resume the ATS reads and humans love: format, bullets that show impact, and what to cut.",
     keyword: "how to write a resume",
     related: ["how-to-ace-a-job-interview", "how-to-negotiate-salary", "character-counter"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-improve-grammar", type: "article", category: "writing",
     title: "How to Improve Grammar — Fast, Without a Textbook",
@@ -970,6 +1131,7 @@ export const PAGES: Page[] = [
     description: "Improve grammar without a textbook: read aloud, learn your top 3 mistakes, and use a short checklist.",
     keyword: "how to improve grammar",
     related: ["how-to-write-better", "readability-score-checker", "word-counter"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-read-more-books", type: "article", category: "writing",
     title: "How to Read More Books — A Realistic System",
@@ -977,6 +1139,7 @@ export const PAGES: Page[] = [
     description: "Read 30+ books a year without forcing it: 20-minute windows, book-abandon permission, and a simple list.",
     keyword: "how to read more books",
     related: ["reading-time-estimator", "how-to-take-better-notes", "how-to-build-good-habits"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-take-better-notes", type: "article", category: "writing",
     title: "How to Take Better Notes — Zettelkasten to Cornell",
@@ -984,6 +1147,7 @@ export const PAGES: Page[] = [
     description: "Compare note-taking systems: Cornell, Zettelkasten, PARA. Which is worth it, which is overkill.",
     keyword: "how to take better notes",
     related: ["how-to-read-more-books", "how-to-write-better", "time-management-tips-for-students"],
+    guideCategory: "productivity",
     published: true },
 
   // -------------------- ARTICLES: CAREER (10) --------------------
@@ -993,6 +1157,7 @@ export const PAGES: Page[] = [
     description: "Network without cringe: give before you ask, keep a simple CRM, and how to follow up.",
     keyword: "how to network effectively",
     related: ["how-to-write-a-resume", "how-to-ace-a-job-interview", "how-to-write-a-cover-letter"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-ace-a-job-interview", type: "article", category: "career",
     title: "How to Ace a Job Interview — STAR Method & More",
@@ -1000,6 +1165,7 @@ export const PAGES: Page[] = [
     description: "Ace your interview: STAR answers, the right questions to ask, and the 5-minute pre-interview ritual.",
     keyword: "how to ace a job interview",
     related: ["how-to-prepare-for-coding-interviews", "how-to-write-a-resume", "how-to-negotiate-salary"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-quit-your-job-professionally", type: "article", category: "career",
     title: "How to Quit Your Job Professionally",
@@ -1007,6 +1173,7 @@ export const PAGES: Page[] = [
     description: "Quit the right way: two-week notice, a clean handoff, and a resignation letter template.",
     keyword: "how to quit your job professionally",
     related: ["how-to-switch-careers", "how-to-write-professional-emails", "how-to-negotiate-salary"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-get-promoted", type: "article", category: "career",
     title: "How to Get Promoted — Do the Next Job First",
@@ -1014,6 +1181,7 @@ export const PAGES: Page[] = [
     description: "Get promoted by quietly doing the next role for 3 months before asking. Scripts and examples.",
     keyword: "how to get promoted",
     related: ["how-to-negotiate-salary", "how-to-network-effectively", "how-to-increase-your-income"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-deal-with-a-bad-boss", type: "article", category: "career",
     title: "How to Deal With a Bad Boss",
@@ -1021,6 +1189,7 @@ export const PAGES: Page[] = [
     description: "Manage up, document what matters, protect your time. When to stay and when it's time to leave.",
     keyword: "how to deal with a bad boss",
     related: ["how-to-set-boundaries", "how-to-quit-your-job-professionally", "how-to-beat-burnout"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-work-remotely", type: "article", category: "career",
     title: "How to Work Remotely — A Playbook",
@@ -1028,6 +1197,7 @@ export const PAGES: Page[] = [
     description: "Remote work done right: over-communicate, async by default, and keep your calendar honest.",
     keyword: "how to work remotely",
     related: ["how-to-work-from-home-productively", "how-to-set-up-a-home-office", "time-zone-converter"],
+    guideCategory: "productivity",
     published: true },
   { slug: "how-to-switch-careers", type: "article", category: "career",
     title: "How to Switch Careers — Without Starting Over",
@@ -1035,6 +1205,7 @@ export const PAGES: Page[] = [
     description: "Change careers without resetting your life: identify transferable skills, build proof, tell the story.",
     keyword: "how to switch careers",
     related: ["how-to-get-your-first-developer-job", "how-to-increase-your-income", "how-to-write-a-resume"],
+    guideCategory: "business",
     published: true },
   { slug: "best-linkedin-profile-tips", type: "article", category: "career",
     title: "Best LinkedIn Profile Tips for 2026",
@@ -1042,6 +1213,7 @@ export const PAGES: Page[] = [
     description: "A LinkedIn profile recruiters actually click: headline, about, experience bullets, and photo.",
     keyword: "best LinkedIn profile tips",
     related: ["how-to-write-a-resume", "how-to-network-effectively", "how-to-switch-careers"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-give-a-great-presentation", type: "article", category: "career",
     title: "How to Give a Great Presentation",
@@ -1049,6 +1221,7 @@ export const PAGES: Page[] = [
     description: "Presentations that land: one big idea, three supports, a strong open and close.",
     keyword: "how to give a great presentation",
     related: ["how-to-write-professional-emails", "meeting-cost-calculator", "how-to-ace-a-job-interview"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-write-professional-emails", type: "article", category: "career",
     title: "How to Write Professional Emails (Templates Inside)",
@@ -1056,6 +1229,7 @@ export const PAGES: Page[] = [
     description: "Write emails that get read and replied to. Subject, opening, ask, CTA. Templates for common situations.",
     keyword: "how to write professional emails",
     related: ["how-to-write-better", "how-to-give-a-great-presentation", "how-to-work-remotely"],
+    guideCategory: "how-to",
     published: true },
 
   // -------------------- ARTICLES: HOME (10) --------------------
@@ -1065,6 +1239,7 @@ export const PAGES: Page[] = [
     description: "Declutter without burning out: one room, one box, one rule. A realistic weekend plan.",
     keyword: "how to declutter your home",
     related: ["how-to-meal-prep", "how-to-build-good-habits", "countdown-timer"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-organize-your-digital-life", type: "article", category: "home",
     title: "How to Organize Your Digital Life",
@@ -1072,6 +1247,7 @@ export const PAGES: Page[] = [
     description: "Inbox zero, clean desktop, backed-up files. A 2-hour reset plus habits to keep it that way.",
     keyword: "how to organize your digital life",
     related: ["password-generator", "how-to-declutter-your-home", "how-to-reduce-screen-time"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-cook-on-a-budget", type: "article", category: "home",
     title: "How to Cook on a Budget",
@@ -1079,6 +1255,7 @@ export const PAGES: Page[] = [
     description: "Cook for less: staples, pantry meals, and the three recipes that stretch further than the others.",
     keyword: "how to cook on a budget",
     related: ["how-to-meal-prep", "how-to-save-on-groceries", "how-to-eat-healthy-on-a-budget"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-meal-prep", type: "article", category: "home",
     title: "How to Meal Prep — A Sunday System",
@@ -1086,6 +1263,7 @@ export const PAGES: Page[] = [
     description: "A 2-hour Sunday meal prep that handles 5 weekday lunches. Shopping list, containers, and reheating.",
     keyword: "how to meal prep",
     related: ["how-to-save-on-groceries", "calorie-calculator", "how-to-declutter-your-home"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-clean-efficiently", type: "article", category: "home",
     title: "How to Clean Efficiently — Top-Down, In-Out",
@@ -1093,6 +1271,7 @@ export const PAGES: Page[] = [
     description: "A clean-the-house-in-an-hour system: top-down, in-out, one cloth per room, finish strong.",
     keyword: "how to clean efficiently",
     related: ["how-to-declutter-your-home", "how-to-organize-your-digital-life", "how-to-save-on-utilities"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-plan-a-move", type: "article", category: "home",
     title: "How to Plan a Move — 8-Week Checklist",
@@ -1100,6 +1279,7 @@ export const PAGES: Page[] = [
     description: "An 8-week moving checklist that prevents the 'what did we forget' panic at 9 p.m. the night before.",
     keyword: "how to plan a move",
     related: ["how-to-declutter-your-home", "how-to-pack-for-travel", "how-to-save-on-utilities"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-reduce-screen-time", type: "article", category: "home",
     title: "How to Reduce Screen Time — Realistically",
@@ -1107,6 +1287,7 @@ export const PAGES: Page[] = [
     description: "Cut phone use without deleting apps: friction first, replacement second, and a weekly audit.",
     keyword: "how to reduce screen time",
     related: ["how-to-organize-your-digital-life", "how-to-focus-better", "how-to-build-good-habits"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-pack-for-travel", type: "article", category: "home",
     title: "How to Pack for Travel — Carry-On Only",
@@ -1114,6 +1295,7 @@ export const PAGES: Page[] = [
     description: "Pack for a week in a carry-on: the capsule list, the 3-1-1 liquids rule, and what to leave at home.",
     keyword: "how to pack for travel",
     related: ["currency-converter", "how-to-plan-a-move", "how-to-save-money-fast"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-save-on-utilities", type: "article", category: "home",
     title: "How to Save on Utilities — Real Savings",
@@ -1121,6 +1303,7 @@ export const PAGES: Page[] = [
     description: "Lower your utility bills with high-leverage moves: thermostat, water heater, LEDs, and air sealing.",
     keyword: "how to save on utilities",
     related: ["how-to-save-money-fast", "budget-calculator", "how-to-live-below-your-means"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-set-up-a-home-office", type: "article", category: "home",
     title: "How to Set Up a Home Office — Under $500",
@@ -1128,6 +1311,7 @@ export const PAGES: Page[] = [
     description: "Set up a home office that works your body and your focus. Prioritized gear list under $500.",
     keyword: "how to set up a home office",
     related: ["how-to-work-from-home-productively", "how-to-fix-posture", "how-to-work-remotely"],
+    guideCategory: "how-to",
     published: true },
 
   // -------------------- ARTICLES: SOCIAL (5) --------------------
@@ -1137,6 +1321,7 @@ export const PAGES: Page[] = [
     description: "Make friends as an adult with the 3-3-3 rule: same people, recurring events, realistic timelines.",
     keyword: "how to make friends as an adult",
     related: ["how-to-have-better-conversations", "how-to-overcome-social-anxiety", "how-to-network-effectively"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-have-better-conversations", type: "article", category: "social",
     title: "How to Have Better Conversations",
@@ -1144,6 +1329,7 @@ export const PAGES: Page[] = [
     description: "Better conversations in five moves: listen, ask one deeper, avoid the topic-switch, close well.",
     keyword: "how to have better conversations",
     related: ["how-to-make-friends-as-an-adult", "how-to-overcome-social-anxiety", "how-to-write-professional-emails"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-overcome-social-anxiety", type: "article", category: "social",
     title: "How to Overcome Social Anxiety — Small Exposures",
@@ -1151,6 +1337,7 @@ export const PAGES: Page[] = [
     description: "Beat social anxiety with graded exposure: small, repeated, uncomfortable-but-safe. A 6-week plan.",
     keyword: "how to overcome social anxiety",
     related: ["how-to-make-friends-as-an-adult", "how-to-have-better-conversations", "how-to-reduce-stress"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-set-boundaries", type: "article", category: "social",
     title: "How to Set Boundaries — Scripts and Follow-Through",
@@ -1158,6 +1345,7 @@ export const PAGES: Page[] = [
     description: "Set boundaries that stick: a short script, what to do when tested, and how to stop over-explaining.",
     keyword: "how to set boundaries",
     related: ["how-to-deal-with-a-bad-boss", "how-to-beat-burnout", "how-to-reduce-stress"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-apologize-well", type: "article", category: "social",
     title: "How to Apologize Well — Sincerely, Without 'But'",
@@ -1165,6 +1353,7 @@ export const PAGES: Page[] = [
     description: "A real apology in 4 parts: name it, own it, repair it, commit to change. No 'but', no 'if'.",
     keyword: "how to apologize well",
     related: ["how-to-have-better-conversations", "how-to-set-boundaries", "how-to-write-professional-emails"],
+    guideCategory: "how-to",
     published: true },
 
   // -------------------- TOOLS: CONVERTERS (15) --------------------
@@ -1427,6 +1616,7 @@ export const PAGES: Page[] = [
     description: "A simple, privacy-safe way to merge PDFs right in your browser. No watermarks, no sign-up, no upload. Takes under a minute.",
     keyword: "how to merge pdfs",
     related: ["merge-pdf", "pdf-split", "how-to-split-a-pdf"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-split-a-pdf", type: "article", category: "converters",
     title: "How to Split a PDF — Extract Pages or Ranges Free",
@@ -1434,6 +1624,7 @@ export const PAGES: Page[] = [
     description: "Split a PDF by pages or ranges without uploading to a server. Clear steps, common pitfalls, and a free in-browser tool.",
     keyword: "how to split a pdf",
     related: ["pdf-split", "merge-pdf", "pdf-organizer"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-compress-images-without-losing-quality", type: "article", category: "converters",
     title: "How to Compress Images Without Losing Quality",
@@ -1441,6 +1632,7 @@ export const PAGES: Page[] = [
     description: "Pick the right format, dimensions, and quality knobs to shrink image size while keeping photos sharp. Plain steps, real numbers.",
     keyword: "how to compress images",
     related: ["image-compressor", "image-resizer", "image-format-converter"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-generate-qr-codes", type: "article", category: "dev",
     title: "How to Generate QR Codes — Clear Steps for Any Link",
@@ -1448,6 +1640,7 @@ export const PAGES: Page[] = [
     description: "Make a QR code for a URL, wifi, vCard, or plain text. What error-correction means, how big to print, how to test it.",
     keyword: "how to generate qr codes",
     related: ["qr-code-generator", "password-generator", "uuid-generator"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-calculate-age-gap", type: "article", category: "random",
     title: "How to Calculate an Age Gap in Years, Months, Days",
@@ -1455,6 +1648,7 @@ export const PAGES: Page[] = [
     description: "A step-by-step method — and a free calculator — for finding the exact age gap between two people in years, months, and days.",
     keyword: "how to calculate age gap",
     related: ["age-gap-calculator", "age-calculator", "percentage-calculator"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-calculate-percentages", type: "article", category: "money",
     title: "How to Calculate Percentages — 5 Everyday Formulas",
@@ -1462,6 +1656,7 @@ export const PAGES: Page[] = [
     description: "Percent of a number, percent change, percent off, markup, tip — the five most useful percentage formulas, with examples.",
     keyword: "how to calculate percentages",
     related: ["percentage-calculator", "tip-calculator", "loan-calculator"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-convert-webp-to-jpg", type: "article", category: "converters",
     title: "How to Convert WebP to JPG — Free, In Your Browser",
@@ -1469,6 +1664,7 @@ export const PAGES: Page[] = [
     description: "Turn WebP images into universally compatible JPGs in seconds. Why WebP exists, when JPG is better, and a free converter.",
     keyword: "how to convert webp to jpg",
     related: ["webp-to-jpg", "image-format-converter", "image-compressor"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-crop-images-online", type: "article", category: "converters",
     title: "How to Crop Images Online — Free, No Watermark",
@@ -1476,6 +1672,7 @@ export const PAGES: Page[] = [
     description: "Pick an aspect ratio, drag a crop box, and export — all without installing Photoshop. Tips for profile pics and social posts.",
     keyword: "how to crop images online",
     related: ["image-cropper", "image-resizer", "image-format-converter"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-extract-colors-from-an-image", type: "article", category: "converters",
     title: "How to Extract Colors From an Image — Free Palette Tool",
@@ -1483,6 +1680,7 @@ export const PAGES: Page[] = [
     description: "Pull the dominant colors out of any photo and copy HEX, RGB, or HSL. Great for branding, mood boards, and design work.",
     keyword: "how to extract colors from an image",
     related: ["color-extractor", "color-converter", "image-format-converter"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-create-gifs-from-images", type: "article", category: "converters",
     title: "How to Create GIFs From Images — Free, Offline Steps",
@@ -1490,6 +1688,7 @@ export const PAGES: Page[] = [
     description: "Build a smooth animated GIF from a stack of PNGs or JPGs. Frame timing, looping, size tradeoffs — in plain English.",
     keyword: "how to create gifs from images",
     related: ["gif-maker", "image-resizer", "image-compressor"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-add-watermark-to-pdf", type: "article", category: "converters",
     title: "How to Add a Watermark to a PDF — Free, No Sign-up",
@@ -1497,6 +1696,7 @@ export const PAGES: Page[] = [
     description: "Stamp a text watermark across every page of a PDF. When to use DRAFT vs CONFIDENTIAL, opacity tips, and a free tool.",
     keyword: "how to add a watermark to a pdf",
     related: ["pdf-watermark", "pdf-page-numbers", "merge-pdf"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-add-page-numbers-to-pdf", type: "article", category: "converters",
     title: "How to Add Page Numbers to a PDF — Simple Steps",
@@ -1504,6 +1704,7 @@ export const PAGES: Page[] = [
     description: "Add page numbers to any PDF — pick position, size, format. Why booklets need different numbering than contracts.",
     keyword: "how to add page numbers to a pdf",
     related: ["pdf-page-numbers", "pdf-watermark", "pdf-organizer"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-remove-pdf-metadata", type: "article", category: "converters",
     title: "How to Remove Metadata from a PDF — Privacy Checklist",
@@ -1511,6 +1712,7 @@ export const PAGES: Page[] = [
     description: "PDFs carry author names, timestamps, and software traces you may not want to share. How to find it — and how to strip it.",
     keyword: "how to remove pdf metadata",
     related: ["pdf-metadata-remover", "pdf-metadata-viewer", "merge-pdf"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-hash-passwords", type: "article", category: "coding",
     title: "How to Hash Passwords — What bcrypt, Argon2 Really Do",
@@ -1518,6 +1720,7 @@ export const PAGES: Page[] = [
     description: "Why you never store plain passwords, why MD5/SHA-1 aren't enough for auth, and how bcrypt/Argon2 actually protect users.",
     keyword: "how to hash passwords",
     related: ["hash-generator", "password-generator", "password-breach-checker"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-use-regex-effectively", type: "article", category: "coding",
     title: "How to Use Regex Effectively — A Practical Cheat Sheet",
@@ -1525,6 +1728,7 @@ export const PAGES: Page[] = [
     description: "The handful of regex features that cover 90% of real work — anchors, classes, quantifiers, groups — with runnable examples.",
     keyword: "how to use regex",
     related: ["regex-tester", "diff-checker", "how-to-learn-coding-fast"],
+    guideCategory: "technical",
     published: true },
 
   // ==================== WAVE 6: FULL LIBRARY COMPLETION (40) ====================
@@ -2421,6 +2625,7 @@ export const PAGES: Page[] = [
     description: "A plain-English guide to writing meta descriptions that fit Google's limits and actually earn clicks. With examples.",
     keyword: "how to write a meta description",
     related: ["meta-description-length-checker", "title-tag-length-checker", "serp-snippet-preview", "how-to-write-better"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-use-utm-parameters", type: "article", category: "writing",
     title: "How to Use UTM Parameters — A Practical Guide",
@@ -2428,6 +2633,7 @@ export const PAGES: Page[] = [
     description: "What UTM parameters are, which five to use, naming rules that don't break reporting, and how to build them fast.",
     keyword: "how to use utm parameters",
     related: ["utm-builder", "utm-parser", "url-cleaner", "seo-basics-for-beginners"],
+    guideCategory: "technical",
     published: true },
   { slug: "what-is-schema-markup", type: "article", category: "writing",
     title: "What Is Schema Markup? A Plain-English SEO Primer",
@@ -2435,6 +2641,7 @@ export const PAGES: Page[] = [
     description: "Schema markup, rich results, and JSON-LD explained without jargon — with the 5 schema types most sites actually need.",
     keyword: "what is schema markup",
     related: ["schema-markup-generator", "faq-schema-generator", "meta-tag-generator", "seo-basics-for-beginners"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-format-json-properly", type: "article", category: "coding",
     title: "How to Format JSON Properly (And Why It Matters)",
@@ -2442,6 +2649,7 @@ export const PAGES: Page[] = [
     description: "Why formatting JSON matters, the rules you can't skip, common mistakes, and how to validate fast. With examples.",
     keyword: "how to format json",
     related: ["json-formatter", "json-diff-checker", "yaml-formatter", "how-to-debug-code-effectively"],
+    guideCategory: "technical",
     published: true },
   { slug: "how-to-make-a-simple-invoice", type: "article", category: "career",
     title: "How to Make a Simple Invoice (Freelancer Guide)",
@@ -2449,6 +2657,7 @@ export const PAGES: Page[] = [
     description: "A freelancer-friendly guide to writing a clean, professional invoice — what to include, how to price, and getting paid.",
     keyword: "how to make an invoice",
     related: ["invoice-generator", "freelance-rate-calculator", "hourly-rate-calculator", "best-side-hustles-for-beginners"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-price-freelance-work", type: "article", category: "career",
     title: "How to Price Freelance Work — Rates That Pay the Bills",
@@ -2456,6 +2665,7 @@ export const PAGES: Page[] = [
     description: "A practical framework for setting freelance rates that cover taxes, benefits, and real life — not just a nice hourly number.",
     keyword: "how to price freelance work",
     related: ["freelance-rate-calculator", "hourly-rate-calculator", "pricing-calculator", "best-side-hustles-for-beginners"],
+    guideCategory: "business",
     published: true },
   { slug: "how-to-split-expenses-fairly", type: "article", category: "home",
     title: "How to Split Expenses Fairly With Roommates or Friends",
@@ -2463,6 +2673,7 @@ export const PAGES: Page[] = [
     description: "Equal shares, by income, or by usage — how to pick a fair split method and actually settle up without resentment.",
     keyword: "how to split expenses",
     related: ["expense-split-calculator", "bill-split-calculator", "rent-split-calculator", "how-to-have-better-conversations"],
+    guideCategory: "how-to",
     published: true },
   { slug: "how-to-choose-image-dimensions", type: "article", category: "writing",
     title: "How to Choose Image Dimensions for Blogs and Social",
@@ -2470,6 +2681,7 @@ export const PAGES: Page[] = [
     description: "Right dimensions for blog hero, Open Graph, X, Instagram, and LinkedIn — plus how to keep file size low.",
     keyword: "how to choose image dimensions",
     related: ["social-media-image-sizes", "aspect-ratio-calculator", "image-resizer", "image-compressor"],
+    guideCategory: "design-media",
     published: true },
   { slug: "how-to-calculate-profit-margin", type: "article", category: "money",
     title: "How to Calculate Profit Margin (Gross vs Net)",
@@ -2477,6 +2689,7 @@ export const PAGES: Page[] = [
     description: "Gross, operating, and net profit margin explained with worked examples — so you know which number to quote and why.",
     keyword: "how to calculate profit margin",
     related: ["profit-margin-calculator", "pricing-calculator", "break-even-calculator", "cash-flow-calculator"],
+    guideCategory: "tools",
     published: true },
   { slug: "how-to-write-a-cron-expression", type: "article", category: "coding",
     title: "How to Write a Cron Expression (With Examples)",
@@ -2484,6 +2697,7 @@ export const PAGES: Page[] = [
     description: "Cron fields, ranges, steps, and lists explained — with 10 ready-to-copy expressions for the schedules you actually need.",
     keyword: "how to write a cron expression",
     related: ["cron-expression-builder", "cron-expression-explainer", "unix-timestamp-converter", "time-zone-converter"],
+    guideCategory: "technical",
     published: true },
 
   // ==================== WAVE 8: COMPETITOR-KILLER BATCH (50) ====================
@@ -2987,4 +3201,38 @@ export function getRelated(slug: string, limit = 3): Page[] {
 
 export function pageHref(page: Page): string {
   return page.type === "tool" ? `/tools/${page.slug}` : `/guides/${page.slug}`;
+}
+
+// ---------- Guide category helpers ----------
+
+/**
+ * Resolve the guide category for an article. Falls back to "how-to" if the
+ * page is missing an explicit guideCategory — keeps new guides renderable
+ * before they've been manually slotted.
+ */
+export function guideCategoryFor(page: Page): GuideCategory {
+  if (page.type !== "article") return "how-to";
+  return page.guideCategory ?? "how-to";
+}
+
+/** All published guides for a given editorial category. */
+export function getGuidesByGuideCategory(gc: GuideCategory): Page[] {
+  return PAGES.filter(
+    (p) => p.published && p.type === "article" && guideCategoryFor(p) === gc,
+  );
+}
+
+/** Build a Partial<Record> of published guides grouped by editorial category. */
+export function guidesByGuideCategory(): Partial<Record<GuideCategory, Page[]>> {
+  const acc: Partial<Record<GuideCategory, Page[]>> = {};
+  for (const p of getPublishedGuides()) {
+    const gc = guideCategoryFor(p);
+    (acc[gc] ||= []).push(p);
+  }
+  return acc;
+}
+
+/** Canonical link to a guide category landing page. */
+export function guideCategoryHref(gc: GuideCategory): string {
+  return `/guides/category/${GUIDE_CATEGORIES[gc].slug}`;
 }

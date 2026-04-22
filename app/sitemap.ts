@@ -1,5 +1,12 @@
 import type { MetadataRoute } from "next";
-import { getPublishedPages, pageHref, SITE_URL } from "@/lib/pages";
+import {
+  getPublishedPages,
+  pageHref,
+  SITE_URL,
+  GUIDE_CATEGORY_ORDER,
+  GUIDE_CATEGORIES,
+  guidesByGuideCategory,
+} from "@/lib/pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -7,16 +14,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/trust`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
+
+  const byCat = guidesByGuideCategory();
+  const categoryRoutes: MetadataRoute.Sitemap = GUIDE_CATEGORY_ORDER
+    .filter((gc) => (byCat[gc]?.length ?? 0) > 0)
+    .map((gc) => ({
+      url: `${SITE_URL}/guides/category/${GUIDE_CATEGORIES[gc].slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
+
   const pageRoutes: MetadataRoute.Sitemap = getPublishedPages().map((p) => ({
     url: `${SITE_URL}${pageHref(p)}`,
     lastModified: now,
     changeFrequency: "monthly",
     priority: p.type === "tool" ? 0.7 : 0.6,
   }));
-  return [...staticRoutes, ...pageRoutes];
+  return [...staticRoutes, ...categoryRoutes, ...pageRoutes];
 }

@@ -12,6 +12,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/ui/Card";
+import { TrustBar } from "@/components/TrustBar";
 import { SITE_UPDATED } from "@/lib/seo";
 
 const HOMEPAGE_CATEGORY_ORDER: Category[] = [
@@ -61,6 +62,7 @@ export default function HomePage() {
             Read the guides
           </ButtonLink>
         </div>
+        <TrustBar className="mt-8" />
       </section>
 
       {/* Popular tools */}
