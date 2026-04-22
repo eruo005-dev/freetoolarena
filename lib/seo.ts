@@ -7,6 +7,8 @@ import {
   SITE_TAGLINE,
   type Page,
 } from "./pages";
+import { LOCALE_META, LOCALES, type Locale } from "./i18n";
+import { localesFor } from "./translations";
 
 /**
  * Date the current content set was last reviewed end-to-end. Surfaced on
@@ -41,11 +43,97 @@ function ogImageForStatic(title: string, eyebrow: string) {
 /**
  * Build Next.js Metadata for any page in the manifest.
  * Every page gets: title, description, canonical, OG, Twitter, robots.
+ * If the slug has translated versions, hreflang alternates are emitted
+ * automatically so the English original and all translations link bi-
+ * directionally.
  */
 export function metadataFor(slug: string): Metadata {
   const page = getPageBySlug(slug);
   if (!page) return { title: SITE_NAME, description: SITE_TAGLINE };
   return buildMetadata(page);
+}
+
+/**
+ * Build hreflang alternates map for a given slug + type. Includes
+ * self-referencing tag for every locale that has a translation, plus
+ * x-default pointing to the English version. Only called when the slug
+ * actually has at least one non-English translation — English-only
+ * pages skip hreflang entirely (Google treats no-hreflang as
+ * unambiguous English).
+ */
+export function hreflangFor(slug: string, type: "tool" | "guide"): Record<string, string> | undefined {
+  const locales = localesFor(slug, type);
+  if (locales.length < 2) return undefined; // English only
+  const base = type === "tool" ? "/tools" : "/guides";
+  const out: Record<string, string> = {};
+  for (const loc of locales) {
+    const prefix = LOCALE_META[loc].urlPrefix;
+    const bcp = LOCALE_META[loc].bcp47;
+    out[bcp] = `${SITE_URL}${prefix}${base}/${slug}`;
+  }
+  // x-default = English version per Google best practice.
+  out["x-default"] = `${SITE_URL}${base}/${slug}`;
+  return out;
+}
+
+/**
+ * Build Metadata for a localized page (non-English). Mirrors
+ * buildMetadata but sourced from a translation bundle and emitting the
+ * full hreflang set. Canonical points to THIS locale's URL, never to
+ * English — that's a common SEO mistake that causes the translated
+ * page to deindex.
+ */
+export function buildLocalizedMetadata({
+  slug,
+  locale,
+  type,
+  title,
+  description,
+  pathOverride,
+}: {
+  slug: string;
+  locale: Locale;
+  type: "tool" | "guide";
+  title: string;
+  description: string;
+  /** Optional override — defaults to /{prefix}/{tools|guides}/{slug}. */
+  pathOverride?: string;
+}): Metadata {
+  const prefix = LOCALE_META[locale].urlPrefix;
+  const base = type === "tool" ? "/tools" : "/guides";
+  const path = pathOverride ?? `${prefix}${base}/${slug}`;
+  const url = `${SITE_URL}${path}`;
+  const ogTitle = `${title} | ${SITE_NAME}`;
+  const image = {
+    url: `${SITE_URL}/og?slug=${encodeURIComponent(slug)}&lang=${locale}`,
+    width: 1200,
+    height: 630,
+    alt: title,
+  };
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: hreflangFor(slug, type),
+    },
+    openGraph: {
+      title: ogTitle,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: type === "guide" ? "article" : "website",
+      locale: LOCALE_META[locale].bcp47.replace("-", "_"),
+      images: [image],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description,
+      images: [image.url],
+    },
+    robots: { index: true, follow: true },
+  };
 }
 
 export function buildMetadata(page: Page): Metadata {
@@ -74,11 +162,17 @@ export function buildMetadata(page: Page): Metadata {
           type: "website" as const,
           images: [image],
         };
+  // If the slug has translations, expose them as hreflang alternates so
+  // Google knows the English page is one of a family. Skipped when the
+  // slug is English-only — unnecessary hreflang tags can cause Google
+  // to treat the page as having broken alternates.
+  const type = page.type === "tool" ? "tool" : "guide";
+  const languages = hreflangFor(page.slug, type);
   return {
     title: page.title,
     description: page.description,
     keywords: [page.keyword],
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(languages ? { languages } : {}) },
     openGraph: og,
     twitter: {
       card: "summary_large_image",

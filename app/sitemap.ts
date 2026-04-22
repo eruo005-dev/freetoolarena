@@ -10,6 +10,8 @@ import {
 import { HUBS } from "@/lib/hubs";
 import { COMPARISONS } from "@/lib/comparisons";
 import { GLOSSARY } from "@/lib/glossary";
+import { LOCALE_META, LOCALES } from "@/lib/i18n";
+import { translatedSlugs } from "@/lib/translations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -69,6 +71,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: p.type === "tool" ? 0.7 : 0.6,
   }));
+
+  // Localized routes. For every non-English locale that has published
+  // translations, emit: /{prefix}/, /{prefix}/tools, /{prefix}/guides,
+  // plus each translated tool and guide. Priorities are one notch lower
+  // than English so Google treats English as the canonical hub while
+  // still indexing the translations.
+  const localizedRoutes: MetadataRoute.Sitemap = [];
+  for (const loc of LOCALES) {
+    if (loc === "en") continue;
+    const prefix = LOCALE_META[loc].urlPrefix;
+    const toolSlugs = translatedSlugs(loc, "tool");
+    const guideSlugs = translatedSlugs(loc, "guide");
+    if (toolSlugs.length === 0 && guideSlugs.length === 0) continue;
+    localizedRoutes.push(
+      {
+        url: `${SITE_URL}${prefix}`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.8,
+      },
+      {
+        url: `${SITE_URL}${prefix}/tools`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.6,
+      },
+      {
+        url: `${SITE_URL}${prefix}/guides`,
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.6,
+      },
+    );
+    for (const slug of toolSlugs) {
+      localizedRoutes.push({
+        url: `${SITE_URL}${prefix}/tools/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+    for (const slug of guideSlugs) {
+      localizedRoutes.push({
+        url: `${SITE_URL}${prefix}/guides/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.5,
+      });
+    }
+  }
+
   return [
     ...staticRoutes,
     ...hubRoutes,
@@ -76,5 +129,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...learnRoutes,
     ...categoryRoutes,
     ...pageRoutes,
+    ...localizedRoutes,
   ];
 }
