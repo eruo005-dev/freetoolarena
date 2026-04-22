@@ -137,6 +137,9 @@ import * as TrackOvulation from "./how-to-track-ovulation";
 import * as BoostYourGpa from "./how-to-boost-your-gpa";
 import * as WhatYouNeedOnAFinal from "./how-to-calculate-what-you-need-on-a-final";
 import * as MarketingRoi from "./how-to-calculate-marketing-roi";
+import * as CompareLoanOffers from "./how-to-compare-loan-offers";
+import * as HowMuchHouse from "./how-much-house-can-you-afford";
+import * as ProjectRetirement from "./how-to-project-retirement-with-compound-interest";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1357,6 +1360,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Run simple and annualized ROI with gross-margin adjustments.",
       targetSlug: "roi-calculator",
+    },
+  },
+  "how-to-compare-loan-offers": {
+    intro: CompareLoanOffers.intro,
+    body: CompareLoanOffers.body,
+    cta: {
+      label: "Compute total cost and APR across offers — free loan calculator.",
+      targetSlug: "loan-calculator",
+    },
+  },
+  "how-much-house-can-you-afford": {
+    intro: HowMuchHouse.intro,
+    body: HowMuchHouse.body,
+    cta: {
+      label: "Find your 28/36 ceiling — free mortgage affordability calculator.",
+      targetSlug: "mortgage-affordability-calculator",
+    },
+  },
+  "how-to-project-retirement-with-compound-interest": {
+    intro: ProjectRetirement.intro,
+    body: ProjectRetirement.body,
+    cta: {
+      label: "Project your retirement balance — free compound interest calculator.",
+      targetSlug: "compound-interest-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
