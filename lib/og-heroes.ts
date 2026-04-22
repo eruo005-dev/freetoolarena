@@ -135,15 +135,10 @@ export const OG_HEROES: Record<string, OgHero> = {
     value: "$70",
     inputs: "$100 · 30% off",
   },
-  "salary-to-hourly-calculator": {
-    label: "Hourly rate",
-    value: "$24.04/hr",
-    inputs: "$50,000/yr · 40 hrs/wk",
-  },
-  "hourly-to-salary-calculator": {
-    label: "Annual salary",
-    value: "$50,000",
-    inputs: "$24.04/hr · 40 hrs/wk",
+  "hourly-rate-calculator": {
+    label: "True hourly rate",
+    value: "$20.53/hr",
+    inputs: "$50k/yr · 2 wks PTO · 10 holidays",
   },
   "paycheck-calculator": {
     label: "Take-home / mo",
@@ -187,7 +182,7 @@ export const OG_HEROES: Record<string, OgHero> = {
     value: "Day 14",
     inputs: "28-day cycle",
   },
-  "pregnancy-due-date-calculator": {
+  "pregnancy-calculator": {
     label: "Due date",
     value: "+40 weeks",
     inputs: "Naegele's rule · last period",
@@ -208,11 +203,6 @@ export const OG_HEROES: Record<string, OgHero> = {
     label: "Time between",
     value: "1,234 days",
     inputs: "Any two dates",
-  },
-  "time-card-calculator": {
-    label: "Weekly hours",
-    value: "40:00",
-    inputs: "5 × 9–5 · 1hr unpaid lunch",
   },
 
   // ── Random/fun with a sharp teaser ──

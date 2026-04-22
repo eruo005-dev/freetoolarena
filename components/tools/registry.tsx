@@ -1182,6 +1182,44 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read your estimated maintenance calories.",
       "Treat it as a starting point; refine it with 2 weeks of real-world tracking.",
     ],
+    whenToUse: [
+      "Starting a deliberate weight-gain, weight-loss, or body-recomp plan.",
+      "Setting up macros — the calorie target is the ceiling your protein/carb/fat split fits under.",
+      "Deciding whether a recovery week needs less food than a training week.",
+      "Sanity-checking a coach's calorie recommendation against a formula-based estimate.",
+    ],
+    whenNotToUse: [
+      "You're under 18 — growth-stage metabolism doesn't follow the Mifflin-St Jeor equation well.",
+      "You're pregnant, breastfeeding, or have a diagnosed thyroid or metabolic condition — talk to a registered dietitian.",
+      "You're recovering from an eating disorder — calorie numbers can be triggering; work with a professional.",
+    ],
+    example: {
+      input: "Age: 32, Male\nHeight: 5'10\" (178 cm)\nWeight: 170 lbs (77 kg)\nActivity: Moderate (3-5 workouts/wk)",
+      output: "BMR: 1,680 kcal\nMaintenance: 2,600 kcal/day\nCut (~1 lb/wk): 2,100 kcal\nBulk (~0.5 lb/wk): 2,850 kcal",
+      note: "The \"moderate\" activity multiplier (1.55) assumes a desk job + 3-5 workouts/week. Truly sedentary jobs should use 1.2.",
+    },
+    faq: [
+      {
+        q: "Which formula does this use — Mifflin-St Jeor or Harris-Benedict?",
+        a: "Mifflin-St Jeor (1990), which studies have shown is more accurate than the older Harris-Benedict for most modern adults. The difference is usually 50-100 kcal.",
+      },
+      {
+        q: "Why are my real results different from the estimate?",
+        a: "Individual metabolism varies by about 10-15% even at identical weight/height/age. Genetics, thyroid function, NEAT (spontaneous fidgeting and standing), and recent diet history all matter. Always refine the formula-based number with 2-3 weeks of actual tracking.",
+      },
+      {
+        q: "How fast can I safely lose weight?",
+        a: "A deficit of 500 kcal/day produces about 1 lb/week of loss, which most research considers sustainable. Larger deficits risk muscle loss, metabolic adaptation, and adherence problems. For most adults, 0.5-1% of bodyweight per week is the sweet spot.",
+      },
+      {
+        q: "Does activity level include my workouts?",
+        a: "Yes — \"moderate\" assumes 3-5 workouts/week plus typical daily movement. Don't double-count by adding your gym sessions on top.",
+      },
+      {
+        q: "What should my protein target be inside this calorie budget?",
+        a: "For most people trying to preserve muscle while cutting, 0.7-1.0 g per pound of bodyweight (1.6-2.2 g/kg). Use a macro calculator to split the rest between carbs and fat based on your training style.",
+      },
+    ],
   },
   "water-intake-calculator": {
     render: () => <WaterIntakeCalculator />,
@@ -4766,6 +4804,39 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the final price and total savings.",
       "In reverse mode, input the sale price to learn the real discount rate.",
     ],
+    whenToUse: [
+      "Comparing \"30% off\" vs \"$40 off\" on the same item.",
+      "Checking whether a \"buy 2 get 1 free\" is really a 33% discount (spoiler: yes, on the cheapest item).",
+      "Working out the before-tax price after a sale — pair with the tax calculator for the all-in number.",
+      "Verifying that an advertised discount matches what the cash register actually rang up.",
+    ],
+    whenNotToUse: [
+      "Computing percentage change over time (prices rising/falling year over year) — use the percentage change calculator.",
+      "Pricing a product you're selling — use the margin/markup calculator so you're optimizing profit, not retail optics.",
+    ],
+    example: {
+      input: "Original price: $120\nDiscount: 25%",
+      output: "You pay: $90.00\nYou save: $30.00\nEffective rate: 25% off",
+      note: "In reverse mode, entering $120 original and $90 sale would return the same 25% discount figure.",
+    },
+    faq: [
+      {
+        q: "Is 20% off better than $20 off?",
+        a: "Depends on the price. On a $50 item, $20 off is 40% — far better than 20%. On a $200 item, 20% off is $40 — better than $20 off. Flip to reverse mode and compare the effective percent.",
+      },
+      {
+        q: "How do stacked discounts work — is 20% + 10% the same as 30%?",
+        a: "No. Stacked discounts compound, so 20% then 10% off gives 28% total (multiplicatively: 0.8 × 0.9 = 0.72). Always apply them in sequence, not add them.",
+      },
+      {
+        q: "Does this calculator include sales tax?",
+        a: "No — it's pre-tax. Use the tax or VAT calculator after to compute the all-in price. The order matters by jurisdiction: most US states apply tax after the discount; some EU promotions advertise VAT-inclusive already.",
+      },
+      {
+        q: "What's the math for \"buy one get one 50% off\"?",
+        a: "If both items are the same price, BOGO-50% is a 25% discount on the pair. BOGO-100% (\"buy one get one free\") is a 50% discount on the pair. The deeper the second-item discount, the bigger the blended rate.",
+      },
+    ],
   },
   "profit-margin-calculator": {
     render: () => <ProfitMarginCalculator />,
@@ -4838,6 +4909,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick the start year (year of the original amount).",
       "Pick the end year (what year to translate it into).",
       "Review the equivalent value, total inflation, and annualized rate.",
+    ],
+    whenToUse: [
+      "Comparing a starting salary from 10+ years ago to today's job market.",
+      "Deciding whether a historical property, artwork, or purchase was a \"good deal.\"",
+      "Setting retirement targets in today's dollars (then translating forward).",
+      "Analyzing whether a long-term contract needs a COLA clause.",
+    ],
+    whenNotToUse: [
+      "Forecasting future inflation — this tool only covers past years. Use compound interest with an assumed inflation rate for projections.",
+      "Region-specific cost-of-living comparisons — inflation tracks a national CPI basket, not rent or groceries in a specific city.",
+      "International currency comparisons — this is US dollar only.",
+    ],
+    example: {
+      input: "Amount: $1,000\nStart year: 2000\nEnd year: 2024",
+      output: "Equivalent today: $1,820\nTotal inflation: 82%\nAnnualized rate: 2.5%",
+      note: "A $1,000 bill in 2000 has the same purchasing power as about $1,820 in 2024 — inflation roughly doubled the price level over 24 years.",
+    },
+    faq: [
+      {
+        q: "Where does the inflation data come from?",
+        a: "CPI-U (Consumer Price Index for All Urban Consumers) published by the US Bureau of Labor Statistics. We interpolate between published anchor years for months/partial years — good enough for personal finance, not precise enough for legal contracts.",
+      },
+      {
+        q: "Why is inflation different from the \"cost of living\" in my city?",
+        a: "CPI tracks a national basket of goods and services. Individual cities see very different housing, transit, and wage trajectories — San Francisco rent inflation has dwarfed national CPI for two decades, for example. For local comparisons, use a cost-of-living index instead.",
+      },
+      {
+        q: "What counts as \"high\" inflation historically?",
+        a: "Since 1914, US annual inflation has averaged about 3.2%. Anything over 5% for more than a year is historically unusual; the 1970s–early 1980s saw peaks above 13%. 2021–2022 was the highest sustained stretch since then.",
+      },
+      {
+        q: "Should I trust CPI as the \"real\" inflation rate?",
+        a: "CPI has known limitations: substitution bias, housing owner-equivalent-rent methodology, and exclusion of asset prices (stocks, real estate). It's the standard reference but many economists argue real lived inflation — especially for renters and lower-income households — can run higher.",
+      },
     ],
   },
   "break-even-calculator": {
@@ -6830,6 +6935,39 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Adjust for unpaid overhead — admin, sales, learning.",
       "Read the true hourly rate and annual equivalents.",
     ],
+    whenToUse: [
+      "Comparing a salaried job offer against a contract role.",
+      "Deciding whether to accept overtime vs extra PTO.",
+      "Checking what your real hourly rate is after paid time off shrinks.",
+      "Justifying a raise based on your effective rate vs the posted band.",
+    ],
+    whenNotToUse: [
+      "Freelancers pricing client work — use the freelance rate calculator instead (it factors in business costs and taxes).",
+      "Computing actual take-home pay — use the paycheck calculator for federal/state withholding math.",
+    ],
+    example: {
+      input: "Annual: $50,000\n2 weeks PTO + 10 federal holidays\n40 hrs/wk typical",
+      output: "True hourly: $20.53\nPosted rate implication: $24.04\n(PTO/holidays cut your real rate by ~15%)",
+      note: "The posted rate (salary ÷ 52 ÷ 40) overstates what you earn per hour actually worked.",
+    },
+    faq: [
+      {
+        q: "What's the difference between hourly rate and effective hourly rate?",
+        a: "Hourly rate is salary divided by 40 hrs × 52 weeks = 2,080 hrs. Effective (or true) hourly rate subtracts paid time off, sick days, and holidays from the denominator — so you get a realistic number for hours actually worked.",
+      },
+      {
+        q: "Should I include my benefits in the calculation?",
+        a: "You can, but most people calculate a base hourly rate first. If you want total compensation per hour, add the dollar value of employer-paid benefits (health insurance, 401(k) match) to the annual salary before dividing.",
+      },
+      {
+        q: "How does this compare to a freelance or contract rate?",
+        a: "Contract and freelance rates are typically 1.5-2.5x the equivalent W-2 rate because contractors pay self-employment tax, buy their own benefits, and absorb non-billable overhead. Use the freelance rate calculator for a proper apples-to-apples comparison.",
+      },
+      {
+        q: "What hourly rate do I need to match a $100k salary?",
+        a: "At 40 hrs/wk × 52 weeks, $100k = about $48/hr gross. But after 2 weeks PTO + 10 holidays it's closer to $55/hr effective, and as a 1099 contractor you'd need ~$70-$85/hr to net the same after taxes and benefits.",
+      },
+    ],
   },
   "freelance-rate-calculator": {
     render: () => <FreelanceRateCalculator />,
@@ -6993,6 +7131,39 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Assign people to each item (for the uneven case).",
       "Set tip percent and tax.",
       "Read each person's total and adjust if needed.",
+    ],
+    whenToUse: [
+      "Splitting a restaurant check where someone didn't drink alcohol or didn't share the appetizers.",
+      "Calculating per-person total including tax and tip without doing mental math at the table.",
+      "Group trips, birthday dinners, or any bill where a flat divide-by-headcount would be unfair.",
+      "Rounding each share to whole dollars so cash splits don't leave anyone short.",
+    ],
+    whenNotToUse: [
+      "Splitting recurring household expenses — use the expense split calculator for ongoing shares.",
+      "Splitting rent — use the rent split calculator (it handles room-size and income weighting).",
+    ],
+    example: {
+      input: "Total bill: $78.00\n4 diners, tip: 18%\nSplit evenly",
+      output: "Per person: $23.01\n(bill $19.50 + tip $3.51 each)",
+      note: "By-item mode: if 1 person skipped a $14 glass of wine, their share drops to ~$18.90 and the others each cover ~$24.36 — tax and tip still prorated across what each person ordered.",
+    },
+    faq: [
+      {
+        q: "Does tip go on the pre-tax or post-tax amount?",
+        a: "Either works — it's cultural, not legal. US convention is to tip on the pre-tax subtotal (you're tipping the server, not the state), but many people tip on the post-tax total for simplicity. The tool supports both.",
+      },
+      {
+        q: "How does by-item splitting handle shared items like an appetizer?",
+        a: "Mark the appetizer as shared by the relevant subset (say, 3 of 4 diners) — the tool divides that item's cost, plus its share of tax and tip, only among those 3. Everyone else's bill drops accordingly.",
+      },
+      {
+        q: "Why does the total sometimes show $0.01 off?",
+        a: "Rounding. When rounding each person's share to whole cents, the rounded sum can be one cent above or below the true total. We flag it so you can decide who absorbs the penny — usually the person who suggested the place.",
+      },
+      {
+        q: "Can I split a bill with different tip rates per person?",
+        a: "No — tip is applied uniformly. If one person insists on tipping more, the cleanest approach is to split normally, then have that person hand the server extra cash. Mixing tip rates turns a 2-minute split into a 20-minute argument.",
+      },
     ],
   },
   "rent-split-calculator": {
