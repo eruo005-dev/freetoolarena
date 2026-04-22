@@ -13,6 +13,7 @@ import { SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
 import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/ui/Card";
 import { TrustBar } from "@/components/TrustBar";
+import { RecentlyUsed } from "@/components/RecentlyUsed";
 import { SITE_UPDATED } from "@/lib/seo";
 
 const HOMEPAGE_CATEGORY_ORDER: Category[] = [
@@ -64,6 +65,9 @@ export default function HomePage() {
         </div>
         <TrustBar className="mt-8" />
       </section>
+
+      {/* Recently used (hydrates, renders only if user has history) */}
+      <RecentlyUsed />
 
       {/* Popular tools */}
       {tools.length > 0 && (

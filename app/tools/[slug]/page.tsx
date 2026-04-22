@@ -30,7 +30,17 @@ export default function ToolPage({ params, searchParams }: ToolPageProps) {
     notFound();
   }
   return (
-    <ToolShell slug={params.slug} explainer={entry.explainer} howToUse={entry.howToUse}>
+    <ToolShell
+      slug={params.slug}
+      explainer={entry.explainer}
+      howToUse={entry.howToUse}
+      useCases={entry.useCases}
+      whenToUse={entry.whenToUse}
+      whenNotToUse={entry.whenNotToUse}
+      example={entry.example}
+      howItWorks={entry.howItWorks}
+      faq={entry.faq}
+    >
       {entry.render(searchParams)}
     </ToolShell>
   );

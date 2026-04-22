@@ -311,6 +311,18 @@ export interface ToolEntry {
   explainer: ReactElement;
   /** Numbered "how to use" steps. */
   howToUse: string[];
+  /** Optional: short "Common use cases" bullet list. */
+  useCases?: string[];
+  /** Optional: "When to reach for this tool" bullets. */
+  whenToUse?: string[];
+  /** Optional: "When NOT to use this tool" bullets. Stops misuse. */
+  whenNotToUse?: string[];
+  /** Optional: concrete input/output example rendered in a styled card. */
+  example?: { input: string; output: string; note?: string };
+  /** Optional: plain-English "how it works" — algorithm, formula, limits. */
+  howItWorks?: ReactElement;
+  /** Optional: question/answer pairs. Auto-emits FAQPage JSON-LD. */
+  faq?: { q: string; a: string }[];
 }
 
 /** Parse a searchParam as a finite number, falling back to undefined. */
@@ -352,6 +364,36 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set the number of people splitting the bill.",
       "Read the per-person total in the highlighted box.",
     ],
+    useCases: [
+      "Splitting a restaurant bill at dinner.",
+      "Working out delivery / takeout tips quickly.",
+      "Settling the group tab at a bar or cafe.",
+      "Teaching someone how tip math actually works.",
+    ],
+    whenToUse: [
+      "You know the pre-tax total and want a per-person number in seconds.",
+      "You're splitting unevenly and want to sanity-check before Venmo.",
+      "You're in a country with different tipping norms and want to start from a clean percentage.",
+    ],
+    whenNotToUse: [
+      "You need a line-by-line bill splitter (different orders per person). Use a dedicated bill splitter instead.",
+      "You need tax calculated on top — this tool tips on the amount you enter; add tax first or use a tax-inclusive bill.",
+    ],
+    example: {
+      input: "Bill: $84.50\nTip: 18%\nPeople: 3",
+      output: "Tip: $15.21\nTotal: $99.71\nPer person: $33.24",
+      note: "Presets reflect US norms. 15% = fine service, 18–20% = standard, 25%+ = above-and-beyond.",
+    },
+    faq: [
+      {
+        q: "Should I tip on the pre-tax or post-tax amount?",
+        a: "Etiquette guides say pre-tax; most Americans tip on the full total out of habit. The difference on a $100 meal at 8% tax is about $1.40 at 18% — pick a policy and be consistent.",
+      },
+      {
+        q: "Is a 'service charge' the same as a tip?",
+        a: "Not always. If the bill already includes a service charge (common in the UK, Europe, and a growing number of US restaurants), tipping on top is optional. Check the bill.",
+      },
+    ],
   },
   "pomodoro-timer": {
     render: () => <PomodoroTimer />,
@@ -377,6 +419,26 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "When the timer ends, take the 5-minute break (or 15-minute after every 4th round).",
       "Repeat. Aim for 4 focus rounds in a sitting before a longer stop.",
     ],
+    useCases: [
+      "Deep-work sprints on writing, coding, studying.",
+      "Breaking down a dreaded task into concrete 25-minute units.",
+      "Timeboxing creative work so breaks are guaranteed, not deferred.",
+    ],
+    whenToUse: [
+      "You're avoiding a task and need a small, finite commitment.",
+      "You lose time to context-switching and want forced breaks.",
+      "You're pair-programming or studying with someone and want a shared rhythm.",
+    ],
+    whenNotToUse: [
+      "You're already in flow — interrupting yourself breaks a good thing.",
+      "The task is genuinely 5 minutes. Just do it.",
+      "Your work needs continuous attention (live ops, a surgery, a driving lesson).",
+    ],
+    example: {
+      input: "Tap Start",
+      output: "25:00 focus → 05:00 break → 25:00 focus → 05:00 break → 25:00 focus → 05:00 break → 25:00 focus → 15:00 long break",
+      note: "One 'set' = 4 focus rounds + 1 long break. Aim for 2–3 sets per day, not 8.",
+    },
   },
   "budget-calculator": {
     render: () => <BudgetCalculator />,
@@ -402,6 +464,25 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the leftover amount and savings rate.",
       "Adjust until you're saving at least 10–20%.",
     ],
+    useCases: [
+      "Monthly planning — see where your paycheck actually goes.",
+      "Before a big decision (new rent, new car) — stress-test the number.",
+      "Finding the $50–200/month drain that's hiding in a category.",
+    ],
+    whenToUse: [
+      "You want a one-screen snapshot, not a spreadsheet.",
+      "You're comparing two possible monthly setups (e.g. two apartments).",
+      "You're starting a budget for the first time and need a shape to aim at.",
+    ],
+    whenNotToUse: [
+      "You need multi-month cash-flow forecasting — use a proper spreadsheet.",
+      "You need debt-snowball vs. avalanche modeling — use the debt payoff calculator.",
+    ],
+    example: {
+      input: "Take-home: $4,200\nRent: $1,400\nGroceries: $450\nUtilities: $180\nTransport: $220\nSubscriptions: $90\nOther: $600",
+      output: "Total expenses: $2,940\nLeftover: $1,260\nSavings rate: 30%",
+      note: "Above 20% is a strong savings rate. Under 10% means one surprise expense knocks you over.",
+    },
   },
   "word-counter": {
     render: () => <WordCounter />,
@@ -425,6 +506,36 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Stats update live — no button to press.",
       "Use Reading and Speaking time to plan posts, presentations, or scripts.",
       "Clear or copy the text with the buttons below the stat grid.",
+    ],
+    useCases: [
+      "Staying under a meta description limit (≤160 chars).",
+      "Hitting a Twitter / X or SMS length (280 / 160 chars).",
+      "Essay word counts for school submissions.",
+      "Estimating presentation length before you record.",
+      "Checking that a blog post fits a target word range.",
+    ],
+    whenToUse: [
+      "You care about character limits or estimated reading time.",
+      "You want sentence/paragraph counts, not just words.",
+      "You need a second opinion on Word's or Docs's word count (they sometimes disagree).",
+    ],
+    whenNotToUse: [
+      "You need grammar checks — use a grammar tool.",
+      "You need a keyword density report — use a content analyzer.",
+    ],
+    example: {
+      input: "The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.",
+      output: "Words: 17\nCharacters: 86 (with spaces) / 70 (no spaces)\nSentences: 2\nParagraphs: 1\nReading time: ~4s\nSpeaking time: ~8s",
+    },
+    faq: [
+      {
+        q: "Why does my count differ from Google Docs or Word?",
+        a: "Different apps handle hyphens, em dashes, and URLs differently. A hyphenated word like 'well-being' might be 1 word or 2 depending on the tool. Differences of 1–3% are normal.",
+      },
+      {
+        q: "Is the text sent to a server?",
+        a: "No. The entire count is computed in your browser as you type. You can open DevTools' Network tab to verify — no outgoing requests.",
+      },
     ],
   },
   "json-formatter": {
@@ -450,6 +561,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Format for pretty-printed output with 2 or 4-space indent.",
       "Click Minify to strip whitespace for config files or URLs.",
       "Click Validate just to confirm structure without changing output.",
+    ],
+    useCases: [
+      "Reading a raw API response that came back on one line.",
+      "Minifying a config payload before pasting into a URL or env var.",
+      "Finding the exact character where a JSON parser is failing.",
+      "Sharing a clean snippet in a code review or bug report.",
+    ],
+    whenToUse: [
+      "You want to read/debug JSON without sending it to an unknown third-party site.",
+      "You need a fast validator that tells you where the syntax error is.",
+      "You want the output to use 2 vs 4-space indent and keep keys in insertion order.",
+    ],
+    whenNotToUse: [
+      "You need schema validation (JSON Schema / OpenAPI) — use a schema validator.",
+      "You need a JSON diff — use a diff tool.",
+      "You need JSON5 or JSONC (with comments) — this tool uses strict JSON.",
+    ],
+    example: {
+      input: "{\"user\":\"ada\",\"roles\":[\"admin\",\"editor\"],\"active\":true}",
+      output: "{\n  \"user\": \"ada\",\n  \"roles\": [\n    \"admin\",\n    \"editor\"\n  ],\n  \"active\": true\n}",
+      note: "Formatted with 2-space indent. Minify collapses the same structure back to a single line.",
+    },
+    faq: [
+      {
+        q: "Does my JSON get sent anywhere?",
+        a: "No. The tool uses the browser's built-in JSON.parse and JSON.stringify. You can paste production payloads and secrets safely — nothing leaves the tab.",
+      },
+      {
+        q: "Why does the error say 'Unexpected token'?",
+        a: "Usually a missing comma between fields, a trailing comma after the last field, a single-quoted string, or an unquoted key. The column number in the error points at the offending character.",
+      },
     ],
   },
   "character-counter": {
@@ -530,6 +672,57 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Regenerate until you get one you like.",
       "Click Copy and paste into your password manager or the signup form.",
     ],
+    useCases: [
+      "Creating a new account on any site that doesn't auto-generate for you.",
+      "Rotating a password after a breach (check haveibeenpwned.com).",
+      "Generating Wi-Fi, database, or API passwords.",
+      "Seeding a password manager's vault with strong unique passwords.",
+    ],
+    whenToUse: [
+      "You need a password and you don't want to use one you'll remember.",
+      "You use a password manager and need the thing it stores.",
+      "You're setting up infrastructure (DB, SSH key passphrase, etc.).",
+    ],
+    whenNotToUse: [
+      "You need to memorize the password. Use a diceware passphrase (6+ words) instead — still strong, far easier to remember.",
+      "You're generating a PIN. Strong passwords aren't the same as strong PINs; a PIN tool is more appropriate.",
+    ],
+    example: {
+      input: "Length: 20\nClasses: a-z, A-Z, 0-9, symbols\nExclude look-alikes: on",
+      output: "v#Kq7n$Mh3RyfXjwTb2P",
+      note: "At length 20 with all four classes, entropy is ~131 bits — comfortably strong for anything short of a nation-state adversary.",
+    },
+    howItWorks: (
+      <>
+        <p>
+          The generator reads cryptographically secure random bytes from your
+          browser&rsquo;s <code>crypto.getRandomValues()</code> API and maps each
+          byte to a character from the enabled pool. No <code>Math.random()</code> —
+          that&rsquo;s predictable and not safe for passwords.
+        </p>
+        <p>
+          Entropy (shown by the strength meter) is calculated as
+          <code> log2(pool_size) × length</code>. Each added character class expands
+          the pool; each added character multiplies total possibilities. Length
+          wins over complexity — 20 lowercase letters beats a 10-character symbol
+          soup.
+        </p>
+      </>
+    ),
+    faq: [
+      {
+        q: "Is the password actually random?",
+        a: "Yes — it comes from Web Crypto's getRandomValues, the same CSPRNG used by browsers for TLS. Math.random is never used here.",
+      },
+      {
+        q: "Does the site see or log the password?",
+        a: "No. Generation happens in your tab. You can disconnect from the internet and it still works.",
+      },
+      {
+        q: "How long should a password be?",
+        a: "16 is fine for low-stakes sites, 20 for anything you'd hate to have breached, 24+ for a password-manager master password and financial / identity accounts.",
+      },
+    ],
   },
   "stopwatch": {
     render: () => <Stopwatch />,
@@ -577,6 +770,36 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click any case button — output updates live.",
       "Copy the result with the Copy button next to each output.",
       "Clear the input when you're ready for the next text.",
+    ],
+    useCases: [
+      "Normalizing variable names between JavaScript (camelCase), Python (snake_case), and SQL (snake_case).",
+      "Reformatting a headline for title-case social posts or blog headings.",
+      "Converting a phrase into a URL slug (kebab-case) quickly.",
+      "Preparing CONSTANT_CASE names for environment variables.",
+    ],
+    whenToUse: [
+      "Any one-off text case conversion without firing up a terminal.",
+      "Cleaning up a pasted value from a spreadsheet or PDF.",
+      "Comparing how the same phrase looks across naming conventions.",
+    ],
+    whenNotToUse: [
+      "Bulk conversion of 1000+ items — script it in Python or Node instead.",
+      "Language-specific title case that requires style guides (AP, Chicago) — this uses a generic heuristic.",
+      "Text that contains code samples you don't want rewritten.",
+    ],
+    example: {
+      input: "Hello World from Free Tool Arena",
+      output: "camelCase: helloWorldFromFreeToolArena\nPascalCase: HelloWorldFromFreeToolArena\nsnake_case: hello_world_from_free_tool_arena\nkebab-case: hello-world-from-free-tool-arena\nCONSTANT_CASE: HELLO_WORLD_FROM_FREE_TOOL_ARENA",
+    },
+    faq: [
+      {
+        q: "Does Title Case follow AP or Chicago rules?",
+        a: "Neither strictly. Title Case here capitalizes every word. For AP/Chicago rules (which skip short prepositions, conjunctions, etc.), you'd need a specialized tool or an editor add-on.",
+      },
+      {
+        q: "Is my text uploaded anywhere?",
+        a: "No. All conversion happens in your browser tab. Close the tab and the text is gone.",
+      },
     ],
   },
   "slug-generator": {
@@ -675,6 +898,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Scan the formula below if you want to do the math by hand.",
       "Clear the field when you're ready for a new value.",
     ],
+    useCases: [
+      "Following a recipe written in the 'other' unit.",
+      "Checking a foreign weather forecast before travel.",
+      "Converting lab or science class readings between units.",
+      "Making sure an oven setting matches what a recipe calls for.",
+    ],
+    whenToUse: [
+      "Quick single conversions in the kitchen, lab, or travel context.",
+      "Double-checking a mental conversion before acting on it.",
+    ],
+    whenNotToUse: [
+      "Converting a whole recipe — convert each temperature and amount individually with the right tool.",
+      "Wind chill, heat index, or humidity-adjusted temperature (those have their own formulas).",
+    ],
+    example: {
+      input: "Celsius: 180°C",
+      output: "Fahrenheit: 356°F\nKelvin: 453.15 K",
+      note: "180°C is a common oven setting for baking — roughly 'moderate' heat.",
+    },
+    howItWorks: (
+      <>
+        <p>
+          Three straightforward formulas: <code>°F = °C × 9/5 + 32</code>, <code>°C = (°F − 32) × 5/9</code>,
+          and <code>K = °C + 273.15</code>. Kelvin is the SI unit (absolute zero is 0 K = −273.15°C); Celsius and
+          Fahrenheit are both relative scales whose zero-points were chosen historically, not physically.
+        </p>
+      </>
+    ),
+    faq: [
+      {
+        q: "Why is 0°C not 0°F?",
+        a: "They use different zero-points. 0°C is water freezing; 0°F was originally a freezing mixture of brine (salt water), which is colder than plain water. The two scales also have different-sized degrees, which is why the conversion involves multiplication, not just addition.",
+      },
+    ],
   },
   "bmi-calculator": {
     render: (params) => (
@@ -703,6 +960,35 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter your height and weight.",
       "Read your BMI and the WHO category it falls in.",
       "Treat it as a screening number, not a verdict.",
+    ],
+    useCases: [
+      "Quick check against a doctor's BMI number.",
+      "Tracking a rough trend over months while losing or gaining weight.",
+      "Filling a field on a form that asks for BMI.",
+    ],
+    whenToUse: [
+      "You want the number WHO uses, for screening purposes only.",
+      "You're tracking your own trend over time.",
+    ],
+    whenNotToUse: [
+      "You're muscular or athletic — BMI will classify you as overweight when you're lean. Use body-fat percent or waist-to-height ratio instead.",
+      "You're under 18 — use a pediatric BMI percentile calculator, not an adult one.",
+      "You're pregnant — BMI doesn't apply.",
+    ],
+    example: {
+      input: "Height: 175 cm\nWeight: 72 kg",
+      output: "BMI: 23.5\nCategory: Normal (WHO 18.5–24.9)",
+      note: "WHO categories: under 18.5 underweight; 18.5–24.9 normal; 25–29.9 overweight; 30+ obese.",
+    },
+    faq: [
+      {
+        q: "Is BMI a good health measure?",
+        a: "It's a rough screening tool. It correlates with metabolic risk at the population level but can mislabel individuals. Waist-to-height ratio and body-fat percent are better individual measures.",
+      },
+      {
+        q: "Does BMI differ by ethnicity?",
+        a: "Yes. Risk thresholds are lower for people of South Asian ancestry (some guidelines use 23 as 'overweight' and 27.5 as 'obese'). Talk to a doctor for targets specific to you.",
+      },
     ],
   },
   "calorie-calculator": {
@@ -859,6 +1145,48 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter the loan term in years.",
       "Read your monthly payment, total cost, and total interest.",
     ],
+    useCases: [
+      "Comparing two loan offers from different lenders.",
+      "Sanity-checking a car dealership's advertised monthly payment.",
+      "Deciding between a 5-year and 7-year loan term.",
+      "Estimating interest savings from paying extra each month.",
+    ],
+    whenToUse: [
+      "Any fixed-rate installment loan: auto, personal, student, small business.",
+      "Before signing — compare total interest across terms.",
+      "When a lender quotes you a payment but not the total cost.",
+    ],
+    whenNotToUse: [
+      "Mortgages with taxes and insurance — use the mortgage calculator (it includes PITI).",
+      "Variable-rate loans or credit card debt — use the debt payoff calculator.",
+      "Interest-only or balloon-payment loans (different amortization).",
+    ],
+    example: {
+      input: "Principal: $20,000\nRate: 7% APR\nTerm: 5 years",
+      output: "Monthly payment: $396.02\nTotal paid: $23,761.44\nTotal interest: $3,761.44",
+      note: "Stretching the same loan to 7 years drops the payment to $302/mo but increases total interest to $5,371.",
+    },
+    howItWorks: (
+      <>
+        <p>
+          Standard amortization formula: <code>M = P × [r(1+r)^n] / [(1+r)^n - 1]</code> where{" "}
+          <code>P</code> is principal, <code>r</code> is the monthly rate (APR ÷ 12), and{" "}
+          <code>n</code> is the number of monthly payments (years × 12). Every payment covers all
+          interest accrued that month plus a bit of principal; early in the loan most of your
+          payment is interest, later most is principal.
+        </p>
+      </>
+    ),
+    faq: [
+      {
+        q: "Does this include fees or origination charges?",
+        a: "No. It calculates only principal, interest, and term. Lender fees, origination charges, and prepayment penalties vary by loan and should be added separately.",
+      },
+      {
+        q: "Is APR the same as interest rate?",
+        a: "Close but not identical. APR includes certain fees; the raw interest rate does not. For accurate comparison, use the APR from each lender's disclosure.",
+      },
+    ],
   },
   "mortgage-calculator": {
     render: (params) => (
@@ -889,6 +1217,48 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Estimate property tax rate and annual insurance.",
       "Read your full PITI monthly payment.",
     ],
+    useCases: [
+      "Estimating the real monthly cost of a home before making an offer.",
+      "Comparing 15-year vs 30-year mortgage terms.",
+      "Checking whether a specific home fits the 28% rule (PITI ≤ 28% of gross income).",
+      "Understanding how a rate change of 0.5% impacts monthly budget.",
+    ],
+    whenToUse: [
+      "House-hunting — sanity-check the affordability of listings.",
+      "Refinancing — compare current PITI against a new rate.",
+      "Deciding between putting 10%, 15%, or 20% down.",
+    ],
+    whenNotToUse: [
+      "Adjustable-rate mortgages (ARMs) — this assumes a fixed rate for the full term.",
+      "Loans with PMI modeled separately — this calculator folds insurance into a single line.",
+      "HOA fees, utilities, or maintenance reserves — those sit on top of PITI.",
+    ],
+    example: {
+      input: "Home price: $400,000\nDown payment: 20%\nRate: 6.5%\nTerm: 30 years\nProperty tax: 1.2%\nInsurance: $1,500/yr",
+      output: "P&I: $2,022/mo\nTaxes: $400/mo\nInsurance: $125/mo\nTotal PITI: $2,547/mo",
+      note: "The advertised P&I number is 21% lower than the real monthly cost — always budget against PITI.",
+    },
+    howItWorks: (
+      <>
+        <p>
+          Principal and interest use the standard amortization formula{" "}
+          <code>M = P × [r(1+r)^n] / [(1+r)^n - 1]</code>. Taxes are calculated as{" "}
+          <code>(home price × tax rate) / 12</code>. Insurance is{" "}
+          <code>(annual premium) / 12</code>. The four components sum to PITI — the number you
+          actually pay each month.
+        </p>
+      </>
+    ),
+    faq: [
+      {
+        q: "Why is my real mortgage quote higher than this?",
+        a: "Likely PMI (private mortgage insurance, required if you put down less than 20%), HOA fees, or an escrow cushion. Add those separately.",
+      },
+      {
+        q: "Should I choose 15 or 30 years?",
+        a: "15-year saves enormous interest but roughly doubles the monthly payment. 30-year is safer for cash flow and lets you invest the difference. Run both and compare.",
+      },
+    ],
   },
   "compound-interest-calculator": {
     render: (params) => (
@@ -918,6 +1288,48 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set expected annual return (7% is a common long-term stock market assumption).",
       "Set number of years to invest.",
       "See the ending balance and total contributed vs. interest earned.",
+    ],
+    useCases: [
+      "Projecting a retirement account balance at age 65.",
+      "Showing a teenager what $100/month becomes over 40 years.",
+      "Comparing the impact of starting 5 years earlier vs saving 50% more.",
+      "Modeling a 529 college savings account growth.",
+    ],
+    whenToUse: [
+      "Long-horizon planning (10+ years) where compounding dominates.",
+      "Comparing consistent-contribution strategies over time.",
+      "Illustrating the cost of waiting to invest.",
+    ],
+    whenNotToUse: [
+      "Short-term savings under 5 years — use the savings goal calculator.",
+      "Debt payoff — the math runs the opposite direction (use the debt payoff calculator).",
+      "Tax-advantaged accounts where contribution limits and tax treatment matter (use a proper retirement planner).",
+    ],
+    example: {
+      input: "Starting balance: $5,000\nMonthly contribution: $500\nAnnual return: 7%\nYears: 30",
+      output: "Ending balance: $650,000\nTotal contributed: $185,000\nInterest earned: $465,000",
+      note: "Interest earned exceeds contributions by 2.5×. This is why time matters more than amount.",
+    },
+    howItWorks: (
+      <>
+        <p>
+          Uses the future-value formula for a series with compound interest:{" "}
+          <code>FV = P(1+r)^n + PMT × [((1+r)^n - 1) / r]</code> where <code>P</code> is starting
+          balance, <code>PMT</code> is periodic contribution, <code>r</code> is periodic rate, and{" "}
+          <code>n</code> is number of periods. We compound monthly to match how most retirement
+          accounts work.
+        </p>
+      </>
+    ),
+    faq: [
+      {
+        q: "What annual return should I use?",
+        a: "7% is a common real (inflation-adjusted) long-term stock market estimate. 10% is the nominal historical average. Use 5-6% for a conservative bond-heavy portfolio.",
+      },
+      {
+        q: "Does this account for inflation?",
+        a: "No. The output is in future dollars. If you assumed a 7% real return (already inflation-adjusted), then the number approximates today's purchasing power. If you used 10%, divide by roughly 2-3× over 30 years for a rough real-dollar estimate.",
+      },
     ],
   },
   "savings-goal-calculator": {
@@ -967,6 +1379,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter the APR (check your statement — often 18-25% on cards).",
       "Enter the monthly payment you can commit to.",
       "Read months to payoff, total paid, and total interest.",
+    ],
+    useCases: [
+      "Deciding between minimum payment vs an aggressive payoff plan.",
+      "Seeing how an extra $100/month shortens a credit card balance.",
+      "Confirming your monthly payment actually reduces principal.",
+      "Sanity check before consolidating multiple balances.",
+    ],
+    whenToUse: [
+      "Any single fixed-APR balance — credit cards, store cards, personal loans.",
+      "Comparing avalanche vs snowball strategies on one debt at a time.",
+      "Checking whether your payment is above the 'interest floor'.",
+    ],
+    whenNotToUse: [
+      "Multiple debts with different APRs — model each separately or use a debt snowball spreadsheet.",
+      "Promotional-rate balances (0% APR intro) — run the calculation against the post-promo rate.",
+      "Taxes, tuition, or government-backed debt with income-driven repayment (different rules).",
+    ],
+    example: {
+      input: "Balance: $5,000\nAPR: 22%\nMonthly payment: $150",
+      output: "Months to payoff: 49 months (≈4 yrs)\nTotal paid: $7,290\nTotal interest: $2,290",
+      note: "Bumping the payment to $250/month cuts payoff to 24 months and total interest to $1,026 — saving $1,264.",
+    },
+    faq: [
+      {
+        q: "What if my payment is lower than the monthly interest?",
+        a: "The balance grows. The calculator will flag this case. Any payment below the interest floor means you'll never pay off the debt on that schedule — increase it or the balance compounds forever.",
+      },
+      {
+        q: "Avalanche or snowball — which is better?",
+        a: "Mathematically, avalanche (highest APR first) saves the most interest. Psychologically, snowball (smallest balance first) produces faster visible wins. For most people, snowball wins because consistency beats optimization.",
+      },
     ],
   },
   "to-do-list": {
@@ -1019,6 +1462,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick your pay frequency (weekly, biweekly, monthly).",
       "Set an approximate state tax rate (varies by state).",
       "Read your estimated net pay per paycheck and per year.",
+    ],
+    useCases: [
+      "Estimating take-home pay for a new job offer.",
+      "Comparing the net of two offers in different states.",
+      "Setting a realistic monthly budget based on actual income.",
+      "Understanding how a raise translates to real spendable dollars.",
+    ],
+    whenToUse: [
+      "Evaluating a salaried W-2 offer.",
+      "Ballparking net pay before pre-tax deductions.",
+      "Cross-checking payroll math against your first pay stub.",
+    ],
+    whenNotToUse: [
+      "Self-employment or 1099 income (different tax treatment — estimated quarterlies, self-employment tax).",
+      "Pre-tax benefits math (401k, HSA, health insurance) that requires plan-specific details.",
+      "Non-US payroll — this uses US federal brackets, FICA, and Medicare only.",
+    ],
+    example: {
+      input: "Gross salary: $85,000\nFrequency: biweekly\nState tax: 5%",
+      output: "Per paycheck: ≈$2,380\nAnnual net: ≈$61,900\nTotal deductions: ≈$23,100",
+      note: "Real take-home will be lower once 401k, health insurance, and HSA contributions come out.",
+    },
+    faq: [
+      {
+        q: "Why doesn't this match my pay stub exactly?",
+        a: "Pre-tax deductions (401k, health insurance, HSA), post-tax deductions (Roth 401k, garnishments), and local/city taxes aren't modeled. The output is a ballpark before those are applied.",
+      },
+      {
+        q: "Is this accurate for 2026?",
+        a: "Federal brackets and FICA rates are reviewed annually. If you're filing for a tax year with different brackets, treat the numbers as approximate.",
+      },
     ],
   },
   "roi-calculator": {
@@ -1337,6 +1811,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Decode to convert back to plain text.",
       "Copy the result with one click.",
     ],
+    useCases: [
+      "Embedding small images in CSS as data URIs.",
+      "Decoding the payload of a JWT to inspect claims (without verifying the signature).",
+      "Encoding binary data for safe transport in JSON APIs.",
+      "Generating Basic Auth headers for testing an API.",
+    ],
+    whenToUse: [
+      "Any time text/binary data must travel through a text-only channel (JSON, URL, email).",
+      "Debugging API responses that include base64 blobs.",
+      "Building HTTP Basic Auth headers manually.",
+    ],
+    whenNotToUse: [
+      "As encryption or obfuscation — base64 is trivially reversible, not secure.",
+      "For large binary files (base64 inflates size by ~33%; use real uploads instead).",
+      "When your language/runtime already has a built-in encoder — use that for production code.",
+    ],
+    example: {
+      input: "Hello, World! 👋",
+      output: "SGVsbG8sIFdvcmxkISDwn5GL",
+      note: "Note the UTF-8 emoji is preserved across the round-trip. ASCII-only base64 libraries sometimes mangle Unicode.",
+    },
+    faq: [
+      {
+        q: "Is base64 encryption?",
+        a: "No. Base64 is encoding, not encryption. Anyone can decode it instantly. Never use base64 to 'hide' passwords, tokens, or private data.",
+      },
+      {
+        q: "Why does base64 text contain padding characters like '=' at the end?",
+        a: "Base64 encodes input in 3-byte chunks. When the input length isn't a multiple of 3, '=' pads the output to a multiple of 4 characters. Some decoders tolerate missing padding, others reject it.",
+      },
+    ],
   },
   "url-encoder-decoder": {
     render: () => <UrlEncoderDecoder />,
@@ -1381,6 +1886,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set flags (g, i, m, s) as needed.",
       "Paste test text into the input.",
       "Review matches highlighted live.",
+    ],
+    useCases: [
+      "Validating an email or phone pattern before pasting it into form validation code.",
+      "Building a search-and-replace expression for VS Code or editor macros.",
+      "Debugging why a regex doesn't match the input you expected it to.",
+      "Testing capture groups before using them in backreferences.",
+    ],
+    whenToUse: [
+      "Building or iterating on a new regex pattern.",
+      "Comparing behavior of /g vs no /g, or case-insensitive vs case-sensitive.",
+      "Exploring what a pattern matches across sample text.",
+    ],
+    whenNotToUse: [
+      "Parsing HTML or deeply nested structures — use a real parser instead of regex.",
+      "Performance-critical matching on huge inputs (benchmark in your target runtime).",
+      "PCRE-only features — browser JavaScript regex has a different (slightly smaller) feature set.",
+    ],
+    example: {
+      input: "Pattern: \\b\\w+@\\w+\\.\\w+\\b\nFlags: g\nText: Contact us at hello@example.com or sales@example.co",
+      output: "2 matches:\nhello@example.com\nsales@example.co",
+      note: "This is a *rough* email check — real email validation is vastly more complex (RFC 5321). For form input, a lightweight check is usually sufficient; the real validation is sending a confirmation email.",
+    },
+    faq: [
+      {
+        q: "Why does my pattern match here but not in my code?",
+        a: "Flags, escape rules, and regex flavor. Browser JavaScript uses ECMAScript regex. Python, Go, and PCRE each have their own dialect with slightly different syntax. Double-check lookbehind, named groups, and Unicode classes.",
+      },
+      {
+        q: "How do I make my regex case-insensitive?",
+        a: "Add the 'i' flag. So /hello/i matches 'Hello', 'HELLO', and 'hello'.",
+      },
     ],
   },
   "uuid-generator": {
@@ -1773,6 +2309,37 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Leave Quality at 75% and Max dim at 2400px — that's the sweet spot.",
       "Click Compress and read the size-saved percentage.",
       "Drop the quality slider if the file still feels big.",
+    ],
+    useCases: [
+      "Shrinking phone photos before uploading to a blog, shop, or social platform.",
+      "Getting a website page-weight below the 1MB threshold for good Core Web Vitals.",
+      "Compressing images for email attachments where file-size limits apply.",
+      "Batch-optimizing product photography before pushing to an e-commerce catalog.",
+    ],
+    whenToUse: [
+      "JPEG or WebP photos where small visual quality loss is acceptable.",
+      "Any image over ~500 KB headed for the web.",
+      "Re-saving phone photos (10-20 MB originals) for web or email.",
+    ],
+    whenNotToUse: [
+      "Images that need transparency — use the PNG or WebP format converter instead.",
+      "Archival or print work where lossless is required.",
+      "Already-small images (<100 KB) — the savings will be minimal and quality may suffer.",
+    ],
+    example: {
+      input: "Original: 12 MB JPEG (4032 × 3024)\nQuality: 75%\nMax dim: 2400px",
+      output: "Compressed: 480 KB (2400 × 1800)\nSize saved: 96%",
+      note: "Visually indistinguishable at normal viewing distances. For hero images on a landing page, this is the target.",
+    },
+    faq: [
+      {
+        q: "Does this upload my photos to a server?",
+        a: "No. The entire compression runs in your browser using the Canvas API. Your photos never leave your device.",
+      },
+      {
+        q: "What quality setting should I pick?",
+        a: "75% is the sweet spot for web photos. 85% for anything where detail matters (product shots, portraits). Below 60% tends to introduce visible artifacts.",
+      },
     ],
   },
   "svg-to-png": {

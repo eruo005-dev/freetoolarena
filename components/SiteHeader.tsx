@@ -24,6 +24,9 @@ export function SiteHeader() {
         >
           <NavLink href="/tools">Tools</NavLink>
           <NavLink href="/guides">Guides</NavLink>
+          <NavLink href="/favorites">
+            <span aria-hidden>★ </span>Favorites
+          </NavLink>
           <NavLink href="/about">About</NavLink>
         </nav>
       </Container>

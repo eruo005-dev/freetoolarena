@@ -43,6 +43,10 @@ export function SiteFooter() {
 
           <FooterColumn title="Safety & legal">
             <FooterLink href="/trust">Trust & safety</FooterLink>
+            <FooterLink href="/security">Security</FooterLink>
+            <FooterLink href="/methodology">Tool methodology</FooterLink>
+            <FooterLink href="/editorial">Editorial policy</FooterLink>
+            <FooterLink href="/ai-policy">AI content policy</FooterLink>
             <FooterLink href="/privacy">Privacy policy</FooterLink>
             <FooterLink href="/terms">Terms of service</FooterLink>
             <FooterLink href="/sitemap.xml">Sitemap</FooterLink>
