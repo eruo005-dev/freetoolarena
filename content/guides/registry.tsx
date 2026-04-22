@@ -146,6 +146,9 @@ import * as ScheduleTimeZones from "./how-to-schedule-across-time-zones";
 import * as SetYourMacros from "./how-to-set-your-macros";
 import * as EstimateTaxBill from "./how-to-estimate-your-tax-bill";
 import * as DaysBetweenDates from "./how-to-calculate-days-between-dates";
+import * as SnowballVsAvalanche from "./how-to-choose-snowball-vs-avalanche";
+import * as SetSavingsGoal from "./how-to-set-a-savings-goal";
+import * as SalaryToHourly from "./how-to-convert-salary-to-hourly-rate";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1438,6 +1441,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Count days between any two dates — calendar, business, inclusive.",
       targetSlug: "date-difference-calculator",
+    },
+  },
+  "how-to-choose-snowball-vs-avalanche": {
+    intro: SnowballVsAvalanche.intro,
+    body: SnowballVsAvalanche.body,
+    cta: {
+      label: "Compare payoff strategies — free debt payoff calculator.",
+      targetSlug: "debt-payoff-calculator",
+    },
+  },
+  "how-to-set-a-savings-goal": {
+    intro: SetSavingsGoal.intro,
+    body: SetSavingsGoal.body,
+    cta: {
+      label: "Back-solve monthly contribution — free savings goal calculator.",
+      targetSlug: "savings-goal-calculator",
+    },
+  },
+  "how-to-convert-salary-to-hourly-rate": {
+    intro: SalaryToHourly.intro,
+    body: SalaryToHourly.body,
+    cta: {
+      label: "Convert salary to hourly — all four methods side by side.",
+      targetSlug: "hourly-rate-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
