@@ -155,6 +155,9 @@ import * as PlanRacePace from "./how-to-plan-your-race-pace";
 import * as FindBreakEven from "./how-to-find-your-break-even-point";
 import * as ExtendRunway from "./how-to-extend-your-startup-runway";
 import * as PriceProduct from "./how-to-price-your-product";
+import * as ForecastCashFlow from "./how-to-forecast-cash-flow";
+import * as ImproveMargin from "./how-to-improve-your-profit-margin";
+import * as ShopCarLoan from "./how-to-shop-for-a-car-loan";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1519,6 +1522,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Price a product with proper margin — free pricing calculator.",
       targetSlug: "pricing-calculator",
+    },
+  },
+  "how-to-forecast-cash-flow": {
+    intro: ForecastCashFlow.intro,
+    body: ForecastCashFlow.body,
+    cta: {
+      label: "Build a cash flow forecast — free calculator.",
+      targetSlug: "cash-flow-calculator",
+    },
+  },
+  "how-to-improve-your-profit-margin": {
+    intro: ImproveMargin.intro,
+    body: ImproveMargin.body,
+    cta: {
+      label: "Check margins across your products — free profit margin calculator.",
+      targetSlug: "profit-margin-calculator",
+    },
+  },
+  "how-to-shop-for-a-car-loan": {
+    intro: ShopCarLoan.intro,
+    body: ShopCarLoan.body,
+    cta: {
+      label: "Compare APR and term scenarios — free car loan calculator.",
+      targetSlug: "car-loan-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
