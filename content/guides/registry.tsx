@@ -128,6 +128,9 @@ import * as CalculateProfitMargin from "./how-to-calculate-profit-margin";
 import * as CalculateBodyFatPercentage from "./how-to-calculate-body-fat-percentage";
 import * as CalculateOvertimePay from "./how-to-calculate-overtime-pay";
 import * as CalculateTdeeAndBmr from "./how-to-calculate-tdee-and-bmr";
+import * as CalculateTrueHourlyRate from "./how-to-calculate-your-true-hourly-rate";
+import * as InflationAffectsSavings from "./how-inflation-affects-your-savings";
+import * as CompareDiscounts from "./how-to-compare-discounts";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1276,6 +1279,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Get your BMR and TDEE in seconds using the Mifflin-St Jeor equation.",
       targetSlug: "bmr-calculator",
+    },
+  },
+  "how-to-calculate-your-true-hourly-rate": {
+    intro: CalculateTrueHourlyRate.intro,
+    body: CalculateTrueHourlyRate.body,
+    cta: {
+      label: "Compute your real hourly rate including PTO, benefits, commute, and unpaid OT.",
+      targetSlug: "hourly-rate-calculator",
+    },
+  },
+  "how-inflation-affects-your-savings": {
+    intro: InflationAffectsSavings.intro,
+    body: InflationAffectsSavings.body,
+    cta: {
+      label: "Run the inflation math on any amount and any timeframe.",
+      targetSlug: "inflation-calculator",
+    },
+  },
+  "how-to-compare-discounts": {
+    intro: CompareDiscounts.intro,
+    body: CompareDiscounts.body,
+    cta: {
+      label: "Stack percent-off, dollar-off, BOGO, and tax — find the real out-the-door price.",
+      targetSlug: "discount-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
