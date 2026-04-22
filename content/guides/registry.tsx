@@ -134,6 +134,9 @@ import * as CompareDiscounts from "./how-to-compare-discounts";
 import * as CalculatePercentageChange from "./how-to-calculate-percentage-change";
 import * as SplitRestaurantBill from "./how-to-split-a-restaurant-bill";
 import * as TrackOvulation from "./how-to-track-ovulation";
+import * as BoostYourGpa from "./how-to-boost-your-gpa";
+import * as WhatYouNeedOnAFinal from "./how-to-calculate-what-you-need-on-a-final";
+import * as MarketingRoi from "./how-to-calculate-marketing-roi";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1330,6 +1333,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Predict your fertile window from cycle data in seconds.",
       targetSlug: "ovulation-calculator",
+    },
+  },
+  "how-to-boost-your-gpa": {
+    intro: BoostYourGpa.intro,
+    body: BoostYourGpa.body,
+    cta: {
+      label: "Plot GPA scenarios and check if your target is mathematically reachable.",
+      targetSlug: "gpa-calculator",
+    },
+  },
+  "how-to-calculate-what-you-need-on-a-final": {
+    intro: WhatYouNeedOnAFinal.intro,
+    body: WhatYouNeedOnAFinal.body,
+    cta: {
+      label: "Enter your category weights — see the exact score you need on the final.",
+      targetSlug: "grade-calculator",
+    },
+  },
+  "how-to-calculate-marketing-roi": {
+    intro: MarketingRoi.intro,
+    body: MarketingRoi.body,
+    cta: {
+      label: "Run simple and annualized ROI with gross-margin adjustments.",
+      targetSlug: "roi-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
