@@ -233,6 +233,70 @@ const WeeklyPlanner = dynamic(() => import("./WeeklyPlanner").then(m => ({ defau
 const MeetingAgendaBuilder = dynamic(() => import("./MeetingAgendaBuilder").then(m => ({ default: m.MeetingAgendaBuilder })), { loading: Skeleton });
 const DecisionWheel = dynamic(() => import("./DecisionWheel").then(m => ({ default: m.DecisionWheel })), { loading: Skeleton });
 
+// ---------- Wave 8: 50 competitor-killer tools ----------
+const CaesarCipher = dynamic(() => import("./CaesarCipher").then(m => ({ default: m.CaesarCipher })), { loading: Skeleton });
+const MorseCodeTranslator = dynamic(() => import("./MorseCodeTranslator").then(m => ({ default: m.MorseCodeTranslator })), { loading: Skeleton });
+const BinaryTextEncoder = dynamic(() => import("./BinaryTextEncoder").then(m => ({ default: m.BinaryTextEncoder })), { loading: Skeleton });
+const AsciiArtGenerator = dynamic(() => import("./AsciiArtGenerator").then(m => ({ default: m.AsciiArtGenerator })), { loading: Skeleton });
+const RomanNumeralConverter = dynamic(() => import("./RomanNumeralConverter").then(m => ({ default: m.RomanNumeralConverter })), { loading: Skeleton });
+const BionicReadingFormatter = dynamic(() => import("./BionicReadingFormatter").then(m => ({ default: m.BionicReadingFormatter })), { loading: Skeleton });
+const TextSummarizer = dynamic(() => import("./TextSummarizer").then(m => ({ default: m.TextSummarizer })), { loading: Skeleton });
+const Base64ToImage = dynamic(() => import("./Base64ToImage").then(m => ({ default: m.Base64ToImage })), { loading: Skeleton });
+const ImageToBase64 = dynamic(() => import("./ImageToBase64").then(m => ({ default: m.ImageToBase64 })), { loading: Skeleton });
+const DiscordTimestamp = dynamic(() => import("./DiscordTimestamp").then(m => ({ default: m.DiscordTimestamp })), { loading: Skeleton });
+const MockDataGenerator = dynamic(() => import("./MockDataGenerator").then(m => ({ default: m.MockDataGenerator })), { loading: Skeleton });
+const JsonToTypescript = dynamic(() => import("./JsonToTypescript").then(m => ({ default: m.JsonToTypescript })), { loading: Skeleton });
+const CssToTailwind = dynamic(() => import("./CssToTailwind").then(m => ({ default: m.CssToTailwind })), { loading: Skeleton });
+const TailwindToCss = dynamic(() => import("./TailwindToCss").then(m => ({ default: m.TailwindToCss })), { loading: Skeleton });
+const HtmlToJsx = dynamic(() => import("./HtmlToJsx").then(m => ({ default: m.HtmlToJsx })), { loading: Skeleton });
+const SqlToJson = dynamic(() => import("./SqlToJson").then(m => ({ default: m.SqlToJson })), { loading: Skeleton });
+const GitignoreGenerator = dynamic(() => import("./GitignoreGenerator").then(m => ({ default: m.GitignoreGenerator })), { loading: Skeleton });
+const ReadmeGenerator = dynamic(() => import("./ReadmeGenerator").then(m => ({ default: m.ReadmeGenerator })), { loading: Skeleton });
+const RegexBuilder = dynamic(() => import("./RegexBuilder").then(m => ({ default: m.RegexBuilder })), { loading: Skeleton });
+const ExifViewer = dynamic(() => import("./ExifViewer").then(m => ({ default: m.ExifViewer })), { loading: Skeleton });
+const ExifRemover = dynamic(() => import("./ExifRemover").then(m => ({ default: m.ExifRemover })), { loading: Skeleton });
+const PassportPhotoMaker = dynamic(() => import("./PassportPhotoMaker").then(m => ({ default: m.PassportPhotoMaker })), { loading: Skeleton });
+const SignatureDrawer = dynamic(() => import("./SignatureDrawer").then(m => ({ default: m.SignatureDrawer })), { loading: Skeleton });
+const ProfilePicCircleCropper = dynamic(() => import("./ProfilePicCircleCropper").then(m => ({ default: m.ProfilePicCircleCropper })), { loading: Skeleton });
+const ImageBlurCensor = dynamic(() => import("./ImageBlurCensor").then(m => ({ default: m.ImageBlurCensor })), { loading: Skeleton });
+const PhotoCollage = dynamic(() => import("./PhotoCollage").then(m => ({ default: m.PhotoCollage })), { loading: Skeleton });
+const MemeGenerator = dynamic(() => import("./MemeGenerator").then(m => ({ default: m.MemeGenerator })), { loading: Skeleton });
+const YoutubeThumbnailDownloader = dynamic(() => import("./YoutubeThumbnailDownloader").then(m => ({ default: m.YoutubeThumbnailDownloader })), { loading: Skeleton });
+const TweetThreadSplitter = dynamic(() => import("./TweetThreadSplitter").then(m => ({ default: m.TweetThreadSplitter })), { loading: Skeleton });
+const UsernameGenerator = dynamic(() => import("./UsernameGenerator").then(m => ({ default: m.UsernameGenerator })), { loading: Skeleton });
+const EmailSignatureBuilder = dynamic(() => import("./EmailSignatureBuilder").then(m => ({ default: m.EmailSignatureBuilder })), { loading: Skeleton });
+const CertificateGenerator = dynamic(() => import("./CertificateGenerator").then(m => ({ default: m.CertificateGenerator })), { loading: Skeleton });
+const BusinessCardDesigner = dynamic(() => import("./BusinessCardDesigner").then(m => ({ default: m.BusinessCardDesigner })), { loading: Skeleton });
+const ResumeSkeletonBuilder = dynamic(() => import("./ResumeSkeletonBuilder").then(m => ({ default: m.ResumeSkeletonBuilder })), { loading: Skeleton });
+const CoverLetterBuilder = dynamic(() => import("./CoverLetterBuilder").then(m => ({ default: m.CoverLetterBuilder })), { loading: Skeleton });
+const ImageToText = dynamic(() => import("./ImageToText").then(m => ({ default: m.ImageToText })), { loading: Skeleton });
+const HandwritingToText = dynamic(() => import("./HandwritingToText").then(m => ({ default: m.HandwritingToText })), { loading: Skeleton });
+const VoiceRecorder = dynamic(() => import("./VoiceRecorder").then(m => ({ default: m.VoiceRecorder })), { loading: Skeleton });
+const AudioTrimmer = dynamic(() => import("./AudioTrimmer").then(m => ({ default: m.AudioTrimmer })), { loading: Skeleton });
+const AudioSilenceRemover = dynamic(() => import("./AudioSilenceRemover").then(m => ({ default: m.AudioSilenceRemover })), { loading: Skeleton });
+const AudioSpeedChanger = dynamic(() => import("./AudioSpeedChanger").then(m => ({ default: m.AudioSpeedChanger })), { loading: Skeleton });
+const AudioPitchChanger = dynamic(() => import("./AudioPitchChanger").then(m => ({ default: m.AudioPitchChanger })), { loading: Skeleton });
+const VideoTrimmer = dynamic(() => import("./VideoTrimmer").then(m => ({ default: m.VideoTrimmer })), { loading: Skeleton });
+const VideoToGif = dynamic(() => import("./VideoToGif").then(m => ({ default: m.VideoToGif })), { loading: Skeleton });
+const VideoMute = dynamic(() => import("./VideoMute").then(m => ({ default: m.VideoMute })), { loading: Skeleton });
+const VideoFrameExtractor = dynamic(() => import("./VideoFrameExtractor").then(m => ({ default: m.VideoFrameExtractor })), { loading: Skeleton });
+const ScreenRecorder = dynamic(() => import("./ScreenRecorder").then(m => ({ default: m.ScreenRecorder })), { loading: Skeleton });
+const TextToSpeech = dynamic(() => import("./TextToSpeech").then(m => ({ default: m.TextToSpeech })), { loading: Skeleton });
+const SpeechToText = dynamic(() => import("./SpeechToText").then(m => ({ default: m.SpeechToText })), { loading: Skeleton });
+const VoiceNoteTranscriber = dynamic(() => import("./VoiceNoteTranscriber").then(m => ({ default: m.VoiceNoteTranscriber })), { loading: Skeleton });
+
+// ---------- Wave 9: AI & prompt tools (10) ----------
+const AiPromptGenerator = dynamic(() => import("./AiPromptGenerator").then(m => ({ default: m.AiPromptGenerator })), { loading: Skeleton });
+const AiPromptLibrary = dynamic(() => import("./AiPromptLibrary").then(m => ({ default: m.AiPromptLibrary })), { loading: Skeleton });
+const ChatPromptBuilder = dynamic(() => import("./ChatPromptBuilder").then(m => ({ default: m.ChatPromptBuilder })), { loading: Skeleton });
+const AiImagePromptBuilder = dynamic(() => import("./AiImagePromptBuilder").then(m => ({ default: m.AiImagePromptBuilder })), { loading: Skeleton });
+const AiArtStylePicker = dynamic(() => import("./AiArtStylePicker").then(m => ({ default: m.AiArtStylePicker })), { loading: Skeleton });
+const AiTokenCounter = dynamic(() => import("./AiTokenCounter").then(m => ({ default: m.AiTokenCounter })), { loading: Skeleton });
+const AiModelCompare = dynamic(() => import("./AiModelCompare").then(m => ({ default: m.AiModelCompare })), { loading: Skeleton });
+const PromptImprover = dynamic(() => import("./PromptImprover").then(m => ({ default: m.PromptImprover })), { loading: Skeleton });
+const AiChatExportFormatter = dynamic(() => import("./AiChatExportFormatter").then(m => ({ default: m.AiChatExportFormatter })), { loading: Skeleton });
+const AiWritingHumanizer = dynamic(() => import("./AiWritingHumanizer").then(m => ({ default: m.AiWritingHumanizer })), { loading: Skeleton });
+
 /** Next passes `searchParams` as `string | string[] | undefined`. */
 export type RenderParams = Record<string, string | string[] | undefined>;
 
@@ -5373,6 +5437,814 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Spin the wheel.",
       "Remove the chosen option if you want draw-without-replacement.",
       "Copy the pick to Slack or chat.",
+    ],
+  },
+
+  // ---------- Wave 8 + 9 (60 new tools) ----------
+  "caesar-cipher": {
+    render: () => <CaesarCipher />,
+    explainer: (
+      <>
+        <p>Shift every letter by a fixed number of positions to encode or decode a message. Classic Caesar cipher and ROT13 in one — useful for puzzles, scouts, and basic obfuscation (not real security).</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the message.",
+      "Pick a shift (1–25) or use the ROT13 button.",
+      "Toggle Encode / Decode.",
+      "Copy the result.",
+    ],
+  },
+  "morse-code-translator": {
+    render: () => <MorseCodeTranslator />,
+    explainer: (
+      <>
+        <p>Convert text to Morse code and back, and optionally play the result as audio at adjustable speed. Handles letters, digits, and common punctuation.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste text or Morse code.",
+      "Choose direction (Text → Morse or Morse → Text).",
+      "Press Play to hear it.",
+      "Copy the translated output.",
+    ],
+  },
+  "binary-text-encoder": {
+    render: () => <BinaryTextEncoder />,
+    explainer: (
+      <>
+        <p>Convert ASCII text to 8-bit binary (and back). Useful for computer science homework, cipher puzzles, or explaining how text becomes bytes.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste text or a binary string.",
+      "Pick the direction of conversion.",
+      "Copy the result.",
+      "Tweak spacing if you need a different block size.",
+    ],
+  },
+  "ascii-art-generator": {
+    render: () => <AsciiArtGenerator />,
+    explainer: (
+      <>
+        <p>Turn plain text into oversized ASCII-art letters with multiple font styles. Great for terminal banners, READMEs, and commit messages.</p>
+      </>
+    ),
+    howToUse: [
+      "Type the text.",
+      "Pick a font style.",
+      "Copy the ASCII art.",
+      "Paste into any monospaced surface.",
+    ],
+  },
+  "roman-numeral-converter": {
+    render: () => <RomanNumeralConverter />,
+    explainer: (
+      <>
+        <p>Convert Arabic numbers to Roman numerals and back, up to the standard upper bound of 3,999,999 using overline notation.</p>
+      </>
+    ),
+    howToUse: [
+      "Enter a number or Roman numeral.",
+      "Pick the direction.",
+      "Read the converted value.",
+      "Copy to clipboard.",
+    ],
+  },
+  "bionic-reading-formatter": {
+    render: () => <BionicReadingFormatter />,
+    explainer: (
+      <>
+        <p>Reformat text so the first portion of each word is bold. Easier to skim long articles and can help readers with attention fatigue.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text.",
+      "Adjust the bold-ratio slider.",
+      "Preview the reformatted version.",
+      "Copy the styled text (HTML).",
+    ],
+  },
+  "text-summarizer": {
+    render: () => <TextSummarizer />,
+    explainer: (
+      <>
+        <p>Paste an article, get an extractive summary in 3, 5, or 10 sentences. Everything runs in your browser — no upload, no account.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the article.",
+      "Pick summary length.",
+      "Read the summary.",
+      "Copy or refine.",
+    ],
+  },
+  "base64-to-image": {
+    render: () => <Base64ToImage />,
+    explainer: (
+      <>
+        <p>Paste a base64 image string (with or without data: prefix) and instantly preview or download the image. Reverse of the image-to-base64 tool.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the base64 string.",
+      "Preview the decoded image.",
+      "Download as PNG or JPG.",
+    ],
+  },
+  "image-to-base64": {
+    render: () => <ImageToBase64 />,
+    explainer: (
+      <>
+        <p>Drop an image and get a base64 data URL you can paste into HTML, CSS, or an API payload. All in your browser, nothing uploaded.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop or pick an image.",
+      "Copy the data URL.",
+      "Paste into code, email, or a CMS.",
+    ],
+  },
+  "discord-timestamp": {
+    render: () => <DiscordTimestamp />,
+    explainer: (
+      <>
+        <p>Pick a date and time, get every Discord timestamp format — short date, long date, relative — ready to paste into chat.</p>
+      </>
+    ),
+    howToUse: [
+      "Pick the date and time.",
+      "Pick your timezone.",
+      "Copy the format you need.",
+    ],
+  },
+  "mock-data-generator": {
+    render: () => <MockDataGenerator />,
+    explainer: (
+      <>
+        <p>Generate realistic fake rows — names, emails, companies, dates — as JSON, CSV, or SQL inserts. Useful for seeding tests and demos.</p>
+      </>
+    ),
+    howToUse: [
+      "Pick fields and row count.",
+      "Choose export format.",
+      "Click generate.",
+      "Copy or download the dataset.",
+    ],
+  },
+  "json-to-typescript": {
+    render: () => <JsonToTypescript />,
+    explainer: (
+      <>
+        <p>Paste any JSON object and get a matching TypeScript interface — nested types, optional fields, and array detection included.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste a JSON object.",
+      "Name the root interface.",
+      "Copy the generated TypeScript.",
+    ],
+  },
+  "css-to-tailwind": {
+    render: () => <CssToTailwind />,
+    explainer: (
+      <>
+        <p>Paste a raw CSS rule and get the equivalent Tailwind utility classes. Handles common properties like padding, margins, colors, and display.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste CSS (one rule).",
+      "Copy the Tailwind classes.",
+      "Paste into your markup.",
+    ],
+  },
+  "tailwind-to-css": {
+    render: () => <TailwindToCss />,
+    explainer: (
+      <>
+        <p>Reverse of css-to-tailwind: paste Tailwind classes, get the CSS they compile to. Handy when debugging or moving off Tailwind.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste a list of Tailwind classes.",
+      "Read the CSS output.",
+      "Copy the result.",
+    ],
+  },
+  "html-to-jsx": {
+    render: () => <HtmlToJsx />,
+    explainer: (
+      <>
+        <p>Paste raw HTML and get valid JSX — class becomes className, attributes are camelCased, self-closing tags are fixed.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the HTML snippet.",
+      "Copy the JSX output.",
+      "Paste into your React component.",
+    ],
+  },
+  "sql-to-json": {
+    render: () => <SqlToJson />,
+    explainer: (
+      <>
+        <p>Paste a simple CREATE TABLE or INSERT statement and get structured JSON — rows, columns, types. Good for mocking APIs from a schema.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste SQL.",
+      "Pick output shape (rows, schema, or both).",
+      "Copy the JSON.",
+    ],
+  },
+  "gitignore-generator": {
+    render: () => <GitignoreGenerator />,
+    explainer: (
+      <>
+        <p>Pick your stack — Node, Python, Go, Rust, macOS, Windows — and assemble a clean .gitignore. No more hunting GitHub for the right template.</p>
+      </>
+    ),
+    howToUse: [
+      "Tick the languages and OS targets.",
+      "Preview the combined file.",
+      "Copy or download .gitignore.",
+    ],
+  },
+  "readme-generator": {
+    render: () => <ReadmeGenerator />,
+    explainer: (
+      <>
+        <p>Answer a short form — name, tagline, install, usage — and get a polished README.md with badges, headings, and the boring boilerplate filled in.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in project name, tagline, and usage snippet.",
+      "Pick sections to include.",
+      "Copy or download the Markdown.",
+    ],
+  },
+  "regex-builder": {
+    render: () => <RegexBuilder />,
+    explainer: (
+      <>
+        <p>Build a regex visually: add patterns, groups, quantifiers, and anchors. Live-test against sample strings without memorizing the syntax.</p>
+      </>
+    ),
+    howToUse: [
+      "Describe what you want to match.",
+      "Click to add groups and modifiers.",
+      "Test against sample input.",
+      "Copy the final pattern.",
+    ],
+  },
+  "exif-viewer": {
+    render: () => <ExifViewer />,
+    explainer: (
+      <>
+        <p>Drop a JPEG and see all its EXIF metadata — camera model, shutter speed, GPS coordinates. Runs locally in your browser; nothing leaves your device.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop or pick a JPEG.",
+      "Scroll the extracted tag list.",
+      "Copy any field you need.",
+    ],
+  },
+  "exif-remover": {
+    render: () => <ExifRemover />,
+    explainer: (
+      <>
+        <p>Strip every EXIF tag (including GPS) by re-encoding the image in-browser. Protects your location and camera fingerprint before posting online.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop the image.",
+      "Wait for the clean copy.",
+      "Download the metadata-free image.",
+    ],
+  },
+  "passport-photo-maker": {
+    render: () => <PassportPhotoMaker />,
+    explainer: (
+      <>
+        <p>Upload a photo, pick a country preset (US, UK, Schengen, India, Canada), and export a print-ready passport photo at 300 DPI with correct sizing.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload your photo.",
+      "Pick the country / visa preset.",
+      "Crop your head within the guide.",
+      "Download the print-ready image.",
+    ],
+  },
+  "signature-drawer": {
+    render: () => <SignatureDrawer />,
+    explainer: (
+      <>
+        <p>Draw your signature with a mouse, trackpad, or touch — and export it as transparent PNG. Good for signing PDFs without printing.</p>
+      </>
+    ),
+    howToUse: [
+      "Draw in the canvas.",
+      "Adjust line thickness and color.",
+      "Download as transparent PNG.",
+    ],
+  },
+  "profile-pic-circle-cropper": {
+    render: () => <ProfilePicCircleCropper />,
+    explainer: (
+      <>
+        <p>Upload an image and crop it into a perfect circle for social profiles and avatars. Exports a transparent PNG.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload your image.",
+      "Drag to position and zoom.",
+      "Download the circular crop.",
+    ],
+  },
+  "image-blur-censor": {
+    render: () => <ImageBlurCensor />,
+    explainer: (
+      <>
+        <p>Drag boxes over faces, names, or credit-card numbers and pick blur, pixelate, or black-bar censoring. Everything stays local.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop the image.",
+      "Drag boxes over areas to censor.",
+      "Pick a censor style.",
+      "Download the censored image.",
+    ],
+  },
+  "photo-collage": {
+    render: () => <PhotoCollage />,
+    explainer: (
+      <>
+        <p>Upload 2–8 photos and arrange them in grids (2×1 through 4×2). Export one combined image for social posts, birthday cards, or trip recaps.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload your photos.",
+      "Pick a layout.",
+      "Adjust spacing and background.",
+      "Download the collage.",
+    ],
+  },
+  "meme-generator": {
+    render: () => <MemeGenerator />,
+    explainer: (
+      <>
+        <p>Classic top-and-bottom text meme maker. Upload any image (or use a preset), type the lines, and export a PNG — white Impact text with black outline, the way memes want.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload an image.",
+      "Type the top and bottom text.",
+      "Adjust font size.",
+      "Download the meme.",
+    ],
+  },
+  "youtube-thumbnail-downloader": {
+    render: () => <YoutubeThumbnailDownloader />,
+    explainer: (
+      <>
+        <p>Paste a YouTube URL and download its thumbnail in every available size (max, HQ, MQ, SD). Uses the public thumbnail endpoint — no scraping.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste a YouTube URL.",
+      "Pick the size.",
+      "Download the thumbnail.",
+    ],
+  },
+  "tweet-thread-splitter": {
+    render: () => <TweetThreadSplitter />,
+    explainer: (
+      <>
+        <p>Paste long text and split it into numbered 280-character tweets. Breaks on sentence boundaries, not mid-word, so each chunk reads cleanly.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the article.",
+      "Adjust the per-tweet length if needed.",
+      "Copy each tweet in order.",
+    ],
+  },
+  "username-generator": {
+    render: () => <UsernameGenerator />,
+    explainer: (
+      <>
+        <p>Generate clean, available-feeling usernames — word pairs, adjective+noun combos, random letters — with a deterministic seed so you can regenerate.</p>
+      </>
+    ),
+    howToUse: [
+      "Pick style and length.",
+      "Click generate.",
+      "Copy the username you like.",
+    ],
+  },
+  "email-signature-builder": {
+    render: () => <EmailSignatureBuilder />,
+    explainer: (
+      <>
+        <p>Fill in your name, role, links, and photo URL — export a clean HTML email signature you can paste into Gmail, Outlook, or Apple Mail.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the fields.",
+      "Preview the rendered signature.",
+      "Copy as rich text (ClipboardItem) or HTML.",
+    ],
+  },
+  "certificate-generator": {
+    render: () => <CertificateGenerator />,
+    explainer: (
+      <>
+        <p>Generate a printable certificate — recipient name, course, signature line — with your logo and a clean classic layout. Exports PDF.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in recipient, course, and date.",
+      "Upload logo (optional).",
+      "Preview the certificate.",
+      "Download as PDF.",
+    ],
+  },
+  "business-card-designer": {
+    render: () => <BusinessCardDesigner />,
+    explainer: (
+      <>
+        <p>Design a two-sided business card (name, role, contact) at print-ready 300 DPI. Pick a layout and export a PDF you can send to any printer.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the card fields.",
+      "Pick a layout.",
+      "Preview front and back.",
+      "Download the print-ready PDF.",
+    ],
+  },
+  "resume-skeleton-builder": {
+    render: () => <ResumeSkeletonBuilder />,
+    explainer: (
+      <>
+        <p>Answer a short form and get a clean, ATS-safe resume template — no tables, no icons, just strong typography. Export as HTML or print-ready PDF.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in contact, experience, and skills.",
+      "Preview the layout.",
+      "Download as HTML or PDF.",
+    ],
+  },
+  "cover-letter-builder": {
+    render: () => <CoverLetterBuilder />,
+    explainer: (
+      <>
+        <p>Fill in company, role, and one highlight — get a formatted cover letter with a working opener, body, and close. Export as PDF or copy as text.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the fields.",
+      "Edit the generated letter.",
+      "Copy or download as PDF.",
+    ],
+  },
+  "image-to-text": {
+    render: () => <ImageToText />,
+    explainer: (
+      <>
+        <p>Drop an image of text — a receipt, screenshot, scanned page — and pull out the text via in-browser OCR. Supports 15 languages.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop the image.",
+      "Pick a language.",
+      "Wait for OCR to finish.",
+      "Copy the extracted text.",
+    ],
+  },
+  "handwriting-to-text": {
+    render: () => <HandwritingToText />,
+    explainer: (
+      <>
+        <p>Like image-to-text but tuned for handwritten notes. Uses an OCR mode optimized for sparse text with more forgiving segmentation.</p>
+      </>
+    ),
+    howToUse: [
+      "Drop the handwritten image.",
+      "Wait for recognition.",
+      "Clean up the output as needed.",
+      "Copy the text.",
+    ],
+  },
+  "voice-recorder": {
+    render: () => <VoiceRecorder />,
+    explainer: (
+      <>
+        <p>Press record, talk, download the audio. Works entirely in-browser via the microphone — no upload, no account, no watermark.</p>
+      </>
+    ),
+    howToUse: [
+      "Grant microphone access.",
+      "Press record and talk.",
+      "Stop when finished.",
+      "Download the audio.",
+    ],
+  },
+  "audio-trimmer": {
+    render: () => <AudioTrimmer />,
+    explainer: (
+      <>
+        <p>Upload an audio file, pick start and end points on the waveform, and export a trimmed WAV. Good for shaving intros, outros, and silences.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload an audio file.",
+      "Drag handles to set start and end.",
+      "Preview the clip.",
+      "Download the trimmed WAV.",
+    ],
+  },
+  "audio-silence-remover": {
+    render: () => <AudioSilenceRemover />,
+    explainer: (
+      <>
+        <p>Detect and strip quiet sections from an audio file based on a threshold and minimum duration. Useful for cleaning up voice notes and podcasts.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the file.",
+      "Adjust silence threshold and minimum duration.",
+      "Preview the shortened track.",
+      "Download the cleaned WAV.",
+    ],
+  },
+  "audio-speed-changer": {
+    render: () => <AudioSpeedChanger />,
+    explainer: (
+      <>
+        <p>Speed up or slow down audio without changing pitch beyond the usual speed-coupled drift. Useful for making lectures skimmable or music playable.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the audio.",
+      "Pick a playback rate (0.5×–2×).",
+      "Preview.",
+      "Download the resampled WAV.",
+    ],
+  },
+  "audio-pitch-changer": {
+    render: () => <AudioPitchChanger />,
+    explainer: (
+      <>
+        <p>Shift the pitch of an audio file up or down by semitones. Fast, in-browser, no plug-ins.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the audio.",
+      "Shift by +/− semitones.",
+      "Preview.",
+      "Download the pitched WAV.",
+    ],
+  },
+  "video-trimmer": {
+    render: () => <VideoTrimmer />,
+    explainer: (
+      <>
+        <p>Upload a video, pick start and end points, export the trimmed clip. Runs via captureStream + MediaRecorder — no server upload.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the video.",
+      "Set start and end.",
+      "Preview the clip.",
+      "Download the trimmed video.",
+    ],
+  },
+  "video-to-gif": {
+    render: () => <VideoToGif />,
+    explainer: (
+      <>
+        <p>Turn a short video into a lightweight looping clip (WebM, labeled as a GIF-alternative). Browser-native, no external libs.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload a short video (under 15s works best).",
+      "Trim to the loop.",
+      "Export the WebM clip.",
+    ],
+  },
+  "video-mute": {
+    render: () => <VideoMute />,
+    explainer: (
+      <>
+        <p>Strip audio from a video cleanly. Outputs video-only, same resolution and framerate, no re-encode of picture quality.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the video.",
+      "Confirm muted preview.",
+      "Download the silent video.",
+    ],
+  },
+  "video-frame-extractor": {
+    render: () => <VideoFrameExtractor />,
+    explainer: (
+      <>
+        <p>Scrub to any frame or auto-extract N evenly-spaced frames. Export each as a PNG. Good for thumbnails, before/after posts, or storyboards.</p>
+      </>
+    ),
+    howToUse: [
+      "Upload the video.",
+      "Scrub to a frame or pick the auto count.",
+      "Download the PNG(s).",
+    ],
+  },
+  "screen-recorder": {
+    render: () => <ScreenRecorder />,
+    explainer: (
+      <>
+        <p>Record your screen (and optional microphone) straight from the browser via getDisplayMedia. Output is a downloadable WebM.</p>
+      </>
+    ),
+    howToUse: [
+      "Click record and pick the screen / window.",
+      "Optionally add microphone.",
+      "Stop when done.",
+      "Download the recording.",
+    ],
+  },
+  "text-to-speech": {
+    render: () => <TextToSpeech />,
+    explainer: (
+      <>
+        <p>Paste text, pick a voice from your system, and listen. Uses the browser's built-in Web Speech synthesis — zero network, zero cost.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste text.",
+      "Pick voice and rate.",
+      "Press play.",
+    ],
+  },
+  "speech-to-text": {
+    render: () => <SpeechToText />,
+    explainer: (
+      <>
+        <p>Talk into your mic and get a live transcript via the browser's speech recognition API. Works best in Chrome-family browsers.</p>
+      </>
+    ),
+    howToUse: [
+      "Grant microphone access.",
+      "Press start and speak.",
+      "Copy the transcript when done.",
+    ],
+  },
+  "voice-note-transcriber": {
+    render: () => <VoiceNoteTranscriber />,
+    explainer: (
+      <>
+        <p>Record and transcribe at the same time: capture the audio file and the live transcript side-by-side for meetings, interviews, or notes.</p>
+      </>
+    ),
+    howToUse: [
+      "Press record.",
+      "Speak.",
+      "Stop — audio and transcript are both available to download/copy.",
+    ],
+  },
+  "ai-prompt-generator": {
+    render: () => <AiPromptGenerator />,
+    explainer: (
+      <>
+        <p>Turn a vague intent into a structured prompt with role, task, context, constraints, audience, and output format. Paste straight into ChatGPT, Claude, or Gemini.</p>
+      </>
+    ),
+    howToUse: [
+      "Describe the goal.",
+      "Pick role, audience, tone, and output format.",
+      "Copy the generated prompt.",
+    ],
+  },
+  "ai-prompt-library": {
+    render: () => <AiPromptLibrary />,
+    explainer: (
+      <>
+        <p>A curated library of prompt templates across writing, coding, marketing, career, and research. Search, filter, copy — no account required.</p>
+      </>
+    ),
+    howToUse: [
+      "Search or filter by category.",
+      "Click Copy on the card.",
+      "Paste into your AI chat and fill in the placeholders.",
+    ],
+  },
+  "chat-prompt-builder": {
+    render: () => <ChatPromptBuilder />,
+    explainer: (
+      <>
+        <p>Build a clean system prompt with persona, do/don't rules, an example turn, and an output schema. Great for GPT builders and Claude Projects.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in persona, do/don't rules, and example.",
+      "Watch the character and token estimate update.",
+      "Copy the system prompt.",
+    ],
+  },
+  "ai-image-prompt-builder": {
+    render: () => <AiImagePromptBuilder />,
+    explainer: (
+      <>
+        <p>Build structured image prompts: subject, style, camera, lighting, aspect, and negative prompt. Outputs formats for Midjourney, DALL·E, and Stable Diffusion.</p>
+      </>
+    ),
+    howToUse: [
+      "Fill in subject and pick style/camera/lighting.",
+      "Set aspect and negative prompt.",
+      "Pick the target model.",
+      "Copy the formatted prompt.",
+    ],
+  },
+  "ai-art-style-picker": {
+    render: () => <AiArtStylePicker />,
+    explainer: (
+      <>
+        <p>Browse 40+ art styles — photoreal, anime, watercolor, cyberpunk, flat vector — and click any card to copy a ready-to-use prompt snippet.</p>
+      </>
+    ),
+    howToUse: [
+      "Search or filter by category.",
+      "Click a style card to copy the snippet.",
+      "Paste next to your subject in any image model.",
+    ],
+  },
+  "ai-token-counter": {
+    render: () => <AiTokenCounter />,
+    explainer: (
+      <>
+        <p>Estimate tokens, characters, and API cost for GPT-4o, GPT-4, Claude, Gemini, Llama, and more — before you hit send.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text.",
+      "Set assumed output tokens.",
+      "Read the per-model cost estimate.",
+    ],
+  },
+  "ai-model-compare": {
+    render: () => <AiModelCompare />,
+    explainer: (
+      <>
+        <p>Side-by-side spec sheet of frontier models — context window, price, multimodal support, strengths, weaknesses — so you can pick the right one.</p>
+      </>
+    ),
+    howToUse: [
+      "Filter by vendor and sort by the metric that matters.",
+      "Tick models to compare head-to-head.",
+      "Read the strengths/watch-out notes.",
+    ],
+  },
+  "prompt-improver": {
+    render: () => <PromptImprover />,
+    explainer: (
+      <>
+        <p>Rule-based prompt linter. Paste a vague prompt, get a rewrite plus a checklist of what was missing (role, format, example, constraints).</p>
+      </>
+    ),
+    howToUse: [
+      "Paste your prompt.",
+      "Read the rule findings and prompt score.",
+      "Copy the improved version.",
+    ],
+  },
+  "ai-chat-export-formatter": {
+    render: () => <AiChatExportFormatter />,
+    explainer: (
+      <>
+        <p>Paste a ChatGPT JSON export or Claude markdown transcript, get a clean transcript you can archive, share, or publish — as Markdown, HTML, TXT, or JSON.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste the export.",
+      "Auto-detect or pick the input format.",
+      "Pick the output format.",
+      "Copy or download the clean transcript.",
+    ],
+  },
+  "ai-writing-humanizer": {
+    render: () => <AiWritingHumanizer />,
+    explainer: (
+      <>
+        <p>Strip the most common AI tells — 'delve into', 'in the realm of', 'tapestry', em-dash abuse — from AI-generated text. Rule-based, not a model call.</p>
+      </>
+    ),
+    howToUse: [
+      "Paste AI-generated writing.",
+      "Read the humanized output and list of rules applied.",
+      "Copy the cleaned-up version.",
     ],
   },
 };

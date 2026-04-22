@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -31,9 +32,22 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const ADSENSE_CLIENT = "ca-pub-8018173696794576";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense — Auto ads */}
+        <Script
+          id="adsbygoogle-init"
+          async
+          strategy="afterInteractive"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+      </head>
       <body className="flex min-h-screen flex-col bg-white text-slate-900 antialiased">
         <a
           href="#main-content"
