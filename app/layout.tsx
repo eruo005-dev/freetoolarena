@@ -38,6 +38,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to third-party origins we use on most pages.
+            Saves 100–200ms on LCP by opening TLS sockets in parallel. */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link
+          rel="preconnect"
+          href="https://pagead2.googlesyndication.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
         {/* Google AdSense — Auto ads */}
         <Script
           id="adsbygoogle-init"

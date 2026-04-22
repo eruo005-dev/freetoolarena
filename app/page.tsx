@@ -8,6 +8,7 @@ import {
   type Category,
   type Page,
 } from "@/lib/pages";
+import { HUBS, hubHref } from "@/lib/hubs";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
@@ -15,6 +16,23 @@ import { Card, CardEyebrow, CardTitle, CardBody } from "@/components/ui/Card";
 import { TrustBar } from "@/components/TrustBar";
 import { RecentlyUsed } from "@/components/RecentlyUsed";
 import { SITE_UPDATED } from "@/lib/seo";
+
+/**
+ * Hand-picked slugs that get top-of-homepage real estate. These are the
+ * highest-search-intent tools in the library and also the highest-CPM
+ * surfaces for AdSense. Order = display order.
+ */
+const POPULAR_TOOL_SLUGS = [
+  "loan-calculator",
+  "mortgage-calculator",
+  "compound-interest-calculator",
+  "budget-calculator",
+  "json-formatter",
+  "regex-tester",
+  "password-generator",
+  "qr-code-generator",
+  "pomodoro-timer",
+] as const;
 
 const HOMEPAGE_CATEGORY_ORDER: Category[] = [
   "money",
@@ -39,25 +57,33 @@ export default function HomePage() {
   const liveCategories = HOMEPAGE_CATEGORY_ORDER.filter((c) =>
     all.some((p) => p.category === c),
   );
+  const popular = POPULAR_TOOL_SLUGS
+    .map((slug) => tools.find((t) => t.slug === slug))
+    .filter((p): p is Page => !!p);
 
   return (
     <Container className="space-y-20 pb-20 pt-14 sm:space-y-24 sm:pt-20">
       {/* Hero */}
       <section className="max-w-3xl">
         <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-brand">
-          {tools.length} tools · {guides.length} guides · no sign-up
+          {tools.length} free tools · {guides.length} guides · zero sign-ups
         </p>
         <h1 className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 sm:text-5xl">
-          Small tools and clear guides, minus the fluff.
+          Free online tools that actually do the job.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
-          {SITE_NAME} collects the calculators, converters, and how-tos you keep
-          Googling — in one place, on one page each. Nothing runs behind the
-          scenes. Nothing asks for your email.
+          Calculators, converters, formatters, and how-to guides — all in your
+          browser, all free forever. From loan and mortgage math to JSON
+          formatters, QR codes, and Pomodoro timers, {SITE_NAME} puts every
+          tool you keep Googling on a single page each. No account, no email,
+          no upsell.
         </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <ButtonLink href="/tools" variant="primary" size="lg">
             Browse {tools.length} tools
+          </ButtonLink>
+          <ButtonLink href="/best" variant="secondary" size="lg">
+            Curated lists →
           </ButtonLink>
           <ButtonLink href="/guides" variant="secondary" size="lg">
             Read the guides
@@ -68,6 +94,54 @@ export default function HomePage() {
 
       {/* Recently used (hydrates, renders only if user has history) */}
       <RecentlyUsed />
+
+      {/* Most used this week — hand-picked highest-intent tools */}
+      {popular.length > 0 && (
+        <section>
+          <SectionHeading
+            title="Most used this week"
+            href="/tools"
+            hrefLabel="All tools"
+          />
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
+            {popular.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={pageHref(p)}
+                  className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-3 text-sm transition hover:border-brand hover:shadow-sm"
+                >
+                  <span className="text-xs text-slate-500">
+                    {CATEGORIES[p.category].label}
+                  </span>
+                  <span className="mt-1 font-semibold text-slate-900">
+                    {p.h1}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Curated hubs — distributes internal PageRank to pillar pages */}
+      <section>
+        <SectionHeading
+          title="Curated lists"
+          href="/best"
+          hrefLabel="All curated lists"
+        />
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {HUBS.map((hub) => (
+            <li key={hub.slug}>
+              <Card href={hubHref(hub)} className="h-full">
+                <CardEyebrow>Curated · {hub.picks.length} tools</CardEyebrow>
+                <CardTitle>{hub.h1}</CardTitle>
+                <CardBody>{hub.description}</CardBody>
+              </Card>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       {/* Popular tools */}
       {tools.length > 0 && (

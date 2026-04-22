@@ -439,6 +439,24 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       output: "25:00 focus → 05:00 break → 25:00 focus → 05:00 break → 25:00 focus → 05:00 break → 25:00 focus → 15:00 long break",
       note: "One 'set' = 4 focus rounds + 1 long break. Aim for 2–3 sets per day, not 8.",
     },
+      faq: [
+      {
+        "q": "Why 25 minutes?",
+        "a": "Francesco Cirillo chose 25 minutes in the 1980s as a length long enough for meaningful work but short enough that the brain accepts the discomfort. You can tune it — 50/10 works well for deep coding sessions — but 25/5 is a proven default for most knowledge work."
+      },
+      {
+        "q": "Does the timer keep running in a background tab?",
+        "a": "Yes. Browsers throttle inactive tabs but the countdown uses timestamps, not ticks, so it stays accurate. You can switch tabs, lock the screen, or even close the laptop lid and the elapsed time remains correct when you come back."
+      },
+      {
+        "q": "Should I take the break even if I'm in flow?",
+        "a": "For single sessions, finishing the thought is fine. But taking the break prevents the late-afternoon fatigue that costs you two low-quality hours later. Short breaks are the reason Pomodoro produces more output per day, not less."
+      },
+      {
+        "q": "How many Pomodoros should I do per day?",
+        "a": "Eight to twelve is the practical ceiling for deep knowledge work. Past that, quality drops sharply. If you consistently hit ten in a day, you're doing better than most salaried engineers."
+      }
+    ],
   },
   "budget-calculator": {
     render: () => <BudgetCalculator />,
@@ -483,6 +501,24 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       output: "Total expenses: $2,940\nLeftover: $1,260\nSavings rate: 30%",
       note: "Above 20% is a strong savings rate. Under 10% means one surprise expense knocks you over.",
     },
+      faq: [
+      {
+        "q": "What is the 50/30/20 rule?",
+        "a": "A simple budget split: 50 percent of take-home pay covers needs (rent, groceries, insurance), 30 percent covers wants (eating out, subscriptions, travel), and 20 percent goes to savings and debt payoff beyond the minimum. It works as a starting point for most incomes."
+      },
+      {
+        "q": "Should I use gross or net income?",
+        "a": "Use net (take-home) income — what actually hits your account after taxes and benefits. Budgeting off gross income consistently leads to month-end shortfalls because you can't spend tax money."
+      },
+      {
+        "q": "My savings rate is under 10 percent. Is that bad?",
+        "a": "It means one unexpected expense knocks you over. Prioritize trimming wants first since that's the bucket with the most flexibility — one $12/mo subscription you don't use is a $144/year raise to savings."
+      },
+      {
+        "q": "Does this work for irregular freelance income?",
+        "a": "Yes — use your average monthly take-home over the last twelve months, and treat the 20 percent savings bucket as a runway fund rather than long-term savings until you have six months of expenses set aside."
+      }
+    ],
   },
   "word-counter": {
     render: () => <WordCounter />,
@@ -646,6 +682,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Use Pause/Resume if interrupted, or Reset to start over.",
       "A beep plays at zero — the tab can be backgrounded while it runs.",
     ],
+      faq: [
+      {
+        "q": "Will the timer still alert me if the tab is in the background?",
+        "a": "Yes, a browser notification fires at zero if you granted notification permission; otherwise an in-page beep plays when you return to the tab. Keep the tab open — pinning it in Chrome prevents accidental closes."
+      },
+      {
+        "q": "How is this different from the Pomodoro timer?",
+        "a": "This is a flexible countdown from any duration (30 seconds, 45 minutes, 2 hours). The Pomodoro timer enforces the 25/5 focus-break cycle. Use the countdown for cooking, workouts, or meeting hard-stops; use Pomodoro for deep-work sessions."
+      },
+      {
+        "q": "Does pausing lose the remaining time?",
+        "a": "No — pause freezes the remaining time, and resume picks up from exactly that point. You can pause and resume as many times as you want without drift."
+      }
+    ],
   },
   "password-generator": {
     render: () => <PasswordGenerator />,
@@ -747,6 +797,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pause to hold, Resume to continue from the same point.",
       "Reset clears the clock and all laps when you&rsquo;re done.",
     ],
+      faq: [
+      {
+        "q": "Can I record lap times?",
+        "a": "Yes — click Lap to capture a split without stopping the overall timer. The lap list stays on screen until you Reset. Useful for timing sets at the gym, interview rounds, or cooking steps."
+      },
+      {
+        "q": "Does the stopwatch keep running if I switch tabs?",
+        "a": "Yes. Like most in-browser timers here, the stopwatch uses timestamps rather than interval ticks, so it's accurate across tab switches, locks, and sleep. The displayed numbers update when you return to the tab."
+      },
+      {
+        "q": "What's the maximum time it can track?",
+        "a": "Up to 24 hours with millisecond precision. Past that the display scrolls but the underlying count remains accurate — we just haven't made it look pretty for multi-day use."
+      }
+    ],
   },
   "case-converter": {
     render: () => <CaseConverter />,
@@ -825,6 +889,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Choose a dash or underscore separator.",
       "Copy the generated slug with one click.",
     ],
+      faq: [
+      {
+        "q": "What makes a good URL slug?",
+        "a": "Short, all lowercase, hyphen-separated, ASCII-only, and ideally 3–6 words. Keep the main keyword toward the start. Avoid stop words (\"a\", \"the\", \"of\") unless removing them makes the slug confusing."
+      },
+      {
+        "q": "Should I use dashes or underscores?",
+        "a": "Dashes. Google treats dashes as word separators and underscores as joiners, so \"my-free-tool\" ranks for [free tool] while \"my_free_tool\" is indexed as the single word \"my_free_tool\". Almost always use dashes."
+      },
+      {
+        "q": "What happens if two pages get the same slug?",
+        "a": "Most CMSes append \"-2\" to the duplicate automatically, which usually ranks worse than a deliberate variant. Rename the second one to something more specific instead of relying on the automatic suffix."
+      }
+    ],
   },
   "lorem-ipsum-generator": {
     render: () => <LoremIpsumGenerator />,
@@ -848,6 +926,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set the count you need.",
       "Toggle the classic lorem ipsum lead on or off.",
       "Click Copy to grab the generated filler text.",
+    ],
+      faq: [
+      {
+        "q": "Why use Lorem Ipsum instead of real text?",
+        "a": "Designers and front-end engineers use filler text to check layout without readers being distracted by content. Real copy makes people read instead of looking at spacing, alignment, and hierarchy — Lorem Ipsum keeps attention on the visual structure."
+      },
+      {
+        "q": "Is it actual Latin?",
+        "a": "Loosely — it's scrambled, truncated Cicero from De Finibus Bonorum et Malorum. The text doesn't make grammatical sense, which is the point: it reads like language without being language."
+      },
+      {
+        "q": "Can I generate shorter filler for small UI elements?",
+        "a": "Yes — switch the unit to \"words\" and set a count of 3–10 for card titles, or 20–40 for preview paragraphs. Shorter filler often looks more realistic for modern layouts."
+      }
     ],
   },
   "unit-converter": {
@@ -1114,6 +1206,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read your age in years/months/days, plus total units lived.",
       "Check the countdown to your next birthday.",
     ],
+      faq: [
+      {
+        "q": "Does it account for leap years?",
+        "a": "Yes. The calculator uses the actual calendar — Feb 29 exists in leap years and gets counted correctly. Someone born on a leap day technically has a birthday every four years, but the calculator always returns a birthday on Feb 28 or Mar 1 in non-leap years."
+      },
+      {
+        "q": "Can I calculate age as of a past date?",
+        "a": "Yes — set the target date to any past date. Useful for life-insurance policies that rate you as of a contract date, or historical research (how old was someone when an event happened)."
+      },
+      {
+        "q": "Is this accurate to the day?",
+        "a": "Yes, with caveat: time zones are ignored. If you were born at 11pm in UTC+1 and the calculation runs in UTC-8, the day count may be off by one. For pet age or routine use this is irrelevant."
+      }
+    ],
   },
   "loan-calculator": {
     render: (params) => (
@@ -1332,6 +1438,1143 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       },
     ],
   },
+  // =========================================================================
+  // LOAN VARIANTS (8) — shared LoanCalculator engine with variant-specific
+  // defaults, copy, and FAQ. Targets long-tail commercial keywords.
+  // =========================================================================
+  "car-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 35000}
+        initialRate={num(params, "rate") ?? 7.5}
+        initialYears={num(params, "years") ?? 5}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A free car loan calculator tuned to the inputs actually printed on a dealer&rsquo;s
+          financing sheet: vehicle price, APR, and term in years. It returns the monthly payment
+          and — more importantly — the total interest you&rsquo;ll pay before you own the car.
+          Knowing that number up front is the single best thing you can do to negotiate well.
+        </p>
+        <p>
+          A $35,000 car loan at 7.5% for 5 years costs $702/month and $7,100 in interest. Stretch
+          that same loan to 7 years and the monthly drops to $538 — but total interest jumps to
+          $10,200. Longer term, lower payment, more total cost. Run both before you sign. Pair with
+          our <a href="/guides/how-to-make-a-monthly-budget">budget guide</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the vehicle price (after any down payment and trade-in).",
+      "Enter the APR from your lender or pre-approval.",
+      "Enter the term in years — 5 is typical, 6-7 is common but costly.",
+      "Read monthly payment and total interest; compare across terms.",
+    ],
+    useCases: [
+      "Comparing the dealer&rsquo;s financing offer vs a credit union pre-approval.",
+      "Deciding between a 60-month and 72-month loan.",
+      "Budgeting a realistic monthly car payment before shopping.",
+    ],
+    whenToUse: [
+      "Any fixed-rate auto loan — new car, used car, refinance quote.",
+      "Before walking into a dealership, so you have a number in your head.",
+    ],
+    whenNotToUse: [
+      "Leases — those use money factor and residual value, not APR.",
+      "Variable-rate or promotional APR loans where the rate changes mid-term.",
+    ],
+    example: {
+      input: "Price: $35,000\nAPR: 7.5%\nTerm: 5 years",
+      output: "Monthly: $701.89\nTotal paid: $42,113\nTotal interest: $7,113",
+      note: "A 7-year term drops the monthly to $538 but raises total interest to $10,185 — $3,072 more.",
+    },
+    faq: [
+      {
+        q: "Should I finance through the dealer or a credit union?",
+        a: "Credit unions almost always win on APR. Get pre-approved before you walk in; use the dealer&rsquo;s offer only if they actually beat it.",
+      },
+      {
+        q: "Is 7.5% a good auto loan rate?",
+        a: "Depends on credit tier and year. Excellent credit typically gets rates a few points below average; subprime borrowers pay considerably more. Check current national averages before assuming your rate is good.",
+      },
+    ],
+  },
+  "auto-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 28000}
+        initialRate={num(params, "rate") ?? 7.25}
+        initialYears={num(params, "years") ?? 6}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          An auto loan calculator that takes three inputs — amount financed, APR, and term — and
+          returns the full cost of the loan, not just the monthly payment. Most dealer conversations
+          happen in monthly-payment terms, which is exactly why long terms get pushed: a
+          &ldquo;lower&rdquo; monthly is often a higher total cost.
+        </p>
+        <p>
+          Run multiple scenarios side by side. Change only the term, or only the APR, to see where
+          the real money is. Most people overpay by thousands because they only asked about the
+          monthly payment.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the amount you&rsquo;re actually financing (price − down payment − trade-in).",
+      "Enter the APR, not the &ldquo;money factor.&rdquo;",
+      "Set the term; longer = lower monthly, more total interest.",
+      "Scan both the monthly and the total interest line.",
+    ],
+    useCases: [
+      "Shopping pre-approved APRs from 2-3 lenders.",
+      "Weighing whether to put more down (less principal = less interest).",
+      "Deciding if a higher sticker price with 0% APR beats a lower price at standard APR.",
+    ],
+    whenToUse: [
+      "Any auto purchase where you&rsquo;ll finance any part of the price.",
+      "Comparing refinance offers on an existing auto loan.",
+    ],
+    whenNotToUse: [
+      "Leases — different math.",
+      "Promotional 0% APR deals — no interest, but those loans often require taking a higher price; compare the all-in cost.",
+    ],
+    example: {
+      input: "Amount financed: $28,000\nAPR: 7.25%\nTerm: 6 years",
+      output: "Monthly: $479.69\nTotal paid: $34,538\nTotal interest: $6,538",
+      note: "Dropping APR by 2 points (to 5.25%) saves $1,867 over the life of the loan.",
+    },
+    faq: [
+      {
+        q: "What&rsquo;s the difference between APR and interest rate?",
+        a: "APR includes certain lender fees; the raw interest rate doesn&rsquo;t. Compare offers using APR for an apples-to-apples number.",
+      },
+      {
+        q: "How much down payment should I put?",
+        a: "At minimum, enough to avoid being underwater when you drive off. New cars depreciate 10-20% immediately; 20% down protects you.",
+      },
+    ],
+  },
+  "personal-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 10000}
+        initialRate={num(params, "rate") ?? 11.5}
+        initialYears={num(params, "years") ?? 3}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A personal loan calculator for unsecured consumer loans — the kind you&rsquo;d take out
+          to consolidate credit card debt, cover a medical bill, or finance a one-time big expense.
+          APRs are higher than secured loans (car, mortgage) but lower than credit cards, which is
+          exactly why consolidation is a common use.
+        </p>
+        <p>
+          Before you borrow, run the numbers on both the new personal loan and whatever you&rsquo;re
+          paying on now. If your credit card APR is 22% and a personal loan is 11.5%, consolidating
+          can cut your interest cost in half — provided you don&rsquo;t rack the card back up. Pair
+          with our <a href="/guides/how-to-pay-off-debt-fast">debt payoff guide</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the loan amount you plan to borrow.",
+      "Enter the APR from your pre-approval offer.",
+      "Enter the term — 2, 3, 5, or 7 years are standard.",
+      "Read monthly payment and total interest.",
+    ],
+    useCases: [
+      "Consolidating high-APR credit card debt.",
+      "Covering a medical or emergency expense when no cheaper option exists.",
+      "Financing a home improvement without a HELOC.",
+    ],
+    whenToUse: [
+      "Unsecured fixed-rate consumer loans.",
+      "Comparing offers from LendingClub, SoFi, Upstart, etc.",
+    ],
+    whenNotToUse: [
+      "Payday loans and title loans — different (predatory) product.",
+      "Variable-rate lines of credit.",
+    ],
+    example: {
+      input: "Amount: $10,000\nAPR: 11.5%\nTerm: 3 years",
+      output: "Monthly: $329.73\nTotal paid: $11,870\nTotal interest: $1,870",
+      note: "Same $10,000 at 22% APR (credit card territory) costs $3,878 in interest over 3 years — more than double.",
+    },
+    faq: [
+      {
+        q: "Are personal loans better than credit card debt?",
+        a: "Usually yes, if you qualify for a lower APR. Fixed term means you&rsquo;ll actually pay it off; revolving credit cards can roll forever.",
+      },
+      {
+        q: "What&rsquo;s a typical personal loan APR?",
+        a: "Ranges from about 7% for excellent credit to 36% cap in many states. 10-15% is typical for good credit.",
+      },
+    ],
+  },
+  "student-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 30000}
+        initialRate={num(params, "rate") ?? 6.5}
+        initialYears={num(params, "years") ?? 10}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A student loan calculator that estimates monthly payments on a standard 10-year
+          amortized repayment plan. Federal Stafford and Grad PLUS loans use this structure by
+          default; refinanced private loans do too. The numbers here assume a fixed APR, which is
+          the norm for federal loans.
+        </p>
+        <p>
+          A $30,000 balance at 6.5% for 10 years costs $340/month and $10,897 in interest —
+          roughly a third of the principal. Income-driven repayment plans can lower that monthly
+          but extend the timeline and change the math considerably. Federal loans also have
+          different rules than private; check with your servicer before committing.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your total loan balance (sum of all loans, or model one at a time).",
+      "Enter the APR — check your Master Promissory Note or servicer dashboard.",
+      "10 years is standard; use 15 or 20 for extended/income-driven plans.",
+      "Read monthly payment; total interest is the real cost number.",
+    ],
+    useCases: [
+      "Estimating post-graduation payment on a current balance.",
+      "Comparing standard repayment vs an extended plan.",
+      "Deciding whether to refinance to a lower private APR (only if you don&rsquo;t need federal protections).",
+    ],
+    whenToUse: [
+      "Federal or private student loans with a fixed APR and standard amortization.",
+      "Refinance scenarios.",
+    ],
+    whenNotToUse: [
+      "Income-driven repayment with forgiveness — the math is different; use the federal Loan Simulator.",
+      "Public Service Loan Forgiveness tracks — also different math.",
+    ],
+    example: {
+      input: "Balance: $30,000\nAPR: 6.5%\nTerm: 10 years",
+      output: "Monthly: $340.82\nTotal paid: $40,897\nTotal interest: $10,897",
+      note: "Stretching to 20 years lowers monthly to $223 but raises total interest to $23,711 — more than doubles it.",
+    },
+    faq: [
+      {
+        q: "Should I refinance my federal loans?",
+        a: "Only if you don&rsquo;t need federal protections (income-driven repayment, deferment, PSLF). Refinancing to private loses those permanently.",
+      },
+      {
+        q: "Are student loan interest payments tax-deductible?",
+        a: "Up to $2,500 of student loan interest per year is deductible from taxable income, subject to income limits. Check current IRS rules for your filing year.",
+      },
+    ],
+  },
+  "boat-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 40000}
+        initialRate={num(params, "rate") ?? 8.5}
+        initialYears={num(params, "years") ?? 10}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A free boat loan calculator built around the realities of marine financing: longer terms
+          (10-20 years is common), higher APRs than auto loans, and a much steeper depreciation
+          curve. Enter loan amount, APR, and term — get monthly payment and total interest before
+          you sign anything at the marina.
+        </p>
+        <p>
+          Boats depreciate faster than most people expect. A loan that outlives the boat&rsquo;s
+          useful life is a real risk, which is why shorter terms are friendlier even though the
+          monthly is higher. Budget for dockage, fuel, insurance, and winter storage before you
+          commit to the payment.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the amount financed after any down payment.",
+      "Enter the APR from your marine lender or bank.",
+      "Enter the term in years — 10, 15, or 20.",
+      "Read monthly payment and total interest; factor in ownership costs separately.",
+    ],
+    useCases: [
+      "Budgeting a realistic monthly payment before a boat purchase.",
+      "Comparing marine-lender APRs with a home equity loan option.",
+      "Deciding between new vs used financing terms.",
+    ],
+    whenToUse: [
+      "Fixed-rate secured boat loans.",
+      "Refinance scenarios on existing marine financing.",
+    ],
+    whenNotToUse: [
+      "Dealer-financed promotional terms with variable rates.",
+      "Chartered/commercial vessels (different tax and financing rules).",
+    ],
+    example: {
+      input: "Amount: $40,000\nAPR: 8.5%\nTerm: 10 years",
+      output: "Monthly: $495.95\nTotal paid: $59,514\nTotal interest: $19,514",
+      note: "Nearly half the loan cost is interest at this term; a 7-year loan saves about $6,300.",
+    },
+    faq: [
+      {
+        q: "Can I deduct boat loan interest?",
+        a: "If the boat qualifies as a second home (has sleeping, cooking, and toilet facilities), loan interest may be deductible under current US tax rules. Check with a tax professional.",
+      },
+      {
+        q: "Why are boat loan APRs higher than auto loan APRs?",
+        a: "Boats depreciate faster and are harder to repossess and resell. Lenders price that risk into the rate.",
+      },
+    ],
+  },
+  "rv-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 50000}
+        initialRate={num(params, "rate") ?? 7.9}
+        initialYears={num(params, "years") ?? 15}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A free RV loan calculator for Class A, Class B, Class C, travel trailers, and fifth
+          wheels. RV financing often stretches 15-20 years because the dollar amounts are high,
+          which dramatically changes the total-interest picture. Enter amount, APR, and term to
+          see exactly what you&rsquo;ll pay over the life of the loan.
+        </p>
+        <p>
+          A $50,000 RV loan at 7.9% for 15 years is $475/month but costs $35,500 in interest —
+          nearly 71% of the sticker price added to the total. Shorter terms are much cheaper
+          overall. Always include campground fees, insurance, maintenance, and fuel in your full
+          ownership budget.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the amount you&rsquo;re financing.",
+      "Enter the APR from your RV lender or bank.",
+      "Enter the term in years; 10-20 is typical.",
+      "Read monthly payment and total interest.",
+    ],
+    useCases: [
+      "Budgeting for a full-time or part-time RV lifestyle.",
+      "Comparing lender offers on a new or used RV.",
+      "Deciding between a longer term vs a larger down payment.",
+    ],
+    whenToUse: [
+      "Fixed-rate RV loans from banks, credit unions, or RV-specialty lenders.",
+      "Used-RV refinance scenarios.",
+    ],
+    whenNotToUse: [
+      "Dealer-promotional variable-rate offers.",
+      "Commercial RV use (different tax and loan rules).",
+    ],
+    example: {
+      input: "Amount: $50,000\nAPR: 7.9%\nTerm: 15 years",
+      output: "Monthly: $475.39\nTotal paid: $85,570\nTotal interest: $35,570",
+      note: "Dropping to 10 years lifts monthly to $604 but saves $14,246 in total interest.",
+    },
+    faq: [
+      {
+        q: "Can an RV qualify as a second home for tax purposes?",
+        a: "If the RV has sleeping, cooking, and toilet facilities, it can qualify as a second home and mortgage-interest deductions may apply. Check current IRS rules.",
+      },
+      {
+        q: "Should I finance a used RV?",
+        a: "Used RVs depreciate less than new, which is why many buyers go used. Expect slightly higher APRs and shorter allowed terms on older models.",
+      },
+    ],
+  },
+  "motorcycle-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 12000}
+        initialRate={num(params, "rate") ?? 8.0}
+        initialYears={num(params, "years") ?? 5}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A free motorcycle loan calculator covering standard street bikes, sport bikes, cruisers,
+          and touring models. Motorcycle APRs are typically 1-3 points higher than auto loan APRs
+          because bikes are riskier collateral, and terms tend to max out at 60-72 months rather
+          than auto&rsquo;s 84.
+        </p>
+        <p>
+          Enter amount, APR, and term; the calculator shows monthly payment, total paid, and
+          total interest. Insurance and gear are separate costs and add up quickly for new riders —
+          budget for them before you commit to the bike payment.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the amount financed after your down payment.",
+      "Enter the APR from your lender or dealer offer.",
+      "Enter the term — 3, 4, or 5 years is typical.",
+      "Read monthly and total interest.",
+    ],
+    useCases: [
+      "Comparing a credit union motorcycle loan vs dealer financing.",
+      "Modeling different down-payment amounts.",
+      "Deciding between new and used financing terms.",
+    ],
+    whenToUse: [
+      "Fixed-rate motorcycle loans.",
+      "Refinance scenarios.",
+    ],
+    whenNotToUse: [
+      "Promotional 0% APR offers (valid but require their own math).",
+      "Personal loans used for a bike (use the personal loan calculator).",
+    ],
+    example: {
+      input: "Amount: $12,000\nAPR: 8.0%\nTerm: 5 years",
+      output: "Monthly: $243.32\nTotal paid: $14,599\nTotal interest: $2,599",
+      note: "Dropping the term to 3 years raises the monthly to $376 but cuts total interest to $1,539.",
+    },
+    faq: [
+      {
+        q: "Why are motorcycle loan rates higher than auto rates?",
+        a: "Bikes are riskier collateral — they&rsquo;re easier to total, harder to repossess intact, and have higher theft rates. Lenders price that into the rate.",
+      },
+      {
+        q: "Should I finance my gear?",
+        a: "Most lenders won&rsquo;t. Gear is considered a consumable; finance it on a card with a real payoff plan, or (better) save up first.",
+      },
+    ],
+  },
+  "simple-loan-calculator": {
+    render: (params) => (
+      <LoanCalculator
+        initialAmount={num(params, "amount") ?? 10000}
+        initialRate={num(params, "rate") ?? 6}
+        initialYears={num(params, "years") ?? 3}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A simple loan calculator with three inputs and three outputs. Enter the amount borrowed,
+          the APR, and the term in years. See the monthly payment, the total amount paid, and the
+          total interest. No ads in the middle of the tool, no jargon, no tricks.
+        </p>
+        <p>
+          Useful for any fixed-rate installment loan where you just want a fast answer — loaning
+          money between family, estimating a personal loan, or doing a quick sanity check on a
+          lender&rsquo;s quote.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the loan amount.",
+      "Enter the APR.",
+      "Enter the term in years.",
+      "Read monthly, total paid, and total interest.",
+    ],
+    useCases: [
+      "Fast back-of-the-envelope loan math.",
+      "Family loan agreements where you need a payment schedule.",
+      "Double-checking a lender&rsquo;s quoted monthly payment.",
+    ],
+    whenToUse: [
+      "Any fixed-rate installment loan.",
+      "Teaching someone how loan math works.",
+    ],
+    whenNotToUse: [
+      "Loans with fees or points (add them to principal first).",
+      "Variable-rate or balloon-payment loans.",
+    ],
+    example: {
+      input: "Amount: $10,000\nAPR: 6%\nTerm: 3 years",
+      output: "Monthly: $304.22\nTotal paid: $10,952\nTotal interest: $952",
+      note: "A 6% personal loan is roughly 3× cheaper than a 22% credit card over the same period.",
+    },
+    faq: [
+      {
+        q: "Does this calculator account for origination fees?",
+        a: "No. Add any origination fee to the principal before calculating. For example, a $10,000 loan with a 3% origination fee becomes $10,300.",
+      },
+    ],
+  },
+  // =========================================================================
+  // MORTGAGE VARIANTS (6) — shared MortgageCalculator engine.
+  // =========================================================================
+  "30-year-mortgage-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 400000}
+        initialDown={num(params, "down") ?? 20}
+        initialRate={num(params, "rate") ?? 6.75}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A 30-year mortgage calculator with PITI: principal, interest, taxes, and insurance. The
+          30-year fixed is the most popular mortgage in the US for one reason — the monthly
+          payment is about 40% lower than a 15-year on the same loan amount. That lower monthly is
+          the tradeoff for paying much more total interest over the life of the loan.
+        </p>
+        <p>
+          A $320,000 loan (80% of a $400,000 home) at 6.75% for 30 years is roughly $2,076/month
+          in P&amp;I alone — $346,000 of interest over three decades. Taxes and insurance push the
+          real monthly 20-30% higher. Know the PITI before you offer on a house.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the home price and down payment percent.",
+      "Enter the rate; 30-year fixed rates change with the market.",
+      "Estimate property tax rate (1-2.5% of home value is typical in the US).",
+      "Enter annual insurance; $1,200-$2,500 is typical.",
+      "Read the full PITI monthly payment.",
+    ],
+    useCases: [
+      "Comparing homes at different price points.",
+      "Checking the affordability of a 30-year loan against the 28% income rule.",
+      "Comparing a new 30-year vs refinancing into a 15-year.",
+    ],
+    whenToUse: [
+      "30-year fixed-rate conventional loans.",
+      "Refinance scenarios into a 30-year term.",
+    ],
+    whenNotToUse: [
+      "Adjustable-rate mortgages.",
+      "Interest-only or balloon products.",
+    ],
+    example: {
+      input: "Home price: $400,000\nDown payment: 20%\nRate: 6.75%\nTerm: 30 years",
+      output: "P&I: $2,076/mo\nTaxes: $400/mo (1.2%)\nInsurance: $100/mo\nTotal PITI: $2,576/mo",
+      note: "Over 30 years you&rsquo;ll pay about $747k total for a $320k loan. The 15-year version on the same loan pays about $510k total but at $2,830/mo.",
+    },
+    faq: [
+      {
+        q: "Is a 30-year mortgage better than a 15-year?",
+        a: "Better for cash flow; worse for total cost. The 30-year gives you margin to invest the difference or weather a downturn. The 15-year locks in lower total interest.",
+      },
+      {
+        q: "Why is my real mortgage quote higher than this?",
+        a: "Likely HOA, PMI (if less than 20% down), and an escrow cushion. Add those to the PITI number this calculator shows.",
+      },
+    ],
+  },
+  "15-year-mortgage-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 400000}
+        initialDown={num(params, "down") ?? 20}
+        initialRate={num(params, "rate") ?? 6.0}
+        initialYears={num(params, "years") ?? 15}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A 15-year mortgage calculator with full PITI. Shorter term, lower rate (usually
+          0.5-0.75% below the 30-year), much higher monthly payment, but dramatically less total
+          interest. This is the pragmatic choice if you can stretch into the higher payment
+          comfortably.
+        </p>
+        <p>
+          On the same $320,000 loan, 15 years at 6.0% costs about $2,700/month but only $166,000
+          in total interest — less than half of the 30-year path. You own the home outright 15
+          years sooner. The tradeoff is a ~35% higher monthly payment, which has to fit in your
+          budget without stress.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the home price and down payment.",
+      "Enter the rate — check for a specific 15-year quote, not a 30-year.",
+      "Add property tax rate and annual insurance.",
+      "Read the full PITI monthly and compare to the 30-year option.",
+    ],
+    useCases: [
+      "Comparing the two common fixed terms side by side.",
+      "Deciding if you can absorb the higher 15-year payment.",
+      "Refinancing from a 30-year into a 15-year to save interest.",
+    ],
+    whenToUse: [
+      "When monthly cash flow comfortably supports the higher payment.",
+      "When you want to be mortgage-free faster (approaching retirement, etc.).",
+    ],
+    whenNotToUse: [
+      "If the higher payment would crowd out retirement savings or emergency fund.",
+      "If you need maximum flexibility in tight-budget months.",
+    ],
+    example: {
+      input: "Home price: $400,000\nDown: 20%\nRate: 6.0%\nTerm: 15 years",
+      output: "P&I: $2,700/mo\nTaxes: $400/mo\nInsurance: $100/mo\nTotal PITI: $3,200/mo",
+      note: "Saves roughly $180,000 in total interest vs a 30-year on the same loan.",
+    },
+    faq: [
+      {
+        q: "Why are 15-year rates lower?",
+        a: "Shorter duration = less risk for the lender. They pass some of that savings to the borrower.",
+      },
+      {
+        q: "Should I pick a 30-year and pay extra, or a 15-year?",
+        a: "The 15-year forces the discipline and guarantees the savings. The 30-year gives flexibility at a higher total cost. Both are valid; match the choice to your risk tolerance.",
+      },
+    ],
+  },
+  "fha-loan-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 300000}
+        initialDown={num(params, "down") ?? 3.5}
+        initialRate={num(params, "rate") ?? 7.0}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          An FHA loan calculator. FHA loans let qualified buyers put as little as 3.5% down, which
+          is the single biggest reason they&rsquo;re used by first-time homebuyers. The catch is
+          mortgage insurance premium (MIP) — an upfront fee plus an annual premium that stays on
+          the loan for the long term in most cases.
+        </p>
+        <p>
+          The calculator estimates your PITI payment. Remember to add MIP to your total monthly
+          cost — it&rsquo;s typically 0.55-0.85% of the loan amount per year. At a $290,000 loan
+          balance, that&rsquo;s $133-$205/month on top of the PITI this calculator shows.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the home price.",
+      "Enter 3.5% as the minimum FHA down payment.",
+      "Enter the current FHA rate (often slightly below conventional).",
+      "Include property taxes and insurance.",
+      "Add monthly MIP separately based on your loan balance.",
+    ],
+    useCases: [
+      "First-time homebuyer planning.",
+      "Comparing FHA vs conventional 3% down programs.",
+      "Assessing the all-in cost including MIP.",
+    ],
+    whenToUse: [
+      "Buyers with limited down payment savings.",
+      "Buyers with lower credit scores (FHA is more lenient).",
+    ],
+    whenNotToUse: [
+      "Buyers with 20%+ down — conventional usually beats FHA on total cost.",
+      "Investment or second-home purchases (FHA is owner-occupied only).",
+    ],
+    example: {
+      input: "Home price: $300,000\nDown: 3.5% ($10,500)\nRate: 7.0%\nTerm: 30 years",
+      output: "P&I: $1,927/mo\nTaxes: $300/mo\nInsurance: $75/mo\nPITI subtotal: $2,302/mo\n+ Estimated MIP: ~$180/mo\nAll-in: ~$2,482/mo",
+      note: "MIP adds roughly $2,160/year to the cost. Refinancing to conventional once you hit 20% equity can drop it.",
+    },
+    faq: [
+      {
+        q: "Does FHA MIP ever drop off?",
+        a: "For most FHA loans originated after 2013 with less than 10% down, MIP lasts the life of the loan. Refinancing to a conventional loan is the usual exit.",
+      },
+      {
+        q: "What credit score do I need for FHA?",
+        a: "580+ qualifies for 3.5% down. Below that, a larger down payment is typically required. Lenders can overlay stricter requirements.",
+      },
+    ],
+  },
+  "va-loan-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 350000}
+        initialDown={num(params, "down") ?? 0}
+        initialRate={num(params, "rate") ?? 6.5}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A VA loan calculator for eligible veterans, active-duty service members, and surviving
+          spouses. VA loans allow zero down payment, no private mortgage insurance (PMI), and
+          competitive interest rates. There is a one-time VA funding fee (typically 1.25-3.3% of
+          the loan) unless exempted for disability.
+        </p>
+        <p>
+          No PMI is the big math advantage. On a $350,000 home with zero down, a conventional loan
+          would require PMI until 20% equity is built up — often $200-$300/month. VA loans skip
+          that entirely, which is why the effective monthly payment can be much lower than an
+          equivalent conventional path.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the home price.",
+      "Set down payment to 0 unless you want to reduce your funding fee.",
+      "Enter the VA rate (often slightly below conventional).",
+      "Include property tax and insurance.",
+      "Factor the funding fee into closing costs, not monthly.",
+    ],
+    useCases: [
+      "Eligible veterans comparing VA vs conventional options.",
+      "Active-duty service members planning a purchase with minimal cash.",
+      "Surviving spouses of eligible veterans.",
+    ],
+    whenToUse: [
+      "When eligible and intending to use the home as a primary residence.",
+      "Refinancing from a conventional loan into a VA loan.",
+    ],
+    whenNotToUse: [
+      "Investment properties (VA loans are primary-residence only).",
+      "Non-eligible buyers — conventional or FHA instead.",
+    ],
+    example: {
+      input: "Home price: $350,000\nDown: $0\nRate: 6.5%\nTerm: 30 years",
+      output: "P&I: $2,213/mo\nTaxes: $350/mo\nInsurance: $100/mo\nTotal PITI: $2,663/mo",
+      note: "Zero down + no PMI saves roughly $200-$300/month vs an equivalent conventional 0-3% down loan.",
+    },
+    faq: [
+      {
+        q: "How do I prove VA eligibility?",
+        a: "Request a Certificate of Eligibility (COE) from the VA. Most lenders can submit the request on your behalf.",
+      },
+      {
+        q: "Is there a loan limit for VA loans?",
+        a: "Veterans with full entitlement have no VA loan limit, though lenders may cap at their own comfort. Partial-entitlement buyers have limits based on county.",
+      },
+    ],
+  },
+  "refinance-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 400000}
+        initialDown={num(params, "down") ?? 25}
+        initialRate={num(params, "rate") ?? 5.75}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A refinance calculator that lets you model a new mortgage alongside your current one.
+          Use the inputs as the new-loan numbers: the refi&rsquo;s principal, the new rate, and
+          the new term. Compare the new monthly and total interest to what you&rsquo;re paying
+          today, then subtract closing costs to find your true break-even point.
+        </p>
+        <p>
+          Rule of thumb: if the rate drop is 0.75% or more and you plan to stay in the home long
+          enough to recoup closing costs (usually 3-5 years), a refi typically pays off. Below
+          that threshold, or with a short expected stay, it often doesn&rsquo;t.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the loan balance you&rsquo;d refi (usually &lt; original principal).",
+      "Enter the new rate you&rsquo;re being quoted.",
+      "Pick a new term (keeping 30 years resets the clock; a 15 or 20 shortens it).",
+      "Compare the new PITI and total interest to your current loan.",
+      "Subtract closing costs to find break-even.",
+    ],
+    useCases: [
+      "Deciding whether to refinance into a lower rate.",
+      "Switching from a 30-year to a 15-year while keeping roughly the same monthly.",
+      "Cash-out refinance math (principal goes up; interest goes up too).",
+    ],
+    whenToUse: [
+      "Rate has dropped 0.75%+ since original loan.",
+      "Switching loan type (ARM to fixed, FHA to conventional to drop MIP).",
+      "Removing a co-borrower via a refi.",
+    ],
+    whenNotToUse: [
+      "If you plan to move within 1-2 years — closing costs likely eat the savings.",
+      "If cash-out is for consumer spending rather than a real investment.",
+    ],
+    example: {
+      input: "New principal: $300,000\nNew rate: 5.75%\nNew term: 30 years",
+      output: "New P&I: $1,751/mo\nNew total interest (30 yrs): $330,309\nBreak-even (assuming $6,000 closing): ~36 months vs current 6.75% loan",
+      note: "A 1% rate drop on $300,000 saves about $170/month — roughly $60k over 30 years.",
+    },
+    faq: [
+      {
+        q: "What are typical refinance closing costs?",
+        a: "2-5% of the loan amount. On a $300,000 refi, expect $6,000-$15,000 in costs unless you pick a no-closing-cost refi (which typically has a higher rate).",
+      },
+      {
+        q: "Should I do a no-closing-cost refi?",
+        a: "Only if you&rsquo;re not staying long enough to amortize the costs. The higher rate usually makes it more expensive over time.",
+      },
+    ],
+  },
+  "mortgage-affordability-calculator": {
+    render: (params) => (
+      <MortgageCalculator
+        initialPrice={num(params, "price") ?? 350000}
+        initialDown={num(params, "down") ?? 10}
+        initialRate={num(params, "rate") ?? 6.75}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A mortgage affordability calculator that shows full PITI on various home prices. Lenders
+          use the 28/36 rule: PITI should be no more than 28% of your gross monthly income, and
+          total debt payments (PITI + car + student loans + minimum credit card payments) should
+          stay under 36%.
+        </p>
+        <p>
+          Run prices up and down until the PITI lands at or below 28% of your gross monthly. Then
+          pressure-test it: could you still hit all your other financial goals (emergency fund,
+          retirement, kids) at that payment? If the answer is &ldquo;only if nothing goes wrong,&rdquo;
+          go lower.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Start with a candidate home price.",
+      "Enter your realistic down payment.",
+      "Enter today&rsquo;s mortgage rate.",
+      "Add property tax rate and insurance estimate.",
+      "Check PITI against 28% of your gross monthly income.",
+    ],
+    useCases: [
+      "Figuring out a realistic home-price range before shopping.",
+      "Running the 28/36 check on a lender&rsquo;s pre-approval amount (often higher than you should actually spend).",
+      "Comparing what different down-payment amounts enable.",
+    ],
+    whenToUse: [
+      "Early in the home-buying process.",
+      "When a pre-approval comes back higher than you expected — check whether you can actually afford it.",
+    ],
+    whenNotToUse: [
+      "As the only decision input — budget priorities (retirement, kids, travel, job risk) matter too.",
+    ],
+    example: {
+      input: "Gross monthly income: $9,000 (example)\n28% of that: $2,520\nIf your target PITI ≤ $2,520/mo: about a $310,000 home with 10% down at 6.75%.",
+      output: "Home price: $310,000\nDown: $31,000\nP&I: $1,810/mo\nTaxes: $310/mo\nInsurance: $80/mo\nTotal PITI: $2,200/mo",
+      note: "Pre-approvals often stretch higher than the 28% rule; just because a lender will lend it doesn&rsquo;t mean you should borrow it.",
+    },
+    faq: [
+      {
+        q: "What&rsquo;s the 28/36 rule?",
+        a: "PITI ≤ 28% of gross monthly income; total debt payments ≤ 36%. Lenders often go beyond these in pre-approvals; they&rsquo;re still a useful personal guardrail.",
+      },
+      {
+        q: "Should I use gross or net income?",
+        a: "Lenders use gross. For personal budgeting, net is more realistic. We recommend running both.",
+      },
+    ],
+  },
+  // =========================================================================
+  // SAVINGS / RETIREMENT VARIANTS (5) — reuse CompoundInterestCalculator
+  // where appropriate, SavingsGoalCalculator where target-date logic fits.
+  // =========================================================================
+  "401k-calculator": {
+    render: (params) => (
+      <CompoundInterestCalculator
+        initialPrincipal={num(params, "principal") ?? 10000}
+        initialContribution={num(params, "monthly") ?? 800}
+        initialRate={num(params, "rate") ?? 7}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A 401(k) calculator that projects your balance at retirement based on current balance,
+          monthly contributions (including employer match), assumed annual return, and years until
+          retirement. The underlying math is compound interest with periodic contributions.
+        </p>
+        <p>
+          $800/month ($9,600/year, well under the 2026 limit) at 7% for 30 years = $1.18M. The
+          employer match is the highest-return contribution you&rsquo;ll ever make — don&rsquo;t
+          leave it on the table. If your employer matches 50% up to 6% of salary, always contribute
+          at least 6% even if you can&rsquo;t max out.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your current 401(k) balance.",
+      "Add your monthly contribution plus employer match.",
+      "Use 7% as a reasonable long-term return assumption.",
+      "Set years to retirement.",
+      "See the projected balance.",
+    ],
+    useCases: [
+      "Projecting your retirement balance.",
+      "Seeing the impact of increasing contributions by 1% of salary.",
+      "Modeling a catch-up contribution strategy close to retirement.",
+    ],
+    whenToUse: [
+      "Annual retirement planning review.",
+      "Deciding whether to increase your contribution percentage.",
+      "Comparing the long-term effect of different employer match levels.",
+    ],
+    whenNotToUse: [
+      "Calculating Roth conversions or RMD strategy — different math.",
+      "Tracking asset allocation or rebalancing (use a brokerage tool).",
+    ],
+    example: {
+      input: "Current balance: $10,000\nMonthly contribution (you + match): $800\nAnnual return: 7%\nYears: 30",
+      output: "Projected balance: $1,188,000\nTotal contributed: $298,000\nGrowth: $890,000",
+      note: "Growth triples contributions at 30 years — this is the compounding argument in a single number.",
+    },
+    faq: [
+      {
+        q: "What percentage should I contribute?",
+        a: "At least enough to capture the full employer match (often 5-6% of salary). Targeting 15% of gross income including match is a common long-term goal.",
+      },
+      {
+        q: "What happens if I change jobs?",
+        a: "You can roll the 401(k) into your new employer&rsquo;s plan or into an IRA. Rolling into an IRA usually gives more investment options.",
+      },
+    ],
+  },
+  "roth-ira-calculator": {
+    render: (params) => (
+      <CompoundInterestCalculator
+        initialPrincipal={num(params, "principal") ?? 5000}
+        initialContribution={num(params, "monthly") ?? 500}
+        initialRate={num(params, "rate") ?? 7}
+        initialYears={num(params, "years") ?? 30}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A Roth IRA calculator. Roth IRA contributions are made with after-tax money, meaning
+          qualified withdrawals in retirement are tax-free — including all the growth. For many
+          people, especially those with decades until retirement, this is the single best
+          retirement account available.
+        </p>
+        <p>
+          At $500/month (well under the 2026 contribution limit) with 30 years of 7% returns, the
+          balance reaches about $620,000. Every dollar of that is withdrawable tax-free in
+          retirement — no RMDs, no surprise tax bills. Pair with a 401(k) if your employer offers a
+          match.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your current Roth balance.",
+      "Enter your monthly contribution (up to the annual limit / 12).",
+      "Use 7% as a reasonable long-term return assumption.",
+      "Set years until retirement.",
+      "Read the projected tax-free balance.",
+    ],
+    useCases: [
+      "Planning tax-free retirement income.",
+      "Modeling the value of maxing out Roth contributions each year.",
+      "Comparing Roth IRA vs 401(k) prioritization.",
+    ],
+    whenToUse: [
+      "Annual retirement planning.",
+      "Income below the Roth IRA contribution limit.",
+      "Expecting to be in the same or higher tax bracket in retirement.",
+    ],
+    whenNotToUse: [
+      "If your income exceeds direct Roth limits — consider a backdoor Roth (different mechanics).",
+      "Traditional IRA or 401(k) analysis (those involve tax deductions now, taxable withdrawals later).",
+    ],
+    example: {
+      input: "Current balance: $5,000\nMonthly contribution: $500\nAnnual return: 7%\nYears: 30",
+      output: "Projected balance: $620,000\nTotal contributed: $185,000\nGrowth: $435,000\nAll withdrawable tax-free in retirement",
+      note: "Same contributions in a taxable brokerage would owe capital gains and dividend tax annually and at withdrawal.",
+    },
+    faq: [
+      {
+        q: "What&rsquo;s the Roth IRA contribution limit?",
+        a: "The IRS adjusts the limit annually. For current year limits and income phase-outs, check IRS Publication 590-A before contributing.",
+      },
+      {
+        q: "Can I withdraw Roth IRA contributions before retirement?",
+        a: "Contributions (not growth) can be withdrawn tax- and penalty-free at any time. Growth withdrawn before age 59½ and 5 years from first contribution is usually taxable and may owe a 10% penalty.",
+      },
+    ],
+  },
+  "retirement-calculator": {
+    render: (params) => (
+      <CompoundInterestCalculator
+        initialPrincipal={num(params, "principal") ?? 50000}
+        initialContribution={num(params, "monthly") ?? 1500}
+        initialRate={num(params, "rate") ?? 7}
+        initialYears={num(params, "years") ?? 25}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A general retirement calculator. Enter your current invested balance (across all
+          retirement accounts), your total monthly contributions, an assumed return rate, and the
+          number of years until you retire. The output is a single number: your projected nest
+          egg at retirement.
+        </p>
+        <p>
+          A common rule of thumb is the 4% rule — you can safely withdraw 4% of your balance per
+          year in retirement. $1.5M supports about $60k/year of pre-tax spending. Run multiple
+          scenarios: what if you contribute 15% more? What if you work 3 more years? The levers
+          are surprisingly large.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add up all retirement account balances and enter the total.",
+      "Add all monthly contributions (your 401(k) + match + any IRA).",
+      "Use 7% as a conservative long-term return assumption.",
+      "Enter years to retirement.",
+      "Apply the 4% rule to estimate annual retirement income.",
+    ],
+    useCases: [
+      "Annual big-picture retirement check.",
+      "Testing the effect of a major contribution change.",
+      "Deciding whether you can retire in X years.",
+    ],
+    whenToUse: [
+      "Once a year as a sanity check.",
+      "At any major life or income change.",
+    ],
+    whenNotToUse: [
+      "For Social Security or pension planning — those use different math.",
+      "For Monte Carlo simulation (variability matters in real retirements).",
+    ],
+    example: {
+      input: "Current total: $50,000\nMonthly contributions: $1,500\nAnnual return: 7%\nYears: 25",
+      output: "Projected balance: $1,490,000\n4% rule income: $59,600/year pre-tax",
+      note: "Every extra year of work at these contributions adds roughly $140,000 to the final balance.",
+    },
+    faq: [
+      {
+        q: "Is the 4% rule still valid?",
+        a: "It&rsquo;s a heuristic, not a law. Most modern research suggests 3.5-4% for 30-year retirements. A portfolio-and-spending check with a fee-only advisor is wise as retirement approaches.",
+      },
+      {
+        q: "How much do I actually need to retire?",
+        a: "About 25× your annual expenses is a common target (the 4% rule in reverse). For $50k/year spending, aim for $1.25M. For $100k/year, $2.5M.",
+      },
+    ],
+  },
+  "college-savings-calculator": {
+    render: (params) => (
+      <CompoundInterestCalculator
+        initialPrincipal={num(params, "principal") ?? 2000}
+        initialContribution={num(params, "monthly") ?? 300}
+        initialRate={num(params, "rate") ?? 6}
+        initialYears={num(params, "years") ?? 18}
+      />
+    ),
+    explainer: (
+      <>
+        <p>
+          A college savings calculator for 529 plans and general investment accounts. Enter current
+          balance, monthly contribution, and years until your child enrolls. 529 plans grow
+          tax-free when used for qualified education expenses; general brokerage accounts grow
+          with taxable gains but offer more flexibility.
+        </p>
+        <p>
+          $300/month for 18 years at 6% = $117,000. That roughly covers a four-year public
+          in-state undergraduate education if costs grow with inflation — though costs have
+          historically outrun general inflation. Starting as early as possible makes the biggest
+          difference.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the current 529 or college-savings balance.",
+      "Enter the monthly contribution.",
+      "Use 6% as a moderately conservative return (younger kids can use 7%).",
+      "Enter years until enrollment.",
+      "Compare the result to current projected college costs.",
+    ],
+    useCases: [
+      "New parents planning a 529 strategy.",
+      "Grandparent contributions to existing 529s.",
+      "Comparing aggressive vs conservative saving paths.",
+    ],
+    whenToUse: [
+      "Any time before college enrollment.",
+      "Annually as part of household financial review.",
+    ],
+    whenNotToUse: [
+      "To project financial aid — separate calculation.",
+      "For private-K-12 savings (529 usage here has different rules and limits).",
+    ],
+    example: {
+      input: "Current: $2,000\nMonthly: $300\nReturn: 6%\nYears: 18",
+      output: "Projected balance: $122,000\nTotal contributed: $66,800\nGrowth: $55,200",
+      note: "Raising monthly to $500 grows the final balance to roughly $198,000 — $76,000 more for $200/month extra.",
+    },
+    faq: [
+      {
+        q: "What if my child doesn&rsquo;t go to college?",
+        a: "529 plans can be transferred to other family members or used for trade schools, apprenticeships, and (up to limits) student loan repayment. Non-qualified withdrawals face taxes and a 10% penalty on growth.",
+      },
+      {
+        q: "529 plan or brokerage?",
+        a: "529 for tax-free growth if the money is likely to be used for education. Brokerage if you want flexibility, even at the cost of paying taxes on gains.",
+      },
+    ],
+  },
+  "emergency-fund-calculator": {
+    render: () => <SavingsGoalCalculator />,
+    explainer: (
+      <>
+        <p>
+          An emergency fund calculator. The first question: how big should your emergency fund
+          actually be? Standard guidance says 3-6 months of essential expenses (rent/mortgage,
+          utilities, groceries, insurance, minimum debt payments). Self-employed or single-income
+          households lean toward 6-12 months. Dual-income households with stable jobs can lean
+          toward 3 months.
+        </p>
+        <p>
+          The second question: how fast can you get there? Enter your target amount, how much
+          you&rsquo;ve already saved, and your monthly savings rate. The calculator shows the
+          timeline plus the interest you&rsquo;ll earn at current high-yield savings rates. Pair
+          with our <a href="/guides/how-to-build-an-emergency-fund">emergency fund guide</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Calculate your essential monthly expenses.",
+      "Multiply by 3, 6, or 12 to get your target.",
+      "Enter that target as the goal amount.",
+      "Enter current savings balance and HYSA APY.",
+      "Read the monthly deposit needed to reach the goal by your date.",
+    ],
+    useCases: [
+      "Building a first emergency fund from zero.",
+      "Sizing a fund around a specific risk (job loss, medical, house repair).",
+      "Comparing a 3-month vs 6-month target timeline.",
+    ],
+    whenToUse: [
+      "When starting an emergency fund.",
+      "When rebuilding after an emergency depleted savings.",
+      "When switching to self-employment or a less stable income.",
+    ],
+    whenNotToUse: [
+      "For long-term savings — money beyond the emergency fund should be invested, not kept in cash.",
+    ],
+    example: {
+      input: "Essential monthly expenses: $4,000\nTarget: 6 months = $24,000\nStarting balance: $3,000\nHYSA APY: 4%\nTimeline: 24 months",
+      output: "Required monthly deposit: ~$820\nTotal saved in 24 months: ~$24,800 (including interest)",
+      note: "The HYSA interest covers about half a month of deposits over 24 months — not huge, but better than 0%.",
+    },
+    faq: [
+      {
+        q: "Where should I keep my emergency fund?",
+        a: "In a high-yield savings account (HYSA) at an FDIC-insured bank. Instant access, meaningful interest (typically 4% in 2026), zero risk.",
+      },
+      {
+        q: "Should I invest my emergency fund?",
+        a: "No. The point is it&rsquo;s available when something goes wrong — exactly when investments are most likely to be down.",
+      },
+    ],
+  },
   "savings-goal-calculator": {
     render: () => <SavingsGoalCalculator />,
     explainer: (
@@ -1354,6 +2597,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter your starting balance (can be 0).",
       "Enter your HYSA APY (4% is typical in 2026).",
       "Read the required monthly deposit to reach the goal.",
+    ],
+      faq: [
+      {
+        "q": "Where should I park my savings while building to a goal?",
+        "a": "A high-yield savings account (HYSA) from an online bank currently pays around 4 percent APY. That's $200/year per $5,000 saved — meaningful and fully liquid. Avoid locking short-term savings in CDs or the market."
+      },
+      {
+        "q": "Should I include employer 401(k) match in my savings rate?",
+        "a": "For this calculator, keep 401(k) separate — those funds aren't accessible for emergencies or short-term goals. Track them as retirement progress instead."
+      },
+      {
+        "q": "What if I can't afford the required monthly deposit?",
+        "a": "Push the target date out by three months, or reduce the goal by 10 percent, and rerun. Small adjustments compound — six extra months of savings on a five-year goal only cost a rounding error in lifestyle."
+      }
     ],
   },
   "debt-payoff-calculator": {
@@ -1517,6 +2774,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter the time period in years.",
       "Read simple ROI and annualized ROI.",
     ],
+      faq: [
+      {
+        "q": "What's a good ROI?",
+        "a": "For a business investment, 15–20 percent annualized over multiple years is considered strong. For stocks, 7 percent real returns is the historical average. Anything over 30 percent annualized over a long period is unusual and deserves scrutiny."
+      },
+      {
+        "q": "Why does annualized ROI matter more than simple ROI?",
+        "a": "A 100 percent return over ten years is much worse than a 100 percent return over one year. Annualized ROI converts any holding period to an apples-to-apples yearly rate, so you can compare across investments of different lengths."
+      },
+      {
+        "q": "Does this account for inflation?",
+        "a": "No — the output is nominal ROI. To convert to real ROI (after inflation), subtract the average inflation rate over the holding period. In a 3 percent inflation environment, a nominal 10 percent return is a real 7 percent return."
+      }
+    ],
   },
   "currency-converter": {
     render: () => <CurrencyConverter />,
@@ -1541,6 +2812,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick From and To currencies — or press ⇄ to swap them.",
       "Override the rate if your provider quoted a different number.",
       "Read the converted amount and the rate used.",
+    ],
+      faq: [
+      {
+        "q": "Are the exchange rates live?",
+        "a": "Rates are pulled from a public ECB-derived feed and refresh roughly daily. They're accurate enough for travel and back-of-envelope work, but for wire transfers or large FX trades, use your bank's actual quote — retail rates include a 1–3 percent markup we don't price in."
+      },
+      {
+        "q": "Why does my bank charge a different rate than this shows?",
+        "a": "The midmarket rate we show is the wholesale rate between banks. Retail banks add a spread (typically 1–3 percent) plus sometimes a flat fee. Services like Wise or Revolut often charge closer to the midmarket rate."
+      },
+      {
+        "q": "Can I convert crypto?",
+        "a": "Not currently — this tool handles fiat currencies only (USD, EUR, GBP, JPY, CAD, AUD, CHF, and similar majors). Crypto prices are volatile enough that a \"converter\" snapshot is misleading within minutes."
+      }
     ],
   },
   "habit-tracker": {
@@ -1631,6 +2916,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Set the reference date and time.",
       "Toggle which zones to display.",
       "Read the converted times side-by-side.",
+    ],
+      faq: [
+      {
+        "q": "Does this handle daylight saving time (DST)?",
+        "a": "Yes. The browser's Intl API is DST-aware, so a 9 AM meeting in New York correctly shows 2 PM London in summer and 1 PM London in winter. The conversion matches what a native calendar app would show."
+      },
+      {
+        "q": "Why does my city not appear in the list?",
+        "a": "The IANA time zone database uses a canonical city per zone (e.g., America/Chicago for all of the US Central Time zone). If your city isn't listed, pick the nearest one in the same zone — the offset is identical."
+      },
+      {
+        "q": "Can I convert a meeting time across more than two zones?",
+        "a": "Yes, toggle additional zones in the display list. Useful for distributed teams — set one reference time and read the local time in four or five places at once."
+      }
     ],
   },
   "ideal-weight-calculator": {
@@ -1745,6 +3044,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the Flesch score and interpretation.",
       "Check syllable, word, and sentence counts.",
       "Shorten sentences or simpler words to boost the score.",
+    ],
+      faq: [
+      {
+        "q": "What's a good Flesch Reading Ease score?",
+        "a": "For blog posts and web copy, aim for 60–70 (fairly easy to read, 8th–9th grade level). For technical documentation, 50–60 is fine. For legal or academic writing, 30–50 is the norm. Anything under 30 is unnecessarily hard to read."
+      },
+      {
+        "q": "Does Google use Flesch scores to rank pages?",
+        "a": "Not directly — Google has stated readability isn't a ranking factor. But lower reading grade levels correlate with higher dwell time and lower bounce rate, which are signals Google does use. So readable writing helps rankings indirectly."
+      },
+      {
+        "q": "How do I improve my score quickly?",
+        "a": "Split long sentences at conjunctions, replace uncommon words with common synonyms, and cut filler phrases (\"in order to\" → \"to\", \"due to the fact that\" → \"because\"). Those three changes usually move a score 10–15 points."
+      }
     ],
   },
   "typing-speed-test": {
@@ -1864,6 +3177,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Click Decode to un-escape percent-encoded text.",
       "Copy the result with one click.",
     ],
+      faq: [
+      {
+        "q": "When do I need URL encoding?",
+        "a": "Any time a URL contains reserved characters (space, #, ?, &, /, :, +, =) that aren't being used in their special role. Form submissions, query strings, and API paths are the common cases — a user input with a space becomes %20 when sent as a query parameter."
+      },
+      {
+        "q": "What's the difference between encoding a query string and a path component?",
+        "a": "Path components shouldn't encode the forward slash; query string components must encode &, =, +, and space as %2B or +. JavaScript's encodeURIComponent is the stricter version and usually what you want for query params."
+      },
+      {
+        "q": "Can I safely paste an API token or secret here?",
+        "a": "Yes — the encoder runs entirely in your browser. Nothing is sent to a server, so you can encode bearer tokens, database connection strings, or webhook URLs without exposing them."
+      }
+    ],
   },
   "regex-tester": {
     render: () => <RegexTester />,
@@ -1940,6 +3267,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Copy individual UUIDs or the whole batch.",
       "Regenerate any time for a fresh batch.",
     ],
+      faq: [
+      {
+        "q": "What's the difference between UUID v4 and v7?",
+        "a": "v4 is fully random (128 bits of entropy). v7 includes a 48-bit timestamp prefix, making it sortable by creation time. Use v4 for maximum unlinkability (session IDs), v7 when you want database-friendly insertion order."
+      },
+      {
+        "q": "Are these UUIDs truly unique?",
+        "a": "v4 UUIDs use 122 bits of randomness — the probability of a collision in a billion-entry table is below one in a quintillion. For all practical purposes they're unique, but they are not cryptographically secret — they should not be used as authentication tokens."
+      },
+      {
+        "q": "Can I bulk-generate thousands for test data?",
+        "a": "Yes — the generator handles batches of 1,000+ in the browser without lag. Copy the full batch with one click and paste into a fixture file or SQL insert statement."
+      }
+    ],
   },
   "markdown-to-html": {
     render: () => <MarkdownToHtml />,
@@ -1960,6 +3301,20 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read the HTML output instantly.",
       "Copy the HTML with one click.",
       "Paste into a CMS, email, or site editor.",
+    ],
+      faq: [
+      {
+        "q": "Which markdown flavor does this support?",
+        "a": "CommonMark with a few GitHub-flavored extensions: tables, fenced code blocks, task lists, and autolinks. It should match what you see rendered on GitHub.com for most content."
+      },
+      {
+        "q": "Can I paste the output into WordPress or Ghost?",
+        "a": "Yes. Switch the editor into HTML mode and paste. WordPress classic editor, Ghost, Substack, and most other CMSes accept pasted HTML directly in the code/source view."
+      },
+      {
+        "q": "Does it sanitize dangerous HTML?",
+        "a": "Raw HTML inside your markdown is preserved as-is (CommonMark default). If you're going to paste output into a public-facing site and your source markdown may contain untrusted HTML, run it through a sanitizer like DOMPurify before publishing."
+      }
     ],
   },
   "length-converter": {

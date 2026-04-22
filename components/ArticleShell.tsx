@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -97,6 +98,11 @@ export function ArticleShell({
       />
 
       <Prose>{intro}</Prose>
+
+      {/* In-article display slot. Placed after the intro (once the
+          reader has committed to the page) — AdSense's own recommended
+          placement for guides. Auto-ads also run sitewide. */}
+      <AdSlot layout="in-article" className="my-8" label="Advertisement" />
 
       {toc && toc.length > 0 && (
         <nav

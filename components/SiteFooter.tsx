@@ -8,7 +8,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-slate-200 bg-slate-50">
       <Container className="py-12">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-5">
           <div>
             <div className="flex items-center gap-2">
               <span
@@ -28,8 +28,24 @@ export function SiteFooter() {
           <FooterColumn title="Browse">
             <FooterLink href="/tools">All tools</FooterLink>
             <FooterLink href="/guides">All guides</FooterLink>
+            <FooterLink href="/best">Curated lists</FooterLink>
+            <FooterLink href="/favorites">Favorites</FooterLink>
             <FooterLink href="/about">About</FooterLink>
             <FooterLink href="/contact">Contact</FooterLink>
+          </FooterColumn>
+
+          <FooterColumn title="Curated lists">
+            <FooterLink href="/best/free-tools-for-freelancers">
+              For freelancers
+            </FooterLink>
+            <FooterLink href="/best/free-tools-for-students">
+              For students
+            </FooterLink>
+            <FooterLink href="/best/free-dev-tools">For developers</FooterLink>
+            <FooterLink href="/best/free-seo-tools">For SEO</FooterLink>
+            <FooterLink href="/best/free-finance-calculators">
+              Finance calculators
+            </FooterLink>
           </FooterColumn>
 
           <FooterColumn title="Guide sections">

@@ -7,6 +7,7 @@ import {
   GUIDE_CATEGORIES,
   guidesByGuideCategory,
 } from "@/lib/pages";
+import { HUBS } from "@/lib/hubs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -14,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/tools`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/best`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/favorites`, lastModified: now, changeFrequency: "monthly", priority: 0.4 },
     { url: `${SITE_URL}/trust`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/security`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/methodology`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
@@ -24,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
   ];
+
+  const hubRoutes: MetadataRoute.Sitemap = HUBS.map((h) => ({
+    url: `${SITE_URL}/best/${h.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
   const byCat = guidesByGuideCategory();
   const categoryRoutes: MetadataRoute.Sitemap = GUIDE_CATEGORY_ORDER
@@ -41,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: p.type === "tool" ? 0.7 : 0.6,
   }));
-  return [...staticRoutes, ...categoryRoutes, ...pageRoutes];
+  return [...staticRoutes, ...hubRoutes, ...categoryRoutes, ...pageRoutes];
 }

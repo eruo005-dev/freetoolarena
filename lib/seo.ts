@@ -184,6 +184,34 @@ export function faqJsonLd(faq: { q: string; a: string }[]): string {
 }
 
 /**
+ * HowTo JSON-LD — emit on any tool that has ordered "how to use" steps.
+ * Google treats HowTo as a standalone rich-result type so this is pure
+ * upside for calculator-style tools.
+ */
+export function howToJsonLd({
+  name,
+  description,
+  steps,
+}: {
+  name: string;
+  description: string;
+  steps: string[];
+}): string {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to use ${name}`,
+    description,
+    step: steps.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: `Step ${i + 1}`,
+      text,
+    })),
+  });
+}
+
+/**
  * Organization-level JSON-LD injected once at the root layout so the whole
  * site claims a single publisher identity.
  */

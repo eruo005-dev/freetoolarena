@@ -2,12 +2,13 @@ import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { TrackRecentTool } from "@/components/TrackRecentTool";
+import { AdSlot } from "@/components/AdSlot";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Prose } from "@/components/ui/Prose";
 import { getPageBySlug, CATEGORIES, pageHref } from "@/lib/pages";
-import { jsonLdFor, faqJsonLd, SITE_UPDATED } from "@/lib/seo";
+import { jsonLdFor, faqJsonLd, howToJsonLd, SITE_UPDATED } from "@/lib/seo";
 
 export interface ToolShellProps {
   slug: string;
@@ -77,6 +78,12 @@ export function ToolShell({
       >
         {children}
       </section>
+
+      {/* Manual above-fold-adjacent slot. Auto ads still run sitewide, but
+          manually placing a slot directly under the tool maximizes RPM —
+          highest-intent eyeballs, best scroll position. Graceful degrade
+          on ad-block (component collapses). */}
+      <AdSlot className="mb-10" label="Advertisement" />
 
       <Prose className="mb-10">
         <h2>What it does</h2>
@@ -188,6 +195,18 @@ export function ToolShell({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdFor(page) }}
       />
+      {howToUse && howToUse.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: howToJsonLd({
+              name: page.h1,
+              description: page.description,
+              steps: howToUse,
+            }),
+          }}
+        />
+      )}
     </Container>
   );
 }
