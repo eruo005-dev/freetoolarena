@@ -204,7 +204,10 @@ export default function HomePage() {
           />
         </div>
         <p className="mt-4 text-center text-xs text-slate-500">
-          Last reviewed end-to-end {formatUpdated(SITE_UPDATED)}.
+          Last reviewed end-to-end {formatUpdated(SITE_UPDATED)}.{" "}
+          <Link href="/how-it-works" className="text-brand hover:underline">
+            See exactly how our tools work →
+          </Link>
         </p>
       </section>
     </Container>

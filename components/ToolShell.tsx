@@ -3,11 +3,13 @@ import { RelatedLinks } from "@/components/RelatedLinks";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { TrackRecentTool } from "@/components/TrackRecentTool";
 import { AdSlot } from "@/components/AdSlot";
+import { ShareBar } from "@/components/ShareBar";
+import { BookmarkNudge } from "@/components/BookmarkNudge";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Prose } from "@/components/ui/Prose";
-import { getPageBySlug, CATEGORIES, pageHref } from "@/lib/pages";
+import { getPageBySlug, CATEGORIES, pageHref, SITE_URL } from "@/lib/pages";
 import { jsonLdFor, faqJsonLd, howToJsonLd, SITE_UPDATED } from "@/lib/seo";
 
 export interface ToolShellProps {
@@ -78,6 +80,10 @@ export function ToolShell({
       >
         {children}
       </section>
+
+      {/* Share row. Sits directly under the tool so a useful result can
+          be copy-linked to a friend / email / DM without scrolling. */}
+      <ShareBar path={pageHref(page)} title={page.h1} origin={SITE_URL} />
 
       {/* Manual above-fold-adjacent slot. Auto ads still run sitewide, but
           manually placing a slot directly under the tool maximizes RPM —
@@ -188,6 +194,13 @@ export function ToolShell({
         </section>
       )}
 
+      {/* Near-bottom ad. Reader has engaged with the tool, scrolled past
+          the explainer/FAQ, and is now in "what's next" mode — this is a
+          high-RPM slot (CPM tends to rise deeper in the page because
+          only committed readers make it here). Auto-ads still run
+          sitewide, so this is additive. */}
+      <AdSlot className="mb-10" label="Advertisement" />
+
       <RelatedLinks slug={slug} filter="tool" heading="Related tools" />
       <RelatedLinks slug={slug} filter="article" heading="Supporting guides" />
 
@@ -207,6 +220,8 @@ export function ToolShell({
           }}
         />
       )}
+
+      <BookmarkNudge slug={slug} />
     </Container>
   );
 }

@@ -61,6 +61,7 @@ export function SiteFooter() {
 
           <FooterColumn title="Safety & legal">
             <FooterLink href="/trust">Trust & safety</FooterLink>
+            <FooterLink href="/how-it-works">How our tools work</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
             <FooterLink href="/methodology">Tool methodology</FooterLink>
             <FooterLink href="/editorial">Editorial policy</FooterLink>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { AdSlot } from "@/components/AdSlot";
+import { ShareBar } from "@/components/ShareBar";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -13,6 +14,7 @@ import {
   GUIDE_CATEGORIES,
   guideCategoryFor,
   guideCategoryHref,
+  SITE_URL,
 } from "@/lib/pages";
 import { jsonLdFor, faqJsonLd, SITE_UPDATED } from "@/lib/seo";
 
@@ -165,6 +167,15 @@ export function ArticleShell({
           />
         </section>
       )}
+
+      {/* Near-bottom in-article slot. Highest RPM position for long
+          guides because anyone reaching here has read 60%+ of the body
+          and is primed to convert. Doesn't compete with the post-intro
+          slot above — AdSense reconciles position vs. viewability on
+          its side. */}
+      <AdSlot layout="in-article" className="mt-12" label="Advertisement" />
+
+      <ShareBar path={pageHref(page)} title={page.h1} origin={SITE_URL} />
 
       {cta && ctaTarget && ctaTarget.published && (
         <aside className="mt-12 flex flex-col gap-4 rounded-2xl bg-brand p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-7">

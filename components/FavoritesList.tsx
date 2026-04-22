@@ -46,18 +46,67 @@ export function FavoritesList() {
   }
 
   if (slugs.length === 0) {
+    const starters = getPublishedTools()
+      .filter((t) =>
+        [
+          "loan-calculator",
+          "mortgage-calculator",
+          "pomodoro-timer",
+          "password-generator",
+          "json-formatter",
+          "qr-code-generator",
+        ].includes(t.slug),
+      )
+      .slice(0, 6);
     return (
-      <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center">
-        <p className="text-lg font-semibold text-slate-900">No favorites yet</p>
-        <p className="mt-2 text-sm text-slate-600">
-          Tap the star on any tool to save it here — stored in your browser only.
-        </p>
-        <Link
-          href="/tools"
-          className="mt-4 inline-block rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:border-slate-400"
-        >
-          Browse all tools →
-        </Link>
+      <div>
+        <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center">
+          <p className="text-lg font-semibold text-slate-900">No favorites yet</p>
+          <p className="mt-2 text-sm text-slate-600">
+            Tap the <span aria-hidden>☆</span> star on any tool to save it here
+            — stored in your browser only, no account, no sync.
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/tools"
+              className="inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-dark"
+            >
+              Browse all tools →
+            </Link>
+            <Link
+              href="/best"
+              className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 transition hover:border-slate-400"
+            >
+              Curated lists
+            </Link>
+          </div>
+        </div>
+
+        {starters.length > 0 && (
+          <section className="mt-10">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+              Popular places to start
+            </p>
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {starters.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={pageHref(p)}
+                    className="block rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand hover:shadow-sm"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wide text-brand">
+                      {CATEGORIES[p.category].label}
+                    </p>
+                    <p className="mt-1 font-medium text-slate-900">{p.h1}</p>
+                    <p className="mt-1 line-clamp-2 text-sm text-slate-600">
+                      {p.description}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
     );
   }
