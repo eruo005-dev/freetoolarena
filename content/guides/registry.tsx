@@ -140,6 +140,9 @@ import * as MarketingRoi from "./how-to-calculate-marketing-roi";
 import * as CompareLoanOffers from "./how-to-compare-loan-offers";
 import * as HowMuchHouse from "./how-much-house-can-you-afford";
 import * as ProjectRetirement from "./how-to-project-retirement-with-compound-interest";
+import * as InterpretBmi from "./how-to-interpret-your-bmi";
+import * as ReadYourPaycheck from "./how-to-read-your-paycheck";
+import * as ScheduleTimeZones from "./how-to-schedule-across-time-zones";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1384,6 +1387,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Project your retirement balance — free compound interest calculator.",
       targetSlug: "compound-interest-calculator",
+    },
+  },
+  "how-to-interpret-your-bmi": {
+    intro: InterpretBmi.intro,
+    body: InterpretBmi.body,
+    cta: {
+      label: "Compute your BMI — free, no signup, includes WHO categories.",
+      targetSlug: "bmi-calculator",
+    },
+  },
+  "how-to-read-your-paycheck": {
+    intro: ReadYourPaycheck.intro,
+    body: ReadYourPaycheck.body,
+    cta: {
+      label: "Estimate your net paycheck — federal, state, FICA, 401(k) all in.",
+      targetSlug: "paycheck-calculator",
+    },
+  },
+  "how-to-schedule-across-time-zones": {
+    intro: ScheduleTimeZones.intro,
+    body: ScheduleTimeZones.body,
+    cta: {
+      label: "Convert across time zones — free, DST-aware converter.",
+      targetSlug: "time-zone-converter",
     },
   },
   "how-to-write-a-cron-expression": {
