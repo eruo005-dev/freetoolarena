@@ -296,6 +296,69 @@ const AiModelCompare = dynamic(() => import("./AiModelCompare").then(m => ({ def
 const PromptImprover = dynamic(() => import("./PromptImprover").then(m => ({ default: m.PromptImprover })), { loading: Skeleton });
 const AiChatExportFormatter = dynamic(() => import("./AiChatExportFormatter").then(m => ({ default: m.AiChatExportFormatter })), { loading: Skeleton });
 const AiWritingHumanizer = dynamic(() => import("./AiWritingHumanizer").then(m => ({ default: m.AiWritingHumanizer })), { loading: Skeleton });
+// Wave 10 — 62 tools (PDF, image, text, dev/SEO, fee, health, life/money, templates)
+const PdfEditor = dynamic(() => import("./PdfEditor").then(m => ({ default: m.PdfEditor })), { loading: Skeleton });
+const PdfRotate = dynamic(() => import("./PdfRotate").then(m => ({ default: m.PdfRotate })), { loading: Skeleton });
+const PdfCompress = dynamic(() => import("./PdfCompress").then(m => ({ default: m.PdfCompress })), { loading: Skeleton });
+const PdfUnlock = dynamic(() => import("./PdfUnlock").then(m => ({ default: m.PdfUnlock })), { loading: Skeleton });
+const PdfProtect = dynamic(() => import("./PdfProtect").then(m => ({ default: m.PdfProtect })), { loading: Skeleton });
+const PdfToPng = dynamic(() => import("./PdfToPng").then(m => ({ default: m.PdfToPng })), { loading: Skeleton });
+const PdfRedact = dynamic(() => import("./PdfRedact").then(m => ({ default: m.PdfRedact })), { loading: Skeleton });
+const PdfExtractImages = dynamic(() => import("./PdfExtractImages").then(m => ({ default: m.PdfExtractImages })), { loading: Skeleton });
+const PdfFlatten = dynamic(() => import("./PdfFlatten").then(m => ({ default: m.PdfFlatten })), { loading: Skeleton });
+const PdfInvertColors = dynamic(() => import("./PdfInvertColors").then(m => ({ default: m.PdfInvertColors })), { loading: Skeleton });
+const ImageFlip = dynamic(() => import("./ImageFlip").then(m => ({ default: m.ImageFlip })), { loading: Skeleton });
+const ImageRotate = dynamic(() => import("./ImageRotate").then(m => ({ default: m.ImageRotate })), { loading: Skeleton });
+const ImageBorderAdder = dynamic(() => import("./ImageBorderAdder").then(m => ({ default: m.ImageBorderAdder })), { loading: Skeleton });
+const ImageRoundCorners = dynamic(() => import("./ImageRoundCorners").then(m => ({ default: m.ImageRoundCorners })), { loading: Skeleton });
+const PngToJpg = dynamic(() => import("./PngToJpg").then(m => ({ default: m.PngToJpg })), { loading: Skeleton });
+const JpgToPng = dynamic(() => import("./JpgToPng").then(m => ({ default: m.JpgToPng })), { loading: Skeleton });
+const PngToWebp = dynamic(() => import("./PngToWebp").then(m => ({ default: m.PngToWebp })), { loading: Skeleton });
+const WebpToPng = dynamic(() => import("./WebpToPng").then(m => ({ default: m.WebpToPng })), { loading: Skeleton });
+const WordFrequencyCounter = dynamic(() => import("./WordFrequencyCounter").then(m => ({ default: m.WordFrequencyCounter })), { loading: Skeleton });
+const TextRepeater = dynamic(() => import("./TextRepeater").then(m => ({ default: m.TextRepeater })), { loading: Skeleton });
+const KebabCaseConverter = dynamic(() => import("./KebabCaseConverter").then(m => ({ default: m.KebabCaseConverter })), { loading: Skeleton });
+const SnakeCaseConverter = dynamic(() => import("./SnakeCaseConverter").then(m => ({ default: m.SnakeCaseConverter })), { loading: Skeleton });
+const NumberToWords = dynamic(() => import("./NumberToWords").then(m => ({ default: m.NumberToWords })), { loading: Skeleton });
+const AcronymGenerator = dynamic(() => import("./AcronymGenerator").then(m => ({ default: m.AcronymGenerator })), { loading: Skeleton });
+const RandomEmojiGenerator = dynamic(() => import("./RandomEmojiGenerator").then(m => ({ default: m.RandomEmojiGenerator })), { loading: Skeleton });
+const RandomLetterGenerator = dynamic(() => import("./RandomLetterGenerator").then(m => ({ default: m.RandomLetterGenerator })), { loading: Skeleton });
+const RandomWordGenerator = dynamic(() => import("./RandomWordGenerator").then(m => ({ default: m.RandomWordGenerator })), { loading: Skeleton });
+const BlockquoteFormatter = dynamic(() => import("./BlockquoteFormatter").then(m => ({ default: m.BlockquoteFormatter })), { loading: Skeleton });
+const SitemapUrlGenerator = dynamic(() => import("./SitemapUrlGenerator").then(m => ({ default: m.SitemapUrlGenerator })), { loading: Skeleton });
+const JsonSchemaGenerator = dynamic(() => import("./JsonSchemaGenerator").then(m => ({ default: m.JsonSchemaGenerator })), { loading: Skeleton });
+const JwtGenerator = dynamic(() => import("./JwtGenerator").then(m => ({ default: m.JwtGenerator })), { loading: Skeleton });
+const EnvFileParser = dynamic(() => import("./EnvFileParser").then(m => ({ default: m.EnvFileParser })), { loading: Skeleton });
+const UserAgentParser = dynamic(() => import("./UserAgentParser").then(m => ({ default: m.UserAgentParser })), { loading: Skeleton });
+const CurlCommandBuilder = dynamic(() => import("./CurlCommandBuilder").then(m => ({ default: m.CurlCommandBuilder })), { loading: Skeleton });
+const RegexToEnglish = dynamic(() => import("./RegexToEnglish").then(m => ({ default: m.RegexToEnglish })), { loading: Skeleton });
+const TomlToJson = dynamic(() => import("./TomlToJson").then(m => ({ default: m.TomlToJson })), { loading: Skeleton });
+const PaypalFeeCalculator = dynamic(() => import("./PaypalFeeCalculator").then(m => ({ default: m.PaypalFeeCalculator })), { loading: Skeleton });
+const StripeFeeCalculator = dynamic(() => import("./StripeFeeCalculator").then(m => ({ default: m.StripeFeeCalculator })), { loading: Skeleton });
+const GumroadFeeCalculator = dynamic(() => import("./GumroadFeeCalculator").then(m => ({ default: m.GumroadFeeCalculator })), { loading: Skeleton });
+const EtsyFeeCalculator = dynamic(() => import("./EtsyFeeCalculator").then(m => ({ default: m.EtsyFeeCalculator })), { loading: Skeleton });
+const EbayFeeCalculator = dynamic(() => import("./EbayFeeCalculator").then(m => ({ default: m.EbayFeeCalculator })), { loading: Skeleton });
+const AmazonFbaCalculator = dynamic(() => import("./AmazonFbaCalculator").then(m => ({ default: m.AmazonFbaCalculator })), { loading: Skeleton });
+const SquareFeeCalculator = dynamic(() => import("./SquareFeeCalculator").then(m => ({ default: m.SquareFeeCalculator })), { loading: Skeleton });
+const SalesTaxCalculator = dynamic(() => import("./SalesTaxCalculator").then(m => ({ default: m.SalesTaxCalculator })), { loading: Skeleton });
+const ShopifyFeeCalculator = dynamic(() => import("./ShopifyFeeCalculator").then(m => ({ default: m.ShopifyFeeCalculator })), { loading: Skeleton });
+const PatreonFeeCalculator = dynamic(() => import("./PatreonFeeCalculator").then(m => ({ default: m.PatreonFeeCalculator })), { loading: Skeleton });
+const ProteinIntakeCalculator = dynamic(() => import("./ProteinIntakeCalculator").then(m => ({ default: m.ProteinIntakeCalculator })), { loading: Skeleton });
+const CarbohydrateCalculator = dynamic(() => import("./CarbohydrateCalculator").then(m => ({ default: m.CarbohydrateCalculator })), { loading: Skeleton });
+const FiberIntakeCalculator = dynamic(() => import("./FiberIntakeCalculator").then(m => ({ default: m.FiberIntakeCalculator })), { loading: Skeleton });
+const FastingTimer = dynamic(() => import("./FastingTimer").then(m => ({ default: m.FastingTimer })), { loading: Skeleton });
+const MealPrepCalculator = dynamic(() => import("./MealPrepCalculator").then(m => ({ default: m.MealPrepCalculator })), { loading: Skeleton });
+const WaterFromWeightCalculator = dynamic(() => import("./WaterFromWeightCalculator").then(m => ({ default: m.WaterFromWeightCalculator })), { loading: Skeleton });
+const RentIncreaseCalculator = dynamic(() => import("./RentIncreaseCalculator").then(m => ({ default: m.RentIncreaseCalculator })), { loading: Skeleton });
+const ApartmentAffordabilityCalculator = dynamic(() => import("./ApartmentAffordabilityCalculator").then(m => ({ default: m.ApartmentAffordabilityCalculator })), { loading: Skeleton });
+const LeaseVsBuyCalculator = dynamic(() => import("./LeaseVsBuyCalculator").then(m => ({ default: m.LeaseVsBuyCalculator })), { loading: Skeleton });
+const GiftCardSplitCalculator = dynamic(() => import("./GiftCardSplitCalculator").then(m => ({ default: m.GiftCardSplitCalculator })), { loading: Skeleton });
+const GroupGiftCalculator = dynamic(() => import("./GroupGiftCalculator").then(m => ({ default: m.GroupGiftCalculator })), { loading: Skeleton });
+const MovingCostCalculator = dynamic(() => import("./MovingCostCalculator").then(m => ({ default: m.MovingCostCalculator })), { loading: Skeleton });
+const StandupNotesTemplate = dynamic(() => import("./StandupNotesTemplate").then(m => ({ default: m.StandupNotesTemplate })), { loading: Skeleton });
+const WeeklyGoalTracker = dynamic(() => import("./WeeklyGoalTracker").then(m => ({ default: m.WeeklyGoalTracker })), { loading: Skeleton });
+const MeetingMinutesTemplate = dynamic(() => import("./MeetingMinutesTemplate").then(m => ({ default: m.MeetingMinutesTemplate })), { loading: Skeleton });
+const ProjectBriefTemplate = dynamic(() => import("./ProjectBriefTemplate").then(m => ({ default: m.ProjectBriefTemplate })), { loading: Skeleton });
 
 /** Next passes `searchParams` as `string | string[] | undefined`. */
 export type RenderParams = Record<string, string | string[] | undefined>;
@@ -8287,6 +8350,1123 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Paste AI-generated writing.",
       "Read the humanized output and list of rules applied.",
       "Copy the cleaned-up version.",
+    ],
+  },
+  // ---------- Wave 10 ----------
+  "pdf-editor": {
+    render: () => <PdfEditor />,
+    explainer: (
+      <>
+        <p>Click-to-place text, signatures, images, shapes, highlights, and checkmarks. Drag to reposition, save a clean PDF. No upload, no account, no watermark.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-rotate": {
+    render: () => <PdfRotate />,
+    explainer: (
+      <>
+        <p>Rotate a whole PDF or individual pages 90°, 180°, 270°. Saves a new copy, no upload, no account, no watermark.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-compress": {
+    render: () => <PdfCompress />,
+    explainer: (
+      <>
+        <p>Reduce PDF size by downsampling embedded images and stripping unused objects. Runs in-browser — your file never leaves.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-unlock": {
+    render: () => <PdfUnlock />,
+    explainer: (
+      <>
+        <p>Remove an owner or user password from a PDF you have the rights to. Works offline in your browser — no uploads.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-protect": {
+    render: () => <PdfProtect />,
+    explainer: (
+      <>
+        <p>Add a user password to a PDF so only the recipient can open it. All processing stays in your browser.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-to-png": {
+    render: () => <PdfToPng />,
+    explainer: (
+      <>
+        <p>Render every page of a PDF as a PNG image. Lossless output, no watermarks, no upload.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-redact": {
+    render: () => <PdfRedact />,
+    explainer: (
+      <>
+        <p>Draw black rectangles over sensitive text or images and flatten the result. Nothing is uploaded — redaction happens in your browser.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-extract-images": {
+    render: () => <PdfExtractImages />,
+    explainer: (
+      <>
+        <p>Pull every embedded image out of a PDF and save each one as a PNG. No upload, no account.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-flatten": {
+    render: () => <PdfFlatten />,
+    explainer: (
+      <>
+        <p>Flatten filled form fields, highlights, and annotations into the page so they can&rsquo;t be edited. Runs entirely in your browser.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "pdf-invert-colors": {
+    render: () => <PdfInvertColors />,
+    explainer: (
+      <>
+        <p>Flip the colors of a PDF to save a high-contrast or dark-mode version. Good for late-night reading or e-ink displays.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "image-flip": {
+    render: () => <ImageFlip />,
+    explainer: (
+      <>
+        <p>Flip an image horizontally or vertically and save. PNG, JPG, WEBP supported. Runs in-browser — no upload.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "image-rotate": {
+    render: () => <ImageRotate />,
+    explainer: (
+      <>
+        <p>Rotate any image by 90, 180, 270 degrees or a custom angle. Preserves transparency for PNGs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "image-border-adder": {
+    render: () => <ImageBorderAdder />,
+    explainer: (
+      <>
+        <p>Add a colored border around any image. Pick thickness in pixels, color, and optional corner radius.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "image-round-corners": {
+    render: () => <ImageRoundCorners />,
+    explainer: (
+      <>
+        <p>Add soft, rounded corners to any image with custom pixel radius. Exports a transparent PNG.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "png-to-jpg": {
+    render: () => <PngToJpg />,
+    explainer: (
+      <>
+        <p>Convert PNG images to JPG with a quality slider. Replaces transparency with a chosen background. Runs in-browser.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "jpg-to-png": {
+    render: () => <JpgToPng />,
+    explainer: (
+      <>
+        <p>Convert JPG images to lossless PNG. Good when you need transparency or to edit without recompression.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "png-to-webp": {
+    render: () => <PngToWebp />,
+    explainer: (
+      <>
+        <p>Convert PNG to WebP with a quality slider. 25–35% smaller files for the same visual quality.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "webp-to-png": {
+    render: () => <WebpToPng />,
+    explainer: (
+      <>
+        <p>Convert WebP images to PNG when you need broader compatibility or lossless output.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "word-frequency-counter": {
+    render: () => <WordFrequencyCounter />,
+    explainer: (
+      <>
+        <p>Paste any text to see the most common words, counts, and percentages. Filters stop-words optional.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "text-repeater": {
+    render: () => <TextRepeater />,
+    explainer: (
+      <>
+        <p>Repeat any text or character N times with optional separator. Handy for filler content, indentation, and test data.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "kebab-case-converter": {
+    render: () => <KebabCaseConverter />,
+    explainer: (
+      <>
+        <p>Convert any text to kebab-case (dash-separated) or from kebab-case back to words. Includes slug-safe normalization.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "snake-case-converter": {
+    render: () => <SnakeCaseConverter />,
+    explainer: (
+      <>
+        <p>Convert any text to snake_case (underscore-separated) or from snake_case back to words. Safe for Python, DB columns, and env vars.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "number-to-words": {
+    render: () => <NumberToWords />,
+    explainer: (
+      <>
+        <p>Convert a number into written English (e.g. 1,234 → &rsquo;one thousand two hundred thirty-four&rsquo;). Handy for checks and invoices.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "acronym-generator": {
+    render: () => <AcronymGenerator />,
+    explainer: (
+      <>
+        <p>Turn any phrase into an acronym. Picks the first letter of each word, with optional vowel insertion to form a pronounceable word.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "random-emoji-generator": {
+    render: () => <RandomEmojiGenerator />,
+    explainer: (
+      <>
+        <p>Generate N random emojis from categories like faces, animals, food, objects. Copy one or a whole string.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "random-letter-generator": {
+    render: () => <RandomLetterGenerator />,
+    explainer: (
+      <>
+        <p>Generate N random letters — uppercase, lowercase, or mixed. Avoid ambiguous pairs (O/0, I/1/l) on request.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "random-word-generator": {
+    render: () => <RandomWordGenerator />,
+    explainer: (
+      <>
+        <p>Pull N random English words. Filter by length or part of speech. Great for creative prompts and naming.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "blockquote-formatter": {
+    render: () => <BlockquoteFormatter />,
+    explainer: (
+      <>
+        <p>Wrap text in markdown or HTML blockquote syntax with attribution. Good for pull-quotes in blog posts and threads.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "sitemap-url-generator": {
+    render: () => <SitemapUrlGenerator />,
+    explainer: (
+      <>
+        <p>Paste a list of URLs and get a valid sitemap.xml with changefreq, priority, and lastmod. Ready for Google Search Console.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "json-schema-generator": {
+    render: () => <JsonSchemaGenerator />,
+    explainer: (
+      <>
+        <p>Paste a JSON sample and get a draft-07 JSON Schema with inferred types, required fields, and nested structure.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "jwt-generator": {
+    render: () => <JwtGenerator />,
+    explainer: (
+      <>
+        <p>Create HS256/HS384/HS512-signed JWT tokens from a header, payload, and secret. Runs entirely in your browser.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "env-file-parser": {
+    render: () => <EnvFileParser />,
+    explainer: (
+      <>
+        <p>Paste a .env file and get a validated list of keys, values, and parse errors. Detects duplicates and bad quoting.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "user-agent-parser": {
+    render: () => <UserAgentParser />,
+    explainer: (
+      <>
+        <p>Paste a User-Agent string and get the browser, OS, device, and engine parsed out. Useful for log analysis.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "curl-command-builder": {
+    render: () => <CurlCommandBuilder />,
+    explainer: (
+      <>
+        <p>Fill in URL, method, headers, and body to get a copy-pasteable curl command. Supports auth, query params, JSON bodies.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "regex-to-english": {
+    render: () => <RegexToEnglish />,
+    explainer: (
+      <>
+        <p>Paste a regular expression and get a plain-English walkthrough of what it matches, group by group.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "toml-to-json": {
+    render: () => <TomlToJson />,
+    explainer: (
+      <>
+        <p>Paste TOML (like a Cargo.toml or pyproject.toml) and get equivalent JSON. Runs in your browser — no upload.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "paypal-fee-calculator": {
+    render: () => <PaypalFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter an amount and country to see the PayPal fee deducted and what you actually receive. Covers goods &amp; services and international tiers.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "stripe-fee-calculator": {
+    render: () => <StripeFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter a charge amount and currency to see the Stripe processing fee and net amount deposited. Supports US + international cards.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "gumroad-fee-calculator": {
+    render: () => <GumroadFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter a product price and tier to see the Gumroad fee and your payout. Covers discover fees, payment processing, and VAT.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "etsy-fee-calculator": {
+    render: () => <EtsyFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter an Etsy sale price to see listing, transaction, payment processing, and VAT fees plus your final payout.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "ebay-fee-calculator": {
+    render: () => <EbayFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter a sale price and category to see eBay&rsquo;s final value fee, payment processing fee, and your final payout.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "amazon-fba-calculator": {
+    render: () => <AmazonFbaCalculator />,
+    explainer: (
+      <>
+        <p>Enter sale price, cost, and category to estimate Amazon&rsquo;s referral fee, FBA fulfillment fee, and your margin.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "square-fee-calculator": {
+    render: () => <SquareFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter a charge amount and terminal type (in-person, online, manual) to see Square&rsquo;s fee and your payout.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "sales-tax-calculator": {
+    render: () => <SalesTaxCalculator />,
+    explainer: (
+      <>
+        <p>Compute sales tax from a pre-tax price, reverse-calculate pre-tax from a total, or compare rates across regions.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "shopify-fee-calculator": {
+    render: () => <ShopifyFeeCalculator />,
+    explainer: (
+      <>
+        <p>Estimate Shopify transaction and payment-processing fees across Basic, Shopify, and Advanced plans plus Shopify Payments vs. external gateways.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "patreon-fee-calculator": {
+    render: () => <PatreonFeeCalculator />,
+    explainer: (
+      <>
+        <p>Enter pledge amount and tier (Lite, Pro, Premium) to see Patreon&rsquo;s platform fee plus payment processing and your payout.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "protein-intake-calculator": {
+    render: () => <ProteinIntakeCalculator />,
+    explainer: (
+      <>
+        <p>Calculate daily protein grams from body weight, activity level, and goal (cut, maintain, bulk). References IOM + ISSN guidelines.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "carbohydrate-calculator": {
+    render: () => <CarbohydrateCalculator />,
+    explainer: (
+      <>
+        <p>Calculate daily carb grams from calories, activity, and diet (balanced, low-carb, keto). Pairs with the macro calculator.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "fiber-intake-calculator": {
+    render: () => <FiberIntakeCalculator />,
+    explainer: (
+      <>
+        <p>Calculate daily fiber grams recommended by age and sex, plus tips for hitting the number from whole foods.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "fasting-timer": {
+    render: () => <FastingTimer />,
+    explainer: (
+      <>
+        <p>Start a fasting timer for 16:8, 18:6, 20:4, OMAD, or a custom schedule. Shows elapsed, remaining, and eating window.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "meal-prep-calculator": {
+    render: () => <MealPrepCalculator />,
+    explainer: (
+      <>
+        <p>Enter weekly macros and preferred foods; get a shopping list scaled for your target calories and portions.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "water-from-weight-calculator": {
+    render: () => <WaterFromWeightCalculator />,
+    explainer: (
+      <>
+        <p>Calculate daily water intake from body weight using the half-ounce-per-pound rule plus activity and climate adjustments.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "rent-increase-calculator": {
+    render: () => <RentIncreaseCalculator />,
+    explainer: (
+      <>
+        <p>Enter old rent and new rent (or a percentage) to see the dollar bump, annual increase, and whether it exceeds common rent-control caps.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "apartment-affordability-calculator": {
+    render: () => <ApartmentAffordabilityCalculator />,
+    explainer: (
+      <>
+        <p>Enter income and debts to see the rent you can actually afford using the 30 % rule plus debt-to-income sanity checks.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "lease-vs-buy-calculator": {
+    render: () => <LeaseVsBuyCalculator />,
+    explainer: (
+      <>
+        <p>Compare total cost of leasing a car vs financing one over the same term. Includes fees, down payment, residual value, and mileage penalties.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "gift-card-split-calculator": {
+    render: () => <GiftCardSplitCalculator />,
+    explainer: (
+      <>
+        <p>Split a gift-card balance evenly or by weights. Shows per-person shares rounded to the nearest cent.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "group-gift-calculator": {
+    render: () => <GroupGiftCalculator />,
+    explainer: (
+      <>
+        <p>Plan a group gift. Enter total and group size (or weighted shares) to see what each person chips in — with an optional extra-buffer slider.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "moving-cost-calculator": {
+    render: () => <MovingCostCalculator />,
+    explainer: (
+      <>
+        <p>Estimate the full cost of a move: truck rental, movers, supplies, deposits, utility setup, and cleaning fees.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "standup-notes-template": {
+    render: () => <StandupNotesTemplate />,
+    explainer: (
+      <>
+        <p>Fill yesterday, today, blockers — copy a clean markdown or Slack-friendly standup update in one click.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "weekly-goal-tracker": {
+    render: () => <WeeklyGoalTracker />,
+    explainer: (
+      <>
+        <p>Set 3 weekly goals, log daily progress, and review on Friday. Saves to your browser — no account.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "meeting-minutes-template": {
+    render: () => <MeetingMinutesTemplate />,
+    explainer: (
+      <>
+        <p>Fill attendees, agenda, decisions, and action items. Export clean markdown or plain text for Slack / email.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
+    ],
+  },
+  "project-brief-template": {
+    render: () => <ProjectBriefTemplate />,
+    explainer: (
+      <>
+        <p>Fill goals, scope, stakeholders, timeline, and success metrics. Export as markdown ready to paste into Notion or Confluence.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in the inputs or drop your file.",
+      "Click the primary button to run.",
+      "Copy or download the result.",
     ],
   },
 };
