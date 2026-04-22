@@ -158,6 +158,9 @@ import * as PriceProduct from "./how-to-price-your-product";
 import * as ForecastCashFlow from "./how-to-forecast-cash-flow";
 import * as ImproveMargin from "./how-to-improve-your-profit-margin";
 import * as ShopCarLoan from "./how-to-shop-for-a-car-loan";
+import * as SendInvoice from "./how-to-send-a-professional-invoice";
+import * as CalculateVat from "./how-to-calculate-vat";
+import * as CalculateAge from "./how-to-calculate-age-between-dates";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1546,6 +1549,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Compare APR and term scenarios — free car loan calculator.",
       targetSlug: "car-loan-calculator",
+    },
+  },
+  "how-to-send-a-professional-invoice": {
+    intro: SendInvoice.intro,
+    body: SendInvoice.body,
+    cta: {
+      label: "Generate a print-ready invoice — free invoice generator.",
+      targetSlug: "invoice-generator",
+    },
+  },
+  "how-to-calculate-vat": {
+    intro: CalculateVat.intro,
+    body: CalculateVat.body,
+    cta: {
+      label: "Add or remove VAT at any country rate — free VAT calculator.",
+      targetSlug: "vat-calculator",
+    },
+  },
+  "how-to-calculate-age-between-dates": {
+    intro: CalculateAge.intro,
+    body: CalculateAge.body,
+    cta: {
+      label: "Compute age in years, months, and days — free age calculator.",
+      targetSlug: "age-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
