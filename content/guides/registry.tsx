@@ -149,6 +149,9 @@ import * as DaysBetweenDates from "./how-to-calculate-days-between-dates";
 import * as SnowballVsAvalanche from "./how-to-choose-snowball-vs-avalanche";
 import * as SetSavingsGoal from "./how-to-set-a-savings-goal";
 import * as SalaryToHourly from "./how-to-convert-salary-to-hourly-rate";
+import * as SetFreelanceRate from "./how-to-set-your-freelance-rate";
+import * as TrackNetWorth from "./how-to-track-your-net-worth";
+import * as PlanRacePace from "./how-to-plan-your-race-pace";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1465,6 +1468,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert salary to hourly — all four methods side by side.",
       targetSlug: "hourly-rate-calculator",
+    },
+  },
+  "how-to-set-your-freelance-rate": {
+    intro: SetFreelanceRate.intro,
+    body: SetFreelanceRate.body,
+    cta: {
+      label: "Back-solve your rate — free freelance rate calculator.",
+      targetSlug: "freelance-rate-calculator",
+    },
+  },
+  "how-to-track-your-net-worth": {
+    intro: TrackNetWorth.intro,
+    body: TrackNetWorth.body,
+    cta: {
+      label: "Snapshot your net worth — free assets vs liabilities calculator.",
+      targetSlug: "net-worth-calculator",
+    },
+  },
+  "how-to-plan-your-race-pace": {
+    intro: PlanRacePace.intro,
+    body: PlanRacePace.body,
+    cta: {
+      label: "Plan your splits — free running pace calculator.",
+      targetSlug: "running-pace-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
