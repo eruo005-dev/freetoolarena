@@ -152,6 +152,9 @@ import * as SalaryToHourly from "./how-to-convert-salary-to-hourly-rate";
 import * as SetFreelanceRate from "./how-to-set-your-freelance-rate";
 import * as TrackNetWorth from "./how-to-track-your-net-worth";
 import * as PlanRacePace from "./how-to-plan-your-race-pace";
+import * as FindBreakEven from "./how-to-find-your-break-even-point";
+import * as ExtendRunway from "./how-to-extend-your-startup-runway";
+import * as PriceProduct from "./how-to-price-your-product";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1492,6 +1495,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Plan your splits — free running pace calculator.",
       targetSlug: "running-pace-calculator",
+    },
+  },
+  "how-to-find-your-break-even-point": {
+    intro: FindBreakEven.intro,
+    body: FindBreakEven.body,
+    cta: {
+      label: "Find your break-even — free calculator with units, revenue, and price views.",
+      targetSlug: "break-even-calculator",
+    },
+  },
+  "how-to-extend-your-startup-runway": {
+    intro: ExtendRunway.intro,
+    body: ExtendRunway.body,
+    cta: {
+      label: "See months of runway — free startup runway calculator.",
+      targetSlug: "startup-runway-calculator",
+    },
+  },
+  "how-to-price-your-product": {
+    intro: PriceProduct.intro,
+    body: PriceProduct.body,
+    cta: {
+      label: "Price a product with proper margin — free pricing calculator.",
+      targetSlug: "pricing-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
