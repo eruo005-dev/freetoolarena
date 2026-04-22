@@ -73,18 +73,100 @@ export default function TrustPage() {
 
         <h2>What data we see</h2>
         <p>
-          We use two privacy-friendly services from Vercel — Web Analytics (page
-          views, referrers, country-level location) and Speed Insights (page
-          load performance). Neither one uses cookies, neither one identifies
-          you, and both are designed to comply with GDPR. We use Google AdSense
-          to show ads — that is a third party and they set their own cookies to
-          serve ads. You can read the full breakdown in our{" "}
+          Three third parties help this site run. Each one sees a limited
+          slice of your visit; here&rsquo;s exactly what and how to opt out:
+        </p>
+      </Prose>
+
+      <div className="my-6 overflow-x-auto rounded-2xl border border-slate-200">
+        <table className="w-full min-w-[620px] text-sm">
+          <thead className="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
+            <tr>
+              <th className="px-4 py-3">Service</th>
+              <th className="px-4 py-3">What it sees</th>
+              <th className="px-4 py-3">Cookies?</th>
+              <th className="px-4 py-3">How to opt out</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-200 bg-white">
+            <tr>
+              <td className="px-4 py-3 align-top font-medium text-slate-900">
+                Vercel Web Analytics
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Page views, referrer, country, device type. No cross-site
+                identity.
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                None
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Browser privacy mode / DNT respected. See{" "}
+                <a
+                  href="https://vercel.com/docs/analytics/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand underline"
+                >
+                  Vercel privacy
+                </a>
+                .
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-3 align-top font-medium text-slate-900">
+                Vercel Speed Insights
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Anonymized page-load timings (TTFB, LCP, CLS). No user
+                identity.
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                None
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Browser privacy mode / DNT respected.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-3 align-top font-medium text-slate-900">
+                Google AdSense
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Ad impressions, clicks, and whatever targeting signals
+                Google uses to personalize ads (IP, user agent, approximate
+                location, Google account if signed in).
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Yes
+              </td>
+              <td className="px-4 py-3 align-top text-slate-700">
+                Manage at{" "}
+                <a
+                  href="https://adssettings.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand underline"
+                >
+                  adssettings.google.com
+                </a>
+                , or use an ad-blocker (this site works without ads).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <Prose>
+        <p className="text-sm text-slate-600">
+          The full legal breakdown, including data-retention periods and your
+          rights under GDPR / CCPA, lives in our{" "}
           <Link href="/privacy">privacy policy</Link>.
         </p>
         <p>
           We do not sell data. We do not have a data broker partnership. We do
-          not have a “data science team” running experiments on your behavior.
-          It’s a small site.
+          not have a &ldquo;data science team&rdquo; running experiments on
+          your behavior. It&rsquo;s a small site.
         </p>
 
         <h2>Malware, viruses, and scanning</h2>

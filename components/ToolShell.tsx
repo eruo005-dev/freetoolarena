@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { FavoriteButton } from "@/components/FavoriteButton";
@@ -10,6 +11,10 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Prose } from "@/components/ui/Prose";
 import { getPageBySlug, CATEGORIES, pageHref, SITE_URL } from "@/lib/pages";
+import {
+  getComparisonsForTool,
+  comparisonHref,
+} from "@/lib/comparisons";
 import { jsonLdFor, faqJsonLd, howToJsonLd, SITE_UPDATED } from "@/lib/seo";
 
 export interface ToolShellProps {
@@ -49,6 +54,7 @@ export function ToolShell({
   const page = getPageBySlug(slug);
   if (!page) return <p>Page not found.</p>;
   const category = CATEGORIES[page.category];
+  const comparisons = getComparisonsForTool(slug);
 
   return (
     <Container size="narrow" className="py-10">
@@ -191,6 +197,38 @@ export function ToolShell({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: faqJsonLd(faq) }}
           />
+        </section>
+      )}
+
+      {/* Head-to-head cross-links. Distributes equity from high-traffic
+          tool pages to the high-margin /compare pages and gives users a
+          natural next click when they're weighing options. Hidden when
+          no matching comparisons exist. */}
+      {comparisons.length > 0 && (
+        <section className="mb-10">
+          <h2 className="mb-3 text-lg font-semibold text-slate-900">
+            See how this compares
+          </h2>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {comparisons.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={comparisonHref(c)}
+                  className="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-4 transition hover:border-brand hover:shadow-sm"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wide text-brand">
+                    Head-to-head
+                  </span>
+                  <span className="mt-1 font-medium text-slate-900">
+                    {c.h1}
+                  </span>
+                  <span className="mt-1 line-clamp-2 text-sm text-slate-600">
+                    {c.description}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

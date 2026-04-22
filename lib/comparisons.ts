@@ -912,3 +912,13 @@ export function getComparisonBySlug(slug: string): Comparison | undefined {
 export function comparisonHref(comparison: Comparison): string {
   return `/compare/${comparison.slug}`;
 }
+
+/**
+ * All comparisons that feature the given tool slug. Used by ToolShell
+ * to show "See how this compares to..." cross-links — distributes link
+ * equity from high-traffic tool pages to the high-margin /compare pages,
+ * and gives users a natural next click.
+ */
+export function getComparisonsForTool(toolSlug: string): Comparison[] {
+  return COMPARISONS.filter((c) => c.toolSlugs.includes(toolSlug));
+}

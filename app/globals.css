@@ -59,3 +59,114 @@ body {
 :focus-visible {
   outline: none;
 }
+
+/*
+ * Print stylesheet. Optimizes any page (especially calculators +
+ * long guides) for black-and-white printing: strips chrome, forces
+ * legible colors, expands anything collapsed, shows link URLs.
+ * Teachers + accountants occasionally print our pages; if we don't
+ * do this, they get an ad-filled unreadable mess.
+ */
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  /* Hide site chrome + any ad/sharing UI that is noise on paper. */
+  header,
+  footer,
+  nav,
+  [role="dialog"],
+  .no-print,
+  [aria-label="Advertisement"],
+  .adsbygoogle,
+  ins.adsbygoogle,
+  iframe[src*="ads"],
+  iframe[src*="doubleclick"] {
+    display: none !important;
+  }
+
+  /* Main content gets the full page width, no box shadows. */
+  main,
+  article,
+  section {
+    box-shadow: none !important;
+    border-color: #cccccc !important;
+  }
+
+  /* Links print in black with the URL spelled out, except for in-page
+     navigation and mailto/tel which don't need annotation. */
+  a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])::after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    color: #555555;
+    word-break: break-all;
+  }
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  /* Tables print with visible borders. */
+  table {
+    border-collapse: collapse;
+  }
+  th,
+  td {
+    border: 1px solid #999999 !important;
+    padding: 4px 6px !important;
+  }
+  thead {
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+  }
+
+  /* Expand anything collapsed so the printout is self-contained. */
+  details {
+    display: block !important;
+  }
+  details > summary {
+    list-style: none;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  details[open] > *,
+  details > * {
+    display: block !important;
+  }
+
+  /* Make results stand out in black-and-white. */
+  .bg-brand,
+  .bg-brand-dark,
+  [class*="bg-brand"] {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #000000 !important;
+  }
+
+  /* Avoid orphaned headings at the bottom of a page. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    page-break-after: avoid;
+  }
+  img,
+  svg,
+  figure,
+  table {
+    page-break-inside: avoid;
+  }
+
+  /* Input values should print — some browsers try to hide them. */
+  input,
+  textarea,
+  select {
+    border: 1px solid #999999 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
