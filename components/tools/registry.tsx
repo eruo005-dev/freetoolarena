@@ -4592,6 +4592,39 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Use the third for percent change — negative means a drop.",
       "Numbers update as you type; nothing to submit.",
     ],
+    whenToUse: [
+      "Quick tip math (15% of $48) or tax math (8.5% of $249).",
+      "Checking percent change on a KPI, stock price, or weight — the third card handles before/after.",
+      "Converting a raw score to a percentage grade (42 out of 50 = what %).",
+      "Sanity-checking a discount that advertises an ambiguous save amount.",
+    ],
+    whenNotToUse: [
+      "Compounded percent changes over multiple periods — use the compound interest calculator (stacked percents don't add).",
+      "Margin vs markup business math — use the profit margin calculator (they're different base formulas).",
+    ],
+    example: {
+      input: "Card 1: What is 15% of 300?\nCard 3: From 200 to 260",
+      output: "Card 1 answer: 45\nCard 3 answer: +30% change",
+      note: "Negative results are shown in red so a price drop or portfolio loss is visually unmistakable.",
+    },
+    faq: [
+      {
+        q: "Is a 50% increase followed by a 50% decrease back to the original?",
+        a: "No — this trips up most people. $100 → +50% → $150 → −50% → $75. Percent changes compound multiplicatively (1.5 × 0.5 = 0.75), not additively. Anytime you stack percents, multiply the factors.",
+      },
+      {
+        q: "How is percent change different from percentage points?",
+        a: "If interest rates move from 4% to 5%, that's a 1-percentage-point rise but a 25% percent change. Journalists and finance pros use 'percentage points' to avoid this ambiguity. The tool reports percent change; translate to points if needed.",
+      },
+      {
+        q: "Can I reverse a percent discount (find the original price)?",
+        a: "Yes — use the discount calculator's reverse mode. If a sale price is $70 after 30% off, original = $70 ÷ 0.7 = $100. The math is one divided by the retained fraction, not plus 30%.",
+      },
+      {
+        q: "Why do my tip + tax results differ between apps?",
+        a: "Order of operations. Tax on the pre-tip subtotal, then tip on pre-tax or post-tax subtotal — all three are valid and all three produce different totals. US convention is tip on pre-tax.",
+      },
+    ],
   },
   "hash-generator": {
     render: () => <HashGenerator />,
@@ -4993,6 +5026,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Read your BMR (resting) and TDEE (daily need).",
       "Adjust intake relative to TDEE based on your goal.",
     ],
+    whenToUse: [
+      "Setting a daily calorie target for weight loss, maintenance, or lean gain.",
+      "Understanding the floor of calories your body burns just staying alive.",
+      "Estimating how many calories an activity level above sedentary adds to your needs.",
+      "Pairing with a macro calculator to split calories into protein, carbs, and fat.",
+    ],
+    whenNotToUse: [
+      "Under 18 — adolescent metabolism differs; use a pediatric nutrition resource instead.",
+      "Pregnant or breastfeeding — energy needs rise beyond what this equation models.",
+      "Recovery from an eating disorder — any calorie math should come from your care team.",
+    ],
+    example: {
+      input: "32-year-old male, 180 lbs, 5'10\", moderately active",
+      output: "BMR: 1,770 kcal/day\nTDEE: 2,745 kcal/day (× 1.55 activity factor)",
+      note: "Subtract 500/day (~2,245 kcal) for roughly 1 lb/week loss; add 250/day for slow lean gain.",
+    },
+    faq: [
+      {
+        q: "Is Mifflin-St Jeor more accurate than Harris-Benedict?",
+        a: "Slightly, yes — Mifflin-St Jeor (1990) was calibrated on modern body compositions and tends to underestimate BMR by ~5% less than Harris-Benedict (1919). That's why dietitians default to it today.",
+      },
+      {
+        q: "Why is my TDEE so much higher than my BMR?",
+        a: "TDEE multiplies BMR by an activity factor (1.2–1.9). A desk worker with 4 workouts/week is ~1.55; a full-time laborer is ~1.7. Even at the same weight, a more active person needs 500+ extra kcal/day.",
+      },
+      {
+        q: "Should I eat exactly my BMR to lose weight?",
+        a: "No — never eat below your BMR for more than a short cut. Eating below BMR for weeks tanks adherence, mood, and lean mass. Drop from TDEE instead (a 300–500 kcal deficit is plenty).",
+      },
+      {
+        q: "How often should I recalculate?",
+        a: "Every 10 lbs of weight change or every 3 months, whichever comes first. BMR scales with body mass, so a 20-lb loss means your maintenance number is now a few hundred kcal lower.",
+      },
+    ],
   },
   "body-fat-calculator": {
     render: () => <BodyFatCalculator />,
@@ -5016,6 +5083,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter sex and height.",
       "Input each circumference in cm or inches.",
       "Read your body fat % and category.",
+    ],
+    whenToUse: [
+      "Tracking recomposition progress when the scale isn't moving but the tape is.",
+      "Ballpark estimate before paying for a DEXA or BodPod scan.",
+      "Comparing cuts and bulks over multiple months on the same tape at the same time of day.",
+      "Sanity-checking BMI when you're muscular (BMI overstates 'fat' for lifters).",
+    ],
+    whenNotToUse: [
+      "Clinical or pre-surgical body composition — get a DEXA scan for medical-grade numbers.",
+      "Elite athletic performance tracking where you need ±1% accuracy.",
+      "Children and adolescents — Navy method is validated on adults only.",
+    ],
+    example: {
+      input: "Male, 5'10\" (70 in)\nNeck: 15 in\nWaist: 34 in",
+      output: "Body fat: 18.4%\nCategory: Fit (ACE range for men)",
+      note: "A DEXA on the same person might return 17.2% or 19.8% — the Navy method is accurate within ±3% for most adults.",
+    },
+    faq: [
+      {
+        q: "Why does waist circumference matter so much?",
+        a: "Visceral (belly) fat is the biggest differentiator between body compositions at the same weight. That's why the Navy formula weights waist heavily and why a 2-inch waist drop often corresponds to a 3–4 point body fat drop.",
+      },
+      {
+        q: "Where exactly do I measure my waist?",
+        a: "At the navel, tape level all the way around, not pulled tight. Do not suck in. Measure in the morning before eating for consistency — a meal can add 0.5–1 inch and distort the percentage by 1–2 points.",
+      },
+      {
+        q: "Why ask for height if I'm measuring circumferences?",
+        a: "The formula subtracts log10(waist − neck) from a height-based term. Height is a proxy for frame size — a 6'2\" person can carry a larger waist at the same body fat as a 5'6\" person.",
+      },
+      {
+        q: "How does this compare to a bioimpedance (BIA) scale?",
+        a: "Cheap BIA scales swing by 3–5% depending on hydration; Navy method is more stable day-to-day because tape doesn't care how much water you drank. For trends, the tape wins.",
+      },
     ],
   },
   "pregnancy-calculator": {
@@ -5065,6 +5166,41 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter your average cycle length (default 28 days).",
       "Review your predicted ovulation day and fertile window.",
       "Plan around the next three predicted cycles shown below.",
+    ],
+    whenToUse: [
+      "Planning around your most fertile window (typically day 10–14 of a 28-day cycle).",
+      "Tracking cycle regularity across several months to spot patterns.",
+      "Estimating when your next period is due for travel, events, or workouts.",
+      "Combining with basal body temperature or LH strips for higher-confidence timing.",
+    ],
+    whenNotToUse: [
+      "Reliable contraception — rhythm-based estimates are not a birth-control method.",
+      "Irregular cycles where length varies by more than ±5 days — ovulation tests are more reliable here.",
+      "Medical fertility workup — see a clinician for AMH, ultrasound, and lab-based ovulation confirmation.",
+      "Post-hormonal-contraception cycles (IUD removal, pill stoppage) while cycles are still stabilizing.",
+    ],
+    example: {
+      input: "Last period started: Apr 1\nAverage cycle: 28 days",
+      output: "Predicted ovulation: Apr 15 (Day 14)\nFertile window: Apr 10–Apr 15\nNext period: Apr 29",
+      note: "Shifting the cycle length to 30 days moves ovulation to Day 16 (Apr 17). The 6-day fertile window always ends on ovulation day.",
+    },
+    faq: [
+      {
+        q: "Is ovulation always 14 days before the next period?",
+        a: "The luteal phase (ovulation → next period) is more consistent at about 14 days than the follicular phase (period → ovulation). In a 30-day cycle, ovulation is closer to day 16; in a 26-day cycle, closer to day 12. The tool counts back 14 days from predicted next period for this reason.",
+      },
+      {
+        q: "Why is the fertile window six days long when I only ovulate once?",
+        a: "Sperm can survive in the reproductive tract for up to 5 days, so intercourse from 5 days before ovulation through ovulation day itself can all result in conception. The egg itself is viable for ~24 hours.",
+      },
+      {
+        q: "Can I use this for birth control?",
+        a: "No. Even in regular cycles, ovulation can shift by 3–4 days due to stress, illness, or travel. The failure rate of rhythm-based methods is 12–24% per year. For contraception, use a clinically reviewed method.",
+      },
+      {
+        q: "I've already conceived — what do I use?",
+        a: "Switch over to the pregnancy calculator, which takes your LMP and returns a due date (Naegele's rule: LMP + 280 days) plus your current week and trimester.",
+      },
     ],
   },
   "steps-to-calories-calculator": {
@@ -7211,6 +7347,40 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick a rule set (US federal, California, or custom).",
       "Break out day-by-day if needed.",
       "Read regular, overtime, and double-time dollars.",
+    ],
+    whenToUse: [
+      "Checking that a paycheck correctly applied the 1.5× premium for hours over 40/week.",
+      "Negotiating a shift schedule — comparing steady 45-hour weeks vs spikes to 55.",
+      "California workers tracking daily 8-hour and weekly 40-hour thresholds plus the 12-hour double-time rule.",
+      "Confirming holiday or weekend premiums match what the offer letter promised.",
+    ],
+    whenNotToUse: [
+      "Salaried exempt employees — you don't earn overtime; see a paycheck calculator for take-home math.",
+      "Tipped workers — federal tipped minimum and tip credits have separate rules not modeled here.",
+      "Union or collective-bargaining overtime schedules with custom multipliers beyond 1.5×/2×.",
+    ],
+    example: {
+      input: "$22/hr · 50 hours in the week\nRule set: US federal (40-hr threshold)",
+      output: "Regular: 40 × $22 = $880\nOvertime: 10 × $33 = $330\nWeekly total: $1,210",
+      note: "Under California rules the same 50-hour week might also trigger daily OT if any single day exceeded 8 hours — the daily breakdown view shows this.",
+    },
+    faq: [
+      {
+        q: "Is overtime calculated on gross or net pay?",
+        a: "Gross. The 1.5× multiplier applies to your regular hourly rate (gross). Taxes are withheld on the higher gross amount afterward, which is why an OT-heavy week can push you into a higher withholding bracket temporarily.",
+      },
+      {
+        q: "Does the 40-hour threshold include PTO or holiday hours?",
+        a: "Under federal law, no — paid leave doesn't count toward the 40-hour OT threshold. So a week with 24 worked hours + 16 PTO hours = 0 OT even though the paycheck shows 40. Some state laws and union contracts override this.",
+      },
+      {
+        q: "What's the difference between time-and-a-half and double-time?",
+        a: "Time-and-a-half = 1.5× base rate, typically kicking in after 40 weekly hours (US federal) or 8 daily hours (California). Double-time = 2× base rate, used for California shifts over 12 hours/day or certain holidays. Federal law doesn't require double-time.",
+      },
+      {
+        q: "How does overtime work for salaried non-exempt?",
+        a: "The tool converts the salary to a weekly rate, then an implied hourly rate (weekly ÷ 40), and applies 1.5× on hours above 40. This matches how most payroll providers compute it under the FLSA fluctuating workweek exception.",
+      },
     ],
   },
   "pto-calculator": {
