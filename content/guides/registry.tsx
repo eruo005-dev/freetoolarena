@@ -126,6 +126,16 @@ import * as SplitExpensesFairly from "./how-to-split-expenses-fairly";
 import * as ChooseImageDimensions from "./how-to-choose-image-dimensions";
 import * as CalculateProfitMargin from "./how-to-calculate-profit-margin";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
+import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
+import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
+import * as BuildAgentOpenaiSdk from "./how-to-build-an-agent-with-the-openai-agents-sdk";
+import * as BuildAgentClaudeSdk from "./how-to-build-an-agent-with-the-claude-agent-sdk";
+import * as SetUpClaudeCode from "./how-to-set-up-claude-code";
+import * as SetUpCursor from "./how-to-set-up-cursor-ai-ide";
+import * as UseGithubCopilotAgent from "./how-to-use-github-copilot-agent-mode";
+import * as CrewaiMultiAgent from "./how-to-build-a-multi-agent-system-with-crewai";
+import * as LangGraphStateful from "./how-to-build-a-stateful-agent-with-langgraph";
+import * as ConnectAgentMcp from "./how-to-connect-an-agent-to-mcp-tools";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -1247,6 +1257,86 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Build cron expressions visually — free cron expression builder.",
       targetSlug: "cron-expression-builder",
+    },
+  },
+  "how-to-set-up-an-ai-agent": {
+    intro: SetUpAiAgent.intro,
+    body: SetUpAiAgent.body,
+    cta: {
+      label: "Estimate your agent's token usage — free AI token counter.",
+      targetSlug: "ai-token-counter",
+    },
+  },
+  "how-to-use-chatgpt-agent-mode": {
+    intro: UseChatgptAgentMode.intro,
+    body: UseChatgptAgentMode.body,
+    cta: {
+      label: "Tighten your agent prompts — free prompt improver.",
+      targetSlug: "prompt-improver",
+    },
+  },
+  "how-to-build-an-agent-with-the-openai-agents-sdk": {
+    intro: BuildAgentOpenaiSdk.intro,
+    body: BuildAgentOpenaiSdk.body,
+    cta: {
+      label: "Compare GPT-5, Claude, and Gemini for agent work — free AI model compare.",
+      targetSlug: "ai-model-compare",
+    },
+  },
+  "how-to-build-an-agent-with-the-claude-agent-sdk": {
+    intro: BuildAgentClaudeSdk.intro,
+    body: BuildAgentClaudeSdk.body,
+    cta: {
+      label: "Estimate Claude token usage before you ship — free AI token counter.",
+      targetSlug: "ai-token-counter",
+    },
+  },
+  "how-to-set-up-claude-code": {
+    intro: SetUpClaudeCode.intro,
+    body: SetUpClaudeCode.body,
+    cta: {
+      label: "Sharpen your CLAUDE.md and slash-command prompts — free prompt improver.",
+      targetSlug: "prompt-improver",
+    },
+  },
+  "how-to-set-up-cursor-ai-ide": {
+    intro: SetUpCursor.intro,
+    body: SetUpCursor.body,
+    cta: {
+      label: "Count tokens before a heavy Cursor agent run — free AI token counter.",
+      targetSlug: "ai-token-counter",
+    },
+  },
+  "how-to-use-github-copilot-agent-mode": {
+    intro: UseGithubCopilotAgent.intro,
+    body: UseGithubCopilotAgent.body,
+    cta: {
+      label: "Turn vague issues into sharp briefs — free prompt improver.",
+      targetSlug: "prompt-improver",
+    },
+  },
+  "how-to-build-a-multi-agent-system-with-crewai": {
+    intro: CrewaiMultiAgent.intro,
+    body: CrewaiMultiAgent.body,
+    cta: {
+      label: "Estimate per-run cost for your crew — free AI token counter.",
+      targetSlug: "ai-token-counter",
+    },
+  },
+  "how-to-build-a-stateful-agent-with-langgraph": {
+    intro: LangGraphStateful.intro,
+    body: LangGraphStateful.body,
+    cta: {
+      label: "Budget tokens for long-running graphs — free AI token counter.",
+      targetSlug: "ai-token-counter",
+    },
+  },
+  "how-to-connect-an-agent-to-mcp-tools": {
+    intro: ConnectAgentMcp.intro,
+    body: ConnectAgentMcp.body,
+    cta: {
+      label: "Compare models before wiring MCP tools — free AI model compare.",
+      targetSlug: "ai-model-compare",
     },
   },
 };
