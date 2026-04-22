@@ -131,6 +131,9 @@ import * as CalculateTdeeAndBmr from "./how-to-calculate-tdee-and-bmr";
 import * as CalculateTrueHourlyRate from "./how-to-calculate-your-true-hourly-rate";
 import * as InflationAffectsSavings from "./how-inflation-affects-your-savings";
 import * as CompareDiscounts from "./how-to-compare-discounts";
+import * as CalculatePercentageChange from "./how-to-calculate-percentage-change";
+import * as SplitRestaurantBill from "./how-to-split-a-restaurant-bill";
+import * as TrackOvulation from "./how-to-track-ovulation";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1303,6 +1306,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Stack percent-off, dollar-off, BOGO, and tax — find the real out-the-door price.",
       targetSlug: "discount-calculator",
+    },
+  },
+  "how-to-calculate-percentage-change": {
+    intro: CalculatePercentageChange.intro,
+    body: CalculatePercentageChange.body,
+    cta: {
+      label: "Compute percent change, percent of, and CAGR in one free tool.",
+      targetSlug: "percentage-calculator",
+    },
+  },
+  "how-to-split-a-restaurant-bill": {
+    intro: SplitRestaurantBill.intro,
+    body: SplitRestaurantBill.body,
+    cta: {
+      label: "Split any bill evenly or per-item — tax and tip allocated proportionally.",
+      targetSlug: "bill-split-calculator",
+    },
+  },
+  "how-to-track-ovulation": {
+    intro: TrackOvulation.intro,
+    body: TrackOvulation.body,
+    cta: {
+      label: "Predict your fertile window from cycle data in seconds.",
+      targetSlug: "ovulation-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
