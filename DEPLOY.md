@@ -124,7 +124,7 @@ Bing indexes independently from Google and tends to rank new SEO sites faster in
 
 IndexNow is a free ping protocol that tells Bing, Yandex, Seznam, and Naver "here are URLs that just changed, please recrawl them." Google does not honor it, so Google Search Console remains the primary channel for Google — IndexNow just accelerates the other four engines.
 
-The key is already committed at `public/bfb35698ca8221cb0e08229834083d67.txt`. Do not rotate the filename or the contents — the file and the key inside must match, and IndexNow verifies by fetching `https://freetoolarea.com/<key>.txt` before accepting any submission.
+The key is already committed at `public/bfb35698ca8221cb0e08229834083d67.txt`. Do not rotate the filename or the contents — the file and the key inside must match, and IndexNow verifies by fetching `https://freetoolarena.com/<key>.txt` before accepting any submission.
 
 To ping after a deploy:
 
@@ -136,7 +136,7 @@ node scripts/indexnow-ping.mjs
 node scripts/indexnow-ping.mjs --recent
 
 # Pings a specific URL list.
-node scripts/indexnow-ping.mjs https://freetoolarea.com/tools/json-formatter https://freetoolarea.com/guides/how-to-use-json-formatter
+node scripts/indexnow-ping.mjs https://freetoolarena.com/tools/json-formatter https://freetoolarena.com/guides/how-to-use-json-formatter
 ```
 
 Expected output: `Batch 1/N — X URLs — HTTP 200` (or `202 Accepted`). The script reads the key from `/public` automatically, so there's nothing to configure. A post-deploy cron or Vercel deploy hook can invoke it, but it is fine to run manually after each significant content push.

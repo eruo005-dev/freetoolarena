@@ -7,7 +7,7 @@
  * Usage:
  *   node scripts/indexnow-ping.mjs                     # ping every URL in all sitemaps
  *   node scripts/indexnow-ping.mjs --recent            # only /compare + /learn + /best
- *   node scripts/indexnow-ping.mjs https://freetoolarea.com/tools/json-formatter [...]
+ *   node scripts/indexnow-ping.mjs https://freetoolarena.com/tools/json-formatter [...]
  *
  * Reads the IndexNow key from public/<key>.txt at repo root. Fetches live
  * sitemaps for the URL list so this script has zero TS dependency — run it
@@ -19,7 +19,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const HOST = "freetoolarea.com";
+const HOST = "freetoolarena.com";
 const SITE_URL = `https://${HOST}`;
 const ENDPOINT = "https://api.indexnow.org/IndexNow";
 const SITEMAPS = [
