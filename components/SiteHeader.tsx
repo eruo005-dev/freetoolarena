@@ -4,8 +4,24 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SITE_NAME } from "@/lib/pages";
 import { Container } from "@/components/ui/Container";
+import { GlobalSearch } from "@/components/GlobalSearch";
 
 const FAV_KEY = "fta.favorites.v1";
+
+function openSearch() {
+  window.dispatchEvent(new Event("fta:open-search"));
+}
+
+/** Platform-aware shortcut hint. Mac shows ⌘K, everyone else Ctrl K. */
+function useShortcutHint() {
+  const [mac, setMac] = useState(false);
+  useEffect(() => {
+    const ua = navigator.userAgent || "";
+    const platform = (navigator as Navigator & { platform?: string }).platform || "";
+    setMac(/Mac|iPhone|iPod|iPad/i.test(platform) || /Mac OS X/i.test(ua));
+  }, []);
+  return mac ? "⌘K" : "Ctrl K";
+}
 
 /**
  * Sticky site header. Desktop: full nav + favorites chip. Mobile: hamburger
@@ -16,6 +32,7 @@ const FAV_KEY = "fta.favorites.v1";
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [favCount, setFavCount] = useState<number | null>(null);
+  const shortcut = useShortcutHint();
 
   useEffect(() => {
     const read = () => {
@@ -76,20 +93,43 @@ export function SiteHeader() {
             )}
           </NavLink>
           <NavLink href="/about">About</NavLink>
+          <button
+            type="button"
+            onClick={openSearch}
+            aria-label="Open site search"
+            title={`Search (${shortcut})`}
+            className="ml-2 inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white px-2.5 py-1.5 text-xs text-slate-500 shadow-sm transition hover:border-brand hover:text-brand"
+          >
+            <span aria-hidden>⌕</span>
+            <span>Search</span>
+            <kbd className="rounded border border-slate-200 bg-slate-50 px-1 font-mono text-[10px] font-semibold text-slate-500">
+              {shortcut}
+            </kbd>
+          </button>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close menu" : "Open menu"}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-100 md:hidden"
-        >
-          <span aria-hidden className="text-xl leading-none">
-            {open ? "×" : "☰"}
-          </span>
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <button
+            type="button"
+            onClick={openSearch}
+            aria-label="Open site search"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-100"
+          >
+            <span aria-hidden className="text-lg">⌕</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-700 hover:bg-slate-100"
+          >
+            <span aria-hidden className="text-xl leading-none">
+              {open ? "×" : "☰"}
+            </span>
+          </button>
+        </div>
       </Container>
 
       {open && (
@@ -99,6 +139,19 @@ export function SiteHeader() {
         >
           <Container className="py-3">
             <ul className="flex flex-col text-sm font-medium text-slate-700">
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    openSearch();
+                  }}
+                  className="flex w-full items-center gap-2 rounded-md px-2 py-2.5 text-left hover:bg-slate-50 hover:text-brand"
+                >
+                  <span aria-hidden>⌕</span>
+                  <span>Search everything</span>
+                </button>
+              </li>
               <MobileLink href="/tools" onClick={() => setOpen(false)}>
                 All tools
               </MobileLink>
@@ -133,6 +186,9 @@ export function SiteHeader() {
           </Container>
         </div>
       )}
+
+      {/* Cmd+K palette — mounted once; keyboard shortcut works site-wide */}
+      <GlobalSearch />
     </header>
   );
 }
