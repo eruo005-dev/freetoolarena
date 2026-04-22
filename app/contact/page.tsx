@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Prose } from "@/components/ui/Prose";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { FeedbackForm } from "@/components/FeedbackForm";
 import { SITE_NAME, SITE_EMAIL } from "@/lib/pages";
 import { buildStaticMetadata } from "@/lib/seo";
 
@@ -26,12 +27,17 @@ export default function ContactPage() {
         title="Get in touch"
         lede="Bug reports, tool requests, broken links, content feedback — all read."
       />
+
+      <div className="mb-10">
+        <FeedbackForm />
+      </div>
+
       <Prose>
-        <h2>Email</h2>
+        <h2>Or email directly</h2>
         <p>
-          Best way to reach us:{" "}
-          <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>. Real messages get a
-          real reply, usually within a few business days.
+          If you&rsquo;d rather skip the form:{" "}
+          <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>. Real messages get
+          a real reply, usually within a few business days.
         </p>
         <h2>What to include</h2>
         <ul>
