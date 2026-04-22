@@ -143,6 +143,9 @@ import * as ProjectRetirement from "./how-to-project-retirement-with-compound-in
 import * as InterpretBmi from "./how-to-interpret-your-bmi";
 import * as ReadYourPaycheck from "./how-to-read-your-paycheck";
 import * as ScheduleTimeZones from "./how-to-schedule-across-time-zones";
+import * as SetYourMacros from "./how-to-set-your-macros";
+import * as EstimateTaxBill from "./how-to-estimate-your-tax-bill";
+import * as DaysBetweenDates from "./how-to-calculate-days-between-dates";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1411,6 +1414,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert across time zones — free, DST-aware converter.",
       targetSlug: "time-zone-converter",
+    },
+  },
+  "how-to-set-your-macros": {
+    intro: SetYourMacros.intro,
+    body: SetYourMacros.body,
+    cta: {
+      label: "Build your protein/carb/fat split — free macro calculator.",
+      targetSlug: "macro-calculator",
+    },
+  },
+  "how-to-estimate-your-tax-bill": {
+    intro: EstimateTaxBill.intro,
+    body: EstimateTaxBill.body,
+    cta: {
+      label: "Project your federal tax bill — free income tax calculator.",
+      targetSlug: "tax-calculator",
+    },
+  },
+  "how-to-calculate-days-between-dates": {
+    intro: DaysBetweenDates.intro,
+    body: DaysBetweenDates.body,
+    cta: {
+      label: "Count days between any two dates — calendar, business, inclusive.",
+      targetSlug: "date-difference-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
