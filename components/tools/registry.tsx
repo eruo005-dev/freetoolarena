@@ -109,6 +109,129 @@ const CssMinifier = dynamic(() => import("./CssMinifier").then(m => ({ default: 
 const JsMinifier = dynamic(() => import("./JsMinifier").then(m => ({ default: m.JsMinifier })), { loading: Skeleton });
 const XmlFormatter = dynamic(() => import("./XmlFormatter").then(m => ({ default: m.XmlFormatter })), { loading: Skeleton });
 const DiffChecker = dynamic(() => import("./DiffChecker").then(m => ({ default: m.DiffChecker })), { loading: Skeleton });
+// Wave 6 — full library completion (40 tools)
+const TaxCalculator = dynamic(() => import("./TaxCalculator").then(m => ({ default: m.TaxCalculator })), { loading: Skeleton });
+const VatCalculator = dynamic(() => import("./VatCalculator").then(m => ({ default: m.VatCalculator })), { loading: Skeleton });
+const DiscountCalculator = dynamic(() => import("./DiscountCalculator").then(m => ({ default: m.DiscountCalculator })), { loading: Skeleton });
+const ProfitMarginCalculator = dynamic(() => import("./ProfitMarginCalculator").then(m => ({ default: m.ProfitMarginCalculator })), { loading: Skeleton });
+const NetWorthCalculator = dynamic(() => import("./NetWorthCalculator").then(m => ({ default: m.NetWorthCalculator })), { loading: Skeleton });
+const InflationCalculator = dynamic(() => import("./InflationCalculator").then(m => ({ default: m.InflationCalculator })), { loading: Skeleton });
+const BreakEvenCalculator = dynamic(() => import("./BreakEvenCalculator").then(m => ({ default: m.BreakEvenCalculator })), { loading: Skeleton });
+const BmrCalculator = dynamic(() => import("./BmrCalculator").then(m => ({ default: m.BmrCalculator })), { loading: Skeleton });
+const BodyFatCalculator = dynamic(() => import("./BodyFatCalculator").then(m => ({ default: m.BodyFatCalculator })), { loading: Skeleton });
+const PregnancyCalculator = dynamic(() => import("./PregnancyCalculator").then(m => ({ default: m.PregnancyCalculator })), { loading: Skeleton });
+const OvulationCalculator = dynamic(() => import("./OvulationCalculator").then(m => ({ default: m.OvulationCalculator })), { loading: Skeleton });
+const StepsToCaloriesCalculator = dynamic(() => import("./StepsToCaloriesCalculator").then(m => ({ default: m.StepsToCaloriesCalculator })), { loading: Skeleton });
+const WeightConverter = dynamic(() => import("./WeightConverter").then(m => ({ default: m.WeightConverter })), { loading: Skeleton });
+const TimeConverter = dynamic(() => import("./TimeConverter").then(m => ({ default: m.TimeConverter })), { loading: Skeleton });
+const AreaConverter = dynamic(() => import("./AreaConverter").then(m => ({ default: m.AreaConverter })), { loading: Skeleton });
+const VolumeConverter = dynamic(() => import("./VolumeConverter").then(m => ({ default: m.VolumeConverter })), { loading: Skeleton });
+const DataSizeConverter = dynamic(() => import("./DataSizeConverter").then(m => ({ default: m.DataSizeConverter })), { loading: Skeleton });
+const EnergyConverter = dynamic(() => import("./EnergyConverter").then(m => ({ default: m.EnergyConverter })), { loading: Skeleton });
+const FractionCalculator = dynamic(() => import("./FractionCalculator").then(m => ({ default: m.FractionCalculator })), { loading: Skeleton });
+const AverageCalculator = dynamic(() => import("./AverageCalculator").then(m => ({ default: m.AverageCalculator })), { loading: Skeleton });
+const DateDifferenceCalculator = dynamic(() => import("./DateDifferenceCalculator").then(m => ({ default: m.DateDifferenceCalculator })), { loading: Skeleton });
+const TimeDurationCalculator = dynamic(() => import("./TimeDurationCalculator").then(m => ({ default: m.TimeDurationCalculator })), { loading: Skeleton });
+const PrimeNumberChecker = dynamic(() => import("./PrimeNumberChecker").then(m => ({ default: m.PrimeNumberChecker })), { loading: Skeleton });
+const RatioCalculator = dynamic(() => import("./RatioCalculator").then(m => ({ default: m.RatioCalculator })), { loading: Skeleton });
+const JwtDecoder = dynamic(() => import("./JwtDecoder").then(m => ({ default: m.JwtDecoder })), { loading: Skeleton });
+const HtmlFormatter = dynamic(() => import("./HtmlFormatter").then(m => ({ default: m.HtmlFormatter })), { loading: Skeleton });
+const SqlFormatter = dynamic(() => import("./SqlFormatter").then(m => ({ default: m.SqlFormatter })), { loading: Skeleton });
+const PasswordStrengthChecker = dynamic(() => import("./PasswordStrengthChecker").then(m => ({ default: m.PasswordStrengthChecker })), { loading: Skeleton });
+const RemoveDuplicateLines = dynamic(() => import("./RemoveDuplicateLines").then(m => ({ default: m.RemoveDuplicateLines })), { loading: Skeleton });
+const TextSorter = dynamic(() => import("./TextSorter").then(m => ({ default: m.TextSorter })), { loading: Skeleton });
+const UrlCleaner = dynamic(() => import("./UrlCleaner").then(m => ({ default: m.UrlCleaner })), { loading: Skeleton });
+const ColorPicker = dynamic(() => import("./ColorPicker").then(m => ({ default: m.ColorPicker })), { loading: Skeleton });
+const GradientGenerator = dynamic(() => import("./GradientGenerator").then(m => ({ default: m.GradientGenerator })), { loading: Skeleton });
+const BarcodeGenerator = dynamic(() => import("./BarcodeGenerator").then(m => ({ default: m.BarcodeGenerator })), { loading: Skeleton });
+const FaviconGenerator = dynamic(() => import("./FaviconGenerator").then(m => ({ default: m.FaviconGenerator })), { loading: Skeleton });
+const MetaTagGenerator = dynamic(() => import("./MetaTagGenerator").then(m => ({ default: m.MetaTagGenerator })), { loading: Skeleton });
+const RobotsTxtGenerator = dynamic(() => import("./RobotsTxtGenerator").then(m => ({ default: m.RobotsTxtGenerator })), { loading: Skeleton });
+const OpenGraphGenerator = dynamic(() => import("./OpenGraphGenerator").then(m => ({ default: m.OpenGraphGenerator })), { loading: Skeleton });
+const KeywordDensityChecker = dynamic(() => import("./KeywordDensityChecker").then(m => ({ default: m.KeywordDensityChecker })), { loading: Skeleton });
+const BusinessNameGenerator = dynamic(() => import("./BusinessNameGenerator").then(m => ({ default: m.BusinessNameGenerator })), { loading: Skeleton });
+// Wave 7 — utility dominance (81 tools)
+const TxtSplitter = dynamic(() => import("./TxtSplitter").then(m => ({ default: m.TxtSplitter })), { loading: Skeleton });
+const TextJoiner = dynamic(() => import("./TextJoiner").then(m => ({ default: m.TextJoiner })), { loading: Skeleton });
+const CsvViewer = dynamic(() => import("./CsvViewer").then(m => ({ default: m.CsvViewer })), { loading: Skeleton });
+const CsvCleaner = dynamic(() => import("./CsvCleaner").then(m => ({ default: m.CsvCleaner })), { loading: Skeleton });
+const TsvToCsv = dynamic(() => import("./TsvToCsv").then(m => ({ default: m.TsvToCsv })), { loading: Skeleton });
+const LineBreakRemover = dynamic(() => import("./LineBreakRemover").then(m => ({ default: m.LineBreakRemover })), { loading: Skeleton });
+const WhitespaceRemover = dynamic(() => import("./WhitespaceRemover").then(m => ({ default: m.WhitespaceRemover })), { loading: Skeleton });
+const InvisibleCharacterDetector = dynamic(() => import("./InvisibleCharacterDetector").then(m => ({ default: m.InvisibleCharacterDetector })), { loading: Skeleton });
+const SpecialCharacterRemover = dynamic(() => import("./SpecialCharacterRemover").then(m => ({ default: m.SpecialCharacterRemover })), { loading: Skeleton });
+const UnicodeTextNormalizer = dynamic(() => import("./UnicodeTextNormalizer").then(m => ({ default: m.UnicodeTextNormalizer })), { loading: Skeleton });
+const BulletListCleaner = dynamic(() => import("./BulletListCleaner").then(m => ({ default: m.BulletListCleaner })), { loading: Skeleton });
+const SentenceCounter = dynamic(() => import("./SentenceCounter").then(m => ({ default: m.SentenceCounter })), { loading: Skeleton });
+const ParagraphCounter = dynamic(() => import("./ParagraphCounter").then(m => ({ default: m.ParagraphCounter })), { loading: Skeleton });
+const MarkdownTableGenerator = dynamic(() => import("./MarkdownTableGenerator").then(m => ({ default: m.MarkdownTableGenerator })), { loading: Skeleton });
+const TableGenerator = dynamic(() => import("./TableGenerator").then(m => ({ default: m.TableGenerator })), { loading: Skeleton });
+const XmlToJson = dynamic(() => import("./XmlToJson").then(m => ({ default: m.XmlToJson })), { loading: Skeleton });
+const JsonToXml = dynamic(() => import("./JsonToXml").then(m => ({ default: m.JsonToXml })), { loading: Skeleton });
+const YamlFormatter = dynamic(() => import("./YamlFormatter").then(m => ({ default: m.YamlFormatter })), { loading: Skeleton });
+const JsonDiffChecker = dynamic(() => import("./JsonDiffChecker").then(m => ({ default: m.JsonDiffChecker })), { loading: Skeleton });
+const HtmlEntityEncoderDecoder = dynamic(() => import("./HtmlEntityEncoderDecoder").then(m => ({ default: m.HtmlEntityEncoderDecoder })), { loading: Skeleton });
+const UtmBuilder = dynamic(() => import("./UtmBuilder").then(m => ({ default: m.UtmBuilder })), { loading: Skeleton });
+const UtmParser = dynamic(() => import("./UtmParser").then(m => ({ default: m.UtmParser })), { loading: Skeleton });
+const SerpSnippetPreview = dynamic(() => import("./SerpSnippetPreview").then(m => ({ default: m.SerpSnippetPreview })), { loading: Skeleton });
+const SchemaMarkupGenerator = dynamic(() => import("./SchemaMarkupGenerator").then(m => ({ default: m.SchemaMarkupGenerator })), { loading: Skeleton });
+const FaqSchemaGenerator = dynamic(() => import("./FaqSchemaGenerator").then(m => ({ default: m.FaqSchemaGenerator })), { loading: Skeleton });
+const TitleTagLengthChecker = dynamic(() => import("./TitleTagLengthChecker").then(m => ({ default: m.TitleTagLengthChecker })), { loading: Skeleton });
+const MetaDescriptionLengthChecker = dynamic(() => import("./MetaDescriptionLengthChecker").then(m => ({ default: m.MetaDescriptionLengthChecker })), { loading: Skeleton });
+const HeadlineAnalyzer = dynamic(() => import("./HeadlineAnalyzer").then(m => ({ default: m.HeadlineAnalyzer })), { loading: Skeleton });
+const AdCopyLengthChecker = dynamic(() => import("./AdCopyLengthChecker").then(m => ({ default: m.AdCopyLengthChecker })), { loading: Skeleton });
+const EmailSubjectLineTester = dynamic(() => import("./EmailSubjectLineTester").then(m => ({ default: m.EmailSubjectLineTester })), { loading: Skeleton });
+const AltTextHelper = dynamic(() => import("./AltTextHelper").then(m => ({ default: m.AltTextHelper })), { loading: Skeleton });
+const CronExpressionBuilder = dynamic(() => import("./CronExpressionBuilder").then(m => ({ default: m.CronExpressionBuilder })), { loading: Skeleton });
+const CronExpressionExplainer = dynamic(() => import("./CronExpressionExplainer").then(m => ({ default: m.CronExpressionExplainer })), { loading: Skeleton });
+const HttpStatusCodeLookup = dynamic(() => import("./HttpStatusCodeLookup").then(m => ({ default: m.HttpStatusCodeLookup })), { loading: Skeleton });
+const MimeTypeLookup = dynamic(() => import("./MimeTypeLookup").then(m => ({ default: m.MimeTypeLookup })), { loading: Skeleton });
+const UrlParser = dynamic(() => import("./UrlParser").then(m => ({ default: m.UrlParser })), { loading: Skeleton });
+const QueryStringParser = dynamic(() => import("./QueryStringParser").then(m => ({ default: m.QueryStringParser })), { loading: Skeleton });
+const FilenameCleaner = dynamic(() => import("./FilenameCleaner").then(m => ({ default: m.FilenameCleaner })), { loading: Skeleton });
+const LineCounter = dynamic(() => import("./LineCounter").then(m => ({ default: m.LineCounter })), { loading: Skeleton });
+const BoxShadowGenerator = dynamic(() => import("./BoxShadowGenerator").then(m => ({ default: m.BoxShadowGenerator })), { loading: Skeleton });
+const BorderRadiusGenerator = dynamic(() => import("./BorderRadiusGenerator").then(m => ({ default: m.BorderRadiusGenerator })), { loading: Skeleton });
+const CssClampGenerator = dynamic(() => import("./CssClampGenerator").then(m => ({ default: m.CssClampGenerator })), { loading: Skeleton });
+const FlexboxPlayground = dynamic(() => import("./FlexboxPlayground").then(m => ({ default: m.FlexboxPlayground })), { loading: Skeleton });
+const GridLayoutGenerator = dynamic(() => import("./GridLayoutGenerator").then(m => ({ default: m.GridLayoutGenerator })), { loading: Skeleton });
+const AspectRatioCalculator = dynamic(() => import("./AspectRatioCalculator").then(m => ({ default: m.AspectRatioCalculator })), { loading: Skeleton });
+const ImageDimensionsChecker = dynamic(() => import("./ImageDimensionsChecker").then(m => ({ default: m.ImageDimensionsChecker })), { loading: Skeleton });
+const ContrastChecker = dynamic(() => import("./ContrastChecker").then(m => ({ default: m.ContrastChecker })), { loading: Skeleton });
+const SocialMediaImageSizes = dynamic(() => import("./SocialMediaImageSizes").then(m => ({ default: m.SocialMediaImageSizes })), { loading: Skeleton });
+const MemeTextFormatter = dynamic(() => import("./MemeTextFormatter").then(m => ({ default: m.MemeTextFormatter })), { loading: Skeleton });
+const InvoiceGenerator = dynamic(() => import("./InvoiceGenerator").then(m => ({ default: m.InvoiceGenerator })), { loading: Skeleton });
+const HourlyRateCalculator = dynamic(() => import("./HourlyRateCalculator").then(m => ({ default: m.HourlyRateCalculator })), { loading: Skeleton });
+const FreelanceRateCalculator = dynamic(() => import("./FreelanceRateCalculator").then(m => ({ default: m.FreelanceRateCalculator })), { loading: Skeleton });
+const PricingCalculator = dynamic(() => import("./PricingCalculator").then(m => ({ default: m.PricingCalculator })), { loading: Skeleton });
+const CashFlowCalculator = dynamic(() => import("./CashFlowCalculator").then(m => ({ default: m.CashFlowCalculator })), { loading: Skeleton });
+const StartupRunwayCalculator = dynamic(() => import("./StartupRunwayCalculator").then(m => ({ default: m.StartupRunwayCalculator })), { loading: Skeleton });
+const SubscriptionCostCalculator = dynamic(() => import("./SubscriptionCostCalculator").then(m => ({ default: m.SubscriptionCostCalculator })), { loading: Skeleton });
+const ExpenseSplitCalculator = dynamic(() => import("./ExpenseSplitCalculator").then(m => ({ default: m.ExpenseSplitCalculator })), { loading: Skeleton });
+const BillSplitCalculator = dynamic(() => import("./BillSplitCalculator").then(m => ({ default: m.BillSplitCalculator })), { loading: Skeleton });
+const RentSplitCalculator = dynamic(() => import("./RentSplitCalculator").then(m => ({ default: m.RentSplitCalculator })), { loading: Skeleton });
+const OvertimeCalculator = dynamic(() => import("./OvertimeCalculator").then(m => ({ default: m.OvertimeCalculator })), { loading: Skeleton });
+const PtoCalculator = dynamic(() => import("./PtoCalculator").then(m => ({ default: m.PtoCalculator })), { loading: Skeleton });
+const ShiftScheduler = dynamic(() => import("./ShiftScheduler").then(m => ({ default: m.ShiftScheduler })), { loading: Skeleton });
+const GpaCalculator = dynamic(() => import("./GpaCalculator").then(m => ({ default: m.GpaCalculator })), { loading: Skeleton });
+const GradeCalculator = dynamic(() => import("./GradeCalculator").then(m => ({ default: m.GradeCalculator })), { loading: Skeleton });
+const FuelCostCalculator = dynamic(() => import("./FuelCostCalculator").then(m => ({ default: m.FuelCostCalculator })), { loading: Skeleton });
+const TripCostCalculator = dynamic(() => import("./TripCostCalculator").then(m => ({ default: m.TripCostCalculator })), { loading: Skeleton });
+const SmokingCostCalculator = dynamic(() => import("./SmokingCostCalculator").then(m => ({ default: m.SmokingCostCalculator })), { loading: Skeleton });
+const AlcoholUnitCalculator = dynamic(() => import("./AlcoholUnitCalculator").then(m => ({ default: m.AlcoholUnitCalculator })), { loading: Skeleton });
+const CaffeineIntakeCalculator = dynamic(() => import("./CaffeineIntakeCalculator").then(m => ({ default: m.CaffeineIntakeCalculator })), { loading: Skeleton });
+const SleepCycleCalculator = dynamic(() => import("./SleepCycleCalculator").then(m => ({ default: m.SleepCycleCalculator })), { loading: Skeleton });
+const HeartRateZoneCalculator = dynamic(() => import("./HeartRateZoneCalculator").then(m => ({ default: m.HeartRateZoneCalculator })), { loading: Skeleton });
+const CookingConverter = dynamic(() => import("./CookingConverter").then(m => ({ default: m.CookingConverter })), { loading: Skeleton });
+const RecipeScaler = dynamic(() => import("./RecipeScaler").then(m => ({ default: m.RecipeScaler })), { loading: Skeleton });
+const PriorityMatrix = dynamic(() => import("./PriorityMatrix").then(m => ({ default: m.PriorityMatrix })), { loading: Skeleton });
+const PackingListGenerator = dynamic(() => import("./PackingListGenerator").then(m => ({ default: m.PackingListGenerator })), { loading: Skeleton });
+const DeadlineCalculator = dynamic(() => import("./DeadlineCalculator").then(m => ({ default: m.DeadlineCalculator })), { loading: Skeleton });
+const LunchBreakCalculator = dynamic(() => import("./LunchBreakCalculator").then(m => ({ default: m.LunchBreakCalculator })), { loading: Skeleton });
+const DailyPlanner = dynamic(() => import("./DailyPlanner").then(m => ({ default: m.DailyPlanner })), { loading: Skeleton });
+const WeeklyPlanner = dynamic(() => import("./WeeklyPlanner").then(m => ({ default: m.WeeklyPlanner })), { loading: Skeleton });
+const MeetingAgendaBuilder = dynamic(() => import("./MeetingAgendaBuilder").then(m => ({ default: m.MeetingAgendaBuilder })), { loading: Skeleton });
+const DecisionWheel = dynamic(() => import("./DecisionWheel").then(m => ({ default: m.DecisionWheel })), { loading: Skeleton });
 
 /** Next passes `searchParams` as `string | string[] | undefined`. */
 export type RenderParams = Record<string, string | string[] | undefined>;
@@ -2399,6 +2522,2857 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Paste the changed text on the right.",
       "Click Compare — scroll through the side-by-side result.",
       "Red = removed, green = added, grey = unchanged.",
+    ],
+  },
+  // Wave 6 — full library completion (40 tools)
+  "tax-calculator": {
+    render: () => <TaxCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate your federal income tax in seconds using 2024 US tax brackets for single, married-filing-jointly,
+          and head-of-household filers. Add a state tax rate to see your total tax burden, effective tax rate, and
+          take-home income — all calculated in your browser with no data leaving your device.
+        </p>
+        <p>
+          This is a simplified calculator suited for planning and quick estimates, not for filing. It applies
+          progressive federal brackets to your gross income and a flat state rate, ignoring deductions, credits,
+          FICA, and itemized situations. For paycheck-level breakdowns use the{" "}
+          <a href="/tools/paycheck-calculator">paycheck calculator</a>; for retirement planning, see{" "}
+          <a href="/tools/compound-interest-calculator">compound interest</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your gross annual income.",
+      "Pick your filing status (single, married, or head of household).",
+      "Add an optional state tax rate if you want a combined estimate.",
+      "Review your federal tax, state tax, and take-home pay.",
+    ],
+  },
+  "vat-calculator": {
+    render: () => <VatCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add or remove VAT/GST from any price instantly. Enter the amount and rate, then pick whether VAT should be
+          added on top of the price (going from net to gross) or extracted from a VAT-inclusive price (going from
+          gross to net). The calculator shows the net amount, VAT portion, and gross total side by side.
+        </p>
+        <p>
+          Useful for invoicing, expense reports, cross-border purchases, or quickly checking the VAT on a receipt.
+          Works for any rate — UK 20%, Ireland 23%, Germany 19%, Australia GST 10%, etc. For US sales tax use{" "}
+          <a href="/tools/tax-calculator">tax calculator</a>; for discount math see{" "}
+          <a href="/tools/discount-calculator">discount calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the amount.",
+      "Set the VAT/GST rate as a percentage.",
+      "Choose add VAT (net → gross) or remove VAT (gross → net).",
+      "Read the net, VAT, and gross values in the result card.",
+    ],
+  },
+  "discount-calculator": {
+    render: () => <DiscountCalculator />,
+    explainer: (
+      <>
+        <p>
+          Work out the exact savings on any sale price in seconds. Forward mode takes an original price and a
+          discount percent and shows the final price plus how much you save. Reverse mode takes an original and a
+          sale price and tells you the effective discount percent — handy for comparing ambiguous promos.
+        </p>
+        <p>
+          All math runs locally, with no tracking. Pair with{" "}
+          <a href="/tools/tax-calculator">tax calculator</a> to add sales tax to a discounted price, or{" "}
+          <a href="/tools/profit-margin-calculator">margin calculator</a> when you&apos;re setting the discount
+          yourself as a seller.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the original price.",
+      "Enter the discount percent (or pick reverse mode).",
+      "Read the final price and total savings.",
+      "In reverse mode, input the sale price to learn the real discount rate.",
+    ],
+  },
+  "profit-margin-calculator": {
+    render: () => <ProfitMarginCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate profit margin, markup, and gross profit from cost and revenue — or reverse it: input a cost and
+          desired margin, and the tool computes the price you need to charge. Margin is profit as a percent of
+          revenue; markup is profit as a percent of cost. Mixing them up is the number-one pricing mistake, so the
+          tool shows both.
+        </p>
+        <p>
+          Every computation runs in your browser. Useful for pricing products, evaluating deals, or stress-testing a
+          quote. Follow up with <a href="/tools/break-even-calculator">break-even calculator</a> to see how many
+          units you need to sell, or <a href="/tools/roi-calculator">ROI calculator</a> for investment returns.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the unit cost.",
+      "Enter the selling price (or flip to reverse mode).",
+      "In reverse mode, enter a target margin — the tool returns the required price.",
+      "Read profit, margin %, and markup % side by side.",
+    ],
+  },
+  "net-worth-calculator": {
+    render: () => <NetWorthCalculator />,
+    explainer: (
+      <>
+        <p>
+          Track everything you own against everything you owe with a clean two-column worksheet. Add as many asset
+          rows (cash, investments, home, vehicles, crypto) and liability rows (mortgage, credit cards, student
+          loans) as you need. The calculator sums each column and shows your net worth in real time — everything
+          stays in your browser.
+        </p>
+        <p>
+          Net worth is the single number that actually measures financial progress. Recompute monthly or quarterly
+          to see the trend. Pair with <a href="/tools/budget-calculator">budget calculator</a> to find cash-flow
+          leaks, or <a href="/tools/debt-payoff-calculator">debt payoff</a> to accelerate the liabilities side.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add asset rows — label each and enter a current value.",
+      "Add liability rows — mortgage, credit cards, loans.",
+      "Remove any row with the trash icon.",
+      "Your net worth updates instantly at the bottom.",
+    ],
+  },
+  "inflation-calculator": {
+    render: () => <InflationCalculator />,
+    explainer: (
+      <>
+        <p>
+          Adjust historical US dollar amounts for inflation between 1914 and today using CPI-based approximations.
+          Enter an amount, a start year, and an end year — the calculator shows what that money would be worth in
+          today&apos;s terms (or any other year), plus the total and annualized inflation rate for the period.
+        </p>
+        <p>
+          Values are linearly interpolated between anchor years, so results are estimates, not official BLS figures.
+          Still, it&apos;s close enough for context: salary comparisons across decades, property value trends, or
+          thinking about long-term savings goals. See also{" "}
+          <a href="/tools/compound-interest-calculator">compound interest</a> for the flip side — how investments
+          can outpace inflation over time.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the original dollar amount.",
+      "Pick the start year (year of the original amount).",
+      "Pick the end year (what year to translate it into).",
+      "Review the equivalent value, total inflation, and annualized rate.",
+    ],
+  },
+  "break-even-calculator": {
+    render: () => <BreakEvenCalculator />,
+    explainer: (
+      <>
+        <p>
+          Know the exact sales volume where your business stops losing money and starts making a profit. Enter your
+          fixed costs (rent, salaries, subscriptions), variable cost per unit, and selling price per unit. The tool
+          computes the break-even point in units sold and revenue needed, plus your contribution margin per unit.
+        </p>
+        <p>
+          Add an expected sales figure and you&apos;ll also see your margin of safety — how far sales can drop
+          before you hit a loss. Every calculation runs locally. Pair with{" "}
+          <a href="/tools/profit-margin-calculator">profit margin</a> when experimenting with prices, or{" "}
+          <a href="/tools/roi-calculator">ROI calculator</a> for long-horizon investment math.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter total fixed costs per period.",
+      "Enter variable cost per unit.",
+      "Enter selling price per unit.",
+      "Optionally add expected sales to see your margin of safety.",
+    ],
+  },
+  "bmr-calculator": {
+    render: () => <BmrCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate your Basal Metabolic Rate — the calories you burn at complete rest — using the Mifflin-St Jeor
+          equation, the current standard used by dietitians. Enter age, sex, weight, and height, then pick an
+          activity level to see your Total Daily Energy Expenditure (TDEE): the calories you need to maintain your
+          current weight with normal activity.
+        </p>
+        <p>
+          Use BMR as a baseline and TDEE as the number to eat for maintenance; subtract 500/day for roughly a pound
+          of loss per week, add 250/day for lean gains. Compare with{" "}
+          <a href="/tools/calorie-calculator">calorie calculator</a> for goal-based targets, or{" "}
+          <a href="/tools/macro-calculator">macro calculator</a> to split TDEE into protein, carbs, and fat.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter age, sex, weight, and height (metric or imperial).",
+      "Pick the activity level that matches your week.",
+      "Read your BMR (resting) and TDEE (daily need).",
+      "Adjust intake relative to TDEE based on your goal.",
+    ],
+  },
+  "body-fat-calculator": {
+    render: () => <BodyFatCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate body fat percentage using the US Navy method — the easiest reliable calculation that only needs a
+          tape measure. Enter sex, height, neck and waist circumference (and hip for women), and the tool returns
+          your body fat % plus a category (essential, athletic, fit, average, or high) using ACE-published ranges.
+        </p>
+        <p>
+          Results are accurate to within a few percent for most people and much cheaper than a DEXA or BodPod scan.
+          Measure in the morning, relaxed, and use the same tape position every time for good trend data. See{" "}
+          <a href="/tools/bmi-calculator">BMI calculator</a> for a simpler height/weight metric or{" "}
+          <a href="/tools/ideal-weight-calculator">ideal weight</a> for target weight math.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Measure your neck, waist (and hip if female) with a flexible tape.",
+      "Enter sex and height.",
+      "Input each circumference in cm or inches.",
+      "Read your body fat % and category.",
+    ],
+  },
+  "pregnancy-calculator": {
+    render: () => <PregnancyCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate your due date, current week of pregnancy, and trimester from either the first day of your last
+          menstrual period (LMP) or a known conception date. Uses the standard Naegele&apos;s rule of LMP + 280
+          days, the same formula most practitioners and apps use for a first-look estimate.
+        </p>
+        <p>
+          This is a planning tool, not a medical device — real due dates shift based on ultrasound dating,
+          ovulation timing, and individual cycle variation. For fertility-window planning before conception, use the{" "}
+          <a href="/tools/ovulation-calculator">ovulation calculator</a>; for ongoing appointments and milestones,
+          keep it beside your prenatal-care schedule.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick LMP or conception-date mode.",
+      "Enter the relevant date.",
+      "Read your estimated due date and current pregnancy week.",
+      "See which trimester you&apos;re in and the estimated conception date.",
+    ],
+  },
+  "ovulation-calculator": {
+    render: () => <OvulationCalculator />,
+    explainer: (
+      <>
+        <p>
+          Find your most fertile days from the date of your last period and your average cycle length. The tool
+          estimates ovulation (around 14 days before your next period), the six-day fertile window leading up to
+          it, and the predicted start of your next three cycles — useful whether you&apos;re trying to conceive or
+          planning around your cycle.
+        </p>
+        <p>
+          This is a rhythm-based estimate; real ovulation varies by a few days from cycle to cycle. For higher
+          accuracy combine with basal body temperature tracking or ovulation test strips. If you&apos;ve already
+          conceived, switch over to <a href="/tools/pregnancy-calculator">pregnancy calculator</a> for due-date and
+          week math.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the first day of your last period.",
+      "Enter your average cycle length (default 28 days).",
+      "Review your predicted ovulation day and fertile window.",
+      "Plan around the next three predicted cycles shown below.",
+    ],
+  },
+  "steps-to-calories-calculator": {
+    render: () => <StepsToCaloriesCalculator />,
+    explainer: (
+      <>
+        <p>
+          Convert step count to calories burned using your weight and walking pace. Enter steps, weight, and pick
+          slow, moderate, or brisk — the calculator returns calories, approximate distance in miles and kilometers,
+          and walking time at that pace. Useful for daily-step goals, fitness challenges, and training logs.
+        </p>
+        <p>
+          Numbers are estimates based on standard MET values; actual calorie burn varies with terrain, stride
+          length, and fitness level. Pair with <a href="/tools/running-pace-calculator">running pace</a> for run
+          training or <a href="/tools/calorie-calculator">calorie calculator</a> to set a daily target.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter step count.",
+      "Enter body weight (kg or lb).",
+      "Pick pace: slow, moderate, or brisk.",
+      "Read calories burned, distance, and walking time.",
+    ],
+  },
+  "weight-converter": {
+    render: () => <WeightConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert between milligrams, grams, kilograms, ounces, pounds, stones, and metric tons instantly. Pick
+          your source and target units, type a number, and see the result plus a full conversion table showing
+          the value in every supported unit — handy when you need more than one answer.
+        </p>
+        <p>
+          Accurate to the exact international avoirdupois pound (453.59237 g) and metric definitions. For other
+          physical units see <a href="/tools/length-converter">length</a>,{" "}
+          <a href="/tools/volume-converter">volume</a>, or{" "}
+          <a href="/tools/temperature-converter">temperature</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick source and target units.",
+      "Enter the value.",
+      "Read the conversion — or see every unit in the table below.",
+      "Use the swap button to flip source and target.",
+    ],
+  },
+  "time-converter": {
+    render: () => <TimeConverter />,
+    explainer: (
+      <>
+        <p>
+          Translate between milliseconds, seconds, minutes, hours, days, weeks, months, and years. Uses 30.44 days
+          per month and 365.25 days per year (the Gregorian calendar average), so long-span conversions stay
+          accurate. Enter a value, pick your units, and see every other unit computed instantly in the table below.
+        </p>
+        <p>
+          Handy for estimating cooking times, project durations, server uptimes, and back-of-envelope planning. For
+          specific date arithmetic use <a href="/tools/date-difference-calculator">date difference</a>; for time-of-
+          day math, <a href="/tools/time-duration-calculator">time duration</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter a duration.",
+      "Pick source and target units.",
+      "Read the result and check the full conversion table for every unit.",
+      "Swap source/target with the swap button.",
+    ],
+  },
+  "area-converter": {
+    render: () => <AreaConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert square millimeters, centimeters, meters, hectares, square kilometers, square inches, feet,
+          yards, acres, and square miles. Useful for real-estate listings, agriculture, construction plans, and
+          schoolwork. Every base conversion uses precise definitions (1 acre = 4046.8564224 m², 1 ha = 10,000 m²).
+        </p>
+        <p>
+          See also <a href="/tools/length-converter">length</a> for linear measurements,{" "}
+          <a href="/tools/volume-converter">volume</a> for three-dimensional math, and{" "}
+          <a href="/tools/unit-converter">unit converter</a> for mixed-category conversions.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the source unit (what you have).",
+      "Pick the target unit (what you want).",
+      "Enter the value.",
+      "Read the conversion and the full per-unit table below.",
+    ],
+  },
+  "volume-converter": {
+    render: () => <VolumeConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert between milliliters, liters, cubic meters, US cooking units (tsp, tbsp, fl oz, cup, pint, quart,
+          gallon), and cubic inches/feet. Values stored internally in liters for precision, using the exact US
+          customary definitions (1 gal = 3.785411784 L, 1 fl oz = 29.5735296 mL).
+        </p>
+        <p>
+          Useful for recipes, fuel calculations, aquariums, and chemistry. Note that US and UK fluid units differ —
+          this tool uses US definitions. For mass see <a href="/tools/weight-converter">weight converter</a>;
+          for surface area, <a href="/tools/area-converter">area converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Choose source and target volume units.",
+      "Enter the value.",
+      "Review the direct conversion and the full unit table.",
+      "Swap units with the swap button.",
+    ],
+  },
+  "data-size-converter": {
+    render: () => <DataSizeConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert between bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes. Toggle between
+          decimal (1000-based: KB, MB, GB) and binary (1024-based: KiB, MiB, GiB) modes — decimal is what
+          storage vendors advertise, binary is what operating systems report, and the difference gets big at
+          higher scales.
+        </p>
+        <p>
+          Handy for disk-space planning, bandwidth estimates, and understanding why your 1 TB drive shows as 931
+          GB. See also <a href="/tools/number-base-converter">number base converter</a> for binary/hex math and{" "}
+          <a href="/tools/unit-converter">unit converter</a> for general unit work.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick decimal (1000) or binary (1024) mode.",
+      "Choose source and target units.",
+      "Enter a value.",
+      "Read the conversion and see every unit in the table below.",
+    ],
+  },
+  "energy-converter": {
+    render: () => <EnergyConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert joules, kilojoules, calories, kilocalories, watt-hours, kilowatt-hours, BTU, electronvolts, and
+          foot-pounds. Useful in physics homework, food labels (kcal ↔ kJ), HVAC (BTU ↔ kWh), utility bills, and
+          engineering. All conversions use SI exact relationships (1 cal = 4.184 J, 1 kWh = 3.6 MJ, 1 BTU =
+          1055.06 J).
+        </p>
+        <p>
+          For power see <a href="/tools/unit-converter">unit converter</a>; for weight-related nutrition,{" "}
+          <a href="/tools/calorie-calculator">calorie calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Select source and target energy units.",
+      "Enter the numeric value.",
+      "Read the direct conversion plus the per-unit table.",
+      "Swap source and target with the swap button.",
+    ],
+  },
+  "fraction-calculator": {
+    render: () => <FractionCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add, subtract, multiply, and divide two fractions. Enter numerators and denominators, pick an operation,
+          and the calculator returns the result as a reduced fraction, a mixed number, and a decimal. All math
+          runs in the browser using GCD-based reduction, so results are exact rational numbers, not floating-point
+          approximations.
+        </p>
+        <p>
+          Great for cooking (half of ¾ cup), carpentry (feet-and-inches math), probability puzzles, and homework.
+          For decimal-to-percent conversions see <a href="/tools/percentage-calculator">percentage calculator</a>;
+          for proportions use the <a href="/tools/ratio-calculator">ratio calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the first fraction (numerator over denominator).",
+      "Pick +, −, ×, or ÷.",
+      "Enter the second fraction.",
+      "Read the reduced answer, mixed number, and decimal equivalent.",
+    ],
+  },
+  "average-calculator": {
+    render: () => <AverageCalculator />,
+    explainer: (
+      <>
+        <p>
+          Paste or type any list of numbers (comma, space, or newline separated) to compute count, sum, mean,
+          median, mode, minimum, maximum, range, and both population and sample variance and standard deviation.
+          One textarea, full stat summary — no spreadsheet required.
+        </p>
+        <p>
+          Useful for quick data checks, survey results, lab measurements, and sports stats. For percentage math see{" "}
+          <a href="/tools/percentage-calculator">percentage calculator</a>; for scaling proportions,{" "}
+          <a href="/tools/ratio-calculator">ratio calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your numbers into the textarea — comma, space, or newline separated.",
+      "Read mean, median, mode, and range at the top.",
+      "Scroll down for variance and standard deviation (population and sample).",
+      "Clear and paste a new dataset anytime.",
+    ],
+  },
+  "date-difference-calculator": {
+    render: () => <DateDifferenceCalculator />,
+    explainer: (
+      <>
+        <p>
+          Measure the gap between any two dates. Enter a start and end date and the calculator returns the
+          difference in years/months/days, plus the total in days, weeks, hours, and minutes. It also breaks down
+          how many Mondays, Tuesdays, etc. fell inside the range.
+        </p>
+        <p>
+          Useful for counting days until a deadline, tracking anniversaries, tallying vacation days, or checking
+          gaps in employment history. For duration between two clock times see{" "}
+          <a href="/tools/time-duration-calculator">time duration calculator</a>; for age-specific math,{" "}
+          <a href="/tools/age-calculator">age calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a start date.",
+      "Pick an end date.",
+      "Read the human-friendly duration at the top.",
+      "Scroll down for weekday breakdown and total hours/minutes.",
+    ],
+  },
+  "time-duration-calculator": {
+    render: () => <TimeDurationCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate the duration between two clock times, or add/subtract a duration from a starting time. Handles
+          overnight spans (22:00 → 06:00 = 8 hours) and shows the answer in hours, minutes, total minutes, and
+          decimal hours — the format payroll systems expect.
+        </p>
+        <p>
+          Useful for timesheets, work shifts, and travel planning. For calendar-date differences see{" "}
+          <a href="/tools/date-difference-calculator">date difference calculator</a>; for time zones, use{" "}
+          <a href="/tools/time-zone-converter">time zone converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick duration mode or add/subtract mode.",
+      "Enter start and end times (or a start time and a duration).",
+      "Toggle overnight if the end is the next day.",
+      "Read hours, minutes, decimal hours.",
+    ],
+  },
+  "prime-number-checker": {
+    render: () => <PrimeNumberChecker />,
+    explainer: (
+      <>
+        <p>
+          Check whether a number is prime, and if not, see its full prime factorization. Enter any integer up to
+          about a trillion (1e12) and the tool returns yes/no, the prime factorization in exponent notation
+          (60 = 2² × 3 × 5), a list of divisors, and the next and previous prime numbers.
+        </p>
+        <p>
+          Uses 6k±1 trial division — practical for numbers up to ~10¹². For much larger inputs you&apos;d want
+          Miller-Rabin; this tool targets education and quick math. See also{" "}
+          <a href="/tools/number-base-converter">number base converter</a> for binary/hex representations and{" "}
+          <a href="/tools/fraction-calculator">fraction calculator</a> for GCD-heavy math.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter any integer up to 1e12.",
+      "See the prime/composite verdict and factorization.",
+      "Scroll the divisor list and the next/previous primes.",
+      "Try another number anytime.",
+    ],
+  },
+  "ratio-calculator": {
+    render: () => <RatioCalculator />,
+    explainer: (
+      <>
+        <p>
+          Simplify a ratio (e.g., 18:24 → 3:4) or solve a proportion where one value is unknown (3:4 = x:12 →
+          x=9). Both modes use GCD-based reduction and exact rational math, so there are no floating-point
+          surprises. Decimals are scaled to integers before reduction.
+        </p>
+        <p>
+          Useful for recipes, blueprint scaling, aspect ratios, and mixing concentrations. Pair with{" "}
+          <a href="/tools/fraction-calculator">fraction calculator</a> for arithmetic on reduced fractions, or{" "}
+          <a href="/tools/percentage-calculator">percentage calculator</a> when you need the ratio as a percent.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick simplify or solve-proportion mode.",
+      "Enter the ratio values; leave one blank in solve mode.",
+      "Read the simplified ratio or the solved value.",
+      "Check the decimal and percentage equivalents shown below.",
+    ],
+  },
+  "jwt-decoder": {
+    render: () => <JwtDecoder />,
+    explainer: (
+      <>
+        <p>
+          Paste a JSON Web Token (JWT) to decode its header and payload locally in your browser. The tool reveals
+          the algorithm, issuer, expiry, and any custom claims — and shows a human-readable version of exp and
+          iat timestamps (&ldquo;expires in 2h 14m&rdquo; / &ldquo;expired 3d ago&rdquo;).
+        </p>
+        <p>
+          <strong>No signature verification</strong> — that requires the signing key and is done server-side in
+          production code. Use this for quick debugging, never for authentication. Tokens never leave your
+          browser. See <a href="/tools/base64-encoder-decoder">Base64 encoder</a> for raw base64url work or{" "}
+          <a href="/tools/hash-generator">hash generator</a> for signing material.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the JWT (three base64url segments separated by dots).",
+      "Review the decoded header and payload.",
+      "Check the human-readable expiry and issued-at times.",
+      "Copy individual sections with the copy buttons.",
+    ],
+  },
+  "html-formatter": {
+    render: () => <HtmlFormatter />,
+    explainer: (
+      <>
+        <p>
+          Beautify messy HTML into clean, 2-space indented markup, or minify it by stripping whitespace between
+          tags. The formatter walks the token stream, handles void tags and self-closing elements, and preserves
+          text content. Minify mode produces the smallest HTML possible while keeping the structure valid.
+        </p>
+        <p>
+          Great for cleaning up scraped markup, email templates, or dumping production HTML for inspection. For
+          CSS/JS compression see <a href="/tools/css-minifier">CSS minifier</a> and{" "}
+          <a href="/tools/js-minifier">JS minifier</a>; for JSON work,{" "}
+          <a href="/tools/json-formatter">JSON formatter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste HTML into the input.",
+      "Pick beautify or minify.",
+      "Read the formatted output.",
+      "Copy or download the result.",
+    ],
+  },
+  "sql-formatter": {
+    render: () => <SqlFormatter />,
+    explainer: (
+      <>
+        <p>
+          Format raw SQL into readable, keyword-uppercased, newline-per-clause form — SELECT, FROM, WHERE, JOIN,
+          GROUP BY, ORDER BY each on their own line. Or flip to minify and collapse back to a single line for
+          pasting into code. Works with most dialects (Postgres, MySQL, SQL Server, SQLite).
+        </p>
+        <p>
+          Useful for code review, debugging slow queries, and sanity-checking long JOINs. Pair with{" "}
+          <a href="/tools/json-formatter">JSON formatter</a> and{" "}
+          <a href="/tools/regex-tester">regex tester</a> in your day-to-day dev toolkit.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your SQL query.",
+      "Click Format (or Minify for the single-line version).",
+      "Copy the result back into your code.",
+      "Uppercased keywords make diffs easier to read.",
+    ],
+  },
+  "password-strength-checker": {
+    render: () => <PasswordStrengthChecker />,
+    explainer: (
+      <>
+        <p>
+          Check how strong a password is with a live score (0 – 4), a color bar, entropy bits, and an estimated
+          time-to-crack at 10 billion guesses per second. A checklist flags missing criteria (length ≥ 12,
+          uppercase, lowercase, digits, symbols, no common patterns). The tool also warns on common passwords
+          like &ldquo;password&rdquo; or &ldquo;123456&rdquo;.
+        </p>
+        <p>
+          <strong>Nothing ever leaves your browser</strong> — no network calls, no logging. For generating strong
+          passwords use <a href="/tools/password-generator">password generator</a>; to check if a password is
+          already in a breach, <a href="/tools/password-breach-checker">password breach checker</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type the password you want to evaluate.",
+      "Read the strength score and entropy estimate.",
+      "Fix any items the checklist flags red.",
+      "Aim for &ldquo;Strong&rdquo; or better before using the password.",
+    ],
+  },
+  "remove-duplicate-lines": {
+    render: () => <RemoveDuplicateLines />,
+    explainer: (
+      <>
+        <p>
+          Paste a list of lines and strip duplicates in one click. Options let you keep first or last occurrence,
+          preserve original order, ignore case, and trim whitespace before comparison. Stats show original line
+          count, deduped count, and how many duplicates were removed.
+        </p>
+        <p>
+          Great for cleaning email lists, log files, imported CSVs, and any messy text dump. For reordering lines
+          see <a href="/tools/text-sorter">text sorter</a>; for line comparisons,{" "}
+          <a href="/tools/diff-checker">diff checker</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your list into the input textarea.",
+      "Toggle case sensitivity, trim whitespace, and keep-first/keep-last as needed.",
+      "Click Remove duplicates.",
+      "Copy the deduped output.",
+    ],
+  },
+  "text-sorter": {
+    render: () => <TextSorter />,
+    explainer: (
+      <>
+        <p>
+          Sort any list of lines alphabetically, numerically, or by length — ascending or descending. Extra
+          options: case-insensitive compare, reverse, and auto-remove empty lines. The sorter uses stable
+          comparisons, so ties keep their input order.
+        </p>
+        <p>
+          Handy for organizing CSV rows, to-do lists, config files, and data exports. To strip duplicates first
+          use <a href="/tools/remove-duplicate-lines">remove duplicate lines</a>; to compare lists side by side,{" "}
+          <a href="/tools/diff-checker">diff checker</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your lines into the input.",
+      "Pick alphabetical, numeric, or by length.",
+      "Choose ascending or descending (and optional reverse).",
+      "Copy the sorted output.",
+    ],
+  },
+  "url-cleaner": {
+    render: () => <UrlCleaner />,
+    explainer: (
+      <>
+        <p>
+          Strip tracking parameters from any URL before you share or store it. Removes utm_*, fbclid, gclid,
+          msclkid, mc_*, ref, yclid, and 15+ other common analytics params by default. You can add your own
+          extras. Paste one URL or many (one per line) — the cleaned versions come back in the same order.
+        </p>
+        <p>
+          Useful for cleaner analytics, cleaner bookmarks, cleaner emails, and to prevent cross-site tracking on
+          links you share. To encode/decode URL components, see{" "}
+          <a href="/tools/url-encoder-decoder">URL encoder/decoder</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste one or more URLs (one per line).",
+      "Edit the extra-params list if you need custom strips.",
+      "Click Clean.",
+      "Copy the cleaned URLs.",
+    ],
+  },
+  "color-picker": {
+    render: () => <ColorPicker />,
+    explainer: (
+      <>
+        <p>
+          Pick any color with a native color picker or RGB/HSL sliders, and get the value in HEX, RGB, HSL, HSV,
+          and CMYK — each with a one-click copy button. The big swatch preview makes it easy to compare shades
+          before locking in a palette.
+        </p>
+        <p>
+          Useful for designers, front-end devs, and anyone building a brand palette. For converting between one
+          color format and another only, see <a href="/tools/color-converter">color converter</a>. To pull colors
+          out of an image, <a href="/tools/color-extractor">color extractor</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Click the color preview or drag the RGB/HSL sliders.",
+      "Watch HEX, RGB, HSL, HSV, CMYK update live.",
+      "Copy any format with its copy button.",
+      "Use the swatch to compare the chosen color visually.",
+    ],
+  },
+  "gradient-generator": {
+    render: () => <GradientGenerator />,
+    explainer: (
+      <>
+        <p>
+          Build CSS linear and radial gradients with a live preview. Pick the type, choose a direction or angle,
+          add or remove color stops, and fine-tune the position of each. The tool outputs production-ready CSS
+          you can paste straight into a stylesheet. Presets (sunset, ocean, forest, fire, twilight) give you a
+          quick starting point.
+        </p>
+        <p>
+          Great for hero sections, button backgrounds, and loading states. For solid-color work use{" "}
+          <a href="/tools/color-picker">color picker</a>; for extracting a palette from an image,{" "}
+          <a href="/tools/color-extractor">color extractor</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick linear or radial.",
+      "Choose a direction (or click a preset to start from scratch).",
+      "Add/remove color stops and drag their positions.",
+      "Copy the CSS snippet into your stylesheet.",
+    ],
+  },
+  "barcode-generator": {
+    render: () => <BarcodeGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate a scannable Code39 barcode from any letters, numbers, and a handful of symbols (dash, period,
+          space, dollar, slash, plus, percent). Rendered on a canvas in your browser, downloadable as a PNG,
+          ready for inventory labels, event badges, asset tags, or homework projects.
+        </p>
+        <p>
+          Code39 scans reliably on virtually any barcode reader and prints well at low resolution. For QR-style
+          2D codes use <a href="/tools/qr-code-generator">QR code generator</a>; for smaller assets,{" "}
+          <a href="/tools/favicon-generator">favicon generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type the text or number to encode (Code39 charset).",
+      "Adjust size and scale to taste.",
+      "Preview the barcode in the canvas.",
+      "Click Download to save the PNG.",
+    ],
+  },
+  "favicon-generator": {
+    render: () => <FaviconGenerator />,
+    explainer: (
+      <>
+        <p>
+          Upload one square image (PNG or JPG) and get a full favicon set in six sizes — 16, 32, 48, 180
+          (apple-touch), 192, and 512 px. Each size is rendered in your browser with a canvas resize and is
+          downloadable as a standalone PNG. The tool also spits out the HTML{" "}
+          <code>&lt;link&gt;</code> tags to paste into your <code>&lt;head&gt;</code>.
+        </p>
+        <p>
+          Perfect for launching a new site without fiddling with image tools. For broader image work use{" "}
+          <a href="/tools/image-resizer">image resizer</a> and{" "}
+          <a href="/tools/image-format-converter">image format converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Upload a square PNG or JPG (at least 512×512 for best results).",
+      "Preview each size in the grid.",
+      "Download each PNG.",
+      "Copy the HTML snippet into your <head>.",
+    ],
+  },
+  "meta-tag-generator": {
+    render: () => <MetaTagGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate a complete set of HTML meta tags — title, description, keywords, canonical, robots, Open
+          Graph, and Twitter Card — from one form. The preview updates live and the final output is ready to
+          paste into your <code>&lt;head&gt;</code>. Required for decent SEO and clean social previews.
+        </p>
+        <p>
+          For richer OG/Twitter preview mockups see <a href="/tools/open-graph-generator">Open Graph
+          generator</a>. For robots files, <a href="/tools/robots-txt-generator">robots.txt generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in title, description, canonical URL, and socials.",
+      "Pick robots directives (index/noindex, follow/nofollow).",
+      "Copy the HTML output.",
+      "Paste into your <head> and deploy.",
+    ],
+  },
+  "robots-txt-generator": {
+    render: () => <RobotsTxtGenerator />,
+    explainer: (
+      <>
+        <p>
+          Build a valid robots.txt file with multiple user-agent blocks, per-agent allow and disallow paths, an
+          optional crawl-delay, and a sitemap URL. Download it as a text file and upload to your site root. The
+          default starts with a sensible baseline (disallow /admin/, /private/, sitemap pointer).
+        </p>
+        <p>
+          Pair with <a href="/tools/meta-tag-generator">meta tag generator</a> and{" "}
+          <a href="/tools/open-graph-generator">Open Graph generator</a> to round out on-page SEO basics.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a user-agent (* for all) or add specific ones.",
+      "Add allow and disallow paths per agent.",
+      "Set crawl-delay and sitemap URL if needed.",
+      "Copy or download robots.txt.",
+    ],
+  },
+  "open-graph-generator": {
+    render: () => <OpenGraphGenerator />,
+    explainer: (
+      <>
+        <p>
+          Preview exactly how your page appears when shared on Facebook and Twitter — and generate the HTML meta
+          tags to match. Fill in title, description, image URL, and the tool shows illustrative mockups plus
+          production-ready <code>&lt;meta property=&quot;og:…&quot;&gt;</code> and Twitter Card tags.
+        </p>
+        <p>
+          Good-looking social previews dramatically boost click-through. For broader meta tags use{" "}
+          <a href="/tools/meta-tag-generator">meta tag generator</a>; for favicons,{" "}
+          <a href="/tools/favicon-generator">favicon generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter title, description, URL, and image URL.",
+      "Pick OG type and Twitter card type.",
+      "Compare the Facebook and Twitter preview mockups.",
+      "Copy the HTML meta tags into your <head>.",
+    ],
+  },
+  "keyword-density-checker": {
+    render: () => <KeywordDensityChecker />,
+    explainer: (
+      <>
+        <p>
+          Paste an article to see its word count, reading time, unique words, and the top 20 keywords by
+          frequency with percent density. Optionally enter a target keyword to check whether it falls in the
+          healthy 0.5 – 3 % range — too low looks thin, too high looks spammy. A stopwords toggle filters common
+          filler words for a cleaner top-terms list.
+        </p>
+        <p>
+          Useful for on-page SEO and long-form writing. Pair with{" "}
+          <a href="/tools/readability-score-checker">readability score checker</a> to keep copy approachable, or{" "}
+          <a href="/tools/word-counter">word counter</a> for a quick length check.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your article into the textarea.",
+      "Optionally enter a target keyword.",
+      "Toggle stopwords on to filter common words.",
+      "Review the top terms and density warnings.",
+    ],
+  },
+  "business-name-generator": {
+    render: () => <BusinessNameGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate 30+ brand name ideas by combining a core keyword with curated prefixes (Neo, Try, Zap, Flux,
+          Nova, Pulse) and suffixes (Hub, Labs, Studio, Forge, Spark, Kit, Stack). Filter by industry (tech,
+          retail, food, health, finance, creative) for vibe-appropriate picks, and see camelCase, lowercase, and
+          domain-style (.io, .co, .app) variants. Regenerate for fresh options.
+        </p>
+        <p>
+          For matching slugs use <a href="/tools/slug-generator">slug generator</a>; for placeholder copy,{" "}
+          <a href="/tools/lorem-ipsum-generator">lorem ipsum</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter a core keyword.",
+      "Pick an industry or leave it on generic.",
+      "Scroll the generated list.",
+      "Click regenerate until a name clicks — then copy it.",
+    ],
+  },
+
+  // ==================== WAVE 7: UTILITY DOMINANCE (81) ====================
+
+  "txt-splitter": {
+    render: () => <TxtSplitter />,
+    explainer: (
+      <>
+        <p>
+          A free TXT splitter that breaks a big plain-text file into equal chunks — by line count, character
+          count, or byte size — and gives you a ZIP (or individual files) to download. Everything happens in your
+          browser, so you can split log files, exports, or imports that contain sensitive data without uploading
+          anything to a server.
+        </p>
+        <p>
+          Use it when an LLM has a token limit, when a mail merge needs batches of 500, or when an import tool
+          chokes above 10 MB. Pair with <a href="/tools/text-joiner">text joiner</a> to stitch the parts back
+          together, <a href="/tools/line-counter">line counter</a> to size chunks correctly, or{" "}
+          <a href="/tools/csv-cleaner">CSV cleaner</a> if you're really working with tabular data.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste text or drop a .txt file.",
+      "Pick a split mode: by lines, by characters, or by bytes.",
+      "Set the chunk size — e.g. 500 lines per file.",
+      "Download the chunks individually or as a ZIP.",
+    ],
+  },
+  "text-joiner": {
+    render: () => <TextJoiner />,
+    explainer: (
+      <>
+        <p>
+          Paste multiple text blocks or drop a set of files and merge them into a single output, separated by a
+          newline, tab, comma, or any custom string you pick. The tool also lets you keep or strip empty lines,
+          trim whitespace on each block, and dedupe repeated entries before joining.
+        </p>
+        <p>
+          Useful for stitching together chunks produced by <a href="/tools/txt-splitter">TXT splitter</a>, merging
+          a day's logs, or combining scraped lists. If the result is CSV-shaped, open it in{" "}
+          <a href="/tools/csv-viewer">CSV viewer</a>. For cleanup, see{" "}
+          <a href="/tools/line-break-remover">line break remover</a> and{" "}
+          <a href="/tools/remove-duplicate-lines">remove duplicate lines</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste each block into a new textarea, or drop files.",
+      "Pick a separator — newline, tab, comma, or custom string.",
+      "Toggle trim, dedupe, and skip-empty as needed.",
+      "Copy the joined output or download it as a .txt.",
+    ],
+  },
+  "csv-viewer": {
+    render: () => <CsvViewer />,
+    explainer: (
+      <>
+        <p>
+          Drop a CSV and see it rendered as a clean, sortable, searchable table — no spreadsheet app needed. The
+          viewer handles quoted fields, embedded commas, newlines inside cells, and a detected delimiter
+          (comma, semicolon, tab). Nothing is uploaded; parsing runs in your browser.
+        </p>
+        <p>
+          Great for sanity-checking an export before you import it, previewing a dataset someone emailed you, or
+          confirming the delimiter is what you expect. If the file needs cleanup, run it through{" "}
+          <a href="/tools/csv-cleaner">CSV cleaner</a>; to convert it, try{" "}
+          <a href="/tools/csv-to-json">CSV to JSON</a> or <a href="/tools/tsv-to-csv">TSV to CSV</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop a .csv file or paste CSV text.",
+      "Confirm the detected delimiter (comma / semicolon / tab).",
+      "Use the search box to filter, or click a header to sort.",
+      "Scan the row and column counts at the top of the table.",
+    ],
+  },
+  "csv-cleaner": {
+    render: () => <CsvCleaner />,
+    explainer: (
+      <>
+        <p>
+          A CSV cleaner that fixes the things that break imports: trims whitespace in every cell, collapses double
+          quotes, normalizes line endings to <code>\n</code>, removes empty rows, dedupes rows by any column, and
+          escapes stray commas inside fields. Drop a file or paste CSV, toggle the rules you need, and copy the
+          cleaned output.
+        </p>
+        <p>
+          Pair with <a href="/tools/csv-viewer">CSV viewer</a> to check the before/after, or{" "}
+          <a href="/tools/csv-to-json">CSV to JSON</a> if you need the cleaned data in JSON. When the file's
+          really tab-separated, start with <a href="/tools/tsv-to-csv">TSV to CSV</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop your CSV file or paste rows.",
+      "Turn on the cleanups you need — trim, dedupe, normalize line endings.",
+      "Pick a dedupe key column if you want row-level deduping.",
+      "Copy the cleaned CSV or download it.",
+    ],
+  },
+  "tsv-to-csv": {
+    render: () => <TsvToCsv />,
+    explainer: (
+      <>
+        <p>
+          Convert tab-separated values to CSV (or CSV to TSV) with proper quoting for fields that contain commas,
+          quotes, or newlines. Useful when a spreadsheet export comes out as tabs but the tool you're feeding it
+          to only accepts CSV — Google Sheets imports, many CRMs, and most ETL pipelines.
+        </p>
+        <p>
+          For other tabular conversions, see <a href="/tools/csv-to-json">CSV to JSON</a> or{" "}
+          <a href="/tools/json-to-csv">JSON to CSV</a>. Inspect the result in{" "}
+          <a href="/tools/csv-viewer">CSV viewer</a>, or clean up messy input with{" "}
+          <a href="/tools/csv-cleaner">CSV cleaner</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste TSV or drop a .tsv file.",
+      "Optionally toggle direction: TSV → CSV, or CSV → TSV.",
+      "Pick quoting: always, minimal, or none.",
+      "Copy the converted output or download it.",
+    ],
+  },
+  "line-break-remover": {
+    render: () => <LineBreakRemover />,
+    explainer: (
+      <>
+        <p>
+          Strip newlines from pasted text and replace them with a space, comma, or custom string — turning a
+          column of values into a single comma-separated list, or an email body with soft wraps into a clean
+          paragraph. Also handles Windows <code>\r\n</code>, Mac <code>\r</code>, and Unicode line separators.
+        </p>
+        <p>
+          For more aggressive cleanup try <a href="/tools/whitespace-remover">whitespace remover</a> or{" "}
+          <a href="/tools/special-character-remover">special character remover</a>. Going the other way?{" "}
+          <a href="/tools/text-joiner">Text joiner</a> splits by separator and glues back with newlines.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your text.",
+      "Pick the replacement: space, comma, custom, or nothing.",
+      "Toggle collapse-multiple so runs of newlines don't double up.",
+      "Copy the cleaned output.",
+    ],
+  },
+  "whitespace-remover": {
+    render: () => <WhitespaceRemover />,
+    explainer: (
+      <>
+        <p>
+          Collapse runs of spaces, tabs, and newlines into a single space, trim leading and trailing whitespace on
+          every line, or strip whitespace entirely. Handy for cleaning scraped text, normalizing code, or fixing
+          accidental double-spacing after a find-and-replace.
+        </p>
+        <p>
+          Combine with <a href="/tools/invisible-character-detector">invisible character detector</a> when
+          whitespace looks wrong but isn't actually spaces, or <a href="/tools/line-break-remover">line break
+          remover</a> when you also want to flatten paragraphs. Formatting code? See{" "}
+          <a href="/tools/html-formatter">HTML formatter</a> or <a href="/tools/json-formatter">JSON formatter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text.",
+      "Pick the mode: collapse, trim lines, or strip all whitespace.",
+      "Toggle per-line trim or global collapse.",
+      "Copy the cleaned result.",
+    ],
+  },
+  "invisible-character-detector": {
+    render: () => <InvisibleCharacterDetector />,
+    explainer: (
+      <>
+        <p>
+          Find zero-width spaces, byte-order marks, non-breaking spaces, and other invisible Unicode characters
+          that quietly break CSV imports, URL slugs, passwords, and code diffs. The detector highlights every
+          invisible character in place with its Unicode codepoint, and offers a one-click strip.
+        </p>
+        <p>
+          If the issue is mixed character forms rather than hidden characters, run{" "}
+          <a href="/tools/unicode-text-normalizer">Unicode text normalizer</a>. For general cleanup see{" "}
+          <a href="/tools/whitespace-remover">whitespace remover</a> or{" "}
+          <a href="/tools/special-character-remover">special character remover</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the suspicious text.",
+      "Scan the highlighted codepoints above the textarea.",
+      "Click Strip to remove them, or Replace to swap for a visible substitute.",
+      "Copy the cleaned text.",
+    ],
+  },
+  "special-character-remover": {
+    render: () => <SpecialCharacterRemover />,
+    explainer: (
+      <>
+        <p>
+          Remove accents, emojis, punctuation, symbols, or anything outside plain ASCII from a paste. Use
+          category toggles to keep exactly what you need — letters, digits, basic punctuation, whitespace — and
+          choose whether to strip or transliterate (é → e).
+        </p>
+        <p>
+          Useful for cleaning filenames (try <a href="/tools/filename-cleaner">filename cleaner</a>), URL slugs
+          (<a href="/tools/slug-generator">slug generator</a>), or database keys. For invisible-char issues
+          specifically, use <a href="/tools/invisible-character-detector">invisible character detector</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text.",
+      "Toggle which categories to keep: letters, digits, whitespace, punctuation.",
+      "Choose strip or transliterate for accents.",
+      "Copy the cleaned output.",
+    ],
+  },
+  "unicode-text-normalizer": {
+    render: () => <UnicodeTextNormalizer />,
+    explainer: (
+      <>
+        <p>
+          Normalize text using NFC, NFD, NFKC, or NFKD — the four standard Unicode normalization forms. Use NFC
+          (the web default) to unify combining characters into precomposed forms, NFKC to also collapse
+          compatibility characters (ﬁ → fi, ① → 1). Great for fixing copy-paste weirdness, broken accents, and
+          search mismatches.
+        </p>
+        <p>
+          Related: <a href="/tools/invisible-character-detector">invisible character detector</a>,{" "}
+          <a href="/tools/special-character-remover">special character remover</a>, and{" "}
+          <a href="/tools/html-entity-encoder-decoder">HTML entity encoder</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text that looks odd.",
+      "Pick a normalization form — NFC is the safe default.",
+      "Read the before/after and the number of codepoints changed.",
+      "Copy the normalized result.",
+    ],
+  },
+  "bullet-list-cleaner": {
+    render: () => <BulletListCleaner />,
+    explainer: (
+      <>
+        <p>
+          Paste a list with mixed bullets (•, -, *, 1., a), Roman numerals, tabs) and get a clean output: bullets
+          stripped, normalized to a single marker of your choice, or swapped to numbered. Fixes the daily mess of
+          pasting from Notion, Google Docs, PDFs, or webpages.
+        </p>
+        <p>
+          Pair with <a href="/tools/remove-duplicate-lines">remove duplicate lines</a> to dedupe first, or{" "}
+          <a href="/tools/text-sorter">text sorter</a> to alphabetize after cleaning. Building a table instead? Try{" "}
+          <a href="/tools/markdown-table-generator">markdown table generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the list.",
+      "Choose: strip markers, normalize to a single bullet, or number the items.",
+      "Pick the target marker if normalizing (•, -, *, or custom).",
+      "Copy the clean list.",
+    ],
+  },
+  "sentence-counter": {
+    render: () => <SentenceCounter />,
+    explainer: (
+      <>
+        <p>
+          Count sentences in pasted text with average sentence length, longest and shortest sentence, and a live
+          reading-time estimate. Good for editing essays, tightening blog intros, and checking whether a page
+          matches a plain-English style guide.
+        </p>
+        <p>
+          Pair with <a href="/tools/paragraph-counter">paragraph counter</a> for structure checks,{" "}
+          <a href="/tools/readability-score-checker">readability score checker</a> for grade-level analysis, and{" "}
+          <a href="/tools/word-counter">word counter</a> when a target word count matters.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste or type text into the textarea.",
+      "Read the headline sentence count.",
+      "Scan the shortest and longest sentence samples.",
+      "Use the stats to tighten wordy sentences.",
+    ],
+  },
+  "paragraph-counter": {
+    render: () => <ParagraphCounter />,
+    explainer: (
+      <>
+        <p>
+          Count paragraphs in any text, with average word count per paragraph and a live outline that shows the
+          first few words of each. Useful for long-form writing where structure matters — blog posts, essays, and
+          reports with a target paragraph count.
+        </p>
+        <p>
+          Combine with <a href="/tools/sentence-counter">sentence counter</a>,{" "}
+          <a href="/tools/reading-time-estimator">reading time estimator</a>, and{" "}
+          <a href="/tools/word-counter">word counter</a> to get a complete view of a draft before you publish.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your draft into the textarea.",
+      "Read paragraph count, words per paragraph, and longest paragraph.",
+      "Scan the outline strip to see the opening of each paragraph.",
+      "Break up paragraphs that are too long or merge ones that are too short.",
+    ],
+  },
+  "markdown-table-generator": {
+    render: () => <MarkdownTableGenerator />,
+    explainer: (
+      <>
+        <p>
+          Build a markdown table visually — add or remove columns and rows, pick per-column alignment (left,
+          center, right), edit cells inline, and copy the formatted markdown. Works for GitHub, docs, Notion, and
+          most static-site generators. Starts with a small sample so you can see how it renders.
+        </p>
+        <p>
+          Need plain HTML instead? Use <a href="/tools/table-generator">HTML table generator</a>. To convert
+          markdown to HTML after, try <a href="/tools/markdown-to-html">markdown to HTML</a>. Working the other
+          direction? <a href="/tools/html-to-markdown">HTML to markdown</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Use + Row / + Column to size the table.",
+      "Type headers in the top row, then fill cells below.",
+      "Set per-column alignment with the L / C / R selector.",
+      "Click Copy to grab the markdown.",
+    ],
+  },
+  "table-generator": {
+    render: () => <TableGenerator />,
+    explainer: (
+      <>
+        <p>
+          A visual HTML table builder that outputs clean, semantic <code>&lt;table&gt;</code> markup. Toggle a
+          header row, striped rows, borders, and per-column alignment. Handy for adding a simple comparison or
+          pricing table to a blog post without opening a code editor.
+        </p>
+        <p>
+          If you'd rather have markdown, use <a href="/tools/markdown-table-generator">markdown table
+          generator</a>. Format the final HTML with <a href="/tools/html-formatter">HTML formatter</a>. Going the
+          other way? <a href="/tools/html-to-markdown">HTML to markdown</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Set rows and columns with + / − buttons.",
+      "Toggle header row, striped, bordered, or compact variants.",
+      "Type cell contents inline.",
+      "Copy the HTML or preview the rendered result.",
+    ],
+  },
+  "xml-to-json": {
+    render: () => <XmlToJson />,
+    explainer: (
+      <>
+        <p>
+          Paste any well-formed XML and get a JSON representation that preserves attributes, namespaces, and the
+          nesting structure. Works for RSS feeds, SOAP payloads, sitemaps, Android layouts, and anything you'd
+          rather read as JSON.
+        </p>
+        <p>
+          Going the other direction? Use <a href="/tools/json-to-xml">JSON to XML</a>. Format either side with{" "}
+          <a href="/tools/json-formatter">JSON formatter</a> or <a href="/tools/xml-formatter">XML formatter</a>.
+          For YAML ↔ JSON, see <a href="/tools/yaml-json-converter">YAML JSON converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste XML into the input.",
+      "Pick how attributes are represented (e.g. @attr prefix).",
+      "Click Convert — errors show the exact XML issue.",
+      "Copy the JSON output or download as a file.",
+    ],
+  },
+  "json-to-xml": {
+    render: () => <JsonToXml />,
+    explainer: (
+      <>
+        <p>
+          Convert JSON to well-formed XML with indentation. Pick a root element name, an attribute prefix, and
+          whether keys starting with that prefix become attributes or child elements. Useful when integrating
+          modern APIs with legacy systems that only accept XML.
+        </p>
+        <p>
+          Pair with <a href="/tools/xml-to-json">XML to JSON</a> for round-trip conversions,{" "}
+          <a href="/tools/xml-formatter">XML formatter</a> to tidy output, and{" "}
+          <a href="/tools/yaml-json-converter">YAML JSON converter</a> for YAML workflows.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your JSON.",
+      "Name the root element (default: root).",
+      "Pick attribute handling and indentation width.",
+      "Copy the XML output or download.",
+    ],
+  },
+  "yaml-formatter": {
+    render: () => <YamlFormatter />,
+    explainer: (
+      <>
+        <p>
+          Paste YAML and get it validated, indented, and pretty-printed. Catches common mistakes — accidental
+          tabs, mis-indented lists, trailing colons — with line-specific error messages. All parsing happens in
+          your browser, so config files with secrets never leave the page.
+        </p>
+        <p>
+          Convert to JSON with <a href="/tools/yaml-json-converter">YAML JSON converter</a>, compare with{" "}
+          <a href="/tools/json-diff-checker">JSON diff checker</a>, or inspect a full JSON payload using{" "}
+          <a href="/tools/json-formatter">JSON formatter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste YAML into the input box.",
+      "Click Format — invalid YAML shows a line-anchored error.",
+      "Pick 2 or 4-space indent.",
+      "Copy the formatted output.",
+    ],
+  },
+  "json-diff-checker": {
+    render: () => <JsonDiffChecker />,
+    explainer: (
+      <>
+        <p>
+          Compare two JSON payloads and see every added, removed, and changed key highlighted — including deep
+          nested changes inside arrays and objects. Perfect for diffing two API responses, a schema change, or a
+          config file across environments.
+        </p>
+        <p>
+          For line-level text diffs try <a href="/tools/diff-checker">diff checker</a>. Format either side first
+          with <a href="/tools/json-formatter">JSON formatter</a>, and for YAML try{" "}
+          <a href="/tools/yaml-formatter">YAML formatter</a> before converting.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste JSON A in the left box and JSON B on the right.",
+      "Click Compare — changes are highlighted per key.",
+      "Use the summary at the top to see total added / removed / changed.",
+      "Copy the diff report or individual changes.",
+    ],
+  },
+  "html-entity-encoder-decoder": {
+    render: () => <HtmlEntityEncoderDecoder />,
+    explainer: (
+      <>
+        <p>
+          Escape or unescape HTML entities — <code>&amp;amp;</code>, <code>&amp;lt;</code>,{" "}
+          <code>&amp;copy;</code>, numeric references like <code>&amp;#169;</code>, and hex references. Useful
+          when pasting HTML into CMS fields that break on raw <code>&lt;</code>, or when you've received encoded
+          text and want the readable version.
+        </p>
+        <p>
+          Related: <a href="/tools/url-encoder-decoder">URL encoder/decoder</a>,{" "}
+          <a href="/tools/base64-encoder-decoder">Base64 encoder/decoder</a>, and{" "}
+          <a href="/tools/unicode-text-normalizer">Unicode text normalizer</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste text into either the raw or encoded box.",
+      "Click Encode (raw → entity) or Decode (entity → raw).",
+      "Toggle whether to escape non-ASCII too.",
+      "Copy the converted version.",
+    ],
+  },
+  "utm-builder": {
+    render: () => <UtmBuilder />,
+    explainer: (
+      <>
+        <p>
+          Build clean UTM URLs for Google Analytics, GA4, Matomo, and any other analytics tool that reads UTM
+          parameters. Fill in source, medium, campaign, and optional term and content, and the tool outputs a
+          URL-encoded link ready to paste into email, social, or ads.
+        </p>
+        <p>
+          To read parameters off an inbound link, use <a href="/tools/utm-parser">UTM parser</a>. To strip
+          tracking from a URL, try <a href="/tools/url-cleaner">URL cleaner</a>. For details on the parameters,
+          read our guide on <a href="/guides/how-to-use-utm-parameters">how to use UTM parameters</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the base URL you want to tag.",
+      "Fill in source, medium, campaign (required) and term / content if needed.",
+      "Review the encoded preview.",
+      "Copy the full tagged URL or the link with a short label.",
+    ],
+  },
+  "utm-parser": {
+    render: () => <UtmParser />,
+    explainer: (
+      <>
+        <p>
+          Paste any URL and see its utm_source, utm_medium, utm_campaign, utm_term, utm_content, and every
+          other query parameter broken out in a clean table. Click through to see the decoded values so you can
+          spot typos or stray spaces that break reporting.
+        </p>
+        <p>
+          To build a new tagged URL use <a href="/tools/utm-builder">UTM builder</a>. Clean the URL of tracking
+          with <a href="/tools/url-cleaner">URL cleaner</a>. For a general URL breakdown, see{" "}
+          <a href="/tools/url-parser">URL parser</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the URL with UTM parameters.",
+      "Read the UTM table at the top and the full query table below.",
+      "Copy any single value with its copy button.",
+      "Fix typos back at the source if something looks wrong.",
+    ],
+  },
+  "serp-snippet-preview": {
+    render: () => <SerpSnippetPreview />,
+    explainer: (
+      <>
+        <p>
+          Preview exactly how a page will appear in Google search — title, breadcrumb URL, and description — with
+          live pixel-width gauges for both mobile and desktop results. Useful while writing metadata before
+          publishing, so you don't ship a title that gets truncated with an ellipsis.
+        </p>
+        <p>
+          To check each field on its own, use <a href="/tools/title-tag-length-checker">title tag length
+          checker</a> or <a href="/tools/meta-description-length-checker">meta description length checker</a>. For
+          the full tag block, <a href="/tools/meta-tag-generator">meta tag generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type your title, URL, and meta description.",
+      "Toggle mobile and desktop previews.",
+      "Watch the pixel width gauges — keep title under ~600 px.",
+      "Tweak copy until both previews look clean and complete.",
+    ],
+  },
+  "schema-markup-generator": {
+    render: () => <SchemaMarkupGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate valid JSON-LD for the schema types most sites actually need: Article, Product, LocalBusiness,
+          BreadcrumbList, Organization, Person, Event. Pick a type, fill the fields, and copy a JSON-LD block you
+          can paste straight into your <code>&lt;head&gt;</code>.
+        </p>
+        <p>
+          For FAQ schema specifically use <a href="/tools/faq-schema-generator">FAQ schema generator</a>. Learn
+          what it is and when to use it in our guide on{" "}
+          <a href="/guides/what-is-schema-markup">what is schema markup</a>. Pair with{" "}
+          <a href="/tools/meta-tag-generator">meta tag generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a schema type — Article, Product, etc.",
+      "Fill the required fields; optional ones are labeled.",
+      "Validate in the live preview — missing required fields are flagged.",
+      "Copy the JSON-LD and paste inside <script type=\"application/ld+json\"> in <head>.",
+    ],
+  },
+  "faq-schema-generator": {
+    render: () => <FaqSchemaGenerator />,
+    explainer: (
+      <>
+        <p>
+          Enter a list of question/answer pairs and get valid FAQPage JSON-LD — the exact markup Google uses for
+          FAQ rich results in search. Works well for blog posts with common-question sections and product pages
+          with specs framed as questions.
+        </p>
+        <p>
+          For other schema types use <a href="/tools/schema-markup-generator">schema markup generator</a>. Pair
+          with <a href="/tools/serp-snippet-preview">SERP snippet preview</a> and{" "}
+          <a href="/tools/meta-tag-generator">meta tag generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each Q/A pair — the tool grows as you type.",
+      "Keep answers 1–3 sentences each; full sentences work best.",
+      "Copy the generated JSON-LD.",
+      "Paste inside <script type=\"application/ld+json\"> in the page's <head>.",
+    ],
+  },
+  "title-tag-length-checker": {
+    render: () => <TitleTagLengthChecker />,
+    explainer: (
+      <>
+        <p>
+          Google truncates page titles around 600 pixels on desktop (roughly 55–65 characters) and a bit less on
+          mobile. This tool measures the actual pixel width of your title in the font Google uses, so you know
+          whether the full title will survive — not just a rough character count.
+        </p>
+        <p>
+          For the description field use <a href="/tools/meta-description-length-checker">meta description length
+          checker</a>. See it in context with <a href="/tools/serp-snippet-preview">SERP snippet preview</a>. To
+          write the whole meta block, <a href="/tools/meta-tag-generator">meta tag generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type or paste your page title.",
+      "Watch the pixel-width gauge — green, amber, red.",
+      "Trim or tweak until both mobile and desktop stay in green.",
+      "Copy the final title into your CMS.",
+    ],
+  },
+  "meta-description-length-checker": {
+    render: () => <MetaDescriptionLengthChecker />,
+    explainer: (
+      <>
+        <p>
+          Check if your meta description fits inside Google's roughly 160-character, ~920-pixel desktop limit and
+          the shorter mobile budget. The tool shows pixel width plus character count, with live previews for
+          both form factors. Useful for writing descriptions that display fully, not cut off mid-sentence.
+        </p>
+        <p>
+          For titles, <a href="/tools/title-tag-length-checker">title tag length checker</a>. For the full
+          result row, <a href="/tools/serp-snippet-preview">SERP snippet preview</a>. Learn what makes a good one
+          in our guide on <a href="/guides/how-to-write-a-meta-description">how to write a meta description</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste or type your meta description.",
+      "Watch character count and pixel-width gauges live.",
+      "Edit until both mobile and desktop previews show the full text.",
+      "Copy the final description and paste into your CMS.",
+    ],
+  },
+  "headline-analyzer": {
+    render: () => <HeadlineAnalyzer />,
+    explainer: (
+      <>
+        <p>
+          Score any headline on length, power words, emotional words, common/uncommon word balance, and reading
+          level. Get concrete rewrites: too long, too vague, missing a hook. Useful for blog titles, ad
+          headlines, email subject lines, and landing-page heroes.
+        </p>
+        <p>
+          For email specifically use <a href="/tools/email-subject-line-tester">email subject line tester</a>.
+          Check ad character limits with <a href="/tools/ad-copy-length-checker">ad copy length checker</a>. Pair
+          with <a href="/tools/title-tag-length-checker">title tag length checker</a> for SEO titles.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type or paste a headline.",
+      "Read the score and the flagged issues.",
+      "Apply the suggested rewrites and re-score.",
+      "Copy the winning version when you're happy.",
+    ],
+  },
+  "ad-copy-length-checker": {
+    render: () => <AdCopyLengthChecker />,
+    explainer: (
+      <>
+        <p>
+          Check ad headlines and descriptions against the real character limits on Google Ads (30 / 90), Meta
+          (40 / 125), LinkedIn (70 / 600), and others. Each field shows a progress bar against its platform
+          limit, so you see at a glance which variants still need trimming.
+        </p>
+        <p>
+          For broader headline scoring use <a href="/tools/headline-analyzer">headline analyzer</a>. For email
+          lines, <a href="/tools/email-subject-line-tester">email subject line tester</a>. For plain character
+          counts, <a href="/tools/character-counter">character counter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a platform: Google, Meta, LinkedIn, X.",
+      "Type each headline and description variant.",
+      "Watch the per-field bars — amber = close, red = over.",
+      "Copy the compliant variants into your ad manager.",
+    ],
+  },
+  "email-subject-line-tester": {
+    render: () => <EmailSubjectLineTester />,
+    explainer: (
+      <>
+        <p>
+          Test an email subject line for length, spam-trigger words, excessive punctuation, and emoji rendering.
+          Previews how the line looks on iPhone Mail and Gmail's inbox, where most subject lines get truncated
+          around 40–60 characters. Essential for newsletter campaigns and cold outreach.
+        </p>
+        <p>
+          For general headlines use <a href="/tools/headline-analyzer">headline analyzer</a>. For ad character
+          limits, <a href="/tools/ad-copy-length-checker">ad copy length checker</a>. Pair with{" "}
+          <a href="/tools/character-counter">character counter</a> for a clean count.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type or paste a subject line.",
+      "Read the score and the flagged issues (length, spam words, emoji risk).",
+      "Compare the iPhone and Gmail previews.",
+      "Iterate until the score and previews both look clean.",
+    ],
+  },
+  "alt-text-helper": {
+    render: () => <AltTextHelper />,
+    explainer: (
+      <>
+        <p>
+          Walks you through writing alt text the right way: decide whether the image is decorative (empty alt),
+          informational (describe what matters), or functional (describe the action). Enforces a length budget
+          (~125 characters) and flags common mistakes like "image of…" and redundant captions.
+        </p>
+        <p>
+          Pair with <a href="/tools/image-dimensions-checker">image dimensions checker</a>,{" "}
+          <a href="/tools/contrast-checker">contrast checker</a>, and{" "}
+          <a href="/tools/social-media-image-sizes">social media image sizes</a> for a quick accessibility pass.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Classify the image — decorative, informational, or functional.",
+      "Write a description; the helper flags verbose phrases and length issues.",
+      "Review the sample alt patterns for your use case.",
+      "Copy the final alt text into your CMS.",
+    ],
+  },
+  "cron-expression-builder": {
+    render: () => <CronExpressionBuilder />,
+    explainer: (
+      <>
+        <p>
+          Build a cron schedule visually: minute, hour, day-of-month, month, day-of-week — each field gets a
+          simple selector for every, specific, range, or step values. The tool previews the next five run times
+          and the plain-English description, so you know exactly what you're scheduling.
+        </p>
+        <p>
+          To decode an existing cron use <a href="/tools/cron-expression-explainer">cron expression
+          explainer</a>. Convert timestamps with <a href="/tools/unix-timestamp-converter">unix timestamp
+          converter</a>. Learn the syntax in{" "}
+          <a href="/guides/how-to-write-a-cron-expression">how to write a cron expression</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick values for each of the 5 cron fields.",
+      "Review the plain-English description above the expression.",
+      "Scan the next 5 run times to sanity-check.",
+      "Copy the resulting cron string into crontab, GitHub Actions, or your scheduler.",
+    ],
+  },
+  "cron-expression-explainer": {
+    render: () => <CronExpressionExplainer />,
+    explainer: (
+      <>
+        <p>
+          Paste a cron expression and read it in plain English — with the next five calculated run times. Works
+          with standard 5-field cron, 6-field Quartz (second included), and Jenkins H syntax. Catches common
+          mistakes like day-of-month + day-of-week conflicts.
+        </p>
+        <p>
+          To build one from scratch use <a href="/tools/cron-expression-builder">cron expression builder</a>.
+          See the guide on <a href="/guides/how-to-write-a-cron-expression">how to write a cron expression</a>.
+          Working in a specific time zone? <a href="/tools/time-zone-converter">time zone converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the cron expression.",
+      "Pick the flavor: standard, Quartz, or Jenkins.",
+      "Read the English description and next 5 runs.",
+      "Copy either side and iterate.",
+    ],
+  },
+  "http-status-code-lookup": {
+    render: () => <HttpStatusCodeLookup />,
+    explainer: (
+      <>
+        <p>
+          Search every HTTP status code — 200 OK, 301 Moved Permanently, 404 Not Found, 500 Internal Server
+          Error, and the more obscure ones like 418, 429, and 451. Each entry includes a plain-English meaning,
+          the RFC reference, and common causes, so you can tell a bad request from a server problem in a hurry.
+        </p>
+        <p>
+          For MIME types use <a href="/tools/mime-type-lookup">MIME type lookup</a>. For URL breakdowns,{" "}
+          <a href="/tools/url-parser">URL parser</a>. For schema markup,{" "}
+          <a href="/tools/schema-markup-generator">schema markup generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type a status code number or keyword.",
+      "Scan the matching results filtered by 2xx / 3xx / 4xx / 5xx.",
+      "Click a code for full description, RFC link, and common causes.",
+      "Copy the plain-English description into a bug report or docs.",
+    ],
+  },
+  "mime-type-lookup": {
+    render: () => <MimeTypeLookup />,
+    explainer: (
+      <>
+        <p>
+          Look up the correct Content-Type for any file extension (or the other way round). Covers images, fonts,
+          video, audio, JSON, common office formats, and rarer ones like .webmanifest and .avif. Useful when
+          debugging upload handlers or configuring nginx/Apache content-type rules.
+        </p>
+        <p>
+          For HTTP status codes use <a href="/tools/http-status-code-lookup">HTTP status code lookup</a>. For
+          image conversion, <a href="/tools/image-format-converter">image format converter</a>. For clean
+          filenames, <a href="/tools/filename-cleaner">filename cleaner</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type a file extension (jpg, webp, pdf) or MIME type (image/*).",
+      "Scan the matching rows with type, description, and safe-to-serve notes.",
+      "Click Copy to grab the exact Content-Type string.",
+      "Use it in your server config or upload validator.",
+    ],
+  },
+  "url-parser": {
+    render: () => <UrlParser />,
+    explainer: (
+      <>
+        <p>
+          Break a URL into its pieces — protocol, host, port, path, query, fragment — just like the browser's
+          URL API but laid out as a readable table. Also shows each query parameter decoded in its own row so
+          you can spot encoding issues.
+        </p>
+        <p>
+          For query-string-only work use <a href="/tools/query-string-parser">query string parser</a>. For UTM
+          tags specifically, <a href="/tools/utm-parser">UTM parser</a>. To strip tracking,{" "}
+          <a href="/tools/url-cleaner">URL cleaner</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste any URL.",
+      "Read each part in the table — protocol, host, path, etc.",
+      "Inspect query parameters decoded in the lower table.",
+      "Copy a single piece with its copy button.",
+    ],
+  },
+  "query-string-parser": {
+    render: () => <QueryStringParser />,
+    explainer: (
+      <>
+        <p>
+          Parse any URL's query string into key/value pairs — including repeated keys, array-style
+          <code> key[]</code> keys, and bracket-notation <code>key[a][b]</code>. Shows raw and decoded values so
+          you can catch double-encoding bugs.
+        </p>
+        <p>
+          For the full URL breakdown use <a href="/tools/url-parser">URL parser</a>. For UTM parameters
+          specifically, <a href="/tools/utm-parser">UTM parser</a>. To encode single values,{" "}
+          <a href="/tools/url-encoder-decoder">URL encoder/decoder</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste a URL or a raw query string.",
+      "Read the parsed key/value rows.",
+      "Toggle array-style parsing (brackets) if needed.",
+      "Copy individual pairs or the whole table as JSON.",
+    ],
+  },
+  "filename-cleaner": {
+    render: () => <FilenameCleaner />,
+    explainer: (
+      <>
+        <p>
+          Clean filenames that are about to be uploaded, committed, or zipped: strips characters that fail on
+          Windows (<code>&lt;&gt;:"/\|?*</code>), collapses spaces to hyphens, trims long names, and keeps the
+          extension intact. Supports batch mode for a pasted list of filenames.
+        </p>
+        <p>
+          Related: <a href="/tools/slug-generator">slug generator</a>,{" "}
+          <a href="/tools/special-character-remover">special character remover</a>, and{" "}
+          <a href="/tools/mime-type-lookup">MIME type lookup</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste one filename per line.",
+      "Pick separator (dash / underscore / dot) and case.",
+      "Toggle truncation, unicode stripping, and duplicate-dedupe.",
+      "Copy the cleaned list.",
+    ],
+  },
+  "line-counter": {
+    render: () => <LineCounter />,
+    explainer: (
+      <>
+        <p>
+          Count lines in any text paste with a breakdown of total, blank, comment (for // and # styles), and code
+          lines. Useful for quick LOC estimates, reviewing logs, and sizing chunks before running{" "}
+          <a href="/tools/txt-splitter">TXT splitter</a>.
+        </p>
+        <p>
+          Pair with <a href="/tools/character-counter">character counter</a>,{" "}
+          <a href="/tools/word-counter">word counter</a>, and{" "}
+          <a href="/tools/remove-duplicate-lines">remove duplicate lines</a> for a complete pass on a text file.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste or drop a text file.",
+      "Read the live stats — total, blank, code, comments.",
+      "Pick the comment syntax if counting code files.",
+      "Copy the report or export the breakdown.",
+    ],
+  },
+  "box-shadow-generator": {
+    render: () => <BoxShadowGenerator />,
+    explainer: (
+      <>
+        <p>
+          Visually build any CSS <code>box-shadow</code>: offset-x, offset-y, blur, spread, color, and optional
+          inset. Stack multiple layers for soft, realistic shadows. The live preview shows the exact result, and
+          you copy the full CSS rule in one click.
+        </p>
+        <p>
+          Related design tools: <a href="/tools/border-radius-generator">border radius generator</a>,{" "}
+          <a href="/tools/gradient-generator">gradient generator</a>,{" "}
+          <a href="/tools/color-picker">color picker</a>, and <a href="/tools/contrast-checker">contrast
+          checker</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Adjust offset, blur, spread, and color sliders.",
+      "Add additional shadow layers if you want stacking.",
+      "Toggle inset for inset shadows.",
+      "Copy the resulting CSS rule.",
+    ],
+  },
+  "border-radius-generator": {
+    render: () => <BorderRadiusGenerator />,
+    explainer: (
+      <>
+        <p>
+          Design CSS <code>border-radius</code> with four independent corner controls and live preview. Copy the
+          short form (<code>8px</code>), per-corner (<code>8px 16px 8px 16px</code>), or full 8-value elliptical
+          form — exactly the CSS you'll paste.
+        </p>
+        <p>
+          Pair with <a href="/tools/box-shadow-generator">box shadow generator</a>,{" "}
+          <a href="/tools/gradient-generator">gradient generator</a>, and{" "}
+          <a href="/tools/css-clamp-generator">CSS clamp generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drag the corner sliders to shape the rectangle.",
+      "Toggle unified vs per-corner modes.",
+      "Switch between px, %, and em units.",
+      "Copy the CSS rule.",
+    ],
+  },
+  "css-clamp-generator": {
+    render: () => <CssClampGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate fluid CSS <code>clamp()</code> values for typography or spacing that scale smoothly between a
+          minimum and maximum viewport width. Skips the hand math — enter min/max sizes and breakpoints, get a
+          working rule that works across modern browsers.
+        </p>
+        <p>
+          For media queries pair with <a href="/tools/aspect-ratio-calculator">aspect ratio calculator</a>. For
+          visual polish, <a href="/tools/box-shadow-generator">box shadow generator</a> and{" "}
+          <a href="/tools/border-radius-generator">border radius generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter min size and max size (font-size or spacing).",
+      "Enter min and max viewport widths in px.",
+      "Pick unit (rem or px).",
+      "Copy the clamp() rule.",
+    ],
+  },
+  "flexbox-playground": {
+    render: () => <FlexboxPlayground />,
+    explainer: (
+      <>
+        <p>
+          Experiment with every common flexbox property — <code>justify-content</code>, <code>align-items</code>,{" "}
+          <code>flex-direction</code>, <code>flex-wrap</code>, gap, and item sizing — with an interactive demo.
+          As you change controls, the CSS rule builds live in the output panel.
+        </p>
+        <p>
+          For grid instead use <a href="/tools/grid-layout-generator">grid layout generator</a>. For visual
+          polish, <a href="/tools/box-shadow-generator">box shadow generator</a> and{" "}
+          <a href="/tools/border-radius-generator">border radius generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Toggle flex-direction, justify-content, align-items.",
+      "Change item count and per-item flex basis.",
+      "Watch the live preview update.",
+      "Copy the generated parent + child CSS.",
+    ],
+  },
+  "grid-layout-generator": {
+    render: () => <GridLayoutGenerator />,
+    explainer: (
+      <>
+        <p>
+          Build a CSS Grid layout visually: define columns and rows, set gaps, name template areas by clicking
+          cells. The tool outputs a full <code>grid-template-areas</code> rule and per-item placements you can
+          paste straight into your stylesheet.
+        </p>
+        <p>
+          For flexbox instead use <a href="/tools/flexbox-playground">flexbox playground</a>. For responsive
+          sizing, <a href="/tools/css-clamp-generator">CSS clamp generator</a>. For preview polish,{" "}
+          <a href="/tools/box-shadow-generator">box shadow generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Set column and row counts and sizes.",
+      "Click cells to assign named areas (header, sidebar, main…).",
+      "Adjust gap between tracks.",
+      "Copy the full grid-template rule.",
+    ],
+  },
+  "aspect-ratio-calculator": {
+    render: () => <AspectRatioCalculator />,
+    explainer: (
+      <>
+        <p>
+          Keep images and video in proportion. Enter a width or height for a given aspect ratio (16:9, 4:3, 1:1,
+          2.35:1) and the tool fills in the matching dimension. Also reverses: paste width and height and get
+          the simplified ratio and closest standard.
+        </p>
+        <p>
+          Pair with <a href="/tools/image-resizer">image resizer</a>,{" "}
+          <a href="/tools/image-dimensions-checker">image dimensions checker</a>, and{" "}
+          <a href="/tools/social-media-image-sizes">social media image sizes</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick or type an aspect ratio.",
+      "Enter width — height fills in (or vice versa).",
+      "Reverse mode: paste width and height, see the ratio.",
+      "Copy the dimensions for your editor.",
+    ],
+  },
+  "image-dimensions-checker": {
+    render: () => <ImageDimensionsChecker />,
+    explainer: (
+      <>
+        <p>
+          Drop any image and see pixel width, pixel height, aspect ratio, and file size — instantly, in your
+          browser, no upload. Supports JPG, PNG, GIF, WebP, AVIF, and SVG. Great for checking whether an image
+          meets a platform's size requirements before posting.
+        </p>
+        <p>
+          For platform specs, <a href="/tools/social-media-image-sizes">social media image sizes</a>. For
+          resizing, <a href="/tools/image-resizer">image resizer</a>. For shrinking a file,{" "}
+          <a href="/tools/image-compressor">image compressor</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Drop one or more images into the dropzone.",
+      "Read width, height, aspect ratio, and file size in the table.",
+      "Click any image to open a larger preview.",
+      "Copy the dimensions line for your tracker or ticket.",
+    ],
+  },
+  "contrast-checker": {
+    render: () => <ContrastChecker />,
+    explainer: (
+      <>
+        <p>
+          Check a foreground/background color pair against WCAG 2.2 AA (4.5:1 for normal text, 3:1 for large)
+          and AAA (7:1 / 4.5:1) contrast targets. Live preview shows sample normal and large text on the chosen
+          background, with pass/fail badges on both levels.
+        </p>
+        <p>
+          Pair with <a href="/tools/color-picker">color picker</a>,{" "}
+          <a href="/tools/color-converter">color converter</a>, and{" "}
+          <a href="/tools/alt-text-helper">alt text helper</a> for an accessibility pass.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter or pick foreground and background colors.",
+      "Read the contrast ratio and AA/AAA badges.",
+      "Nudge colors until both badges pass for your text size.",
+      "Copy the final hex pair into your design system.",
+    ],
+  },
+  "social-media-image-sizes": {
+    render: () => <SocialMediaImageSizes />,
+    explainer: (
+      <>
+        <p>
+          An up-to-date (2026) reference of image sizes for Instagram, X, Facebook, LinkedIn, TikTok, YouTube,
+          Pinterest, and threads. Covers feed posts, stories, covers, profile pictures, ad creative, and video
+          thumbnails — all as a searchable, filterable table.
+        </p>
+        <p>
+          Pair with <a href="/tools/aspect-ratio-calculator">aspect ratio calculator</a>,{" "}
+          <a href="/tools/image-resizer">image resizer</a>, and{" "}
+          <a href="/tools/image-dimensions-checker">image dimensions checker</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Filter by platform or content type.",
+      "Read the recommended width × height and aspect ratio.",
+      "Click to copy the exact pixel dimensions.",
+      "Create the image at that size or resize an existing one.",
+    ],
+  },
+  "meme-text-formatter": {
+    render: () => <MemeTextFormatter />,
+    explainer: (
+      <>
+        <p>
+          Turn plain text into styled Unicode variants — 𝐛𝐨𝐥𝐝, 𝑖𝑡𝑎𝑙𝑖𝑐, 𝓼𝓬𝓻𝓲𝓹𝓽, fullwidth
+          ａｅｓｔｈｅｔｉｃ, monospace, ⓑⓤⓑⓑⓛⓔ, and more. These render almost anywhere because they're
+          actual Unicode characters, not fonts.
+        </p>
+        <p>
+          Related fun tools: <a href="/tools/text-reverser">text reverser</a>,{" "}
+          <a href="/tools/case-converter">case converter</a>, and{" "}
+          <a href="/tools/decision-wheel">decision wheel</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type any text.",
+      "Scroll the styled variants — bold, italic, script, aesthetic.",
+      "Click Copy on the variant you like.",
+      "Paste into your bio, caption, or post.",
+    ],
+  },
+  "invoice-generator": {
+    render: () => <InvoiceGenerator />,
+    explainer: (
+      <>
+        <p>
+          A free, no-signup invoice generator for freelancers and small businesses. Add line items, quantities,
+          rates, taxes, discounts, notes, and payment terms. Print to PDF from your browser — no watermark, no
+          upload, no account to cancel later.
+        </p>
+        <p>
+          Pair with <a href="/tools/hourly-rate-calculator">hourly rate calculator</a>,{" "}
+          <a href="/tools/freelance-rate-calculator">freelance rate calculator</a>, and{" "}
+          <a href="/tools/vat-calculator">VAT calculator</a>. Learn the basics in{" "}
+          <a href="/guides/how-to-make-a-simple-invoice">how to make a simple invoice</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in your business details and client info.",
+      "Add each line item — description, qty, rate.",
+      "Set tax or VAT percentage and payment terms.",
+      "Click Print and choose Save as PDF.",
+    ],
+  },
+  "hourly-rate-calculator": {
+    render: () => <HourlyRateCalculator />,
+    explainer: (
+      <>
+        <p>
+          Convert an annual salary into a real hourly rate, adjusting for unpaid time, holidays, sick days, and
+          non-billable hours. Or go the other way: type an hourly rate and see what it implies as an annual
+          income at various weekly workloads.
+        </p>
+        <p>
+          For freelancers specifically use{" "}
+          <a href="/tools/freelance-rate-calculator">freelance rate calculator</a>. Related:{" "}
+          <a href="/tools/paycheck-calculator">paycheck calculator</a>,{" "}
+          <a href="/tools/overtime-calculator">overtime calculator</a>. See{" "}
+          <a href="/guides/how-to-price-freelance-work">how to price freelance work</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter annual salary (or hourly rate).",
+      "Set holidays, sick days, and typical weekly hours.",
+      "Adjust for unpaid overhead — admin, sales, learning.",
+      "Read the true hourly rate and annual equivalents.",
+    ],
+  },
+  "freelance-rate-calculator": {
+    render: () => <FreelanceRateCalculator />,
+    explainer: (
+      <>
+        <p>
+          Work out a freelance rate that covers your actual costs: target take-home, taxes, benefits, software,
+          hardware, billable vs non-billable ratio, and vacation. The tool outputs minimum hourly, target
+          hourly, and a day-rate equivalent so you can quote with confidence.
+        </p>
+        <p>
+          Pair with <a href="/tools/invoice-generator">invoice generator</a>,{" "}
+          <a href="/tools/hourly-rate-calculator">hourly rate calculator</a>, and{" "}
+          <a href="/tools/pricing-calculator">pricing calculator</a>. See{" "}
+          <a href="/guides/how-to-price-freelance-work">how to price freelance work</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter target yearly income.",
+      "Set holiday weeks, sick days, and billable-hour percentage.",
+      "Add business costs and taxes.",
+      "Read minimum, target, and stretch hourly rates.",
+    ],
+  },
+  "pricing-calculator": {
+    render: () => <PricingCalculator />,
+    explainer: (
+      <>
+        <p>
+          Price a product or service to the margin you actually want. Enter cost, markup or margin, and optional
+          tax, payment processing fees, and platform cuts. The tool shows the sale price, margin in dollars, and
+          margin percent side by side.
+        </p>
+        <p>
+          Related: <a href="/tools/profit-margin-calculator">profit margin calculator</a>,{" "}
+          <a href="/tools/break-even-calculator">break-even calculator</a>,{" "}
+          <a href="/tools/discount-calculator">discount calculator</a>. See{" "}
+          <a href="/guides/how-to-calculate-profit-margin">how to calculate profit margin</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter product cost and target margin (or markup).",
+      "Add tax, processing fees, and platform cuts.",
+      "Read the clean sale price and dollar margin.",
+      "Iterate until the price feels right.",
+    ],
+  },
+  "cash-flow-calculator": {
+    render: () => <CashFlowCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add income and expense lines and see cash flow monthly, quarterly, and annually. A negative line or
+          month turns red so you can spot shortfalls early. Works for personal finance, freelance months, or a
+          small side business.
+        </p>
+        <p>
+          Pair with <a href="/tools/startup-runway-calculator">startup runway calculator</a>,{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>, and{" "}
+          <a href="/tools/profit-margin-calculator">profit margin calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each income line with its monthly amount.",
+      "Add each expense line the same way.",
+      "Read monthly, quarterly, and annual totals.",
+      "Trim expenses or boost income until cash flow is positive.",
+    ],
+  },
+  "startup-runway-calculator": {
+    render: () => <StartupRunwayCalculator />,
+    explainer: (
+      <>
+        <p>
+          Enter cash on hand and monthly net burn — get runway in months and days, with a projected zero-date
+          and the burn-reduction or revenue needed to add 3, 6, or 12 months. Essential for solo founders and
+          pre-seed teams who need to think in quarters, not years.
+        </p>
+        <p>
+          Related: <a href="/tools/cash-flow-calculator">cash flow calculator</a>,{" "}
+          <a href="/tools/break-even-calculator">break-even calculator</a>, and{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter cash balance.",
+      "Enter monthly burn (or monthly gross expenses + revenue).",
+      "Optionally add monthly growth in revenue.",
+      "Read months of runway and the zero-date.",
+    ],
+  },
+  "subscription-cost-calculator": {
+    render: () => <SubscriptionCostCalculator />,
+    explainer: (
+      <>
+        <p>
+          List every subscription — Netflix, Spotify, iCloud, Adobe, SaaS tools — and see the true monthly and
+          annual cost. A subtle forcing function: seeing "I'm spending $2,400/yr on things I forgot about" often
+          triggers a useful purge.
+        </p>
+        <p>
+          Pair with <a href="/tools/budget-calculator">budget calculator</a>,{" "}
+          <a href="/tools/cash-flow-calculator">cash flow calculator</a>, and{" "}
+          <a href="/tools/expense-split-calculator">expense split calculator</a> if you share any of them.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each subscription name and price.",
+      "Set billing frequency (monthly / annual / weekly).",
+      "Read the total monthly and annual cost.",
+      "Sort by price and start cutting from the top.",
+    ],
+  },
+  "expense-split-calculator": {
+    render: () => <ExpenseSplitCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add who paid for what on a group trip or project and get the fewest-transaction way to settle up.
+          Handles uneven splits, partial shares (one person ducked out of dinner), and multiple currencies.
+          Nothing is uploaded; all math runs in your browser.
+        </p>
+        <p>
+          Related: <a href="/tools/bill-split-calculator">bill split calculator</a>,{" "}
+          <a href="/tools/rent-split-calculator">rent split calculator</a>,{" "}
+          <a href="/tools/tip-calculator">tip calculator</a>. Full walkthrough:{" "}
+          <a href="/guides/how-to-split-expenses-fairly">how to split expenses fairly</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each person in the group.",
+      "Enter each expense — who paid, how much, who's in.",
+      "Review the per-person balance.",
+      "Follow the minimized settle-up instructions.",
+    ],
+  },
+  "bill-split-calculator": {
+    render: () => <BillSplitCalculator />,
+    explainer: (
+      <>
+        <p>
+          Split a restaurant bill cleanly: even shares, by-item, with tax and tip rolled in, and rounded for
+          cash. Handles the "someone skipped the wine" case by letting you assign each item to a subset.
+        </p>
+        <p>
+          Related: <a href="/tools/tip-calculator">tip calculator</a>,{" "}
+          <a href="/tools/expense-split-calculator">expense split calculator</a>,{" "}
+          <a href="/tools/rent-split-calculator">rent split calculator</a>,{" "}
+          <a href="/tools/discount-calculator">discount calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter items and prices, or a total bill.",
+      "Assign people to each item (for the uneven case).",
+      "Set tip percent and tax.",
+      "Read each person's total and adjust if needed.",
+    ],
+  },
+  "rent-split-calculator": {
+    render: () => <RentSplitCalculator />,
+    explainer: (
+      <>
+        <p>
+          Split rent fairly in a share house — equal, by room size (sq ft), by income, or a weighted blend. Saves
+          the awkward conversation by letting everyone see a transparent breakdown.
+        </p>
+        <p>
+          Related: <a href="/tools/expense-split-calculator">expense split calculator</a>,{" "}
+          <a href="/tools/bill-split-calculator">bill split calculator</a>,{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>,{" "}
+          <a href="/tools/mortgage-calculator">mortgage calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter total rent and each person's room details (size or share).",
+      "Pick a method: equal, by room size, by income, or custom weights.",
+      "Read the per-person monthly amount.",
+      "Share the breakdown — copy as a plain-text summary.",
+    ],
+  },
+  "overtime-calculator": {
+    render: () => <OvertimeCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate overtime pay with time-and-a-half and double-time rules, including the US federal 40-hour
+          weekly threshold and common state rules (California's 8/day, 40/week, 12/day doubles). Works for
+          hourly employees and salaried non-exempt.
+        </p>
+        <p>
+          Pair with <a href="/tools/paycheck-calculator">paycheck calculator</a>,{" "}
+          <a href="/tools/hourly-rate-calculator">hourly rate calculator</a>,{" "}
+          <a href="/tools/pto-calculator">PTO calculator</a>, and{" "}
+          <a href="/tools/shift-scheduler">shift scheduler</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter hourly rate and weekly hours.",
+      "Pick a rule set (US federal, California, or custom).",
+      "Break out day-by-day if needed.",
+      "Read regular, overtime, and double-time dollars.",
+    ],
+  },
+  "pto-calculator": {
+    render: () => <PtoCalculator />,
+    explainer: (
+      <>
+        <p>
+          Track paid time off by pay period and see your current balance plus projected year-end. Supports hourly
+          and salaried accrual, carry-over caps, and a start-of-year balance. Useful during benefits enrollment
+          and when planning a trip.
+        </p>
+        <p>
+          Related: <a href="/tools/overtime-calculator">overtime calculator</a>,{" "}
+          <a href="/tools/paycheck-calculator">paycheck calculator</a>,{" "}
+          <a href="/tools/deadline-calculator">deadline calculator</a>, and{" "}
+          <a href="/tools/shift-scheduler">shift scheduler</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter starting balance and accrual rate.",
+      "Set pay-period frequency (weekly, biweekly, monthly).",
+      "Enter PTO taken this year so far.",
+      "Read current balance and projected year-end.",
+    ],
+  },
+  "shift-scheduler": {
+    render: () => <ShiftScheduler />,
+    explainer: (
+      <>
+        <p>
+          Plan a weekly shift rotation for a small team — name each teammate, pick their available days, set
+          shift length, and print a clean schedule. Supports fixed patterns (same shift weekly) and simple
+          rotations (A/B weeks). Great for small retail, ops, or coverage teams.
+        </p>
+        <p>
+          Pair with <a href="/tools/overtime-calculator">overtime calculator</a>,{" "}
+          <a href="/tools/weekly-planner">weekly planner</a>,{" "}
+          <a href="/tools/daily-planner">daily planner</a>, and{" "}
+          <a href="/tools/meeting-agenda-builder">meeting agenda builder</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add teammates and their available days.",
+      "Set default shift length and number of shifts per day.",
+      "Let the tool suggest an assignment or drag manually.",
+      "Print the week or copy as plain text.",
+    ],
+  },
+  "gpa-calculator": {
+    render: () => <GpaCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate weighted and unweighted GPA on the US 4.0 scale from a list of courses with letter grades and
+          credit hours. Supports honors and AP bumps with a per-class weight toggle. Shows cumulative and
+          term-by-term GPAs.
+        </p>
+        <p>
+          Related: <a href="/tools/grade-calculator">grade calculator</a>,{" "}
+          <a href="/tools/percentage-calculator">percentage calculator</a>,{" "}
+          <a href="/tools/average-calculator">average calculator</a>, and{" "}
+          <a href="/tools/ratio-calculator">ratio calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each course — name, letter grade, credit hours.",
+      "Toggle weighted for honors / AP classes.",
+      "Read unweighted and weighted GPA side by side.",
+      "Copy the summary for a résumé or transcript prep.",
+    ],
+  },
+  "grade-calculator": {
+    render: () => <GradeCalculator />,
+    explainer: (
+      <>
+        <p>
+          Work out a final course grade from weighted categories (homework 20%, midterm 30%, final 50%, etc.) or
+          figure out exactly what you need on the final to hit a target grade. Essential during exam prep and
+          end-of-semester planning.
+        </p>
+        <p>
+          Related: <a href="/tools/gpa-calculator">GPA calculator</a>,{" "}
+          <a href="/tools/percentage-calculator">percentage calculator</a>,{" "}
+          <a href="/tools/average-calculator">average calculator</a>, and{" "}
+          <a href="/tools/ratio-calculator">ratio calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter each category, its weight, and your current score.",
+      "Add the final exam and the target grade.",
+      "Read your current weighted grade and the score needed on the final.",
+      "Plan study time accordingly.",
+    ],
+  },
+  "fuel-cost-calculator": {
+    render: () => <FuelCostCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate fuel cost for a drive: distance, MPG (or L/100km), and price per gallon or liter. Useful for
+          budgeting a road trip, comparing driving vs flying, and splitting costs fairly with carpoolers.
+        </p>
+        <p>
+          Pair with <a href="/tools/trip-cost-calculator">trip cost calculator</a>,{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>,{" "}
+          <a href="/tools/expense-split-calculator">expense split calculator</a>, and{" "}
+          <a href="/tools/length-converter">length converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick units — miles/gallon or km/litres.",
+      "Enter distance, vehicle MPG, and fuel price.",
+      "Add round-trip toggle and passenger count.",
+      "Read total cost and per-person share.",
+    ],
+  },
+  "trip-cost-calculator": {
+    render: () => <TripCostCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add flights, lodging, food, activities, transport, and insurance — see the total cost, per-day spend,
+          and per-person share. Split across travelers with one click. A much cleaner way to pre-budget a
+          vacation than a throwaway spreadsheet.
+        </p>
+        <p>
+          Pair with <a href="/tools/fuel-cost-calculator">fuel cost calculator</a>,{" "}
+          <a href="/tools/expense-split-calculator">expense split calculator</a>,{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>, and{" "}
+          <a href="/tools/currency-converter">currency converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add line items: flights, lodging, food, activities.",
+      "Set trip length and number of travelers.",
+      "Read total cost, per-day, and per-person.",
+      "Adjust to match the budget before booking.",
+    ],
+  },
+  "smoking-cost-calculator": {
+    render: () => <SmokingCostCalculator />,
+    explainer: (
+      <>
+        <p>
+          Enter packs per day and pack price — see the monthly, yearly, 10-year, and lifetime cost. It's a gut
+          check: the number is almost always bigger than you expect, and for many people that's the first step
+          toward quitting.
+        </p>
+        <p>
+          Related: <a href="/tools/subscription-cost-calculator">subscription cost calculator</a>,{" "}
+          <a href="/tools/caffeine-intake-calculator">caffeine intake calculator</a>,{" "}
+          <a href="/tools/alcohol-unit-calculator">alcohol unit calculator</a>,{" "}
+          <a href="/tools/budget-calculator">budget calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter packs per day and price per pack.",
+      "Adjust for expected price inflation.",
+      "Read monthly, yearly, 10-year, and lifetime costs.",
+      "Compare to what the same money could compound into (see compound interest).",
+    ],
+  },
+  "alcohol-unit-calculator": {
+    render: () => <AlcoholUnitCalculator />,
+    explainer: (
+      <>
+        <p>
+          Convert any drink — beer, wine, spirits, cocktails — to US standard drinks (14g alcohol) or UK units
+          (8g alcohol). Track a week's intake against public-health low-risk guidelines and see a rolling
+          average.
+        </p>
+        <p>
+          Related: <a href="/tools/caffeine-intake-calculator">caffeine intake calculator</a>,{" "}
+          <a href="/tools/water-intake-calculator">water intake calculator</a>,{" "}
+          <a href="/tools/calorie-calculator">calorie calculator</a>, and{" "}
+          <a href="/tools/heart-rate-zone-calculator">heart rate zone calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter each drink: type, volume, and ABV.",
+      "Toggle units between US standard drinks and UK units.",
+      "Add a week's worth of drinks.",
+      "Read the total and how it compares to low-risk limits.",
+    ],
+  },
+  "caffeine-intake-calculator": {
+    render: () => <CaffeineIntakeCalculator />,
+    explainer: (
+      <>
+        <p>
+          Log coffee, tea, soda, and energy drinks and see daily caffeine in mg, with the 400 mg adult safe-limit
+          as a visible benchmark. Sensitive to afternoon timing too, so you can see how late caffeine interferes
+          with sleep.
+        </p>
+        <p>
+          Pair with <a href="/tools/water-intake-calculator">water intake calculator</a>,{" "}
+          <a href="/tools/sleep-cycle-calculator">sleep cycle calculator</a>,{" "}
+          <a href="/tools/alcohol-unit-calculator">alcohol unit calculator</a>, and{" "}
+          <a href="/tools/calorie-calculator">calorie calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Log each drink with size and time.",
+      "Read total mg and time-of-last-drink.",
+      "Compare to the 400 mg safe-limit line.",
+      "Move late drinks earlier if sleep is an issue.",
+    ],
+  },
+  "sleep-cycle-calculator": {
+    render: () => <SleepCycleCalculator />,
+    explainer: (
+      <>
+        <p>
+          Pick a wake-up time and see the best bedtimes aligned with the 90-minute sleep cycle — waking at the
+          end of a cycle feels less groggy than waking in the middle. Or enter bedtime and get wake times.
+          Accounts for typical sleep-onset latency.
+        </p>
+        <p>
+          Pair with <a href="/tools/heart-rate-zone-calculator">heart rate zone calculator</a>,{" "}
+          <a href="/tools/caffeine-intake-calculator">caffeine intake calculator</a>,{" "}
+          <a href="/tools/water-intake-calculator">water intake calculator</a>, and{" "}
+          <a href="/tools/bmr-calculator">BMR calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick wake-up time or bedtime.",
+      "Adjust the typical time to fall asleep (default 15 min).",
+      "Read the recommended bedtimes or wake times.",
+      "Pick the one that gets you 5 or 6 full cycles.",
+    ],
+  },
+  "heart-rate-zone-calculator": {
+    render: () => <HeartRateZoneCalculator />,
+    explainer: (
+      <>
+        <p>
+          Find your max heart rate and the five training zones (recovery, aerobic, tempo, threshold, VO2 max) in
+          one go. Supports the 220-age formula and the more accurate Tanaka formula, plus a Karvonen option
+          using resting heart rate.
+        </p>
+        <p>
+          Pair with <a href="/tools/running-pace-calculator">running pace calculator</a>,{" "}
+          <a href="/tools/bmr-calculator">BMR calculator</a>,{" "}
+          <a href="/tools/calorie-calculator">calorie calculator</a>, and{" "}
+          <a href="/tools/sleep-cycle-calculator">sleep cycle calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter age and optionally resting heart rate.",
+      "Pick a formula (220-age or Tanaka).",
+      "Read max HR and zone 1–5 ranges.",
+      "Match zones to your workout plan.",
+    ],
+  },
+  "cooking-converter": {
+    render: () => <CookingConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert cups, tablespoons, teaspoons, grams, ounces, and milliliters — with ingredient-aware density
+          for flour, sugar, butter, rice, and common pantry staples. Switch between US, UK, and metric cup
+          sizes. Perfect for adapting recipes written in an unfamiliar system.
+        </p>
+        <p>
+          Pair with <a href="/tools/recipe-scaler">recipe scaler</a>,{" "}
+          <a href="/tools/temperature-converter">temperature converter</a>,{" "}
+          <a href="/tools/weight-converter">weight converter</a>, and{" "}
+          <a href="/tools/volume-converter">volume converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick an ingredient (flour, sugar, butter…) or leave as water.",
+      "Enter amount in your starting unit.",
+      "Read equivalents in cups, grams, ounces, and ml.",
+      "Switch cup size if a recipe is UK or Australian.",
+    ],
+  },
+  "recipe-scaler": {
+    render: () => <RecipeScaler />,
+    explainer: (
+      <>
+        <p>
+          Paste any ingredient list and scale every amount by a ratio: 2x for a bigger batch, 0.5x for half,
+          custom factor for any portion. Handles fractions, decimals, mixed numbers, and "to taste" items left
+          unchanged.
+        </p>
+        <p>
+          Pair with <a href="/tools/cooking-converter">cooking converter</a>,{" "}
+          <a href="/tools/fraction-calculator">fraction calculator</a>,{" "}
+          <a href="/tools/volume-converter">volume converter</a>, and{" "}
+          <a href="/tools/weight-converter">weight converter</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the ingredient list.",
+      "Pick a multiplier (2x, 0.5x, or custom).",
+      "Review the scaled amounts.",
+      "Copy the scaled list.",
+    ],
+  },
+  "priority-matrix": {
+    render: () => <PriorityMatrix />,
+    explainer: (
+      <>
+        <p>
+          The classic Eisenhower 2x2 — urgent/important — turned into a drag-and-drop tool. Drop tasks into the
+          right quadrant and the tool spits out a Do / Decide / Delegate / Delete list you can actually act on.
+          Great for overwhelmed Monday mornings.
+        </p>
+        <p>
+          Pair with <a href="/tools/to-do-list">to-do list</a>,{" "}
+          <a href="/tools/daily-planner">daily planner</a>,{" "}
+          <a href="/tools/weekly-planner">weekly planner</a>, and{" "}
+          <a href="/tools/meeting-agenda-builder">meeting agenda builder</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Brain-dump every task into the input.",
+      "Drag each into one of four quadrants.",
+      "Read the outputted Do / Decide / Delegate / Delete list.",
+      "Copy it as a plain-text plan for the day or week.",
+    ],
+  },
+  "packing-list-generator": {
+    render: () => <PackingListGenerator />,
+    explainer: (
+      <>
+        <p>
+          Generate a packing list based on trip length, destination weather, and activities — beach, hiking,
+          business, winter. Starts with a smart default and lets you check off items as you pack. The list
+          stays in your browser (no account needed).
+        </p>
+        <p>
+          Pair with <a href="/tools/trip-cost-calculator">trip cost calculator</a>,{" "}
+          <a href="/tools/daily-planner">daily planner</a>,{" "}
+          <a href="/tools/weekly-planner">weekly planner</a>, and{" "}
+          <a href="/tools/to-do-list">to-do list</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick trip length, climate, and activities.",
+      "Review the suggested list — add or remove items.",
+      "Check items off as you pack.",
+      "Print or copy the list for your travel buddy.",
+    ],
+  },
+  "deadline-calculator": {
+    render: () => <DeadlineCalculator />,
+    explainer: (
+      <>
+        <p>
+          Add business days or working hours to a start date and get the real-world deadline — weekends and US
+          federal holidays excluded. Useful for project timelines, SLA calculations, and contract deadlines that
+          say "within 10 business days".
+        </p>
+        <p>
+          Pair with <a href="/tools/date-difference-calculator">date difference calculator</a>,{" "}
+          <a href="/tools/time-duration-calculator">time duration calculator</a>,{" "}
+          <a href="/tools/countdown-timer">countdown timer</a>, and{" "}
+          <a href="/tools/public-holidays">public holidays</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the start date.",
+      "Enter business days or working hours to add.",
+      "Optionally include US federal holidays.",
+      "Read the resulting deadline.",
+    ],
+  },
+  "lunch-break-calculator": {
+    render: () => <LunchBreakCalculator />,
+    explainer: (
+      <>
+        <p>
+          Enter start and end times and whether lunch is paid — see net worked hours, overtime edge, and weekly
+          totals. Handy for hourly employees who track lunch manually, and for managers sanity-checking
+          time-sheets.
+        </p>
+        <p>
+          Pair with <a href="/tools/overtime-calculator">overtime calculator</a>,{" "}
+          <a href="/tools/shift-scheduler">shift scheduler</a>,{" "}
+          <a href="/tools/time-duration-calculator">time duration calculator</a>, and{" "}
+          <a href="/tools/pto-calculator">PTO calculator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter clock-in and clock-out.",
+      "Set lunch length and whether it's paid.",
+      "Read net worked hours per day and the weekly total.",
+      "Flag overtime days if applicable.",
+    ],
+  },
+  "daily-planner": {
+    render: () => <DailyPlanner />,
+    explainer: (
+      <>
+        <p>
+          Time-box your day in 15- or 30-minute blocks. Add tasks, set durations, and the planner fills in
+          start/end times automatically. Good for deep-work heavy days when you want explicit meeting and focus
+          slots instead of an open calendar.
+        </p>
+        <p>
+          Pair with <a href="/tools/weekly-planner">weekly planner</a>,{" "}
+          <a href="/tools/priority-matrix">priority matrix</a>,{" "}
+          <a href="/tools/meeting-agenda-builder">meeting agenda builder</a>, and{" "}
+          <a href="/tools/pomodoro-timer">pomodoro timer</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a start time and day length.",
+      "Add each task and its minutes.",
+      "Drag to reorder — times recalculate.",
+      "Print or copy the day's plan.",
+    ],
+  },
+  "weekly-planner": {
+    render: () => <WeeklyPlanner />,
+    explainer: (
+      <>
+        <p>
+          A 7-day week view for top priorities, recurring routines, and per-day blocks. Designed for the weekly
+          review: on Sunday you fill it; by Friday you see what shipped. Stays entirely in your browser so
+          nothing to sync.
+        </p>
+        <p>
+          Pair with <a href="/tools/daily-planner">daily planner</a>,{" "}
+          <a href="/tools/priority-matrix">priority matrix</a>,{" "}
+          <a href="/tools/meeting-agenda-builder">meeting agenda builder</a>, and{" "}
+          <a href="/tools/shift-scheduler">shift scheduler</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add the top 3 priorities for the week.",
+      "Add recurring routines by day.",
+      "Fill in per-day blocks.",
+      "Print or keep open in a tab all week.",
+    ],
+  },
+  "meeting-agenda-builder": {
+    render: () => <MeetingAgendaBuilder />,
+    explainer: (
+      <>
+        <p>
+          Build a timed meeting agenda — topic, owner, minutes — and copy it to calendar invite or email. The
+          tool flags over-running agendas and suggests a finish time so you book the right calendar slot.
+        </p>
+        <p>
+          Pair with <a href="/tools/meeting-cost-calculator">meeting cost calculator</a>,{" "}
+          <a href="/tools/priority-matrix">priority matrix</a>,{" "}
+          <a href="/tools/daily-planner">daily planner</a>, and{" "}
+          <a href="/tools/weekly-planner">weekly planner</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add meeting title and expected attendees.",
+      "Add each topic with an owner and minutes.",
+      "Review the auto-calculated finish time.",
+      "Copy the agenda into the calendar invite body.",
+    ],
+  },
+  "decision-wheel": {
+    render: () => <DecisionWheel />,
+    explainer: (
+      <>
+        <p>
+          Type options, spin the wheel, get a random pick. Good for lunch fights, tie-breakers, and team
+          icebreakers where someone just needs to call it. You can remove a pick after it's chosen so the wheel
+          effectively draws without replacement.
+        </p>
+        <p>
+          Related random helpers: <a href="/tools/decision-maker">decision maker</a>,{" "}
+          <a href="/tools/coin-flip">coin flip</a>,{" "}
+          <a href="/tools/dice-roller">dice roller</a>, and{" "}
+          <a href="/tools/random-name-generator">random name generator</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Type each option on a new line.",
+      "Spin the wheel.",
+      "Remove the chosen option if you want draw-without-replacement.",
+      "Copy the pick to Slack or chat.",
     ],
   },
 };

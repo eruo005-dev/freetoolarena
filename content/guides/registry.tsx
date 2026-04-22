@@ -115,6 +115,17 @@ import * as AddPageNumbersPdf from "./how-to-add-page-numbers-to-pdf";
 import * as RemovePdfMetadata from "./how-to-remove-pdf-metadata";
 import * as HashPasswords from "./how-to-hash-passwords";
 import * as UseRegexEffectively from "./how-to-use-regex-effectively";
+// Wave 7 — utility dominance guides (10)
+import * as WriteMetaDescription from "./how-to-write-a-meta-description";
+import * as UseUtmParameters from "./how-to-use-utm-parameters";
+import * as WhatIsSchemaMarkup from "./what-is-schema-markup";
+import * as FormatJsonProperly from "./how-to-format-json-properly";
+import * as MakeSimpleInvoice from "./how-to-make-a-simple-invoice";
+import * as PriceFreelanceWork from "./how-to-price-freelance-work";
+import * as SplitExpensesFairly from "./how-to-split-expenses-fairly";
+import * as ChooseImageDimensions from "./how-to-choose-image-dimensions";
+import * as CalculateProfitMargin from "./how-to-calculate-profit-margin";
+import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -1155,6 +1166,87 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Test a regex in real time — free regex tester.",
       targetSlug: "regex-tester",
+    },
+  },
+  // ==================== WAVE 7: UTILITY DOMINANCE GUIDES (10) ====================
+  "how-to-write-a-meta-description": {
+    intro: WriteMetaDescription.intro,
+    body: WriteMetaDescription.body,
+    cta: {
+      label: "Check your meta description length in desktop + mobile — free tool.",
+      targetSlug: "meta-description-length-checker",
+    },
+  },
+  "how-to-use-utm-parameters": {
+    intro: UseUtmParameters.intro,
+    body: UseUtmParameters.body,
+    cta: {
+      label: "Build clean UTM-tagged URLs — free UTM builder.",
+      targetSlug: "utm-builder",
+    },
+  },
+  "what-is-schema-markup": {
+    intro: WhatIsSchemaMarkup.intro,
+    body: WhatIsSchemaMarkup.body,
+    cta: {
+      label: "Generate JSON-LD schema for any page — free schema markup generator.",
+      targetSlug: "schema-markup-generator",
+    },
+  },
+  "how-to-format-json-properly": {
+    intro: FormatJsonProperly.intro,
+    body: FormatJsonProperly.body,
+    cta: {
+      label: "Pretty-print and validate any JSON — free JSON formatter.",
+      targetSlug: "json-formatter",
+    },
+  },
+  "how-to-make-a-simple-invoice": {
+    intro: MakeSimpleInvoice.intro,
+    body: MakeSimpleInvoice.body,
+    cta: {
+      label: "Create a clean PDF invoice in under a minute — free invoice generator.",
+      targetSlug: "invoice-generator",
+    },
+  },
+  "how-to-price-freelance-work": {
+    intro: PriceFreelanceWork.intro,
+    body: PriceFreelanceWork.body,
+    cta: {
+      label: "Calculate a sustainable freelance rate from your target income.",
+      targetSlug: "freelance-rate-calculator",
+    },
+  },
+  "how-to-split-expenses-fairly": {
+    intro: SplitExpensesFairly.intro,
+    body: SplitExpensesFairly.body,
+    cta: {
+      label: "Split any shared expense across any number of people — free tool.",
+      targetSlug: "expense-split-calculator",
+    },
+  },
+  "how-to-choose-image-dimensions": {
+    intro: ChooseImageDimensions.intro,
+    body: ChooseImageDimensions.body,
+    cta: {
+      label: "Look up the right image size for every social platform.",
+      targetSlug: "social-media-image-sizes",
+    },
+  },
+  "how-to-calculate-profit-margin": {
+    intro: CalculateProfitMargin.intro,
+    body: CalculateProfitMargin.body,
+    cta: {
+      label: "Calculate gross, markup, and margin in one pass — free profit margin calculator.",
+      targetSlug: "profit-margin-calculator",
+    },
+  },
+  "how-to-write-a-cron-expression": {
+    intro: WriteCronExpression.intro,
+    body: WriteCronExpression.body,
+    cta: {
+      label: "Build cron expressions visually — free cron expression builder.",
+      targetSlug: "cron-expression-builder",
     },
   },
 };
