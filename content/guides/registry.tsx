@@ -274,6 +274,66 @@ import * as TrimAudio from "./how-to-trim-audio";
 import * as ChangeAudioSpeed from "./how-to-change-audio-speed";
 import * as TranscribeSpeechToText from "./how-to-transcribe-speech-to-text";
 import * as ConvertTextToSpeech from "./how-to-convert-text-to-speech";
+import * as HowToResizeImagesForWeb from "./how-to-resize-images-for-web";
+import * as HowToRotateImages from "./how-to-rotate-images";
+import * as HowToFlipImages from "./how-to-flip-images";
+import * as HowToCheckImageDimensions from "./how-to-check-image-dimensions";
+import * as HowToRoundImageCorners from "./how-to-round-image-corners";
+import * as HowToMakeAPhotoCollage from "./how-to-make-a-photo-collage";
+import * as HowToCropACircularProfilePicture from "./how-to-crop-a-circular-profile-picture";
+import * as HowToRemoveExifMetadata from "./how-to-remove-exif-metadata";
+import * as HowToViewExifMetadata from "./how-to-view-exif-metadata";
+import * as HowToWriteAltText from "./how-to-write-alt-text";
+import * as HowToBlurFacesInPhotos from "./how-to-blur-faces-in-photos";
+import * as HowToConvertHeicToJpg from "./how-to-convert-heic-to-jpg";
+import * as HowToConvertSvgToPng from "./how-to-convert-svg-to-png";
+import * as HowToUseBorderRadiusInCss from "./how-to-use-border-radius-in-css";
+import * as HowToUseBoxShadowInCss from "./how-to-use-box-shadow-in-css";
+import * as HowToUseFlexbox from "./how-to-use-flexbox";
+import * as HowToUseCssGrid from "./how-to-use-css-grid";
+import * as HowToCheckColorContrast from "./how-to-check-color-contrast";
+import * as HowToExtractColorsFromImages from "./how-to-extract-colors-from-images";
+import * as HowToPickColorsFromImages from "./how-to-pick-colors-from-images";
+import * as HowToCalculateDailyCalorieNeeds from "./how-to-calculate-daily-calorie-needs";
+import * as HowToCalculateYourBmr from "./how-to-calculate-your-bmr";
+import * as HowToCalculateWaterIntake from "./how-to-calculate-water-intake";
+import * as HowToTimeYourSleepCycles from "./how-to-time-your-sleep-cycles";
+import * as HowToUseThePomodoroTechnique from "./how-to-use-the-pomodoro-technique";
+import * as HowToDoIntermittentFasting from "./how-to-do-intermittent-fasting";
+import * as HowToFindYourHeartRateZones from "./how-to-find-your-heart-rate-zones";
+import * as HowToEstimateCaloriesBurnedFromSteps from "./how-to-estimate-calories-burned-from-steps";
+import * as HowToCalculateTheCostOfSmoking from "./how-to-calculate-the-cost-of-smoking";
+import * as HowToManageCaffeineIntake from "./how-to-manage-caffeine-intake";
+import * as HowToCountAlcoholUnits from "./how-to-count-alcohol-units";
+import * as HowToCalculateProteinIntake from "./how-to-calculate-protein-intake";
+import * as HowToHitDailyFiberTargets from "./how-to-hit-daily-fiber-targets";
+import * as HowToCountCarbs from "./how-to-count-carbs";
+import * as HowToEstimateBodyFatPercentage from "./how-to-estimate-body-fat-percentage";
+import * as HowToCalculateApartmentAffordability from "./how-to-calculate-apartment-affordability";
+import * as HowToPlanYour401kContributions from "./how-to-plan-your-401k-contributions";
+import * as HowToPlanRothIraContributions from "./how-to-plan-roth-ira-contributions";
+import * as HowToSizeYourEmergencyFund from "./how-to-size-your-emergency-fund";
+import * as HowToSaveForCollege from "./how-to-save-for-college";
+import * as HowToAdjustForInflation from "./how-to-adjust-for-inflation";
+import * as HowToDecideIfRefinancingMakesSense from "./how-to-decide-if-refinancing-makes-sense";
+import * as HowToDecideLeaseVsBuy from "./how-to-decide-lease-vs-buy";
+import * as HowToEstimateMovingCosts from "./how-to-estimate-moving-costs";
+import * as HowToEstimateATripFuelCost from "./how-to-estimate-a-trip-fuel-cost";
+import * as HowToAuditSubscriptionSpend from "./how-to-audit-subscription-spend";
+import * as HowToSplitABill from "./how-to-split-a-bill";
+import * as HowToCalculateDiscounts from "./how-to-calculate-discounts";
+import * as HowToCalculateSalesTax from "./how-to-calculate-sales-tax";
+import * as HowToReverseText from "./how-to-reverse-text";
+import * as HowToSortLinesOfText from "./how-to-sort-lines-of-text";
+import * as HowToRemoveLineBreaks from "./how-to-remove-line-breaks";
+import * as HowToRemoveExtraWhitespace from "./how-to-remove-extra-whitespace";
+import * as HowToStripSpecialCharacters from "./how-to-strip-special-characters";
+import * as HowToNormalizeUnicodeText from "./how-to-normalize-unicode-text";
+import * as HowToDetectInvisibleCharacters from "./how-to-detect-invisible-characters";
+import * as HowToRemoveDuplicateLines from "./how-to-remove-duplicate-lines";
+import * as HowToCountWordFrequency from "./how-to-count-word-frequency";
+import * as HowToWriteNumbersInWords from "./how-to-write-numbers-in-words";
+import * as HowToConvertToSnakeCase from "./how-to-convert-to-snake-case";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -2590,6 +2650,486 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert text to spoken audio — free text-to-speech tool.",
       targetSlug: "text-to-speech",
+    },
+  },
+  "how-to-resize-images-for-web": {
+    intro: HowToResizeImagesForWeb.intro,
+    body: HowToResizeImagesForWeb.body,
+    cta: {
+      label: "Try the image resizer — free and private.",
+      targetSlug: "image-resizer",
+    },
+  },
+  "how-to-rotate-images": {
+    intro: HowToRotateImages.intro,
+    body: HowToRotateImages.body,
+    cta: {
+      label: "Try the image rotate — free and private.",
+      targetSlug: "image-rotate",
+    },
+  },
+  "how-to-flip-images": {
+    intro: HowToFlipImages.intro,
+    body: HowToFlipImages.body,
+    cta: {
+      label: "Try the image flip — free and private.",
+      targetSlug: "image-flip",
+    },
+  },
+  "how-to-check-image-dimensions": {
+    intro: HowToCheckImageDimensions.intro,
+    body: HowToCheckImageDimensions.body,
+    cta: {
+      label: "Try the image dimensions checker — free and private.",
+      targetSlug: "image-dimensions-checker",
+    },
+  },
+  "how-to-round-image-corners": {
+    intro: HowToRoundImageCorners.intro,
+    body: HowToRoundImageCorners.body,
+    cta: {
+      label: "Try the image round corners — free and private.",
+      targetSlug: "image-round-corners",
+    },
+  },
+  "how-to-make-a-photo-collage": {
+    intro: HowToMakeAPhotoCollage.intro,
+    body: HowToMakeAPhotoCollage.body,
+    cta: {
+      label: "Try the photo collage — free and private.",
+      targetSlug: "photo-collage",
+    },
+  },
+  "how-to-crop-a-circular-profile-picture": {
+    intro: HowToCropACircularProfilePicture.intro,
+    body: HowToCropACircularProfilePicture.body,
+    cta: {
+      label: "Try the profile pic circle cropper — free and private.",
+      targetSlug: "profile-pic-circle-cropper",
+    },
+  },
+  "how-to-remove-exif-metadata": {
+    intro: HowToRemoveExifMetadata.intro,
+    body: HowToRemoveExifMetadata.body,
+    cta: {
+      label: "Try the exif remover — free and private.",
+      targetSlug: "exif-remover",
+    },
+  },
+  "how-to-view-exif-metadata": {
+    intro: HowToViewExifMetadata.intro,
+    body: HowToViewExifMetadata.body,
+    cta: {
+      label: "Try the exif viewer — free and private.",
+      targetSlug: "exif-viewer",
+    },
+  },
+  "how-to-write-alt-text": {
+    intro: HowToWriteAltText.intro,
+    body: HowToWriteAltText.body,
+    cta: {
+      label: "Try the alt text helper — free and private.",
+      targetSlug: "alt-text-helper",
+    },
+  },
+  "how-to-blur-faces-in-photos": {
+    intro: HowToBlurFacesInPhotos.intro,
+    body: HowToBlurFacesInPhotos.body,
+    cta: {
+      label: "Try the image blur censor — free and private.",
+      targetSlug: "image-blur-censor",
+    },
+  },
+  "how-to-convert-heic-to-jpg": {
+    intro: HowToConvertHeicToJpg.intro,
+    body: HowToConvertHeicToJpg.body,
+    cta: {
+      label: "Try the heic to jpg — free and private.",
+      targetSlug: "heic-to-jpg",
+    },
+  },
+  "how-to-convert-svg-to-png": {
+    intro: HowToConvertSvgToPng.intro,
+    body: HowToConvertSvgToPng.body,
+    cta: {
+      label: "Try the svg to png — free and private.",
+      targetSlug: "svg-to-png",
+    },
+  },
+  "how-to-use-border-radius-in-css": {
+    intro: HowToUseBorderRadiusInCss.intro,
+    body: HowToUseBorderRadiusInCss.body,
+    cta: {
+      label: "Try the border radius generator — free and private.",
+      targetSlug: "border-radius-generator",
+    },
+  },
+  "how-to-use-box-shadow-in-css": {
+    intro: HowToUseBoxShadowInCss.intro,
+    body: HowToUseBoxShadowInCss.body,
+    cta: {
+      label: "Try the box shadow generator — free and private.",
+      targetSlug: "box-shadow-generator",
+    },
+  },
+  "how-to-use-flexbox": {
+    intro: HowToUseFlexbox.intro,
+    body: HowToUseFlexbox.body,
+    cta: {
+      label: "Try the flexbox playground — free and private.",
+      targetSlug: "flexbox-playground",
+    },
+  },
+  "how-to-use-css-grid": {
+    intro: HowToUseCssGrid.intro,
+    body: HowToUseCssGrid.body,
+    cta: {
+      label: "Try the grid layout generator — free and private.",
+      targetSlug: "grid-layout-generator",
+    },
+  },
+  "how-to-check-color-contrast": {
+    intro: HowToCheckColorContrast.intro,
+    body: HowToCheckColorContrast.body,
+    cta: {
+      label: "Try the contrast checker — free and private.",
+      targetSlug: "contrast-checker",
+    },
+  },
+  "how-to-extract-colors-from-images": {
+    intro: HowToExtractColorsFromImages.intro,
+    body: HowToExtractColorsFromImages.body,
+    cta: {
+      label: "Try the color extractor — free and private.",
+      targetSlug: "color-extractor",
+    },
+  },
+  "how-to-pick-colors-from-images": {
+    intro: HowToPickColorsFromImages.intro,
+    body: HowToPickColorsFromImages.body,
+    cta: {
+      label: "Try the color picker — free and private.",
+      targetSlug: "color-picker",
+    },
+  },
+  "how-to-calculate-daily-calorie-needs": {
+    intro: HowToCalculateDailyCalorieNeeds.intro,
+    body: HowToCalculateDailyCalorieNeeds.body,
+    cta: {
+      label: "Try the calorie calculator — free and private.",
+      targetSlug: "calorie-calculator",
+    },
+  },
+  "how-to-calculate-your-bmr": {
+    intro: HowToCalculateYourBmr.intro,
+    body: HowToCalculateYourBmr.body,
+    cta: {
+      label: "Try the bmr calculator — free and private.",
+      targetSlug: "bmr-calculator",
+    },
+  },
+  "how-to-calculate-water-intake": {
+    intro: HowToCalculateWaterIntake.intro,
+    body: HowToCalculateWaterIntake.body,
+    cta: {
+      label: "Try the water intake calculator — free and private.",
+      targetSlug: "water-intake-calculator",
+    },
+  },
+  "how-to-time-your-sleep-cycles": {
+    intro: HowToTimeYourSleepCycles.intro,
+    body: HowToTimeYourSleepCycles.body,
+    cta: {
+      label: "Try the sleep cycle calculator — free and private.",
+      targetSlug: "sleep-cycle-calculator",
+    },
+  },
+  "how-to-use-the-pomodoro-technique": {
+    intro: HowToUseThePomodoroTechnique.intro,
+    body: HowToUseThePomodoroTechnique.body,
+    cta: {
+      label: "Try the pomodoro timer — free and private.",
+      targetSlug: "pomodoro-timer",
+    },
+  },
+  "how-to-do-intermittent-fasting": {
+    intro: HowToDoIntermittentFasting.intro,
+    body: HowToDoIntermittentFasting.body,
+    cta: {
+      label: "Try the fasting timer — free and private.",
+      targetSlug: "fasting-timer",
+    },
+  },
+  "how-to-find-your-heart-rate-zones": {
+    intro: HowToFindYourHeartRateZones.intro,
+    body: HowToFindYourHeartRateZones.body,
+    cta: {
+      label: "Try the heart rate zone calculator — free and private.",
+      targetSlug: "heart-rate-zone-calculator",
+    },
+  },
+  "how-to-estimate-calories-burned-from-steps": {
+    intro: HowToEstimateCaloriesBurnedFromSteps.intro,
+    body: HowToEstimateCaloriesBurnedFromSteps.body,
+    cta: {
+      label: "Try the steps to calories calculator — free and private.",
+      targetSlug: "steps-to-calories-calculator",
+    },
+  },
+  "how-to-calculate-the-cost-of-smoking": {
+    intro: HowToCalculateTheCostOfSmoking.intro,
+    body: HowToCalculateTheCostOfSmoking.body,
+    cta: {
+      label: "Try the smoking cost calculator — free and private.",
+      targetSlug: "smoking-cost-calculator",
+    },
+  },
+  "how-to-manage-caffeine-intake": {
+    intro: HowToManageCaffeineIntake.intro,
+    body: HowToManageCaffeineIntake.body,
+    cta: {
+      label: "Try the caffeine intake calculator — free and private.",
+      targetSlug: "caffeine-intake-calculator",
+    },
+  },
+  "how-to-count-alcohol-units": {
+    intro: HowToCountAlcoholUnits.intro,
+    body: HowToCountAlcoholUnits.body,
+    cta: {
+      label: "Try the alcohol unit calculator — free and private.",
+      targetSlug: "alcohol-unit-calculator",
+    },
+  },
+  "how-to-calculate-protein-intake": {
+    intro: HowToCalculateProteinIntake.intro,
+    body: HowToCalculateProteinIntake.body,
+    cta: {
+      label: "Try the protein intake calculator — free and private.",
+      targetSlug: "protein-intake-calculator",
+    },
+  },
+  "how-to-hit-daily-fiber-targets": {
+    intro: HowToHitDailyFiberTargets.intro,
+    body: HowToHitDailyFiberTargets.body,
+    cta: {
+      label: "Try the fiber intake calculator — free and private.",
+      targetSlug: "fiber-intake-calculator",
+    },
+  },
+  "how-to-count-carbs": {
+    intro: HowToCountCarbs.intro,
+    body: HowToCountCarbs.body,
+    cta: {
+      label: "Try the carbohydrate calculator — free and private.",
+      targetSlug: "carbohydrate-calculator",
+    },
+  },
+  "how-to-estimate-body-fat-percentage": {
+    intro: HowToEstimateBodyFatPercentage.intro,
+    body: HowToEstimateBodyFatPercentage.body,
+    cta: {
+      label: "Try the body fat calculator — free and private.",
+      targetSlug: "body-fat-calculator",
+    },
+  },
+  "how-to-calculate-apartment-affordability": {
+    intro: HowToCalculateApartmentAffordability.intro,
+    body: HowToCalculateApartmentAffordability.body,
+    cta: {
+      label: "Try the apartment affordability calculator — free and private.",
+      targetSlug: "apartment-affordability-calculator",
+    },
+  },
+  "how-to-plan-your-401k-contributions": {
+    intro: HowToPlanYour401kContributions.intro,
+    body: HowToPlanYour401kContributions.body,
+    cta: {
+      label: "Try the 401k calculator — free and private.",
+      targetSlug: "401k-calculator",
+    },
+  },
+  "how-to-plan-roth-ira-contributions": {
+    intro: HowToPlanRothIraContributions.intro,
+    body: HowToPlanRothIraContributions.body,
+    cta: {
+      label: "Try the roth ira calculator — free and private.",
+      targetSlug: "roth-ira-calculator",
+    },
+  },
+  "how-to-size-your-emergency-fund": {
+    intro: HowToSizeYourEmergencyFund.intro,
+    body: HowToSizeYourEmergencyFund.body,
+    cta: {
+      label: "Try the emergency fund calculator — free and private.",
+      targetSlug: "emergency-fund-calculator",
+    },
+  },
+  "how-to-save-for-college": {
+    intro: HowToSaveForCollege.intro,
+    body: HowToSaveForCollege.body,
+    cta: {
+      label: "Try the college savings calculator — free and private.",
+      targetSlug: "college-savings-calculator",
+    },
+  },
+  "how-to-adjust-for-inflation": {
+    intro: HowToAdjustForInflation.intro,
+    body: HowToAdjustForInflation.body,
+    cta: {
+      label: "Try the inflation calculator — free and private.",
+      targetSlug: "inflation-calculator",
+    },
+  },
+  "how-to-decide-if-refinancing-makes-sense": {
+    intro: HowToDecideIfRefinancingMakesSense.intro,
+    body: HowToDecideIfRefinancingMakesSense.body,
+    cta: {
+      label: "Try the refinance calculator — free and private.",
+      targetSlug: "refinance-calculator",
+    },
+  },
+  "how-to-decide-lease-vs-buy": {
+    intro: HowToDecideLeaseVsBuy.intro,
+    body: HowToDecideLeaseVsBuy.body,
+    cta: {
+      label: "Try the lease vs buy calculator — free and private.",
+      targetSlug: "lease-vs-buy-calculator",
+    },
+  },
+  "how-to-estimate-moving-costs": {
+    intro: HowToEstimateMovingCosts.intro,
+    body: HowToEstimateMovingCosts.body,
+    cta: {
+      label: "Try the moving cost calculator — free and private.",
+      targetSlug: "moving-cost-calculator",
+    },
+  },
+  "how-to-estimate-a-trip-fuel-cost": {
+    intro: HowToEstimateATripFuelCost.intro,
+    body: HowToEstimateATripFuelCost.body,
+    cta: {
+      label: "Try the fuel cost calculator — free and private.",
+      targetSlug: "fuel-cost-calculator",
+    },
+  },
+  "how-to-audit-subscription-spend": {
+    intro: HowToAuditSubscriptionSpend.intro,
+    body: HowToAuditSubscriptionSpend.body,
+    cta: {
+      label: "Try the subscription cost calculator — free and private.",
+      targetSlug: "subscription-cost-calculator",
+    },
+  },
+  "how-to-split-a-bill": {
+    intro: HowToSplitABill.intro,
+    body: HowToSplitABill.body,
+    cta: {
+      label: "Try the bill split calculator — free and private.",
+      targetSlug: "bill-split-calculator",
+    },
+  },
+  "how-to-calculate-discounts": {
+    intro: HowToCalculateDiscounts.intro,
+    body: HowToCalculateDiscounts.body,
+    cta: {
+      label: "Try the discount calculator — free and private.",
+      targetSlug: "discount-calculator",
+    },
+  },
+  "how-to-calculate-sales-tax": {
+    intro: HowToCalculateSalesTax.intro,
+    body: HowToCalculateSalesTax.body,
+    cta: {
+      label: "Try the sales tax calculator — free and private.",
+      targetSlug: "sales-tax-calculator",
+    },
+  },
+  "how-to-reverse-text": {
+    intro: HowToReverseText.intro,
+    body: HowToReverseText.body,
+    cta: {
+      label: "Try the text reverser — free and private.",
+      targetSlug: "text-reverser",
+    },
+  },
+  "how-to-sort-lines-of-text": {
+    intro: HowToSortLinesOfText.intro,
+    body: HowToSortLinesOfText.body,
+    cta: {
+      label: "Try the text sorter — free and private.",
+      targetSlug: "text-sorter",
+    },
+  },
+  "how-to-remove-line-breaks": {
+    intro: HowToRemoveLineBreaks.intro,
+    body: HowToRemoveLineBreaks.body,
+    cta: {
+      label: "Try the line break remover — free and private.",
+      targetSlug: "line-break-remover",
+    },
+  },
+  "how-to-remove-extra-whitespace": {
+    intro: HowToRemoveExtraWhitespace.intro,
+    body: HowToRemoveExtraWhitespace.body,
+    cta: {
+      label: "Try the whitespace remover — free and private.",
+      targetSlug: "whitespace-remover",
+    },
+  },
+  "how-to-strip-special-characters": {
+    intro: HowToStripSpecialCharacters.intro,
+    body: HowToStripSpecialCharacters.body,
+    cta: {
+      label: "Try the special character remover — free and private.",
+      targetSlug: "special-character-remover",
+    },
+  },
+  "how-to-normalize-unicode-text": {
+    intro: HowToNormalizeUnicodeText.intro,
+    body: HowToNormalizeUnicodeText.body,
+    cta: {
+      label: "Try the unicode text normalizer — free and private.",
+      targetSlug: "unicode-text-normalizer",
+    },
+  },
+  "how-to-detect-invisible-characters": {
+    intro: HowToDetectInvisibleCharacters.intro,
+    body: HowToDetectInvisibleCharacters.body,
+    cta: {
+      label: "Try the invisible character detector — free and private.",
+      targetSlug: "invisible-character-detector",
+    },
+  },
+  "how-to-remove-duplicate-lines": {
+    intro: HowToRemoveDuplicateLines.intro,
+    body: HowToRemoveDuplicateLines.body,
+    cta: {
+      label: "Try the remove duplicate lines — free and private.",
+      targetSlug: "remove-duplicate-lines",
+    },
+  },
+  "how-to-count-word-frequency": {
+    intro: HowToCountWordFrequency.intro,
+    body: HowToCountWordFrequency.body,
+    cta: {
+      label: "Try the word frequency counter — free and private.",
+      targetSlug: "word-frequency-counter",
+    },
+  },
+  "how-to-write-numbers-in-words": {
+    intro: HowToWriteNumbersInWords.intro,
+    body: HowToWriteNumbersInWords.body,
+    cta: {
+      label: "Try the number to words — free and private.",
+      targetSlug: "number-to-words",
+    },
+  },
+  "how-to-convert-to-snake-case": {
+    intro: HowToConvertToSnakeCase.intro,
+    body: HowToConvertToSnakeCase.body,
+    cta: {
+      label: "Try the snake case converter — free and private.",
+      targetSlug: "snake-case-converter",
     },
   },
   "how-to-write-a-cron-expression": {
