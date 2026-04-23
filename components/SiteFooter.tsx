@@ -29,6 +29,7 @@ export function SiteFooter() {
             <FooterLink href="/tools">All tools</FooterLink>
             <FooterLink href="/guides">All guides</FooterLink>
             <FooterLink href="/best">Curated lists</FooterLink>
+            <FooterLink href="/documents">Document templates</FooterLink>
             <FooterLink href="/compare">Comparisons</FooterLink>
             <FooterLink href="/learn">Glossary</FooterLink>
             <FooterLink href="/favorites">Favorites</FooterLink>

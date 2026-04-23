@@ -119,6 +119,13 @@ export function InvoiceGenerator() {
     <div className="space-y-6">
       <style jsx global>{`
         @media print {
+          @page {
+            size: letter;
+            margin: 0.75in;
+          }
+          body {
+            background: white;
+          }
           body * {
             visibility: hidden !important;
           }
