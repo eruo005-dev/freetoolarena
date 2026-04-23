@@ -200,6 +200,9 @@ import * as CompareTextChanges from "./how-to-compare-text-changes";
 import * as ConvertJsonToCsv from "./how-to-convert-json-to-csv";
 import * as ChooseImageFormats from "./how-to-choose-image-formats";
 import * as TimeSleepCycles from "./how-to-time-sleep-cycles";
+import * as MinifyJavascript from "./how-to-minify-javascript";
+import * as CompareJson from "./how-to-compare-json";
+import * as WriteGoodAltText from "./how-to-write-good-alt-text";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1924,6 +1927,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Plan your wake time around sleep cycles — free sleep cycle calculator.",
       targetSlug: "sleep-cycle-calculator",
+    },
+  },
+  "how-to-minify-javascript": {
+    intro: MinifyJavascript.intro,
+    body: MinifyJavascript.body,
+    cta: {
+      label: "Minify your JavaScript instantly — free JS minifier.",
+      targetSlug: "js-minifier",
+    },
+  },
+  "how-to-compare-json": {
+    intro: CompareJson.intro,
+    body: CompareJson.body,
+    cta: {
+      label: "Diff two JSON objects structurally — free JSON diff checker.",
+      targetSlug: "json-diff-checker",
+    },
+  },
+  "how-to-write-good-alt-text": {
+    intro: WriteGoodAltText.intro,
+    body: WriteGoodAltText.body,
+    cta: {
+      label: "Draft alt text for your images — free alt text helper.",
+      targetSlug: "alt-text-helper",
     },
   },
   "how-to-write-a-cron-expression": {
