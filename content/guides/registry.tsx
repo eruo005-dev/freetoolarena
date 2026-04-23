@@ -179,6 +179,9 @@ import * as ChooseUuidVersion from "./how-to-choose-between-uuid-versions";
 import * as ResizeImages from "./how-to-resize-images-without-losing-quality";
 import * as MinifyCss from "./how-to-minify-css-for-web-performance";
 import * as ConvertNumberBases from "./how-to-convert-between-number-bases";
+import * as UseCssGradients from "./how-to-use-css-gradients-effectively";
+import * as ChooseBarcode from "./how-to-choose-between-barcode-formats";
+import * as UrlEncode from "./how-to-url-encode-correctly";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1735,6 +1738,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert binary, decimal, hex, octal — free number base converter.",
       targetSlug: "number-base-converter",
+    },
+  },
+  "how-to-use-css-gradients-effectively": {
+    intro: UseCssGradients.intro,
+    body: UseCssGradients.body,
+    cta: {
+      label: "Build linear, radial, and conic gradients — free CSS gradient generator.",
+      targetSlug: "gradient-generator",
+    },
+  },
+  "how-to-choose-between-barcode-formats": {
+    intro: ChooseBarcode.intro,
+    body: ChooseBarcode.body,
+    cta: {
+      label: "Generate UPC, EAN, Code 128, and more — free barcode generator.",
+      targetSlug: "barcode-generator",
+    },
+  },
+  "how-to-url-encode-correctly": {
+    intro: UrlEncode.intro,
+    body: UrlEncode.body,
+    cta: {
+      label: "Percent-encode and decode URLs instantly — free URL encoder/decoder.",
+      targetSlug: "url-encoder-decoder",
     },
   },
   "how-to-write-a-cron-expression": {
