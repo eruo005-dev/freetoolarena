@@ -182,6 +182,9 @@ import * as ConvertNumberBases from "./how-to-convert-between-number-bases";
 import * as UseCssGradients from "./how-to-use-css-gradients-effectively";
 import * as ChooseBarcode from "./how-to-choose-between-barcode-formats";
 import * as UrlEncode from "./how-to-url-encode-correctly";
+import * as FormatSql from "./how-to-format-sql-for-readability";
+import * as TextCase from "./how-to-use-text-case-conventions";
+import * as EstimateReadingTime from "./how-to-estimate-reading-time";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1762,6 +1765,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Percent-encode and decode URLs instantly — free URL encoder/decoder.",
       targetSlug: "url-encoder-decoder",
+    },
+  },
+  "how-to-format-sql-for-readability": {
+    intro: FormatSql.intro,
+    body: FormatSql.body,
+    cta: {
+      label: "Clean up messy queries — free SQL formatter.",
+      targetSlug: "sql-formatter",
+    },
+  },
+  "how-to-use-text-case-conventions": {
+    intro: TextCase.intro,
+    body: TextCase.body,
+    cta: {
+      label: "Convert camelCase, snake_case, kebab-case, Title Case — free case converter.",
+      targetSlug: "case-converter",
+    },
+  },
+  "how-to-estimate-reading-time": {
+    intro: EstimateReadingTime.intro,
+    body: EstimateReadingTime.body,
+    cta: {
+      label: "Paste any text and see minutes to read — free reading time estimator.",
+      targetSlug: "reading-time-estimator",
     },
   },
   "how-to-write-a-cron-expression": {
