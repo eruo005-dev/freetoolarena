@@ -191,6 +191,9 @@ import * as AspectRatios from "./how-to-work-with-aspect-ratios";
 import * as WordCount from "./how-to-hit-word-count-targets";
 import * as PlaceholderText from "./how-to-use-placeholder-text";
 import * as TypingSpeed from "./how-to-improve-your-typing-speed";
+import * as ReadWriteXml from "./how-to-read-and-write-xml";
+import * as FormatHtml from "./how-to-format-html-properly";
+import * as WriteCleanMarkdown from "./how-to-write-clean-markdown";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1843,6 +1846,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Measure your WPM and accuracy — free typing speed test.",
       targetSlug: "typing-speed-test",
+    },
+  },
+  "how-to-read-and-write-xml": {
+    intro: ReadWriteXml.intro,
+    body: ReadWriteXml.body,
+    cta: {
+      label: "Format, validate, and minify XML — free XML formatter.",
+      targetSlug: "xml-formatter",
+    },
+  },
+  "how-to-format-html-properly": {
+    intro: FormatHtml.intro,
+    body: FormatHtml.body,
+    cta: {
+      label: "Pretty-print and minify HTML instantly — free HTML formatter.",
+      targetSlug: "html-formatter",
+    },
+  },
+  "how-to-write-clean-markdown": {
+    intro: WriteCleanMarkdown.intro,
+    body: WriteCleanMarkdown.body,
+    cta: {
+      label: "Convert markdown to HTML in your browser — free converter.",
+      targetSlug: "markdown-to-html",
     },
   },
   "how-to-write-a-cron-expression": {
