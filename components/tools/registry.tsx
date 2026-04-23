@@ -448,6 +448,23 @@ const EmailGreetingPicker = dynamic(() => import("./EmailGreetingPicker").then(m
 const CopyPasteDeduplicator = dynamic(() => import("./CopyPasteDeduplicator").then(m => ({ default: m.CopyPasteDeduplicator })), { loading: Skeleton });
 const TypingWpmToWordsPerHour = dynamic(() => import("./TypingWpmToWordsPerHour").then(m => ({ default: m.TypingWpmToWordsPerHour })), { loading: Skeleton });
 
+// Phase 1 — document templates (15)
+const ReceiptGenerator = dynamic(() => import("./ReceiptGenerator").then(m => ({ default: m.ReceiptGenerator })), { loading: Skeleton });
+const QuoteGenerator = dynamic(() => import("./QuoteGenerator").then(m => ({ default: m.QuoteGenerator })), { loading: Skeleton });
+const PurchaseOrderGenerator = dynamic(() => import("./PurchaseOrderGenerator").then(m => ({ default: m.PurchaseOrderGenerator })), { loading: Skeleton });
+const BillOfSaleGenerator = dynamic(() => import("./BillOfSaleGenerator").then(m => ({ default: m.BillOfSaleGenerator })), { loading: Skeleton });
+const PayStubGenerator = dynamic(() => import("./PayStubGenerator").then(m => ({ default: m.PayStubGenerator })), { loading: Skeleton });
+const PackingSlipGenerator = dynamic(() => import("./PackingSlipGenerator").then(m => ({ default: m.PackingSlipGenerator })), { loading: Skeleton });
+const GiftCertificateMaker = dynamic(() => import("./GiftCertificateMaker").then(m => ({ default: m.GiftCertificateMaker })), { loading: Skeleton });
+const ResignationLetterGenerator = dynamic(() => import("./ResignationLetterGenerator").then(m => ({ default: m.ResignationLetterGenerator })), { loading: Skeleton });
+const RecommendationLetterGenerator = dynamic(() => import("./RecommendationLetterGenerator").then(m => ({ default: m.RecommendationLetterGenerator })), { loading: Skeleton });
+const ComplaintLetterGenerator = dynamic(() => import("./ComplaintLetterGenerator").then(m => ({ default: m.ComplaintLetterGenerator })), { loading: Skeleton });
+const ThankYouLetterGenerator = dynamic(() => import("./ThankYouLetterGenerator").then(m => ({ default: m.ThankYouLetterGenerator })), { loading: Skeleton });
+const MemoGenerator = dynamic(() => import("./MemoGenerator").then(m => ({ default: m.MemoGenerator })), { loading: Skeleton });
+const BusinessLetterGenerator = dynamic(() => import("./BusinessLetterGenerator").then(m => ({ default: m.BusinessLetterGenerator })), { loading: Skeleton });
+const LetterOfIntentGenerator = dynamic(() => import("./LetterOfIntentGenerator").then(m => ({ default: m.LetterOfIntentGenerator })), { loading: Skeleton });
+const ApologyLetterGenerator = dynamic(() => import("./ApologyLetterGenerator").then(m => ({ default: m.ApologyLetterGenerator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -10901,6 +10918,276 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter WPM.",
       "Set hours per day and productivity.",
       "Read daily and yearly output.",
+    ],
+  },
+  "receipt-generator": {
+    render: () => <ReceiptGenerator />,
+    explainer: (
+      <>
+        <p>Generate a clean, professional receipt for any cash, card, or check sale. Add line items and tax, then print or save as PDF — no signup, no watermark.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill in business and customer details.",
+      "Add items, quantity, and prices.",
+      "Click Print / Save as PDF.",
+    ],
+  },
+  "quote-generator": {
+    render: () => <QuoteGenerator />,
+    explainer: (
+      <>
+        <p>Send clean quotes before you start work. Line items, tax, validity date, and terms in one page that prints perfectly.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add your company and client details.",
+      "Enter line items and terms.",
+      "Print or save as PDF.",
+    ],
+  },
+  "purchase-order-generator": {
+    render: () => <PurchaseOrderGenerator />,
+    explainer: (
+      <>
+        <p>Formal PO template with boxed buyer/vendor sections, itemized order, shipping/tax totals, and signature line.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill buyer and vendor blocks.",
+      "Add items and shipping.",
+      "Print or save as PDF.",
+    ],
+  },
+  "bill-of-sale-generator": {
+    render: () => <BillOfSaleGenerator />,
+    explainer: (
+      <>
+        <p>A printable bill-of-sale template for transferring ownership of a car, trailer, equipment, or other personal property. Not legal advice — consult an attorney for jurisdiction-specific requirements.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter seller, buyer, and item details.",
+      "Pick state and sale price.",
+      "Print both copies and sign.",
+    ],
+  },
+  "pay-stub-generator": {
+    render: () => <PayStubGenerator />,
+    explainer: (
+      <>
+        <p>Employer pay-stub template with current and year-to-date columns, automatic FICA calc, and net-pay summary. For record-keeping only — not a substitute for payroll software.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter employer and employee info.",
+      "Enter hours, rate, and withholdings.",
+      "Print or save as PDF.",
+    ],
+  },
+  "packing-slip-generator": {
+    render: () => <PackingSlipGenerator />,
+    explainer: (
+      <>
+        <p>Include a professional packing slip with every shipment — shipper block, ship-to address, tracking number, and item checklist with ordered vs shipped quantities.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill shipper and ship-to addresses.",
+      "Add items with SKU and quantities.",
+      "Print and include in the box.",
+    ],
+  },
+  "gift-certificate-maker": {
+    render: () => <GiftCertificateMaker />,
+    explainer: (
+      <>
+        <p>A clean, decorative gift certificate you can fill in and print in a minute. Fits a standard envelope when folded in thirds.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter business, recipient, and amount.",
+      "Add personal message and expiry.",
+      "Print on card stock or save as PDF.",
+    ],
+  },
+  "resignation-letter-generator": {
+    render: () => <ResignationLetterGenerator />,
+    explainer: (
+      <>
+        <p>Leave gracefully. Pick tone (formal, warm, or brief), set your last day, and generate a letter that preserves the relationship with your employer.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your details and last day.",
+      "Pick tone and transition offer.",
+      "Print or save as PDF.",
+    ],
+  },
+  "recommendation-letter-generator": {
+    render: () => <RecommendationLetterGenerator />,
+    explainer: (
+      <>
+        <p>Write a strong reference in minutes. Specific strengths with examples, clear endorsement, and your contact details — structured the way admissions and HR expect.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Describe your relationship and capacity.",
+      "Add 3 strengths with examples.",
+      "Print or save as PDF.",
+    ],
+  },
+  "complaint-letter-generator": {
+    render: () => <ComplaintLetterGenerator />,
+    explainer: (
+      <>
+        <p>Make your complaint hard to ignore. Formal structure, specific resolution ask, and a deadline &mdash; the tone that actually gets responses from customer service.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the company and order details.",
+      "Describe what happened and what you want.",
+      "Send certified mail or email with read-receipt.",
+    ],
+  },
+  "thank-you-letter-generator": {
+    render: () => <ThankYouLetterGenerator />,
+    explainer: (
+      <>
+        <p>A specific, sincere thank-you in minutes. Pick the occasion (interview / gift / referral / favor / general) and the tone, and the template fills in the right opening and closing.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick occasion and tone.",
+      "Describe what you're thanking for.",
+      "Print or save as PDF.",
+    ],
+  },
+  "memo-generator": {
+    render: () => <MemoGenerator />,
+    explainer: (
+      <>
+        <p>Standard MEMORANDUM format &mdash; four-line header, body paragraphs, no frills. Useful for internal comms, policy updates, and meeting notes.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill TO / FROM / DATE / SUBJECT.",
+      "Write the body.",
+      "Print or save as PDF.",
+    ],
+  },
+  "business-letter-generator": {
+    render: () => <BusinessLetterGenerator />,
+    explainer: (
+      <>
+        <p>Strict block-format letter &mdash; the safe choice for any formal external correspondence. Pick your closing, paste your body, print.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill sender and recipient blocks.",
+      "Write body and pick closing.",
+      "Print or save as PDF.",
+    ],
+  },
+  "letter-of-intent-generator": {
+    render: () => <LetterOfIntentGenerator />,
+    explainer: (
+      <>
+        <p>Declare intent clearly and professionally. Pick the LOI type (job / grad school / business / real estate) and the template prefills the right language. Non-binding &mdash; consult an attorney for binding LOIs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the LOI type.",
+      "Fill sender and recipient blocks.",
+      "Print or save as PDF.",
+    ],
+  },
+  "apology-letter-generator": {
+    render: () => <ApologyLetterGenerator />,
+    explainer: (
+      <>
+        <p>Apologize well. The template skips defensive phrasing (&ldquo;sorry if you felt&rdquo;) and models specific accountability, acknowledgment of impact, and concrete amends.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Describe what happened.",
+      "State impact and what you're changing.",
+      "Print or save as PDF.",
     ],
   },
 };
