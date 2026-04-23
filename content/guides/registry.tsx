@@ -170,6 +170,9 @@ import * as RunEfficientMeetings from "./how-to-run-efficient-meetings";
 import * as ConvertCurrencyTravel from "./how-to-convert-currency-when-traveling";
 import * as EncodeDecodeBase64 from "./how-to-encode-and-decode-base64";
 import * as TypeFaster from "./how-to-type-faster";
+import * as PayOffStudentLoans from "./how-to-pay-off-student-loans-faster";
+import * as ChooseColorPalette from "./how-to-choose-a-color-palette";
+import * as UseJwtSecurely from "./how-to-use-jwt-tokens-securely";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1654,6 +1657,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Benchmark typing speed — free typing speed test.",
       targetSlug: "typing-speed-test",
+    },
+  },
+  "how-to-pay-off-student-loans-faster": {
+    intro: PayOffStudentLoans.intro,
+    body: PayOffStudentLoans.body,
+    cta: {
+      label: "Model student loan payoff scenarios — free student loan calculator.",
+      targetSlug: "student-loan-calculator",
+    },
+  },
+  "how-to-choose-a-color-palette": {
+    intro: ChooseColorPalette.intro,
+    body: ChooseColorPalette.body,
+    cta: {
+      label: "Pick exact HEX/RGB/HSL colors — free color picker.",
+      targetSlug: "color-picker",
+    },
+  },
+  "how-to-use-jwt-tokens-securely": {
+    intro: UseJwtSecurely.intro,
+    body: UseJwtSecurely.body,
+    cta: {
+      label: "Inspect JWT claims — free JWT decoder.",
+      targetSlug: "jwt-decoder",
     },
   },
   "how-to-write-a-cron-expression": {
