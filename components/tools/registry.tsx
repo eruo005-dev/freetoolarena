@@ -465,6 +465,14 @@ const BusinessLetterGenerator = dynamic(() => import("./BusinessLetterGenerator"
 const LetterOfIntentGenerator = dynamic(() => import("./LetterOfIntentGenerator").then(m => ({ default: m.LetterOfIntentGenerator })), { loading: Skeleton });
 const ApologyLetterGenerator = dynamic(() => import("./ApologyLetterGenerator").then(m => ({ default: m.ApologyLetterGenerator })), { loading: Skeleton });
 
+// Phase 2 — legal templates with disclaimers (6)
+const NdaGenerator = dynamic(() => import("./NdaGenerator").then(m => ({ default: m.NdaGenerator })), { loading: Skeleton });
+const FreelanceContractGenerator = dynamic(() => import("./FreelanceContractGenerator").then(m => ({ default: m.FreelanceContractGenerator })), { loading: Skeleton });
+const RentalApplicationGenerator = dynamic(() => import("./RentalApplicationGenerator").then(m => ({ default: m.RentalApplicationGenerator })), { loading: Skeleton });
+const PhotoReleaseGenerator = dynamic(() => import("./PhotoReleaseGenerator").then(m => ({ default: m.PhotoReleaseGenerator })), { loading: Skeleton });
+const LiabilityWaiverGenerator = dynamic(() => import("./LiabilityWaiverGenerator").then(m => ({ default: m.LiabilityWaiverGenerator })), { loading: Skeleton });
+const PromissoryNoteGenerator = dynamic(() => import("./PromissoryNoteGenerator").then(m => ({ default: m.PromissoryNoteGenerator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -11188,6 +11196,114 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Describe what happened.",
       "State impact and what you're changing.",
       "Print or save as PDF.",
+    ],
+  },
+  "nda-generator": {
+    render: () => <NdaGenerator />,
+    explainer: (
+      <>
+        <p>One-way or mutual NDA with standard clauses &mdash; confidentiality, non-use, term, return of materials, and governing law. Fill the form, print, sign. Not legal advice &mdash; consult an attorney before relying on any contract.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick one-way or mutual.",
+      "Fill parties, purpose, and term.",
+      "Print both copies and sign.",
+    ],
+  },
+  "freelance-contract-generator": {
+    render: () => <FreelanceContractGenerator />,
+    explainer: (
+      <>
+        <p>Ship a real freelance contract instead of a handshake. Ten numbered clauses covering services, payment, IP, confidentiality, termination, and governing law. Not legal advice.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Fill client, contractor, and scope.",
+      "Pick payment structure and IP terms.",
+      "Print or save as PDF for e-sign.",
+    ],
+  },
+  "rental-application-generator": {
+    render: () => <RentalApplicationGenerator />,
+    explainer: (
+      <>
+        <p>Landlord-ready rental application with all the standard sections &mdash; applicant, residence history, employment, references, pets, and authorization. Fair-housing reminder included.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick which sections to include.",
+      "Applicant fills and signs.",
+      "Print or save as PDF for the landlord.",
+    ],
+  },
+  "photo-release-generator": {
+    render: () => <PhotoReleaseGenerator />,
+    explainer: (
+      <>
+        <p>Standard photo and video release &mdash; usage scope, territory, duration, optional credit line, and parent/guardian block for minors. Not legal advice &mdash; verify with your jurisdiction.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick photo / video / combined.",
+      "Fill subject and photographer.",
+      "Print and sign before the shoot.",
+    ],
+  },
+  "liability-waiver-generator": {
+    render: () => <LiabilityWaiverGenerator />,
+    explainer: (
+      <>
+        <p>A waiver that participants actually understand. Lists specific risks, assumption-of-risk clause, release of claims, medical authorization, and parent/guardian block for minors. Not legal advice.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "List the activity and known risks.",
+      "Fill participant and emergency contact.",
+      "Print and collect signatures at check-in.",
+    ],
+  },
+  "promissory-note-generator": {
+    render: () => <PromissoryNoteGenerator />,
+    explainer: (
+      <>
+        <p>A simple IOU done right. Principal in words and numerals, interest rate, demand / installment / lump-sum terms, optional late fee and prepayment clause. Not legal advice.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the note type and amount.",
+      "Set interest and payment terms.",
+      "Print and sign with both parties.",
     ],
   },
 };
