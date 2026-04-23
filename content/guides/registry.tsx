@@ -173,6 +173,9 @@ import * as TypeFaster from "./how-to-type-faster";
 import * as PayOffStudentLoans from "./how-to-pay-off-student-loans-faster";
 import * as ChooseColorPalette from "./how-to-choose-a-color-palette";
 import * as UseJwtSecurely from "./how-to-use-jwt-tokens-securely";
+import * as WriteSeoFriendlyUrls from "./how-to-write-seo-friendly-urls";
+import * as DesignFavicon from "./how-to-design-a-favicon";
+import * as ChooseUuidVersion from "./how-to-choose-between-uuid-versions";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1681,6 +1684,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Inspect JWT claims — free JWT decoder.",
       targetSlug: "jwt-decoder",
+    },
+  },
+  "how-to-write-seo-friendly-urls": {
+    intro: WriteSeoFriendlyUrls.intro,
+    body: WriteSeoFriendlyUrls.body,
+    cta: {
+      label: "Slugify any title instantly — free URL slug generator.",
+      targetSlug: "slug-generator",
+    },
+  },
+  "how-to-design-a-favicon": {
+    intro: DesignFavicon.intro,
+    body: DesignFavicon.body,
+    cta: {
+      label: "Generate a full favicon set — free favicon generator.",
+      targetSlug: "favicon-generator",
+    },
+  },
+  "how-to-choose-between-uuid-versions": {
+    intro: ChooseUuidVersion.intro,
+    body: ChooseUuidVersion.body,
+    cta: {
+      label: "Generate v4 or v1 UUIDs — free UUID generator.",
+      targetSlug: "uuid-generator",
     },
   },
   "how-to-write-a-cron-expression": {
