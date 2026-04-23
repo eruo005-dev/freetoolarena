@@ -161,6 +161,15 @@ import * as ShopCarLoan from "./how-to-shop-for-a-car-loan";
 import * as SendInvoice from "./how-to-send-a-professional-invoice";
 import * as CalculateVat from "./how-to-calculate-vat";
 import * as CalculateAge from "./how-to-calculate-age-between-dates";
+import * as CalculateTip from "./how-to-calculate-a-tip";
+import * as PlanRetirement from "./how-to-plan-for-retirement";
+import * as CreateStrongPassword from "./how-to-create-a-strong-password";
+import * as ConvertBetweenUnits from "./how-to-convert-between-units";
+import * as TrackPregnancy from "./how-to-track-your-pregnancy-week-by-week";
+import * as RunEfficientMeetings from "./how-to-run-efficient-meetings";
+import * as ConvertCurrencyTravel from "./how-to-convert-currency-when-traveling";
+import * as EncodeDecodeBase64 from "./how-to-encode-and-decode-base64";
+import * as TypeFaster from "./how-to-type-faster";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1573,6 +1582,78 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Compute age in years, months, and days — free age calculator.",
       targetSlug: "age-calculator",
+    },
+  },
+  "how-to-calculate-a-tip": {
+    intro: CalculateTip.intro,
+    body: CalculateTip.body,
+    cta: {
+      label: "Compute tip and split by party — free tip calculator.",
+      targetSlug: "tip-calculator",
+    },
+  },
+  "how-to-plan-for-retirement": {
+    intro: PlanRetirement.intro,
+    body: PlanRetirement.body,
+    cta: {
+      label: "Project retirement savings — free retirement calculator.",
+      targetSlug: "retirement-calculator",
+    },
+  },
+  "how-to-create-a-strong-password": {
+    intro: CreateStrongPassword.intro,
+    body: CreateStrongPassword.body,
+    cta: {
+      label: "Generate strong random passwords — free password generator.",
+      targetSlug: "password-generator",
+    },
+  },
+  "how-to-convert-between-units": {
+    intro: ConvertBetweenUnits.intro,
+    body: ConvertBetweenUnits.body,
+    cta: {
+      label: "Convert any unit instantly — free unit converter.",
+      targetSlug: "unit-converter",
+    },
+  },
+  "how-to-track-your-pregnancy-week-by-week": {
+    intro: TrackPregnancy.intro,
+    body: TrackPregnancy.body,
+    cta: {
+      label: "Find due date and gestational week — free pregnancy calculator.",
+      targetSlug: "pregnancy-calculator",
+    },
+  },
+  "how-to-run-efficient-meetings": {
+    intro: RunEfficientMeetings.intro,
+    body: RunEfficientMeetings.body,
+    cta: {
+      label: "See the real cost of any meeting — free meeting cost calculator.",
+      targetSlug: "meeting-cost-calculator",
+    },
+  },
+  "how-to-convert-currency-when-traveling": {
+    intro: ConvertCurrencyTravel.intro,
+    body: ConvertCurrencyTravel.body,
+    cta: {
+      label: "Get live cross-currency rates — free currency converter.",
+      targetSlug: "currency-converter",
+    },
+  },
+  "how-to-encode-and-decode-base64": {
+    intro: EncodeDecodeBase64.intro,
+    body: EncodeDecodeBase64.body,
+    cta: {
+      label: "Encode or decode Base64 instantly — free Base64 tool.",
+      targetSlug: "base64-encoder-decoder",
+    },
+  },
+  "how-to-type-faster": {
+    intro: TypeFaster.intro,
+    body: TypeFaster.body,
+    cta: {
+      label: "Benchmark typing speed — free typing speed test.",
+      targetSlug: "typing-speed-test",
     },
   },
   "how-to-write-a-cron-expression": {
