@@ -185,6 +185,9 @@ import * as UrlEncode from "./how-to-url-encode-correctly";
 import * as FormatSql from "./how-to-format-sql-for-readability";
 import * as TextCase from "./how-to-use-text-case-conventions";
 import * as EstimateReadingTime from "./how-to-estimate-reading-time";
+import * as BoxShadows from "./how-to-use-box-shadows-effectively";
+import * as BorderRadius from "./how-to-choose-border-radius-values";
+import * as AspectRatios from "./how-to-work-with-aspect-ratios";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1789,6 +1792,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Paste any text and see minutes to read — free reading time estimator.",
       targetSlug: "reading-time-estimator",
+    },
+  },
+  "how-to-use-box-shadows-effectively": {
+    intro: BoxShadows.intro,
+    body: BoxShadows.body,
+    cta: {
+      label: "Tune layered shadows live — free CSS box shadow generator.",
+      targetSlug: "box-shadow-generator",
+    },
+  },
+  "how-to-choose-border-radius-values": {
+    intro: BorderRadius.intro,
+    body: BorderRadius.body,
+    cta: {
+      label: "Dial in corner softness per side — free border radius generator.",
+      targetSlug: "border-radius-generator",
+    },
+  },
+  "how-to-work-with-aspect-ratios": {
+    intro: AspectRatios.intro,
+    body: AspectRatios.body,
+    cta: {
+      label: "Compute width, height, and scale — free aspect ratio calculator.",
+      targetSlug: "aspect-ratio-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
