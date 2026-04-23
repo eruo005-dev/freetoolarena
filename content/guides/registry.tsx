@@ -345,6 +345,56 @@ import * as UseGithubCopilotAgent from "./how-to-use-github-copilot-agent-mode";
 import * as CrewaiMultiAgent from "./how-to-build-a-multi-agent-system-with-crewai";
 import * as LangGraphStateful from "./how-to-build-a-stateful-agent-with-langgraph";
 import * as ConnectAgentMcp from "./how-to-connect-an-agent-to-mcp-tools";
+import * as HowToUseOllama from "./how-to-use-ollama";
+import * as HowToUseLmStudio from "./how-to-use-lm-studio";
+import * as HowToUseLlamaCpp from "./how-to-use-llama-cpp";
+import * as HowToUseJanAi from "./how-to-use-jan-ai";
+import * as HowToUseGpt4all from "./how-to-use-gpt4all";
+import * as HowToUseHermesModels from "./how-to-use-hermes-models";
+import * as HowToUseSmolagents from "./how-to-use-smolagents";
+import * as HowToUseSweAgent from "./how-to-use-swe-agent";
+import * as HowToUseOpencode from "./how-to-use-opencode";
+import * as HowToUseAider from "./how-to-use-aider";
+import * as HowToUseCline from "./how-to-use-cline";
+import * as HowToUseContinueDev from "./how-to-use-continue-dev";
+import * as HowToUseWindsurf from "./how-to-use-windsurf";
+import * as HowToUseGooseAgent from "./how-to-use-goose-agent";
+import * as HowToUseGeminiCli from "./how-to-use-gemini-cli";
+import * as HowToUseCodexCli from "./how-to-use-codex-cli";
+import * as HowToUseOpenhands from "./how-to-use-openhands";
+import * as HowToUseDevin from "./how-to-use-devin";
+import * as HowToUseReplitAgent from "./how-to-use-replit-agent";
+import * as HowToUseBoltNew from "./how-to-use-bolt-new";
+import * as HowToUseV0ByVercel from "./how-to-use-v0-by-vercel";
+import * as HowToUseLovableDev from "./how-to-use-lovable-dev";
+import * as HowToUseAutogen from "./how-to-use-autogen";
+import * as HowToUsePydanticAi from "./how-to-use-pydantic-ai";
+import * as HowToUseAgnoFramework from "./how-to-use-agno-framework";
+import * as HowToUseDspy from "./how-to-use-dspy";
+import * as HowToUseMastra from "./how-to-use-mastra";
+import * as HowToUseVercelAiSdk from "./how-to-use-vercel-ai-sdk";
+import * as HowToUseLangchain from "./how-to-use-langchain";
+import * as HowToUseLlamaindex from "./how-to-use-llamaindex";
+import * as HowToUseZedAgent from "./how-to-use-zed-agent";
+import * as HowToUseWarpAi from "./how-to-use-warp-ai";
+import * as HowToUseAmazonQDeveloper from "./how-to-use-amazon-q-developer";
+import * as HowToUseTabby from "./how-to-use-tabby";
+import * as HowToUsePhind from "./how-to-use-phind";
+import * as HowToUseMentat from "./how-to-use-mentat";
+import * as HowToUseSemanticKernel from "./how-to-use-semantic-kernel";
+import * as HowToUseLettaMemgpt from "./how-to-use-letta-memgpt";
+import * as HowToUseHaystack from "./how-to-use-haystack";
+import * as HowToUseGriptape from "./how-to-use-griptape";
+import * as HowToUseMarvinAi from "./how-to-use-marvin-ai";
+import * as HowToUseOpenWebui from "./how-to-use-open-webui";
+import * as HowToUseAnythingllm from "./how-to-use-anythingllm";
+import * as HowToUseFlowise from "./how-to-use-flowise";
+import * as HowToUseDify from "./how-to-use-dify";
+import * as HowToUseLibrechat from "./how-to-use-librechat";
+import * as HowToUseN8nAiAgent from "./how-to-use-n8n-ai-agent";
+import * as HowToUseLangfuse from "./how-to-use-langfuse";
+import * as HowToUsePromptfoo from "./how-to-use-promptfoo";
+import * as HowToUseRivetAi from "./how-to-use-rivet-ai";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -3218,6 +3268,406 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Compare models before wiring MCP tools — free AI model compare.",
       targetSlug: "ai-model-compare",
+    },
+  },
+  "how-to-use-ollama": {
+    intro: HowToUseOllama.intro,
+    body: HowToUseOllama.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "llm-context-window-calculator",
+    },
+  },
+  "how-to-use-lm-studio": {
+    intro: HowToUseLmStudio.intro,
+    body: HowToUseLmStudio.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "llm-context-window-calculator",
+    },
+  },
+  "how-to-use-llama-cpp": {
+    intro: HowToUseLlamaCpp.intro,
+    body: HowToUseLlamaCpp.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "llm-context-window-calculator",
+    },
+  },
+  "how-to-use-jan-ai": {
+    intro: HowToUseJanAi.intro,
+    body: HowToUseJanAi.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-gpt4all": {
+    intro: HowToUseGpt4all.intro,
+    body: HowToUseGpt4all.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "embedding-cost-estimator",
+    },
+  },
+  "how-to-use-hermes-models": {
+    intro: HowToUseHermesModels.intro,
+    body: HowToUseHermesModels.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-smolagents": {
+    intro: HowToUseSmolagents.intro,
+    body: HowToUseSmolagents.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-swe-agent": {
+    intro: HowToUseSweAgent.intro,
+    body: HowToUseSweAgent.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-opencode": {
+    intro: HowToUseOpencode.intro,
+    body: HowToUseOpencode.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-aider": {
+    intro: HowToUseAider.intro,
+    body: HowToUseAider.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-cline": {
+    intro: HowToUseCline.intro,
+    body: HowToUseCline.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-continue-dev": {
+    intro: HowToUseContinueDev.intro,
+    body: HowToUseContinueDev.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-windsurf": {
+    intro: HowToUseWindsurf.intro,
+    body: HowToUseWindsurf.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-goose-agent": {
+    intro: HowToUseGooseAgent.intro,
+    body: HowToUseGooseAgent.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-gemini-cli": {
+    intro: HowToUseGeminiCli.intro,
+    body: HowToUseGeminiCli.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-codex-cli": {
+    intro: HowToUseCodexCli.intro,
+    body: HowToUseCodexCli.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-openhands": {
+    intro: HowToUseOpenhands.intro,
+    body: HowToUseOpenhands.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-devin": {
+    intro: HowToUseDevin.intro,
+    body: HowToUseDevin.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-replit-agent": {
+    intro: HowToUseReplitAgent.intro,
+    body: HowToUseReplitAgent.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-bolt-new": {
+    intro: HowToUseBoltNew.intro,
+    body: HowToUseBoltNew.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-v0-by-vercel": {
+    intro: HowToUseV0ByVercel.intro,
+    body: HowToUseV0ByVercel.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-lovable-dev": {
+    intro: HowToUseLovableDev.intro,
+    body: HowToUseLovableDev.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-autogen": {
+    intro: HowToUseAutogen.intro,
+    body: HowToUseAutogen.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-pydantic-ai": {
+    intro: HowToUsePydanticAi.intro,
+    body: HowToUsePydanticAi.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "agent-json-validator",
+    },
+  },
+  "how-to-use-agno-framework": {
+    intro: HowToUseAgnoFramework.intro,
+    body: HowToUseAgnoFramework.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-dspy": {
+    intro: HowToUseDspy.intro,
+    body: HowToUseDspy.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-mastra": {
+    intro: HowToUseMastra.intro,
+    body: HowToUseMastra.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-vercel-ai-sdk": {
+    intro: HowToUseVercelAiSdk.intro,
+    body: HowToUseVercelAiSdk.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-langchain": {
+    intro: HowToUseLangchain.intro,
+    body: HowToUseLangchain.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-llamaindex": {
+    intro: HowToUseLlamaindex.intro,
+    body: HowToUseLlamaindex.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "embedding-cost-estimator",
+    },
+  },
+  "how-to-use-zed-agent": {
+    intro: HowToUseZedAgent.intro,
+    body: HowToUseZedAgent.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-warp-ai": {
+    intro: HowToUseWarpAi.intro,
+    body: HowToUseWarpAi.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-amazon-q-developer": {
+    intro: HowToUseAmazonQDeveloper.intro,
+    body: HowToUseAmazonQDeveloper.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-tabby": {
+    intro: HowToUseTabby.intro,
+    body: HowToUseTabby.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-phind": {
+    intro: HowToUsePhind.intro,
+    body: HowToUsePhind.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-mentat": {
+    intro: HowToUseMentat.intro,
+    body: HowToUseMentat.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-semantic-kernel": {
+    intro: HowToUseSemanticKernel.intro,
+    body: HowToUseSemanticKernel.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-letta-memgpt": {
+    intro: HowToUseLettaMemgpt.intro,
+    body: HowToUseLettaMemgpt.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "agent-json-validator",
+    },
+  },
+  "how-to-use-haystack": {
+    intro: HowToUseHaystack.intro,
+    body: HowToUseHaystack.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "embedding-cost-estimator",
+    },
+  },
+  "how-to-use-griptape": {
+    intro: HowToUseGriptape.intro,
+    body: HowToUseGriptape.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-marvin-ai": {
+    intro: HowToUseMarvinAi.intro,
+    body: HowToUseMarvinAi.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "agent-json-validator",
+    },
+  },
+  "how-to-use-open-webui": {
+    intro: HowToUseOpenWebui.intro,
+    body: HowToUseOpenWebui.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-anythingllm": {
+    intro: HowToUseAnythingllm.intro,
+    body: HowToUseAnythingllm.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "embedding-cost-estimator",
+    },
+  },
+  "how-to-use-flowise": {
+    intro: HowToUseFlowise.intro,
+    body: HowToUseFlowise.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-dify": {
+    intro: HowToUseDify.intro,
+    body: HowToUseDify.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-librechat": {
+    intro: HowToUseLibrechat.intro,
+    body: HowToUseLibrechat.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-n8n-ai-agent": {
+    intro: HowToUseN8nAiAgent.intro,
+    body: HowToUseN8nAiAgent.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-langfuse": {
+    intro: HowToUseLangfuse.intro,
+    body: HowToUseLangfuse.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "ai-cost-estimator",
+    },
+  },
+  "how-to-use-promptfoo": {
+    intro: HowToUsePromptfoo.intro,
+    body: HowToUsePromptfoo.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-rivet-ai": {
+    intro: HowToUseRivetAi.intro,
+    body: HowToUseRivetAi.body,
+    cta: {
+      label: "Try our companion tool — free and private.",
+      targetSlug: "system-prompt-builder",
     },
   },
 };

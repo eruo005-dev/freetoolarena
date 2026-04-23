@@ -396,6 +396,58 @@ function num(params: RenderParams | undefined, key: string): number | undefined 
   return Number.isFinite(n) ? n : undefined;
 }
 
+// Wave 12 — AI agents + utilities wave (100 new pages)
+const LlmContextWindowCalculator = dynamic(() => import("./LlmContextWindowCalculator").then(m => ({ default: m.LlmContextWindowCalculator })), { loading: Skeleton });
+const AiCostEstimator = dynamic(() => import("./AiCostEstimator").then(m => ({ default: m.AiCostEstimator })), { loading: Skeleton });
+const SystemPromptBuilder = dynamic(() => import("./SystemPromptBuilder").then(m => ({ default: m.SystemPromptBuilder })), { loading: Skeleton });
+const AgentJsonValidator = dynamic(() => import("./AgentJsonValidator").then(m => ({ default: m.AgentJsonValidator })), { loading: Skeleton });
+const AiRegexGenerator = dynamic(() => import("./AiRegexGenerator").then(m => ({ default: m.AiRegexGenerator })), { loading: Skeleton });
+const JailbreakRiskScorer = dynamic(() => import("./JailbreakRiskScorer").then(m => ({ default: m.JailbreakRiskScorer })), { loading: Skeleton });
+const AiSamplingSettingsHelper = dynamic(() => import("./AiSamplingSettingsHelper").then(m => ({ default: m.AiSamplingSettingsHelper })), { loading: Skeleton });
+const ChainOfThoughtFormatter = dynamic(() => import("./ChainOfThoughtFormatter").then(m => ({ default: m.ChainOfThoughtFormatter })), { loading: Skeleton });
+const EmbeddingCostEstimator = dynamic(() => import("./EmbeddingCostEstimator").then(m => ({ default: m.EmbeddingCostEstimator })), { loading: Skeleton });
+const AiOutputLengthEstimator = dynamic(() => import("./AiOutputLengthEstimator").then(m => ({ default: m.AiOutputLengthEstimator })), { loading: Skeleton });
+const DockerfileLintHelper = dynamic(() => import("./DockerfileLintHelper").then(m => ({ default: m.DockerfileLintHelper })), { loading: Skeleton });
+const GitCommitMessageHelper = dynamic(() => import("./GitCommitMessageHelper").then(m => ({ default: m.GitCommitMessageHelper })), { loading: Skeleton });
+const SemverBumper = dynamic(() => import("./SemverBumper").then(m => ({ default: m.SemverBumper })), { loading: Skeleton });
+const BashCommandExplainer = dynamic(() => import("./BashCommandExplainer").then(m => ({ default: m.BashCommandExplainer })), { loading: Skeleton });
+const ApiRateLimitCalculator = dynamic(() => import("./ApiRateLimitCalculator").then(m => ({ default: m.ApiRateLimitCalculator })), { loading: Skeleton });
+const JsonSchemaToTs = dynamic(() => import("./JsonSchemaToTs").then(m => ({ default: m.JsonSchemaToTs })), { loading: Skeleton });
+const OpenapiEndpointCounter = dynamic(() => import("./OpenapiEndpointCounter").then(m => ({ default: m.OpenapiEndpointCounter })), { loading: Skeleton });
+const HttpHeaderExplainer = dynamic(() => import("./HttpHeaderExplainer").then(m => ({ default: m.HttpHeaderExplainer })), { loading: Skeleton });
+const WebsocketFrameParser = dynamic(() => import("./WebsocketFrameParser").then(m => ({ default: m.WebsocketFrameParser })), { loading: Skeleton });
+const DotenvGenerator = dynamic(() => import("./DotenvGenerator").then(m => ({ default: m.DotenvGenerator })), { loading: Skeleton });
+const FreelancerTaxReserveCalculator = dynamic(() => import("./FreelancerTaxReserveCalculator").then(m => ({ default: m.FreelancerTaxReserveCalculator })), { loading: Skeleton });
+const HomeEquityLoanCalculator = dynamic(() => import("./HomeEquityLoanCalculator").then(m => ({ default: m.HomeEquityLoanCalculator })), { loading: Skeleton });
+const Employer401kMatchOptimizer = dynamic(() => import("./Employer401kMatchOptimizer").then(m => ({ default: m.Employer401kMatchOptimizer })), { loading: Skeleton });
+const RothVsTraditionalBreakeven = dynamic(() => import("./RothVsTraditionalBreakeven").then(m => ({ default: m.RothVsTraditionalBreakeven })), { loading: Skeleton });
+const AnnuityPaymentCalculator = dynamic(() => import("./AnnuityPaymentCalculator").then(m => ({ default: m.AnnuityPaymentCalculator })), { loading: Skeleton });
+const DividendReinvestmentCalculator = dynamic(() => import("./DividendReinvestmentCalculator").then(m => ({ default: m.DividendReinvestmentCalculator })), { loading: Skeleton });
+const TaxBracketVisualizer = dynamic(() => import("./TaxBracketVisualizer").then(m => ({ default: m.TaxBracketVisualizer })), { loading: Skeleton });
+const FireNumberCalculator = dynamic(() => import("./FireNumberCalculator").then(m => ({ default: m.FireNumberCalculator })), { loading: Skeleton });
+const NetSalaryToGrossCalculator = dynamic(() => import("./NetSalaryToGrossCalculator").then(m => ({ default: m.NetSalaryToGrossCalculator })), { loading: Skeleton });
+const CostOfLivingAdjuster = dynamic(() => import("./CostOfLivingAdjuster").then(m => ({ default: m.CostOfLivingAdjuster })), { loading: Skeleton });
+const OneRepMaxCalculator = dynamic(() => import("./OneRepMaxCalculator").then(m => ({ default: m.OneRepMaxCalculator })), { loading: Skeleton });
+const OvulationWindowCalculator = dynamic(() => import("./OvulationWindowCalculator").then(m => ({ default: m.OvulationWindowCalculator })), { loading: Skeleton });
+const ElectrolyteReplacementCalculator = dynamic(() => import("./ElectrolyteReplacementCalculator").then(m => ({ default: m.ElectrolyteReplacementCalculator })), { loading: Skeleton });
+const VitaminDDoseCalculator = dynamic(() => import("./VitaminDDoseCalculator").then(m => ({ default: m.VitaminDDoseCalculator })), { loading: Skeleton });
+const CaloriesPerMacroEstimator = dynamic(() => import("./CaloriesPerMacroEstimator").then(m => ({ default: m.CaloriesPerMacroEstimator })), { loading: Skeleton });
+const PaintGallonsCalculator = dynamic(() => import("./PaintGallonsCalculator").then(m => ({ default: m.PaintGallonsCalculator })), { loading: Skeleton });
+const WallpaperRollCalculator = dynamic(() => import("./WallpaperRollCalculator").then(m => ({ default: m.WallpaperRollCalculator })), { loading: Skeleton });
+const LawnFertilizerCalculator = dynamic(() => import("./LawnFertilizerCalculator").then(m => ({ default: m.LawnFertilizerCalculator })), { loading: Skeleton });
+const FurnitureFitCalculator = dynamic(() => import("./FurnitureFitCalculator").then(m => ({ default: m.FurnitureFitCalculator })), { loading: Skeleton });
+const TileCountCalculator = dynamic(() => import("./TileCountCalculator").then(m => ({ default: m.TileCountCalculator })), { loading: Skeleton });
+const EmailSubjectLineAnalyzer = dynamic(() => import("./EmailSubjectLineAnalyzer").then(m => ({ default: m.EmailSubjectLineAnalyzer })), { loading: Skeleton });
+const CallToActionAnalyzer = dynamic(() => import("./CallToActionAnalyzer").then(m => ({ default: m.CallToActionAnalyzer })), { loading: Skeleton });
+const MeetingTimeSuggester = dynamic(() => import("./MeetingTimeSuggester").then(m => ({ default: m.MeetingTimeSuggester })), { loading: Skeleton });
+const DailyAffirmationGenerator = dynamic(() => import("./DailyAffirmationGenerator").then(m => ({ default: m.DailyAffirmationGenerator })), { loading: Skeleton });
+const ReadingGradeEstimator = dynamic(() => import("./ReadingGradeEstimator").then(m => ({ default: m.ReadingGradeEstimator })), { loading: Skeleton });
+const KanbanWipCalculator = dynamic(() => import("./KanbanWipCalculator").then(m => ({ default: m.KanbanWipCalculator })), { loading: Skeleton });
+const TimeBlockPlanner = dynamic(() => import("./TimeBlockPlanner").then(m => ({ default: m.TimeBlockPlanner })), { loading: Skeleton });
+const EmailGreetingPicker = dynamic(() => import("./EmailGreetingPicker").then(m => ({ default: m.EmailGreetingPicker })), { loading: Skeleton });
+const CopyPasteDeduplicator = dynamic(() => import("./CopyPasteDeduplicator").then(m => ({ default: m.CopyPasteDeduplicator })), { loading: Skeleton });
+const TypingWpmToWordsPerHour = dynamic(() => import("./TypingWpmToWordsPerHour").then(m => ({ default: m.TypingWpmToWordsPerHour })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -9949,6 +10001,906 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Fill in the inputs or drop your file.",
       "Click the primary button to run.",
       "Copy or download the result.",
+    ],
+  },
+  "llm-context-window-calculator": {
+    render: () => <LlmContextWindowCalculator />,
+    explainer: (
+      <>
+        <p>Plan whether your prompt + expected reply fits inside a model's context window. Compares GPT-4o, Claude, Gemini, Llama, and Mistral side by side.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter input tokens.",
+      "Enter expected output tokens.",
+      "Read headroom per model.",
+    ],
+  },
+  "ai-cost-estimator": {
+    render: () => <AiCostEstimator />,
+    explainer: (
+      <>
+        <p>Plug in requests-per-day and token sizes to see your monthly LLM bill before it arrives.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Set requests per day.",
+      "Set avg input and output tokens.",
+      "Pick the model and read the monthly estimate.",
+    ],
+  },
+  "system-prompt-builder": {
+    render: () => <SystemPromptBuilder />,
+    explainer: (
+      <>
+        <p>Fill role, tone, constraints, and format — get a copy-ready system prompt that works in any API.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick role and tone.",
+      "List constraints and output format.",
+      "Copy the generated prompt.",
+    ],
+  },
+  "agent-json-validator": {
+    render: () => <AgentJsonValidator />,
+    explainer: (
+      <>
+        <p>Validate JSON emitted by agents and tool calls — with line numbers and key counts.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the JSON.",
+      "Read parse status and errors.",
+      "Copy the pretty-printed output.",
+    ],
+  },
+  "ai-regex-generator": {
+    render: () => <AiRegexGenerator />,
+    explainer: (
+      <>
+        <p>Turn plain-English descriptions into battle-tested regex, with live testing against a sample string.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Describe the match.",
+      "Pick a sample string.",
+      "Copy the regex.",
+    ],
+  },
+  "jailbreak-risk-scorer": {
+    render: () => <JailbreakRiskScorer />,
+    explainer: (
+      <>
+        <p>Heuristic score for jailbreak and prompt-injection risk — fast smoke test before sending to a model.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the input.",
+      "Read the score and flagged terms.",
+      "Harden your system prompt accordingly.",
+    ],
+  },
+  "ai-sampling-settings-helper": {
+    render: () => <AiSamplingSettingsHelper />,
+    explainer: (
+      <>
+        <p>Get recommended temperature, top_p, top_k, and penalty settings for your use case — with a short reason why.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick your use case.",
+      "Read the recommended settings.",
+      "Apply them to your API call.",
+    ],
+  },
+  "chain-of-thought-formatter": {
+    render: () => <ChainOfThoughtFormatter />,
+    explainer: (
+      <>
+        <p>Wrap a question in a Chain-of-Thought scaffold that consistently lifts reasoning quality.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the question.",
+      "Review the CoT template.",
+      "Copy into your prompt.",
+    ],
+  },
+  "embedding-cost-estimator": {
+    render: () => <EmbeddingCostEstimator />,
+    explainer: (
+      <>
+        <p>Estimate embedding cost for a corpus — compare OpenAI, Voyage, Cohere side by side.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter document count and avg tokens.",
+      "Pick embedding models.",
+      "Read total cost per provider.",
+    ],
+  },
+  "ai-output-length-estimator": {
+    render: () => <AiOutputLengthEstimator />,
+    explainer: (
+      <>
+        <p>Estimate how long an LLM response will be by task type — budget max_tokens without truncation.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the task type.",
+      "Enter input tokens.",
+      "Read the output estimate.",
+    ],
+  },
+  "dockerfile-lint-helper": {
+    render: () => <DockerfileLintHelper />,
+    explainer: (
+      <>
+        <p>Linter-grade check for Dockerfile smells before you ship an image.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the Dockerfile.",
+      "Read issue list with line numbers.",
+      "Fix and re-check.",
+    ],
+  },
+  "git-commit-message-helper": {
+    render: () => <GitCommitMessageHelper />,
+    explainer: (
+      <>
+        <p>Compose a conventional-commit message with the right tags, scopes, and breaking-change signals.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick type and scope.",
+      "Write a short subject.",
+      "Copy the formatted message.",
+    ],
+  },
+  "semver-bumper": {
+    render: () => <SemverBumper />,
+    explainer: (
+      <>
+        <p>Pick major, minor, or patch — and understand the compatibility contract behind each.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current version.",
+      "Pick the bump type.",
+      "Copy the next version.",
+    ],
+  },
+  "bash-command-explainer": {
+    render: () => <BashCommandExplainer />,
+    explainer: (
+      <>
+        <p>Decode any bash pipeline into a clear explanation with flag meanings.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the command.",
+      "Read the breakdown.",
+      "Copy the annotations.",
+    ],
+  },
+  "api-rate-limit-calculator": {
+    render: () => <ApiRateLimitCalculator />,
+    explainer: (
+      <>
+        <p>Figure out effective throughput and saturation point for any rate-limited API.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter req/sec limit.",
+      "Enter concurrency and latency.",
+      "Read effective throughput.",
+    ],
+  },
+  "json-schema-to-ts": {
+    render: () => <JsonSchemaToTs />,
+    explainer: (
+      <>
+        <p>Turn any JSON sample into a TypeScript interface — no build tools required.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste JSON.",
+      "Review the interface.",
+      "Copy into your .ts file.",
+    ],
+  },
+  "openapi-endpoint-counter": {
+    render: () => <OpenapiEndpointCounter />,
+    explainer: (
+      <>
+        <p>Get a fast inventory of any OpenAPI spec — paths, methods, and operation IDs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the spec.",
+      "Read method counts.",
+      "Scan the operation list.",
+    ],
+  },
+  "http-header-explainer": {
+    render: () => <HttpHeaderExplainer />,
+    explainer: (
+      <>
+        <p>Decode raw HTTP headers with security-relevant context for each.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste response headers.",
+      "Read explanations.",
+      "Fix risky settings.",
+    ],
+  },
+  "websocket-frame-parser": {
+    render: () => <WebsocketFrameParser />,
+    explainer: (
+      <>
+        <p>Parse WebSocket frames at the byte level — catch mask and payload bugs early.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste hex bytes.",
+      "Read parsed fields.",
+      "Verify the payload.",
+    ],
+  },
+  "dotenv-generator": {
+    render: () => <DotenvGenerator />,
+    explainer: (
+      <>
+        <p>Produce a clean .env with auto-generated secrets and duplicate warnings.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "List your vars.",
+      "Click generate secrets.",
+      "Copy the .env.",
+    ],
+  },
+  "freelancer-tax-reserve-calculator": {
+    render: () => <FreelancerTaxReserveCalculator />,
+    explainer: (
+      <>
+        <p>Reserve the right tax % of every freelance dollar — federal, SE, and state in one view.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter gross income.",
+      "Pick state and SE status.",
+      "Read monthly reserve.",
+    ],
+  },
+  "home-equity-loan-calculator": {
+    render: () => <HomeEquityLoanCalculator />,
+    explainer: (
+      <>
+        <p>See how much equity you can borrow and what it'll cost monthly.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter home value and mortgage balance.",
+      "Set LTV cap and rate.",
+      "Read payment and max draw.",
+    ],
+  },
+  "employer-401k-match-optimizer": {
+    render: () => <Employer401kMatchOptimizer />,
+    explainer: (
+      <>
+        <p>Maximize your employer match without wasting unmatched contributions.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter salary.",
+      "Enter match formula.",
+      "Read optimal contribution %.",
+    ],
+  },
+  "roth-vs-traditional-breakeven": {
+    render: () => <RothVsTraditionalBreakeven />,
+    explainer: (
+      <>
+        <p>Roth or Traditional? Compare on current and expected retirement rates side by side.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current marginal rate.",
+      "Enter expected retirement rate.",
+      "Read the winner.",
+    ],
+  },
+  "annuity-payment-calculator": {
+    render: () => <AnnuityPaymentCalculator />,
+    explainer: (
+      <>
+        <p>Standard annuity math — monthly, quarterly, or annual payments on any principal and rate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter principal and rate.",
+      "Set term and frequency.",
+      "Read the periodic payment.",
+    ],
+  },
+  "dividend-reinvestment-calculator": {
+    render: () => <DividendReinvestmentCalculator />,
+    explainer: (
+      <>
+        <p>See the long-run power of reinvested dividends with your own yield and contribution assumptions.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter starting balance.",
+      "Set yield and growth rate.",
+      "Read the ending balance.",
+    ],
+  },
+  "tax-bracket-visualizer": {
+    render: () => <TaxBracketVisualizer />,
+    explainer: (
+      <>
+        <p>Stop guessing how brackets work — see your income slot into each tier with effective and marginal rates.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter taxable income.",
+      "Pick filing status.",
+      "Read per-bracket amounts.",
+    ],
+  },
+  "fire-number-calculator": {
+    render: () => <FireNumberCalculator />,
+    explainer: (
+      <>
+        <p>Calculate your FIRE number at lean, regular, and fat levels in one view.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter annual expenses.",
+      "Set SWR.",
+      "Read all three FIRE targets.",
+    ],
+  },
+  "net-salary-to-gross-calculator": {
+    render: () => <NetSalaryToGrossCalculator />,
+    explainer: (
+      <>
+        <p>Work backwards from desired net pay to the gross salary you need to ask for.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter desired net.",
+      "Pick filing status and state.",
+      "Read required gross.",
+    ],
+  },
+  "cost-of-living-adjuster": {
+    render: () => <CostOfLivingAdjuster />,
+    explainer: (
+      <>
+        <p>See what salary you'd need in a new city to keep your current lifestyle.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current salary.",
+      "Set both COL indices.",
+      "Read equivalent salary.",
+    ],
+  },
+  "one-rep-max-calculator": {
+    render: () => <OneRepMaxCalculator />,
+    explainer: (
+      <>
+        <p>Get your 1RM across four formulas and load targets for every training % band.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight and reps.",
+      "Read 1RM per formula.",
+      "Use the % table for programming.",
+    ],
+  },
+  "ovulation-window-calculator": {
+    render: () => <OvulationWindowCalculator />,
+    explainer: (
+      <>
+        <p>Find your fertile window, ovulation day, and next period estimate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter last period date.",
+      "Set cycle length.",
+      "Read fertile window.",
+    ],
+  },
+  "electrolyte-replacement-calculator": {
+    render: () => <ElectrolyteReplacementCalculator />,
+    explainer: (
+      <>
+        <p>Dial in sodium, potassium, and water for any training length and climate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Set body weight.",
+      "Pick sweat rate and climate.",
+      "Read per-hour targets.",
+    ],
+  },
+  "vitamin-d-dose-calculator": {
+    render: () => <VitaminDDoseCalculator />,
+    explainer: (
+      <>
+        <p>Get a starting IU recommendation — always confirm with your provider.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter age and level if known.",
+      "Set sun exposure.",
+      "Read suggested IU.",
+    ],
+  },
+  "calories-per-macro-estimator": {
+    render: () => <CaloriesPerMacroEstimator />,
+    explainer: (
+      <>
+        <p>Totals and percentages for any macro split — protein flag built in.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter grams of each macro.",
+      "Read kcal and split %.",
+      "Adjust until balanced.",
+    ],
+  },
+  "paint-gallons-calculator": {
+    render: () => <PaintGallonsCalculator />,
+    explainer: (
+      <>
+        <p>Buy the right number of gallons — no second trip to the store.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter room dimensions.",
+      "Set coats and spread rate.",
+      "Read gallons needed.",
+    ],
+  },
+  "wallpaper-roll-calculator": {
+    render: () => <WallpaperRollCalculator />,
+    explainer: (
+      <>
+        <p>Rolls and waste for any room — saves you from mid-project trips to the store.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wall dimensions.",
+      "Set roll size and repeat.",
+      "Read rolls plus waste.",
+    ],
+  },
+  "lawn-fertilizer-calculator": {
+    render: () => <LawnFertilizerCalculator />,
+    explainer: (
+      <>
+        <p>Apply the right nitrogen without over- or under-feeding.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter lawn sqft.",
+      "Set N target and bag %.",
+      "Read pounds needed.",
+    ],
+  },
+  "furniture-fit-calculator": {
+    render: () => <FurnitureFitCalculator />,
+    explainer: (
+      <>
+        <p>Check furniture clearance and walkway room before you buy.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter room dimensions.",
+      "Enter piece dimensions.",
+      "Read fit and walkway.",
+    ],
+  },
+  "tile-count-calculator": {
+    render: () => <TileCountCalculator />,
+    explainer: (
+      <>
+        <p>Figure out tiles and boxes needed — with a sane waste buffer.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter area to tile.",
+      "Set tile size and waste %.",
+      "Read tiles and boxes.",
+    ],
+  },
+  "email-subject-line-analyzer": {
+    render: () => <EmailSubjectLineAnalyzer />,
+    explainer: (
+      <>
+        <p>Score subject lines on length, spam risk, and caps before you send.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the subject.",
+      "Read the score and flags.",
+      "Tweak until clean.",
+    ],
+  },
+  "call-to-action-analyzer": {
+    render: () => <CallToActionAnalyzer />,
+    explainer: (
+      <>
+        <p>Rate your CTA on length, verb strength, urgency, and clarity.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the CTA.",
+      "Read the score.",
+      "Apply the suggestions.",
+    ],
+  },
+  "meeting-time-suggester": {
+    render: () => <MeetingTimeSuggester />,
+    explainer: (
+      <>
+        <p>Find viable meeting times across three time zones in one view.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick three timezones.",
+      "Set working hours.",
+      "Read the overlap grid.",
+    ],
+  },
+  "daily-affirmation-generator": {
+    render: () => <DailyAffirmationGenerator />,
+    explainer: (
+      <>
+        <p>Four themes of affirmations — curated, local, and refreshed per tap.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a theme.",
+      "Tap generate.",
+      "Copy or save.",
+    ],
+  },
+  "reading-grade-estimator": {
+    render: () => <ReadingGradeEstimator />,
+    explainer: (
+      <>
+        <p>Get a Flesch-Kincaid grade and plain-English verdict for any passage.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the text.",
+      "Read the grade.",
+      "Edit to hit your target.",
+    ],
+  },
+  "kanban-wip-calculator": {
+    render: () => <KanbanWipCalculator />,
+    explainer: (
+      <>
+        <p>Size WIP limits correctly so work flows instead of piles up.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter team size.",
+      "Set cycle time and focus.",
+      "Read per-column caps.",
+    ],
+  },
+  "time-block-planner": {
+    render: () => <TimeBlockPlanner />,
+    explainer: (
+      <>
+        <p>Build a time-blocked day in seconds with auto-breaks and focus tally.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Set start and end.",
+      "Pick block and break size.",
+      "Fill in the table.",
+    ],
+  },
+  "email-greeting-picker": {
+    render: () => <EmailGreetingPicker />,
+    explainer: (
+      <>
+        <p>Never stare at a blank email again — get context-appropriate greetings and sign-offs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick recipient type.",
+      "Set formality.",
+      "Copy greeting and sign-off.",
+    ],
+  },
+  "copy-paste-deduplicator": {
+    render: () => <CopyPasteDeduplicator />,
+    explainer: (
+      <>
+        <p>Clean up pasted lists — dedupe with control over trim, case, and order.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste the list.",
+      "Pick the options.",
+      "Copy the clean output.",
+    ],
+  },
+  "typing-wpm-to-words-per-hour": {
+    render: () => <TypingWpmToWordsPerHour />,
+    explainer: (
+      <>
+        <p>Translate raw WPM into real-world writing output at your productivity factor.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter WPM.",
+      "Set hours per day and productivity.",
+      "Read daily and yearly output.",
     ],
   },
 };
