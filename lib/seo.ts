@@ -15,7 +15,7 @@ import { localesFor } from "./translations";
  * articles as "Last updated" and used as the OG/article modifiedTime. Bump
  * this ISO date whenever the content passes editorial review again.
  */
-export const SITE_UPDATED = "2026-04-21";
+export const SITE_UPDATED = "2026-04-23";
 /** Year content was first published (for OG article.publishedTime). */
 export const SITE_PUBLISHED = "2026-04-01";
 
@@ -308,16 +308,32 @@ export function howToJsonLd({
 /**
  * Organization-level JSON-LD injected once at the root layout so the whole
  * site claims a single publisher identity.
+ *
+ * sameAs is Google's knowledge-graph bridge — every verified social/code
+ * profile URL you list here gets connected to the brand entity. Only include
+ * profiles that (a) exist and (b) you control. Empty array is worse than
+ * omitting the field, so we only emit sameAs when there's at least one URL.
  */
+const BRAND_SOCIAL_URLS: string[] = [
+  // Add when available. Examples (delete this comment + fill in real URLs):
+  // "https://x.com/freetoolarena",
+  // "https://www.linkedin.com/company/freetoolarena",
+  // "https://github.com/freetoolarena",
+];
+
 export function organizationJsonLd(): string {
-  return JSON.stringify({
+  const org: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_TAGLINE,
     logo: `${SITE_URL}/icon.png`,
-  });
+  };
+  if (BRAND_SOCIAL_URLS.length > 0) {
+    org.sameAs = BRAND_SOCIAL_URLS;
+  }
+  return JSON.stringify(org);
 }
 
 /**

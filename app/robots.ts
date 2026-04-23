@@ -31,6 +31,5 @@ export default function robots(): MetadataRoute.Robots {
       `${SITE_URL}/sitemap-compare.xml`,
       `${SITE_URL}/sitemap-learn.xml`,
     ],
-    host: SITE_URL,
   };
 }
