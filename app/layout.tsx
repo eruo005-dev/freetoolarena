@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
+  verification: {
+    // Bing Webmaster Tools HTML meta verification. Added 2026-04-23.
+    other: { "msvalidate.01": "473218CD812C6AC7B11E77E82FEA651A" },
+  },
 };
 
 export const viewport: Viewport = {
