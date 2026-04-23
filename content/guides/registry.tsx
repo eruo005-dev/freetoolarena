@@ -209,6 +209,9 @@ import * as WorkWithToml from "./how-to-work-with-toml";
 import * as CheckForPasswordBreaches from "./how-to-check-for-password-breaches";
 import * as MeasurePasswordStrength from "./how-to-measure-password-strength";
 import * as UseCssClamp from "./how-to-use-css-clamp";
+import * as MigrateCssToTailwind from "./how-to-migrate-css-to-tailwind";
+import * as ConvertYamlToJson from "./how-to-convert-yaml-to-json";
+import * as ConvertSqlToJson from "./how-to-convert-sql-to-json";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -2005,6 +2008,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Generate a CSS clamp() expression — free CSS clamp generator.",
       targetSlug: "css-clamp-generator",
+    },
+  },
+  "how-to-migrate-css-to-tailwind": {
+    intro: MigrateCssToTailwind.intro,
+    body: MigrateCssToTailwind.body,
+    cta: {
+      label: "Convert CSS to Tailwind utility classes — free CSS to Tailwind converter.",
+      targetSlug: "css-to-tailwind",
+    },
+  },
+  "how-to-convert-yaml-to-json": {
+    intro: ConvertYamlToJson.intro,
+    body: ConvertYamlToJson.body,
+    cta: {
+      label: "Convert YAML to JSON instantly — free YAML ↔ JSON converter.",
+      targetSlug: "yaml-json-converter",
+    },
+  },
+  "how-to-convert-sql-to-json": {
+    intro: ConvertSqlToJson.intro,
+    body: ConvertSqlToJson.body,
+    cta: {
+      label: "Convert SQL rows to JSON — free SQL to JSON converter.",
+      targetSlug: "sql-to-json",
     },
   },
   "how-to-write-a-cron-expression": {
