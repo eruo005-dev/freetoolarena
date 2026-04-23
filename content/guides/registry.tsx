@@ -203,6 +203,9 @@ import * as TimeSleepCycles from "./how-to-time-sleep-cycles";
 import * as MinifyJavascript from "./how-to-minify-javascript";
 import * as CompareJson from "./how-to-compare-json";
 import * as WriteGoodAltText from "./how-to-write-good-alt-text";
+import * as WriteJsonSchemas from "./how-to-write-json-schemas";
+import * as GenerateTypescriptFromJson from "./how-to-generate-typescript-from-json";
+import * as WorkWithToml from "./how-to-work-with-toml";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1951,6 +1954,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Draft alt text for your images — free alt text helper.",
       targetSlug: "alt-text-helper",
+    },
+  },
+  "how-to-write-json-schemas": {
+    intro: WriteJsonSchemas.intro,
+    body: WriteJsonSchemas.body,
+    cta: {
+      label: "Generate a starter schema from JSON — free JSON schema generator.",
+      targetSlug: "json-schema-generator",
+    },
+  },
+  "how-to-generate-typescript-from-json": {
+    intro: GenerateTypescriptFromJson.intro,
+    body: GenerateTypescriptFromJson.body,
+    cta: {
+      label: "Convert JSON to TypeScript interfaces — free JSON to TypeScript tool.",
+      targetSlug: "json-to-typescript",
+    },
+  },
+  "how-to-work-with-toml": {
+    intro: WorkWithToml.intro,
+    body: WorkWithToml.body,
+    cta: {
+      label: "Convert TOML to JSON instantly — free TOML to JSON converter.",
+      targetSlug: "toml-to-json",
     },
   },
   "how-to-write-a-cron-expression": {
