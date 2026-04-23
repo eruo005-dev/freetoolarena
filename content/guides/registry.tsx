@@ -215,6 +215,65 @@ import * as ConvertSqlToJson from "./how-to-convert-sql-to-json";
 import * as GenerateAcronyms from "./how-to-generate-acronyms";
 import * as ConvertColorFormats from "./how-to-convert-color-formats";
 import * as ConvertBetweenSpeedUnits from "./how-to-convert-between-speed-units";
+import * as FormatMarkdownTables from "./how-to-format-markdown-tables";
+import * as ConvertHtmlToMarkdown from "./how-to-convert-html-to-markdown";
+import * as UseLoremIpsum from "./how-to-use-lorem-ipsum";
+import * as FormatHtmlDoc from "./how-to-format-html";
+import * as FormatXml from "./how-to-format-xml";
+import * as FormatYaml from "./how-to-format-yaml";
+import * as DiffTwoFiles from "./how-to-diff-two-files";
+import * as SummarizeLongText from "./how-to-summarize-long-text";
+import * as ImproveReadabilityScores from "./how-to-improve-readability-scores";
+import * as AnalyzeKeywordDensity from "./how-to-analyze-keyword-density";
+import * as WriteMetaDescriptions from "./how-to-write-meta-descriptions";
+import * as WriteTitleTags from "./how-to-write-title-tags";
+import * as PreviewSerpSnippets from "./how-to-preview-serp-snippets";
+import * as ConfigureOpenGraphTags from "./how-to-configure-open-graph-tags";
+import * as WriteRobotsTxt from "./how-to-write-robots-txt";
+import * as AddSchemaMarkup from "./how-to-add-schema-markup";
+import * as BuildAnXmlSitemap from "./how-to-build-an-xml-sitemap";
+import * as BuildUtmLinks from "./how-to-build-utm-links";
+import * as ParseUtmParameters from "./how-to-parse-utm-parameters";
+import * as ParseQueryStrings from "./how-to-parse-query-strings";
+import * as CleanTrackingUrls from "./how-to-clean-tracking-urls";
+import * as ParseUrls from "./how-to-parse-urls";
+import * as ParseUserAgents from "./how-to-parse-user-agents";
+import * as LookUpMimeTypes from "./how-to-look-up-mime-types";
+import * as UnderstandHttpStatusCodes from "./how-to-understand-http-status-codes";
+import * as GenerateSecureHashes from "./how-to-generate-secure-hashes";
+import * as UseClassicalCiphers from "./how-to-use-classical-ciphers";
+import * as EncodeTextToBinary from "./how-to-encode-text-to-binary";
+import * as ReadAndSendMorseCode from "./how-to-read-and-send-morse-code";
+import * as ReadRomanNumerals from "./how-to-read-roman-numerals";
+import * as UseBase64Encoding from "./how-to-use-base64-encoding";
+import * as CalculateRatios from "./how-to-calculate-ratios";
+import * as WorkWithFractions from "./how-to-work-with-fractions";
+import * as CalculateAverages from "./how-to-calculate-averages";
+import * as CheckPrimeNumbers from "./how-to-check-prime-numbers";
+import * as ReadCronExpressions from "./how-to-read-cron-expressions";
+import * as TestRegexPatterns from "./how-to-test-regex-patterns";
+import * as TranslateRegexToEnglish from "./how-to-translate-regex-to-english";
+import * as ConvertTemperatures from "./how-to-convert-temperatures";
+import * as ConvertLengthUnits from "./how-to-convert-length-units";
+import * as ConvertWeightUnits from "./how-to-convert-weight-units";
+import * as ConvertAreaUnits from "./how-to-convert-area-units";
+import * as ConvertVolumeUnits from "./how-to-convert-volume-units";
+import * as ConvertDataSizes from "./how-to-convert-data-sizes";
+import * as ConvertCookingMeasurements from "./how-to-convert-cooking-measurements";
+import * as WorkWithUnixTimestamps from "./how-to-work-with-unix-timestamps";
+import * as UseDiscordTimestamps from "./how-to-use-discord-timestamps";
+import * as CompressImages from "./how-to-compress-images";
+import * as CropImagesForWeb from "./how-to-crop-images-for-web";
+import * as AddImageBorders from "./how-to-add-image-borders";
+import * as CreateGifs from "./how-to-create-gifs";
+import * as ConvertVideoToGif from "./how-to-convert-video-to-gif";
+import * as TrimVideos from "./how-to-trim-videos";
+import * as RemoveAudioFromVideo from "./how-to-remove-audio-from-video";
+import * as ExtractVideoFrames from "./how-to-extract-video-frames";
+import * as TrimAudio from "./how-to-trim-audio";
+import * as ChangeAudioSpeed from "./how-to-change-audio-speed";
+import * as TranscribeSpeechToText from "./how-to-transcribe-speech-to-text";
+import * as ConvertTextToSpeech from "./how-to-convert-text-to-speech";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -2059,6 +2118,478 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert mph, km/h, knots, and m/s — free speed converter.",
       targetSlug: "speed-converter",
+    },
+  },
+  "how-to-format-markdown-tables": {
+    intro: FormatMarkdownTables.intro,
+    body: FormatMarkdownTables.body,
+    cta: {
+      label: "Build Markdown tables from your data — free Markdown table generator.",
+      targetSlug: "markdown-table-generator",
+    },
+  },
+  "how-to-convert-html-to-markdown": {
+    intro: ConvertHtmlToMarkdown.intro,
+    body: ConvertHtmlToMarkdown.body,
+    cta: {
+      label: "Convert HTML to clean Markdown — free converter.",
+      targetSlug: "html-to-markdown",
+    },
+  },
+  "how-to-use-lorem-ipsum": {
+    intro: UseLoremIpsum.intro,
+    body: UseLoremIpsum.body,
+    cta: {
+      label: "Generate placeholder text instantly — free lorem ipsum generator.",
+      targetSlug: "lorem-ipsum-generator",
+    },
+  },
+  "how-to-format-html": {
+    intro: FormatHtmlDoc.intro,
+    body: FormatHtmlDoc.body,
+    cta: {
+      label: "Pretty-print or minify HTML — free HTML formatter.",
+      targetSlug: "html-formatter",
+    },
+  },
+  "how-to-format-xml": {
+    intro: FormatXml.intro,
+    body: FormatXml.body,
+    cta: {
+      label: "Pretty-print and validate XML — free XML formatter.",
+      targetSlug: "xml-formatter",
+    },
+  },
+  "how-to-format-yaml": {
+    intro: FormatYaml.intro,
+    body: FormatYaml.body,
+    cta: {
+      label: "Format and validate YAML — free YAML formatter.",
+      targetSlug: "yaml-formatter",
+    },
+  },
+  "how-to-diff-two-files": {
+    intro: DiffTwoFiles.intro,
+    body: DiffTwoFiles.body,
+    cta: {
+      label: "Compare two files side by side — free diff checker.",
+      targetSlug: "diff-checker",
+    },
+  },
+  "how-to-summarize-long-text": {
+    intro: SummarizeLongText.intro,
+    body: SummarizeLongText.body,
+    cta: {
+      label: "Summarize long articles in seconds — free text summarizer.",
+      targetSlug: "text-summarizer",
+    },
+  },
+  "how-to-improve-readability-scores": {
+    intro: ImproveReadabilityScores.intro,
+    body: ImproveReadabilityScores.body,
+    cta: {
+      label: "Check your reading grade level — free readability score checker.",
+      targetSlug: "readability-score-checker",
+    },
+  },
+  "how-to-analyze-keyword-density": {
+    intro: AnalyzeKeywordDensity.intro,
+    body: AnalyzeKeywordDensity.body,
+    cta: {
+      label: "Count word frequency and density — free keyword density checker.",
+      targetSlug: "keyword-density-checker",
+    },
+  },
+  "how-to-write-meta-descriptions": {
+    intro: WriteMetaDescriptions.intro,
+    body: WriteMetaDescriptions.body,
+    cta: {
+      label: "Check meta description length and preview — free checker.",
+      targetSlug: "meta-description-length-checker",
+    },
+  },
+  "how-to-write-title-tags": {
+    intro: WriteTitleTags.intro,
+    body: WriteTitleTags.body,
+    cta: {
+      label: "Check title tag length in pixels — free title tag length checker.",
+      targetSlug: "title-tag-length-checker",
+    },
+  },
+  "how-to-preview-serp-snippets": {
+    intro: PreviewSerpSnippets.intro,
+    body: PreviewSerpSnippets.body,
+    cta: {
+      label: "Preview how your page shows in Google — free SERP snippet preview.",
+      targetSlug: "serp-snippet-preview",
+    },
+  },
+  "how-to-configure-open-graph-tags": {
+    intro: ConfigureOpenGraphTags.intro,
+    body: ConfigureOpenGraphTags.body,
+    cta: {
+      label: "Generate Open Graph tags — free Open Graph generator.",
+      targetSlug: "open-graph-generator",
+    },
+  },
+  "how-to-write-robots-txt": {
+    intro: WriteRobotsTxt.intro,
+    body: WriteRobotsTxt.body,
+    cta: {
+      label: "Build a valid robots.txt — free robots.txt generator.",
+      targetSlug: "robots-txt-generator",
+    },
+  },
+  "how-to-add-schema-markup": {
+    intro: AddSchemaMarkup.intro,
+    body: AddSchemaMarkup.body,
+    cta: {
+      label: "Generate JSON-LD schema markup — free schema markup generator.",
+      targetSlug: "schema-markup-generator",
+    },
+  },
+  "how-to-build-an-xml-sitemap": {
+    intro: BuildAnXmlSitemap.intro,
+    body: BuildAnXmlSitemap.body,
+    cta: {
+      label: "Generate a sitemap.xml from your URLs — free sitemap URL generator.",
+      targetSlug: "sitemap-url-generator",
+    },
+  },
+  "how-to-build-utm-links": {
+    intro: BuildUtmLinks.intro,
+    body: BuildUtmLinks.body,
+    cta: {
+      label: "Build tagged campaign URLs — free UTM builder.",
+      targetSlug: "utm-builder",
+    },
+  },
+  "how-to-parse-utm-parameters": {
+    intro: ParseUtmParameters.intro,
+    body: ParseUtmParameters.body,
+    cta: {
+      label: "Decode UTM parameters from any URL — free UTM parser.",
+      targetSlug: "utm-parser",
+    },
+  },
+  "how-to-parse-query-strings": {
+    intro: ParseQueryStrings.intro,
+    body: ParseQueryStrings.body,
+    cta: {
+      label: "Parse and decode query strings — free query string parser.",
+      targetSlug: "query-string-parser",
+    },
+  },
+  "how-to-clean-tracking-urls": {
+    intro: CleanTrackingUrls.intro,
+    body: CleanTrackingUrls.body,
+    cta: {
+      label: "Strip tracking parameters from any URL — free URL cleaner.",
+      targetSlug: "url-cleaner",
+    },
+  },
+  "how-to-parse-urls": {
+    intro: ParseUrls.intro,
+    body: ParseUrls.body,
+    cta: {
+      label: "Break down any URL into parts — free URL parser.",
+      targetSlug: "url-parser",
+    },
+  },
+  "how-to-parse-user-agents": {
+    intro: ParseUserAgents.intro,
+    body: ParseUserAgents.body,
+    cta: {
+      label: "Decode any user-agent string — free user-agent parser.",
+      targetSlug: "user-agent-parser",
+    },
+  },
+  "how-to-look-up-mime-types": {
+    intro: LookUpMimeTypes.intro,
+    body: LookUpMimeTypes.body,
+    cta: {
+      label: "Look up MIME types for any extension — free lookup.",
+      targetSlug: "mime-type-lookup",
+    },
+  },
+  "how-to-understand-http-status-codes": {
+    intro: UnderstandHttpStatusCodes.intro,
+    body: UnderstandHttpStatusCodes.body,
+    cta: {
+      label: "Look up any HTTP status code — free lookup.",
+      targetSlug: "http-status-code-lookup",
+    },
+  },
+  "how-to-generate-secure-hashes": {
+    intro: GenerateSecureHashes.intro,
+    body: GenerateSecureHashes.body,
+    cta: {
+      label: "Generate MD5, SHA-1, SHA-256, SHA-512 — free hash generator.",
+      targetSlug: "hash-generator",
+    },
+  },
+  "how-to-use-classical-ciphers": {
+    intro: UseClassicalCiphers.intro,
+    body: UseClassicalCiphers.body,
+    cta: {
+      label: "Encode and decode Caesar shifts — free Caesar cipher tool.",
+      targetSlug: "caesar-cipher",
+    },
+  },
+  "how-to-encode-text-to-binary": {
+    intro: EncodeTextToBinary.intro,
+    body: EncodeTextToBinary.body,
+    cta: {
+      label: "Convert text to binary and back — free binary text encoder.",
+      targetSlug: "binary-text-encoder",
+    },
+  },
+  "how-to-read-and-send-morse-code": {
+    intro: ReadAndSendMorseCode.intro,
+    body: ReadAndSendMorseCode.body,
+    cta: {
+      label: "Translate text to Morse code — free Morse code translator.",
+      targetSlug: "morse-code-translator",
+    },
+  },
+  "how-to-read-roman-numerals": {
+    intro: ReadRomanNumerals.intro,
+    body: ReadRomanNumerals.body,
+    cta: {
+      label: "Convert between Roman numerals and numbers — free converter.",
+      targetSlug: "roman-numeral-converter",
+    },
+  },
+  "how-to-use-base64-encoding": {
+    intro: UseBase64Encoding.intro,
+    body: UseBase64Encoding.body,
+    cta: {
+      label: "Encode and decode Base64 instantly — free encoder/decoder.",
+      targetSlug: "base64-encoder-decoder",
+    },
+  },
+  "how-to-calculate-ratios": {
+    intro: CalculateRatios.intro,
+    body: CalculateRatios.body,
+    cta: {
+      label: "Solve and simplify ratios — free ratio calculator.",
+      targetSlug: "ratio-calculator",
+    },
+  },
+  "how-to-work-with-fractions": {
+    intro: WorkWithFractions.intro,
+    body: WorkWithFractions.body,
+    cta: {
+      label: "Add, subtract, and simplify fractions — free fraction calculator.",
+      targetSlug: "fraction-calculator",
+    },
+  },
+  "how-to-calculate-averages": {
+    intro: CalculateAverages.intro,
+    body: CalculateAverages.body,
+    cta: {
+      label: "Compute mean, median, mode, and more — free average calculator.",
+      targetSlug: "average-calculator",
+    },
+  },
+  "how-to-check-prime-numbers": {
+    intro: CheckPrimeNumbers.intro,
+    body: CheckPrimeNumbers.body,
+    cta: {
+      label: "Test whether any number is prime — free prime number checker.",
+      targetSlug: "prime-number-checker",
+    },
+  },
+  "how-to-read-cron-expressions": {
+    intro: ReadCronExpressions.intro,
+    body: ReadCronExpressions.body,
+    cta: {
+      label: "Decode any cron expression in plain English — free explainer.",
+      targetSlug: "cron-expression-explainer",
+    },
+  },
+  "how-to-test-regex-patterns": {
+    intro: TestRegexPatterns.intro,
+    body: TestRegexPatterns.body,
+    cta: {
+      label: "Test regular expressions with live matches — free regex tester.",
+      targetSlug: "regex-tester",
+    },
+  },
+  "how-to-translate-regex-to-english": {
+    intro: TranslateRegexToEnglish.intro,
+    body: TranslateRegexToEnglish.body,
+    cta: {
+      label: "Translate any regex to plain English — free translator.",
+      targetSlug: "regex-to-english",
+    },
+  },
+  "how-to-convert-temperatures": {
+    intro: ConvertTemperatures.intro,
+    body: ConvertTemperatures.body,
+    cta: {
+      label: "Convert Celsius, Fahrenheit, and Kelvin — free temperature converter.",
+      targetSlug: "temperature-converter",
+    },
+  },
+  "how-to-convert-length-units": {
+    intro: ConvertLengthUnits.intro,
+    body: ConvertLengthUnits.body,
+    cta: {
+      label: "Convert meters, feet, miles, and more — free length converter.",
+      targetSlug: "length-converter",
+    },
+  },
+  "how-to-convert-weight-units": {
+    intro: ConvertWeightUnits.intro,
+    body: ConvertWeightUnits.body,
+    cta: {
+      label: "Convert kg, lb, oz, and stone — free weight converter.",
+      targetSlug: "weight-converter",
+    },
+  },
+  "how-to-convert-area-units": {
+    intro: ConvertAreaUnits.intro,
+    body: ConvertAreaUnits.body,
+    cta: {
+      label: "Convert sqft, m², acres, hectares — free area converter.",
+      targetSlug: "area-converter",
+    },
+  },
+  "how-to-convert-volume-units": {
+    intro: ConvertVolumeUnits.intro,
+    body: ConvertVolumeUnits.body,
+    cta: {
+      label: "Convert liters, gallons, cups, and more — free volume converter.",
+      targetSlug: "volume-converter",
+    },
+  },
+  "how-to-convert-data-sizes": {
+    intro: ConvertDataSizes.intro,
+    body: ConvertDataSizes.body,
+    cta: {
+      label: "Convert KB, MB, GB, TB — free data size converter.",
+      targetSlug: "data-size-converter",
+    },
+  },
+  "how-to-convert-cooking-measurements": {
+    intro: ConvertCookingMeasurements.intro,
+    body: ConvertCookingMeasurements.body,
+    cta: {
+      label: "Convert cups, tbsp, ml, grams — free cooking converter.",
+      targetSlug: "cooking-converter",
+    },
+  },
+  "how-to-work-with-unix-timestamps": {
+    intro: WorkWithUnixTimestamps.intro,
+    body: WorkWithUnixTimestamps.body,
+    cta: {
+      label: "Convert Unix timestamps to dates and back — free converter.",
+      targetSlug: "unix-timestamp-converter",
+    },
+  },
+  "how-to-use-discord-timestamps": {
+    intro: UseDiscordTimestamps.intro,
+    body: UseDiscordTimestamps.body,
+    cta: {
+      label: "Build Discord timestamp tags — free Discord timestamp tool.",
+      targetSlug: "discord-timestamp",
+    },
+  },
+  "how-to-compress-images": {
+    intro: CompressImages.intro,
+    body: CompressImages.body,
+    cta: {
+      label: "Shrink JPG, PNG, WebP file sizes — free image compressor.",
+      targetSlug: "image-compressor",
+    },
+  },
+  "how-to-crop-images-for-web": {
+    intro: CropImagesForWeb.intro,
+    body: CropImagesForWeb.body,
+    cta: {
+      label: "Crop any image to size — free image cropper.",
+      targetSlug: "image-cropper",
+    },
+  },
+  "how-to-add-image-borders": {
+    intro: AddImageBorders.intro,
+    body: AddImageBorders.body,
+    cta: {
+      label: "Add borders and frames to images — free image border adder.",
+      targetSlug: "image-border-adder",
+    },
+  },
+  "how-to-create-gifs": {
+    intro: CreateGifs.intro,
+    body: CreateGifs.body,
+    cta: {
+      label: "Turn images and clips into GIFs — free GIF maker.",
+      targetSlug: "gif-maker",
+    },
+  },
+  "how-to-convert-video-to-gif": {
+    intro: ConvertVideoToGif.intro,
+    body: ConvertVideoToGif.body,
+    cta: {
+      label: "Turn video clips into GIFs — free video-to-GIF converter.",
+      targetSlug: "video-to-gif",
+    },
+  },
+  "how-to-trim-videos": {
+    intro: TrimVideos.intro,
+    body: TrimVideos.body,
+    cta: {
+      label: "Cut clips from any video in your browser — free video trimmer.",
+      targetSlug: "video-trimmer",
+    },
+  },
+  "how-to-remove-audio-from-video": {
+    intro: RemoveAudioFromVideo.intro,
+    body: RemoveAudioFromVideo.body,
+    cta: {
+      label: "Mute any video without re-encoding — free video mute tool.",
+      targetSlug: "video-mute",
+    },
+  },
+  "how-to-extract-video-frames": {
+    intro: ExtractVideoFrames.intro,
+    body: ExtractVideoFrames.body,
+    cta: {
+      label: "Grab frames from any video as images — free frame extractor.",
+      targetSlug: "video-frame-extractor",
+    },
+  },
+  "how-to-trim-audio": {
+    intro: TrimAudio.intro,
+    body: TrimAudio.body,
+    cta: {
+      label: "Cut and trim audio clips in your browser — free audio trimmer.",
+      targetSlug: "audio-trimmer",
+    },
+  },
+  "how-to-change-audio-speed": {
+    intro: ChangeAudioSpeed.intro,
+    body: ChangeAudioSpeed.body,
+    cta: {
+      label: "Speed up or slow down audio — free audio speed changer.",
+      targetSlug: "audio-speed-changer",
+    },
+  },
+  "how-to-transcribe-speech-to-text": {
+    intro: TranscribeSpeechToText.intro,
+    body: TranscribeSpeechToText.body,
+    cta: {
+      label: "Transcribe voice to text in your browser — free speech-to-text.",
+      targetSlug: "speech-to-text",
+    },
+  },
+  "how-to-convert-text-to-speech": {
+    intro: ConvertTextToSpeech.intro,
+    body: ConvertTextToSpeech.body,
+    cta: {
+      label: "Convert text to spoken audio — free text-to-speech tool.",
+      targetSlug: "text-to-speech",
     },
   },
   "how-to-write-a-cron-expression": {
