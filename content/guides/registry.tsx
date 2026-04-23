@@ -212,6 +212,9 @@ import * as UseCssClamp from "./how-to-use-css-clamp";
 import * as MigrateCssToTailwind from "./how-to-migrate-css-to-tailwind";
 import * as ConvertYamlToJson from "./how-to-convert-yaml-to-json";
 import * as ConvertSqlToJson from "./how-to-convert-sql-to-json";
+import * as GenerateAcronyms from "./how-to-generate-acronyms";
+import * as ConvertColorFormats from "./how-to-convert-color-formats";
+import * as ConvertBetweenSpeedUnits from "./how-to-convert-between-speed-units";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -2032,6 +2035,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert SQL rows to JSON — free SQL to JSON converter.",
       targetSlug: "sql-to-json",
+    },
+  },
+  "how-to-generate-acronyms": {
+    intro: GenerateAcronyms.intro,
+    body: GenerateAcronyms.body,
+    cta: {
+      label: "Brainstorm pronounceable acronyms — free acronym generator.",
+      targetSlug: "acronym-generator",
+    },
+  },
+  "how-to-convert-color-formats": {
+    intro: ConvertColorFormats.intro,
+    body: ConvertColorFormats.body,
+    cta: {
+      label: "Convert HEX, RGB, HSL, and OKLCH — free color converter.",
+      targetSlug: "color-converter",
+    },
+  },
+  "how-to-convert-between-speed-units": {
+    intro: ConvertBetweenSpeedUnits.intro,
+    body: ConvertBetweenSpeedUnits.body,
+    cta: {
+      label: "Convert mph, km/h, knots, and m/s — free speed converter.",
+      targetSlug: "speed-converter",
     },
   },
   "how-to-write-a-cron-expression": {
