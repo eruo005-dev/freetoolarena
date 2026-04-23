@@ -188,6 +188,9 @@ import * as EstimateReadingTime from "./how-to-estimate-reading-time";
 import * as BoxShadows from "./how-to-use-box-shadows-effectively";
 import * as BorderRadius from "./how-to-choose-border-radius-values";
 import * as AspectRatios from "./how-to-work-with-aspect-ratios";
+import * as WordCount from "./how-to-hit-word-count-targets";
+import * as PlaceholderText from "./how-to-use-placeholder-text";
+import * as TypingSpeed from "./how-to-improve-your-typing-speed";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1816,6 +1819,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Compute width, height, and scale — free aspect ratio calculator.",
       targetSlug: "aspect-ratio-calculator",
+    },
+  },
+  "how-to-hit-word-count-targets": {
+    intro: WordCount.intro,
+    body: WordCount.body,
+    cta: {
+      label: "Paste text and get instant word count — free word counter.",
+      targetSlug: "word-counter",
+    },
+  },
+  "how-to-use-placeholder-text": {
+    intro: PlaceholderText.intro,
+    body: PlaceholderText.body,
+    cta: {
+      label: "Generate lorem ipsum paragraphs, sentences, words — free lorem ipsum generator.",
+      targetSlug: "lorem-ipsum-generator",
+    },
+  },
+  "how-to-improve-your-typing-speed": {
+    intro: TypingSpeed.intro,
+    body: TypingSpeed.body,
+    cta: {
+      label: "Measure your WPM and accuracy — free typing speed test.",
+      targetSlug: "typing-speed-test",
     },
   },
   "how-to-write-a-cron-expression": {
