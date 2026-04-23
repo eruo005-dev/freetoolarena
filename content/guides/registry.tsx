@@ -176,6 +176,9 @@ import * as UseJwtSecurely from "./how-to-use-jwt-tokens-securely";
 import * as WriteSeoFriendlyUrls from "./how-to-write-seo-friendly-urls";
 import * as DesignFavicon from "./how-to-design-a-favicon";
 import * as ChooseUuidVersion from "./how-to-choose-between-uuid-versions";
+import * as ResizeImages from "./how-to-resize-images-without-losing-quality";
+import * as MinifyCss from "./how-to-minify-css-for-web-performance";
+import * as ConvertNumberBases from "./how-to-convert-between-number-bases";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1708,6 +1711,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Generate v4 or v1 UUIDs — free UUID generator.",
       targetSlug: "uuid-generator",
+    },
+  },
+  "how-to-resize-images-without-losing-quality": {
+    intro: ResizeImages.intro,
+    body: ResizeImages.body,
+    cta: {
+      label: "Resize images in-browser — free image resizer.",
+      targetSlug: "image-resizer",
+    },
+  },
+  "how-to-minify-css-for-web-performance": {
+    intro: MinifyCss.intro,
+    body: MinifyCss.body,
+    cta: {
+      label: "Minify CSS instantly — free CSS minifier.",
+      targetSlug: "css-minifier",
+    },
+  },
+  "how-to-convert-between-number-bases": {
+    intro: ConvertNumberBases.intro,
+    body: ConvertNumberBases.body,
+    cta: {
+      label: "Convert binary, decimal, hex, octal — free number base converter.",
+      targetSlug: "number-base-converter",
     },
   },
   "how-to-write-a-cron-expression": {
