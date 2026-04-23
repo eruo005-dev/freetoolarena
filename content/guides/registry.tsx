@@ -206,6 +206,9 @@ import * as WriteGoodAltText from "./how-to-write-good-alt-text";
 import * as WriteJsonSchemas from "./how-to-write-json-schemas";
 import * as GenerateTypescriptFromJson from "./how-to-generate-typescript-from-json";
 import * as WorkWithToml from "./how-to-work-with-toml";
+import * as CheckForPasswordBreaches from "./how-to-check-for-password-breaches";
+import * as MeasurePasswordStrength from "./how-to-measure-password-strength";
+import * as UseCssClamp from "./how-to-use-css-clamp";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1978,6 +1981,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert TOML to JSON instantly — free TOML to JSON converter.",
       targetSlug: "toml-to-json",
+    },
+  },
+  "how-to-check-for-password-breaches": {
+    intro: CheckForPasswordBreaches.intro,
+    body: CheckForPasswordBreaches.body,
+    cta: {
+      label: "Check your password against known breaches — free password breach checker.",
+      targetSlug: "password-breach-checker",
+    },
+  },
+  "how-to-measure-password-strength": {
+    intro: MeasurePasswordStrength.intro,
+    body: MeasurePasswordStrength.body,
+    cta: {
+      label: "Measure real password strength — free password strength checker.",
+      targetSlug: "password-strength-checker",
+    },
+  },
+  "how-to-use-css-clamp": {
+    intro: UseCssClamp.intro,
+    body: UseCssClamp.body,
+    cta: {
+      label: "Generate a CSS clamp() expression — free CSS clamp generator.",
+      targetSlug: "css-clamp-generator",
     },
   },
   "how-to-write-a-cron-expression": {
