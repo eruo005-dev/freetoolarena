@@ -194,6 +194,9 @@ import * as TypingSpeed from "./how-to-improve-your-typing-speed";
 import * as ReadWriteXml from "./how-to-read-and-write-xml";
 import * as FormatHtml from "./how-to-format-html-properly";
 import * as WriteCleanMarkdown from "./how-to-write-clean-markdown";
+import * as WriteMetaTags from "./how-to-write-meta-tags";
+import * as SetUpOpenGraphTags from "./how-to-set-up-open-graph-tags";
+import * as CompareTextChanges from "./how-to-compare-text-changes";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1870,6 +1873,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Convert markdown to HTML in your browser — free converter.",
       targetSlug: "markdown-to-html",
+    },
+  },
+  "how-to-write-meta-tags": {
+    intro: WriteMetaTags.intro,
+    body: WriteMetaTags.body,
+    cta: {
+      label: "Build a complete meta tag block — free meta tag generator.",
+      targetSlug: "meta-tag-generator",
+    },
+  },
+  "how-to-set-up-open-graph-tags": {
+    intro: SetUpOpenGraphTags.intro,
+    body: SetUpOpenGraphTags.body,
+    cta: {
+      label: "Generate Open Graph meta for every page — free OG generator.",
+      targetSlug: "open-graph-generator",
+    },
+  },
+  "how-to-compare-text-changes": {
+    intro: CompareTextChanges.intro,
+    body: CompareTextChanges.body,
+    cta: {
+      label: "Compare two blocks of text side-by-side — free diff checker.",
+      targetSlug: "diff-checker",
     },
   },
   "how-to-write-a-cron-expression": {
