@@ -197,6 +197,9 @@ import * as WriteCleanMarkdown from "./how-to-write-clean-markdown";
 import * as WriteMetaTags from "./how-to-write-meta-tags";
 import * as SetUpOpenGraphTags from "./how-to-set-up-open-graph-tags";
 import * as CompareTextChanges from "./how-to-compare-text-changes";
+import * as ConvertJsonToCsv from "./how-to-convert-json-to-csv";
+import * as ChooseImageFormats from "./how-to-choose-image-formats";
+import * as TimeSleepCycles from "./how-to-time-sleep-cycles";
 import * as WriteCronExpression from "./how-to-write-a-cron-expression";
 import * as SetUpAiAgent from "./how-to-set-up-an-ai-agent";
 import * as UseChatgptAgentMode from "./how-to-use-chatgpt-agent-mode";
@@ -1897,6 +1900,30 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Compare two blocks of text side-by-side — free diff checker.",
       targetSlug: "diff-checker",
+    },
+  },
+  "how-to-convert-json-to-csv": {
+    intro: ConvertJsonToCsv.intro,
+    body: ConvertJsonToCsv.body,
+    cta: {
+      label: "Turn JSON into CSV in your browser — free converter.",
+      targetSlug: "json-to-csv",
+    },
+  },
+  "how-to-choose-image-formats": {
+    intro: ChooseImageFormats.intro,
+    body: ChooseImageFormats.body,
+    cta: {
+      label: "Convert between JPG, PNG, WebP, AVIF — free image format converter.",
+      targetSlug: "image-format-converter",
+    },
+  },
+  "how-to-time-sleep-cycles": {
+    intro: TimeSleepCycles.intro,
+    body: TimeSleepCycles.body,
+    cta: {
+      label: "Plan your wake time around sleep cycles — free sleep cycle calculator.",
+      targetSlug: "sleep-cycle-calculator",
     },
   },
   "how-to-write-a-cron-expression": {
