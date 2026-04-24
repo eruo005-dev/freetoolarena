@@ -6,6 +6,7 @@ import {
   GUIDE_CATEGORY_ORDER,
   GUIDE_CATEGORIES,
   guidesByGuideCategory,
+  CATEGORIES,
 } from "@/lib/pages";
 import { HUBS } from "@/lib/hubs";
 import { COMPARISONS } from "@/lib/comparisons";
@@ -67,6 +68,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.6,
     }));
+
+  // Tool category landing pages (/tools/category/[slug]).
+  const toolCategoryRoutes: MetadataRoute.Sitemap = (
+    Object.keys(CATEGORIES) as (keyof typeof CATEGORIES)[]
+  ).map((slug) => ({
+    url: `${SITE_URL}/tools/category/${slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
   const pageRoutes: MetadataRoute.Sitemap = getPublishedPages().map((p) => ({
     url: `${SITE_URL}${pageHref(p)}`,
@@ -131,6 +142,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...compareRoutes,
     ...learnRoutes,
     ...categoryRoutes,
+    ...toolCategoryRoutes,
     ...pageRoutes,
     ...localizedRoutes,
   ];

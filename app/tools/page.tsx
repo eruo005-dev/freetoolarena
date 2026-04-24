@@ -23,13 +23,25 @@ export const metadata: Metadata = buildStaticMetadata({
 
 const CATEGORY_ORDER: Category[] = [
   "money",
+  "automotive",
+  "home",
   "productivity",
   "converters",
   "health",
+  "parenting",
+  "pets",
+  "cooking",
   "dev",
+  "ai",
+  "gaming",
+  "media",
   "text",
+  "writing",
   "units",
   "random",
+  "coding",
+  "career",
+  "social",
 ];
 
 export default function ToolsIndexPage() {
@@ -85,9 +97,17 @@ export default function ToolsIndexPage() {
 
       {liveCategories.map((cat) => (
         <section key={cat} id={cat} className="mb-12 scroll-mt-20">
-          <h2 className="mb-1 text-xl font-semibold text-slate-900">
-            {CATEGORIES[cat].label}
-          </h2>
+          <div className="mb-1 flex items-baseline justify-between gap-4">
+            <h2 className="text-xl font-semibold text-slate-900">
+              {CATEGORIES[cat].label}
+            </h2>
+            <a
+              href={`/tools/category/${cat}`}
+              className="text-xs font-medium text-slate-500 hover:text-brand"
+            >
+              View all {CATEGORIES[cat].label.toLowerCase()} &rarr;
+            </a>
+          </div>
           <p className="mb-5 text-sm text-slate-600">
             {CATEGORIES[cat].blurb}
           </p>
