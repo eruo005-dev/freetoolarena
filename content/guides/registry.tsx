@@ -415,6 +415,24 @@ import * as HowToManageDebtStrategically from "./how-to-manage-debt-strategicall
 import * as HowToStartEsgInvesting from "./how-to-start-esg-investing";
 import * as HowToBuildAFintechApp from "./how-to-build-a-fintech-app";
 import * as HowToOptimizeFreelancerTaxes from "./how-to-optimize-freelancer-taxes";
+import * as HowToOptimizeSleepWithGear from "./how-to-optimize-sleep-with-gear";
+import * as HowToPickMentalHealthApps from "./how-to-pick-mental-health-apps";
+import * as HowToStartPlantBasedNutrition from "./how-to-start-plant-based-nutrition";
+import * as HomeWorkoutResistanceBandRoutine from "./home-workout-resistance-band-routine";
+import * as HowToPickNaturalSkincare from "./how-to-pick-natural-skincare";
+import * as FunctionalMushroomSupplementGuide from "./functional-mushroom-supplement-guide";
+import * as HowToDesignCorporateWellnessProgram from "./how-to-design-corporate-wellness-program";
+import * as HowToStartBiohackingSafely from "./how-to-start-biohacking-safely";
+import * as HowToPickYogaMindfulnessApps from "./how-to-pick-yoga-mindfulness-apps";
+import * as AddictionRecoverySupportToolsGuide from "./addiction-recovery-support-tools-guide";
+import * as HowToSwitchToReusableHouseholdProducts from "./how-to-switch-to-reusable-household-products";
+import * as HowToPickEcoFriendlyPackaging from "./how-to-pick-eco-friendly-packaging";
+import * as HowToBuildSustainableWardrobe from "./how-to-build-sustainable-wardrobe";
+import * as HowToPickEvAccessories from "./how-to-pick-ev-accessories";
+import * as HowToBuildADiySolarPowerKit from "./how-to-build-a-diy-solar-power-kit";
+import * as HowToPickZeroWasteBeauty from "./how-to-pick-zero-waste-beauty";
+import * as HowToStartUrbanFarming from "./how-to-start-urban-farming";
+import * as HowToSetUpCompostingAtHome from "./how-to-set-up-composting-at-home";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -3848,6 +3866,150 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Calculate freelancer tax reserve",
       targetSlug: "freelancer-tax-reserve-calculator",
+    },
+  },
+  "how-to-optimize-sleep-with-gear": {
+    intro: HowToOptimizeSleepWithGear.intro,
+    body: HowToOptimizeSleepWithGear.body,
+    cta: {
+      label: "Calculate your sleep cycles",
+      targetSlug: "sleep-cycle-calculator",
+    },
+  },
+  "how-to-pick-mental-health-apps": {
+    intro: HowToPickMentalHealthApps.intro,
+    body: HowToPickMentalHealthApps.body,
+    cta: {
+      label: "Try our free pomodoro timer",
+      targetSlug: "pomodoro-timer",
+    },
+  },
+  "how-to-start-plant-based-nutrition": {
+    intro: HowToStartPlantBasedNutrition.intro,
+    body: HowToStartPlantBasedNutrition.body,
+    cta: {
+      label: "Calculate vegan protein needs",
+      targetSlug: "vegan-protein-calculator",
+    },
+  },
+  "home-workout-resistance-band-routine": {
+    intro: HomeWorkoutResistanceBandRoutine.intro,
+    body: HomeWorkoutResistanceBandRoutine.body,
+    cta: {
+      label: "Plan a band workout",
+      targetSlug: "resistance-band-workout-planner",
+    },
+  },
+  "how-to-pick-natural-skincare": {
+    intro: HowToPickNaturalSkincare.intro,
+    body: HowToPickNaturalSkincare.body,
+    cta: {
+      label: "Use the calorie calculator",
+      targetSlug: "calorie-calculator",
+    },
+  },
+  "functional-mushroom-supplement-guide": {
+    intro: FunctionalMushroomSupplementGuide.intro,
+    body: FunctionalMushroomSupplementGuide.body,
+    cta: {
+      label: "Track your supplement stack",
+      targetSlug: "biohacking-supplement-tracker",
+    },
+  },
+  "how-to-design-corporate-wellness-program": {
+    intro: HowToDesignCorporateWellnessProgram.intro,
+    body: HowToDesignCorporateWellnessProgram.body,
+    cta: {
+      label: "Calculate wellness program ROI",
+      targetSlug: "corporate-wellness-roi",
+    },
+  },
+  "how-to-start-biohacking-safely": {
+    intro: HowToStartBiohackingSafely.intro,
+    body: HowToStartBiohackingSafely.body,
+    cta: {
+      label: "Track your biohacking stack",
+      targetSlug: "biohacking-supplement-tracker",
+    },
+  },
+  "how-to-pick-yoga-mindfulness-apps": {
+    intro: HowToPickYogaMindfulnessApps.intro,
+    body: HowToPickYogaMindfulnessApps.body,
+    cta: {
+      label: "Try our free pomodoro timer",
+      targetSlug: "pomodoro-timer",
+    },
+  },
+  "addiction-recovery-support-tools-guide": {
+    intro: AddictionRecoverySupportToolsGuide.intro,
+    body: AddictionRecoverySupportToolsGuide.body,
+    cta: {
+      label: "Calculate your quit savings",
+      targetSlug: "smoking-cost-calculator",
+    },
+  },
+  "how-to-switch-to-reusable-household-products": {
+    intro: HowToSwitchToReusableHouseholdProducts.intro,
+    body: HowToSwitchToReusableHouseholdProducts.body,
+    cta: {
+      label: "Calculate reusable savings",
+      targetSlug: "reusable-vs-disposable-savings",
+    },
+  },
+  "how-to-pick-eco-friendly-packaging": {
+    intro: HowToPickEcoFriendlyPackaging.intro,
+    body: HowToPickEcoFriendlyPackaging.body,
+    cta: {
+      label: "Generate a packing slip",
+      targetSlug: "packing-slip-generator",
+    },
+  },
+  "how-to-build-sustainable-wardrobe": {
+    intro: HowToBuildSustainableWardrobe.intro,
+    body: HowToBuildSustainableWardrobe.body,
+    cta: {
+      label: "Use the clothing size converter",
+      targetSlug: "clothing-size-converter",
+    },
+  },
+  "how-to-pick-ev-accessories": {
+    intro: HowToPickEvAccessories.intro,
+    body: HowToPickEvAccessories.body,
+    cta: {
+      label: "Estimate EV range",
+      targetSlug: "ev-range-estimator",
+    },
+  },
+  "how-to-build-a-diy-solar-power-kit": {
+    intro: HowToBuildADiySolarPowerKit.intro,
+    body: HowToBuildADiySolarPowerKit.body,
+    cta: {
+      label: "Calculate solar payback",
+      targetSlug: "solar-panel-payback-calculator",
+    },
+  },
+  "how-to-pick-zero-waste-beauty": {
+    intro: HowToPickZeroWasteBeauty.intro,
+    body: HowToPickZeroWasteBeauty.body,
+    cta: {
+      label: "Calculate reusable savings",
+      targetSlug: "reusable-vs-disposable-savings",
+    },
+  },
+  "how-to-start-urban-farming": {
+    intro: HowToStartUrbanFarming.intro,
+    body: HowToStartUrbanFarming.body,
+    cta: {
+      label: "Check your planting calendar",
+      targetSlug: "planting-calendar-by-zone",
+    },
+  },
+  "how-to-set-up-composting-at-home": {
+    intro: HowToSetUpCompostingAtHome.intro,
+    body: HowToSetUpCompostingAtHome.body,
+    cta: {
+      label: "Check your compost ratio",
+      targetSlug: "compost-ratio-calculator",
     },
   },
 };
