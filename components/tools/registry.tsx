@@ -635,6 +635,28 @@ const KennelBoardingCostCalculator = dynamic(() => import("./KennelBoardingCostC
 const DogWalkDistanceTracker = dynamic(() => import("./DogWalkDistanceTracker").then(m => ({ default: m.DogWalkDistanceTracker })), { loading: Skeleton });
 const PetMedicationDosageLookup = dynamic(() => import("./PetMedicationDosageLookup").then(m => ({ default: m.PetMedicationDosageLookup })), { loading: Skeleton });
 
+// Wave 6 DIY + marketing/SaaS (20 new)
+const ConcreteCubicYardsCalculator = dynamic(() => import("./ConcreteCubicYardsCalculator").then(m => ({ default: m.ConcreteCubicYardsCalculator })), { loading: Skeleton });
+const DeckBoardCountCalculator = dynamic(() => import("./DeckBoardCountCalculator").then(m => ({ default: m.DeckBoardCountCalculator })), { loading: Skeleton });
+const StairCalculator = dynamic(() => import("./StairCalculator").then(m => ({ default: m.StairCalculator })), { loading: Skeleton });
+const DrillBitSizeLookup = dynamic(() => import("./DrillBitSizeLookup").then(m => ({ default: m.DrillBitSizeLookup })), { loading: Skeleton });
+const ScrewSizeConverter = dynamic(() => import("./ScrewSizeConverter").then(m => ({ default: m.ScrewSizeConverter })), { loading: Skeleton });
+const SawBladeToothGuide = dynamic(() => import("./SawBladeToothGuide").then(m => ({ default: m.SawBladeToothGuide })), { loading: Skeleton });
+const RebarSpacingCalculator = dynamic(() => import("./RebarSpacingCalculator").then(m => ({ default: m.RebarSpacingCalculator })), { loading: Skeleton });
+const FencePostCalculator = dynamic(() => import("./FencePostCalculator").then(m => ({ default: m.FencePostCalculator })), { loading: Skeleton });
+const InsulationRValueCalculator = dynamic(() => import("./InsulationRValueCalculator").then(m => ({ default: m.InsulationRValueCalculator })), { loading: Skeleton });
+const RoofPitchCalculator = dynamic(() => import("./RoofPitchCalculator").then(m => ({ default: m.RoofPitchCalculator })), { loading: Skeleton });
+const CacLtvCalculator = dynamic(() => import("./CacLtvCalculator").then(m => ({ default: m.CacLtvCalculator })), { loading: Skeleton });
+const SaasChurnRateCalculator = dynamic(() => import("./SaasChurnRateCalculator").then(m => ({ default: m.SaasChurnRateCalculator })), { loading: Skeleton });
+const NetRevenueRetentionCalculator = dynamic(() => import("./NetRevenueRetentionCalculator").then(m => ({ default: m.NetRevenueRetentionCalculator })), { loading: Skeleton });
+const RuleOf40Calculator = dynamic(() => import("./RuleOf40Calculator").then(m => ({ default: m.RuleOf40Calculator })), { loading: Skeleton });
+const CpmCpcCpaConverter = dynamic(() => import("./CpmCpcCpaConverter").then(m => ({ default: m.CpmCpcCpaConverter })), { loading: Skeleton });
+const RoasCalculator = dynamic(() => import("./RoasCalculator").then(m => ({ default: m.RoasCalculator })), { loading: Skeleton });
+const SaasMagicNumberCalculator = dynamic(() => import("./SaasMagicNumberCalculator").then(m => ({ default: m.SaasMagicNumberCalculator })), { loading: Skeleton });
+const CacPaybackPeriod = dynamic(() => import("./CacPaybackPeriod").then(m => ({ default: m.CacPaybackPeriod })), { loading: Skeleton });
+const GrossMarginCalculator = dynamic(() => import("./GrossMarginCalculator").then(m => ({ default: m.GrossMarginCalculator })), { loading: Skeleton });
+const MrrToArrConverter = dynamic(() => import("./MrrToArrConverter").then(m => ({ default: m.MrrToArrConverter })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -14094,6 +14116,366 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter pet weight.",
       "Pick medication.",
       "Read dosage + warnings.",
+    ],
+  },
+  "concrete-cubic-yards-calculator": {
+    render: () => <ConcreteCubicYardsCalculator />,
+    explainer: (
+      <>
+        <p>Slabs, footings, columns, stairs. Cubic feet, cubic yards, bags needed, and whether bulk-delivered or bagged is cheaper for your job.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick shape + dimensions.",
+      "Read cu yd + bag count.",
+      "Compare bulk vs bagged cost.",
+    ],
+  },
+  "deck-board-count-calculator": {
+    render: () => <DeckBoardCountCalculator />,
+    explainer: (
+      <>
+        <p>Boards needed, linear feet of lumber, joist count. Pick board length that wastes least.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter deck dimensions.",
+      "Set board width + spacing.",
+      "Read board + joist count.",
+    ],
+  },
+  "stair-calculator": {
+    render: () => <StairCalculator />,
+    explainer: (
+      <>
+        <p>Total rise plus preferred riser = step count, actual riser, total run, stringer length via Pythagorean. IRC code warnings if you exceed limits.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter total rise.",
+      "Set preferred riser + run.",
+      "Read full stair spec.",
+    ],
+  },
+  "drill-bit-size-lookup": {
+    render: () => <DrillBitSizeLookup />,
+    explainer: (
+      <>
+        <p>#8 wood screw in softwood = 3/32&quot; pilot. In hardwood = 7/64&quot;. Plus anchor and tap-hole sizes, in fractional, decimal, and mm.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick application + size.",
+      "Read bit size.",
+      "Softwood vs hardwood notes.",
+    ],
+  },
+  "screw-size-converter": {
+    render: () => <ScrewSizeConverter />,
+    explainer: (
+      <>
+        <p>#8 = M4 = .164&quot;. Gauge, metric, imperial, plus thread pitches and common lengths and head types.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter gauge, metric, or diameter.",
+      "Read all three.",
+      "Check thread + head types.",
+    ],
+  },
+  "saw-blade-tooth-guide": {
+    render: () => <SawBladeToothGuide />,
+    explainer: (
+      <>
+        <p>Hardwood crosscut = 80T. Plywood = 80T high-ATB. Aluminum = non-ferrous blade. This matches blade to material and cut.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick material + cut.",
+      "Read tooth count + blade type.",
+      "Check RPM + safety.",
+    ],
+  },
+  "rebar-spacing-calculator": {
+    render: () => <RebarSpacingCalculator />,
+    explainer: (
+      <>
+        <p>Slab dimensions + rebar size + 16&quot; OC = linear feet, pieces to buy (20 ft stock), tie wire, cost. Plus 40x lap splice reminder.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter slab dimensions.",
+      "Pick rebar size + spacing.",
+      "Read pieces + tie wire.",
+    ],
+  },
+  "fence-post-calculator": {
+    render: () => <FencePostCalculator />,
+    explainer: (
+      <>
+        <p>Post count (plus gate doubles), panels, concrete bags at 1.5 per post, material cost totals. Pick panel type for realistic pricing.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter fence length + spacing.",
+      "Pick panel type + gate count.",
+      "Read posts + materials.",
+    ],
+  },
+  "insulation-r-value-calculator": {
+    render: () => <InsulationRValueCalculator />,
+    explainer: (
+      <>
+        <p>IECC-recommended R-values by zone (hot south vs very cold north) plus the thickness for fiberglass, cellulose, spray foam, rigid foam.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick climate zone + area.",
+      "Enter current R-value.",
+      "Read thickness by material.",
+    ],
+  },
+  "roof-pitch-calculator": {
+    render: () => <RoofPitchCalculator />,
+    explainer: (
+      <>
+        <p>Enter rise and run (or angle) &mdash; get X/12 notation, degrees, percent grade, and whether architectural shingles work on that pitch.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter rise and run.",
+      "Or enter angle.",
+      "Read pitch + shingle fit.",
+    ],
+  },
+  "cac-ltv-calculator": {
+    render: () => <CacLtvCalculator />,
+    explainer: (
+      <>
+        <p>LTV/CAC is the single SaaS sanity check. 3-5x is healthy, &lt;1x is losing money, &gt;5x might mean under-investing in growth.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter CAC + monthly revenue.",
+      "Set margin + lifetime.",
+      "Read LTV/CAC ratio.",
+    ],
+  },
+  "saas-churn-rate-calculator": {
+    render: () => <SaasChurnRateCalculator />,
+    explainer: (
+      <>
+        <p>Customer churn vs MRR churn vs net MRR churn &mdash; all three tell different stories. Net negative churn is the SaaS goal.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter customer + MRR deltas.",
+      "Factor in expansion.",
+      "Read 3 churn rates.",
+    ],
+  },
+  "net-revenue-retention-calculator": {
+    render: () => <NetRevenueRetentionCalculator />,
+    explainer: (
+      <>
+        <p>NRR above 100% means you grow without new customers. Top public SaaS hits 115-130%. This shows yours and the tier.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter starting cohort MRR.",
+      "Enter expansion + churn.",
+      "Read NRR %.",
+    ],
+  },
+  "rule-of-40-calculator": {
+    render: () => <RuleOf40Calculator />,
+    explainer: (
+      <>
+        <p>Growth % + margin % &mdash; does it clear 40? The single VC sanity check for SaaS health. 4-quadrant chart shows where you land.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter growth rate.",
+      "Enter margin %.",
+      "Read Rule 40 score.",
+    ],
+  },
+  "cpm-cpc-cpa-converter": {
+    render: () => <CpmCpcCpaConverter />,
+    explainer: (
+      <>
+        <p>Drop in spend + impressions + clicks + conversions &mdash; get every ad metric. Plus funnel visual and platform benchmarks.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter any two metrics.",
+      "Read all 5.",
+      "Compare to benchmarks.",
+    ],
+  },
+  "roas-calculator": {
+    render: () => <RoasCalculator />,
+    explainer: (
+      <>
+        <p>ROAS only pays if it clears break-even. 50% margin = you need 2x ROAS just to break even. Here&rsquo;s the real profit picture.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter spend + revenue + margin.",
+      "Read ROAS + break-even.",
+      "See actual profit.",
+    ],
+  },
+  "saas-magic-number-calculator": {
+    render: () => <SaasMagicNumberCalculator />,
+    explainer: (
+      <>
+        <p>The VC-favorite S&M efficiency metric. Above 1.0 you&rsquo;re under-investing; below 0.5 you&rsquo;re wasting. This gives you the number.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter new ARR this quarter.",
+      "Enter S&M spend.",
+      "Read Magic Number.",
+    ],
+  },
+  "cac-payback-period": {
+    render: () => <CacPaybackPeriod />,
+    explainer: (
+      <>
+        <p>Short payback = faster capital recycling. SMB SaaS target &lt;12 months; enterprise can support 24+. Here&rsquo;s yours.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter CAC + monthly revenue.",
+      "Enter margin %.",
+      "Read payback months.",
+    ],
+  },
+  "gross-margin-calculator": {
+    render: () => <GrossMarginCalculator />,
+    explainer: (
+      <>
+        <p>Gross margin benchmarks vary wildly by business model. SaaS 75-85%, hardware 20-40%, marketplace 15-25%. Here&rsquo;s yours in context.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter revenue + COGS.",
+      "Read margin %.",
+      "Compare to industry.",
+    ],
+  },
+  "mrr-to-arr-converter": {
+    render: () => <MrrToArrConverter />,
+    explainer: (
+      <>
+        <p>Boards think ARR. Operators think MRR. This converts fluidly: any of MRR, ARR, quarterly, or customer×plan.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick input mode.",
+      "Enter a value.",
+      "Read all forms.",
     ],
   },
 };
