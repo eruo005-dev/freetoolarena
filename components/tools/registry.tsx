@@ -507,6 +507,23 @@ const CashOnCashReturnCalculator = dynamic(() => import("./CashOnCashReturnCalcu
 const HouseFlipRoiCalculator = dynamic(() => import("./HouseFlipRoiCalculator").then(m => ({ default: m.HouseFlipRoiCalculator })), { loading: Skeleton });
 const AirbnbRevenueEstimator = dynamic(() => import("./AirbnbRevenueEstimator").then(m => ({ default: m.AirbnbRevenueEstimator })), { loading: Skeleton });
 
+// Travel wave (15 new tools)
+const FlightTimeCalculator = dynamic(() => import("./FlightTimeCalculator").then(m => ({ default: m.FlightTimeCalculator })), { loading: Skeleton });
+const JetLagRecoveryCalculator = dynamic(() => import("./JetLagRecoveryCalculator").then(m => ({ default: m.JetLagRecoveryCalculator })), { loading: Skeleton });
+const LayoverRiskChecker = dynamic(() => import("./LayoverRiskChecker").then(m => ({ default: m.LayoverRiskChecker })), { loading: Skeleton });
+const PassportExpiryChecker = dynamic(() => import("./PassportExpiryChecker").then(m => ({ default: m.PassportExpiryChecker })), { loading: Skeleton });
+const TipByCountryLookup = dynamic(() => import("./TipByCountryLookup").then(m => ({ default: m.TipByCountryLookup })), { loading: Skeleton });
+const InternationalDataCostEstimator = dynamic(() => import("./InternationalDataCostEstimator").then(m => ({ default: m.InternationalDataCostEstimator })), { loading: Skeleton });
+const FlightCarbonFootprintCalculator = dynamic(() => import("./FlightCarbonFootprintCalculator").then(m => ({ default: m.FlightCarbonFootprintCalculator })), { loading: Skeleton });
+const RoadTripPlanner = dynamic(() => import("./RoadTripPlanner").then(m => ({ default: m.RoadTripPlanner })), { loading: Skeleton });
+const TravelBudgetCalculator = dynamic(() => import("./TravelBudgetCalculator").then(m => ({ default: m.TravelBudgetCalculator })), { loading: Skeleton });
+const VacationDayOptimizer = dynamic(() => import("./VacationDayOptimizer").then(m => ({ default: m.VacationDayOptimizer })), { loading: Skeleton });
+const Schengen90180Tracker = dynamic(() => import("./Schengen90180Tracker").then(m => ({ default: m.Schengen90180Tracker })), { loading: Skeleton });
+const AirbnbCleaningFeeFairness = dynamic(() => import("./AirbnbCleaningFeeFairness").then(m => ({ default: m.AirbnbCleaningFeeFairness })), { loading: Skeleton });
+const DaylightSavingsLookup = dynamic(() => import("./DaylightSavingsLookup").then(m => ({ default: m.DaylightSavingsLookup })), { loading: Skeleton });
+const BestTimeToBookCalculator = dynamic(() => import("./BestTimeToBookCalculator").then(m => ({ default: m.BestTimeToBookCalculator })), { loading: Skeleton });
+const TravelInsuranceCostEstimator = dynamic(() => import("./TravelInsuranceCostEstimator").then(m => ({ default: m.TravelInsuranceCostEstimator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -11878,6 +11895,276 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter rate and occupancy.",
       "Set cleaning and platform fees.",
       "Read net annual income.",
+    ],
+  },
+  "flight-time-calculator": {
+    render: () => <FlightTimeCalculator />,
+    explainer: (
+      <>
+        <p>Estimate flight time between any two major airports using great-circle distance and typical cruise speed. Works offline once loaded.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick origin airport.",
+      "Pick destination airport.",
+      "Read distance and flight time.",
+    ],
+  },
+  "jet-lag-recovery-calculator": {
+    render: () => <JetLagRecoveryCalculator />,
+    explainer: (
+      <>
+        <p>How many days to fully adjust after a long flight? Formula accounts for direction (eastward is slower) and timezone shift.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick origin and destination timezones.",
+      "Pick direction.",
+      "Read recovery days + adjustment tips.",
+    ],
+  },
+  "layover-risk-checker": {
+    render: () => <LayoverRiskChecker />,
+    explainer: (
+      <>
+        <p>Safe or tight? Layover analyzer tuned for airport size, domestic vs international, and customs/terminal-change reality.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter layover duration.",
+      "Pick airport type + flags.",
+      "Read tier and risk %.",
+    ],
+  },
+  "passport-expiry-checker": {
+    render: () => <PassportExpiryChecker />,
+    explainer: (
+      <>
+        <p>Most countries enforce a 6-month validity rule &mdash; travelers get turned away at boarding. Check before booking.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter passport expiry.",
+      "Enter travel dates.",
+      "Pick destination, read pass/fail.",
+    ],
+  },
+  "tip-by-country-lookup": {
+    render: () => <TipByCountryLookup />,
+    explainer: (
+      <>
+        <p>Tipping culture varies wildly &mdash; 20% in the US, zero in Japan, service-included in France. This covers 40 countries across 4 contexts.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick destination country.",
+      "Read tipping norms.",
+      "Enter bill, read tip amount.",
+    ],
+  },
+  "international-data-cost-estimator": {
+    render: () => <InternationalDataCostEstimator />,
+    explainer: (
+      <>
+        <p>Should you pay $10/day roaming, grab an Airalo eSIM, or buy a local SIM on arrival? Quick comparison by region and usage.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick destination region + days.",
+      "Enter daily data estimate.",
+      "Read cost for each option.",
+    ],
+  },
+  "flight-carbon-footprint-calculator": {
+    render: () => <FlightCarbonFootprintCalculator />,
+    explainer: (
+      <>
+        <p>Your flight emissions, in kg CO2. Business class = 2.9x economy per seat. Multi-leg adds 15%. Reducing flights beats offsetting.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter distance and cabin class.",
+      "Read kg CO2 per passenger.",
+      "See equivalent in gasoline and trees.",
+    ],
+  },
+  "road-trip-planner": {
+    render: () => <RoadTripPlanner />,
+    explainer: (
+      <>
+        <p>From fuel cost to hotel nights to daily food &mdash; the full road-trip budget in one page. Adjust days/MPG/gas price for your reality.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter distance and MPG.",
+      "Set daily hours + per-day costs.",
+      "Read itemized + per-person totals.",
+    ],
+  },
+  "travel-budget-calculator": {
+    render: () => <TravelBudgetCalculator />,
+    explainer: (
+      <>
+        <p>Plan a trip budget that doesn&rsquo;t blow up. All four cost categories, 10% buffer, per-person + per-day split.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter flight and hotel costs.",
+      "Set daily budgets.",
+      "Add one-time costs, read total.",
+    ],
+  },
+  "vacation-day-optimizer": {
+    render: () => <VacationDayOptimizer />,
+    explainer: (
+      <>
+        <p>3 PTO days around Thanksgiving = 9 days off. Pick your country, set your PTO bank, and this ranks the best holiday clusters by efficiency.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick country + PTO days.",
+      "Read ranked holiday clusters.",
+      "Book the highest-efficiency breaks.",
+    ],
+  },
+  "schengen-90-180-tracker": {
+    render: () => <Schengen90180Tracker />,
+    explainer: (
+      <>
+        <p>Max 90 days in Schengen within any 180-day rolling window. This tracks your history and tests any planned entry.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste prior Schengen stays.",
+      "Enter planned entry.",
+      "Read pass/fail + remaining days.",
+    ],
+  },
+  "airbnb-cleaning-fee-fairness": {
+    render: () => <AirbnbCleaningFeeFairness />,
+    explainer: (
+      <>
+        <p>Cleaning fees punish short stays. See the real per-night cost after the fee amortizes &mdash; and whether this listing is fair, steep, or gouging.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter cleaning fee + nightly rate.",
+      "Enter nights.",
+      "Read tier verdict.",
+    ],
+  },
+  "daylight-savings-lookup": {
+    render: () => <DaylightSavingsLookup />,
+    explainer: (
+      <>
+        <p>DST dates vary by country. This checks 30+ cities so you know the correct UTC offset on the date of your meeting or flight.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a city.",
+      "Pick a date.",
+      "Read DST status + offset.",
+    ],
+  },
+  "best-time-to-book-calculator": {
+    render: () => <BestTimeToBookCalculator />,
+    explainer: (
+      <>
+        <p>The sweet spot depends on trip type: domestic 1-3 months out, international long-haul 3-8. Find your booking window for any trip.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick trip type.",
+      "Pick departure date.",
+      "Read tier + days until sweet spot.",
+    ],
+  },
+  "travel-insurance-cost-estimator": {
+    render: () => <TravelInsuranceCostEstimator />,
+    explainer: (
+      <>
+        <p>Is travel insurance worth it? Insurance typically runs 4-12% of trip cost depending on age and coverage. Compare CFAR, comprehensive, and basic.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter trip cost and length.",
+      "Pick age and coverage type.",
+      "Read estimated cost.",
     ],
   },
 };

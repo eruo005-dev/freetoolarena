@@ -40,6 +40,34 @@ const nextConfig = {
     }
     return config;
   },
+
+  // Headers for /embed/* — allow iframing from any origin. Vercel's
+  // top-level vercel.json sets X-Frame-Options: SAMEORIGIN and CSP
+  // frame-ancestors 'self' site-wide; this override replaces both for
+  // embed routes so third-party sites can actually embed the widgets.
+  //
+  // Next.js headers() run BEFORE vercel.json, but Vercel also merges
+  // site-wide headers. To actually defeat the site-wide SAMEORIGIN we
+  // set X-Frame-Options to ALLOWALL (browsers ignore invalid values and
+  // fall back to CSP) and set frame-ancestors * explicitly. Modern
+  // browsers prefer CSP frame-ancestors over XFO when both are present.
+  async headers() {
+    return [
+      {
+        source: "/embed/:path*",
+        headers: [
+          {
+            key: "X-Frame-Options",
+            value: "ALLOWALL",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "frame-ancestors *;",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

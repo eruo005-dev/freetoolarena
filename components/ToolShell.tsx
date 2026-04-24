@@ -7,6 +7,7 @@ import { AdSlot } from "@/components/AdSlot";
 import { ShareBar } from "@/components/ShareBar";
 import { BookmarkNudge } from "@/components/BookmarkNudge";
 import { CategoryDisclaimer } from "@/components/CategoryDisclaimer";
+import { EmbedButton } from "@/components/EmbedButton";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -104,6 +105,10 @@ export function ToolShell({
       </Prose>
 
       <CategoryDisclaimer category={page.category} className="mb-10" />
+
+      <div className="mb-10">
+        <EmbedButton slug={page.slug} title={page.h1 ?? page.title} />
+      </div>
 
       {example && (
         <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
