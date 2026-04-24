@@ -591,6 +591,28 @@ const PartyFoodQuantityCalculator = dynamic(() => import("./PartyFoodQuantityCal
 const WeddingRegistryPrioritizer = dynamic(() => import("./WeddingRegistryPrioritizer").then(m => ({ default: m.WeddingRegistryPrioritizer })), { loading: Skeleton });
 const RsvpTracker = dynamic(() => import("./RsvpTracker").then(m => ({ default: m.RsvpTracker })), { loading: Skeleton });
 
+// Wave 4 creator + shopping (20 new)
+const YoutubeRevenueEstimator = dynamic(() => import("./YoutubeRevenueEstimator").then(m => ({ default: m.YoutubeRevenueEstimator })), { loading: Skeleton });
+const TiktokCreatorFundCalculator = dynamic(() => import("./TiktokCreatorFundCalculator").then(m => ({ default: m.TiktokCreatorFundCalculator })), { loading: Skeleton });
+const InstagramEngagementRate = dynamic(() => import("./InstagramEngagementRate").then(m => ({ default: m.InstagramEngagementRate })), { loading: Skeleton });
+const TwitchSubRevenueCalculator = dynamic(() => import("./TwitchSubRevenueCalculator").then(m => ({ default: m.TwitchSubRevenueCalculator })), { loading: Skeleton });
+const OnlyfansEarningsCalculator = dynamic(() => import("./OnlyfansEarningsCalculator").then(m => ({ default: m.OnlyfansEarningsCalculator })), { loading: Skeleton });
+const SponsorshipRateEstimator = dynamic(() => import("./SponsorshipRateEstimator").then(m => ({ default: m.SponsorshipRateEstimator })), { loading: Skeleton });
+const UgcRateCalculator = dynamic(() => import("./UgcRateCalculator").then(m => ({ default: m.UgcRateCalculator })), { loading: Skeleton });
+const CreatorTaxReserve = dynamic(() => import("./CreatorTaxReserve").then(m => ({ default: m.CreatorTaxReserve })), { loading: Skeleton });
+const PodcastCpmCalculator = dynamic(() => import("./PodcastCpmCalculator").then(m => ({ default: m.PodcastCpmCalculator })), { loading: Skeleton });
+const NewsletterRevenueCalculator = dynamic(() => import("./NewsletterRevenueCalculator").then(m => ({ default: m.NewsletterRevenueCalculator })), { loading: Skeleton });
+const ClothingSizeConverter = dynamic(() => import("./ClothingSizeConverter").then(m => ({ default: m.ClothingSizeConverter })), { loading: Skeleton });
+const ShoeSizeConverter = dynamic(() => import("./ShoeSizeConverter").then(m => ({ default: m.ShoeSizeConverter })), { loading: Skeleton });
+const RingSizeConverter = dynamic(() => import("./RingSizeConverter").then(m => ({ default: m.RingSizeConverter })), { loading: Skeleton });
+const BraSizeConverter = dynamic(() => import("./BraSizeConverter").then(m => ({ default: m.BraSizeConverter })), { loading: Skeleton });
+const WatchCaseSizeGuide = dynamic(() => import("./WatchCaseSizeGuide").then(m => ({ default: m.WatchCaseSizeGuide })), { loading: Skeleton });
+const LuggageWeightChecker = dynamic(() => import("./LuggageWeightChecker").then(m => ({ default: m.LuggageWeightChecker })), { loading: Skeleton });
+const JeansWaistConverter = dynamic(() => import("./JeansWaistConverter").then(m => ({ default: m.JeansWaistConverter })), { loading: Skeleton });
+const HatSizeConverter = dynamic(() => import("./HatSizeConverter").then(m => ({ default: m.HatSizeConverter })), { loading: Skeleton });
+const GloveSizeConverter = dynamic(() => import("./GloveSizeConverter").then(m => ({ default: m.GloveSizeConverter })), { loading: Skeleton });
+const KidsClothingSizeByAge = dynamic(() => import("./KidsClothingSizeByAge").then(m => ({ default: m.KidsClothingSizeByAge })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -13330,6 +13352,366 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Paste guests with statuses.",
       "Read response rates.",
       "Export follow-up list.",
+    ],
+  },
+  "youtube-revenue-estimator": {
+    render: () => <YoutubeRevenueEstimator />,
+    explainer: (
+      <>
+        <p>Monthly view count in, monthly revenue out. 6 niches with real CPM differences &mdash; finance is 7x gaming. Plus membership and sponsorship layers.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter monthly views + niche.",
+      "Set watch time %.",
+      "Read monthly + yearly revenue.",
+    ],
+  },
+  "tiktok-creator-fund-calculator": {
+    render: () => <TiktokCreatorFundCalculator />,
+    explainer: (
+      <>
+        <p>Creator Fund pays $0.02-0.04 per 1000 views (dying). Creativity Program: $4-8 per 1000 (for qualifying videos). The truth about TikTok monetization.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter monthly views.",
+      "Set engagement rate.",
+      "Read both program earnings.",
+    ],
+  },
+  "instagram-engagement-rate": {
+    render: () => <InstagramEngagementRate />,
+    explainer: (
+      <>
+        <p>ER tells brands more than follower count. Here&rsquo;s yours vs the median for your account size. 3-6% is good; 6%+ is great.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter followers + avg post metrics.",
+      "Read ER %.",
+      "Compare to median for your size.",
+    ],
+  },
+  "twitch-sub-revenue-calculator": {
+    render: () => <TwitchSubRevenueCalculator />,
+    explainer: (
+      <>
+        <p>Subs at $4.99/$9.99/$24.99 with creator share, plus bits at $0.01 each, plus ad revenue at typical CPMs. Full monthly breakdown.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter subs by tier + bits + CCV.",
+      "Pick revenue share.",
+      "Read monthly income.",
+    ],
+  },
+  "onlyfans-earnings-calculator": {
+    render: () => <OnlyfansEarningsCalculator />,
+    explainer: (
+      <>
+        <p>Gross from subs + tips + PPV, minus the 20% platform fee. Focus on revenue-per-user, not sub count.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter subs and price.",
+      "Enter tip + PPV rates.",
+      "Read gross and net.",
+    ],
+  },
+  "sponsorship-rate-estimator": {
+    render: () => <SponsorshipRateEstimator />,
+    explainer: (
+      <>
+        <p>What should you charge for a sponsored post? Rates by platform, follower count, engagement, and niche. Plus negotiation tips.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick platform + niche.",
+      "Enter followers + ER.",
+      "Read rate range.",
+    ],
+  },
+  "ugc-rate-calculator": {
+    render: () => <UgcRateCalculator />,
+    explainer: (
+      <>
+        <p>UGC is different from influencer &mdash; you charge for content, not audience. Rates by tier and deliverable, with usage-rights uplift.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick tier + deliverable.",
+      "Set usage rights.",
+      "Read rate range.",
+    ],
+  },
+  "creator-tax-reserve": {
+    render: () => <CreatorTaxReserve />,
+    explainer: (
+      <>
+        <p>SE tax 15.3% plus federal + state. Creators get hit with IRS penalties for underpaying. This gets you the quarterly number to send in.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter gross + expenses.",
+      "Pick state + filing status.",
+      "Read total reserve %.",
+    ],
+  },
+  "podcast-cpm-calculator": {
+    render: () => <PodcastCpmCalculator />,
+    explainer: (
+      <>
+        <p>Host-read podcast ads: $20-30 CPM mid-roll. Programmatic: half that. Your monthly downloads × ads per episode × placement CPM.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter downloads + episodes.",
+      "Set ad count + placement.",
+      "Read monthly revenue.",
+    ],
+  },
+  "newsletter-revenue-calculator": {
+    render: () => <NewsletterRevenueCalculator />,
+    explainer: (
+      <>
+        <p>Ads vs paid sub vs affiliate &mdash; the math is wildly different. See projected monthly revenue by model plus a size-based recommendation.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter subs + open rate.",
+      "Pick monetization model.",
+      "Read monthly revenue.",
+    ],
+  },
+  "clothing-size-converter": {
+    render: () => <ClothingSizeConverter />,
+    explainer: (
+      <>
+        <p>US 8 = UK 12 = EU 40 = JP 13 &mdash; but only for women&rsquo;s tops. Men&rsquo;s, dresses, pants all different tables. All of them here.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick gender + category.",
+      "Enter size + country.",
+      "Read all equivalents.",
+    ],
+  },
+  "shoe-size-converter": {
+    render: () => <ShoeSizeConverter />,
+    explainer: (
+      <>
+        <p>Women&rsquo;s US 8 = UK 6 = EU 38-39 = JP 25. Men&rsquo;s, kids too. Plus foot length in cm to verify against your actual foot.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick gender + source country.",
+      "Enter size.",
+      "Read all equivalents.",
+    ],
+  },
+  "ring-size-converter": {
+    render: () => <RingSizeConverter />,
+    explainer: (
+      <>
+        <p>US 7 = UK N = EU 54 = JP 14 = 54.4mm circumference. Five systems plus a string-and-ruler home-measurement guide.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter size or circumference.",
+      "Pick source country.",
+      "Read all equivalents.",
+    ],
+  },
+  "bra-size-converter": {
+    render: () => <BraSizeConverter />,
+    explainer: (
+      <>
+        <p>Bra sizing across 4 countries + the sisterhood-size rule (same volume, different band/cup combos). With cup-letter divergence above DD.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter band + cup + country.",
+      "Read all equivalents.",
+      "Check sister sizes.",
+    ],
+  },
+  "watch-case-size-guide": {
+    render: () => <WatchCaseSizeGuide />,
+    explainer: (
+      <>
+        <p>7-inch wrist wants a 40mm watch. Plus strap width (case/2) and why lug-to-lug matters more than diameter on skinny wrists.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wrist size.",
+      "Read case size range.",
+      "See strap width + thickness.",
+    ],
+  },
+  "luggage-weight-checker": {
+    render: () => <LuggageWeightChecker />,
+    explainer: (
+      <>
+        <p>30 airlines, 4 classes, 3 trip types. Pack-within weight target built in (3 lbs buffer avoids $75-200 overweight fees). With per-airline notes.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick airline + class.",
+      "Pick trip type.",
+      "Read allowances + target.",
+    ],
+  },
+  "jeans-waist-converter": {
+    render: () => <JeansWaistConverter />,
+    explainer: (
+      <>
+        <p>Men&rsquo;s 32 = EU 48 = UK 32. Women&rsquo;s 28 = EU 40 = UK 12. Plus waist in cm and a how-to-measure-accurately guide.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick gender + country.",
+      "Enter size.",
+      "Read all equivalents.",
+    ],
+  },
+  "hat-size-converter": {
+    render: () => <HatSizeConverter />,
+    explainer: (
+      <>
+        <p>US 7 fits a 56cm head &mdash; but is that S, M, or L? This maps all four systems with the string-and-ruler measurement technique.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Measure head in cm.",
+      "Or enter a size.",
+      "Read all systems.",
+    ],
+  },
+  "glove-size-converter": {
+    render: () => <GloveSizeConverter />,
+    explainer: (
+      <>
+        <p>7&quot; palm = women&rsquo;s S. 8&quot; palm = men&rsquo;s M. With material-fit notes (leather stretches, wool fits tight, liners size up).</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Measure palm circumference.",
+      "Pick gender.",
+      "Read size + fit tips.",
+    ],
+  },
+  "kids-clothing-size-by-age": {
+    render: () => <KidsClothingSizeByAge />,
+    explainer: (
+      <>
+        <p>Kids come in all sizes. Use height first (most reliable), age second, weight for checks. From newborn 3M through Youth XL.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter age + height.",
+      "Add weight if helpful.",
+      "Read recommended size.",
     ],
   },
 };
