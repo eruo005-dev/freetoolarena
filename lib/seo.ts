@@ -12,10 +12,15 @@ import { localesFor } from "./translations";
 
 /**
  * Date the current content set was last reviewed end-to-end. Surfaced on
- * articles as "Last updated" and used as the OG/article modifiedTime. Bump
- * this ISO date whenever the content passes editorial review again.
+ * articles as "Last updated" and used as the OG/article modifiedTime.
+ *
+ * Auto-bumps every deploy because this module loads at build time and
+ * Vercel builds on every git push — so the date always reflects the most
+ * recent deploy. Override with `SITE_UPDATED` env var (ISO date) to pin
+ * to a specific review date (e.g., the last editorial audit).
  */
-export const SITE_UPDATED = "2026-04-23";
+export const SITE_UPDATED: string =
+  process.env.SITE_UPDATED ?? new Date().toISOString().slice(0, 10);
 /** Year content was first published (for OG article.publishedTime). */
 export const SITE_PUBLISHED = "2026-04-01";
 
