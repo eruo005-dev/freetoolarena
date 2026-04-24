@@ -395,6 +395,26 @@ import * as HowToUseN8nAiAgent from "./how-to-use-n8n-ai-agent";
 import * as HowToUseLangfuse from "./how-to-use-langfuse";
 import * as HowToUsePromptfoo from "./how-to-use-promptfoo";
 import * as HowToUseRivetAi from "./how-to-use-rivet-ai";
+import * as HowToUseAiInSmallBusiness from "./how-to-use-ai-in-small-business";
+import * as HowToWriteBetterAiPrompts from "./how-to-write-better-ai-prompts";
+import * as HowToRepairOrRefurbishTech from "./how-to-repair-or-refurbish-tech";
+import * as HowToChooseSmartHomeSecurity from "./how-to-choose-smart-home-security";
+import * as HowToPickAWearableHealthTracker from "./how-to-pick-a-wearable-health-tracker";
+import * as CybersecurityGuideForRemoteWorkers from "./cybersecurity-guide-for-remote-workers";
+import * as HowToStartWithVrPeripherals from "./how-to-start-with-vr-peripherals";
+import * as HowToTrackCryptoForTaxTime from "./how-to-track-crypto-for-tax-time";
+import * as HowToStartDronePhotography from "./how-to-start-drone-photography";
+import * as HowToChooseNoCodeTools from "./how-to-choose-no-code-tools";
+import * as HowToPlanCryptoInvestments from "./how-to-plan-crypto-investments";
+import * as HowToBudgetAsGenZ from "./how-to-budget-as-gen-z";
+import * as HowToPlanForFireRetirement from "./how-to-plan-for-fire-retirement";
+import * as HowToInvestInRealEstateCrowdfunding from "./how-to-invest-in-real-estate-crowdfunding";
+import * as HowToAnalyzeStocksForBeginners from "./how-to-analyze-stocks-for-beginners";
+import * as HowToEvaluateNftInvestments from "./how-to-evaluate-nft-investments";
+import * as HowToManageDebtStrategically from "./how-to-manage-debt-strategically";
+import * as HowToStartEsgInvesting from "./how-to-start-esg-investing";
+import * as HowToBuildAFintechApp from "./how-to-build-a-fintech-app";
+import * as HowToOptimizeFreelancerTaxes from "./how-to-optimize-freelancer-taxes";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -3668,6 +3688,166 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Try our companion tool — free and private.",
       targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-use-ai-in-small-business": {
+    intro: HowToUseAiInSmallBusiness.intro,
+    body: HowToUseAiInSmallBusiness.body,
+    cta: {
+      label: "Try our free AI prompt generator",
+      targetSlug: "ai-prompt-generator",
+    },
+  },
+  "how-to-write-better-ai-prompts": {
+    intro: HowToWriteBetterAiPrompts.intro,
+    body: HowToWriteBetterAiPrompts.body,
+    cta: {
+      label: "Try our free prompt improver",
+      targetSlug: "prompt-improver",
+    },
+  },
+  "how-to-repair-or-refurbish-tech": {
+    intro: HowToRepairOrRefurbishTech.intro,
+    body: HowToRepairOrRefurbishTech.body,
+    cta: {
+      label: "Use our Repair Worth It calculator",
+      targetSlug: "tech-repair-worth-it-calculator",
+    },
+  },
+  "how-to-choose-smart-home-security": {
+    intro: HowToChooseSmartHomeSecurity.intro,
+    body: HowToChooseSmartHomeSecurity.body,
+    cta: {
+      label: "Estimate smart home install cost",
+      targetSlug: "smart-home-cost-estimator",
+    },
+  },
+  "how-to-pick-a-wearable-health-tracker": {
+    intro: HowToPickAWearableHealthTracker.intro,
+    body: HowToPickAWearableHealthTracker.body,
+    cta: {
+      label: "Try our free calorie calculator",
+      targetSlug: "calorie-calculator",
+    },
+  },
+  "cybersecurity-guide-for-remote-workers": {
+    intro: CybersecurityGuideForRemoteWorkers.intro,
+    body: CybersecurityGuideForRemoteWorkers.body,
+    cta: {
+      label: "Check password strength instantly",
+      targetSlug: "password-strength-checker",
+    },
+  },
+  "how-to-start-with-vr-peripherals": {
+    intro: HowToStartWithVrPeripherals.intro,
+    body: HowToStartWithVrPeripherals.body,
+    cta: {
+      label: "Try our free AI prompt generator",
+      targetSlug: "ai-prompt-generator",
+    },
+  },
+  "how-to-track-crypto-for-tax-time": {
+    intro: HowToTrackCryptoForTaxTime.intro,
+    body: HowToTrackCryptoForTaxTime.body,
+    cta: {
+      label: "Estimate crypto capital gains",
+      targetSlug: "crypto-capital-gains-calculator",
+    },
+  },
+  "how-to-start-drone-photography": {
+    intro: HowToStartDronePhotography.intro,
+    body: HowToStartDronePhotography.body,
+    cta: {
+      label: "Try our aspect ratio calculator",
+      targetSlug: "aspect-ratio-calculator",
+    },
+  },
+  "how-to-choose-no-code-tools": {
+    intro: HowToChooseNoCodeTools.intro,
+    body: HowToChooseNoCodeTools.body,
+    cta: {
+      label: "Build a system prompt for your no-code agent",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-plan-crypto-investments": {
+    intro: HowToPlanCryptoInvestments.intro,
+    body: HowToPlanCryptoInvestments.body,
+    cta: {
+      label: "Try the crypto DCA calculator",
+      targetSlug: "crypto-dca-calculator",
+    },
+  },
+  "how-to-budget-as-gen-z": {
+    intro: HowToBudgetAsGenZ.intro,
+    body: HowToBudgetAsGenZ.body,
+    cta: {
+      label: "Use our free budget calculator",
+      targetSlug: "budget-calculator",
+    },
+  },
+  "how-to-plan-for-fire-retirement": {
+    intro: HowToPlanForFireRetirement.intro,
+    body: HowToPlanForFireRetirement.body,
+    cta: {
+      label: "Calculate your FIRE number",
+      targetSlug: "fire-number-calculator",
+    },
+  },
+  "how-to-invest-in-real-estate-crowdfunding": {
+    intro: HowToInvestInRealEstateCrowdfunding.intro,
+    body: HowToInvestInRealEstateCrowdfunding.body,
+    cta: {
+      label: "Estimate crowdfunding yield",
+      targetSlug: "real-estate-crowdfunding-yield",
+    },
+  },
+  "how-to-analyze-stocks-for-beginners": {
+    intro: HowToAnalyzeStocksForBeginners.intro,
+    body: HowToAnalyzeStocksForBeginners.body,
+    cta: {
+      label: "Check portfolio diversification",
+      targetSlug: "stock-portfolio-diversification",
+    },
+  },
+  "how-to-evaluate-nft-investments": {
+    intro: HowToEvaluateNftInvestments.intro,
+    body: HowToEvaluateNftInvestments.body,
+    cta: {
+      label: "Use the NFT ROI calculator",
+      targetSlug: "nft-roi-calculator",
+    },
+  },
+  "how-to-manage-debt-strategically": {
+    intro: HowToManageDebtStrategically.intro,
+    body: HowToManageDebtStrategically.body,
+    cta: {
+      label: "Run the debt payoff calculator",
+      targetSlug: "debt-payoff-calculator",
+    },
+  },
+  "how-to-start-esg-investing": {
+    intro: HowToStartEsgInvesting.intro,
+    body: HowToStartEsgInvesting.body,
+    cta: {
+      label: "Check portfolio diversification",
+      targetSlug: "stock-portfolio-diversification",
+    },
+  },
+  "how-to-build-a-fintech-app": {
+    intro: HowToBuildAFintechApp.intro,
+    body: HowToBuildAFintechApp.body,
+    cta: {
+      label: "Build a system prompt",
+      targetSlug: "system-prompt-builder",
+    },
+  },
+  "how-to-optimize-freelancer-taxes": {
+    intro: HowToOptimizeFreelancerTaxes.intro,
+    body: HowToOptimizeFreelancerTaxes.body,
+    cta: {
+      label: "Calculate freelancer tax reserve",
+      targetSlug: "freelancer-tax-reserve-calculator",
     },
   },
 };
