@@ -567,6 +567,30 @@ const DaycareCostCalculator = dynamic(() => import("./DaycareCostCalculator").th
 const BreastfeedingDurationTracker = dynamic(() => import("./BreastfeedingDurationTracker").then(m => ({ default: m.BreastfeedingDurationTracker })), { loading: Skeleton });
 const BabyBottleFeedingAmount = dynamic(() => import("./BabyBottleFeedingAmount").then(m => ({ default: m.BabyBottleFeedingAmount })), { loading: Skeleton });
 
+// Wave 3 education + events (22 new)
+const CitationGenerator = dynamic(() => import("./CitationGenerator").then(m => ({ default: m.CitationGenerator })), { loading: Skeleton });
+const ActToSatConverter = dynamic(() => import("./ActToSatConverter").then(m => ({ default: m.ActToSatConverter })), { loading: Skeleton });
+const CollegeGpaProjector = dynamic(() => import("./CollegeGpaProjector").then(m => ({ default: m.CollegeGpaProjector })), { loading: Skeleton });
+const SemesterGpaTargetCalculator = dynamic(() => import("./SemesterGpaTargetCalculator").then(m => ({ default: m.SemesterGpaTargetCalculator })), { loading: Skeleton });
+const StudyTimePlanner = dynamic(() => import("./StudyTimePlanner").then(m => ({ default: m.StudyTimePlanner })), { loading: Skeleton });
+const FinalExamGradeNeeded = dynamic(() => import("./FinalExamGradeNeeded").then(m => ({ default: m.FinalExamGradeNeeded })), { loading: Skeleton });
+const CefrLanguageLevelTest = dynamic(() => import("./CefrLanguageLevelTest").then(m => ({ default: m.CefrLanguageLevelTest })), { loading: Skeleton });
+const ResearchPaperReadingTime = dynamic(() => import("./ResearchPaperReadingTime").then(m => ({ default: m.ResearchPaperReadingTime })), { loading: Skeleton });
+const CollegeAffordabilityCalculator = dynamic(() => import("./CollegeAffordabilityCalculator").then(m => ({ default: m.CollegeAffordabilityCalculator })), { loading: Skeleton });
+const FafsaEfcEstimator = dynamic(() => import("./FafsaEfcEstimator").then(m => ({ default: m.FafsaEfcEstimator })), { loading: Skeleton });
+const FlashcardStudyEstimator = dynamic(() => import("./FlashcardStudyEstimator").then(m => ({ default: m.FlashcardStudyEstimator })), { loading: Skeleton });
+const TestScorePercentileLookup = dynamic(() => import("./TestScorePercentileLookup").then(m => ({ default: m.TestScorePercentileLookup })), { loading: Skeleton });
+const WeddingBudgetCalculator = dynamic(() => import("./WeddingBudgetCalculator").then(m => ({ default: m.WeddingBudgetCalculator })), { loading: Skeleton });
+const WeddingGuestListSplitter = dynamic(() => import("./WeddingGuestListSplitter").then(m => ({ default: m.WeddingGuestListSplitter })), { loading: Skeleton });
+const SeatingChartGenerator = dynamic(() => import("./SeatingChartGenerator").then(m => ({ default: m.SeatingChartGenerator })), { loading: Skeleton });
+const CakeServingsCalculator = dynamic(() => import("./CakeServingsCalculator").then(m => ({ default: m.CakeServingsCalculator })), { loading: Skeleton });
+const BarQuantityCalculator = dynamic(() => import("./BarQuantityCalculator").then(m => ({ default: m.BarQuantityCalculator })), { loading: Skeleton });
+const CateringCostEstimator = dynamic(() => import("./CateringCostEstimator").then(m => ({ default: m.CateringCostEstimator })), { loading: Skeleton });
+const SaveTheDateTiming = dynamic(() => import("./SaveTheDateTiming").then(m => ({ default: m.SaveTheDateTiming })), { loading: Skeleton });
+const PartyFoodQuantityCalculator = dynamic(() => import("./PartyFoodQuantityCalculator").then(m => ({ default: m.PartyFoodQuantityCalculator })), { loading: Skeleton });
+const WeddingRegistryPrioritizer = dynamic(() => import("./WeddingRegistryPrioritizer").then(m => ({ default: m.WeddingRegistryPrioritizer })), { loading: Skeleton });
+const RsvpTracker = dynamic(() => import("./RsvpTracker").then(m => ({ default: m.RsvpTracker })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -12910,6 +12934,402 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter baby age + weight.",
       "Read oz per day.",
       "See bottles-per-day suggestion.",
+    ],
+  },
+  "citation-generator": {
+    render: () => <CitationGenerator />,
+    explainer: (
+      <>
+        <p>Format citations in the 4 styles profs actually assign. Book, journal, website, newspaper &mdash; both in-text and full reference.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick style and source type.",
+      "Fill author/year/title.",
+      "Copy formatted citation.",
+    ],
+  },
+  "act-to-sat-converter": {
+    render: () => <ActToSatConverter />,
+    explainer: (
+      <>
+        <p>Official concordance table &mdash; ACT 30 maps to SAT 1360-1390. Percentile ranks for both tests so you know where you stand.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick source test.",
+      "Enter score.",
+      "Read equivalent score + percentile.",
+    ],
+  },
+  "college-gpa-projector": {
+    render: () => <CollegeGpaProjector />,
+    explainer: (
+      <>
+        <p>Plan the climb: current GPA, target GPA, and exactly what semester GPA you need to hit it. Graph included.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current GPA + credits.",
+      "Enter target + remaining credits.",
+      "Read required semester GPA.",
+    ],
+  },
+  "semester-gpa-target-calculator": {
+    render: () => <SemesterGpaTargetCalculator />,
+    explainer: (
+      <>
+        <p>3 classes at A, 1 at B+ gets you to 3.7? Enter your classes + credits, pick a target, see multiple valid grade combos.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add classes + credits.",
+      "Set target GPA.",
+      "Pick strategy.",
+    ],
+  },
+  "study-time-planner": {
+    render: () => <StudyTimePlanner />,
+    explainer: (
+      <>
+        <p>STEM 3-5 hrs/chapter, language 2-3, memorization 1-2. Familiarity adjusts the multiplier. Tells you daily hours and warns if you&rsquo;re cramming.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick subject type.",
+      "Enter chapters + familiarity.",
+      "Read daily study hours.",
+    ],
+  },
+  "final-exam-grade-needed": {
+    render: () => <FinalExamGradeNeeded />,
+    explainer: (
+      <>
+        <p>You&rsquo;re at 82% and want an A &mdash; what do you need on the final? Formula, tier label, and a fallback if the target is mathematically impossible.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current average.",
+      "Enter final weight + target.",
+      "Read grade needed.",
+    ],
+  },
+  "cefr-language-level-test": {
+    render: () => <CefrLanguageLevelTest />,
+    explainer: (
+      <>
+        <p>Gauge your language level on the European Framework in 10 questions. Honest self-assessment only &mdash; no algorithm can replace a real test.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Rate yourself on 10 skills.",
+      "Read CEFR level.",
+      "See next-level targets.",
+    ],
+  },
+  "research-paper-reading-time": {
+    render: () => <ResearchPaperReadingTime />,
+    explainer: (
+      <>
+        <p>Dense 40-page paper &mdash; 20 minutes or 4 hours? Depends on density and how deep you&rsquo;re reading. Estimates + the three-pass strategy.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter pages and density.",
+      "Pick reading method.",
+      "Read time estimate.",
+    ],
+  },
+  "college-affordability-calculator": {
+    render: () => <CollegeAffordabilityCalculator />,
+    explainer: (
+      <>
+        <p>Sticker price × 4 years &mdash; minus aid &mdash; equals loan debt. And that post-grad payment eats 15-45% of an entry-level salary. Run the numbers before committing.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter cost + contribution.",
+      "Enter scholarships.",
+      "Read affordability tier.",
+    ],
+  },
+  "fafsa-efc-estimator": {
+    render: () => <FafsaEfcEstimator />,
+    explainer: (
+      <>
+        <p>Rough EFC / SAI before you file the FAFSA. Simplified math &mdash; actual number comes from the official worksheet.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter parent income + assets.",
+      "Enter household info.",
+      "Read estimated EFC.",
+    ],
+  },
+  "flashcard-study-estimator": {
+    render: () => <FlashcardStudyEstimator />,
+    explainer: (
+      <>
+        <p>Retention isn&rsquo;t linear &mdash; 6 months requires 2x the reviews of 1 month. Cards, hours, and an SM-2-style review schedule from day 1 to 90.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter concepts + subject type.",
+      "Pick target retention.",
+      "Read cards + hours + schedule.",
+    ],
+  },
+  "test-score-percentile-lookup": {
+    render: () => <TestScorePercentileLookup />,
+    explainer: (
+      <>
+        <p>Scored a 1400 SAT &mdash; that&rsquo;s 94th percentile. Look up any standardized-test score and see where you stand against the distribution.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick test.",
+      "Enter your score.",
+      "Read percentile + tier.",
+    ],
+  },
+  "wedding-budget-calculator": {
+    render: () => <WeddingBudgetCalculator />,
+    explainer: (
+      <>
+        <p>Wedding costs break down predictably. Enter guest count and region, get a full 11-category budget with per-guest spend.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter guests or budget.",
+      "Pick region.",
+      "Read full breakdown.",
+    ],
+  },
+  "wedding-guest-list-splitter": {
+    render: () => <WeddingGuestListSplitter />,
+    explainer: (
+      <>
+        <p>Two (or three) families, one guest list. Split evenly, by who pays what, or by custom percentage &mdash; plus a must-haves-first worksheet.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter total guests + families.",
+      "Pick split method.",
+      "Read per-family slots.",
+    ],
+  },
+  "seating-chart-generator": {
+    render: () => <SeatingChartGenerator />,
+    explainer: (
+      <>
+        <p>Paste a list of guests (tagged into groups), pick tables and seats. The tool keeps groups together and flags overflow.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste guests by line.",
+      "Set tables and seats.",
+      "Copy printable chart.",
+    ],
+  },
+  "cake-servings-calculator": {
+    render: () => <CakeServingsCalculator />,
+    explainer: (
+      <>
+        <p>Wilton&rsquo;s wedding slice (1x2&quot;) vs a party slice (1.5x2&quot;) &mdash; different servings per tier. Round or square, single or stacked, full chart.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter guest count.",
+      "Pick slice size + shape.",
+      "Read recommended tiers.",
+    ],
+  },
+  "bar-quantity-calculator": {
+    render: () => <BarQuantityCalculator />,
+    explainer: (
+      <>
+        <p>Don&rsquo;t run dry. 1 drink per guest per hour, tuned for your crowd&rsquo;s drinking style, split across beer/wine/spirits.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter guests + hours.",
+      "Set drinker type + splits.",
+      "Read bottles needed.",
+    ],
+  },
+  "catering-cost-estimator": {
+    render: () => <CateringCostEstimator />,
+    explainer: (
+      <>
+        <p>Buffet vs plated vs family-style: huge price differences. Full cost breakdown including 20% service fee and 1 bartender per 75 guests.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick style + cuisine tier.",
+      "Enter guests + bar needs.",
+      "Read full cost.",
+    ],
+  },
+  "save-the-date-timing": {
+    render: () => <SaveTheDateTiming />,
+    explainer: (
+      <>
+        <p>6 milestones on a wedding timeline with days-until countdown. Different schedule for destination and holiday weddings.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wedding date and type.",
+      "Read milestone dates.",
+      "Print the checklist.",
+    ],
+  },
+  "party-food-quantity-calculator": {
+    render: () => <PartyFoodQuantityCalculator />,
+    explainer: (
+      <>
+        <p>6 oz protein + 4 oz per side + 8 bites if apps. Per-person quantities for 4 party types, total shopping list, cost estimate at typical grocery prices.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter guests + hours.",
+      "Pick meal type.",
+      "Read quantities + cost.",
+    ],
+  },
+  "wedding-registry-prioritizer": {
+    render: () => <WeddingRegistryPrioritizer />,
+    explainer: (
+      <>
+        <p>Half your guests don&rsquo;t use the registry. The other half want 5 price tiers to pick from. This builds that structure.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter goal + guest count.",
+      "Read tier suggestions.",
+      "Allocate across categories.",
+    ],
+  },
+  "rsvp-tracker": {
+    render: () => <RsvpTracker />,
+    explainer: (
+      <>
+        <p>Paste your guest list with status tags, get completion stats, projected final attendance, and meal tallies. Tracks pending follow-ups.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste guests with statuses.",
+      "Read response rates.",
+      "Export follow-up list.",
     ],
   },
 };
