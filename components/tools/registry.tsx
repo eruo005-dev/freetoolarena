@@ -495,6 +495,18 @@ const DndEncounterDifficulty = dynamic(() => import("./DndEncounterDifficulty").
 const MtgManaCurveAnalyzer = dynamic(() => import("./MtgManaCurveAnalyzer").then(m => ({ default: m.MtgManaCurveAnalyzer })), { loading: Skeleton });
 const SteamLibraryValue = dynamic(() => import("./SteamLibraryValue").then(m => ({ default: m.SteamLibraryValue })), { loading: Skeleton });
 
+// Real estate wave (10 new tools)
+const ClosingCostEstimator = dynamic(() => import("./ClosingCostEstimator").then(m => ({ default: m.ClosingCostEstimator })), { loading: Skeleton });
+const PmiCalculator = dynamic(() => import("./PmiCalculator").then(m => ({ default: m.PmiCalculator })), { loading: Skeleton });
+const PropertyTaxCalculator = dynamic(() => import("./PropertyTaxCalculator").then(m => ({ default: m.PropertyTaxCalculator })), { loading: Skeleton });
+const MortgagePayoffAccelerator = dynamic(() => import("./MortgagePayoffAccelerator").then(m => ({ default: m.MortgagePayoffAccelerator })), { loading: Skeleton });
+const HoaFeeImpactCalculator = dynamic(() => import("./HoaFeeImpactCalculator").then(m => ({ default: m.HoaFeeImpactCalculator })), { loading: Skeleton });
+const RentalYieldCalculator = dynamic(() => import("./RentalYieldCalculator").then(m => ({ default: m.RentalYieldCalculator })), { loading: Skeleton });
+const CapRateCalculator = dynamic(() => import("./CapRateCalculator").then(m => ({ default: m.CapRateCalculator })), { loading: Skeleton });
+const CashOnCashReturnCalculator = dynamic(() => import("./CashOnCashReturnCalculator").then(m => ({ default: m.CashOnCashReturnCalculator })), { loading: Skeleton });
+const HouseFlipRoiCalculator = dynamic(() => import("./HouseFlipRoiCalculator").then(m => ({ default: m.HouseFlipRoiCalculator })), { loading: Skeleton });
+const AirbnbRevenueEstimator = dynamic(() => import("./AirbnbRevenueEstimator").then(m => ({ default: m.AirbnbRevenueEstimator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -11686,6 +11698,186 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Paste your library list.",
       "Pick currency.",
       "Read total + cost-of-regret.",
+    ],
+  },
+  "closing-cost-estimator": {
+    render: () => <ClosingCostEstimator />,
+    explainer: (
+      <>
+        <p>Estimate every line item on your Loan Estimate before you see one. Origination, title, appraisal, transfer tax, prepaids &mdash; tuned per state.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter home price and down payment.",
+      "Pick your state.",
+      "Read itemized closing costs + total.",
+    ],
+  },
+  "pmi-calculator": {
+    render: () => <PmiCalculator />,
+    explainer: (
+      <>
+        <p>How much is PMI costing you and when does it go away? Credit score + LTV matrix shows monthly cost and auto-cancel date.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter price and down payment.",
+      "Pick credit band.",
+      "Read monthly PMI + drop-off month.",
+    ],
+  },
+  "property-tax-calculator": {
+    render: () => <PropertyTaxCalculator />,
+    explainer: (
+      <>
+        <p>What will property tax actually cost? Effective rates for 20+ states plus a custom option. Compared against the US average.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter home value.",
+      "Pick state (or enter custom rate).",
+      "Read annual + monthly tax.",
+    ],
+  },
+  "mortgage-payoff-accelerator": {
+    render: () => <MortgagePayoffAccelerator />,
+    explainer: (
+      <>
+        <p>Pay an extra $250 a month &mdash; lose 6 years off the loan and save tens of thousands in interest. See exact numbers for your loan.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter balance, rate, term.",
+      "Enter extra payment.",
+      "Read months saved + interest saved.",
+    ],
+  },
+  "hoa-fee-impact-calculator": {
+    render: () => <HoaFeeImpactCalculator />,
+    explainer: (
+      <>
+        <p>A $300/month HOA is the same as about $45k less house you can afford. This tool makes the tradeoff explicit.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter monthly HOA.",
+      "Enter mortgage rate and term.",
+      "Read equivalent loan reduction.",
+    ],
+  },
+  "rental-yield-calculator": {
+    render: () => <RentalYieldCalculator />,
+    explainer: (
+      <>
+        <p>Run the 5-minute deal screen on any rental &mdash; gross yield, net yield, monthly cash flow, and a tier label (weak to excellent).</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter price and rent.",
+      "Enter vacancy and expenses.",
+      "Read gross + net yield.",
+    ],
+  },
+  "cap-rate-calculator": {
+    render: () => <CapRateCalculator />,
+    explainer: (
+      <>
+        <p>Cap rate is how investors compare properties apples-to-apples &mdash; property-only return before financing. Enter price, rent, expenses; get NOI and the rate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter price and rent.",
+      "Enter operating expenses and vacancy.",
+      "Read NOI + cap rate.",
+    ],
+  },
+  "cash-on-cash-return-calculator": {
+    render: () => <CashOnCashReturnCalculator />,
+    explainer: (
+      <>
+        <p>The investor metric that matters most when financing: annual cash flow as a % of cash you actually put in. Break-even month included.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter cash invested + loan terms.",
+      "Enter rent and expenses.",
+      "Read cash-on-cash %.",
+    ],
+  },
+  "house-flip-roi-calculator": {
+    render: () => <HouseFlipRoiCalculator />,
+    explainer: (
+      <>
+        <p>Before you buy the flip, run the numbers. ROI, annualized ROI, 70% rule pass/fail, holding costs &mdash; the full investor screen in one page.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter purchase, rehab, ARV.",
+      "Set holding period + selling costs.",
+      "Read profit + annualized ROI.",
+    ],
+  },
+  "airbnb-revenue-estimator": {
+    render: () => <AirbnbRevenueEstimator />,
+    explainer: (
+      <>
+        <p>Short-term rental math &mdash; nightly rate, occupancy, cleaning fees, Airbnb take, property management &mdash; net annual income after everything.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter rate and occupancy.",
+      "Set cleaning and platform fees.",
+      "Read net annual income.",
     ],
   },
 };

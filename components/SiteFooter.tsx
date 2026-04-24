@@ -68,6 +68,7 @@ export function SiteFooter() {
             <FooterLink href="/editorial">Editorial policy</FooterLink>
             <FooterLink href="/ai-policy">AI content policy</FooterLink>
             <FooterLink href="/privacy">Privacy policy</FooterLink>
+            <FooterLink href="/disclaimers">Disclaimers</FooterLink>
             <FooterLink href="/terms">Terms of service</FooterLink>
             <FooterLink href="/sitemap.xml">Sitemap</FooterLink>
           </FooterColumn>

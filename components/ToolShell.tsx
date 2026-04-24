@@ -6,6 +6,7 @@ import { TrackRecentTool } from "@/components/TrackRecentTool";
 import { AdSlot } from "@/components/AdSlot";
 import { ShareBar } from "@/components/ShareBar";
 import { BookmarkNudge } from "@/components/BookmarkNudge";
+import { CategoryDisclaimer } from "@/components/CategoryDisclaimer";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -101,6 +102,8 @@ export function ToolShell({
         <h2>What it does</h2>
         {explainer}
       </Prose>
+
+      <CategoryDisclaimer category={page.category} className="mb-10" />
 
       {example && (
         <section className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
