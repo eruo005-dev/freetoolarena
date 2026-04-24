@@ -32,6 +32,7 @@ export const CATEGORY_OG_THEME: Record<
   converters:  { accent: "#0e7490", accentDark: "#164e63", tint: "#ecfeff" }, // cyan
   media:       { accent: "#9333ea", accentDark: "#6b21a8", tint: "#faf5ff" }, // purple
   ai:          { accent: "#db2777", accentDark: "#9d174d", tint: "#fdf2f8" }, // pink (AI = generative vibes)
+  gaming:      { accent: "#7c3aed", accentDark: "#4c1d95", tint: "#f5f3ff" }, // violet (controller glow)
 };
 
 export interface OgHero {

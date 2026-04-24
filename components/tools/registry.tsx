@@ -473,6 +473,28 @@ const PhotoReleaseGenerator = dynamic(() => import("./PhotoReleaseGenerator").th
 const LiabilityWaiverGenerator = dynamic(() => import("./LiabilityWaiverGenerator").then(m => ({ default: m.LiabilityWaiverGenerator })), { loading: Skeleton });
 const PromissoryNoteGenerator = dynamic(() => import("./PromissoryNoteGenerator").then(m => ({ default: m.PromissoryNoteGenerator })), { loading: Skeleton });
 
+// Gaming wave (20 new tools)
+const SensitivityConverter = dynamic(() => import("./SensitivityConverter").then(m => ({ default: m.SensitivityConverter })), { loading: Skeleton });
+const EdpiCalculator = dynamic(() => import("./EdpiCalculator").then(m => ({ default: m.EdpiCalculator })), { loading: Skeleton });
+const FovCalculator = dynamic(() => import("./FovCalculator").then(m => ({ default: m.FovCalculator })), { loading: Skeleton });
+const FpsToFrameTime = dynamic(() => import("./FpsToFrameTime").then(m => ({ default: m.FpsToFrameTime })), { loading: Skeleton });
+const PingLatencyTier = dynamic(() => import("./PingLatencyTier").then(m => ({ default: m.PingLatencyTier })), { loading: Skeleton });
+const GamingDpsCalculator = dynamic(() => import("./GamingDpsCalculator").then(m => ({ default: m.GamingDpsCalculator })), { loading: Skeleton });
+const KdRatioCalculator = dynamic(() => import("./KdRatioCalculator").then(m => ({ default: m.KdRatioCalculator })), { loading: Skeleton });
+const WinRateCalculator = dynamic(() => import("./WinRateCalculator").then(m => ({ default: m.WinRateCalculator })), { loading: Skeleton });
+const XpToLevelCalculator = dynamic(() => import("./XpToLevelCalculator").then(m => ({ default: m.XpToLevelCalculator })), { loading: Skeleton });
+const LootDropProbability = dynamic(() => import("./LootDropProbability").then(m => ({ default: m.LootDropProbability })), { loading: Skeleton });
+const TeamRandomizer = dynamic(() => import("./TeamRandomizer").then(m => ({ default: m.TeamRandomizer })), { loading: Skeleton });
+const TournamentBracketGenerator = dynamic(() => import("./TournamentBracketGenerator").then(m => ({ default: m.TournamentBracketGenerator })), { loading: Skeleton });
+const GamertagGenerator = dynamic(() => import("./GamertagGenerator").then(m => ({ default: m.GamertagGenerator })), { loading: Skeleton });
+const ClanTagGenerator = dynamic(() => import("./ClanTagGenerator").then(m => ({ default: m.ClanTagGenerator })), { loading: Skeleton });
+const DiceNotationRoller = dynamic(() => import("./DiceNotationRoller").then(m => ({ default: m.DiceNotationRoller })), { loading: Skeleton });
+const MinecraftFoodCalculator = dynamic(() => import("./MinecraftFoodCalculator").then(m => ({ default: m.MinecraftFoodCalculator })), { loading: Skeleton });
+const MinecraftEnchantmentLevel = dynamic(() => import("./MinecraftEnchantmentLevel").then(m => ({ default: m.MinecraftEnchantmentLevel })), { loading: Skeleton });
+const DndEncounterDifficulty = dynamic(() => import("./DndEncounterDifficulty").then(m => ({ default: m.DndEncounterDifficulty })), { loading: Skeleton });
+const MtgManaCurveAnalyzer = dynamic(() => import("./MtgManaCurveAnalyzer").then(m => ({ default: m.MtgManaCurveAnalyzer })), { loading: Skeleton });
+const SteamLibraryValue = dynamic(() => import("./SteamLibraryValue").then(m => ({ default: m.SteamLibraryValue })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -11304,6 +11326,366 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick the note type and amount.",
       "Set interest and payment terms.",
       "Print and sign with both parties.",
+    ],
+  },
+  "sensitivity-converter": {
+    render: () => <SensitivityConverter />,
+    explainer: (
+      <>
+        <p>Move your sens between games without losing muscle memory. Supports 9 titles with real yaw values &mdash; paste your current sens, pick the target game, done.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick your current game + sens + DPI.",
+      "Pick the target game.",
+      "Copy the target sens and cm/360.",
+    ],
+  },
+  "edpi-calculator": {
+    render: () => <EdpiCalculator />,
+    explainer: (
+      <>
+        <p>eDPI = sens * DPI &mdash; the only number that matters when comparing mouse settings across players. With tier label and pro-player reference table.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter in-game sens and mouse DPI.",
+      "Read eDPI and cm/360.",
+      "Compare to the pro reference.",
+    ],
+  },
+  "fov-calculator": {
+    render: () => <FovCalculator />,
+    explainer: (
+      <>
+        <p>Keep the same visual field when switching monitors or aspect ratios. Hor+ formula with 5 aspect-ratio presets and game defaults.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current FOV and aspect ratio.",
+      "Pick the target aspect ratio.",
+      "Read horizontal + vertical FOV.",
+    ],
+  },
+  "fps-to-frame-time": {
+    render: () => <FpsToFrameTime />,
+    explainer: (
+      <>
+        <p>Every frame above your monitor refresh rate still helps input lag &mdash; this shows exactly how many ms each frame costs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter target FPS.",
+      "Read the frame time in ms.",
+      "Compare against common refresh rates.",
+    ],
+  },
+  "ping-latency-tier": {
+    render: () => <PingLatencyTier />,
+    explainer: (
+      <>
+        <p>Know whether your ping is pro-level or tilting you. Tier labels, competitive thresholds for FPS and MOBAs, and a rough distance estimate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your ping in ms.",
+      "Read the tier and explainer.",
+      "Check distance and jitter.",
+    ],
+  },
+  "gaming-dps-calculator": {
+    render: () => <GamingDpsCalculator />,
+    explainer: (
+      <>
+        <p>Raw DPS vs sustained DPS (with reload) vs effective DPS (with crits). Paste weapon stats, compare loadouts instantly.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter damage, RPM, mag, reload.",
+      "Add crit chance + multiplier.",
+      "Compare DPS values.",
+    ],
+  },
+  "kd-ratio-calculator": {
+    render: () => <KdRatioCalculator />,
+    explainer: (
+      <>
+        <p>K/D isn&rsquo;t just kills over deaths &mdash; it&rsquo;s a target you can project toward. Enter current stats, set your goal, see exactly what&rsquo;s needed.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter kills and deaths.",
+      "Read K/D and tier.",
+      "Set a target and see the gap.",
+    ],
+  },
+  "win-rate-calculator": {
+    render: () => <WinRateCalculator />,
+    explainer: (
+      <>
+        <p>Plan a climb instead of guessing. Enter your record, pick a target win rate, see exactly how many wins-in-a-row or losses-absorbed it takes.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wins and losses.",
+      "Read win rate and tier.",
+      "Set a target, read the path.",
+    ],
+  },
+  "xp-to-level-calculator": {
+    render: () => <XpToLevelCalculator />,
+    explainer: (
+      <>
+        <p>How long until max level? Enter your XP rate and target, get hours and minutes.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current XP and target.",
+      "Enter XP per hour.",
+      "Read time to target.",
+    ],
+  },
+  "loot-drop-probability": {
+    render: () => <LootDropProbability />,
+    explainer: (
+      <>
+        <p>0.5% drop rate? How many runs until 50% chance? Until 95%? The real probability math for farming, in four numbers.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter the drop rate %.",
+      "Enter attempts per session.",
+      "Read all four probability stats.",
+    ],
+  },
+  "team-randomizer": {
+    render: () => <TeamRandomizer />,
+    explainer: (
+      <>
+        <p>Random or greedy-balanced team split. Paste names (optionally with skill ratings) and get fair teams in one click.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste one player per line.",
+      "Pick team count and balancing.",
+      "Shuffle until you&rsquo;re happy.",
+    ],
+  },
+  "tournament-bracket-generator": {
+    render: () => <TournamentBracketGenerator />,
+    explainer: (
+      <>
+        <p>Single or double elimination with three seeding modes. BYEs padded automatically for non-power-of-two entries. Prints clean on one page.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste one team per line.",
+      "Pick format and seeding.",
+      "Print the bracket.",
+    ],
+  },
+  "gamertag-generator": {
+    render: () => <GamertagGenerator />,
+    explainer: (
+      <>
+        <p>Out of ideas? Five style themes, length control, numbers and leet speak on demand. Generate a fresh list as often as you want.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick style and length.",
+      "Toggle numbers + leet.",
+      "Copy a tag you like.",
+    ],
+  },
+  "clan-tag-generator": {
+    render: () => <ClanTagGenerator />,
+    explainer: (
+      <>
+        <p>Pronounceable 2-4 letter clan tags from a seed phrase or random. Leet and mixed-case variants included.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick length and style.",
+      "Add a seed phrase for themed tags.",
+      "Copy the tag you pick.",
+    ],
+  },
+  "dice-notation-roller": {
+    render: () => <DiceNotationRoller />,
+    explainer: (
+      <>
+        <p>Real dice notation support &mdash; kh/kl for advantage / disadvantage, exploding dice, modifiers, chained expressions. Plus expected value and variance.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter dice notation.",
+      "Click Roll.",
+      "Read individual rolls + total.",
+    ],
+  },
+  "minecraft-food-calculator": {
+    render: () => <MinecraftFoodCalculator />,
+    explainer: (
+      <>
+        <p>Golden Carrot wins saturation-per-hunger every time. Plan your food stack, see total hunger + saturation, stop wasting cookies.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick foods and quantities.",
+      "Read hunger + saturation totals.",
+      "Find the best ratio pick.",
+    ],
+  },
+  "minecraft-enchantment-level": {
+    render: () => <MinecraftEnchantmentLevel />,
+    explainer: (
+      <>
+        <p>Three XP tiers mean level 30 costs way more than level 15 * 2. Plan your grind with real numbers.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter current level.",
+      "Enter target level.",
+      "Read total XP and mob equivalents.",
+    ],
+  },
+  "dnd-encounter-difficulty": {
+    render: () => <DndEncounterDifficulty />,
+    explainer: (
+      <>
+        <p>The DMG XP-threshold table made usable. Enter party config + monster XP, see which tier the fight lands in.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter party size and average level.",
+      "Enter monster count + total XP.",
+      "Read the encounter tier.",
+    ],
+  },
+  "mtg-mana-curve-analyzer": {
+    render: () => <MtgManaCurveAnalyzer />,
+    explainer: (
+      <>
+        <p>Paste a decklist, see the curve. Average CMC, top-heavy warnings, suggested land count from the classic nonland / 60 * 24 rule of thumb.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste decklist with counts.",
+      "Read curve chart and average CMC.",
+      "Check suggested land count.",
+    ],
+  },
+  "steam-library-value": {
+    render: () => <SteamLibraryValue />,
+    explainer: (
+      <>
+        <p>How much have you actually spent on Steam? Paste your library, flag games with &lt;2h played, see your cost-of-regret.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your library list.",
+      "Pick currency.",
+      "Read total + cost-of-regret.",
     ],
   },
 };
