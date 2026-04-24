@@ -541,6 +541,32 @@ const RepairOrReplaceCalculator = dynamic(() => import("./RepairOrReplaceCalcula
 const EvChargingCostCalculator = dynamic(() => import("./EvChargingCostCalculator").then(m => ({ default: m.EvChargingCostCalculator })), { loading: Skeleton });
 const RoadTripFuelStops = dynamic(() => import("./RoadTripFuelStops").then(m => ({ default: m.RoadTripFuelStops })), { loading: Skeleton });
 
+// Wave 2 cooking + parenting (24 new)
+const BakingConversionCalculator = dynamic(() => import("./BakingConversionCalculator").then(m => ({ default: m.BakingConversionCalculator })), { loading: Skeleton });
+const MeatDonenessTemperature = dynamic(() => import("./MeatDonenessTemperature").then(m => ({ default: m.MeatDonenessTemperature })), { loading: Skeleton });
+const FoodStorageShelfLife = dynamic(() => import("./FoodStorageShelfLife").then(m => ({ default: m.FoodStorageShelfLife })), { loading: Skeleton });
+const SourdoughHydrationCalculator = dynamic(() => import("./SourdoughHydrationCalculator").then(m => ({ default: m.SourdoughHydrationCalculator })), { loading: Skeleton });
+const CoffeeRatioCalculator = dynamic(() => import("./CoffeeRatioCalculator").then(m => ({ default: m.CoffeeRatioCalculator })), { loading: Skeleton });
+const CocktailRatioGuide = dynamic(() => import("./CocktailRatioGuide").then(m => ({ default: m.CocktailRatioGuide })), { loading: Skeleton });
+const SousVideTimeTemp = dynamic(() => import("./SousVideTimeTemp").then(m => ({ default: m.SousVideTimeTemp })), { loading: Skeleton });
+const PizzaDoughCalculator = dynamic(() => import("./PizzaDoughCalculator").then(m => ({ default: m.PizzaDoughCalculator })), { loading: Skeleton });
+const RiceToWaterRatio = dynamic(() => import("./RiceToWaterRatio").then(m => ({ default: m.RiceToWaterRatio })), { loading: Skeleton });
+const GroceryBudgetSplitter = dynamic(() => import("./GroceryBudgetSplitter").then(m => ({ default: m.GroceryBudgetSplitter })), { loading: Skeleton });
+const BreadBakerPercentages = dynamic(() => import("./BreadBakerPercentages").then(m => ({ default: m.BreadBakerPercentages })), { loading: Skeleton });
+const IceCreamScoopCalculator = dynamic(() => import("./IceCreamScoopCalculator").then(m => ({ default: m.IceCreamScoopCalculator })), { loading: Skeleton });
+const BabySleepScheduleBuilder = dynamic(() => import("./BabySleepScheduleBuilder").then(m => ({ default: m.BabySleepScheduleBuilder })), { loading: Skeleton });
+const BabyFormulaMixingCalculator = dynamic(() => import("./BabyFormulaMixingCalculator").then(m => ({ default: m.BabyFormulaMixingCalculator })), { loading: Skeleton });
+const DiaperCountEstimator = dynamic(() => import("./DiaperCountEstimator").then(m => ({ default: m.DiaperCountEstimator })), { loading: Skeleton });
+const BabyWeightPercentile = dynamic(() => import("./BabyWeightPercentile").then(m => ({ default: m.BabyWeightPercentile })), { loading: Skeleton });
+const BabyFoodPortionGuide = dynamic(() => import("./BabyFoodPortionGuide").then(m => ({ default: m.BabyFoodPortionGuide })), { loading: Skeleton });
+const ChildScreenTimeTracker = dynamic(() => import("./ChildScreenTimeTracker").then(m => ({ default: m.ChildScreenTimeTracker })), { loading: Skeleton });
+const AllowanceAgeCalculator = dynamic(() => import("./AllowanceAgeCalculator").then(m => ({ default: m.AllowanceAgeCalculator })), { loading: Skeleton });
+const ToddlerTantrumCalculator = dynamic(() => import("./ToddlerTantrumCalculator").then(m => ({ default: m.ToddlerTantrumCalculator })), { loading: Skeleton });
+const ChildHeightPrediction = dynamic(() => import("./ChildHeightPrediction").then(m => ({ default: m.ChildHeightPrediction })), { loading: Skeleton });
+const DaycareCostCalculator = dynamic(() => import("./DaycareCostCalculator").then(m => ({ default: m.DaycareCostCalculator })), { loading: Skeleton });
+const BreastfeedingDurationTracker = dynamic(() => import("./BreastfeedingDurationTracker").then(m => ({ default: m.BreastfeedingDurationTracker })), { loading: Skeleton });
+const BabyBottleFeedingAmount = dynamic(() => import("./BabyBottleFeedingAmount").then(m => ({ default: m.BabyBottleFeedingAmount })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -12452,6 +12478,438 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter trip miles and tank.",
       "Enter MPG and buffer %.",
       "Read stop count + markers.",
+    ],
+  },
+  "baking-conversion-calculator": {
+    render: () => <BakingConversionCalculator />,
+    explainer: (
+      <>
+        <p>US cups to grams, the right way &mdash; flour is 125g, not 120g, because the tool knows your ingredient. 16 common baking ingredients pre-loaded.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick ingredient.",
+      "Enter amount + unit.",
+      "Read all 6 equivalents.",
+    ],
+  },
+  "meat-doneness-temperature": {
+    render: () => <MeatDonenessTemperature />,
+    explainer: (
+      <>
+        <p>Safe temps for every meat, plus chef-preferred temps for rare and medium-rare. Rest times included because rested meat is better meat.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick meat type.",
+      "Read doneness table.",
+      "Add rest time before slicing.",
+    ],
+  },
+  "food-storage-shelf-life": {
+    render: () => <FoodStorageShelfLife />,
+    explainer: (
+      <>
+        <p>Sniff test isn&rsquo;t always reliable. Pick the food, enter the date you bought it, get fridge + freezer good-until dates plus storage tips.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick food type.",
+      "Enter purchase date.",
+      "Read good-until dates.",
+    ],
+  },
+  "sourdough-hydration-calculator": {
+    render: () => <SourdoughHydrationCalculator />,
+    explainer: (
+      <>
+        <p>Hydration math minus the sourdough-forum confusion. Accounts for starter water content so your 70% really is 70%.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter flour, water, starter.",
+      "Read total hydration %.",
+      "Compare to tier.",
+    ],
+  },
+  "coffee-ratio-calculator": {
+    render: () => <CoffeeRatioCalculator />,
+    explainer: (
+      <>
+        <p>1:16 for drip, 1:15 for french press, 1:2 for espresso. This picks the ratio for your method and tells you grams of beans to grind.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick brew method.",
+      "Enter cups desired.",
+      "Read coffee + water.",
+    ],
+  },
+  "cocktail-ratio-guide": {
+    render: () => <CocktailRatioGuide />,
+    explainer: (
+      <>
+        <p>Old Fashioned is 2:0.25:2 dash. Martini is 6:1. Negroni is 1:1:1. 15 classics with the ratios that actually taste right, scaled to your guest count.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a cocktail.",
+      "Set servings.",
+      "Read ingredient amounts.",
+    ],
+  },
+  "sous-vide-time-temp": {
+    render: () => <SousVideTimeTemp />,
+    explainer: (
+      <>
+        <p>Beef steak at 129&deg;F for 2 hours is medium-rare nirvana. 9 proteins, every doneness level, with safety temps called out.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick protein.",
+      "Pick doneness.",
+      "Read temp + time range.",
+    ],
+  },
+  "pizza-dough-calculator": {
+    render: () => <PizzaDoughCalculator />,
+    explainer: (
+      <>
+        <p>Neapolitan, NY, or Detroit &mdash; scale dough by the number of pizzas. 65% hydration, 2% salt, 0.3% yeast. Adjust to taste.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick pizza count and size.",
+      "Set hydration and extras.",
+      "Read ingredient grams.",
+    ],
+  },
+  "rice-to-water-ratio": {
+    render: () => <RiceToWaterRatio />,
+    explainer: (
+      <>
+        <p>White long-grain 1:2. Brown 1:2.5. Basmati 1:1.75. 8 rice types, the right water for each, plus stovetop vs cooker times.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick rice type.",
+      "Enter cups.",
+      "Read water + cook time.",
+    ],
+  },
+  "grocery-budget-splitter": {
+    render: () => <GroceryBudgetSplitter />,
+    explainer: (
+      <>
+        <p>Roommate grocery shopping without awkward Venmo requests. Mark which items go to whom &mdash; all shared, shared-with-some, or person-only &mdash; totals update live.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add people (2-6).",
+      "Add items + allocations.",
+      "Read per-person totals.",
+    ],
+  },
+  "bread-baker-percentages": {
+    render: () => <BreadBakerPercentages />,
+    explainer: (
+      <>
+        <p>Baker&rsquo;s math: flour is 100%, everything else is a percent of flour. Paste any recipe, get the percentages, scale to any new flour weight in one click.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter flour + other ingredients.",
+      "Read percentages.",
+      "Scale to new flour weight.",
+    ],
+  },
+  "ice-cream-scoop-calculator": {
+    render: () => <IceCreamScoopCalculator />,
+    explainer: (
+      <>
+        <p>Don&rsquo;t run out at the barbecue. Adults + kids + scoops = total gallons, flavor breakdown, and a cost estimate.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter guest count and scoop size.",
+      "Pick flavor count.",
+      "Read gallons + cost.",
+    ],
+  },
+  "baby-sleep-schedule-builder": {
+    render: () => <BabySleepScheduleBuilder />,
+    explainer: (
+      <>
+        <p>Wake windows and nap counts that match your baby&rsquo;s age. Sample schedule included so you can start tonight.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter baby age in months.",
+      "Read sleep totals + naps.",
+      "Use the sample schedule.",
+    ],
+  },
+  "baby-formula-mixing-calculator": {
+    render: () => <BabyFormulaMixingCalculator />,
+    explainer: (
+      <>
+        <p>Never dilute formula &mdash; water intoxication is a real risk. Correct ratios for all three types, plus storage rules.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick formula type.",
+      "Enter ounces desired.",
+      "Read scoop + water amount.",
+    ],
+  },
+  "diaper-count-estimator": {
+    render: () => <DiaperCountEstimator />,
+    explainer: (
+      <>
+        <p>You&rsquo;ll go through ~2,700 diapers in year one. Plan the budget, the size progression, and whether cloth saves you money long-term.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick baby age band.",
+      "Enter cost per diaper.",
+      "Read monthly + yearly.",
+    ],
+  },
+  "baby-weight-percentile": {
+    render: () => <BabyWeightPercentile />,
+    explainer: (
+      <>
+        <p>WHO and CDC percentiles without a clinic visit. Track the trend &mdash; a single reading means nothing; the curve means everything.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter baby age, sex, weight.",
+      "Read percentile.",
+      "Track with pediatrician.",
+    ],
+  },
+  "baby-food-portion-guide": {
+    render: () => <BabyFoodPortionGuide />,
+    explainer: (
+      <>
+        <p>6-8 months is starter portions. 9-11 is expanding. 12+ is variety. Portion guidance for each food group, plus allergen intro and wait-list.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick baby age band.",
+      "Read per-food portions.",
+      "Review allergen + wait list.",
+    ],
+  },
+  "child-screen-time-tracker": {
+    render: () => <ChildScreenTimeTracker />,
+    explainer: (
+      <>
+        <p>AAP recommends no screen under 2 and max 1 hour daily age 2-5. This shows the gap and suggests swaps &mdash; not guilt-trips.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick child age band.",
+      "Enter current daily screen time.",
+      "Read tier + swap ideas.",
+    ],
+  },
+  "allowance-age-calculator": {
+    render: () => <AllowanceAgeCalculator />,
+    explainer: (
+      <>
+        <p>$1-$2 per week per year of age is a solid US baseline. With save/spend/give splits that teach money skills from age 5.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter child age + region.",
+      "Pick chores-based or unconditional.",
+      "Read weekly/monthly/yearly.",
+    ],
+  },
+  "toddler-tantrum-calculator": {
+    render: () => <ToddlerTantrumCalculator />,
+    explainer: (
+      <>
+        <p>Tantrums peak at 2-3 years with 2-5 per day being normal. Trigger checklist + de-escalation list + reassurance that this is a milestone, not a problem.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter toddler age.",
+      "Check triggers.",
+      "Read typical range + tips.",
+    ],
+  },
+  "child-height-prediction": {
+    render: () => <ChildHeightPrediction />,
+    explainer: (
+      <>
+        <p>Mid-parental formula predicts adult height within ±4 inches for 95% of kids. Genetics is 80%. The rest is sleep, nutrition, and health.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter parents&rsquo; heights.",
+      "Enter child age + current height.",
+      "Read predicted adult height.",
+    ],
+  },
+  "daycare-cost-calculator": {
+    render: () => <DaycareCostCalculator />,
+    explainer: (
+      <>
+        <p>Childcare costs a new-car payment per year. Compare center vs home daycare vs nanny across four US location tiers and three age groups.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick location + type.",
+      "Pick child age.",
+      "Read weekly/monthly/annual.",
+    ],
+  },
+  "breastfeeding-duration-tracker": {
+    render: () => <BreastfeedingDurationTracker />,
+    explainer: (
+      <>
+        <p>Track duration and side, see daily totals and averages, and compare against typical ranges by age. Baby getting enough is measured by weight gain and diapers &mdash; not the clock.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Log each session.",
+      "Read running total + average.",
+      "Compare to age-typical range.",
+    ],
+  },
+  "baby-bottle-feeding-amount": {
+    render: () => <BabyBottleFeedingAmount />,
+    explainer: (
+      <>
+        <p>2.5 oz formula per pound of body weight per day, up to 32 oz max. With age-appropriate bottles-per-day and a hunger-cue reminder.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter baby age + weight.",
+      "Read oz per day.",
+      "See bottles-per-day suggestion.",
     ],
   },
 };
