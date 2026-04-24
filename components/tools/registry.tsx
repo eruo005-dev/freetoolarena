@@ -657,6 +657,23 @@ const CacPaybackPeriod = dynamic(() => import("./CacPaybackPeriod").then(m => ({
 const GrossMarginCalculator = dynamic(() => import("./GrossMarginCalculator").then(m => ({ default: m.GrossMarginCalculator })), { loading: Skeleton });
 const MrrToArrConverter = dynamic(() => import("./MrrToArrConverter").then(m => ({ default: m.MrrToArrConverter })), { loading: Skeleton });
 
+// Megawave A crypto/sustainability/health/tech (15 new)
+const CryptoDcaCalculator = dynamic(() => import("./CryptoDcaCalculator").then(m => ({ default: m.CryptoDcaCalculator })), { loading: Skeleton });
+const CryptoCapitalGainsCalculator = dynamic(() => import("./CryptoCapitalGainsCalculator").then(m => ({ default: m.CryptoCapitalGainsCalculator })), { loading: Skeleton });
+const NftRoiCalculator = dynamic(() => import("./NftRoiCalculator").then(m => ({ default: m.NftRoiCalculator })), { loading: Skeleton });
+const RealEstateCrowdfundingYield = dynamic(() => import("./RealEstateCrowdfundingYield").then(m => ({ default: m.RealEstateCrowdfundingYield })), { loading: Skeleton });
+const StockPortfolioDiversification = dynamic(() => import("./StockPortfolioDiversification").then(m => ({ default: m.StockPortfolioDiversification })), { loading: Skeleton });
+const SolarPanelPaybackCalculator = dynamic(() => import("./SolarPanelPaybackCalculator").then(m => ({ default: m.SolarPanelPaybackCalculator })), { loading: Skeleton });
+const EvRangeEstimator = dynamic(() => import("./EvRangeEstimator").then(m => ({ default: m.EvRangeEstimator })), { loading: Skeleton });
+const SmartHomeCostEstimator = dynamic(() => import("./SmartHomeCostEstimator").then(m => ({ default: m.SmartHomeCostEstimator })), { loading: Skeleton });
+const VeganProteinCalculator = dynamic(() => import("./VeganProteinCalculator").then(m => ({ default: m.VeganProteinCalculator })), { loading: Skeleton });
+const CorporateWellnessRoi = dynamic(() => import("./CorporateWellnessRoi").then(m => ({ default: m.CorporateWellnessRoi })), { loading: Skeleton });
+const ResistanceBandWorkoutPlanner = dynamic(() => import("./ResistanceBandWorkoutPlanner").then(m => ({ default: m.ResistanceBandWorkoutPlanner })), { loading: Skeleton });
+const BiohackingSupplementTracker = dynamic(() => import("./BiohackingSupplementTracker").then(m => ({ default: m.BiohackingSupplementTracker })), { loading: Skeleton });
+const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposableSavings").then(m => ({ default: m.ReusableVsDisposableSavings })), { loading: Skeleton });
+const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
+const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -14476,6 +14493,276 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick input mode.",
       "Enter a value.",
       "Read all forms.",
+    ],
+  },
+  "crypto-dca-calculator": {
+    render: () => <CryptoDcaCalculator />,
+    explainer: (
+      <>
+        <p>DCA vs lump sum on crypto. Past performance warning built in. Shows cost basis, ending value, and the lump-sum comparison.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter amount per buy + frequency.",
+      "Set years and growth assumption.",
+      "Read DCA vs lump-sum.",
+    ],
+  },
+  "crypto-capital-gains-calculator": {
+    render: () => <CryptoCapitalGainsCalculator />,
+    explainer: (
+      <>
+        <p>Sold crypto? This shows short-term (365 days) capital gain tax estimate. Always verify with a CPA.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter buy + sell prices.",
+      "Enter holding period.",
+      "Read after-tax net.",
+    ],
+  },
+  "nft-roi-calculator": {
+    render: () => <NftRoiCalculator />,
+    explainer: (
+      <>
+        <p>Most NFTs sell for zero. For the ones that don&rsquo;t, this shows real ROI after gas, platform (2.5%), and royalty fees.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter buy + sell prices.",
+      "Enter gas fees + fees %.",
+      "Read profit in ETH and USD.",
+    ],
+  },
+  "real-estate-crowdfunding-yield": {
+    render: () => <RealEstateCrowdfundingYield />,
+    explainer: (
+      <>
+        <p>Fundrise markets 5-9% returns. This projects compound growth with quarterly contributions and shows the comparison to S&P 500 index funds.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter initial investment + contribution.",
+      "Set return rate and years.",
+      "Read ending value + comparison.",
+    ],
+  },
+  "stock-portfolio-diversification": {
+    render: () => <StockPortfolioDiversification />,
+    explainer: (
+      <>
+        <p>Paste your holdings, see concentration risk. Any single position above 10% of portfolio is a yellow flag. Target: 80% index funds.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste TICKER + amount lines.",
+      "Read allocation %.",
+      "Check concentration warnings.",
+    ],
+  },
+  "solar-panel-payback-calculator": {
+    render: () => <SolarPanelPaybackCalculator />,
+    explainer: (
+      <>
+        <p>Solar panels: when do they pay back, what do they save over 25 years? Includes tax credit, rebates, electricity inflation.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter system size + cost.",
+      "Set rebate + electricity rate.",
+      "Read years to payback.",
+    ],
+  },
+  "ev-range-estimator": {
+    render: () => <EvRangeEstimator />,
+    explainer: (
+      <>
+        <p>Rated 300 miles doesn&rsquo;t mean you get 300. Cold weather cuts range 30%. Highway speed cuts 15%. This shows what you&rsquo;ll actually get.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter rated range + battery.",
+      "Pick conditions + HVAC.",
+      "Read real-world range.",
+    ],
+  },
+  "smart-home-cost-estimator": {
+    render: () => <SmartHomeCostEstimator />,
+    explainer: (
+      <>
+        <p>Pick the devices you want. This totals equipment cost plus realistic install labor and the monthly cloud subscription sprawl.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Select devices and quantities.",
+      "Add install hours.",
+      "Read total + monthly services.",
+    ],
+  },
+  "vegan-protein-calculator": {
+    render: () => <VeganProteinCalculator />,
+    explainer: (
+      <>
+        <p>Hit your protein target with real plant foods. Tofu 20g per 100g, tempeh 19g, seitan 25g, lentils 18g per cup. 3 sample meal plans included.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight + activity.",
+      "Pick goal.",
+      "Read daily target + meal plan.",
+    ],
+  },
+  "corporate-wellness-roi": {
+    render: () => <CorporateWellnessRoi />,
+    explainer: (
+      <>
+        <p>Wellness ROI math: reduce sick days 15%, claims 7%, turnover 12% for 40% participation. Net ROI per employee and payback months.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter employees + cost.",
+      "Set participation.",
+      "Read ROI + payback.",
+    ],
+  },
+  "resistance-band-workout-planner": {
+    render: () => <ResistanceBandWorkoutPlanner />,
+    explainer: (
+      <>
+        <p>Pick your goal, days, and level &mdash; get a weekly split with exercise lists, sets/reps, and bands needed. From beginner to advanced.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick goal + days + time.",
+      "Set fitness level.",
+      "Read weekly workout.",
+    ],
+  },
+  "biohacking-supplement-tracker": {
+    render: () => <BiohackingSupplementTracker />,
+    explainer: (
+      <>
+        <p>List your stack, see monthly and yearly cost, flag controversial picks. Popular staples (creatine, omega-3, D3, magnesium) highlighted.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste supplement list.",
+      "Read monthly + yearly.",
+      "Check for red flags.",
+    ],
+  },
+  "reusable-vs-disposable-savings": {
+    render: () => <ReusableVsDisposableSavings />,
+    explainer: (
+      <>
+        <p>Reusable water bottle pays for itself in 30 days. Reusable razor pays back in 3 months. Lifetime savings + plastic avoided for 8 product types.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick product.",
+      "Adjust usage.",
+      "Read lifetime savings.",
+    ],
+  },
+  "compost-bin-size-calculator": {
+    render: () => <CompostBinSizeCalculator />,
+    explainer: (
+      <>
+        <p>Household size + cooking + yard size determines weekly waste volume. This sizes the bin and picks tumbler vs pile.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter household + cooking.",
+      "Set yard size.",
+      "Read bin size.",
+    ],
+  },
+  "tech-repair-worth-it-calculator": {
+    render: () => <TechRepairWorthItCalculator />,
+    explainer: (
+      <>
+        <p>Phone screen repair $300 vs new iPhone $1000? This runs the 50%/75% rule plus device-age heuristics to recommend repair, marginal, or replace.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick device type.",
+      "Enter repair + replace cost.",
+      "Read recommendation.",
     ],
   },
 };
