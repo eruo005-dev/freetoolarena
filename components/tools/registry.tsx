@@ -613,6 +613,28 @@ const HatSizeConverter = dynamic(() => import("./HatSizeConverter").then(m => ({
 const GloveSizeConverter = dynamic(() => import("./GloveSizeConverter").then(m => ({ default: m.GloveSizeConverter })), { loading: Skeleton });
 const KidsClothingSizeByAge = dynamic(() => import("./KidsClothingSizeByAge").then(m => ({ default: m.KidsClothingSizeByAge })), { loading: Skeleton });
 
+// Wave 5 gardening + pets (20 new)
+const UsdaHardinessZoneLookup = dynamic(() => import("./UsdaHardinessZoneLookup").then(m => ({ default: m.UsdaHardinessZoneLookup })), { loading: Skeleton });
+const FrostDateLookup = dynamic(() => import("./FrostDateLookup").then(m => ({ default: m.FrostDateLookup })), { loading: Skeleton });
+const PlantingCalendarByZone = dynamic(() => import("./PlantingCalendarByZone").then(m => ({ default: m.PlantingCalendarByZone })), { loading: Skeleton });
+const SeedSpacingCalculator = dynamic(() => import("./SeedSpacingCalculator").then(m => ({ default: m.SeedSpacingCalculator })), { loading: Skeleton });
+const GardenBedSoilVolume = dynamic(() => import("./GardenBedSoilVolume").then(m => ({ default: m.GardenBedSoilVolume })), { loading: Skeleton });
+const CompostRatioCalculator = dynamic(() => import("./CompostRatioCalculator").then(m => ({ default: m.CompostRatioCalculator })), { loading: Skeleton });
+const CompanionPlantChecker = dynamic(() => import("./CompanionPlantChecker").then(m => ({ default: m.CompanionPlantChecker })), { loading: Skeleton });
+const MulchCubicYardsCalculator = dynamic(() => import("./MulchCubicYardsCalculator").then(m => ({ default: m.MulchCubicYardsCalculator })), { loading: Skeleton });
+const RaisedBedCostCalculator = dynamic(() => import("./RaisedBedCostCalculator").then(m => ({ default: m.RaisedBedCostCalculator })), { loading: Skeleton });
+const PlantWateringSchedule = dynamic(() => import("./PlantWateringSchedule").then(m => ({ default: m.PlantWateringSchedule })), { loading: Skeleton });
+const DogAgeInHumanYears = dynamic(() => import("./DogAgeInHumanYears").then(m => ({ default: m.DogAgeInHumanYears })), { loading: Skeleton });
+const CatAgeInHumanYears = dynamic(() => import("./CatAgeInHumanYears").then(m => ({ default: m.CatAgeInHumanYears })), { loading: Skeleton });
+const DogFoodAmountCalculator = dynamic(() => import("./DogFoodAmountCalculator").then(m => ({ default: m.DogFoodAmountCalculator })), { loading: Skeleton });
+const CatFoodAmountCalculator = dynamic(() => import("./CatFoodAmountCalculator").then(m => ({ default: m.CatFoodAmountCalculator })), { loading: Skeleton });
+const PetTravelCostEstimator = dynamic(() => import("./PetTravelCostEstimator").then(m => ({ default: m.PetTravelCostEstimator })), { loading: Skeleton });
+const PetInsuranceCostEstimator = dynamic(() => import("./PetInsuranceCostEstimator").then(m => ({ default: m.PetInsuranceCostEstimator })), { loading: Skeleton });
+const PetWeightTracker = dynamic(() => import("./PetWeightTracker").then(m => ({ default: m.PetWeightTracker })), { loading: Skeleton });
+const KennelBoardingCostCalculator = dynamic(() => import("./KennelBoardingCostCalculator").then(m => ({ default: m.KennelBoardingCostCalculator })), { loading: Skeleton });
+const DogWalkDistanceTracker = dynamic(() => import("./DogWalkDistanceTracker").then(m => ({ default: m.DogWalkDistanceTracker })), { loading: Skeleton });
+const PetMedicationDosageLookup = dynamic(() => import("./PetMedicationDosageLookup").then(m => ({ default: m.PetMedicationDosageLookup })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -13712,6 +13734,366 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter age + height.",
       "Add weight if helpful.",
       "Read recommended size.",
+    ],
+  },
+  "usda-hardiness-zone-lookup": {
+    render: () => <UsdaHardinessZoneLookup />,
+    explainer: (
+      <>
+        <p>Your zone decides what grows. Quick ZIP-to-zone lookup with min-temp range and frost-risk months.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter ZIP code.",
+      "Read zone + temp range.",
+      "See recommended plants.",
+    ],
+  },
+  "frost-date-lookup": {
+    render: () => <FrostDateLookup />,
+    explainer: (
+      <>
+        <p>Last spring frost decides when you can plant outside. First fall frost decides when you&rsquo;d better harvest. Both by zone.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick your zone.",
+      "Read frost dates.",
+      "Check growing season length.",
+    ],
+  },
+  "planting-calendar-by-zone": {
+    render: () => <PlantingCalendarByZone />,
+    explainer: (
+      <>
+        <p>Zone-aware planting dates for 20 crops. Start indoors, direct-sow, or transplant &mdash; with expected harvest dates.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick your zone.",
+      "Scan the crop table.",
+      "Plan your planting weeks.",
+    ],
+  },
+  "seed-spacing-calculator": {
+    render: () => <SeedSpacingCalculator />,
+    explainer: (
+      <>
+        <p>Bed dimensions + crop = plants that fit, seeds to buy (2x for thinning), spacing diagram.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter bed dimensions.",
+      "Pick crop + layout.",
+      "Read plants + seeds.",
+    ],
+  },
+  "garden-bed-soil-volume": {
+    render: () => <GardenBedSoilVolume />,
+    explainer: (
+      <>
+        <p>Cu ft, cu yd, bags, cost &mdash; everything to fill a raised bed. With the always-overlooked 10% buffer.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter bed dimensions.",
+      "Set soil depth.",
+      "Read cu yd + bag count.",
+    ],
+  },
+  "compost-ratio-calculator": {
+    render: () => <CompostRatioCalculator />,
+    explainer: (
+      <>
+        <p>Pile too wet and smelly? Too dry and inactive? Target 1:3 green:brown. This shows your current balance and what to add.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter green + brown volumes.",
+      "Read ratio + health tier.",
+      "Adjust to balance.",
+    ],
+  },
+  "companion-plant-checker": {
+    render: () => <CompanionPlantChecker />,
+    explainer: (
+      <>
+        <p>Tomato + basil? Excellent. Tomato + corn? Avoid. 20 common crops paired with reasons and alternatives.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick two crops.",
+      "Read compatibility tier.",
+      "Swap if bad.",
+    ],
+  },
+  "mulch-cubic-yards-calculator": {
+    render: () => <MulchCubicYardsCalculator />,
+    explainer: (
+      <>
+        <p>3 inches is standard for weed suppression. Area × depth = cu yd. Bulk delivery beats bags above 2 cu yd.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter area + depth.",
+      "Read cu yd.",
+      "Compare bulk vs bagged.",
+    ],
+  },
+  "raised-bed-cost-calculator": {
+    render: () => <RaisedBedCostCalculator />,
+    explainer: (
+      <>
+        <p>Cedar lasts 10-15 years, pine 5-7. Full cost &mdash; lumber + soil + hardware &mdash; for any bed size and material.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter bed dimensions.",
+      "Pick material + soil.",
+      "Read total cost.",
+    ],
+  },
+  "plant-watering-schedule": {
+    render: () => <PlantWateringSchedule />,
+    explainer: (
+      <>
+        <p>Sandy soil drains fast. Clay holds. Hot-arid doubles the need. Here&rsquo;s a schedule tuned to all three plus the plant type.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick plant + soil + climate.",
+      "Pick season.",
+      "Read days/week + minutes.",
+    ],
+  },
+  "dog-age-in-human-years": {
+    render: () => <DogAgeInHumanYears />,
+    explainer: (
+      <>
+        <p>The old 'dog years = 7 human' rule is wrong. 2019 UCSD epigenetic research gives a more accurate curve, size-adjusted here.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter dog age and size.",
+      "Read human equivalent.",
+      "See remaining life expectancy.",
+    ],
+  },
+  "cat-age-in-human-years": {
+    render: () => <CatAgeInHumanYears />,
+    explainer: (
+      <>
+        <p>Year 1 = 15 human. Year 2 = 24. +4 per year after. Plus life-stage care notes (kitten through super-senior).</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter cat age.",
+      "Indoor or outdoor?",
+      "Read human equivalent + care notes.",
+    ],
+  },
+  "dog-food-amount-calculator": {
+    render: () => <DogFoodAmountCalculator />,
+    explainer: (
+      <>
+        <p>Resting Energy Requirement (RER) × activity multiplier. Cups per day, meals per day &mdash; based on your dog&rsquo;s actual needs.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight + age.",
+      "Pick activity + body condition.",
+      "Read cups/day + meals.",
+    ],
+  },
+  "cat-food-amount-calculator": {
+    render: () => <CatFoodAmountCalculator />,
+    explainer: (
+      <>
+        <p>10-lb adult cat = ~250 kcal/day. This converts to cups of kibble or pouches of wet, with a hydration note.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight + age.",
+      "Pick food type.",
+      "Read daily amount.",
+    ],
+  },
+  "pet-travel-cost-estimator": {
+    render: () => <PetTravelCostEstimator />,
+    explainer: (
+      <>
+        <p>Bringing the pet vs boarding &mdash; compare total cost. Airline cabin $95-200, cargo $200-400, hotel pet fees $20-50/night.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick mode + trip length.",
+      "Set hotel nights.",
+      "Read cost vs boarding.",
+    ],
+  },
+  "pet-insurance-cost-estimator": {
+    render: () => <PetInsuranceCostEstimator />,
+    explainer: (
+      <>
+        <p>Insurance premium range by pet age, breed risk, coverage level, and deductible. Compare at Healthy Paws / Trupanion / Embrace for actual quotes.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick pet type + age.",
+      "Set coverage + deductible.",
+      "Read monthly premium range.",
+    ],
+  },
+  "pet-weight-tracker": {
+    render: () => <PetWeightTracker />,
+    explainer: (
+      <>
+        <p>Track pet weight over time, see trend. Healthy change is 1% body weight per week max &mdash; anything faster is a vet check.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight log.",
+      "Read trend.",
+      "Compare to safe rate.",
+    ],
+  },
+  "kennel-boarding-cost-calculator": {
+    render: () => <KennelBoardingCostCalculator />,
+    explainer: (
+      <>
+        <p>Standard dog boarding $35-55/night. Premium adds 50%. Extras (group play, walks, meds) add up fast &mdash; itemize here.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick tier + size.",
+      "Select extras.",
+      "Read total.",
+    ],
+  },
+  "dog-walk-distance-tracker": {
+    render: () => <DogWalkDistanceTracker />,
+    explainer: (
+      <>
+        <p>Log walks in one textarea. Weekly totals, pace, calories burned, attainment against your breed&rsquo;s energy target.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Log walks (date, time, distance).",
+      "Pick breed energy.",
+      "Read weekly summary.",
+    ],
+  },
+  "pet-medication-dosage-lookup": {
+    render: () => <PetMedicationDosageLookup />,
+    explainer: (
+      <>
+        <p>Reference only for 5 meds. Aspirin kills cats. Tylenol kills cats. Chocolate kills dogs. Always call your vet before giving anything.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter pet weight.",
+      "Pick medication.",
+      "Read dosage + warnings.",
     ],
   },
 };
