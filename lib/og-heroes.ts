@@ -33,6 +33,10 @@ export const CATEGORY_OG_THEME: Record<
   media:       { accent: "#9333ea", accentDark: "#6b21a8", tint: "#faf5ff" }, // purple
   ai:          { accent: "#db2777", accentDark: "#9d174d", tint: "#fdf2f8" }, // pink (AI = generative vibes)
   gaming:      { accent: "#7c3aed", accentDark: "#4c1d95", tint: "#f5f3ff" }, // violet (controller glow)
+  automotive:  { accent: "#1e40af", accentDark: "#1e3a8a", tint: "#eff6ff" }, // blue (road signs)
+  cooking:     { accent: "#b45309", accentDark: "#78350f", tint: "#fffbeb" }, // amber (kitchen warmth)
+  parenting:   { accent: "#db2777", accentDark: "#9d174d", tint: "#fdf2f8" }, // pink (nursery pastels)
+  pets:        { accent: "#15803d", accentDark: "#14532d", tint: "#f0fdf4" }, // green (nature + life)
 };
 
 export interface OgHero {

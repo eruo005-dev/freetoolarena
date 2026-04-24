@@ -20,9 +20,12 @@ export function disclaimerKindFor(category: Category): DisclaimerKind {
     case "career":
       return "financial";
     case "health":
+    case "parenting":
       return "medical";
     case "home":
     case "gaming":
+    case "automotive":
+    case "pets":
       return "estimate";
     default:
       return null;

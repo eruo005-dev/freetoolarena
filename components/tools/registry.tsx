@@ -524,6 +524,23 @@ const DaylightSavingsLookup = dynamic(() => import("./DaylightSavingsLookup").th
 const BestTimeToBookCalculator = dynamic(() => import("./BestTimeToBookCalculator").then(m => ({ default: m.BestTimeToBookCalculator })), { loading: Skeleton });
 const TravelInsuranceCostEstimator = dynamic(() => import("./TravelInsuranceCostEstimator").then(m => ({ default: m.TravelInsuranceCostEstimator })), { loading: Skeleton });
 
+// Automotive wave (15 new)
+const CarAffordabilityCalculator = dynamic(() => import("./CarAffordabilityCalculator").then(m => ({ default: m.CarAffordabilityCalculator })), { loading: Skeleton });
+const CarPaymentCalculator = dynamic(() => import("./CarPaymentCalculator").then(m => ({ default: m.CarPaymentCalculator })), { loading: Skeleton });
+const GasMileageCalculator = dynamic(() => import("./GasMileageCalculator").then(m => ({ default: m.GasMileageCalculator })), { loading: Skeleton });
+const CarDepreciationCalculator = dynamic(() => import("./CarDepreciationCalculator").then(m => ({ default: m.CarDepreciationCalculator })), { loading: Skeleton });
+const TotalCostOfOwnershipCalculator = dynamic(() => import("./TotalCostOfOwnershipCalculator").then(m => ({ default: m.TotalCostOfOwnershipCalculator })), { loading: Skeleton });
+const FuelEconomyConverter = dynamic(() => import("./FuelEconomyConverter").then(m => ({ default: m.FuelEconomyConverter })), { loading: Skeleton });
+const CarInsuranceQuoteEstimator = dynamic(() => import("./CarInsuranceQuoteEstimator").then(m => ({ default: m.CarInsuranceQuoteEstimator })), { loading: Skeleton });
+const TireSizeConverter = dynamic(() => import("./TireSizeConverter").then(m => ({ default: m.TireSizeConverter })), { loading: Skeleton });
+const TirePressureLookup = dynamic(() => import("./TirePressureLookup").then(m => ({ default: m.TirePressureLookup })), { loading: Skeleton });
+const VinDecoder = dynamic(() => import("./VinDecoder").then(m => ({ default: m.VinDecoder })), { loading: Skeleton });
+const LicensePlateFormatLookup = dynamic(() => import("./LicensePlateFormatLookup").then(m => ({ default: m.LicensePlateFormatLookup })), { loading: Skeleton });
+const OilChangeIntervalCalculator = dynamic(() => import("./OilChangeIntervalCalculator").then(m => ({ default: m.OilChangeIntervalCalculator })), { loading: Skeleton });
+const RepairOrReplaceCalculator = dynamic(() => import("./RepairOrReplaceCalculator").then(m => ({ default: m.RepairOrReplaceCalculator })), { loading: Skeleton });
+const EvChargingCostCalculator = dynamic(() => import("./EvChargingCostCalculator").then(m => ({ default: m.EvChargingCostCalculator })), { loading: Skeleton });
+const RoadTripFuelStops = dynamic(() => import("./RoadTripFuelStops").then(m => ({ default: m.RoadTripFuelStops })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -12165,6 +12182,276 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter trip cost and length.",
       "Pick age and coverage type.",
       "Read estimated cost.",
+    ],
+  },
+  "car-affordability-calculator": {
+    render: () => <CarAffordabilityCalculator />,
+    explainer: (
+      <>
+        <p>Figure out the most car you should buy on your income. Pick your rule of thumb (20% / 15% / 10% / DTI) and get max price, payment, and loan.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter income and debts.",
+      "Pick an affordability rule.",
+      "Read max car price.",
+    ],
+  },
+  "car-payment-calculator": {
+    render: () => <CarPaymentCalculator />,
+    explainer: (
+      <>
+        <p>Before signing at the dealer: see monthly payment, total interest, and how payments shift from interest to principal over time.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter price and down payment.",
+      "Enter rate and term.",
+      "Read monthly + total interest.",
+    ],
+  },
+  "gas-mileage-calculator": {
+    render: () => <GasMileageCalculator />,
+    explainer: (
+      <>
+        <p>Real MPG from your last tank, translated into cost per mile and annual fuel spend. See how much better (or worse) MPG changes the yearly bill.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter miles driven and gallons used.",
+      "Enter gas price.",
+      "Read MPG and annual cost.",
+    ],
+  },
+  "car-depreciation-calculator": {
+    render: () => <CarDepreciationCalculator />,
+    explainer: (
+      <>
+        <p>Cars lose 20% in year one, ~15%/year for years 2-5, then slower. Punch in your purchase and see what it&rsquo;s worth now &mdash; with a 10-year schedule.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter purchase price + year.",
+      "Pick annual miles band.",
+      "Read current value + schedule.",
+    ],
+  },
+  "total-cost-of-ownership-calculator": {
+    render: () => <TotalCostOfOwnershipCalculator />,
+    explainer: (
+      <>
+        <p>Sticker price lies. This shows the real 5-year cost including fuel, insurance, maintenance, and depreciation &mdash; and breaks it down per mile.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter all ownership inputs.",
+      "Set years to own.",
+      "Read grand total + per-mile.",
+    ],
+  },
+  "fuel-economy-converter": {
+    render: () => <FuelEconomyConverter />,
+    explainer: (
+      <>
+        <p>Converting fuel economy between regions is weirdly mathy. All four values at once, with a tier label so you know &ldquo;35 MPG&rdquo; is respectable.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter value + from-unit.",
+      "Pick target unit.",
+      "Read the full 4-way table.",
+    ],
+  },
+  "car-insurance-quote-estimator": {
+    render: () => <CarInsuranceQuoteEstimator />,
+    explainer: (
+      <>
+        <p>Before you call around: get a rough premium range for your state, age, and coverage. Estimates based on industry averages &mdash; actual quotes vary.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick state + age band.",
+      "Pick coverage + credit + record.",
+      "Read annual + monthly estimate.",
+    ],
+  },
+  "tire-size-converter": {
+    render: () => <TireSizeConverter />,
+    explainer: (
+      <>
+        <p>Decode metric tire notation: width, aspect ratio, rim size &mdash; output overall diameter, section width, revs per mile, and imperial equivalent.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter tire size (e.g. 225/65R17).",
+      "Read overall diameter + circumference.",
+      "See imperial equivalent.",
+    ],
+  },
+  "tire-pressure-lookup": {
+    render: () => <TirePressureLookup />,
+    explainer: (
+      <>
+        <p>Rule one: check the door jamb sticker. Rule two: use these averages as a sanity check. With altitude and temperature adjustments.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick vehicle type.",
+      "Read front + rear PSI.",
+      "Check door-jamb for truth.",
+    ],
+  },
+  "vin-decoder": {
+    render: () => <VinDecoder />,
+    explainer: (
+      <>
+        <p>Paste a VIN, get the country, brand, year, plant. Full details require NHTSA&rsquo;s decoder &mdash; this is the offline quick-check.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste 17-char VIN.",
+      "Read country + brand + year.",
+      "Cross-check with NHTSA for full details.",
+    ],
+  },
+  "license-plate-format-lookup": {
+    render: () => <LicensePlateFormatLookup />,
+    explainer: (
+      <>
+        <p>Buying a specialty plate? Custom vanity idea? This covers every US state&rsquo;s plate format, max length, and plate-type rules.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick a state.",
+      "Read format + regex.",
+      "See example plates.",
+    ],
+  },
+  "oil-change-interval-calculator": {
+    render: () => <OilChangeIntervalCalculator />,
+    explainer: (
+      <>
+        <p>3,000 mile intervals are a myth for modern synthetic. Here&rsquo;s the right cadence for your oil type, driving conditions, and engine mileage.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick oil type + driving conditions.",
+      "Enter annual miles + engine age.",
+      "Read interval + next date.",
+    ],
+  },
+  "repair-or-replace-calculator": {
+    render: () => <RepairOrReplaceCalculator />,
+    explainer: (
+      <>
+        <p>Ask &ldquo;is this repair worth it&rdquo; once: this tool answers with a recommendation based on car value, repair cost, and how often it&rsquo;s been in the shop.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter repair cost + car value.",
+      "Pick recent repair frequency.",
+      "Read recommendation.",
+    ],
+  },
+  "ev-charging-cost-calculator": {
+    render: () => <EvChargingCostCalculator />,
+    explainer: (
+      <>
+        <p>Home level 2 vs Tesla Supercharger: which costs more per mile, and how long does each take to hit 80%? With a comparison to a 30 MPG gas car.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter battery size + target %.",
+      "Enter home and fast rates.",
+      "Read cost + time for each.",
+    ],
+  },
+  "road-trip-fuel-stops": {
+    render: () => <RoadTripFuelStops />,
+    explainer: (
+      <>
+        <p>Plan your fuel stops for a long drive &mdash; number of stops, mile markers, total gallons, total cost. Tunable for buffer and starting tank level.</p>
+        <p>
+          Runs entirely in your browser — no upload, no account, no watermark.
+          For more tools in this category see the{" "}
+          <a href="/tools">full tools index</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter trip miles and tank.",
+      "Enter MPG and buffer %.",
+      "Read stop count + markers.",
     ],
   },
 };
