@@ -4023,7 +4023,3 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     },
   },
 };
-post-ratio-calculator",
-    },
-  },
-};
