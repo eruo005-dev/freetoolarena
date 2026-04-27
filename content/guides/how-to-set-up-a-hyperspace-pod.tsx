@@ -430,6 +430,3 @@ export const faq = [
     a: "Pods themselves are free — the CLI is open and the inference happens on hardware you already own. The shared treasury only spends money when you opt into a cloud-fallback call to a frontier model your pod can't run locally, and those are billed at wholesale rates.",
   },
 ];
-billed at wholesale rates.",
-  },
-];
