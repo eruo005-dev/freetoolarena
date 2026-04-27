@@ -345,6 +345,7 @@ import * as UseGithubCopilotAgent from "./how-to-use-github-copilot-agent-mode";
 import * as CrewaiMultiAgent from "./how-to-build-a-multi-agent-system-with-crewai";
 import * as LangGraphStateful from "./how-to-build-a-stateful-agent-with-langgraph";
 import * as ConnectAgentMcp from "./how-to-connect-an-agent-to-mcp-tools";
+import * as HyperspacePod from "./how-to-set-up-a-hyperspace-pod";
 import * as HowToUseOllama from "./how-to-use-ollama";
 import * as HowToUseLmStudio from "./how-to-use-lm-studio";
 import * as HowToUseLlamaCpp from "./how-to-use-llama-cpp";
@@ -3308,6 +3309,15 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
       targetSlug: "ai-model-compare",
     },
   },
+  "how-to-set-up-a-hyperspace-pod": {
+    intro: HyperspacePod.intro,
+    body: HyperspacePod.body,
+    cta: {
+      label: "Compare local-friendly models before you load one — free AI model compare.",
+      targetSlug: "ai-model-compare",
+    },
+    faq: HyperspacePod.faq,
+  },
   "how-to-use-ollama": {
     intro: HowToUseOllama.intro,
     body: HowToUseOllama.body,
@@ -4010,6 +4020,10 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
     cta: {
       label: "Check your compost ratio",
       targetSlug: "compost-ratio-calculator",
+    },
+  },
+};
+post-ratio-calculator",
     },
   },
 };

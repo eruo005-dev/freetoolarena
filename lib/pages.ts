@@ -4599,6 +4599,14 @@ export const PAGES: Page[] = [
     related: ["how-to-set-up-claude-code", "how-to-build-an-agent-with-the-claude-agent-sdk", "how-to-build-an-agent-with-the-openai-agents-sdk", "how-to-set-up-cursor-ai-ide", "how-to-build-a-stateful-agent-with-langgraph"],
     guideCategory: "ai",
     published: true },
+  { slug: "how-to-set-up-a-hyperspace-pod", type: "article", category: "ai",
+    title: "How to Set Up a Hyperspace Pod (Pool Laptops Into One AI Cluster)",
+    h1: "How to Set Up a Hyperspace Pod",
+    description: "Pool the laptops you already own into one peer-to-peer AI cluster. Automatic model sharding, an OpenAI-compatible endpoint, and free local inference — set up in 4 commands.",
+    keyword: "how to set up a hyperspace pod",
+    related: ["how-to-use-ollama", "how-to-use-lm-studio", "how-to-build-an-agent-with-the-claude-agent-sdk", "ai-model-compare", "ai-token-counter"],
+    guideCategory: "ai",
+    published: true },
 
   // ==================== WAVE 8: COMPETITOR-KILLER BATCH (50) ====================
   // Audio, video, voice (13) — all in-browser (MediaRecorder / Web Audio / Web Speech)
