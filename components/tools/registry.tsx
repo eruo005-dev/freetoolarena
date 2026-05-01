@@ -707,6 +707,23 @@ const PromptInjectionDetector = dynamic(() => import("./PromptInjectionDetector"
 const McpServerPicker = dynamic(() => import("./McpServerPicker").then(m => ({ default: m.McpServerPicker })), { loading: Skeleton });
 const AiReadinessScore = dynamic(() => import("./AiReadinessScore").then(m => ({ default: m.AiReadinessScore })), { loading: Skeleton });
 
+// Wave 23 document tools (15 new)
+const MailMergeHelper = dynamic(() => import("./MailMergeHelper").then(m => ({ default: m.MailMergeHelper })), { loading: Skeleton });
+const LetterheadTemplateBuilder = dynamic(() => import("./LetterheadTemplateBuilder").then(m => ({ default: m.LetterheadTemplateBuilder })), { loading: Skeleton });
+const MailingLabelGenerator = dynamic(() => import("./MailingLabelGenerator").then(m => ({ default: m.MailingLabelGenerator })), { loading: Skeleton });
+const FaxCoverSheetGenerator = dynamic(() => import("./FaxCoverSheetGenerator").then(m => ({ default: m.FaxCoverSheetGenerator })), { loading: Skeleton });
+const DemandLetterGenerator = dynamic(() => import("./DemandLetterGenerator").then(m => ({ default: m.DemandLetterGenerator })), { loading: Skeleton });
+const CeaseAndDesistGenerator = dynamic(() => import("./CeaseAndDesistGenerator").then(m => ({ default: m.CeaseAndDesistGenerator })), { loading: Skeleton });
+const DisputeLetterGenerator = dynamic(() => import("./DisputeLetterGenerator").then(m => ({ default: m.DisputeLetterGenerator })), { loading: Skeleton });
+const EnvelopeFormatter = dynamic(() => import("./EnvelopeFormatter").then(m => ({ default: m.EnvelopeFormatter })), { loading: Skeleton });
+const BibliographyFormatter = dynamic(() => import("./BibliographyFormatter").then(m => ({ default: m.BibliographyFormatter })), { loading: Skeleton });
+const TextRedactionHelper = dynamic(() => import("./TextRedactionHelper").then(m => ({ default: m.TextRedactionHelper })), { loading: Skeleton });
+const PdfTableExtractor = dynamic(() => import("./PdfTableExtractor").then(m => ({ default: m.PdfTableExtractor })), { loading: Skeleton });
+const MarkdownToPdf = dynamic(() => import("./MarkdownToPdf").then(m => ({ default: m.MarkdownToPdf })), { loading: Skeleton });
+const WordCountByDocSection = dynamic(() => import("./WordCountByDocSection").then(m => ({ default: m.WordCountByDocSection })), { loading: Skeleton });
+const PdfPageRangeExtractor = dynamic(() => import("./PdfPageRangeExtractor").then(m => ({ default: m.PdfPageRangeExtractor })), { loading: Skeleton });
+const DocumentVersionDiff = dynamic(() => import("./DocumentVersionDiff").then(m => ({ default: m.DocumentVersionDiff })), { loading: Skeleton });
+
 // Wave 9 AI cost & comparison tools (12 new)
 const GeminiVsChatgptCostCalculator = dynamic(() => import("./GeminiVsChatgptCostCalculator").then(m => ({ default: m.GeminiVsChatgptCostCalculator })), { loading: Skeleton });
 const ClaudeVsDeepseekCostCalculator = dynamic(() => import("./ClaudeVsDeepseekCostCalculator").then(m => ({ default: m.ClaudeVsDeepseekCostCalculator })), { loading: Skeleton });
@@ -16091,5 +16108,116 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       round duration, number of rounds, frequency, and timing. Based on the Finnish KIHD longevity data: 4-7 sessions/week
       at 175°F+ correlates with 40% reduction in all-cause mortality.</p></>),
     howToUse: ["Pick goal + level + temp.", "Read your protocol.", "Follow the safety + execution notes."],
+  },
+  "mail-merge-helper": {
+    render: () => <MailMergeHelper />,
+    explainer: (<><p>Paste a template with <code>{"{{ field }}"}</code> placeholders and a CSV with a header row. Get one
+      merged output per row, ready to copy. Useful for bulk emails, personalized letters, contract drafts, anywhere you&rsquo;d
+      otherwise hand-edit the same document many times.</p>
+      <p>Everything runs in your browser. Nothing uploaded.</p></>),
+    howToUse: ["Paste your template using {{ field }} placeholders.", "Paste your CSV (first row = headers).", "Copy each merged output."],
+  },
+  "letterhead-template-builder": {
+    render: () => <LetterheadTemplateBuilder />,
+    explainer: (<><p>Generate a clean, print-ready letterhead with your business name, tagline, address, and accent
+      color. Click print, save as PDF, use it as a template for every business letter going forward. No signup, no monthly
+      fee, no &ldquo;watermark&rdquo; on the free tier.</p></>),
+    howToUse: ["Fill in your business details + accent color.", "Click 'Print / save as PDF'.", "In the print dialog, set destination to Save as PDF."],
+  },
+  "mailing-label-generator": {
+    render: () => <MailingLabelGenerator />,
+    explainer: (<><p>Generate sheets of mailing labels in standard Avery formats: 5160 (1&Prime;&times;2 5/8&Prime;, 30/sheet),
+      5161, 5163, 5164, 5167 return labels, plus L7160 for A4. Paste your addresses (one per blank-line-separated block); the
+      tool tiles them into a print-ready sheet.</p></>),
+    howToUse: ["Pick the Avery format that matches your label sheet.", "Paste addresses (separate each by a blank line).", "Print at 'Actual size' on the label sheet."],
+  },
+  "fax-cover-sheet-generator": {
+    render: () => <FaxCoverSheetGenerator />,
+    explainer: (<><p>Generate a print-ready fax cover sheet — sender, recipient, urgency, page count, optional HIPAA-style
+      confidentiality notice. Still useful in 2026 for medical, legal, escrow, certain government workflows.</p></>),
+    howToUse: ["Fill in the sender + recipient fields.", "Pick urgency + check the confidentiality notice if needed.", "Print or save as PDF."],
+  },
+  "demand-letter-generator": {
+    render: () => <DemandLetterGenerator />,
+    explainer: (<><p>Educational template for a formal demand letter — unpaid invoice, breach of contract, personal loan,
+      security deposit return, or property damage. Built-in 14-day default deadline, certified-mail header, sender + recipient
+      address blocks.</p>
+      <p><strong>Not legal advice.</strong> For amounts over a few thousand dollars or complex disputes, talk to a lawyer.</p></>),
+    howToUse: ["Pick demand type.", "Fill amount, original date, and supporting details.", "Print + send via certified mail."],
+  },
+  "cease-and-desist-generator": {
+    render: () => <CeaseAndDesistGenerator />,
+    explainer: (<><p>Generate a cease-and-desist letter for harassment, trademark/copyright infringement, defamation,
+      improper debt collection, or neighbor disputes. Includes citation to the relevant statute (FCBA, TCPA, Lanham Act,
+      etc.) where applicable.</p>
+      <p><strong>Not legal advice</strong> — a C&amp;D is a formal warning, not a court order. Recipients aren&rsquo;t legally required
+      to comply. The letter establishes a paper trail useful in subsequent litigation.</p></>),
+    howToUse: ["Pick dispute type.", "Describe the conduct + evidence + your demand.", "Print + send certified mail with return receipt."],
+  },
+  "dispute-letter-generator": {
+    render: () => <DisputeLetterGenerator />,
+    explainer: (<><p>Formal dispute letter for credit report errors (FCRA), billing disputes (FCBA / Fair Credit Billing
+      Act), bank errors (Electronic Fund Transfer Act), medical bills (No Surprises Act), or unwanted subscription charges.
+      Each type cites the relevant law and requested resolution timeline.</p></>),
+    howToUse: ["Pick dispute type.", "Fill account number + describe the error + state the resolution you want.", "Send via certified mail + retain copies."],
+  },
+  "envelope-formatter": {
+    render: () => <EnvelopeFormatter />,
+    explainer: (<><p>Format envelopes correctly for US (USPS), UK (Royal Mail), EU national posts, Canada Post, or Australia
+      Post standards. Each country has different rules: USPS prefers ALL CAPS, Royal Mail wants postcode on its own line,
+      EU varies by country. The tool gets the spacing right and prints to a #10 (US) or DL (international) envelope.</p></>),
+    howToUse: ["Pick country / postal authority.", "Fill in sender + recipient.", "Print on a real envelope (set printer to envelope feed)."],
+  },
+  "bibliography-formatter": {
+    render: () => <BibliographyFormatter />,
+    explainer: (<><p>Format a multi-source bibliography in APA 7, MLA 9, Chicago 17, or Harvard style. Books, journals,
+      websites, newspapers all supported. Sources auto-sort alphabetically by author. Pair with the{" "}
+      <a href="/tools/citation-generator">citation generator</a> for in-text citations.</p></>),
+    howToUse: ["Add each source with its type + key fields.", "Pick a citation style.", "Copy the formatted bibliography."],
+  },
+  "text-redaction-helper": {
+    render: () => <TextRedactionHelper />,
+    explainer: (<><p>Strip PII from text before sharing it with an LLM, posting in Slack, or pasting into a Jira ticket.
+      Toggle which patterns to scrub: emails, phone numbers, SSNs, credit cards, IPs, URLs, dates, dollar amounts. Add custom
+      regex if needed.</p>
+      <p>NOT a substitute for production DLP — for legal/medical/compliance work use a vetted tool. Always do a
+      manual review pass.</p></>),
+    howToUse: ["Paste your text.", "Toggle which patterns to redact.", "Copy the redacted output."],
+  },
+  "pdf-table-extractor": {
+    render: () => <PdfTableExtractor />,
+    explainer: (<><p>Extract tables from any text-based PDF page into CSV. Uses pdf.js to read positioned text boxes,
+      clusters them into rows by Y-coordinate, splits cells by X-gap. Works well on simple tables; complex layouts may
+      need cleanup.</p>
+      <p>All processing happens in your browser. The PDF is never uploaded.</p></>),
+    howToUse: ["Upload your PDF.", "Pick a page number.", "Download the extracted table as CSV."],
+  },
+  "markdown-to-pdf": {
+    render: () => <MarkdownToPdf />,
+    explainer: (<><p>Convert any Markdown text to a clean, print-ready PDF in your browser. Supports headings, lists,
+      blockquotes, code blocks, bold, italic, inline code, and links. Useful for quarterly reports, meeting notes, technical
+      docs &mdash; any case where you have markdown but need a polished PDF.</p></>),
+    howToUse: ["Paste / write your markdown.", "Click 'Print / save as PDF'.", "Set destination to 'Save as PDF' in print dialog."],
+  },
+  "word-count-by-section": {
+    render: () => <WordCountByDocSection />,
+    explainer: (<><p>Get total words, characters, paragraphs, sentences, and reading time — plus a per-section breakdown
+      for any Markdown-formatted document. Useful for catching unbalanced sections (one section that&rsquo;s 60% of the document
+      probably needs to be split) and verifying word-count targets.</p></>),
+    howToUse: ["Paste your document with markdown headings.", "Read total + per-section stats."],
+  },
+  "pdf-page-range-extractor": {
+    render: () => <PdfPageRangeExtractor />,
+    explainer: (<><p>Extract specific pages from a PDF (e.g., <code>1-5, 8, 12-15</code>) into a new PDF. Browser-only
+      via pdf-lib. Different from <a href="/tools/pdf-split">pdf-split</a> (which splits to many separate PDFs) — this gives
+      you ONE new PDF with just the pages you want.</p></>),
+    howToUse: ["Upload PDF.", "Enter page ranges (commas + dashes).", "Download the extracted PDF."],
+  },
+  "document-version-diff": {
+    render: () => <DocumentVersionDiff />,
+    explainer: (<><p>Compare two versions of a document side-by-side. Word-level for prose; line-level for code or
+      structured docs. Highlights additions in green, deletions in red strikethrough. Browser-only — works on documents up
+      to ~5,000 tokens via standard LCS diff algorithm.</p></>),
+    howToUse: ["Paste original (A) + revised (B) text.", "Pick word-level or line-level granularity.", "Read the highlighted diff."],
   },
 };
