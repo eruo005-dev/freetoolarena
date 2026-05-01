@@ -21,6 +21,9 @@ const TAG_LABELS: Record<GlossaryEntry["tags"][number], string> = {
   seo: "SEO",
   dev: "Developer",
   "web-perf": "Web performance",
+  ai: "AI",
+  health: "Health",
+  lifestyle: "Lifestyle",
 };
 
 export default function LearnIndex() {
