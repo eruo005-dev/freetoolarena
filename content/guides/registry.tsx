@@ -445,6 +445,32 @@ import * as HowToCombineLaptopsToRunLargeLlms from "./how-to-combine-laptops-to-
 import * as HowToShareAGpuAcrossMachines from "./how-to-share-a-gpu-across-machines";
 import * as HowToRunLlama70bOnConsumerHardware from "./how-to-run-llama-70b-on-consumer-hardware";
 import * as HowToBuildAHomeAiCluster from "./how-to-build-a-home-ai-cluster";
+// Wave 11 — AI guides + best-for-X (25)
+import * as BestAiForCoding2026 from "./best-ai-for-coding-2026";
+import * as BestAiForResearch from "./best-ai-for-research";
+import * as BestAiForWriting from "./best-ai-for-writing";
+import * as BestAiForMarketing from "./best-ai-for-marketing";
+import * as BestAiForStudents from "./best-ai-for-students";
+import * as BestAiForDataAnalysis from "./best-ai-for-data-analysis";
+import * as BestAiForCreativeWriting from "./best-ai-for-creative-writing";
+import * as BestAiForCustomerSupport from "./best-ai-for-customer-support";
+import * as BestAiForImageGeneration from "./best-ai-for-image-generation";
+import * as BestAiForVideoGeneration from "./best-ai-for-video-generation";
+import * as BestAiForAgents from "./best-ai-for-agents";
+import * as BestAiForPdfs from "./best-ai-for-pdfs";
+import * as BestAiForEmails from "./best-ai-for-emails";
+import * as BestAiForMeetings from "./best-ai-for-meetings";
+import * as BestAiForLegalResearch from "./best-ai-for-legal-research";
+import * as BestFreeAiTools2026 from "./best-free-ai-tools-2026";
+import * as HowToPickAnAiCodingAssistant from "./how-to-pick-an-ai-coding-assistant";
+import * as HowToPickAnAiForResearch from "./how-to-pick-an-ai-for-research";
+import * as HowToEvaluateAnAiModel from "./how-to-evaluate-an-ai-model";
+import * as ClaudePricingExplained from "./claude-pricing-explained";
+import * as ChatgptPricingExplained from "./chatgpt-pricing-explained";
+import * as GeminiPricingExplained from "./gemini-pricing-explained";
+import * as DeepseekPricingExplained from "./deepseek-pricing-explained";
+import * as AiPricingCheatSheet from "./ai-pricing-cheat-sheet";
+import * as HowToChooseTheRightAiForYourTeam from "./how-to-choose-the-right-ai-for-your-team";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -4237,6 +4263,31 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
       },
     ],
   },
+  "best-ai-for-coding-2026": { intro: BestAiForCoding2026.intro, body: BestAiForCoding2026.body, cta: { label: "Compare AI coding tool costs at any team size", targetSlug: "ai-coding-tool-cost-comparison" } },
+  "best-ai-for-research": { intro: BestAiForResearch.intro, body: BestAiForResearch.body, cta: { label: "See how AI tools compare on features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-writing": { intro: BestAiForWriting.intro, body: BestAiForWriting.body, cta: { label: "Track every frontier AI model", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-marketing": { intro: BestAiForMarketing.intro, body: BestAiForMarketing.body, cta: { label: "Budget your monthly AI spend", targetSlug: "ai-monthly-cost-budgeter" } },
+  "best-ai-for-students": { intro: BestAiForStudents.intro, body: BestAiForStudents.body, cta: { label: "Compare AI features side-by-side", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-data-analysis": { intro: BestAiForDataAnalysis.intro, body: BestAiForDataAnalysis.body, cta: { label: "Track frontier model capabilities", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-creative-writing": { intro: BestAiForCreativeWriting.intro, body: BestAiForCreativeWriting.body, cta: { label: "Compare ChatGPT and Claude head-to-head", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-customer-support": { intro: BestAiForCustomerSupport.intro, body: BestAiForCustomerSupport.body, cta: { label: "Estimate your AI cost", targetSlug: "ai-cost-estimator" } },
+  "best-ai-for-image-generation": { intro: BestAiForImageGeneration.intro, body: BestAiForImageGeneration.body, cta: { label: "Compare AI features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-video-generation": { intro: BestAiForVideoGeneration.intro, body: BestAiForVideoGeneration.body, cta: { label: "Compare frontier models", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-agents": { intro: BestAiForAgents.intro, body: BestAiForAgents.body, cta: { label: "Estimate agent loop cost", targetSlug: "ai-agent-loop-cost-estimator" } },
+  "best-ai-for-pdfs": { intro: BestAiForPdfs.intro, body: BestAiForPdfs.body, cta: { label: "Compare AI features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-emails": { intro: BestAiForEmails.intro, body: BestAiForEmails.body, cta: { label: "Track AI features by tool", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-meetings": { intro: BestAiForMeetings.intro, body: BestAiForMeetings.body, cta: { label: "Budget your AI tools", targetSlug: "ai-monthly-cost-budgeter" } },
+  "best-ai-for-legal-research": { intro: BestAiForLegalResearch.intro, body: BestAiForLegalResearch.body, cta: { label: "Compare frontier models", targetSlug: "frontier-model-tracker" } },
+  "best-free-ai-tools-2026": { intro: BestFreeAiTools2026.intro, body: BestFreeAiTools2026.body, cta: { label: "Compare AI features across tools", targetSlug: "ai-feature-comparison-matrix" } },
+  "how-to-pick-an-ai-coding-assistant": { intro: HowToPickAnAiCodingAssistant.intro, body: HowToPickAnAiCodingAssistant.body, cta: { label: "Compare every AI coding tool's cost", targetSlug: "ai-coding-tool-cost-comparison" } },
+  "how-to-pick-an-ai-for-research": { intro: HowToPickAnAiForResearch.intro, body: HowToPickAnAiForResearch.body, cta: { label: "Track every frontier model", targetSlug: "frontier-model-tracker" } },
+  "how-to-evaluate-an-ai-model": { intro: HowToEvaluateAnAiModel.intro, body: HowToEvaluateAnAiModel.body, cta: { label: "Compare frontier models side-by-side", targetSlug: "frontier-model-tracker" } },
+  "claude-pricing-explained": { intro: ClaudePricingExplained.intro, body: ClaudePricingExplained.body, cta: { label: "Compare Claude vs DeepSeek cost", targetSlug: "claude-vs-deepseek-cost-calculator" } },
+  "chatgpt-pricing-explained": { intro: ChatgptPricingExplained.intro, body: ChatgptPricingExplained.body, cta: { label: "Compare Gemini vs ChatGPT cost", targetSlug: "gemini-vs-chatgpt-cost-calculator" } },
+  "gemini-pricing-explained": { intro: GeminiPricingExplained.intro, body: GeminiPricingExplained.body, cta: { label: "Compare Gemini vs ChatGPT cost", targetSlug: "gemini-vs-chatgpt-cost-calculator" } },
+  "deepseek-pricing-explained": { intro: DeepseekPricingExplained.intro, body: DeepseekPricingExplained.body, cta: { label: "Compare Claude vs DeepSeek", targetSlug: "claude-vs-deepseek-cost-calculator" } },
+  "ai-pricing-cheat-sheet": { intro: AiPricingCheatSheet.intro, body: AiPricingCheatSheet.body, cta: { label: "Budget your AI spend", targetSlug: "ai-monthly-cost-budgeter" } },
+  "how-to-choose-the-right-ai-for-your-team": { intro: HowToChooseTheRightAiForYourTeam.intro, body: HowToChooseTheRightAiForYourTeam.body, cta: { label: "Compare AI coding tool costs by team size", targetSlug: "ai-coding-tool-cost-comparison" } },
   "how-to-feed-dog-treats-without-overdoing-it": {
     intro: HowToFeedDogTreatsWithoutOverdoingIt.intro,
     body: HowToFeedDogTreatsWithoutOverdoingIt.body,
