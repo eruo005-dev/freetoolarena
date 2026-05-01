@@ -674,6 +674,14 @@ const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposable
 const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
 const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
 
+// Wave 14 AI workflow tools (6 new)
+const PromptRewriter = dynamic(() => import("./PromptRewriter").then(m => ({ default: m.PromptRewriter })), { loading: Skeleton });
+const SystemPromptGenerator = dynamic(() => import("./SystemPromptGenerator").then(m => ({ default: m.SystemPromptGenerator })), { loading: Skeleton });
+const AiModelPickerQuiz = dynamic(() => import("./AiModelPickerQuiz").then(m => ({ default: m.AiModelPickerQuiz })), { loading: Skeleton });
+const PromptInjectionDetector = dynamic(() => import("./PromptInjectionDetector").then(m => ({ default: m.PromptInjectionDetector })), { loading: Skeleton });
+const McpServerPicker = dynamic(() => import("./McpServerPicker").then(m => ({ default: m.McpServerPicker })), { loading: Skeleton });
+const AiReadinessScore = dynamic(() => import("./AiReadinessScore").then(m => ({ default: m.AiReadinessScore })), { loading: Skeleton });
+
 // Wave 9 AI cost & comparison tools (12 new)
 const GeminiVsChatgptCostCalculator = dynamic(() => import("./GeminiVsChatgptCostCalculator").then(m => ({ default: m.GeminiVsChatgptCostCalculator })), { loading: Skeleton });
 const ClaudeVsDeepseekCostCalculator = dynamic(() => import("./ClaudeVsDeepseekCostCalculator").then(m => ({ default: m.ClaudeVsDeepseekCostCalculator })), { loading: Skeleton });
@@ -15852,5 +15860,56 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       <p>For the deeper architecture, see <a href="/guides/how-to-build-a-home-ai-cluster">how to build a home AI
       cluster</a>.</p></>),
     howToUse: ["Pick API model + monthly token volume.", "Enter $/kWh.", "Read break-even months for each hardware path."],
+  },
+  "prompt-rewriter": {
+    render: () => <PromptRewriter />,
+    explainer: (<><p>Paste a rough prompt and get a quality score (0-100) plus the top fixes &mdash; missing role, no audience,
+      no format, fluffy filler, etc. Below the fixes you get a structured Role / Task / Audience / Constraints / Format / Example
+      template ready to copy.</p>
+      <p>Pair with the <a href="/tools/system-prompt-generator">system prompt generator</a> for the persistent / Custom GPT case.</p></>),
+    howToUse: ["Paste your prompt.", "Read the score and fixes.", "Copy the template, fill in the brackets, run it."],
+  },
+  "system-prompt-generator": {
+    render: () => <SystemPromptGenerator />,
+    explainer: (<><p>Generates a structured system prompt for ChatGPT Custom GPTs, Claude Projects, Gemini Gems, or API workloads.
+      Inputs: role, domain, audience, style, must/never lists, optional examples. Output: ready-to-paste system prompt with
+      target-specific behavior notes (Custom GPT refuses off-topic, Claude Project notes persistent context, etc.).</p>
+      <p>The output is cache-friendly &mdash; stable parts (role, style, examples) at the top so prompt caching kicks in at 90% off cached input.</p></>),
+    howToUse: ["Pick target (Custom GPT / Claude Project / Gemini Gem / API).", "Fill role + domain + audience + style.", "List the always / never bullets.", "Copy the generated prompt."],
+  },
+  "ai-model-picker-quiz": {
+    render: () => <AiModelPickerQuiz />,
+    explainer: (<><p>Four questions: what&rsquo;s your main use, monthly budget, top priority, how heavy. Returns the AI model + tool combo
+      that fits, with reasons and 1-2 alternatives. Logic covers free-tier paths up to $200/mo Max plans.</p>
+      <p>Once you&rsquo;ve picked, run cost math through the <a href="/tools/ai-monthly-cost-budgeter">monthly cost budgeter</a> or compare specific
+      pairs at <a href="/tools/ai-feature-comparison-matrix">the feature matrix</a>.</p></>),
+    howToUse: ["Answer the 4 questions.", "Read the recommendation + reasons.", "Open the alternatives if the primary doesn't fit."],
+  },
+  "prompt-injection-detector": {
+    render: () => <PromptInjectionDetector />,
+    explainer: (<><p>Pre-filter for untrusted text before you pipe it into an LLM. Scans for known injection patterns:
+      override attempts (&ldquo;ignore previous&rdquo;), role hijacks, system-prompt forgery, fake admin/dev modes, hidden zero-width
+      and bidi unicode characters, and more.</p>
+      <p>Caveat: this is a fast first line of defense, not a complete solution. Real defense layers structured tool-use schemas,
+      explicit confirmation for destructive actions, and treating all tool outputs as untrusted by default.</p></>),
+    howToUse: ["Paste any text headed for an LLM.", "Read the verdict.", "Treat any high-risk match as a refusal trigger upstream."],
+  },
+  "mcp-server-picker": {
+    render: () => <McpServerPicker />,
+    explainer: (<><p>Pick a workflow (coding, research, data analyst, customer support, scraping, project manager, personal assistant)
+      and get the recommended Model Context Protocol servers, with installation strings and a copy-paste config snippet for Claude Desktop /
+      Code.</p>
+      <p>Servers are tagged official vs community &mdash; community servers vary in quality and trust. Treat all MCP servers as having the
+      privileges of the user running them.</p></>),
+    howToUse: ["Pick the workflow.", "Read the server list.", "Copy the JSON snippet into your Claude Desktop config."],
+  },
+  "ai-readiness-score": {
+    render: () => <AiReadinessScore />,
+    explainer: (<><p>12-question honest assessment: is your team ready to roll out AI? Covers use cases, data, champion, budget,
+      policy, privacy, training, evaluation, leadership buy-in, iteration, compliance, infra. Scored 0-100 with a verdict (ready / mostly
+      / premature / far) and the prep work to close gaps.</p>
+      <p>Pair with <a href="/guides/how-to-choose-the-right-ai-for-your-team">how to choose the right AI for your team</a> for the
+      4-week selection process.</p></>),
+    howToUse: ["Check each statement that's true for your team.", "Read your readiness score and verdict.", "Close the gaps before rolling out."],
   },
 };
