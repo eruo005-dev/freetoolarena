@@ -440,6 +440,11 @@ import * as HowToSetUpAnErgonomicDesk from "./how-to-set-up-an-ergonomic-desk";
 import * as HowToCancelUnusedSubscriptions from "./how-to-cancel-unused-subscriptions";
 import * as HowToMasterSmallTalk from "./how-to-master-small-talk";
 import * as HowToFeedDogTreatsWithoutOverdoingIt from "./how-to-feed-dog-treats-without-overdoing-it";
+// Wave 8 — distributed AI / home cluster
+import * as HowToCombineLaptopsToRunLargeLlms from "./how-to-combine-laptops-to-run-large-llms";
+import * as HowToShareAGpuAcrossMachines from "./how-to-share-a-gpu-across-machines";
+import * as HowToRunLlama70bOnConsumerHardware from "./how-to-run-llama-70b-on-consumer-hardware";
+import * as HowToBuildAHomeAiCluster from "./how-to-build-a-home-ai-cluster";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -4125,6 +4130,110 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
       {
         q: "How do I gracefully end a small-talk conversation?",
         a: "Two clean exits: the honest one ('going to grab a drink — really enjoyed this, see you in a bit') or the intro pivot ('you should meet [X], I think you'd actually enjoy talking to her,' then walk them over). Both leave the other person feeling met, not abandoned.",
+      },
+    ],
+  },
+  "how-to-combine-laptops-to-run-large-llms": {
+    intro: HowToCombineLaptopsToRunLargeLlms.intro,
+    body: HowToCombineLaptopsToRunLargeLlms.body,
+    cta: {
+      label: "Plan your context-window memory before you start",
+      targetSlug: "llm-context-window-calculator",
+    },
+    faq: [
+      {
+        q: "Can you really run a 70B model on regular laptops?",
+        a: "Yes. With pipeline parallelism (Hyperspace, exo, llama.cpp RPC), a 70B model at Q4 quantization (~42 GB on disk) can be sharded across three or four laptops with 16–32 GB of memory each. Each machine carries some layers; tokens flow through the ring. Throughput is bound by the slowest member, but quality matches a single big-machine run.",
+      },
+      {
+        q: "What's the difference between Hyperspace, exo, llama.cpp RPC, and Petals?",
+        a: "Hyperspace is the easiest team option — invite link, OpenAI-compatible endpoint, automatic NAT traversal. exo is open-source, terminal-first, and tuned for Apple Silicon. llama.cpp RPC gives maximum control with minimal dependencies. Petals is for running models too large to fit any private pool, using a public BitTorrent-style swarm.",
+      },
+      {
+        q: "Does pooling laptops require fast networking?",
+        a: "Less than you'd think. Pipeline parallelism shuttles small (~4–16 KB) tensors per token, so latency matters more than bandwidth. Wired 1 GbE handles 70B comfortably. Wi-Fi 6 works for casual use; Wi-Fi over multiple walls becomes the bottleneck at 2–3 tokens per second.",
+      },
+      {
+        q: "Do all the laptops need the same OS or hardware?",
+        a: "No. A pod can mix macOS, Linux, and Windows under WSL2; Apple Silicon, AMD, and Intel; 16 GB and 64 GB machines. The runtime auto-shards based on available memory — bigger machines just carry more layers.",
+      },
+    ],
+  },
+  "how-to-share-a-gpu-across-machines": {
+    intro: HowToShareAGpuAcrossMachines.intro,
+    body: HowToShareAGpuAcrossMachines.body,
+    cta: {
+      label: "Estimate cost vs cloud APIs at your usage level",
+      targetSlug: "ai-cost-estimator",
+    },
+    faq: [
+      {
+        q: "How do I share a single GPU with multiple machines on my LAN?",
+        a: "Run a model-serving daemon on the GPU host that exposes an OpenAI-compatible HTTP endpoint. Ollama (easiest), vLLM (highest throughput), and LM Studio server mode all work. Bind to 0.0.0.0:port, then point each client's OpenAI base URL at http://gpu-host-ip:port/v1.",
+      },
+      {
+        q: "What's the difference between tensor parallelism and pipeline parallelism?",
+        a: "Tensor parallelism splits each layer's matrices across GPUs in the same machine via NVLink — used to fit models too big for one card. Pipeline parallelism splits whole layers across machines on a network — used to pool memory across machines. Tensor parallel needs 25 GbE+ if cross-machine, so it's almost always single-host. Pipeline parallel works fine on standard LAN.",
+      },
+      {
+        q: "How many users can a single 4090 handle?",
+        a: "With vLLM and continuous batching, a 24 GB RTX 4090 serves a 7B model at ~95 tokens/sec for 4 simultaneous users, ~55 tokens/sec for 16. For 70B Q4 with offload, you're looking at ~9 tokens/sec for 4 users — usable but slower.",
+      },
+      {
+        q: "Can I expose a shared GPU endpoint to the public internet?",
+        a: "Don't, unless you've added auth, rate limiting, and HTTPS. A LAN endpoint with no protection is fine for a household; a public endpoint without protection is a free open AI service. Caddy or Traefik handle reverse-proxy auth in one config block. For team setups, a Hyperspace pod handles this natively.",
+      },
+    ],
+  },
+  "how-to-run-llama-70b-on-consumer-hardware": {
+    intro: HowToRunLlama70bOnConsumerHardware.intro,
+    body: HowToRunLlama70bOnConsumerHardware.body,
+    cta: {
+      label: "Plan KV-cache memory for your context window",
+      targetSlug: "llm-context-window-calculator",
+    },
+    faq: [
+      {
+        q: "What hardware do I need to run Llama 3.3 70B locally?",
+        a: "At Q4_K_M quantization (~42 GB on disk plus 6–8 GB headroom), you need around 50 GB of unified memory or pooled VRAM+RAM. Cheapest options: a used Mac Studio M2 Max 64 GB (~$1,800), a Mac Studio M2 Ultra 128 GB (~$3,500), or four 16-GB laptops in a Hyperspace pod (free if you have them).",
+      },
+      {
+        q: "What's the best quantization for Llama 70B?",
+        a: "Q4_K_M is the sweet spot — about 4% quality loss versus FP16, but fits in 3.3× less memory. Q5_K_M is the next step up if you have memory headroom. Past Q3 the model produces visibly worse code and reasoning, so it's not worth the savings.",
+      },
+      {
+        q: "How fast is local Llama 70B compared to cloud APIs?",
+        a: "Mac Studio M2 Ultra 128 GB runs 70B Q5 at 12–16 tokens/sec; an RTX 4090 with offloading hits 8–14 tokens/sec; a 5-laptop Hyperspace pod gets 8–12 tokens/sec. Frontier cloud APIs run 50–100+ tokens/sec, so local is 3–8× slower — usually still fast enough for chat and code work.",
+      },
+      {
+        q: "Can I run Llama 70B on a single GPU like a 4090?",
+        a: "Not entirely in VRAM — 70B Q4 needs ~42 GB and a 4090 has 24 GB. But with llama.cpp's --n-gpu-layers flag, you can put ~32 of 80 layers on the GPU and stream the rest from system RAM. Expect 10–14 tokens/sec on a 4090 + 64 GB DDR5 system.",
+      },
+    ],
+  },
+  "how-to-build-a-home-ai-cluster": {
+    intro: HowToBuildAHomeAiCluster.intro,
+    body: HowToBuildAHomeAiCluster.body,
+    cta: {
+      label: "Run the cost vs cloud math for your usage",
+      targetSlug: "ai-cost-estimator",
+    },
+    faq: [
+      {
+        q: "Is building a home AI cluster worth it?",
+        a: "Worth it if you spend $60+/month on AI APIs and want privacy on sensitive code or documents, or if you want code-completion that's faster than typing without rate limits. Not worth it for casual chat use — a $20/month cloud subscription will feel faster and cheaper.",
+      },
+      {
+        q: "What's the cheapest way to start a home AI setup?",
+        a: "A used Mac Studio M2 Max 64 GB (~$1,800) running Ollama serves 70B Q4 at 6–9 tokens/sec for a single user. Or, if you already own 3–5 laptops, a Hyperspace pod across them is $0 in hardware and gets you 70B Q4 at 8–12 tokens/sec.",
+      },
+      {
+        q: "What network gear do I need for a home AI cluster?",
+        a: "Wi-Fi 6 works for casual pods. For multi-machine pods that you'll actually rely on, plan a 2.5 GbE switch (~$120–300) and Cat 6 wiring. Thunderbolt cable directly between two laptops gives near-PCIe performance for two-node setups.",
+      },
+      {
+        q: "Will running an AI cluster heat up my house?",
+        a: "Only if it's pegged constantly. A Mac Studio Ultra under heavy inference draws ~150 W; a 4090 host hits 450 W. Plan for 200–500 W of sustained draw per active host. A small portable AC, a vented closet, or just keeping a doorway open handles the heat. Apple Silicon is the quiet option — under 35 dBA at full inference.",
       },
     ],
   },
