@@ -16,7 +16,7 @@ import {
   guideCategoryHref,
   SITE_URL,
 } from "@/lib/pages";
-import { jsonLdFor, faqJsonLd, SITE_UPDATED } from "@/lib/seo";
+import { jsonLdFor, faqJsonLd, breadcrumbForPage, SITE_UPDATED } from "@/lib/seo";
 
 export interface FaqItem {
   q: string;
@@ -194,6 +194,10 @@ export function ArticleShell({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdFor(page) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: breadcrumbForPage(page) }}
       />
     </Container>
   );

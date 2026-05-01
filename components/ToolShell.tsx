@@ -17,7 +17,7 @@ import {
   getComparisonsForTool,
   comparisonHref,
 } from "@/lib/comparisons";
-import { jsonLdFor, faqJsonLd, howToJsonLd, SITE_UPDATED } from "@/lib/seo";
+import { jsonLdFor, faqJsonLd, howToJsonLd, breadcrumbForPage, SITE_UPDATED } from "@/lib/seo";
 
 export interface ToolShellProps {
   slug: string;
@@ -253,6 +253,10 @@ export function ToolShell({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdFor(page) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: breadcrumbForPage(page) }}
       />
       {howToUse && howToUse.length > 0 && (
         <script

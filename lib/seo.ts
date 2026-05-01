@@ -353,5 +353,48 @@ export function websiteJsonLd(): string {
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_TAGLINE,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/tools?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   });
+}
+
+/**
+ * BreadcrumbList JSON-LD — Google uses this for the breadcrumb rich result
+ * shown above the page title in SERPs. Higher CTR vs no breadcrumbs.
+ *
+ * Pass the breadcrumb chain as { name, url } pairs in display order
+ * (Home → Section → Page). Position is auto-numbered.
+ */
+export function breadcrumbJsonLd(items: { name: string; url: string }[]): string {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  });
+}
+
+/**
+ * Convenience: build the breadcrumb chain for any Page in the manifest.
+ * Tools → Home > Tools > {h1}
+ * Articles → Home > Guides > {h1}
+ */
+export function breadcrumbForPage(page: Page): string {
+  const sectionLabel = page.type === "tool" ? "Tools" : "Guides";
+  const sectionUrl = `${SITE_URL}/${page.type === "tool" ? "tools" : "guides"}`;
+  return breadcrumbJsonLd([
+    { name: "Home", url: SITE_URL },
+    { name: sectionLabel, url: sectionUrl },
+    { name: page.h1, url: `${SITE_URL}${pageHref(page)}` },
+  ]);
 }
