@@ -434,6 +434,43 @@ import * as HowToBuildADiySolarPowerKit from "./how-to-build-a-diy-solar-power-k
 import * as HowToPickZeroWasteBeauty from "./how-to-pick-zero-waste-beauty";
 import * as HowToStartUrbanFarming from "./how-to-start-urban-farming";
 import * as HowToSetUpCompostingAtHome from "./how-to-set-up-composting-at-home";
+// Wave 7
+import * as HowToWriteADatingAppBio from "./how-to-write-a-dating-app-bio";
+import * as HowToSetUpAnErgonomicDesk from "./how-to-set-up-an-ergonomic-desk";
+import * as HowToCancelUnusedSubscriptions from "./how-to-cancel-unused-subscriptions";
+import * as HowToMasterSmallTalk from "./how-to-master-small-talk";
+import * as HowToFeedDogTreatsWithoutOverdoingIt from "./how-to-feed-dog-treats-without-overdoing-it";
+// Wave 8 — distributed AI / home cluster
+import * as HowToCombineLaptopsToRunLargeLlms from "./how-to-combine-laptops-to-run-large-llms";
+import * as HowToShareAGpuAcrossMachines from "./how-to-share-a-gpu-across-machines";
+import * as HowToRunLlama70bOnConsumerHardware from "./how-to-run-llama-70b-on-consumer-hardware";
+import * as HowToBuildAHomeAiCluster from "./how-to-build-a-home-ai-cluster";
+// Wave 11 — AI guides + best-for-X (25)
+import * as BestAiForCoding2026 from "./best-ai-for-coding-2026";
+import * as BestAiForResearch from "./best-ai-for-research";
+import * as BestAiForWriting from "./best-ai-for-writing";
+import * as BestAiForMarketing from "./best-ai-for-marketing";
+import * as BestAiForStudents from "./best-ai-for-students";
+import * as BestAiForDataAnalysis from "./best-ai-for-data-analysis";
+import * as BestAiForCreativeWriting from "./best-ai-for-creative-writing";
+import * as BestAiForCustomerSupport from "./best-ai-for-customer-support";
+import * as BestAiForImageGeneration from "./best-ai-for-image-generation";
+import * as BestAiForVideoGeneration from "./best-ai-for-video-generation";
+import * as BestAiForAgents from "./best-ai-for-agents";
+import * as BestAiForPdfs from "./best-ai-for-pdfs";
+import * as BestAiForEmails from "./best-ai-for-emails";
+import * as BestAiForMeetings from "./best-ai-for-meetings";
+import * as BestAiForLegalResearch from "./best-ai-for-legal-research";
+import * as BestFreeAiTools2026 from "./best-free-ai-tools-2026";
+import * as HowToPickAnAiCodingAssistant from "./how-to-pick-an-ai-coding-assistant";
+import * as HowToPickAnAiForResearch from "./how-to-pick-an-ai-for-research";
+import * as HowToEvaluateAnAiModel from "./how-to-evaluate-an-ai-model";
+import * as ClaudePricingExplained from "./claude-pricing-explained";
+import * as ChatgptPricingExplained from "./chatgpt-pricing-explained";
+import * as GeminiPricingExplained from "./gemini-pricing-explained";
+import * as DeepseekPricingExplained from "./deepseek-pricing-explained";
+import * as AiPricingCheatSheet from "./ai-pricing-cheat-sheet";
+import * as HowToChooseTheRightAiForYourTeam from "./how-to-choose-the-right-ai-for-your-team";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -4021,5 +4058,260 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
       label: "Check your compost ratio",
       targetSlug: "compost-ratio-calculator",
     },
+  },
+  "how-to-write-a-dating-app-bio": {
+    intro: HowToWriteADatingAppBio.intro,
+    body: HowToWriteADatingAppBio.body,
+    cta: {
+      label: "Score your bio out of 100 in seconds",
+      targetSlug: "dating-app-bio-rater",
+    },
+    faq: [
+      {
+        q: "How long should a dating app bio be?",
+        a: "Aim for 60–150 words. Under 60 reads as low effort and gives readers nothing to react to. Over 150 reads as a personal essay no one volunteered to read. The middle range gives you room for two or three specific hooks plus a conversation invite.",
+      },
+      {
+        q: "What should I avoid putting in a dating app bio?",
+        a: "Skip cliches like 'fluent in sarcasm' or 'partner in crime,' negative framing ('no drama,' 'don't message me if'), and a list of dealbreakers. These describe the average user, not you, and they filter you out faster than they filter others.",
+      },
+      {
+        q: "Do dating app bios actually matter compared to photos?",
+        a: "Photos do most of the swipe-decision work, but the bio determines who sends a substantive opening message versus who swipes and forgets. A great bio with average photos converts better than great photos with a generic or empty bio.",
+      },
+      {
+        q: "What's a 'hook' in a dating bio?",
+        a: "A hook is a sentence designed to be quoted back to you — a micro-debate ('argue with me about pineapple pizza'), a recommendation request ('what should I read next?'), or a call-out ('if you also hate cilantro, hi'). One hook is plenty, two if the rest of the bio supports it.",
+      },
+    ],
+  },
+  "how-to-set-up-an-ergonomic-desk": {
+    intro: HowToSetUpAnErgonomicDesk.intro,
+    body: HowToSetUpAnErgonomicDesk.body,
+    cta: {
+      label: "Get your target heights for desk, chair, and monitor",
+      targetSlug: "ergonomic-desk-setup-checker",
+    },
+    faq: [
+      {
+        q: "What is the ideal desk height for ergonomics?",
+        a: "Roughly 49% of your standing height — so about 28 inches for a 5'8' person and 30 inches for someone 6'0'. The more reliable rule is to sit relaxed and have the desk hit your elbows when your forearms are parallel to the floor.",
+      },
+      {
+        q: "How high should my monitor be?",
+        a: "Top edge at or just below your eye line when you're sitting tall, with the screen 20–30 inches from your face. Looking down at a low monitor for 6–8 hours a day is the most common cause of office neck pain.",
+      },
+      {
+        q: "Do I need an expensive ergonomic chair?",
+        a: "Not really. A $200 chair set up with the right lumbar support, height, and 90-90-90 joint geometry beats a $1,500 chair adjusted poorly. Lumbar issues can usually be solved with a rolled towel; height issues with a footrest.",
+      },
+      {
+        q: "Is a standing desk better than a sitting desk?",
+        a: "Standing all day is just as bad as sitting all day — different problems, equally bad. The real win is alternating, plus a 60-second movement break every 30 minutes. Standing-desk converters are useful only after the seated geometry is dialed in.",
+      },
+    ],
+  },
+  "how-to-cancel-unused-subscriptions": {
+    intro: HowToCancelUnusedSubscriptions.intro,
+    body: HowToCancelUnusedSubscriptions.body,
+    cta: {
+      label: "Run the audit and see your annual savings",
+      targetSlug: "subscription-fatigue-auditor",
+    },
+    faq: [
+      {
+        q: "How do I find all my subscriptions?",
+        a: "Pull from four sources: your bank/credit card statements (search recurring debits), Apple ID Settings → Subscriptions, Google Play account subscriptions, and PayPal Settings → Manage automatic payments. Most people are surprised by 2–3 forgotten ones in the PayPal list.",
+      },
+      {
+        q: "When should I cancel a subscription?",
+        a: "If your cost per use is over $5 and you used it fewer than 4 times last month, cancel today. If you haven't opened it in 30 days, cancel today. You can always re-subscribe in 5 minutes if you actually miss it.",
+      },
+      {
+        q: "Will I lose my data if I cancel?",
+        a: "Usually no, if you 'cancel renewal' rather than 'delete account.' For media services like Spotify, Hulu, or Netflix, cancelling renewal lets the account go dormant — playlists and watchlists are preserved if you re-subscribe later.",
+      },
+      {
+        q: "How much can I save by auditing subscriptions?",
+        a: "The average US household has 12 paid subscriptions and uses 6, so a full audit typically frees up $400–1,200 per year. Most of that comes from 2–3 services that auto-renewed quietly while the household stopped using them.",
+      },
+    ],
+  },
+  "how-to-master-small-talk": {
+    intro: HowToMasterSmallTalk.intro,
+    body: HowToMasterSmallTalk.body,
+    cta: {
+      label: "Get five fresh open-ended questions for any setting",
+      targetSlug: "small-talk-question-generator",
+    },
+    faq: [
+      {
+        q: "What's a good question to start small talk?",
+        a: "Open questions starting with 'what' or 'how' beat closed 'is/are' questions every time. Try 'what's the best thing you've eaten this week?' or 'what brought you to this event specifically?' — both invite a story rather than a one-word answer.",
+      },
+      {
+        q: "How do I get better at small talk if I'm an introvert?",
+        a: "You don't need to be louder, you need to ask better follow-ups. Listen for specifics (a place name, a hobby, a year) and pull that thread with 'why?' or 'how did that go?'. A 70/30 listen-to-talk ratio reads as 'great to talk to' across personality types.",
+      },
+      {
+        q: "How do I gracefully end a small-talk conversation?",
+        a: "Two clean exits: the honest one ('going to grab a drink — really enjoyed this, see you in a bit') or the intro pivot ('you should meet [X], I think you'd actually enjoy talking to her,' then walk them over). Both leave the other person feeling met, not abandoned.",
+      },
+    ],
+  },
+  "how-to-combine-laptops-to-run-large-llms": {
+    intro: HowToCombineLaptopsToRunLargeLlms.intro,
+    body: HowToCombineLaptopsToRunLargeLlms.body,
+    cta: {
+      label: "Plan your context-window memory before you start",
+      targetSlug: "llm-context-window-calculator",
+    },
+    faq: [
+      {
+        q: "Can you really run a 70B model on regular laptops?",
+        a: "Yes. With pipeline parallelism (Hyperspace, exo, llama.cpp RPC), a 70B model at Q4 quantization (~42 GB on disk) can be sharded across three or four laptops with 16–32 GB of memory each. Each machine carries some layers; tokens flow through the ring. Throughput is bound by the slowest member, but quality matches a single big-machine run.",
+      },
+      {
+        q: "What's the difference between Hyperspace, exo, llama.cpp RPC, and Petals?",
+        a: "Hyperspace is the easiest team option — invite link, OpenAI-compatible endpoint, automatic NAT traversal. exo is open-source, terminal-first, and tuned for Apple Silicon. llama.cpp RPC gives maximum control with minimal dependencies. Petals is for running models too large to fit any private pool, using a public BitTorrent-style swarm.",
+      },
+      {
+        q: "Does pooling laptops require fast networking?",
+        a: "Less than you'd think. Pipeline parallelism shuttles small (~4–16 KB) tensors per token, so latency matters more than bandwidth. Wired 1 GbE handles 70B comfortably. Wi-Fi 6 works for casual use; Wi-Fi over multiple walls becomes the bottleneck at 2–3 tokens per second.",
+      },
+      {
+        q: "Do all the laptops need the same OS or hardware?",
+        a: "No. A pod can mix macOS, Linux, and Windows under WSL2; Apple Silicon, AMD, and Intel; 16 GB and 64 GB machines. The runtime auto-shards based on available memory — bigger machines just carry more layers.",
+      },
+    ],
+  },
+  "how-to-share-a-gpu-across-machines": {
+    intro: HowToShareAGpuAcrossMachines.intro,
+    body: HowToShareAGpuAcrossMachines.body,
+    cta: {
+      label: "Estimate cost vs cloud APIs at your usage level",
+      targetSlug: "ai-cost-estimator",
+    },
+    faq: [
+      {
+        q: "How do I share a single GPU with multiple machines on my LAN?",
+        a: "Run a model-serving daemon on the GPU host that exposes an OpenAI-compatible HTTP endpoint. Ollama (easiest), vLLM (highest throughput), and LM Studio server mode all work. Bind to 0.0.0.0:port, then point each client's OpenAI base URL at http://gpu-host-ip:port/v1.",
+      },
+      {
+        q: "What's the difference between tensor parallelism and pipeline parallelism?",
+        a: "Tensor parallelism splits each layer's matrices across GPUs in the same machine via NVLink — used to fit models too big for one card. Pipeline parallelism splits whole layers across machines on a network — used to pool memory across machines. Tensor parallel needs 25 GbE+ if cross-machine, so it's almost always single-host. Pipeline parallel works fine on standard LAN.",
+      },
+      {
+        q: "How many users can a single 4090 handle?",
+        a: "With vLLM and continuous batching, a 24 GB RTX 4090 serves a 7B model at ~95 tokens/sec for 4 simultaneous users, ~55 tokens/sec for 16. For 70B Q4 with offload, you're looking at ~9 tokens/sec for 4 users — usable but slower.",
+      },
+      {
+        q: "Can I expose a shared GPU endpoint to the public internet?",
+        a: "Don't, unless you've added auth, rate limiting, and HTTPS. A LAN endpoint with no protection is fine for a household; a public endpoint without protection is a free open AI service. Caddy or Traefik handle reverse-proxy auth in one config block. For team setups, a Hyperspace pod handles this natively.",
+      },
+    ],
+  },
+  "how-to-run-llama-70b-on-consumer-hardware": {
+    intro: HowToRunLlama70bOnConsumerHardware.intro,
+    body: HowToRunLlama70bOnConsumerHardware.body,
+    cta: {
+      label: "Plan KV-cache memory for your context window",
+      targetSlug: "llm-context-window-calculator",
+    },
+    faq: [
+      {
+        q: "What hardware do I need to run Llama 3.3 70B locally?",
+        a: "At Q4_K_M quantization (~42 GB on disk plus 6–8 GB headroom), you need around 50 GB of unified memory or pooled VRAM+RAM. Cheapest options: a used Mac Studio M2 Max 64 GB (~$1,800), a Mac Studio M2 Ultra 128 GB (~$3,500), or four 16-GB laptops in a Hyperspace pod (free if you have them).",
+      },
+      {
+        q: "What's the best quantization for Llama 70B?",
+        a: "Q4_K_M is the sweet spot — about 4% quality loss versus FP16, but fits in 3.3× less memory. Q5_K_M is the next step up if you have memory headroom. Past Q3 the model produces visibly worse code and reasoning, so it's not worth the savings.",
+      },
+      {
+        q: "How fast is local Llama 70B compared to cloud APIs?",
+        a: "Mac Studio M2 Ultra 128 GB runs 70B Q5 at 12–16 tokens/sec; an RTX 4090 with offloading hits 8–14 tokens/sec; a 5-laptop Hyperspace pod gets 8–12 tokens/sec. Frontier cloud APIs run 50–100+ tokens/sec, so local is 3–8× slower — usually still fast enough for chat and code work.",
+      },
+      {
+        q: "Can I run Llama 70B on a single GPU like a 4090?",
+        a: "Not entirely in VRAM — 70B Q4 needs ~42 GB and a 4090 has 24 GB. But with llama.cpp's --n-gpu-layers flag, you can put ~32 of 80 layers on the GPU and stream the rest from system RAM. Expect 10–14 tokens/sec on a 4090 + 64 GB DDR5 system.",
+      },
+    ],
+  },
+  "how-to-build-a-home-ai-cluster": {
+    intro: HowToBuildAHomeAiCluster.intro,
+    body: HowToBuildAHomeAiCluster.body,
+    cta: {
+      label: "Run the cost vs cloud math for your usage",
+      targetSlug: "ai-cost-estimator",
+    },
+    faq: [
+      {
+        q: "Is building a home AI cluster worth it?",
+        a: "Worth it if you spend $60+/month on AI APIs and want privacy on sensitive code or documents, or if you want code-completion that's faster than typing without rate limits. Not worth it for casual chat use — a $20/month cloud subscription will feel faster and cheaper.",
+      },
+      {
+        q: "What's the cheapest way to start a home AI setup?",
+        a: "A used Mac Studio M2 Max 64 GB (~$1,800) running Ollama serves 70B Q4 at 6–9 tokens/sec for a single user. Or, if you already own 3–5 laptops, a Hyperspace pod across them is $0 in hardware and gets you 70B Q4 at 8–12 tokens/sec.",
+      },
+      {
+        q: "What network gear do I need for a home AI cluster?",
+        a: "Wi-Fi 6 works for casual pods. For multi-machine pods that you'll actually rely on, plan a 2.5 GbE switch (~$120–300) and Cat 6 wiring. Thunderbolt cable directly between two laptops gives near-PCIe performance for two-node setups.",
+      },
+      {
+        q: "Will running an AI cluster heat up my house?",
+        a: "Only if it's pegged constantly. A Mac Studio Ultra under heavy inference draws ~150 W; a 4090 host hits 450 W. Plan for 200–500 W of sustained draw per active host. A small portable AC, a vented closet, or just keeping a doorway open handles the heat. Apple Silicon is the quiet option — under 35 dBA at full inference.",
+      },
+    ],
+  },
+  "best-ai-for-coding-2026": { intro: BestAiForCoding2026.intro, body: BestAiForCoding2026.body, cta: { label: "Compare AI coding tool costs at any team size", targetSlug: "ai-coding-tool-cost-comparison" } },
+  "best-ai-for-research": { intro: BestAiForResearch.intro, body: BestAiForResearch.body, cta: { label: "See how AI tools compare on features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-writing": { intro: BestAiForWriting.intro, body: BestAiForWriting.body, cta: { label: "Track every frontier AI model", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-marketing": { intro: BestAiForMarketing.intro, body: BestAiForMarketing.body, cta: { label: "Budget your monthly AI spend", targetSlug: "ai-monthly-cost-budgeter" } },
+  "best-ai-for-students": { intro: BestAiForStudents.intro, body: BestAiForStudents.body, cta: { label: "Compare AI features side-by-side", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-data-analysis": { intro: BestAiForDataAnalysis.intro, body: BestAiForDataAnalysis.body, cta: { label: "Track frontier model capabilities", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-creative-writing": { intro: BestAiForCreativeWriting.intro, body: BestAiForCreativeWriting.body, cta: { label: "Compare ChatGPT and Claude head-to-head", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-customer-support": { intro: BestAiForCustomerSupport.intro, body: BestAiForCustomerSupport.body, cta: { label: "Estimate your AI cost", targetSlug: "ai-cost-estimator" } },
+  "best-ai-for-image-generation": { intro: BestAiForImageGeneration.intro, body: BestAiForImageGeneration.body, cta: { label: "Compare AI features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-video-generation": { intro: BestAiForVideoGeneration.intro, body: BestAiForVideoGeneration.body, cta: { label: "Compare frontier models", targetSlug: "frontier-model-tracker" } },
+  "best-ai-for-agents": { intro: BestAiForAgents.intro, body: BestAiForAgents.body, cta: { label: "Estimate agent loop cost", targetSlug: "ai-agent-loop-cost-estimator" } },
+  "best-ai-for-pdfs": { intro: BestAiForPdfs.intro, body: BestAiForPdfs.body, cta: { label: "Compare AI features", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-emails": { intro: BestAiForEmails.intro, body: BestAiForEmails.body, cta: { label: "Track AI features by tool", targetSlug: "ai-feature-comparison-matrix" } },
+  "best-ai-for-meetings": { intro: BestAiForMeetings.intro, body: BestAiForMeetings.body, cta: { label: "Budget your AI tools", targetSlug: "ai-monthly-cost-budgeter" } },
+  "best-ai-for-legal-research": { intro: BestAiForLegalResearch.intro, body: BestAiForLegalResearch.body, cta: { label: "Compare frontier models", targetSlug: "frontier-model-tracker" } },
+  "best-free-ai-tools-2026": { intro: BestFreeAiTools2026.intro, body: BestFreeAiTools2026.body, cta: { label: "Compare AI features across tools", targetSlug: "ai-feature-comparison-matrix" } },
+  "how-to-pick-an-ai-coding-assistant": { intro: HowToPickAnAiCodingAssistant.intro, body: HowToPickAnAiCodingAssistant.body, cta: { label: "Compare every AI coding tool's cost", targetSlug: "ai-coding-tool-cost-comparison" } },
+  "how-to-pick-an-ai-for-research": { intro: HowToPickAnAiForResearch.intro, body: HowToPickAnAiForResearch.body, cta: { label: "Track every frontier model", targetSlug: "frontier-model-tracker" } },
+  "how-to-evaluate-an-ai-model": { intro: HowToEvaluateAnAiModel.intro, body: HowToEvaluateAnAiModel.body, cta: { label: "Compare frontier models side-by-side", targetSlug: "frontier-model-tracker" } },
+  "claude-pricing-explained": { intro: ClaudePricingExplained.intro, body: ClaudePricingExplained.body, cta: { label: "Compare Claude vs DeepSeek cost", targetSlug: "claude-vs-deepseek-cost-calculator" } },
+  "chatgpt-pricing-explained": { intro: ChatgptPricingExplained.intro, body: ChatgptPricingExplained.body, cta: { label: "Compare Gemini vs ChatGPT cost", targetSlug: "gemini-vs-chatgpt-cost-calculator" } },
+  "gemini-pricing-explained": { intro: GeminiPricingExplained.intro, body: GeminiPricingExplained.body, cta: { label: "Compare Gemini vs ChatGPT cost", targetSlug: "gemini-vs-chatgpt-cost-calculator" } },
+  "deepseek-pricing-explained": { intro: DeepseekPricingExplained.intro, body: DeepseekPricingExplained.body, cta: { label: "Compare Claude vs DeepSeek", targetSlug: "claude-vs-deepseek-cost-calculator" } },
+  "ai-pricing-cheat-sheet": { intro: AiPricingCheatSheet.intro, body: AiPricingCheatSheet.body, cta: { label: "Budget your AI spend", targetSlug: "ai-monthly-cost-budgeter" } },
+  "how-to-choose-the-right-ai-for-your-team": { intro: HowToChooseTheRightAiForYourTeam.intro, body: HowToChooseTheRightAiForYourTeam.body, cta: { label: "Compare AI coding tool costs by team size", targetSlug: "ai-coding-tool-cost-comparison" } },
+  "how-to-feed-dog-treats-without-overdoing-it": {
+    intro: HowToFeedDogTreatsWithoutOverdoingIt.intro,
+    body: HowToFeedDogTreatsWithoutOverdoingIt.body,
+    cta: {
+      label: "Calculate your dog's daily treat budget",
+      targetSlug: "dog-treat-calorie-budget",
+    },
+    faq: [
+      {
+        q: "What is the 10% rule for dog treats?",
+        a: "Treats should make up no more than 10% of your dog's daily calorie intake, with the remaining 90% from a complete-and-balanced diet. Both AAFCO and AAHA back this number because complete diets are formulated assuming most calories come from food, not treats.",
+      },
+      {
+        q: "How many treats can I give my dog per day?",
+        a: "Depends on weight, activity level, and the calorie content of the specific treat. A 40-pound moderately active dog has roughly a 100-kcal treat budget — about one bully stick, three medium training biscuits, or 25 small training treats.",
+      },
+      {
+        q: "What human foods are toxic to dogs?",
+        a: "The serious ones: chocolate, grapes, raisins, onions, garlic, xylitol (sugar-free sweetener), macadamia nuts, cooked bones, raw bread dough. When in doubt, the ASPCA Animal Poison Control hotline (888-426-4435) is staffed 24/7.",
+      },
+      {
+        q: "Can I use my dog's regular food as treats?",
+        a: "Yes — pulling kibble from the day's ration to use as training treats has zero net calorie impact and is a common professional-trainer move for high-volume training sessions. Just make sure you're not double-feeding by also serving full meals.",
+      },
+    ],
   },
 };

@@ -674,6 +674,33 @@ const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposable
 const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
 const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
 
+// Wave 9 AI cost & comparison tools (12 new)
+const GeminiVsChatgptCostCalculator = dynamic(() => import("./GeminiVsChatgptCostCalculator").then(m => ({ default: m.GeminiVsChatgptCostCalculator })), { loading: Skeleton });
+const ClaudeVsDeepseekCostCalculator = dynamic(() => import("./ClaudeVsDeepseekCostCalculator").then(m => ({ default: m.ClaudeVsDeepseekCostCalculator })), { loading: Skeleton });
+const PromptCacheSavingsCalculator = dynamic(() => import("./PromptCacheSavingsCalculator").then(m => ({ default: m.PromptCacheSavingsCalculator })), { loading: Skeleton });
+const BatchApiSavingsCalculator = dynamic(() => import("./BatchApiSavingsCalculator").then(m => ({ default: m.BatchApiSavingsCalculator })), { loading: Skeleton });
+const MultimodalPromptCostEstimator = dynamic(() => import("./MultimodalPromptCostEstimator").then(m => ({ default: m.MultimodalPromptCostEstimator })), { loading: Skeleton });
+const AiAgentLoopCostEstimator = dynamic(() => import("./AiAgentLoopCostEstimator").then(m => ({ default: m.AiAgentLoopCostEstimator })), { loading: Skeleton });
+const EmbeddingsCostComparison = dynamic(() => import("./EmbeddingsCostComparison").then(m => ({ default: m.EmbeddingsCostComparison })), { loading: Skeleton });
+const AiCodingToolCostComparison = dynamic(() => import("./AiCodingToolCostComparison").then(m => ({ default: m.AiCodingToolCostComparison })), { loading: Skeleton });
+const AiMonthlyCostBudgeter = dynamic(() => import("./AiMonthlyCostBudgeter").then(m => ({ default: m.AiMonthlyCostBudgeter })), { loading: Skeleton });
+const FrontierModelTracker = dynamic(() => import("./FrontierModelTracker").then(m => ({ default: m.FrontierModelTracker })), { loading: Skeleton });
+const AiFeatureComparisonMatrix = dynamic(() => import("./AiFeatureComparisonMatrix").then(m => ({ default: m.AiFeatureComparisonMatrix })), { loading: Skeleton });
+const AiRateLimitTracker = dynamic(() => import("./AiRateLimitTracker").then(m => ({ default: m.AiRateLimitTracker })), { loading: Skeleton });
+const LocalVsApiBreakevenCalculator = dynamic(() => import("./LocalVsApiBreakevenCalculator").then(m => ({ default: m.LocalVsApiBreakevenCalculator })), { loading: Skeleton });
+
+// Wave 7 modern-life math (10 new)
+const DatingAppBioRater = dynamic(() => import("./DatingAppBioRater").then(m => ({ default: m.DatingAppBioRater })), { loading: Skeleton });
+const FicaTaxCalculator = dynamic(() => import("./FicaTaxCalculator").then(m => ({ default: m.FicaTaxCalculator })), { loading: Skeleton });
+const ErgonomicDeskSetupChecker = dynamic(() => import("./ErgonomicDeskSetupChecker").then(m => ({ default: m.ErgonomicDeskSetupChecker })), { loading: Skeleton });
+const VacationPayoutCalculator = dynamic(() => import("./VacationPayoutCalculator").then(m => ({ default: m.VacationPayoutCalculator })), { loading: Skeleton });
+const DogTreatCalorieBudget = dynamic(() => import("./DogTreatCalorieBudget").then(m => ({ default: m.DogTreatCalorieBudget })), { loading: Skeleton });
+const DryToCookedRiceConverter = dynamic(() => import("./DryToCookedRiceConverter").then(m => ({ default: m.DryToCookedRiceConverter })), { loading: Skeleton });
+const SubscriptionFatigueAuditor = dynamic(() => import("./SubscriptionFatigueAuditor").then(m => ({ default: m.SubscriptionFatigueAuditor })), { loading: Skeleton });
+const SmallTalkQuestionGenerator = dynamic(() => import("./SmallTalkQuestionGenerator").then(m => ({ default: m.SmallTalkQuestionGenerator })), { loading: Skeleton });
+const GymMembershipRoiCalculator = dynamic(() => import("./GymMembershipRoiCalculator").then(m => ({ default: m.GymMembershipRoiCalculator })), { loading: Skeleton });
+const EyeStrainBreakCalculator = dynamic(() => import("./EyeStrainBreakCalculator").then(m => ({ default: m.EyeStrainBreakCalculator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -15502,5 +15529,328 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Enter repair + replace cost.",
       "Read recommendation.",
     ],
+  },
+  "dating-app-bio-rater": {
+    render: () => <DatingAppBioRater />,
+    explainer: (
+      <>
+        <p>
+          Paste your Hinge, Bumble, Tinder, or Feeld bio and get a score out of 100. The rubric weights length,
+          conversation hooks, cliche density, framing, and specificity &mdash; the same things dating coaches grade for.
+          We surface the top fixes plus what&rsquo;s already working.
+        </p>
+        <p>
+          Runs entirely in your browser. Nothing is uploaded, logged, or trained on. For the full breakdown of why
+          each score component matters, see <a href="/guides/how-to-write-a-dating-app-bio">how to write a dating app bio that actually works</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your bio into the textarea.",
+      "Read the score and the top fixes.",
+      "Edit, paste again, watch the score climb.",
+    ],
+    faq: [
+      {
+        q: "Does it work for any dating app?",
+        a: "Yes — Hinge, Bumble, Tinder, Feeld, OkCupid, Raya. The grading is based on universal patterns (specificity, hooks, framing), not platform-specific quirks.",
+      },
+      {
+        q: "Is my bio sent anywhere?",
+        a: "No. Everything runs in your tab. You can disconnect from the internet and it still works.",
+      },
+      {
+        q: "What's a good score?",
+        a: "80+ is a strong bio. 60–79 is fixable in 5 minutes. Under 60 usually has a length, hook, or cliche issue you can correct quickly.",
+      },
+    ],
+  },
+  "fica-tax-calculator": {
+    render: () => <FicaTaxCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate Social Security and Medicare withholding for any wage or self-employment income. Uses the 2026
+          IRS wage base ($176,100) and the additional Medicare thresholds for single ($200k) and married filers ($250k).
+          Self-employed mode applies the full 12.4% + 2.9% SE tax and shows the half-deductible amount.
+        </p>
+        <p>
+          Runs entirely in your browser &mdash; no upload, no account. Pair with the{" "}
+          <a href="/tools/tax-bracket-visualizer">tax bracket visualizer</a> for federal income tax.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wage or SE income.",
+      "Pick W-2 or self-employed.",
+      "Set filing status (matters above the additional-Medicare threshold).",
+      "Read total, monthly, and per-paycheck amounts.",
+    ],
+  },
+  "ergonomic-desk-setup-checker": {
+    render: () => <ErgonomicDeskSetupChecker />,
+    explainer: (
+      <>
+        <p>
+          Enter your height. Get target desk, chair, monitor center, monitor top edge, monitor distance, and keyboard
+          height in inches or centimeters &mdash; based on OSHA and BIFMA G1-2013 anthropometric ranges. Includes the
+          90-90-90 verification checklist and a cheap-fix list for when the numbers don&rsquo;t match your existing furniture.
+        </p>
+        <p>
+          See the deeper walkthrough at{" "}
+          <a href="/guides/how-to-set-up-an-ergonomic-desk">how to set up an ergonomic desk</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your height.",
+      "Pick inches or centimeters.",
+      "Adjust your desk, chair, and monitor toward the target numbers.",
+    ],
+  },
+  "vacation-payout-calculator": {
+    render: () => <VacationPayoutCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate the take-home value of your accrued PTO when you leave a job. Models the IRS supplemental withholding
+          method (22% federal flat) plus FICA (Social Security + Medicare) and a configurable state income tax rate. Toggle
+          off the supplemental flag to see the regular-wage withholding case.
+        </p>
+        <p>
+          State rules vary &mdash; California, Massachusetts, and a handful of others <em>require</em> payout of unused
+          vacation when employment ends. Many states leave it to company policy.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter accrued PTO hours and your hourly wage.",
+      "Set state income tax (0% in TX/FL/WA/NV/TN/NH/AK/SD/WY).",
+      "Read gross, withholding, and take-home.",
+    ],
+  },
+  "dog-treat-calorie-budget": {
+    render: () => <DogTreatCalorieBudget />,
+    explainer: (
+      <>
+        <p>
+          The veterinary 10% rule: treats should make up no more than 10% of your dog&rsquo;s daily calories. This tool runs
+          the standard RER &times; activity-factor formula (RER = 70 &times; kg<sup>0.75</sup>, AAFCO/AAHA-aligned), then shows
+          how many of 12 common treats fit under that cap &mdash; from 1-kcal blueberries to 110-kcal bully sticks.
+        </p>
+        <p>
+          For the full breakdown including foods to never feed, weight-loss adjustments, and low-calorie training alternatives,
+          see <a href="/guides/how-to-feed-dog-treats-without-overdoing-it">how to feed dog treats without overdoing it</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight in pounds.",
+      "Pick activity level.",
+      "Read the daily treat budget and treat-by-treat counts.",
+    ],
+  },
+  "dry-to-cooked-rice-converter": {
+    render: () => <DryToCookedRiceConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert dry rice or grains to cooked yield (and back) for ten common varieties: white, jasmine, basmati, brown,
+          wild, quinoa, farro, pearl barley, instant couscous, and bulgur. Each ratio is the standard stovetop method
+          &mdash; water, yield, and cook time. The result includes serving estimates and a complete recipe.
+        </p>
+        <p>
+          For a deeper water-ratio reference, also see the{" "}
+          <a href="/tools/rice-to-water-ratio">rice to water ratio</a> tool.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the grain.",
+      "Choose direction: dry → cooked or cooked → dry.",
+      "Enter cups, read the yield + water + cook time.",
+    ],
+  },
+  "subscription-fatigue-auditor": {
+    render: () => <SubscriptionFatigueAuditor />,
+    explainer: (
+      <>
+        <p>
+          List your subscriptions, mark each keep / review / cancel, and see the projected annual savings if you act on the
+          kill list today. Auto-flags anything with a $/use ratio over $5 and fewer than 4 uses per month &mdash; the threshold
+          most personal-finance auditors use.
+        </p>
+        <p>
+          For the full audit playbook (where to pull receipts, how to cancel without losing watchlists, the 30-day rule for
+          new sign-ups), see <a href="/guides/how-to-cancel-unused-subscriptions">how to cancel unused subscriptions</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each subscription with monthly cost and uses-per-month.",
+      "Mark keep, review, or cancel.",
+      "Read the cancel-list yearly savings.",
+    ],
+  },
+  "small-talk-question-generator": {
+    render: () => <SmallTalkQuestionGenerator />,
+    explainer: (
+      <>
+        <p>
+          Pick the setting (party, work, first date, wedding, networking, family dinner, talking with kids) and get five
+          fresh open-ended questions designed to invite a story instead of a one-word answer. Reshuffle as many times as
+          you want &mdash; runs entirely in your browser.
+        </p>
+        <p>
+          For the broader playbook on listening ratios, follow-up moves, and graceful exits, see{" "}
+          <a href="/guides/how-to-master-small-talk">how to master small talk</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the setting.",
+      "Read the five questions.",
+      "Click Reshuffle for another set.",
+    ],
+  },
+  "gym-membership-roi-calculator": {
+    render: () => <GymMembershipRoiCalculator />,
+    explainer: (
+      <>
+        <p>
+          Cost per visit, break-even visits, and yearly savings vs drop-in pricing. Includes annual fees and dues so the
+          number reflects what you&rsquo;re actually paying &mdash; not the headline monthly rate. The verdict tells you
+          whether the membership is a clear win, reasonable, or worse than buying day passes as you go.
+        </p>
+        <p>
+          Be honest about realistic visits per week. The average gym member visits twice a week, so anything you input above
+          three has to clear a credibility check before you trust the verdict.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter monthly fee, annual fees, drop-in rate, and realistic visits per week.",
+      "Read cost per visit, break-even, and verdict.",
+    ],
+  },
+  "eye-strain-break-calculator": {
+    render: () => <EyeStrainBreakCalculator />,
+    explainer: (
+      <>
+        <p>
+          A built-in 20-20-20 timer plus a daily-screen-hours planner. Every 20 minutes of focus, look at something 20 feet
+          away for 20 seconds &mdash; the American Academy of Ophthalmology&rsquo;s standard recommendation for digital eye
+          strain. The timer keeps running across tab switches because it uses timestamps, not interval ticks.
+        </p>
+        <p>
+          Pair with the <a href="/tools/ergonomic-desk-setup-checker">ergonomic desk setup checker</a> for the geometry side
+          of the same problem.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Click Start.",
+      "Look at your screen for 20 minutes.",
+      "When the rest phase begins, look 20 feet away for 20 seconds.",
+    ],
+  },
+  "gemini-vs-chatgpt-cost-calculator": {
+    render: () => <GeminiVsChatgptCostCalculator />,
+    explainer: (<><p>Compare per-token API pricing across all current Gemini and OpenAI models at your real volume.
+      Inputs are tokens-per-call (in thousands) and calls-per-month; outputs are sorted cost-by-model with the cheapest
+      flagged. Useful for picking a model before committing, or for costing out a switch.</p>
+      <p>For a deeper look at the full frontier-model landscape, see the{" "}
+      <a href="/tools/frontier-model-tracker">frontier model tracker</a>.</p></>),
+    howToUse: ["Enter input + output tokens per call (in thousands).", "Enter calls per month.", "Read the cheapest pick + full table."],
+  },
+  "claude-vs-deepseek-cost-calculator": {
+    render: () => <ClaudeVsDeepseekCostCalculator />,
+    explainer: (<><p>DeepSeek V3.2 typically scores within 5 quality points of Claude Sonnet at 1/10 the cost. This
+      calculator shows you exactly how much you&rsquo;d save by switching at your real volume, with rough quality scores
+      to break ties when costs are close.</p></>),
+    howToUse: ["Enter your token usage and calls.", "Read the cheapest model and savings vs Opus."],
+  },
+  "prompt-cache-savings-calculator": {
+    render: () => <PromptCacheSavingsCalculator />,
+    explainer: (<><p>Anthropic, OpenAI, and Google all let you cache stable prompt prefixes &mdash; system messages,
+      RAG context, few-shot examples. Cached reads cost roughly 10% of normal input tokens. This calculator estimates
+      your monthly savings given your call rate and prompt structure. The fix is almost always &ldquo;keep your stable
+      prefix at the start of every call.&rdquo;</p></>),
+    howToUse: ["Pick provider.", "Enter system / user / output token sizes.", "Enter calls per hour.", "Read savings."],
+  },
+  "batch-api-savings-calculator": {
+    render: () => <BatchApiSavingsCalculator />,
+    explainer: (<><p>Batch APIs from Anthropic, OpenAI, Google, and DeepSeek all give a 50% discount in exchange for
+      asynchronous SLAs (most return in 1-6 hours, max 24h). Right for: bulk classification, summarization, embedding
+      generation, evals, anything that doesn&rsquo;t need a same-second response.</p></>),
+    howToUse: ["Enter token volume + total calls.", "Read 50% off across all 4 providers."],
+  },
+  "multimodal-prompt-cost-estimator": {
+    render: () => <MultimodalPromptCostEstimator />,
+    explainer: (<><p>When prompts include images, video frames, or audio, costs balloon fast. This estimator uses the
+      standard Gemini / Claude conversions: ~1500 tokens per image, 250 tokens per video second (1fps), 1500 tokens per
+      audio minute. GPT-5 vision uses a slightly different patch-based formula but lands within 10%.</p></>),
+    howToUse: ["Enter text / image / video / audio per call.", "Read total token equivalent + monthly cost."],
+  },
+  "ai-agent-loop-cost-estimator": {
+    render: () => <AiAgentLoopCostEstimator />,
+    explainer: (<><p>Agent loops accumulate context across steps &mdash; by step 12, the model is reading every prior
+      tool call + result. This calculator runs the standard triangular-sum cost across 7 frontier models. Reality check:
+      enable prompt caching to cut the input multiplier by ~10x.</p>
+      <p>Pair with the <a href="/tools/prompt-cache-savings-calculator">prompt cache savings calculator</a>.</p></>),
+    howToUse: ["Enter system prompt size + per-step in/out.", "Enter steps per run + runs per month.", "Read cost by model."],
+  },
+  "embeddings-cost-comparison": {
+    render: () => <EmbeddingsCostComparison />,
+    explainer: (<><p>Eight embedding providers compared by cost per million tokens, vector dimensions, and MTEB
+      benchmark scores (the standard public retrieval benchmark, average of 56 tasks). 1-2 points of MTEB rarely matters
+      for typical RAG; 5+ does. Cheap models like text-embedding-3-small and BGE-M3 usually win the cost/quality
+      tradeoff.</p></>),
+    howToUse: ["Enter document count + tokens per doc.", "Enter monthly re-embeds.", "Read sorted cost table."],
+  },
+  "ai-coding-tool-cost-comparison": {
+    render: () => <AiCodingToolCostComparison />,
+    explainer: (<><p>Compare monthly cost across the 9 main AI coding tools at any team size: GitHub Copilot Pro/Business,
+      Cursor Pro/Ultra, Windsurf Pro, Claude Pro/Max (with Claude Code), Cody Pro, and Continue.dev (BYO API). Quick picks:
+      Copilot Pro for solo autocomplete; Cursor Pro or Claude Max for agentic refactors; Continue.dev if you already pay
+      Anthropic / OpenAI consoles.</p></>),
+    howToUse: ["Enter team size.", "Read total monthly cost across all 9 plans."],
+  },
+  "ai-monthly-cost-budgeter": {
+    render: () => <AiMonthlyCostBudgeter />,
+    explainer: (<><p>Track every AI subscription and API spend in one place: ChatGPT, Claude, Gemini, Cursor, Anthropic
+      console, OpenAI console, Perplexity, etc. Set a monthly budget and see your over/under at a glance. The starter
+      list seeds 6 common services; add your own from there.</p></>),
+    howToUse: ["Set monthly budget.", "Add or edit each service.", "Read total + over/under."],
+  },
+  "frontier-model-tracker": {
+    render: () => <FrontierModelTracker />,
+    explainer: (<><p>Live tracker of the 15 most relevant frontier models in 2026: Claude 4.7/4.6/4.5, GPT-5/mini, Gemini 3
+      Pro / 2.5 Pro/Flash, DeepSeek R1/V3.2, Kimi K2, Grok 4, Llama 3.3/4 Maverick, Qwen 3.5, Mistral Large 3. Filter by
+      capability (code, reasoning, vision, long context, agents); sorted by release date.</p></>),
+    howToUse: ["Pick a capability filter.", "Read released models sorted newest-first."],
+  },
+  "ai-feature-comparison-matrix": {
+    render: () => <AiFeatureComparisonMatrix />,
+    explainer: (<><p>Vision input, audio input, video generation, tool use, web search, code interpreter, file upload,
+      voice mode, long-term memory, agentic mode &mdash; tracked across ChatGPT Plus/Pro, Claude Pro/Max, Gemini Advanced,
+      Perplexity Pro, DeepSeek, Kimi, Grok, Mistral Le Chat, NotebookLM, and Microsoft Copilot.</p></>),
+    howToUse: ["Filter by feature, or view all.", "Compare what each tool ships in 2026 Q1."],
+  },
+  "ai-rate-limit-tracker": {
+    render: () => <AiRateLimitTracker />,
+    explainer: (<><p>Current rate-limit tiers across Anthropic, OpenAI, Google, DeepSeek, Perplexity, and xAI &mdash;
+      including ChatGPT Plus/Pro and Claude Pro/Max consumer caps. RPM (requests per minute), TPM (tokens per minute), and
+      daily quotas. Hitting limits early? All providers raise tiers based on cumulative spend.</p></>),
+    howToUse: ["Filter by provider.", "Read tier-by-tier limits and notes."],
+  },
+  "local-vs-api-breakeven-calculator": {
+    render: () => <LocalVsApiBreakevenCalculator />,
+    explainer: (<><p>How many months until a Mac Studio, RTX 4090/5090, or Hyperspace pod pays back versus using API at
+      your real volume? Includes electricity cost. Reality check: don&rsquo;t self-host until you&rsquo;re confident your
+      usage is sustained &mdash; 72-hour evaluation is a fair bar.</p>
+      <p>For the deeper architecture, see <a href="/guides/how-to-build-a-home-ai-cluster">how to build a home AI
+      cluster</a>.</p></>),
+    howToUse: ["Pick API model + monthly token volume.", "Enter $/kWh.", "Read break-even months for each hardware path."],
   },
 };

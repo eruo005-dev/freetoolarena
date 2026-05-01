@@ -220,6 +220,42 @@ export const HUBS: Hub[] = [
     ],
     relatedHubs: ["free-tools-for-freelancers", "free-seo-tools"],
   },
+  {
+    slug: "best-ai-tools-2026",
+    title: "Best AI Tools (2026): Free + Paid Picks for Real Workflows",
+    h1: "Best AI Tools (2026)",
+    description:
+      "The 2026 AI tool stack: cost calculators, model trackers, comparison tools, and budgeters for ChatGPT, Claude, Gemini, DeepSeek, Kimi, Perplexity. All free.",
+    keyword: "best ai tools",
+    eyebrow: "Curated list · 12 tools",
+    intro:
+      "Picking the right AI in 2026 is a real spending decision. These 12 tools help you compare costs across Anthropic, OpenAI, Google, DeepSeek; calculate what prompt caching and batch APIs save; track frontier model releases; and budget your AI subscriptions before they balloon. Every tool runs in your browser, no signup, no data stored.",
+    picks: [
+      { slug: "frontier-model-tracker", pitch: "Live tracker of every frontier AI model: Claude 4.7/4.6/4.5, GPT-5/mini, Gemini 3 Pro, DeepSeek R1/V3.2, Kimi K2, Grok 4, Llama 4. Filter by capability." },
+      { slug: "ai-feature-comparison-matrix", pitch: "Vision, voice, video, tools, agents, memory — every feature × every major AI tool in one matrix." },
+      { slug: "ai-rate-limit-tracker", pitch: "Current RPM, TPM, and daily quota limits across Anthropic, OpenAI, Google, DeepSeek, Perplexity, xAI." },
+      { slug: "gemini-vs-chatgpt-cost-calculator", pitch: "Compare per-token API pricing across Gemini 3 Pro/2.5 Pro/Flash and GPT-5/mini/nano at your real volume." },
+      { slug: "claude-vs-deepseek-cost-calculator", pitch: "DeepSeek is 10x cheaper than Claude at ~95% the quality. See your savings switching at your real volume." },
+      { slug: "prompt-cache-savings-calculator", pitch: "Anthropic, OpenAI, and Gemini all give 90% off cached input tokens. Calculate your monthly savings." },
+      { slug: "batch-api-savings-calculator", pitch: "Batch APIs from Anthropic, OpenAI, Google, DeepSeek give 50% off for async work. Calculate the savings." },
+      { slug: "ai-agent-loop-cost-estimator", pitch: "Agent loops accumulate context every step. Triangular-sum cost across 7 frontier models." },
+      { slug: "ai-coding-tool-cost-comparison", pitch: "9 AI coding plans compared by team size: GitHub Copilot, Cursor Pro/Ultra, Windsurf, Claude Pro/Max, Cody, Continue.dev." },
+      { slug: "embeddings-cost-comparison", pitch: "8 embedding providers compared by cost-per-million-tokens, dimensions, and MTEB benchmark scores." },
+      { slug: "multimodal-prompt-cost-estimator", pitch: "Estimate cost when prompts include images, video frames, or audio. Standard token-per-image conversions." },
+      { slug: "ai-monthly-cost-budgeter", pitch: "Track every AI subscription and API spend in one place. Set a monthly budget, see your over/under at a glance." },
+    ],
+    sections: [
+      {
+        heading: "The 5 levers that cut your AI bill",
+        body: "Prompt caching (90% off cached input). Batch API (50% off for async). Right-sized model (Haiku not Sonnet, Sonnet not Opus for routine work). Off-peak DeepSeek (50% off again). Self-host for sustained workloads. Most teams underutilize all five and end up paying 3-5x what they need to. Run your numbers through the calculators above before signing any annual contract.",
+      },
+      {
+        heading: "Picking the right model in 2026",
+        body: "Default to Claude Sonnet 4.6 or GPT-5 for general use; reach for Opus / o-pro only when you've measured a real quality gap. Use DeepSeek V3.2 for high-volume agent loops where total cost dominates. Use Gemini 2.5/3 Pro for native multimodal or 2M context. Self-host Qwen 3.5 or Llama 3.3 if privacy or cost matters more than latency. The frontier-model-tracker above keeps the lineup current.",
+      },
+    ],
+    relatedHubs: ["free-dev-tools", "free-seo-tools"],
+  },
 ];
 
 export function getHubBySlug(slug: string): Hub | undefined {
