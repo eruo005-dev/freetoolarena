@@ -674,6 +674,31 @@ const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposable
 const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
 const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
 
+// Wave 15 trending AI/tech tools (11 new)
+const AgenticBrowserComparison = dynamic(() => import("./AgenticBrowserComparison").then(m => ({ default: m.AgenticBrowserComparison })), { loading: Skeleton });
+const AiVoiceModeComparison = dynamic(() => import("./AiVoiceModeComparison").then(m => ({ default: m.AiVoiceModeComparison })), { loading: Skeleton });
+const AiVideoToolTracker = dynamic(() => import("./AiVideoToolTracker").then(m => ({ default: m.AiVideoToolTracker })), { loading: Skeleton });
+const AiMusicToolComparison = dynamic(() => import("./AiMusicToolComparison").then(m => ({ default: m.AiMusicToolComparison })), { loading: Skeleton });
+const AiSearchEngineComparison = dynamic(() => import("./AiSearchEngineComparison").then(m => ({ default: m.AiSearchEngineComparison })), { loading: Skeleton });
+const AiAgentPlatformComparison = dynamic(() => import("./AiAgentPlatformComparison").then(m => ({ default: m.AiAgentPlatformComparison })), { loading: Skeleton });
+const AiContextWindowPlanner = dynamic(() => import("./AiContextWindowPlanner").then(m => ({ default: m.AiContextWindowPlanner })), { loading: Skeleton });
+const AiDataResidencyChecker = dynamic(() => import("./AiDataResidencyChecker").then(m => ({ default: m.AiDataResidencyChecker })), { loading: Skeleton });
+const AiTranscriptionToolComparison = dynamic(() => import("./AiTranscriptionToolComparison").then(m => ({ default: m.AiTranscriptionToolComparison })), { loading: Skeleton });
+const OpenSourceLlmTracker = dynamic(() => import("./OpenSourceLlmTracker").then(m => ({ default: m.OpenSourceLlmTracker })), { loading: Skeleton });
+const AiImagePromptHelper = dynamic(() => import("./AiImagePromptHelper").then(m => ({ default: m.AiImagePromptHelper })), { loading: Skeleton });
+
+// Wave 16 trending life tools (10 new)
+const Zone2HeartRateCalculator = dynamic(() => import("./Zone2HeartRateCalculator").then(m => ({ default: m.Zone2HeartRateCalculator })), { loading: Skeleton });
+const Vo2MaxEstimator = dynamic(() => import("./Vo2MaxEstimator").then(m => ({ default: m.Vo2MaxEstimator })), { loading: Skeleton });
+const ColdPlungeProtocolBuilder = dynamic(() => import("./ColdPlungeProtocolBuilder").then(m => ({ default: m.ColdPlungeProtocolBuilder })), { loading: Skeleton });
+const HeatPumpSavingsCalculator = dynamic(() => import("./HeatPumpSavingsCalculator").then(m => ({ default: m.HeatPumpSavingsCalculator })), { loading: Skeleton });
+const PickleballRatingCalculator = dynamic(() => import("./PickleballRatingCalculator").then(m => ({ default: m.PickleballRatingCalculator })), { loading: Skeleton });
+const StepCountTargetCalculator = dynamic(() => import("./StepCountTargetCalculator").then(m => ({ default: m.StepCountTargetCalculator })), { loading: Skeleton });
+const LowBuyYearTracker = dynamic(() => import("./LowBuyYearTracker").then(m => ({ default: m.LowBuyYearTracker })), { loading: Skeleton });
+const DopamineDetoxPlanner = dynamic(() => import("./DopamineDetoxPlanner").then(m => ({ default: m.DopamineDetoxPlanner })), { loading: Skeleton });
+const RunClubDistanceCalculator = dynamic(() => import("./RunClubDistanceCalculator").then(m => ({ default: m.RunClubDistanceCalculator })), { loading: Skeleton });
+const SaunaProtocolCalculator = dynamic(() => import("./SaunaProtocolCalculator").then(m => ({ default: m.SaunaProtocolCalculator })), { loading: Skeleton });
+
 // Wave 14 AI workflow tools (6 new)
 const PromptRewriter = dynamic(() => import("./PromptRewriter").then(m => ({ default: m.PromptRewriter })), { loading: Skeleton });
 const SystemPromptGenerator = dynamic(() => import("./SystemPromptGenerator").then(m => ({ default: m.SystemPromptGenerator })), { loading: Skeleton });
@@ -15911,5 +15936,160 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       <p>Pair with <a href="/guides/how-to-choose-the-right-ai-for-your-team">how to choose the right AI for your team</a> for the
       4-week selection process.</p></>),
     howToUse: ["Check each statement that's true for your team.", "Read your readiness score and verdict.", "Close the gaps before rolling out."],
+  },
+  "agentic-browser-comparison": {
+    render: () => <AgenticBrowserComparison />,
+    explainer: (<><p>Compare seven AI browsers head-to-head: ChatGPT Atlas, Comet (Perplexity), Dia (Browser Company),
+      Microsoft Copilot in Edge, Chrome with Gemini, Brave with Leo, Arc Search. Capability tiers (sidebar / cross-tab / full
+      agent), privacy posture, pricing, pros and cons. As of 2026 Q1, Atlas leads autonomy; Dia leads UX; Comet leads research.</p></>),
+    howToUse: ["Click any row to see pros + cons.", "Pick the one that matches your daily workflow."],
+  },
+  "ai-voice-mode-comparison": {
+    render: () => <AiVoiceModeComparison />,
+    explainer: (<><p>Latency, access, and best-fit for 8 AI voice tools: ChatGPT Advanced Voice, Gemini Live, Claude Voice,
+      Grok, Perplexity Voice, Apple Intelligence, ElevenLabs Conversational, Sesame Maya/Miles. The &ldquo;feels human&rdquo;
+      threshold is around 250ms; ChatGPT, Apple, and Sesame all cross it.</p></>),
+    howToUse: ["Read the comparison table.", "Pick by your priority: latency, multilingual, privacy, or app-builder access."],
+  },
+  "ai-video-tool-tracker": {
+    render: () => <AiVideoToolTracker />,
+    explainer: (<><p>Live tracker of AI video generators: Sora 2, Veo 3, Runway Gen-4, Kling 2.5, Pika 2.5, Hedra Character-2,
+      Higgsfield, Luma Dream Machine 2, plus open-weight HunyuanVideo and CogVideoX. Filter by use case: text-to-video,
+      image-to-video, lipsync, or open weights. Real workflow: Midjourney for keyframe &rarr; Runway for image-to-video &rarr;
+      Sora/Veo for long shots.</p></>),
+    howToUse: ["Filter by category.", "Read pricing + max-length + quality + control by tool."],
+  },
+  "ai-music-tool-comparison": {
+    render: () => <AiMusicToolComparison />,
+    explainer: (<><p>Eight AI music tools compared by pricing, licensing tier, and best use: Suno v4.5 (best vocals), Udio
+      (most diverse), Riffusion FUZZ (stems), Sonauto (lyrics-fidelity), Stable Audio (open weights), AIVA (orchestral),
+      ElevenLabs Music (API), MusicLM (research). Licensing varies by tier — always check before commercial use.</p></>),
+    howToUse: ["Read the table.", "Pick by use case: full song / lyrics-first / stems / orchestral / API."],
+  },
+  "ai-search-engine-comparison": {
+    render: () => <AiSearchEngineComparison />,
+    explainer: (<><p>8 AI-powered search engines compared: Perplexity, ChatGPT Search, Google AI Overviews, Bing Copilot,
+      You.com, Phind, Kagi, DuckDuckGo AI Chat. Pick by need: research with sources (Perplexity Pro), privacy (Kagi,
+      DuckDuckGo), free GPT-5 (Bing Copilot), developer questions (Phind), local + transactional (Google).</p></>),
+    howToUse: ["Read the comparison table.", "Match the engine to your daily query type."],
+  },
+  "ai-agent-platform-comparison": {
+    render: () => <AiAgentPlatformComparison />,
+    explainer: (<><p>10 agentic AI platforms compared: ChatGPT Operator, Atlas, Claude Computer Use, Devin, Manus, Replit
+      Agent, Cursor Background Agents, Bolt.new, v0 (Vercel), Lovable.dev. Decision shortcut: coding agent &rarr; Claude or
+      Devin; web automation &rarr; Operator or Atlas; app gen &rarr; v0 / Bolt / Lovable.</p></>),
+    howToUse: ["Read the table.", "Match platform to your task type."],
+  },
+  "ai-context-window-planner": {
+    render: () => <AiContextWindowPlanner />,
+    explainer: (<><p>Plan your prompt token budget across system prompt, documents, chat history, output, and safety buffer.
+      See which AI models (Claude Sonnet 4.6 / Opus 4.7 / Haiku 4.5 / GPT-5 / Gemini 3 Pro / DeepSeek V3.2 / Kimi K2) fit
+      with how much headroom. Models degrade near max context — operate at 50-70% of the rated window for production
+      reliability.</p></>),
+    howToUse: ["Enter token budgets per category.", "Read which models fit + headroom for each."],
+  },
+  "ai-data-residency-checker": {
+    render: () => <AiDataResidencyChecker />,
+    explainer: (<><p>Filter AI providers by region (US, EU, UK, APAC, Canada) and certifications (SOC 2, HIPAA). Includes
+      OpenAI, Anthropic, Google Vertex, Mistral, Cohere, AWS Bedrock, Azure OpenAI, plus self-host as the always-compliant
+      option. EU-region API doesn&rsquo;t guarantee EU-only data flow &mdash; verify routing.</p></>),
+    howToUse: ["Pick your region + compliance needs.", "Read filtered list of compliant providers."],
+  },
+  "ai-transcription-tool-comparison": {
+    render: () => <AiTranscriptionToolComparison />,
+    explainer: (<><p>9 transcription tools: Otter, Whisper API, Deepgram Nova-3, AssemblyAI Universal-2, Rev, Sonix, Granola,
+      Zoom AI Companion, MacWhisper. Compare accuracy (90-96%), languages, live vs async, pricing, speakers detection.
+      Standard test sets vs your real audio differ &mdash; pilot 2-3 candidates on YOUR audio for a week before
+      committing.</p></>),
+    howToUse: ["Read the comparison table.", "Pick by accuracy + price + your platform need."],
+  },
+  "open-source-llm-tracker": {
+    render: () => <OpenSourceLlmTracker />,
+    explainer: (<><p>15 open-weight LLMs tracked: Llama 3.3 / 4 Maverick, Qwen 3.5 (32B / 72B), DeepSeek V3.2 / R1, the
+      DeepSeek-Distill-Qwen variant, Kimi K2, Mistral Large 3 / Medium 3, Gemma 3 (9B / 27B), Phi-4, Llama 3.2 3B, SmolLM3.
+      Filter by license (Apache, MIT, Llama, Qwen, custom). Always read the license file before shipping a commercial
+      product.</p></>),
+    howToUse: ["Filter by license type.", "Pick by params + context + use case."],
+  },
+  "ai-image-prompt-helper": {
+    render: () => <AiImagePromptHelper />,
+    explainer: (<><p>Build effective image prompts in seconds. Pick style (photo / cinematic / anime / illustration / 3D /
+      logo), lighting (natural / studio / golden / moody / neon), camera (24mm / 85mm / macro / aerial / fisheye), aspect
+      ratio. Add subject + extras. Outputs a layered prompt + Stable Diffusion negative prompt. Works for Midjourney,
+      DALL-E, FLUX, Imagen, SD 3.5.</p></>),
+    howToUse: ["Fill in style, subject, lighting, camera.", "Copy generated prompt + negative.", "Paste into your image generator."],
+  },
+  "zone-2-heart-rate-calculator": {
+    render: () => <Zone2HeartRateCalculator />,
+    explainer: (<><p>Calculate your Zone 2 cardio heart rate range with three methods: Karvonen (uses your resting HR for
+      personalization), Maffetone (180 - age, conservative), or %max-HR (the textbook simple version). Zone 2 builds
+      mitochondrial density and is the strongest correlate (with VO2 max) for all-cause mortality reduction. 30-90 min,
+      2-4&times;/week.</p></>),
+    howToUse: ["Enter age + resting HR.", "Pick method.", "Stay in the range for 30-90 min, 2-4&times;/week."],
+  },
+  "vo2-max-estimator": {
+    render: () => <Vo2MaxEstimator />,
+    explainer: (<><p>Estimate VO&#8322; max with three field tests: Cooper 12-minute run (run as far as possible in 12 min),
+      Rockport 1-mile walk (walk as fast as you can, record final HR), or resting HR (rough). VO&#8322; max correlates with
+      all-cause mortality more than most other fitness markers — going from &ldquo;poor&rdquo; to &ldquo;average&rdquo; is
+      the single biggest health investment most adults can make.</p></>),
+    howToUse: ["Pick a test method.", "Enter your numbers.", "Read VO&#8322; max + age/sex norm category."],
+  },
+  "cold-plunge-protocol-builder": {
+    render: () => <ColdPlungeProtocolBuilder />,
+    explainer: (<><p>Build a personalized cold-plunge protocol from goal (recovery / metabolic / mental / performance) and
+      experience level (beginner / intermediate / advanced). Returns target temp, duration per session, frequency, and
+      timing notes. Performance athletes: never within 4 hours of strength training (blunts protein synthesis).</p></>),
+    howToUse: ["Pick goal + level.", "Read your protocol.", "Follow the safety + execution notes."],
+  },
+  "heat-pump-savings-calculator": {
+    render: () => <HeatPumpSavingsCalculator />,
+    explainer: (<><p>Calculate annual savings + payback for replacing gas/oil/propane/electric-resistance heating with a
+      heat pump. Includes IRA federal tax credit + state rebate inputs, electricity rate, climate zone (mild/moderate/cold/
+      very cold), and CO&#8322; reduction. COP scales: 3.5 in mild, down to 2.5 in very-cold climates with cold-climate
+      pumps.</p></>),
+    howToUse: ["Pick climate + current fuel + house size.", "Enter install cost + rebate.", "Read annual savings + payback."],
+  },
+  "pickleball-rating-calculator": {
+    render: () => <PickleballRatingCalculator />,
+    explainer: (<><p>Estimate your DUPR-style pickleball rating (2.0-7.0 scale) from recent wins/losses against same and
+      higher-rated players. Returns rating + level description. For an official rating, register with DUPR. Most rec
+      players overrate themselves by 0.5 points; the recalibration is normal.</p></>),
+    howToUse: ["Enter your stated rating + recent wins/losses.", "Read estimated rating + level description."],
+  },
+  "step-count-target-calculator": {
+    render: () => <StepCountTargetCalculator />,
+    explainer: (<><p>Personalized daily step target by age, primary goal (longevity / weight loss / fitness / athlete), and
+      current activity level. Modern data: mortality benefits plateau around 7,500 for most adults, earlier for 60+.
+      Cadence (100+ steps/min for 30 min/day) matters more than total step count.</p></>),
+    howToUse: ["Enter age + goal + activity.", "Read personalized target + miles/active-min equivalents."],
+  },
+  "low-buy-year-tracker": {
+    render: () => <LowBuyYearTracker />,
+    explainer: (<><p>Log every discretionary purchase, mark needed vs want, see monthly total + over/under your budget. The
+      starter list is empty — add your own categories. Logging IS the intervention. The 2026 cultural answer to lifestyle
+      creep + subscription fatigue.</p></>),
+    howToUse: ["Set monthly budget.", "Log each purchase.", "Toggle needed/want.", "Watch your over/under."],
+  },
+  "dopamine-detox-planner": {
+    render: () => <DopamineDetoxPlanner />,
+    explainer: (<><p>Plan a stimuli-reset detox by length (weekend / week / month) and strictness (minimal / moderate /
+      strict). Returns allowed and blocked lists plus a pre-detox checklist. The intervention works because it removes
+      high-frequency rewards that crowd out slower ones &mdash; not because dopamine is &ldquo;depleted.&rdquo;</p></>),
+    howToUse: ["Pick length + strictness.", "Read allow / block lists.", "Run through the prep checklist before starting."],
+  },
+  "run-club-distance-calculator": {
+    render: () => <RunClubDistanceCalculator />,
+    explainer: (<><p>Calculate distance, average pace, and energy burn for a run-club session by level (beginner /
+      intermediate / advanced) + target pace (social / recovery / moderate / tempo) + duration. Plus etiquette tips for
+      the social-run boom.</p></>),
+    howToUse: ["Pick level + pace + duration.", "Read distance + pace + energy + recovery time."],
+  },
+  "sauna-protocol-calculator": {
+    render: () => <SaunaProtocolCalculator />,
+    explainer: (<><p>Build a sauna protocol by goal (longevity / recovery / social / sleep) + experience level. Returns
+      round duration, number of rounds, frequency, and timing. Based on the Finnish KIHD longevity data: 4-7 sessions/week
+      at 175°F+ correlates with 40% reduction in all-cause mortality.</p></>),
+    howToUse: ["Pick goal + level + temp.", "Read your protocol.", "Follow the safety + execution notes."],
   },
 };
