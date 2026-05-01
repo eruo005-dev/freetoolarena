@@ -434,6 +434,12 @@ import * as HowToBuildADiySolarPowerKit from "./how-to-build-a-diy-solar-power-k
 import * as HowToPickZeroWasteBeauty from "./how-to-pick-zero-waste-beauty";
 import * as HowToStartUrbanFarming from "./how-to-start-urban-farming";
 import * as HowToSetUpCompostingAtHome from "./how-to-set-up-composting-at-home";
+// Wave 7
+import * as HowToWriteADatingAppBio from "./how-to-write-a-dating-app-bio";
+import * as HowToSetUpAnErgonomicDesk from "./how-to-set-up-an-ergonomic-desk";
+import * as HowToCancelUnusedSubscriptions from "./how-to-cancel-unused-subscriptions";
+import * as HowToMasterSmallTalk from "./how-to-master-small-talk";
+import * as HowToFeedDogTreatsWithoutOverdoingIt from "./how-to-feed-dog-treats-without-overdoing-it";
 
 export interface GuideEntry {
   intro: ReactElement;
@@ -4021,5 +4027,131 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
       label: "Check your compost ratio",
       targetSlug: "compost-ratio-calculator",
     },
+  },
+  "how-to-write-a-dating-app-bio": {
+    intro: HowToWriteADatingAppBio.intro,
+    body: HowToWriteADatingAppBio.body,
+    cta: {
+      label: "Score your bio out of 100 in seconds",
+      targetSlug: "dating-app-bio-rater",
+    },
+    faq: [
+      {
+        q: "How long should a dating app bio be?",
+        a: "Aim for 60–150 words. Under 60 reads as low effort and gives readers nothing to react to. Over 150 reads as a personal essay no one volunteered to read. The middle range gives you room for two or three specific hooks plus a conversation invite.",
+      },
+      {
+        q: "What should I avoid putting in a dating app bio?",
+        a: "Skip cliches like 'fluent in sarcasm' or 'partner in crime,' negative framing ('no drama,' 'don't message me if'), and a list of dealbreakers. These describe the average user, not you, and they filter you out faster than they filter others.",
+      },
+      {
+        q: "Do dating app bios actually matter compared to photos?",
+        a: "Photos do most of the swipe-decision work, but the bio determines who sends a substantive opening message versus who swipes and forgets. A great bio with average photos converts better than great photos with a generic or empty bio.",
+      },
+      {
+        q: "What's a 'hook' in a dating bio?",
+        a: "A hook is a sentence designed to be quoted back to you — a micro-debate ('argue with me about pineapple pizza'), a recommendation request ('what should I read next?'), or a call-out ('if you also hate cilantro, hi'). One hook is plenty, two if the rest of the bio supports it.",
+      },
+    ],
+  },
+  "how-to-set-up-an-ergonomic-desk": {
+    intro: HowToSetUpAnErgonomicDesk.intro,
+    body: HowToSetUpAnErgonomicDesk.body,
+    cta: {
+      label: "Get your target heights for desk, chair, and monitor",
+      targetSlug: "ergonomic-desk-setup-checker",
+    },
+    faq: [
+      {
+        q: "What is the ideal desk height for ergonomics?",
+        a: "Roughly 49% of your standing height — so about 28 inches for a 5'8' person and 30 inches for someone 6'0'. The more reliable rule is to sit relaxed and have the desk hit your elbows when your forearms are parallel to the floor.",
+      },
+      {
+        q: "How high should my monitor be?",
+        a: "Top edge at or just below your eye line when you're sitting tall, with the screen 20–30 inches from your face. Looking down at a low monitor for 6–8 hours a day is the most common cause of office neck pain.",
+      },
+      {
+        q: "Do I need an expensive ergonomic chair?",
+        a: "Not really. A $200 chair set up with the right lumbar support, height, and 90-90-90 joint geometry beats a $1,500 chair adjusted poorly. Lumbar issues can usually be solved with a rolled towel; height issues with a footrest.",
+      },
+      {
+        q: "Is a standing desk better than a sitting desk?",
+        a: "Standing all day is just as bad as sitting all day — different problems, equally bad. The real win is alternating, plus a 60-second movement break every 30 minutes. Standing-desk converters are useful only after the seated geometry is dialed in.",
+      },
+    ],
+  },
+  "how-to-cancel-unused-subscriptions": {
+    intro: HowToCancelUnusedSubscriptions.intro,
+    body: HowToCancelUnusedSubscriptions.body,
+    cta: {
+      label: "Run the audit and see your annual savings",
+      targetSlug: "subscription-fatigue-auditor",
+    },
+    faq: [
+      {
+        q: "How do I find all my subscriptions?",
+        a: "Pull from four sources: your bank/credit card statements (search recurring debits), Apple ID Settings → Subscriptions, Google Play account subscriptions, and PayPal Settings → Manage automatic payments. Most people are surprised by 2–3 forgotten ones in the PayPal list.",
+      },
+      {
+        q: "When should I cancel a subscription?",
+        a: "If your cost per use is over $5 and you used it fewer than 4 times last month, cancel today. If you haven't opened it in 30 days, cancel today. You can always re-subscribe in 5 minutes if you actually miss it.",
+      },
+      {
+        q: "Will I lose my data if I cancel?",
+        a: "Usually no, if you 'cancel renewal' rather than 'delete account.' For media services like Spotify, Hulu, or Netflix, cancelling renewal lets the account go dormant — playlists and watchlists are preserved if you re-subscribe later.",
+      },
+      {
+        q: "How much can I save by auditing subscriptions?",
+        a: "The average US household has 12 paid subscriptions and uses 6, so a full audit typically frees up $400–1,200 per year. Most of that comes from 2–3 services that auto-renewed quietly while the household stopped using them.",
+      },
+    ],
+  },
+  "how-to-master-small-talk": {
+    intro: HowToMasterSmallTalk.intro,
+    body: HowToMasterSmallTalk.body,
+    cta: {
+      label: "Get five fresh open-ended questions for any setting",
+      targetSlug: "small-talk-question-generator",
+    },
+    faq: [
+      {
+        q: "What's a good question to start small talk?",
+        a: "Open questions starting with 'what' or 'how' beat closed 'is/are' questions every time. Try 'what's the best thing you've eaten this week?' or 'what brought you to this event specifically?' — both invite a story rather than a one-word answer.",
+      },
+      {
+        q: "How do I get better at small talk if I'm an introvert?",
+        a: "You don't need to be louder, you need to ask better follow-ups. Listen for specifics (a place name, a hobby, a year) and pull that thread with 'why?' or 'how did that go?'. A 70/30 listen-to-talk ratio reads as 'great to talk to' across personality types.",
+      },
+      {
+        q: "How do I gracefully end a small-talk conversation?",
+        a: "Two clean exits: the honest one ('going to grab a drink — really enjoyed this, see you in a bit') or the intro pivot ('you should meet [X], I think you'd actually enjoy talking to her,' then walk them over). Both leave the other person feeling met, not abandoned.",
+      },
+    ],
+  },
+  "how-to-feed-dog-treats-without-overdoing-it": {
+    intro: HowToFeedDogTreatsWithoutOverdoingIt.intro,
+    body: HowToFeedDogTreatsWithoutOverdoingIt.body,
+    cta: {
+      label: "Calculate your dog's daily treat budget",
+      targetSlug: "dog-treat-calorie-budget",
+    },
+    faq: [
+      {
+        q: "What is the 10% rule for dog treats?",
+        a: "Treats should make up no more than 10% of your dog's daily calorie intake, with the remaining 90% from a complete-and-balanced diet. Both AAFCO and AAHA back this number because complete diets are formulated assuming most calories come from food, not treats.",
+      },
+      {
+        q: "How many treats can I give my dog per day?",
+        a: "Depends on weight, activity level, and the calorie content of the specific treat. A 40-pound moderately active dog has roughly a 100-kcal treat budget — about one bully stick, three medium training biscuits, or 25 small training treats.",
+      },
+      {
+        q: "What human foods are toxic to dogs?",
+        a: "The serious ones: chocolate, grapes, raisins, onions, garlic, xylitol (sugar-free sweetener), macadamia nuts, cooked bones, raw bread dough. When in doubt, the ASPCA Animal Poison Control hotline (888-426-4435) is staffed 24/7.",
+      },
+      {
+        q: "Can I use my dog's regular food as treats?",
+        a: "Yes — pulling kibble from the day's ration to use as training treats has zero net calorie impact and is a common professional-trainer move for high-volume training sessions. Just make sure you're not double-feeding by also serving full meals.",
+      },
+    ],
   },
 };

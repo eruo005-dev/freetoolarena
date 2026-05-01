@@ -674,6 +674,18 @@ const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposable
 const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
 const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
 
+// Wave 7 modern-life math (10 new)
+const DatingAppBioRater = dynamic(() => import("./DatingAppBioRater").then(m => ({ default: m.DatingAppBioRater })), { loading: Skeleton });
+const FicaTaxCalculator = dynamic(() => import("./FicaTaxCalculator").then(m => ({ default: m.FicaTaxCalculator })), { loading: Skeleton });
+const ErgonomicDeskSetupChecker = dynamic(() => import("./ErgonomicDeskSetupChecker").then(m => ({ default: m.ErgonomicDeskSetupChecker })), { loading: Skeleton });
+const VacationPayoutCalculator = dynamic(() => import("./VacationPayoutCalculator").then(m => ({ default: m.VacationPayoutCalculator })), { loading: Skeleton });
+const DogTreatCalorieBudget = dynamic(() => import("./DogTreatCalorieBudget").then(m => ({ default: m.DogTreatCalorieBudget })), { loading: Skeleton });
+const DryToCookedRiceConverter = dynamic(() => import("./DryToCookedRiceConverter").then(m => ({ default: m.DryToCookedRiceConverter })), { loading: Skeleton });
+const SubscriptionFatigueAuditor = dynamic(() => import("./SubscriptionFatigueAuditor").then(m => ({ default: m.SubscriptionFatigueAuditor })), { loading: Skeleton });
+const SmallTalkQuestionGenerator = dynamic(() => import("./SmallTalkQuestionGenerator").then(m => ({ default: m.SmallTalkQuestionGenerator })), { loading: Skeleton });
+const GymMembershipRoiCalculator = dynamic(() => import("./GymMembershipRoiCalculator").then(m => ({ default: m.GymMembershipRoiCalculator })), { loading: Skeleton });
+const EyeStrainBreakCalculator = dynamic(() => import("./EyeStrainBreakCalculator").then(m => ({ default: m.EyeStrainBreakCalculator })), { loading: Skeleton });
+
 export const TOOL_REGISTRY: Record<string, ToolEntry> = {
   "tip-calculator": {
     render: (params) => (
@@ -15501,6 +15513,230 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Pick device type.",
       "Enter repair + replace cost.",
       "Read recommendation.",
+    ],
+  },
+  "dating-app-bio-rater": {
+    render: () => <DatingAppBioRater />,
+    explainer: (
+      <>
+        <p>
+          Paste your Hinge, Bumble, Tinder, or Feeld bio and get a score out of 100. The rubric weights length,
+          conversation hooks, cliche density, framing, and specificity &mdash; the same things dating coaches grade for.
+          We surface the top fixes plus what&rsquo;s already working.
+        </p>
+        <p>
+          Runs entirely in your browser. Nothing is uploaded, logged, or trained on. For the full breakdown of why
+          each score component matters, see <a href="/guides/how-to-write-a-dating-app-bio">how to write a dating app bio that actually works</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Paste your bio into the textarea.",
+      "Read the score and the top fixes.",
+      "Edit, paste again, watch the score climb.",
+    ],
+    faq: [
+      {
+        q: "Does it work for any dating app?",
+        a: "Yes — Hinge, Bumble, Tinder, Feeld, OkCupid, Raya. The grading is based on universal patterns (specificity, hooks, framing), not platform-specific quirks.",
+      },
+      {
+        q: "Is my bio sent anywhere?",
+        a: "No. Everything runs in your tab. You can disconnect from the internet and it still works.",
+      },
+      {
+        q: "What's a good score?",
+        a: "80+ is a strong bio. 60–79 is fixable in 5 minutes. Under 60 usually has a length, hook, or cliche issue you can correct quickly.",
+      },
+    ],
+  },
+  "fica-tax-calculator": {
+    render: () => <FicaTaxCalculator />,
+    explainer: (
+      <>
+        <p>
+          Calculate Social Security and Medicare withholding for any wage or self-employment income. Uses the 2026
+          IRS wage base ($176,100) and the additional Medicare thresholds for single ($200k) and married filers ($250k).
+          Self-employed mode applies the full 12.4% + 2.9% SE tax and shows the half-deductible amount.
+        </p>
+        <p>
+          Runs entirely in your browser &mdash; no upload, no account. Pair with the{" "}
+          <a href="/tools/tax-bracket-visualizer">tax bracket visualizer</a> for federal income tax.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter wage or SE income.",
+      "Pick W-2 or self-employed.",
+      "Set filing status (matters above the additional-Medicare threshold).",
+      "Read total, monthly, and per-paycheck amounts.",
+    ],
+  },
+  "ergonomic-desk-setup-checker": {
+    render: () => <ErgonomicDeskSetupChecker />,
+    explainer: (
+      <>
+        <p>
+          Enter your height. Get target desk, chair, monitor center, monitor top edge, monitor distance, and keyboard
+          height in inches or centimeters &mdash; based on OSHA and BIFMA G1-2013 anthropometric ranges. Includes the
+          90-90-90 verification checklist and a cheap-fix list for when the numbers don&rsquo;t match your existing furniture.
+        </p>
+        <p>
+          See the deeper walkthrough at{" "}
+          <a href="/guides/how-to-set-up-an-ergonomic-desk">how to set up an ergonomic desk</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter your height.",
+      "Pick inches or centimeters.",
+      "Adjust your desk, chair, and monitor toward the target numbers.",
+    ],
+  },
+  "vacation-payout-calculator": {
+    render: () => <VacationPayoutCalculator />,
+    explainer: (
+      <>
+        <p>
+          Estimate the take-home value of your accrued PTO when you leave a job. Models the IRS supplemental withholding
+          method (22% federal flat) plus FICA (Social Security + Medicare) and a configurable state income tax rate. Toggle
+          off the supplemental flag to see the regular-wage withholding case.
+        </p>
+        <p>
+          State rules vary &mdash; California, Massachusetts, and a handful of others <em>require</em> payout of unused
+          vacation when employment ends. Many states leave it to company policy.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter accrued PTO hours and your hourly wage.",
+      "Set state income tax (0% in TX/FL/WA/NV/TN/NH/AK/SD/WY).",
+      "Read gross, withholding, and take-home.",
+    ],
+  },
+  "dog-treat-calorie-budget": {
+    render: () => <DogTreatCalorieBudget />,
+    explainer: (
+      <>
+        <p>
+          The veterinary 10% rule: treats should make up no more than 10% of your dog&rsquo;s daily calories. This tool runs
+          the standard RER &times; activity-factor formula (RER = 70 &times; kg<sup>0.75</sup>, AAFCO/AAHA-aligned), then shows
+          how many of 12 common treats fit under that cap &mdash; from 1-kcal blueberries to 110-kcal bully sticks.
+        </p>
+        <p>
+          For the full breakdown including foods to never feed, weight-loss adjustments, and low-calorie training alternatives,
+          see <a href="/guides/how-to-feed-dog-treats-without-overdoing-it">how to feed dog treats without overdoing it</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter weight in pounds.",
+      "Pick activity level.",
+      "Read the daily treat budget and treat-by-treat counts.",
+    ],
+  },
+  "dry-to-cooked-rice-converter": {
+    render: () => <DryToCookedRiceConverter />,
+    explainer: (
+      <>
+        <p>
+          Convert dry rice or grains to cooked yield (and back) for ten common varieties: white, jasmine, basmati, brown,
+          wild, quinoa, farro, pearl barley, instant couscous, and bulgur. Each ratio is the standard stovetop method
+          &mdash; water, yield, and cook time. The result includes serving estimates and a complete recipe.
+        </p>
+        <p>
+          For a deeper water-ratio reference, also see the{" "}
+          <a href="/tools/rice-to-water-ratio">rice to water ratio</a> tool.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the grain.",
+      "Choose direction: dry → cooked or cooked → dry.",
+      "Enter cups, read the yield + water + cook time.",
+    ],
+  },
+  "subscription-fatigue-auditor": {
+    render: () => <SubscriptionFatigueAuditor />,
+    explainer: (
+      <>
+        <p>
+          List your subscriptions, mark each keep / review / cancel, and see the projected annual savings if you act on the
+          kill list today. Auto-flags anything with a $/use ratio over $5 and fewer than 4 uses per month &mdash; the threshold
+          most personal-finance auditors use.
+        </p>
+        <p>
+          For the full audit playbook (where to pull receipts, how to cancel without losing watchlists, the 30-day rule for
+          new sign-ups), see <a href="/guides/how-to-cancel-unused-subscriptions">how to cancel unused subscriptions</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Add each subscription with monthly cost and uses-per-month.",
+      "Mark keep, review, or cancel.",
+      "Read the cancel-list yearly savings.",
+    ],
+  },
+  "small-talk-question-generator": {
+    render: () => <SmallTalkQuestionGenerator />,
+    explainer: (
+      <>
+        <p>
+          Pick the setting (party, work, first date, wedding, networking, family dinner, talking with kids) and get five
+          fresh open-ended questions designed to invite a story instead of a one-word answer. Reshuffle as many times as
+          you want &mdash; runs entirely in your browser.
+        </p>
+        <p>
+          For the broader playbook on listening ratios, follow-up moves, and graceful exits, see{" "}
+          <a href="/guides/how-to-master-small-talk">how to master small talk</a>.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Pick the setting.",
+      "Read the five questions.",
+      "Click Reshuffle for another set.",
+    ],
+  },
+  "gym-membership-roi-calculator": {
+    render: () => <GymMembershipRoiCalculator />,
+    explainer: (
+      <>
+        <p>
+          Cost per visit, break-even visits, and yearly savings vs drop-in pricing. Includes annual fees and dues so the
+          number reflects what you&rsquo;re actually paying &mdash; not the headline monthly rate. The verdict tells you
+          whether the membership is a clear win, reasonable, or worse than buying day passes as you go.
+        </p>
+        <p>
+          Be honest about realistic visits per week. The average gym member visits twice a week, so anything you input above
+          three has to clear a credibility check before you trust the verdict.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Enter monthly fee, annual fees, drop-in rate, and realistic visits per week.",
+      "Read cost per visit, break-even, and verdict.",
+    ],
+  },
+  "eye-strain-break-calculator": {
+    render: () => <EyeStrainBreakCalculator />,
+    explainer: (
+      <>
+        <p>
+          A built-in 20-20-20 timer plus a daily-screen-hours planner. Every 20 minutes of focus, look at something 20 feet
+          away for 20 seconds &mdash; the American Academy of Ophthalmology&rsquo;s standard recommendation for digital eye
+          strain. The timer keeps running across tab switches because it uses timestamps, not interval ticks.
+        </p>
+        <p>
+          Pair with the <a href="/tools/ergonomic-desk-setup-checker">ergonomic desk setup checker</a> for the geometry side
+          of the same problem.
+        </p>
+      </>
+    ),
+    howToUse: [
+      "Click Start.",
+      "Look at your screen for 20 minutes.",
+      "When the rest phase begins, look 20 feet away for 20 seconds.",
     ],
   },
 };
