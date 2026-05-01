@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "PowerShell(gh --version 2>&1)",
+      "Bash(curl -sI -A \"Mediapartners-Google\" https://freetoolarena.com/ads.txt)",
+      "Bash(curl -sI -A \"Mediapartners-Google\" https://www.freetoolarena.com/ads.txt)",
+      "Bash(git add *)",
+      "Bash(git reset *)"
+    ]
+  }
+}
