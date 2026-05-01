@@ -674,6 +674,21 @@ const ReusableVsDisposableSavings = dynamic(() => import("./ReusableVsDisposable
 const CompostBinSizeCalculator = dynamic(() => import("./CompostBinSizeCalculator").then(m => ({ default: m.CompostBinSizeCalculator })), { loading: Skeleton });
 const TechRepairWorthItCalculator = dynamic(() => import("./TechRepairWorthItCalculator").then(m => ({ default: m.TechRepairWorthItCalculator })), { loading: Skeleton });
 
+// Wave 9 AI cost & comparison tools (12 new)
+const GeminiVsChatgptCostCalculator = dynamic(() => import("./GeminiVsChatgptCostCalculator").then(m => ({ default: m.GeminiVsChatgptCostCalculator })), { loading: Skeleton });
+const ClaudeVsDeepseekCostCalculator = dynamic(() => import("./ClaudeVsDeepseekCostCalculator").then(m => ({ default: m.ClaudeVsDeepseekCostCalculator })), { loading: Skeleton });
+const PromptCacheSavingsCalculator = dynamic(() => import("./PromptCacheSavingsCalculator").then(m => ({ default: m.PromptCacheSavingsCalculator })), { loading: Skeleton });
+const BatchApiSavingsCalculator = dynamic(() => import("./BatchApiSavingsCalculator").then(m => ({ default: m.BatchApiSavingsCalculator })), { loading: Skeleton });
+const MultimodalPromptCostEstimator = dynamic(() => import("./MultimodalPromptCostEstimator").then(m => ({ default: m.MultimodalPromptCostEstimator })), { loading: Skeleton });
+const AiAgentLoopCostEstimator = dynamic(() => import("./AiAgentLoopCostEstimator").then(m => ({ default: m.AiAgentLoopCostEstimator })), { loading: Skeleton });
+const EmbeddingsCostComparison = dynamic(() => import("./EmbeddingsCostComparison").then(m => ({ default: m.EmbeddingsCostComparison })), { loading: Skeleton });
+const AiCodingToolCostComparison = dynamic(() => import("./AiCodingToolCostComparison").then(m => ({ default: m.AiCodingToolCostComparison })), { loading: Skeleton });
+const AiMonthlyCostBudgeter = dynamic(() => import("./AiMonthlyCostBudgeter").then(m => ({ default: m.AiMonthlyCostBudgeter })), { loading: Skeleton });
+const FrontierModelTracker = dynamic(() => import("./FrontierModelTracker").then(m => ({ default: m.FrontierModelTracker })), { loading: Skeleton });
+const AiFeatureComparisonMatrix = dynamic(() => import("./AiFeatureComparisonMatrix").then(m => ({ default: m.AiFeatureComparisonMatrix })), { loading: Skeleton });
+const AiRateLimitTracker = dynamic(() => import("./AiRateLimitTracker").then(m => ({ default: m.AiRateLimitTracker })), { loading: Skeleton });
+const LocalVsApiBreakevenCalculator = dynamic(() => import("./LocalVsApiBreakevenCalculator").then(m => ({ default: m.LocalVsApiBreakevenCalculator })), { loading: Skeleton });
+
 // Wave 7 modern-life math (10 new)
 const DatingAppBioRater = dynamic(() => import("./DatingAppBioRater").then(m => ({ default: m.DatingAppBioRater })), { loading: Skeleton });
 const FicaTaxCalculator = dynamic(() => import("./FicaTaxCalculator").then(m => ({ default: m.FicaTaxCalculator })), { loading: Skeleton });
@@ -15738,5 +15753,104 @@ export const TOOL_REGISTRY: Record<string, ToolEntry> = {
       "Look at your screen for 20 minutes.",
       "When the rest phase begins, look 20 feet away for 20 seconds.",
     ],
+  },
+  "gemini-vs-chatgpt-cost-calculator": {
+    render: () => <GeminiVsChatgptCostCalculator />,
+    explainer: (<><p>Compare per-token API pricing across all current Gemini and OpenAI models at your real volume.
+      Inputs are tokens-per-call (in thousands) and calls-per-month; outputs are sorted cost-by-model with the cheapest
+      flagged. Useful for picking a model before committing, or for costing out a switch.</p>
+      <p>For a deeper look at the full frontier-model landscape, see the{" "}
+      <a href="/tools/frontier-model-tracker">frontier model tracker</a>.</p></>),
+    howToUse: ["Enter input + output tokens per call (in thousands).", "Enter calls per month.", "Read the cheapest pick + full table."],
+  },
+  "claude-vs-deepseek-cost-calculator": {
+    render: () => <ClaudeVsDeepseekCostCalculator />,
+    explainer: (<><p>DeepSeek V3.2 typically scores within 5 quality points of Claude Sonnet at 1/10 the cost. This
+      calculator shows you exactly how much you&rsquo;d save by switching at your real volume, with rough quality scores
+      to break ties when costs are close.</p></>),
+    howToUse: ["Enter your token usage and calls.", "Read the cheapest model and savings vs Opus."],
+  },
+  "prompt-cache-savings-calculator": {
+    render: () => <PromptCacheSavingsCalculator />,
+    explainer: (<><p>Anthropic, OpenAI, and Google all let you cache stable prompt prefixes &mdash; system messages,
+      RAG context, few-shot examples. Cached reads cost roughly 10% of normal input tokens. This calculator estimates
+      your monthly savings given your call rate and prompt structure. The fix is almost always &ldquo;keep your stable
+      prefix at the start of every call.&rdquo;</p></>),
+    howToUse: ["Pick provider.", "Enter system / user / output token sizes.", "Enter calls per hour.", "Read savings."],
+  },
+  "batch-api-savings-calculator": {
+    render: () => <BatchApiSavingsCalculator />,
+    explainer: (<><p>Batch APIs from Anthropic, OpenAI, Google, and DeepSeek all give a 50% discount in exchange for
+      asynchronous SLAs (most return in 1-6 hours, max 24h). Right for: bulk classification, summarization, embedding
+      generation, evals, anything that doesn&rsquo;t need a same-second response.</p></>),
+    howToUse: ["Enter token volume + total calls.", "Read 50% off across all 4 providers."],
+  },
+  "multimodal-prompt-cost-estimator": {
+    render: () => <MultimodalPromptCostEstimator />,
+    explainer: (<><p>When prompts include images, video frames, or audio, costs balloon fast. This estimator uses the
+      standard Gemini / Claude conversions: ~1500 tokens per image, 250 tokens per video second (1fps), 1500 tokens per
+      audio minute. GPT-5 vision uses a slightly different patch-based formula but lands within 10%.</p></>),
+    howToUse: ["Enter text / image / video / audio per call.", "Read total token equivalent + monthly cost."],
+  },
+  "ai-agent-loop-cost-estimator": {
+    render: () => <AiAgentLoopCostEstimator />,
+    explainer: (<><p>Agent loops accumulate context across steps &mdash; by step 12, the model is reading every prior
+      tool call + result. This calculator runs the standard triangular-sum cost across 7 frontier models. Reality check:
+      enable prompt caching to cut the input multiplier by ~10x.</p>
+      <p>Pair with the <a href="/tools/prompt-cache-savings-calculator">prompt cache savings calculator</a>.</p></>),
+    howToUse: ["Enter system prompt size + per-step in/out.", "Enter steps per run + runs per month.", "Read cost by model."],
+  },
+  "embeddings-cost-comparison": {
+    render: () => <EmbeddingsCostComparison />,
+    explainer: (<><p>Eight embedding providers compared by cost per million tokens, vector dimensions, and MTEB
+      benchmark scores (the standard public retrieval benchmark, average of 56 tasks). 1-2 points of MTEB rarely matters
+      for typical RAG; 5+ does. Cheap models like text-embedding-3-small and BGE-M3 usually win the cost/quality
+      tradeoff.</p></>),
+    howToUse: ["Enter document count + tokens per doc.", "Enter monthly re-embeds.", "Read sorted cost table."],
+  },
+  "ai-coding-tool-cost-comparison": {
+    render: () => <AiCodingToolCostComparison />,
+    explainer: (<><p>Compare monthly cost across the 9 main AI coding tools at any team size: GitHub Copilot Pro/Business,
+      Cursor Pro/Ultra, Windsurf Pro, Claude Pro/Max (with Claude Code), Cody Pro, and Continue.dev (BYO API). Quick picks:
+      Copilot Pro for solo autocomplete; Cursor Pro or Claude Max for agentic refactors; Continue.dev if you already pay
+      Anthropic / OpenAI consoles.</p></>),
+    howToUse: ["Enter team size.", "Read total monthly cost across all 9 plans."],
+  },
+  "ai-monthly-cost-budgeter": {
+    render: () => <AiMonthlyCostBudgeter />,
+    explainer: (<><p>Track every AI subscription and API spend in one place: ChatGPT, Claude, Gemini, Cursor, Anthropic
+      console, OpenAI console, Perplexity, etc. Set a monthly budget and see your over/under at a glance. The starter
+      list seeds 6 common services; add your own from there.</p></>),
+    howToUse: ["Set monthly budget.", "Add or edit each service.", "Read total + over/under."],
+  },
+  "frontier-model-tracker": {
+    render: () => <FrontierModelTracker />,
+    explainer: (<><p>Live tracker of the 15 most relevant frontier models in 2026: Claude 4.7/4.6/4.5, GPT-5/mini, Gemini 3
+      Pro / 2.5 Pro/Flash, DeepSeek R1/V3.2, Kimi K2, Grok 4, Llama 3.3/4 Maverick, Qwen 3.5, Mistral Large 3. Filter by
+      capability (code, reasoning, vision, long context, agents); sorted by release date.</p></>),
+    howToUse: ["Pick a capability filter.", "Read released models sorted newest-first."],
+  },
+  "ai-feature-comparison-matrix": {
+    render: () => <AiFeatureComparisonMatrix />,
+    explainer: (<><p>Vision input, audio input, video generation, tool use, web search, code interpreter, file upload,
+      voice mode, long-term memory, agentic mode &mdash; tracked across ChatGPT Plus/Pro, Claude Pro/Max, Gemini Advanced,
+      Perplexity Pro, DeepSeek, Kimi, Grok, Mistral Le Chat, NotebookLM, and Microsoft Copilot.</p></>),
+    howToUse: ["Filter by feature, or view all.", "Compare what each tool ships in 2026 Q1."],
+  },
+  "ai-rate-limit-tracker": {
+    render: () => <AiRateLimitTracker />,
+    explainer: (<><p>Current rate-limit tiers across Anthropic, OpenAI, Google, DeepSeek, Perplexity, and xAI &mdash;
+      including ChatGPT Plus/Pro and Claude Pro/Max consumer caps. RPM (requests per minute), TPM (tokens per minute), and
+      daily quotas. Hitting limits early? All providers raise tiers based on cumulative spend.</p></>),
+    howToUse: ["Filter by provider.", "Read tier-by-tier limits and notes."],
+  },
+  "local-vs-api-breakeven-calculator": {
+    render: () => <LocalVsApiBreakevenCalculator />,
+    explainer: (<><p>How many months until a Mac Studio, RTX 4090/5090, or Hyperspace pod pays back versus using API at
+      your real volume? Includes electricity cost. Reality check: don&rsquo;t self-host until you&rsquo;re confident your
+      usage is sustained &mdash; 72-hour evaluation is a fair bar.</p>
+      <p>For the deeper architecture, see <a href="/guides/how-to-build-a-home-ai-cluster">how to build a home AI
+      cluster</a>.</p></>),
+    howToUse: ["Pick API model + monthly token volume.", "Enter $/kWh.", "Read break-even months for each hardware path."],
   },
 };
