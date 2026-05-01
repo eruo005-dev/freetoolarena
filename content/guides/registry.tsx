@@ -468,6 +468,29 @@ import * as AiResistantCareers from "./ai-resistant-careers";
 import * as HowToWriteImagePrompts2026 from "./how-to-write-image-prompts-2026";
 import * as WhatChangedInGpt5 from "./what-changed-in-gpt-5";
 import * as WhatChangedInClaude4 from "./what-changed-in-claude-4";
+// Wave 19 — additional trending guides
+import * as BedtimeRoutine2026 from "./bedtime-routine-2026";
+import * as CaffeineHalfLifeExplained from "./caffeine-half-life-explained";
+import * as CgmForNonDiabetics from "./cgm-for-non-diabetics";
+import * as WalkingVsRunningForFatLoss from "./walking-vs-running-for-fat-loss";
+import * as HeartRateVariabilityExplained from "./heart-rate-variability-explained";
+import * as AiSearchVsGoogle2026 from "./ai-search-vs-google-2026";
+import * as FiberTarget2026 from "./fiber-target-2026";
+import * as MouthTapeExplained from "./mouth-tape-explained";
+import * as EvVsHybrid2026 from "./ev-vs-hybrid-2026";
+import * as ThirdPlaceRevival from "./third-place-revival";
+import * as CreatorBurnout2026 from "./creator-burnout-2026";
+import * as PaperPlannerComeback from "./paper-planner-comeback";
+import * as HowToPickAnMcpServer from "./how-to-pick-an-mcp-server";
+import * as KimiK2VsDeepseekV3 from "./kimi-k2-vs-deepseek-v3";
+import * as AnthropicSkillsExplained from "./anthropic-skills-explained";
+import * as FermentedFoods2026 from "./fermented-foods-2026";
+import * as BeginnerMarathonTraining from "./beginner-marathon-training";
+import * as InductionStoveConversion2026 from "./induction-stove-conversion-2026";
+import * as ElectricBikeCommuteRoi from "./electric-bike-commute-roi";
+import * as ReturnToOffice2026 from "./return-to-office-2026";
+import * as AiFluencySkills2026 from "./ai-fluency-skills-2026";
+import * as WomenStrengthTraining2026 from "./women-strength-training-2026";
 
 // Wave 11 — AI guides + best-for-X (25)
 import * as BestAiForCoding2026 from "./best-ai-for-coding-2026";
@@ -4309,6 +4332,28 @@ export const GUIDE_REGISTRY: Record<string, GuideEntry> = {
   "how-to-write-image-prompts-2026": { intro: HowToWriteImagePrompts2026.intro, body: HowToWriteImagePrompts2026.body, cta: { label: "Build your prompt with the helper", targetSlug: "ai-image-prompt-helper" } },
   "what-changed-in-gpt-5": { intro: WhatChangedInGpt5.intro, body: WhatChangedInGpt5.body, cta: { label: "Track every frontier AI model", targetSlug: "frontier-model-tracker" } },
   "what-changed-in-claude-4": { intro: WhatChangedInClaude4.intro, body: WhatChangedInClaude4.body, cta: { label: "Track every frontier AI model", targetSlug: "frontier-model-tracker" } },
+  "bedtime-routine-2026": { intro: BedtimeRoutine2026.intro, body: BedtimeRoutine2026.body, cta: { label: "Time your sleep cycles", targetSlug: "sleep-cycle-calculator" } },
+  "caffeine-half-life-explained": { intro: CaffeineHalfLifeExplained.intro, body: CaffeineHalfLifeExplained.body, cta: { label: "Time your sleep cycles", targetSlug: "sleep-cycle-calculator" } },
+  "cgm-for-non-diabetics": { intro: CgmForNonDiabetics.intro, body: CgmForNonDiabetics.body, cta: { label: "Run your macros", targetSlug: "macro-calculator" } },
+  "walking-vs-running-for-fat-loss": { intro: WalkingVsRunningForFatLoss.intro, body: WalkingVsRunningForFatLoss.body, cta: { label: "Set your daily step target", targetSlug: "step-count-target-calculator" } },
+  "heart-rate-variability-explained": { intro: HeartRateVariabilityExplained.intro, body: HeartRateVariabilityExplained.body, cta: { label: "Calculate your zone 2", targetSlug: "zone-2-heart-rate-calculator" } },
+  "ai-search-vs-google-2026": { intro: AiSearchVsGoogle2026.intro, body: AiSearchVsGoogle2026.body, cta: { label: "Compare 8 AI search engines", targetSlug: "ai-search-engine-comparison" } },
+  "fiber-target-2026": { intro: FiberTarget2026.intro, body: FiberTarget2026.body, cta: { label: "Run your macros", targetSlug: "macro-calculator" } },
+  "mouth-tape-explained": { intro: MouthTapeExplained.intro, body: MouthTapeExplained.body, cta: { label: "Time your sleep cycles", targetSlug: "sleep-cycle-calculator" } },
+  "ev-vs-hybrid-2026": { intro: EvVsHybrid2026.intro, body: EvVsHybrid2026.body, cta: { label: "Estimate EV range", targetSlug: "ev-range-estimator" } },
+  "third-place-revival": { intro: ThirdPlaceRevival.intro, body: ThirdPlaceRevival.body, cta: { label: "Get small-talk question prompts", targetSlug: "small-talk-question-generator" } },
+  "creator-burnout-2026": { intro: CreatorBurnout2026.intro, body: CreatorBurnout2026.body, cta: { label: "Audit your AI subscriptions", targetSlug: "ai-monthly-cost-budgeter" } },
+  "paper-planner-comeback": { intro: PaperPlannerComeback.intro, body: PaperPlannerComeback.body, cta: { label: "Use the weekly planner", targetSlug: "weekly-planner" } },
+  "how-to-pick-an-mcp-server": { intro: HowToPickAnMcpServer.intro, body: HowToPickAnMcpServer.body, cta: { label: "Get tailored MCP server picks", targetSlug: "mcp-server-picker" } },
+  "kimi-k2-vs-deepseek-v3": { intro: KimiK2VsDeepseekV3.intro, body: KimiK2VsDeepseekV3.body, cta: { label: "Track open-source LLMs", targetSlug: "open-source-llm-tracker" } },
+  "anthropic-skills-explained": { intro: AnthropicSkillsExplained.intro, body: AnthropicSkillsExplained.body, cta: { label: "Track frontier model capabilities", targetSlug: "frontier-model-tracker" } },
+  "fermented-foods-2026": { intro: FermentedFoods2026.intro, body: FermentedFoods2026.body, cta: { label: "Run your macros", targetSlug: "macro-calculator" } },
+  "beginner-marathon-training": { intro: BeginnerMarathonTraining.intro, body: BeginnerMarathonTraining.body, cta: { label: "Set running paces", targetSlug: "running-pace-calculator" } },
+  "induction-stove-conversion-2026": { intro: InductionStoveConversion2026.intro, body: InductionStoveConversion2026.body, cta: { label: "Calculate heat-pump savings", targetSlug: "heat-pump-savings-calculator" } },
+  "electric-bike-commute-roi": { intro: ElectricBikeCommuteRoi.intro, body: ElectricBikeCommuteRoi.body, cta: { label: "Calculate commute savings", targetSlug: "ev-range-estimator" } },
+  "return-to-office-2026": { intro: ReturnToOffice2026.intro, body: ReturnToOffice2026.body, cta: { label: "Set up an ergonomic desk", targetSlug: "ergonomic-desk-setup-checker" } },
+  "ai-fluency-skills-2026": { intro: AiFluencySkills2026.intro, body: AiFluencySkills2026.body, cta: { label: "Try the prompt rewriter", targetSlug: "prompt-rewriter" } },
+  "women-strength-training-2026": { intro: WomenStrengthTraining2026.intro, body: WomenStrengthTraining2026.body, cta: { label: "Estimate your VO2 max", targetSlug: "vo2-max-estimator" } },
   "best-ai-for-coding-2026": { intro: BestAiForCoding2026.intro, body: BestAiForCoding2026.body, cta: { label: "Compare AI coding tool costs at any team size", targetSlug: "ai-coding-tool-cost-comparison" } },
   "best-ai-for-research": { intro: BestAiForResearch.intro, body: BestAiForResearch.body, cta: { label: "See how AI tools compare on features", targetSlug: "ai-feature-comparison-matrix" } },
   "best-ai-for-writing": { intro: BestAiForWriting.intro, body: BestAiForWriting.body, cta: { label: "Track every frontier AI model", targetSlug: "frontier-model-tracker" } },

@@ -256,6 +256,113 @@ export const HUBS: Hub[] = [
     ],
     relatedHubs: ["free-dev-tools", "free-seo-tools"],
   },
+  {
+    slug: "best-fitness-tools-2026",
+    title: "Best Fitness Tools (2026): Zone 2, VO2 Max, Pickleball + More",
+    h1: "Best Fitness Tools (2026)",
+    description:
+      "Free fitness tools for 2026 trends: zone 2 heart rate, VO2 max, sauna, cold plunge, pickleball rating, run club distance, step count, BMI, calorie + macro calculators.",
+    keyword: "best fitness tools 2026",
+    eyebrow: "Curated list · 12 tools",
+    intro:
+      "The 2026 fitness conversation moved from gym programming to longevity science. Zone 2 cardio, VO2 max, sauna protocols, cold plunge, pickleball, and step targets all dominate the discourse. These twelve free tools cover the math behind each, with no pseudoscience and no $20 monthly subscription.",
+    picks: [
+      { slug: "zone-2-heart-rate-calculator", pitch: "Personalized zone 2 cardio range (Karvonen / Maffetone / %max). The longevity-research-backed cardio zone." },
+      { slug: "vo2-max-estimator", pitch: "Three field tests (Cooper / Rockport / resting HR) plus age + sex norms. VO2 max correlates with all-cause mortality more than most other markers." },
+      { slug: "sauna-protocol-calculator", pitch: "Build a sauna protocol from goal + experience. Based on the Finnish KIHD longevity data — 40% mortality reduction at 4-7 sessions/week." },
+      { slug: "cold-plunge-protocol-builder", pitch: "Goal-tuned cold plunge protocol with safety + execution notes. Strength athletes: never within 4h of lifting." },
+      { slug: "pickleball-rating-calculator", pitch: "DUPR-style 2.0–7.0 rating from your recent results. With level descriptions for benchmarking." },
+      { slug: "run-club-distance-calculator", pitch: "Distance + pace + energy by level + target pace. Plus etiquette tips for the 2026 run-club explosion." },
+      { slug: "step-count-target-calculator", pitch: "Personalized daily step target by age + goal. Beyond the 10,000-step myth (which was a 1965 marketing campaign)." },
+      { slug: "bmi-calculator", pitch: "BMI in metric and imperial with healthy-range context. Imperfect but a useful starting point." },
+      { slug: "calorie-calculator", pitch: "Daily calorie target for maintenance, cut, or bulk based on activity level + goals." },
+      { slug: "macro-calculator", pitch: "Protein / carbs / fat split by goal. Pair with the protein-target debunking article." },
+      { slug: "running-pace-calculator", pitch: "Convert pace, time, and distance any direction. For beginners through marathon training." },
+      { slug: "ideal-weight-calculator", pitch: "Ideal weight by height + frame size, multiple formulas. Useful for setting realistic targets." },
+    ],
+    sections: [
+      {
+        heading: "The 2026 longevity stack",
+        body: "Three things move the needle most for adults: sustained zone 2 cardio (4-5 hr/wk), strength training (2-3&times;/wk), and walking volume (8-10K steps/day). Sauna (4-7 sessions/wk) is the cherry on top with the strongest single-intervention mortality data. Cold plunges add mood + recovery benefits but don't substitute for the fundamentals.",
+      },
+      {
+        heading: "What's overhyped",
+        body: "Mouth tape, blue-light glasses, melatonin, fasted cardio, expensive supplement stacks. Most of the longevity needle moves with: zone 2 + lifting + sleep + protein + fiber + hydration. That stack is boring and free. Don't replace it with $40/mo subscriptions.",
+      },
+    ],
+    relatedHubs: ["free-finance-calculators", "free-tools-for-students"],
+  },
+  {
+    slug: "best-tools-for-remote-workers",
+    title: "Best Tools for Remote Workers (2026): AI, Productivity, Health",
+    h1: "Best Tools for Remote Workers (2026)",
+    description:
+      "Free tools for remote workers in 2026: AI cost calculators, ergonomic desk checker, eye strain timer, dopamine detox planner, focus tools, time-zone converter.",
+    keyword: "best tools for remote workers",
+    eyebrow: "Curated list · 11 tools",
+    intro:
+      "Remote work is settled territory in 2026 — most knowledge workers are hybrid 3-2 or fully remote. The constraints are different than they were in 2020: AI is part of the daily stack, the home office matters more, and screen-time hygiene is a real performance variable. These eleven free tools cover the practical math.",
+    picks: [
+      { slug: "ergonomic-desk-setup-checker", pitch: "Target desk, chair, monitor heights for your body. Fixes 80% of common pain patterns." },
+      { slug: "eye-strain-break-calculator", pitch: "20-20-20 rule timer with screen-hours planning. Tiny investment for big returns." },
+      { slug: "pomodoro-timer", pitch: "25/5 focus cycles. Stops the 'check email every 10 minutes' pattern that quietly kills your output." },
+      { slug: "time-zone-converter", pitch: "Schedule across teams without DST mistakes. Returns ambiguity-free meeting times." },
+      { slug: "ai-monthly-cost-budgeter", pitch: "Track every ChatGPT / Claude / Cursor / Perplexity subscription before it balloons." },
+      { slug: "ai-coding-tool-cost-comparison", pitch: "9 AI coding plans compared — Copilot, Cursor, Claude Code, Windsurf — at any team size." },
+      { slug: "subscription-fatigue-auditor", pitch: "Kill-list builder with annual savings. Most households cut $400-1200/year." },
+      { slug: "dopamine-detox-planner", pitch: "Stimuli-reset by length + strictness. Honest framing without pseudoscience." },
+      { slug: "to-do-list", pitch: "Tab-based to-do that survives reloads. No login, no sync to a server." },
+      { slug: "habit-tracker", pitch: "Weekly habit grid for the 1% improvements that compound." },
+      { slug: "weekly-planner", pitch: "Time-blocked weekly view, browser-based. Print or use on screen." },
+    ],
+    sections: [
+      {
+        heading: "The 4-day work week + flexibility",
+        body: "Most companies landed on hybrid 3-2 by 2026, but flexibility (compressed schedules, 4-day weeks, async-first norms) is a real lever. Read the 4-day work week evidence guide for what actually moves productivity vs status-quo bias.",
+      },
+      {
+        heading: "AI fluency is the differentiator",
+        body: "Going from 'uses ChatGPT once a week' to 'uses 3 frontier models daily, knows when each wins, uses prompt caching' is the productivity gap that matters in 2026. The AI fluency skills guide breaks down the 8 sub-skills.",
+      },
+    ],
+    relatedHubs: ["best-ai-tools-2026", "free-tools-for-freelancers"],
+  },
+  {
+    slug: "best-money-tools-2026",
+    title: "Best Money Tools (2026): Low-Buy, Subscriptions, Budget, Tax",
+    h1: "Best Money Tools (2026)",
+    description:
+      "Free money tools for 2026 trends: low-buy year tracker, subscription auditor, AI cost budgeter, budget calculator, tax bracket visualizer, FICA, vacation payout, more.",
+    keyword: "best money tools 2026",
+    eyebrow: "Curated list · 12 tools",
+    intro:
+      "Money in 2026 is dominated by two themes: subscription bloat (especially AI tools) and lifestyle creep. These twelve tools tackle both, plus the boring fundamentals (taxes, retirement, paycheck) that haven't changed but most people still skip running the numbers on.",
+    picks: [
+      { slug: "low-buy-year-tracker", pitch: "Log discretionary purchases, mark needed vs want. The 2026 cultural answer to lifestyle creep." },
+      { slug: "subscription-fatigue-auditor", pitch: "Build a kill list with annual savings. Most households cut $400-1200/year." },
+      { slug: "ai-monthly-cost-budgeter", pitch: "Track every AI subscription + API spend in one place. Set a budget." },
+      { slug: "budget-calculator", pitch: "50/30/20 split with live percentages. Sustainable monthly framework." },
+      { slug: "tax-bracket-visualizer", pitch: "See exactly how much income falls in each 2026 federal bracket. Marginal + effective rate." },
+      { slug: "fica-tax-calculator", pitch: "Social Security + Medicare withholding for W-2 or self-employed. Including additional Medicare." },
+      { slug: "vacation-payout-calculator", pitch: "PTO payout after federal supplemental + FICA + state withholding." },
+      { slug: "compound-interest-calculator", pitch: "What monthly contributions become over 10, 20, 30 years. The most important calculator in investing." },
+      { slug: "401k-calculator", pitch: "Project 401(k) balance at retirement with employer match + return assumptions." },
+      { slug: "debt-payoff-calculator", pitch: "Avalanche vs snowball comparison on your actual balances. Extra payment math." },
+      { slug: "net-worth-calculator", pitch: "Assets - liabilities. Track quarterly to see whether your financial life is actually improving." },
+      { slug: "savings-goal-calculator", pitch: "Given a target ($20K emergency, $50K down payment), how much to save monthly to hit a date." },
+    ],
+    sections: [
+      {
+        heading: "The subscription audit playbook",
+        body: "Average US household: 12 paid subscriptions, uses 6. The audit takes 30 minutes — pull receipts from your card, Apple ID, Google Play, PayPal, Amazon. Mark cost-per-use. Anything over $5/use with under 4 uses/month → cancel today. Average savings: $400-1200/year.",
+      },
+      {
+        heading: "The low-buy mindset",
+        body: "Low-buy ≠ no-buy. Low-buy: monthly budget for wants ($25-100), strict need-vs-want filter, 30-day cooling rule on purchases over $50. Sustainable for a year. Logging IS the intervention — most people cut 30-50% of category spending without feeling deprived.",
+      },
+    ],
+    relatedHubs: ["free-finance-calculators", "best-tools-for-remote-workers"],
+  },
 ];
 
 export function getHubBySlug(slug: string): Hub | undefined {
