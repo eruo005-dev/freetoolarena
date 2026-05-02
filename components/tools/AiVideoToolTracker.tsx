@@ -54,6 +54,13 @@ export function AiVideoToolTracker() {
         Quality is a composite of motion coherence + photo realism + prompt adherence (1-100, higher better). Real workflow:
         Midjourney for keyframe &rarr; Runway Gen-4 for image-to-video &rarr; Sora / Veo for the long shots &rarr; Topaz upscale.
       </div>
+
+      <div className="rounded border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-900">
+        <strong>Data transparency:</strong> tracker verified <strong>2026-04-30</strong> against vendor
+        product pages. Quality scores are an editorial composite, not a benchmark; treat them as a
+        starting point and run your own A/B tests on real prompts before committing to a workflow. See{" "}
+        <a href="/source" className="underline">source &amp; transparency</a>.
+      </div>
     </div>
   );
 }

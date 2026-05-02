@@ -69,6 +69,13 @@ export function AiRateLimitTracker() {
         tier. To avoid 429s in production, build retry-with-exponential-backoff into your client and
         use the streaming response API (it bills only what you actually generate).
       </div>
+
+      <div className="rounded border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-900">
+        <strong>Data transparency:</strong> rate limits verified against provider documentation on{" "}
+        <strong>2026-04-30</strong>. Tier thresholds change without notice — confirm directly in your
+        provider console before architecting around specific numbers. See{" "}
+        <a href="/source" className="underline">source &amp; transparency</a> for full sourcing.
+      </div>
     </div>
   );
 }

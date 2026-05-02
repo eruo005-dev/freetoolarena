@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0.00";
@@ -166,6 +166,20 @@ export function LoanCalculator({
   const [extra, setExtra] = useState(0);
   const [showTable, setShowTable] = useState(false);
   const [granularity, setGranularity] = useState<"year" | "month">("year");
+
+  // Sync state to URL so the share button copies a permalink.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("amount", String(amount));
+    u.searchParams.set("rate", String(rate));
+    u.searchParams.set("years", String(years));
+    if (extra > 0) u.searchParams.set("extra", String(extra));
+    else u.searchParams.delete("extra");
+    if (u.toString() !== window.location.href) {
+      window.history.replaceState(null, "", u.toString());
+    }
+  }, [amount, rate, years, extra]);
 
   const { scheduled, baseline, withExtra } = useMemo(() => {
     const n = Math.max(1, Math.round(years * 12));

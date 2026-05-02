@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 export interface TipCalculatorProps {
   initialBill?: number;
@@ -24,6 +25,18 @@ export function TipCalculator({
     const tip = b * (t / 100);
     const tot = b + tip;
     return { billNum: b, tipAmount: tip, total: tot, perPerson: tot / p };
+  }, [bill, tipPct, people]);
+
+  // Sync state to URL so the share-link copies a permalink to the user's scenario.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("bill", bill);
+    u.searchParams.set("tip", tipPct);
+    u.searchParams.set("people", people);
+    if (u.toString() !== window.location.href) {
+      window.history.replaceState(null, "", u.toString());
+    }
   }, [bill, tipPct, people]);
 
   const presets = [10, 15, 18, 20, 25];
@@ -59,6 +72,18 @@ export function TipCalculator({
         <Stat label="Per person" value={perPerson} highlight />
         <Stat label="Bill total" value={billNum} muted />
       </div>
+
+      <ExportData
+        filename={`tip-calculation-${Math.round(billNum)}`}
+        rows={[
+          { metric: "Bill total", value: billNum.toFixed(2) },
+          { metric: "Tip percent", value: tipPct },
+          { metric: "Tip amount", value: tipAmount.toFixed(2) },
+          { metric: "Total with tip", value: total.toFixed(2) },
+          { metric: "Number of people", value: people },
+          { metric: "Per person", value: perPerson.toFixed(2) },
+        ]}
+      />
     </div>
   );
 }

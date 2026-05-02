@@ -66,6 +66,7 @@ export function SiteFooter() {
             <FooterLink href="/how-it-works">How our tools work</FooterLink>
             <FooterLink href="/security">Security</FooterLink>
             <FooterLink href="/methodology">Tool methodology</FooterLink>
+            <FooterLink href="/source">Source &amp; transparency</FooterLink>
             <FooterLink href="/editorial">Editorial policy</FooterLink>
             <FooterLink href="/ai-policy">AI content policy</FooterLink>
             <FooterLink href="/privacy">Privacy policy</FooterLink>

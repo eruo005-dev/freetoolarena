@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0";
@@ -40,6 +40,19 @@ export function MortgageCalculator({
   const [insurance, setInsurance] = useState(1200);
   const [hoa, setHoa] = useState(0);
   const [pmiRate, setPmiRate] = useState(DEFAULT_PMI_RATE);
+
+  // Sync inputs to URL so share-link captures the user's scenario.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("price", String(price));
+    u.searchParams.set("down", String(down));
+    u.searchParams.set("rate", String(rate));
+    u.searchParams.set("years", String(years));
+    if (u.toString() !== window.location.href) {
+      window.history.replaceState(null, "", u.toString());
+    }
+  }, [price, down, rate, years]);
 
   const calc = useMemo(() => {
     const loanAmount = Math.max(0, price * (1 - down / 100));
