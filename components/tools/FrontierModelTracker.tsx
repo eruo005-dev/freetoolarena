@@ -81,6 +81,19 @@ export function FrontierModelTracker() {
         Tracked through 2026-Q1; pricing and capabilities shift fast &mdash; verify on the provider&rsquo;s
         page before locking long contracts.
       </div>
+
+      <div className="rounded border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-900">
+        <strong>Data transparency:</strong> data verified against canonical pricing pages on{" "}
+        <strong>2026-04-30</strong> by our monthly automated routine.
+        Sources we cross-reference each refresh:{" "}
+        <a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener noreferrer" className="underline">anthropic.com/pricing</a>,{" "}
+        <a href="https://openai.com/pricing" target="_blank" rel="noopener noreferrer" className="underline">openai.com/pricing</a>,{" "}
+        <a href="https://ai.google.dev/pricing" target="_blank" rel="noopener noreferrer" className="underline">ai.google.dev/pricing</a>,{" "}
+        <a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank" rel="noopener noreferrer" className="underline">deepseek</a>,{" "}
+        <a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener noreferrer" className="underline">x.ai docs</a>,{" "}
+        <a href="https://docs.mistral.ai/" target="_blank" rel="noopener noreferrer" className="underline">mistral docs</a>.
+        See <a href="/source" className="underline">source &amp; transparency</a> for the full list.
+      </div>
     </div>
   );
 }
