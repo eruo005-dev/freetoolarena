@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0.00";
@@ -444,6 +445,27 @@ export function LoanCalculator({
           </table>
         </div>
       )}
+
+      <ExportData
+        filename={`loan-${Math.round(amount)}-${rate}pct-${years}y`}
+        rows={[
+          { metric: "Loan amount", value: amount.toFixed(2) },
+          { metric: "Annual rate (%)", value: rate },
+          { metric: "Term (years)", value: years },
+          { metric: "Scheduled monthly payment", value: scheduled.toFixed(2) },
+          { metric: "Total interest (no extra)", value: baseline.interest.toFixed(2) },
+          { metric: "Total paid (no extra)", value: (amount + baseline.interest).toFixed(2) },
+          { metric: "Months (no extra)", value: baseline.months },
+          ...(extra > 0
+            ? [
+                { metric: "Extra monthly", value: extra.toFixed(2) },
+                { metric: "Total interest (with extra)", value: withExtra.interest.toFixed(2) },
+                { metric: "Months saved", value: baseline.months - withExtra.months },
+                { metric: "Interest saved", value: (baseline.interest - withExtra.interest).toFixed(2) },
+              ]
+            : []),
+        ]}
+      />
     </div>
   );
 }

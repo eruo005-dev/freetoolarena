@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0";

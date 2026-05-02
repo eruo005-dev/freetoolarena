@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0";
@@ -319,6 +320,26 @@ export function MortgageCalculator({
         original price). Taxes, insurance, and HOA are held flat — in
         reality they drift up over time.
       </p>
+
+      <ExportData
+        filename={`mortgage-${Math.round(price)}-${rate}pct-${years}y`}
+        rows={[
+          { metric: "Home price", value: price.toFixed(2) },
+          { metric: "Down payment", value: calc.downPaymentDollars.toFixed(2) },
+          { metric: "Loan amount", value: calc.loanAmount.toFixed(2) },
+          { metric: "Annual rate (%)", value: rate },
+          { metric: "Term (years)", value: years },
+          { metric: "Principal + Interest", value: calc.pi.toFixed(2) },
+          { metric: "Property tax (monthly)", value: calc.monthlyTax.toFixed(2) },
+          { metric: "Insurance (monthly)", value: calc.monthlyIns.toFixed(2) },
+          { metric: "HOA (monthly)", value: calc.hoa.toFixed(2) },
+          { metric: "PMI avg monthly", value: calc.avgMonthlyPmi.toFixed(2) },
+          { metric: "Total monthly", value: calc.totalMonthly.toFixed(2) },
+          { metric: "Total interest", value: calc.totalInterest.toFixed(2) },
+          { metric: "Total PMI", value: calc.totalPmi.toFixed(2) },
+          { metric: "Total cost of home", value: calc.totalCostOfHome.toFixed(2) },
+        ]}
+      />
     </div>
   );
 }
