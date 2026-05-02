@@ -6,6 +6,8 @@ import { TrackRecentTool } from "@/components/TrackRecentTool";
 import { AdSlot } from "@/components/AdSlot";
 import { ShareBar } from "@/components/ShareBar";
 import { BookmarkNudge } from "@/components/BookmarkNudge";
+import { TrustBar } from "@/components/TrustBar";
+import { MethodologyPanel, type Source } from "@/components/MethodologyPanel";
 import { CategoryDisclaimer } from "@/components/CategoryDisclaimer";
 import { EmbedButton } from "@/components/EmbedButton";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -34,6 +36,18 @@ export interface ToolShellProps {
   example?: { input: string; output: string; note?: string };
   howItWorks?: ReactNode;
   faq?: { q: string; a: string }[];
+  /**
+   * Methodology + sources panel. When supplied, renders a collapsible
+   * "Show the math + sources" section above the related-tools area.
+   * Auditable transparency every competitor lacks.
+   */
+  methodology?: {
+    formula: ReactNode;
+    assumes: ReactNode;
+    sources: Source[];
+    lastVerified: string;
+    dataUpdated?: string;
+  };
 }
 
 /**
@@ -52,6 +66,7 @@ export function ToolShell({
   example,
   howItWorks,
   faq,
+  methodology,
 }: ToolShellProps) {
   const page = getPageBySlug(slug);
   if (!page) return <p>Page not found.</p>;
@@ -247,8 +262,20 @@ export function ToolShell({
           sitewide, so this is additive. */}
       <AdSlot className="mb-10" label="Advertisement" />
 
+      {methodology && (
+        <MethodologyPanel
+          formula={methodology.formula}
+          assumes={methodology.assumes}
+          sources={methodology.sources}
+          lastVerified={methodology.lastVerified}
+          dataUpdated={methodology.dataUpdated}
+        />
+      )}
+
       <RelatedLinks slug={slug} filter="tool" heading="Related tools" />
       <RelatedLinks slug={slug} filter="article" heading="Supporting guides" />
+
+      <TrustBar className="mt-10" />
 
       <script
         type="application/ld+json"

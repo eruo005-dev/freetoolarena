@@ -4,6 +4,7 @@ import { ToolShell } from "@/components/ToolShell";
 import { TOOL_REGISTRY } from "@/components/tools/registry";
 import { getPageBySlug, getPublishedTools } from "@/lib/pages";
 import { metadataFor } from "@/lib/seo";
+import { methodologyForSlug } from "@/lib/methodologies";
 
 // Allow statically generated tools to also serve arbitrary query strings
 // (e.g. /tools/loan-calculator?amount=200000). dynamicParams=false still
@@ -40,6 +41,7 @@ export default function ToolPage({ params, searchParams }: ToolPageProps) {
       example={entry.example}
       howItWorks={entry.howItWorks}
       faq={entry.faq}
+      methodology={methodologyForSlug(params.slug)}
     >
       {entry.render(searchParams)}
     </ToolShell>
