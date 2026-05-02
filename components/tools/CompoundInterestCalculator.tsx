@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function formatMoney(n: number): string {
   if (!Number.isFinite(n)) return "$0";
@@ -93,6 +93,19 @@ export function CompoundInterestCalculator({
   const [monthly, setMonthly] = useState(initialContribution);
   const [rate, setRate] = useState(initialRate);
   const [years, setYears] = useState(initialYears);
+
+  // Sync to URL for the share button.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const u = new URL(window.location.href);
+    u.searchParams.set("principal", String(start));
+    u.searchParams.set("monthly", String(monthly));
+    u.searchParams.set("rate", String(rate));
+    u.searchParams.set("years", String(years));
+    if (u.toString() !== window.location.href) {
+      window.history.replaceState(null, "", u.toString());
+    }
+  }, [start, monthly, rate, years]);
 
   const series = useMemo(
     () => simulate(start, monthly, rate, years),

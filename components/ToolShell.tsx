@@ -5,6 +5,7 @@ import { FavoriteButton } from "@/components/FavoriteButton";
 import { TrackRecentTool } from "@/components/TrackRecentTool";
 import { AdSlot } from "@/components/AdSlot";
 import { ShareBar } from "@/components/ShareBar";
+import { ShareCalculation } from "@/components/ShareCalculation";
 import { BookmarkNudge } from "@/components/BookmarkNudge";
 import { TrustBar } from "@/components/TrustBar";
 import { MethodologyPanel, type Source } from "@/components/MethodologyPanel";
@@ -99,10 +100,18 @@ export function ToolShell({
 
       <section
         aria-label={`${page.h1} interactive tool`}
-        className="mb-12 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8"
+        className="mb-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8"
       >
         {children}
       </section>
+
+      {/* Share-this-calculation: copies the current URL (with whatever
+          query params the tool synced) so users can send a friend their
+          exact scenario. Tools that read defaults from searchParams
+          (LoanCalculator, TipCalculator, etc.) make the link reproducible. */}
+      <div className="mb-8 flex justify-end">
+        <ShareCalculation />
+      </div>
 
       {/* Share row. Sits directly under the tool so a useful result can
           be copy-linked to a friend / email / DM without scrolling. */}
