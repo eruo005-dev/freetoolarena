@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 type Units = "metric" | "imperial";
 
@@ -81,6 +82,14 @@ export function BmiCalculator({
         </ul>
         <p className="mt-2 italic">BMI is a rough screen, not a diagnosis. Muscle mass and body composition matter.</p>
       </div>
+
+      <ExportData
+        filename="bmi-calculation"
+        rows={[
+          { metric: "BMI", value: bmi.toFixed(1) },
+          { metric: "Category", value: category },
+        ]}
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { ExportData } from "@/components/ExportData";
 
 function money(n: number): string {
   return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -88,6 +89,20 @@ export function PaycheckCalculator({
         </div>
       </div>
       <p className="text-xs text-slate-500">Estimate only. Withholding depends on W-4 elections, credits, and local taxes.</p>
+
+      <ExportData
+        filename="paycheck-calculation"
+        rows={[
+          { metric: "Gross annual", value: salary.toFixed(2) },
+          { metric: "Pre-tax deductions", value: pretax.toFixed(2) },
+          { metric: "Federal tax", value: r.fed.toFixed(2) },
+          { metric: "State tax", value: r.st.toFixed(2) },
+          { metric: "FICA", value: r.fica.toFixed(2) },
+          { metric: "Take-home annual", value: r.takeHome.toFixed(2) },
+          { metric: "Per paycheck", value: r.per.toFixed(2) },
+          { metric: "Pay periods/year", value: r.periods },
+        ]}
+      />
     </div>
   );
 }
