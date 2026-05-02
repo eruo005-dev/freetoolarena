@@ -78,6 +78,16 @@ export default function HomePage() {
           tool you keep Googling on a single page each. No account, no email,
           no upsell.
         </p>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-500">
+          <strong className="text-slate-700">Why not just ask ChatGPT?</strong> Because
+          ChatGPT can&rsquo;t print a properly aligned Avery 5160 label sheet from your
+          CSV in 4 seconds, can&rsquo;t guarantee your loan numbers cite the IRS, can&rsquo;t
+          run when your wifi drops mid-calculation. We can. Every formula{" "}
+          <a href="/source" className="font-medium text-brand underline-offset-2 hover:underline">
+            published with primary sources
+          </a>
+          .
+        </p>
         <div className="mt-7 flex flex-wrap items-center gap-3">
           <ButtonLink href="/tools" variant="primary" size="lg">
             Browse {tools.length} tools
