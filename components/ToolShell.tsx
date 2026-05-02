@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { RelatedHeadToHead } from "@/components/RelatedHeadToHead";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { TrackRecentTool } from "@/components/TrackRecentTool";
 import { AdSlot } from "@/components/AdSlot";
@@ -283,6 +284,7 @@ export function ToolShell({
 
       <RelatedLinks slug={slug} filter="tool" heading="Related tools" />
       <RelatedLinks slug={slug} filter="article" heading="Supporting guides" />
+      <RelatedHeadToHead slug={slug} />
 
       <TrustBar className="mt-10" />
 

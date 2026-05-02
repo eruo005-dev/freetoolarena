@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * Tiny "share this calculation" button. Copies the current URL (with query
@@ -52,7 +52,7 @@ export function ShareCalculation({
     }
   }, [values, paramKey]);
 
-  const handleCopy = async () => {
+  const handleCopy = useCallback(async () => {
     if (typeof window === "undefined") return;
     const url = window.location.href;
     try {
@@ -75,9 +75,9 @@ export function ShareCalculation({
       setStatus("error");
       setTimeout(() => setStatus("idle"), 2000);
     }
-  };
+  }, []);
 
-  const handleNativeShare = async () => {
+  const handleNativeShare = useCallback(async () => {
     if (typeof window === "undefined" || !("share" in navigator)) {
       handleCopy();
       return;
@@ -91,7 +91,26 @@ export function ShareCalculation({
       // User cancelled or share unavailable — fall back to copy.
       handleCopy();
     }
-  };
+  }, [handleCopy]);
+
+  // Cmd/Ctrl + Shift + S as a power-user shortcut to copy the current
+  // tool URL. Skipped while a form input has focus so we don't fight the
+  // browser's own save-page shortcut.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const mod = e.metaKey || e.ctrlKey;
+      if (!(mod && e.shiftKey && (e.key === "s" || e.key === "S"))) return;
+      const t = e.target as HTMLElement | null;
+      const tag = t?.tagName;
+      const editable =
+        tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable);
+      if (editable) return;
+      e.preventDefault();
+      handleCopy();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [handleCopy]);
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
@@ -100,6 +119,8 @@ export function ShareCalculation({
         onClick={handleNativeShare}
         className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-brand hover:text-brand"
         aria-live="polite"
+        aria-keyshortcuts="Control+Shift+S Meta+Shift+S"
+        title="Share this calculation (Ctrl/⌘ + Shift + S)"
       >
         <ShareIcon />
         {status === "copied" ? "Link copied!" : status === "error" ? "Copy failed" : "Share this calculation"}

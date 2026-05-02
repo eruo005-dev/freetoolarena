@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { RelatedHeadToHead } from "@/components/RelatedHeadToHead";
 import { AdSlot } from "@/components/AdSlot";
 import { ShareBar } from "@/components/ShareBar";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -191,6 +192,7 @@ export function ArticleShell({
       )}
 
       <RelatedLinks slug={slug} />
+      <RelatedHeadToHead slug={slug} />
 
       <TrustBar className="mt-10" />
 
