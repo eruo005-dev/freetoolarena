@@ -55,9 +55,20 @@ body {
   @apply my-6 border-l-4 border-slate-200 pl-4 italic text-slate-600;
 }
 
-/* Focus ring polish — visible only for keyboard users. */
+/* Focus ring polish — visible only for keyboard users.
+   2px brand-colored outline + 2px white offset for high contrast on any background.
+   WCAG 2.4.7 Focus Visible — never globally suppress focus outlines. */
 :focus-visible {
-  outline: none;
+  outline: 2px solid #0f766e; /* brand teal */
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Form inputs get a clearer ring since they often have their own border. */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 1px;
 }
 
 /*

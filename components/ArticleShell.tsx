@@ -17,6 +17,7 @@ import {
   SITE_URL,
 } from "@/lib/pages";
 import { jsonLdFor, faqJsonLd, breadcrumbForPage, SITE_UPDATED } from "@/lib/seo";
+import { TrustBar } from "@/components/TrustBar";
 
 export interface FaqItem {
   q: string;
@@ -190,6 +191,8 @@ export function ArticleShell({
       )}
 
       <RelatedLinks slug={slug} />
+
+      <TrustBar className="mt-10" />
 
       <script
         type="application/ld+json"
